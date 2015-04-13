@@ -7,6 +7,16 @@
 
 get_header(); ?>
 
+<div id="content-container" class="hero">
+
+    <div id="content" class="site-content">
+
+    <?php if ( has_post_thumbnail() ): ?>
+        <div id="hero-banner">
+            <?php the_post_thumbnail(); ?>
+        </div>
+    <?php endif; ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -28,5 +38,10 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+
+    <?php get_sidebar(); ?>
+
+    </div><!-- #content -->
+</div><!-- #content-container   -->
+
 <?php get_footer(); ?>

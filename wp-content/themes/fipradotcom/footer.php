@@ -8,15 +8,33 @@
  */
 ?>
 
-	</div><!-- #content -->
+    <div id="footer-global-network-container">
+        <div id="footer-global-network">
+            <div class="title">Explore our Global Network:</div>
+            <select name="footer-global-network" id="footer-global-network">
+                <option value="1">Option One</option>
+                <option value="2">Option Two</option>
+                <option value="3">Option Three</option>
+            </select>
+        </div>
+    </div>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'fipradotcom' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'fipradotcom' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'fipradotcom' ), 'fipradotcom', '<a href="http://underscores.me/" rel="designer">James Kontargyris</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+    <div id="footer-container">
+        <footer id="colophon" class="site-footer" role="contentinfo">
+
+            <div class="footer-section">Footer Section 1</div>
+            <div class="footer-section">Footer Section 2</div>
+            <div class="footer-section">Footer Section 3</div>
+
+        </footer><!-- #colophon -->
+
+    </div>
+    <div id="site-info-container">
+        <div class="site-info">
+            Copyright notice
+        </div><!-- .site-info -->
+    </div>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

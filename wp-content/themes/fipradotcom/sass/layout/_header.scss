@@ -1,0 +1,98 @@
+#header-container {
+  clear:both;
+  border-top:$color__fipra-blue solid $v-rhythm / 2;
+
+  header.site-header {
+    @include row();
+    @include outer-container($container__outer-width);
+    padding:0 40px;
+    @include media($media__xlarge) {
+      padding:0;
+    }
+
+    #site-branding-container {
+      @include span-columns(2);
+
+      h1.site-title {
+        margin:$v-rhythm * 2 0 0 0;
+      }
+
+    }
+
+    #site-navigation-container {
+      @include span-columns(10);
+      float:right;
+      width:auto;
+
+      .search-global-network-button {
+        float:right;
+      }
+      .searchform {
+        float:left;
+        position:relative;
+        width:auto;
+        margin-top:8px;
+        margin-right:5px;
+        font-family: $font__sans;
+        input[type=text] {
+          padding-right:40px;
+          font-family: $font__sans;
+        }
+        .button-search {
+          @include button-reset();
+          position:absolute;
+          top:10px;
+          right:10px;
+          color:$color__fipra-blue-gray;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          -ms-box-shadow: none;
+          &:hover {
+            color:$color__fipra-blue;
+          }
+        }
+        ::-webkit-input-placeholder {
+          font-style:italic;
+          font-family: $font__sans;
+        }
+
+        :-moz-placeholder { /* Firefox 18- */
+          font-style:italic;
+          font-family: $font__sans;
+        }
+
+        ::-moz-placeholder {  /* Firefox 19+ */
+          font-style:italic;
+          font-family: $font__sans;
+        }
+
+        :-ms-input-placeholder {
+          font-style:italic;
+          font-family: $font__sans;
+        }
+      }
+
+      a.global-network-button {
+        display: inline-block;
+        float:left;
+        font-family: $font__sans;
+        font-weight: $font__black;
+        color:white;
+        background-color: $color__fipra-blue;
+        @include background(linear-gradient($color__fipra-blue 40%, darken($color__fipra-blue, 10%) 100%));
+        padding:$v-rhythm em(12) $v-rhythm / 2 em(12);
+        &:hover {
+          @include transition(all 0.2s ease-out);
+          padding-top:$v-rhythm * 2;
+        }
+      }
+
+      button.menu-toggle {
+        float:right;
+        margin-top:$v-rhythm * 2;
+      }
+    }
+
+  }
+
+}

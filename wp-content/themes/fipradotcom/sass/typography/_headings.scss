@@ -1,3 +1,63 @@
 h1, h2, h3, h4, h5, h6 {
-	clear: both;
+  clear: both;
+  font-family:$font__sans;
+  margin:0;
+
+  &.blue {
+    color:$color__fipra-blue;
+  }
+  &.grey {
+    color:$color__fipra-blue-gray;
+  }
+  &.turquoise {
+    color:$color__fipra-turquoise;
+  }
+  &.violet {
+    color:$color__fipra-violet;
+  }
+  &.center {
+    text-align: center;
+  }
+}
+
+h1, h2 {
+  margin:0 0 $v-rhythm * 2 0;
+}
+
+h3, h4, h5, h6 {
+  margin:0 0 $v-rhythm 0;
+}
+
+h1 {
+  @include font-size(36);
+  line-height: $v-rhythm * 3;
+  font-weight: $font__bold;
+}
+
+h2 {
+  @include font-size(32);
+  line-height: $v-rhythm * 3;
+  font-weight: $font__light;
+}
+
+h3 {
+  @include font-size(24);
+  line-height: $v-rhythm * 2;
+  font-weight: $font__bold;
+}
+
+h4 {
+  @include font-size(21);
+  font-weight: $font__bold;
+}
+
+h5 {
+  @include font-size(16);
+  font-weight: $font__black;
+  text-transform: uppercase;
+}
+
+h6 {
+  @include font-size(14);
+  font-weight: $font__bold;
 }

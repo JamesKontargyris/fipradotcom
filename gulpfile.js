@@ -15,9 +15,13 @@ var minifycss = require('gulp-minify-css');
 //var svgmin = require('gulp-svgmin');
 var imagemin = require('gulp-imagemin');
 
+//Others
+var plumber = require('gulp-plumber');
+
 // compile all your Sass
 gulp.task('sass', function (){
     gulp.src([sassDir + 'style.scss'])
+        .pipe(plumber())
         .pipe(sass({
             outputStyle: 'expanded'
         }))
@@ -38,11 +42,15 @@ gulp.task('sass', function (){
 
 gulp.task('imagemin', function () {
     gulp.src(imgDir + '**/*')
+        .pipe(plumber())
         .pipe(imagemin())
         .pipe(gulp.dest(imgDir + '/min'));
 });
 
 gulp.task('default', function(){
+
+    gulp.run('sass');
+    gulp.run('imagemin');
 
     // watch me getting Sassy
     gulp.watch(sassDir + "**/*.scss", function(event){

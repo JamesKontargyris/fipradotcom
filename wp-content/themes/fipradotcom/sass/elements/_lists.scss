@@ -1,25 +1,43 @@
 ul, ol {
-	margin: 0 0 1.5em 3em;
+  margin: 0 0 $v-rhythm * 3 0;
+  padding-left: 0;
+  line-height: $v-rhythm * 3;
 }
 
 ul {
-	list-style: disc;
+  list-style: none;
+
+  li:not(.menu-item) {
+    padding-left: em(30px);
+    text-indent: em(-30px);
+    margin-bottom: $v-rhythm;
+    &:before {
+      content: "■ ";
+      padding-right: em(16px);
+      color: $color__fipra-blue;
+    }
+  }
 }
 
 ol {
-	list-style: decimal;
+  list-style: decimal;
+  padding-left: em(24px);
+  li {
+    margin-bottom: $v-rhythm;
+  }
 }
 
 li > ul,
 li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
+  margin-top: $v-rhythm;
+  margin-bottom: 0;
+  margin-left: em(24px);
 }
 
 dt {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+  margin: 0 $v-rhythm * 2 em(24px);
 }
