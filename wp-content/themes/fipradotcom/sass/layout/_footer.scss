@@ -1,6 +1,8 @@
 #footer-global-network-container {
   clear:both;
   background-color: darken($color__fipra-light-gray, 15%);
+  border-top:1px solid darken($color__fipra-light-gray, 25%);
+  border-bottom:1px solid darken($color__fipra-light-gray, 25%);
 
   #footer-global-network {
     text-align: center;

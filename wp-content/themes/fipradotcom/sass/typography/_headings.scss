@@ -38,6 +38,7 @@ h2 {
   @include font-size(32);
   line-height: $v-rhythm * 3;
   font-weight: $font__light;
+  color:$color__fipra-blue;
 }
 
 h3 {

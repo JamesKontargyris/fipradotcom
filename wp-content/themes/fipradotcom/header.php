@@ -39,7 +39,7 @@
                     <a class="global-network-button" href="#"><i class="fa fa-globe"></i> Explore our Global Network</a>
                 </div>
                 <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e('Primary Menu', 'fipradotcom'); ?></button>
+<!--                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">--><?php //_e('Primary Menu', 'fipradotcom'); ?><!--</button>-->
                     <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
                 </nav>
                 <!-- #site-navigation -->

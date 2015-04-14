@@ -44,13 +44,13 @@ gulp.task('imagemin', function () {
     gulp.src(imgDir + '**/*')
         .pipe(plumber())
         .pipe(imagemin())
-        .pipe(gulp.dest(imgDir + '/min'));
+        .pipe(gulp.dest(baseDir + 'img-min'));
 });
 
 gulp.task('default', function(){
 
     gulp.run('sass');
-    gulp.run('imagemin');
+    //gulp.run('imagemin');
 
     // watch me getting Sassy
     gulp.watch(sassDir + "**/*.scss", function(event){
@@ -58,7 +58,7 @@ gulp.task('default', function(){
     });
     // images
     gulp.watch(imgDir + "/**/*", function(event){
-        gulp.run('imagemin');
+        //gulp.run('imagemin');
         //gulp.run('svgmin');
     });
 });

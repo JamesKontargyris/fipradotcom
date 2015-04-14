@@ -1,0 +1,114 @@
+.gallery {
+  @include clearfix();
+
+  .gallery-block {
+    @include clearfix();
+    @include border-left-radius(4px);
+    @include border-right-radius(4px);
+    margin-top: $v-rhythm * 2;
+    color:$color__fipra-blue-gray;
+
+    .featured-image {
+      img { @include border-top-radius(4px); width:100%; }
+    }
+
+    &.center {
+      text-align: center;
+    }
+
+    .gallery-block-content {
+      padding: $v-rhythm * 2 em(24px);
+      min-height:em(300px);
+    }
+
+    &.bg {
+      background: $color__fipra-light-gray;
+
+      &.orange {
+        @include background(linear-gradient(bottom, lighten(orange, 4%) 0, darken(orange, 4%) 100%));
+        color:white;
+        .icon-circle { color: orange; }
+        .highlight-box {
+          background-color:darken(orange, 10%);
+          border-top:1px solid darken(orange, 12%);
+          color:white;
+          a {
+            color:white;
+            &:hover { color: lighten(orange, 10%); }
+          }
+        }
+      }
+
+      &.violet {
+        @include background(linear-gradient(bottom, lighten($color__fipra-violet, 4%) 0, darken($color__fipra-violet, 4%) 100%));
+        color:white;
+        .icon-circle { color: $color__fipra-violet; }
+        .highlight-box {
+          background-color:darken($color__fipra-violet, 10%);
+          border-top:1px solid darken($color__fipra-violet, 12%);
+          color:white;
+          a {
+            color:white;
+            &:hover {
+              color:lighten($color__fipra-violet, 10%);
+            }
+          }
+        }
+      }
+
+      &.turquoise {
+        @include background(linear-gradient(bottom, lighten($color__fipra-turquoise, 4%) 0, darken($color__fipra-turquoise, 4%) 100%));
+        color:white;
+        .icon-circle { color: $color__fipra-turquoise; }
+        .highlight-box {
+          background-color:darken($color__fipra-turquoise, 10%);
+          border-top:1px solid darken($color__fipra-turquoise, 12%);
+          color:white;
+          a {
+            color:white;
+            &:hover {
+              color:lighten($color__fipra-turquoise, 10%);
+            }
+          }
+        }
+      }
+
+    }
+
+    &.outline {
+      border: 1px solid $color__fipra-light-gray;
+      .highlight-box {
+        background-color:$color__fipra-light-gray;
+        border-top:1px solid darken($color__fipra-light-gray, 3%);
+        color:$color__fipra-blue-gray;
+      }
+    }
+
+  }
+
+  &.row-of-three {
+    margin-bottom: $v-rhythm * 3;
+    .gallery-block {
+      @include media($media__large) {
+        @include span-columns(4);
+        @include omega(3n);
+      }
+    }
+  }
+
+  &.list {
+    @include clearfix();
+    @include row();
+    text-align: center;
+    color:$color__fipra-blue-gray;
+    @include media($media__medium) {
+      text-align:left;
+    }
+    .gallery-block-content {
+      @include media($media__medium) {
+        float:left;
+        @include span-columns(8);
+      }
+    }
+  }
+}

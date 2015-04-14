@@ -1,0 +1,68 @@
+.br-top {
+  @include border-top-radius(4px);
+}
+.br-bottom {
+  @include border-bottom-radius(4px);
+}
+.br-left {
+  @include border-left-radius(4px);
+}
+.br-right {
+  @include border-right-radius(4px);
+}
+
+.attachment-post-thumbnail {
+  width:100%;
+}
+
+.highlight-box {
+  &.primary {
+    background-color: $color__fipra-blue-gray;
+    padding:$v-rhythm em(16px);
+    color:white;
+    a {
+      color:lighten($color__fipra-turquoise, 5%);
+      font-weight:$font__black;
+      &:hover {
+        color:$color__fipra-turquoise;
+      }
+    }
+  }
+  &.secondary {
+    background-color: darken($color__fipra-light-gray, 10%);
+    padding:$v-rhythm em(16px);
+    color:$color__fipra-blue-gray;
+    a {
+      color:darken($color__fipra-turquoise, 5%);
+      font-weight:$font__black;
+      &:hover {
+        color:$color__fipra-turquoise;
+      }
+    }
+  }
+}
+
+.icon-circle {
+  display:inline-block;
+  padding:$v-rhythm;
+  margin-bottom:$v-rhythm * 2;
+  line-height:55px;
+  width:80px;
+  height:80px;
+  @include border-left-radius(50%);
+  @include border-right-radius(50%);
+  background-color: white;
+  color:$color__fipra-blue-gray;
+  @include font-size(48);
+}
+//Gallery box with outline style
+.outline .icon-circle {
+  background-color: $color__fipra-blue-gray;
+  color:white;
+}
+
+
+//Text Colours
+.blue-gray {
+  color:$color__fipra-blue-gray;
+}

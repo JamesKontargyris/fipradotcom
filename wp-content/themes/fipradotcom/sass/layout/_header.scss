@@ -5,27 +5,43 @@
   header.site-header {
     @include row();
     @include outer-container($container__outer-width);
-    padding:0 40px;
+    padding:0 20px;
+    @include media($media__large) { padding: 0 40px; }
     @include media($media__xlarge) {
       padding:0;
     }
 
     #site-branding-container {
-      @include span-columns(2);
+      @include span-columns(6);
+      padding:$v-rhythm 0;
+      @include media($media__medium) { @include span-columns(2); padding:0; }
 
       h1.site-title {
-        margin:$v-rhythm * 2 0 0 0;
+        margin-bottom:0;
+        img { width:50px; height:50px; }
+        @include media($media__medium) {
+          margin:$v-rhythm * 1.5 0 0 0;
+          img { width:72px; height:72px; }
+        }
+
       }
 
     }
 
     #site-navigation-container {
+      position:relative;
       @include span-columns(10);
       float:right;
       width:auto;
 
       .search-global-network-button {
-        float:right;
+        display:none;
+        @include media($media__medium) {
+          display:block;
+          position:absolute;
+          top:0;
+          right:0;
+        }
       }
       .searchform {
         float:left;
@@ -81,8 +97,8 @@
         background-color: $color__fipra-blue;
         @include background(linear-gradient($color__fipra-blue 40%, darken($color__fipra-blue, 10%) 100%));
         padding:$v-rhythm em(12) $v-rhythm / 2 em(12);
+        @include transition(all 0.2s ease-out);
         &:hover {
-          @include transition(all 0.2s ease-out);
           padding-top:$v-rhythm * 2;
         }
       }
