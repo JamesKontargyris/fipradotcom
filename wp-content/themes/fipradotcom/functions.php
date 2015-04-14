@@ -124,9 +124,25 @@ function fipradotcom_scripts()
         'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
     );
 
-    wp_enqueue_script(
-        'fipradotcom-navigation',
-        get_template_directory_uri() . '/js/navigation.js',
+//    wp_enqueue_script(
+//        'fipradotcom-navigation',
+//        get_template_directory_uri() . '/js/navigation.js',
+//        array(),
+//        '20120206',
+//        true
+//    );
+
+        wp_enqueue_script(
+        'fipradotcom-jquery',
+        'https://code.jquery.com/jquery-2.1.3.min.js',
+        array(),
+        '20120206',
+        true
+    );
+
+        wp_enqueue_script(
+        'fipradotcom-user-js',
+        get_template_directory_uri() . '/js/site.js',
         array(),
         '20120206',
         true

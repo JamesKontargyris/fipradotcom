@@ -64,7 +64,7 @@
       }
 
       @include media($media__medium) {
-        padding:($v-rhythm * 4) 0 ($v-rhythm * 8);
+        padding:($v-rhythm * 4) 0 ($v-rhythm * 6);
         @include span-columns(8);
         @include shift(2);
         a {

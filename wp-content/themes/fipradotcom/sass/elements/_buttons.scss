@@ -1,7 +1,7 @@
 .btn {
   display:inline-block;
   font-family: $font__sans;
-  @include font-size(14);
+//  @include font-size(14);
   font-weight: $font__bold;
   @include border-left-radius(4px);
   @include border-right-radius(4px);

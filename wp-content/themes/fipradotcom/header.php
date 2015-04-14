@@ -21,6 +21,11 @@
 <div id="page" class="hfeed site">
     <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'fipradotcom'); ?></a>
 
+    <div id="mobile-search-container">
+        <div id="mobile-search">
+            <?php get_search_form( true ); ?>
+        </div>
+    </div>
     <div id="header-container">
         <header id="masthead" class="site-header" role="banner">
             <div id="site-branding-container">
@@ -39,12 +44,23 @@
                     <a class="global-network-button" href="#"><i class="fa fa-globe"></i> Explore our Global Network</a>
                 </div>
                 <nav id="site-navigation" class="main-navigation" role="navigation">
-<!--                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">--><?php //_e('Primary Menu', 'fipradotcom'); ?><!--</button>-->
+                    <a class="mobile-menu-search btn primary"><i class="fa fa-search"></i></a>
+                    <a class="mobile-menu-toggle btn secondary" aria-controls="primary-menu-mobile" aria-expanded="false"><i class="fa fa-bars"></i> <?php _e(strtoupper('Menu'), 'fipradotcom'); ?></a>
+<!--                    <button class="btn secondary"><i class="fa fa-search"></i></button>-->
+
+<!--                    <button class="mobile-menu-toggle btn secondary" href="#"><i class="fa fa-bars"></i> Menu</button>-->
+
                     <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
                 </nav>
                 <!-- #site-navigation -->
             </div>
             <!-- #site-navigation-container -->
+
         </header>
+        <div id="primary-menu-mobile-container">
+            <div id="primary-menu-mobile">
+                <?php wp_nav_menu(array('theme_location' => 'primary', 'depth' => '1')); ?>
+            </div>
+        </div>
         <!-- #masthead -->
     </div>

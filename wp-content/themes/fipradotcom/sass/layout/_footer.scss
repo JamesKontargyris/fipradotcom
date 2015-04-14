@@ -22,14 +22,15 @@
       }
     }
     select {
-      @include font-size(18);
-      padding:$v-rhythm / 2 20px;
-      width:300px;
+      padding:$v-rhythm / 2 em(10px);
+      width:80%;
       border:0;
       background-color: $color__fipra-light-gray;
       @include border-left-radius(4px);
       @include border-right-radius(4px);
       @include media($media__medium) {
+        padding:$v-rhythm / 2 em(20px);
+        @include font-size(18);
         width:500px;
       }
     }
