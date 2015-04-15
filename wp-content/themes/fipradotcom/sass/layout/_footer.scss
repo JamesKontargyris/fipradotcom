@@ -1,6 +1,7 @@
 #footer-global-network-container {
   clear:both;
   background-color: darken($color__fipra-light-gray, 15%);
+  @include background(linear-gradient(darken($color__fipra-light-gray, 15%) 40%, darken($color__fipra-light-gray, 25%) 100%));
   border-top:1px solid darken($color__fipra-light-gray, 25%);
   border-bottom:1px solid darken($color__fipra-light-gray, 25%);
 
@@ -25,9 +26,12 @@
       optgroup {
         background-color:darken($color__fipra-light-gray, 10%);
       }
+      text-align: left;
       padding:$v-rhythm / 2 em(10px);
       width:80%;
       border:0;
+      @include background(linear-gradient(darken($color__fipra-light-gray, 8%) 0%, $color__fipra-light-gray 20%));
+      border-bottom:1px solid white;
       background-color: $color__fipra-light-gray;
       @include border-left-radius(4px);
       @include border-right-radius(4px);
@@ -45,6 +49,7 @@
   font-family:$font__sans;
   color:lighten($color__fipra-blue-gray, 45%);
   background-color: lighten($color__fipra-blue-gray, 10%);
+  @include background(linear-gradient(lighten($color__fipra-blue-gray, 5%) 0%, darken($color__fipra-blue-gray, 5%) 100%));
 
   h5 { color:lighten($color__fipra-blue-gray, 30%); }
   a {
@@ -79,7 +84,6 @@
       @include span-columns(12);
       padding:$v-rhythm * 1.5 em(24px) $v-rhythm * 1.5 0;
       @include font-size(14);
-//      margin-bottom:$v-rhythm;
       @include media($media__medium) {
         @include span-columns(4);
       }
@@ -92,7 +96,8 @@
   @include clearfix;
   font-family: $font__sans;
   @include font-size(12);
-  background-color: $color__fipra-blue-gray;
+  background-color: darken($color__fipra-blue-gray, 12%);
+  @include background(linear-gradient(darken($color__fipra-blue-gray, 12%) 80%, darken($color__fipra-blue-gray, 16%) 100%));
 
   .site-info {
     a {

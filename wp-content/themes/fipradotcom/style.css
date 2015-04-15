@@ -664,6 +664,9 @@ table {
 #footer-global-network-container {
   clear: both;
   background-color: #c7c5bf;
+  background: -webkit-linear-gradient(#c7c5bf 40%, #b0aca4 100%);
+  background: -webkit-linear-gradient(to, #b0aca4 100%);
+  background: linear-gradient(to   , #b0aca4 100%);
   border-top: 1px solid #b0aca4;
   border-bottom: 1px solid #b0aca4; }
   #footer-global-network-container #footer-global-network {
@@ -684,9 +687,14 @@ table {
           display: inline-block;
           padding-right: 20px; } }
     #footer-global-network-container #footer-global-network select {
+      text-align: left;
       padding: 0.375rem 0.625em;
       width: 80%;
       border: 0;
+      background: -webkit-linear-gradient(#d8d6d2 0%, #EBEAE8 20%);
+      background: -webkit-linear-gradient(to, #EBEAE8 20%);
+      background: linear-gradient(to   , #EBEAE8 20%);
+      border-bottom: 1px solid white;
       background-color: #EBEAE8;
       border-bottom-left-radius: 4px;
       border-top-left-radius: 4px;
@@ -704,7 +712,10 @@ table {
 #footer-container {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
   color: #dee0e6;
-  background-color: #77829a; }
+  background-color: #77829a;
+  background: -webkit-linear-gradient(#6a758e 0%, #545d70 100%);
+  background: -webkit-linear-gradient(to, #545d70 100%);
+  background: linear-gradient(to   , #545d70 100%); }
   #footer-container::after {
     clear: both;
     content: "";
@@ -771,7 +782,10 @@ table {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
   font-size: 12px;
   font-size: 0.75rem;
-  background-color: #5F697F; }
+  background-color: #454c5c;
+  background: -webkit-linear-gradient(#454c5c 80%, #3c4250 100%);
+  background: -webkit-linear-gradient(to, #3c4250 100%);
+  background: linear-gradient(to   , #3c4250 100%); }
   #site-info-container::after {
     clear: both;
     content: "";
