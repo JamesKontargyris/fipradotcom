@@ -1,5 +1,5 @@
 ul, ol {
-  margin: 0 0 $v-rhythm * 3 0;
+  margin: 0 0 $v-rhythm * 2 0;
   padding-left: 0;
   line-height: $v-rhythm * 3;
 }
@@ -17,6 +17,14 @@ ul {
       color: $color__fipra-blue;
     }
   }
+  &.no-bullet {
+    li {
+      padding-left:0;
+      text-indent: 0;
+      &:before { content: none; padding-right:0; }
+    }
+  }
+  &.no-v-spacing { li { margin-bottom:0; } }
 }
 
 ol {

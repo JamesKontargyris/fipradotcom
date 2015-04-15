@@ -8,7 +8,7 @@
   font-weight: $font__bold;
   @include border-left-radius(4px);
   @include border-right-radius(4px);
-  padding: $v-rhythm * 0.75 em(16px);
+  padding: $v-rhythm * 0.5 em(16px);
   margin-bottom: $v-rhythm * 0.5;
   margin-right: em(16px);
   &:last-child { margin-right: 0; }
@@ -33,5 +33,9 @@
       border: 1px solid $color__fipra-blue;
       color: $color__fipra-blue;
     }
+  }
+
+  &.full-width {
+    display:block;
   }
 }
