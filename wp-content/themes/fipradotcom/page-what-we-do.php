@@ -7,17 +7,7 @@
 
 get_header(); ?>
 
-<div id="content-container">
-<!--    <div id="content-container" class="with-hero-banner" style="background-image:linear-gradient(rgba(0,0,0, 0.3) 0px, rgba(40,40,40, 0.4) 600px, rgba(235, 234, 232, 1) 800px),  url('<?php //echo get_template_directory_uri(); ?>/*/img/people.jpg');">*/-->
-
-<!--    <div class="hero-banner-container">-->
-<!--        <div class="hero-banner right light">-->
-<!--            <h5>What We Do</h5>-->
-<!--            <h1>What We Do title is best on two lines like this.</h1>-->
-<!--            <p class="lead">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.</p>-->
-<!--            <a href="#" class="btn primary">Public Affairs Services</a> <a href="#" class="btn secondary">Areas of Expertise</a>-->
-<!--        </div>-->
-<!--    </div>-->
+<div id="content-container" class="with-border">
 
     <div id="content" class="site-content">
 

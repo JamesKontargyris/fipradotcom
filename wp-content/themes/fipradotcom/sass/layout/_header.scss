@@ -15,9 +15,8 @@
 
 
 #header-container {
-  clear:both;
+  @include clearfix;
   border-top:$color__fipra-blue solid $v-rhythm / 2;
-  border-bottom:1px solid darken(white, 12%);
   @include background(linear-gradient(white 90%, darken(white, 5%) 100%));
 
   header.site-header {
@@ -25,9 +24,7 @@
     @include outer-container($container__outer-width);
     padding:0 20px;
     @include media($media__large) { padding: 0 40px; }
-    @include media($media__xlarge) {
-      padding:0;
-    }
+    @include media($media__xlarge) { padding:0; }
 
     #site-branding-container {
       @include span-columns(4);

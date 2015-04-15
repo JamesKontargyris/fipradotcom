@@ -31,19 +31,21 @@
       }
       @include font-size(16);
       font-weight: $font__bold;
-      &.current-menu-item > a,
-      &.current-page-ancestor > a {
-        font-weight: $font__black;
-        color: $color__fipra-blue;
-        border-bottom: 6px solid $color__fipra-blue;
-      }
-
       & > a {
         display: block;
         text-decoration: none;
         padding: ($v-rhythm * 2) 0 $v-rhythm;
         color: $color__fipra-blue-gray;
       }
+      &.current-menu-item > a,
+      &.current_page_ancestor > a {
+        font-weight: $font__black;
+        color: $color__fipra-blue;
+        border-bottom: 6px solid $color__fipra-blue;
+        padding: ($v-rhythm * 2) 0 $v-rhythm - rem(6px);
+      }
+
+
       &:hover > a,
       &.focus > a {
         color: $color__fipra-blue;
@@ -81,19 +83,21 @@
         &:hover {
           background-color: $color__fipra-periwinkle;
         }
+        a {
+          display: block;
+          padding: $v-rhythm / 2 em(24px);
+        }
         &.current-menu-item > a,
         &.current-page-ancestor > a {
           font-weight: $font__bold;
           color: $color__fipra-blue-gray;
           border-bottom: 0;
+          padding: $v-rhythm / 2 em(24px);
         }
       }
       //          End of third level
 
-      a {
-        display: block;
-        padding: $v-rhythm / 2 em(24px);
-      }
+
 
       a:hover,
       a.focus {

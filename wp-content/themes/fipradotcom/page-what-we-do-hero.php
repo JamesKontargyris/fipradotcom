@@ -7,11 +7,33 @@
 
 get_header(); ?>
 
+<style>
+/*    Small and Medium Screens */
+    .with-hero-banner {
+        background-image: linear-gradient(rgba(0,0,0, 0.4) 0px, rgba(40,40,40, 0.4) 600px, rgba(235, 234, 232, 1) 800px),
+            url('<?php echo get_template_directory_uri(); ?>/img/people.jpg');
+        background-position: 0 0, top center;
+        background-repeat: no-repeat, no-repeat;
+        background-size:contain, auto 600px;
+    }
+
+/* Large and Extra Large screens */
+    @media screen and (min-width: 769px) {
+        .with-hero-banner {
+            background-image: linear-gradient(rgba(0,0,0, 0) 0px, rgba(40,40,40, 0.1) 600px, rgba(235, 234, 232, 1) 800px), linear-gradient(to left, rgba(0,0,0, 0) 0, rgba(0,0,0, 0.6) 100%),
+            url('<?php echo get_template_directory_uri(); ?>/img/people.jpg') !important;
+            background-position: 0 0, 0 0, top center !important;
+            background-repeat: no-repeat, no-repeat, no-repeat !important;
+            background-size:contain, contain, contain !important;
+        }
+    }
+</style>
+
 <!--<div id="content-container">-->
-    <div id="content-container" class="with-hero-banner" style="background-image:linear-gradient(rgba(0,0,0, 0.2) 0px, rgba(40,40,40, 0.4) 600px, rgba(235, 234, 232, 1) 800px),  url('<?php echo get_template_directory_uri(); ?>/img/people.jpg');">
+    <div id="content-container" class="with-hero-banner">
 
     <div class="hero-banner-container">
-        <div class="hero-banner right light">
+        <div class="hero-banner left light">
             <h5>What We Do</h5>
             <h1>What We Do title is best on two lines like this.</h1>
             <p class="lead">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.</p>
