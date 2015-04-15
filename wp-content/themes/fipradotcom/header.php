@@ -41,7 +41,7 @@
             <div id="site-navigation-container">
                 <div class="search-global-network-button">
                     <?php get_search_form( true ); ?>
-                    <a class="global-network-button" href="#"><i class="fa fa-globe"></i> Explore our Global Network</a>
+                    <a class="global-network-button br-bottom" href="#"><i class="fa fa-globe"></i> Explore our Global Network</a>
                 </div>
                 <nav id="site-navigation" class="main-navigation" role="navigation">
                     <a class="mobile-menu-search btn primary"><i class="fa fa-search"></i></a>

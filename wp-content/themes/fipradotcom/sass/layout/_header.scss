@@ -17,6 +17,8 @@
 #header-container {
   clear:both;
   border-top:$color__fipra-blue solid $v-rhythm / 2;
+  border-bottom:1px solid darken(white, 12%);
+  @include background(linear-gradient(white 90%, darken(white, 5%) 100%));
 
   header.site-header {
     @include row();
@@ -67,7 +69,7 @@
         font-weight: $font__black;
         color:white;
         background-color: $color__fipra-blue;
-        @include background(linear-gradient($color__fipra-blue 40%, darken($color__fipra-blue, 10%) 100%));
+        @include background(linear-gradient($color__fipra-blue 60%, darken($color__fipra-blue, 7%) 100%));
         padding:$v-rhythm em(12) $v-rhythm / 2 em(12);
         @include transition(all 0.2s ease-out);
         &:hover {

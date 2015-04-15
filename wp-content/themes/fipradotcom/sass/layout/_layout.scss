@@ -1,81 +1,27 @@
 @import "header";
 @import "footer";
 @import "gallery";
+@import "hero-banner";
 
 #content-container {
   width:100%;
   background-color: $color__fipra-light-gray;
-  @include media($media__xlarge) { padding:$v-rhythm * 4 0; }
+  background-repeat: no-repeat, no-repeat;
+  @include media(max-width $media__medium) { background-size:contain, auto 600px; background-position: 0 0, top center; }
+  @include media($media__medium) { background-size:contain, contain; }
+  @include media($media__xlarge) {
+    padding:$v-rhythm * 2 0;
+    &.with-hero-banner {
+      padding-top:0;
+    }
+  }
 
   .hero-banner-container {
     @include row();
     @include outer-container($local-max-width: $container__content-width);
-
-    .hero-banner {
-      @include span-columns(10);
-      @include shift(1);
-      padding:($v-rhythm * 6) 0;
-
-      a {
-        display:block;
-        margin:$v-rhythm 0;
-      }
-
-      &.light {
-        h1, .lead {
-          color:white;
-          font-weight: $font__bold;
-          text-shadow:0px -1px 3px $color__fipra-blue-gray;
-        }
-        .btn.primary {
-          text-shadow:0px -1px 3px $color__fipra-light-gray;
-          color:$color__fipra-blue;
-          background-color: white;
-        }
-        .btn.secondary {
-          text-shadow:0px -1px 3px $color__fipra-blue-gray;
-          color:white;
-          border-color: white;
-        }
-      }
-
-      &.dark {
-        h1 {
-          color:$color__fipra-blue;
-        }
-        h1, .lead {
-          text-shadow:0px -1px 10px $color__fipra-light-gray;
-        }
-        .btn.primary {
-          text-shadow:0px -1px 3px lighten($color__fipra-blue, 10%);
-        }
-        .btn.secondary {
-          text-shadow:0px -1px 3px white;
-        }
-      }
-
-      &.center {
-        @include media($media__medium) { @include shift(2); }
-        text-align:center;
-      }
-      &.right {
-        @include media($media__medium) { @include shift(4); }
-        text-align:right;
-      }
-
-      @include media($media__medium) {
-        padding:($v-rhythm * 4) 0 ($v-rhythm * 6);
-        @include span-columns(8);
-        @include shift(2);
-        a {
-          display:inline;
-          margin-right: em(16px);
-          &:last-child {
-            margin-right: 0;
-          }
-        }
-      }
-    }
+    padding:0 em(24px);
+//    @include radial-gradient(rgba(black,0.4) 30%, rgba(#3dc3d1, 0) 60%, $fallback: rgba(0,0,0,0));
+//    background-position: -150px;
   }
 
   #content {

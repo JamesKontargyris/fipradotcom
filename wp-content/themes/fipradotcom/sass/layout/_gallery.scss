@@ -18,7 +18,7 @@
 
     .gallery-block-content {
       padding: $v-rhythm * 2 em(24px);
-      min-height:em(300px);
+      @include media($media__large) { min-height:em(300px); }
     }
 
     &.bg {

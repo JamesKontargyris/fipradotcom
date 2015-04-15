@@ -7,20 +7,32 @@
 
 get_header(); ?>
 
-<div id="content-container" style="background:linear-gradient(rgba(235, 234, 232, 0) 0, rgba(235, 234, 232, 1) 1200px),  url('<?php echo get_template_directory_uri(); ?>/img/street_feather.jpg') top center no-repeat, #EBEAE8; background-size:contain">
+<div id="content-container">
+<!--    <div id="content-container" class="with-hero-banner" style="background-image:linear-gradient(rgba(0,0,0, 0.3) 0px, rgba(40,40,40, 0.4) 600px, rgba(235, 234, 232, 1) 800px),  url('<?php //echo get_template_directory_uri(); ?>/*/img/people.jpg');">*/-->
 
-    <div class="hero-banner-container">
-        <div class="hero-banner center dark">
-            <h1>What We Do Title</h1>
-            <p class="lead">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.</p>
-            <a href="#" class="btn primary">Public Affairs Services</a> <a href="#" class="btn secondary">Areas of Expertise</a>
-        </div>
-    </div>
+<!--    <div class="hero-banner-container">-->
+<!--        <div class="hero-banner right light">-->
+<!--            <h5>What We Do</h5>-->
+<!--            <h1>What We Do title is best on two lines like this.</h1>-->
+<!--            <p class="lead">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.</p>-->
+<!--            <a href="#" class="btn primary">Public Affairs Services</a> <a href="#" class="btn secondary">Areas of Expertise</a>-->
+<!--        </div>-->
+<!--    </div>-->
 
     <div id="content" class="site-content">
 
         <div id="primary" class="content-area full-width">
             <main id="main" class="site-main" role="main">
+                <div class="page-banner center">
+                    <h5>What We Do</h5>
+                    <h1>What We Do title in the page banner</h1>
+                    <p class="lead">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.
+                        <br/><br/>
+                        <a href="#" class="btn primary">Public Affairs Services</a> <a href="#" class="btn secondary">Areas of Expertise</a>
+                    </p>
+
+                    <hr/>
+                </div>
 
                 <h2 class="center">Public Affairs Services</h2>
                 <p class="center narrow">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pretium ipsum leo, nec faucibus magna finibus congue. Integer nisl tellus, volutpat nec tellus at, ullamcorper finibus lectus. Aliquam erat volutpat.</p>

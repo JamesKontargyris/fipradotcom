@@ -74,7 +74,6 @@ p {
   &.lead {
     font-family: $font__sans;
     @include font-size(18);
-    letter-spacing: 1px;
   }
   &.center {
     text-align: center;

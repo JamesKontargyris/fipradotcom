@@ -1,16 +1,17 @@
-.btn {
+.btn, .btn:link, .btn:visited {
   display:inline-block;
+  @include font-size(16);
+  color:$color__fipra-blue;
+  &:hover { color: $color__fipra-blue-gray; }
+  background-color: $color__fipra-periwinkle;
   font-family: $font__sans;
-//  @include font-size(14);
   font-weight: $font__bold;
   @include border-left-radius(4px);
   @include border-right-radius(4px);
   padding: $v-rhythm * 0.75 em(16px);
   margin-bottom: $v-rhythm * 0.5;
   margin-right: em(16px);
-  &:last-child {
-    margin-right: 0;
-  }
+  &:last-child { margin-right: 0; }
 
   &.primary {
     background-color: $color__fipra-blue;
@@ -24,7 +25,7 @@
   }
 
   &.secondary {
-    background-color: rgba(white, 0.6);
+    background-color:rgba(255,255,255,0);
     border: 1px solid $color__fipra-blue-gray;
     color: $color__fipra-blue-gray;
     @include transition(all 0.2s);

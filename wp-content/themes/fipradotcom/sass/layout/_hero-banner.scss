@@ -1,0 +1,125 @@
+.hero-banner {
+  @include span-columns(12);
+  text-align: center;
+  padding:($v-rhythm * 2) 0;
+  @include media($media__small) { padding:($v-rhythm * 6) 0; @include shift(1); @include span-columns(10); }
+
+  h1 {
+    @include font-size(30);
+    line-height: $v-rhythm * 3;
+    @include media($media__medium) {
+      font-weight: $font__light;
+      @include font-size(38);
+      line-height: $v-rhythm * 4;
+    }
+    @include media($media__large) {
+      font-weight: $font__light;
+      @include font-size(50);
+      line-height: $v-rhythm * 5;
+    }
+  }
+  h5 {
+    color:white;
+    margin:0;
+  }
+  .lead {
+    @include media(max-width $media__large) {
+      @include font-size(16);
+    }
+  }
+  a {
+    display:block;
+    margin:$v-rhythm 0;
+  }
+
+  &.light {
+    h1, .lead {
+      color:white;
+      text-shadow:0px 1px 1px black;
+    }
+    .btn.primary {
+      text-shadow:none;
+      color:$color__fipra-blue;
+      background-color: white;
+    }
+    .btn.secondary {
+      color:white;
+      border-color: white;
+    }
+  }
+
+  &.dark {
+    h1 {
+      color:lighten(black, 5%);
+    }
+    h1, .lead {
+      text-shadow:0px 1px 1px $color__fipra-light-gray;
+    }
+    .btn.primary {
+      text-shadow:0px 1px 3px lighten($color__fipra-blue, 10%);
+    }
+    .btn.secondary {
+      border:1px solid $color__fipra-blue;
+      color:$color__fipra-blue;
+      &:hover {
+        border:1px solid $color__fipra-blue-gray;
+        color:$color__fipra-blue-gray;
+      }
+    }
+  }
+
+  &.left {
+    @include media($media__medium) { @include shift(0); @include span-columns(7); text-align:left; }
+
+  }
+  &.right {
+    @include media($media__medium) { @include shift(5); @include span-columns(7); text-align:left; }
+  }
+
+  &.center {
+    @include media($media__medium) { @include shift(2); @include span-columns(8); text-align:center; }
+
+  }
+
+  @include media($media__medium) {
+    text-align: left;
+    padding:($v-rhythm * 7) 0 ($v-rhythm * 7);
+    @include span-columns(7);
+    @include shift(1);
+    a {
+      display:inline;
+      margin-right: em(16px);
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include media($media__xlarge) {
+    padding:($v-rhythm * 10) 0 ($v-rhythm * 10);
+  }
+}
+
+.page-banner {
+  margin-bottom:$v-rhythm * 3;
+  &.left {
+    text-align: left;
+  }
+  &.center {
+    text-align: center;
+  }
+  &.right {
+    text-align: right;
+  }
+}
+
+.hero-banner, .page-banner {
+  .btn {
+    display:block;
+    margin-right:0;
+    @include media($media__small) {
+      margin-right:em(6px);
+      display: inline-block;
+    }
+  }
+}
