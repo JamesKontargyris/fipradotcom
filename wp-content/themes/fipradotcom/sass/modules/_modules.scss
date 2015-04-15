@@ -44,16 +44,23 @@
 
 .icon-circle {
   display:inline-block;
-  padding:$v-rhythm;
-  margin-bottom:$v-rhythm * 2;
+  margin-bottom:$v-rhythm;
   line-height:55px;
-  width:80px;
-  height:80px;
+  width:55px;
+  height:55px;
   @include border-left-radius(50%);
   @include border-right-radius(50%);
   background-color: white;
   color:$color__fipra-blue-gray;
-  @include font-size(48);
+  @include font-size(34);
+
+  @include media($media__medium) {
+    width:80px;
+    height:80px;
+    @include font-size(48);
+    line-height:80px;
+    margin-bottom:$v-rhythm * 2;
+  }
 }
 //Gallery box with outline style
 .outline .icon-circle {
