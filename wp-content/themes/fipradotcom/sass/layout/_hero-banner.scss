@@ -5,24 +5,11 @@
   padding:($v-rhythm * 2) 0;
   @include media($media__small) { padding:($v-rhythm * 6) 0; @include shift(1); @include span-columns(10); }
 
-  h1 {
-    @include font-size(30);
-    line-height: $v-rhythm * 3;
-    @include media($media__medium) {
-      font-weight: $font__light;
-      @include font-size(38);
-      line-height: $v-rhythm * 4;
-    }
-    @include media($media__large) {
-      font-weight: $font__light;
-      @include font-size(50);
-      line-height: $v-rhythm * 5;
-    }
-  }
-  h5 {
+//  In hero-banner, h1 looks the same as H5, H2 is same as H1 but light font weight
+  h1, h2 {
     color:white;
-    margin:0;
   }
+
   .lead {
     @include media(max-width $media__large) {
       @include font-size(16);

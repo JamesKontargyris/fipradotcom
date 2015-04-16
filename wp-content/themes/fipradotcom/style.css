@@ -226,14 +226,20 @@ h3, h4, h5, h6 {
 
 h1 {
   font-weight: 700;
-  font-size: 28px;
-  font-size: 1.75rem;
+  font-size: 22px;
+  font-size: 1.375rem;
   line-height: 1.875rem; }
   @media screen and (min-width: 769px) {
     h1 {
       font-size: 36px;
       font-size: 2.25rem;
       line-height: 2.25rem; } }
+  h1.feature {
+    margin: 0;
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase; }
 
 h2 {
   font-weight: 700;
@@ -247,6 +253,23 @@ h2 {
       font-size: 32px;
       font-size: 2rem;
       line-height: 2.25rem; } }
+  @media screen and (min-width: 481px) {
+    h2.feature {
+      font-size: 28px;
+      font-size: 1.75rem;
+      line-height: 2.25rem; } }
+  @media screen and (min-width: 769px) {
+    h2.feature {
+      font-weight: 300;
+      font-size: 38px;
+      font-size: 2.375rem;
+      line-height: 3rem; } }
+  @media screen and (min-width: 940px) {
+    h2.feature {
+      font-weight: 300;
+      font-size: 50px;
+      font-size: 3.125rem;
+      line-height: 3.75rem; } }
 
 h3 {
   font-weight: 700;
@@ -991,25 +1014,8 @@ table {
       width: 82.94039%; }
       .hero-banner:last-child {
         margin-right: 0; } }
-  .hero-banner h1 {
-    font-size: 30px;
-    font-size: 1.875rem;
-    line-height: 2.25rem; }
-    @media screen and (min-width: 769px) {
-      .hero-banner h1 {
-        font-weight: 300;
-        font-size: 38px;
-        font-size: 2.375rem;
-        line-height: 3rem; } }
-    @media screen and (min-width: 940px) {
-      .hero-banner h1 {
-        font-weight: 300;
-        font-size: 50px;
-        font-size: 3.125rem;
-        line-height: 3.75rem; } }
-  .hero-banner h5 {
-    color: white;
-    margin: 0; }
+  .hero-banner h1, .hero-banner h2 {
+    color: white; }
   @media screen and (max-width: 940px)  {
     .hero-banner .lead {
       font-size: 16px;
@@ -1261,12 +1267,12 @@ a {
   float: right;
   width: 100%;
   font-family: 'Lato', Arial, Helvetica, sans-serif; }
-  @media screen and (min-width: 769px) {
-    .main-navigation {
-      margin-top: 2.25rem; } }
   @media screen and (max-width: 769px)  {
     .main-navigation {
       width: 100%; } }
+  @media screen and (min-width: 769px) {
+    .main-navigation {
+      margin-top: 2.25rem; } }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -1354,7 +1360,7 @@ a {
       #primary-menu-mobile-container #primary-menu-mobile ul li a {
         display: block;
         text-align: center;
-        padding: 1.125rem 0.625em;
+        padding: 0.75rem 0.625em;
         color: #00257f; }
         #primary-menu-mobile-container #primary-menu-mobile ul li a:hover {
           background-color: #e4e7f1; }

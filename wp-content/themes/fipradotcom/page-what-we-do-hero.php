@@ -21,13 +21,22 @@ get_header(); ?>
 /* Large and Extra Large screens */
     @media screen and (min-width: 769px) {
         .with-hero-banner {
-            background-image: linear-gradient(rgba(0,0,0, 0) 0px, rgba(40,40,40, 0.1) 600px, rgba(235, 234, 232, 1) 800px), linear-gradient(to right, rgba(0,0,0, 0) 0, rgba(0,0,0, 0.6) 100%),
+            background-image: linear-gradient(rgba(0,0,0, 0) 0px, rgba(40,40,40, 0) 600px, rgba(235, 234, 232, 1) 800px), linear-gradient(to right, rgba(0,0,0, 0) 30%, rgba(0,0,0, 0.7) 100%),
             url('<?php echo get_template_directory_uri(); ?>/img/people.jpg') !important;
             background-position: 0 0, 0 0, top center !important;
             background-repeat: no-repeat, no-repeat, no-repeat !important;
             background-size:contain, contain, contain !important;
         }
     }
+@media screen and (min-width: 1500px) {
+    .with-hero-banner {
+        background-image: linear-gradient(rgba(0,0,0, 0) 0px, rgba(40,40,40, 0) 600px, rgba(235, 234, 232, 1) 1000px), linear-gradient(to right, rgba(0,0,0, 0) 30%, rgba(0,0,0, 0.7) 100%),
+        url('<?php echo get_template_directory_uri(); ?>/img/people.jpg') !important;
+        background-position: 0 0, 0 0, top center !important;
+        background-repeat: no-repeat, no-repeat, no-repeat !important;
+        background-size:contain, contain, contain !important;
+    }
+}
 </style>
 
 <!--<div id="content-container">-->
@@ -35,8 +44,8 @@ get_header(); ?>
 
     <div class="hero-banner-container">
         <div class="hero-banner right light">
-            <h5>What We Do</h5>
-            <h1>What We Do title is best on two lines like this.</h1>
+            <h1 class="feature"><?php the_title(); ?></h1>
+            <h2 class="feature">What We Do title is best on two lines like this.</h2>
             <p class="lead">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.</p>
             <a href="#" class="btn primary">Public Affairs Services</a> <a href="#" class="btn secondary">Areas of Expertise</a>
         </div>

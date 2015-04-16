@@ -14,14 +14,13 @@ get_header(); ?>
         <div id="primary" class="content-area full-width">
             <main id="main" class="site-main" role="main">
                 <div class="page-banner center">
-                    <h5>What We Do</h5>
-                    <h1>What We Do title in the page banner</h1>
+                    <h1 class="feature"><?php the_title(); ?></h1>
+                    <h2 class="feature">What we do title in the page banner</h2>
                     <p class="lead">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.
                         <br/><br/>
                         <a href="#" class="btn primary">Public Affairs Services</a> <a href="#" class="btn secondary">Areas of Expertise</a>
-                    </p>
-
                     <hr/>
+                    </p>
                 </div>
 
                 <h2 class="center">Public Affairs Services</h2>
@@ -33,7 +32,7 @@ get_header(); ?>
                             <img src="http://lorempixel.com/400/200/city" alt="Service Image"/>
                         </div>
                         <div class="gallery-block-content">
-                            <h3>Service Title</h3>
+                            <h4>Service Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -43,7 +42,7 @@ get_header(); ?>
                             <img src="http://lorempixel.com/400/200/city" alt="Service Image"/>
                         </div>
                         <div class="gallery-block-content">
-                            <h3>Service Title</h3>
+                            <h4>Service Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -53,7 +52,7 @@ get_header(); ?>
                             <img src="http://lorempixel.com/400/200/city" alt="Service Image"/>
                         </div>
                         <div class="gallery-block-content">
-                            <h3>Service Title</h3>
+                            <h4>Service Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -63,7 +62,7 @@ get_header(); ?>
                             <img src="http://lorempixel.com/400/200/city" alt="Service Image"/>
                         </div>
                         <div class="gallery-block-content">
-                            <h3>Service Title</h3>
+                            <h4>Service Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -73,7 +72,7 @@ get_header(); ?>
                             <img src="http://lorempixel.com/400/200/city" alt="Service Image"/>
                         </div>
                         <div class="gallery-block-content">
-                            <h3>Service Title</h3>
+                            <h4>Service Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -83,7 +82,7 @@ get_header(); ?>
                             <img src="http://lorempixel.com/400/200/city" alt="Service Image"/>
                         </div>
                         <div class="gallery-block-content">
-                            <h3>Service Title</h3>
+                            <h4>Service Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -99,7 +98,7 @@ get_header(); ?>
                     <div class="gallery-block center bg orange">
                         <div class="gallery-block-content">
                             <div class="icon-circle"><i class="fa fa-globe"></i></div>
-                            <h3>Area of Expertise Title</h3>
+                            <h4>Area of Expertise Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -107,7 +106,7 @@ get_header(); ?>
                     <div class="gallery-block center bg violet">
                         <div class="gallery-block-content">
                             <div class="icon-circle"><i class="fa fa-globe"></i></div>
-                            <h3>Area of Expertise Title</h3>
+                            <h4>Area of Expertise Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -115,7 +114,7 @@ get_header(); ?>
                     <div class="gallery-block center bg turquoise">
                         <div class="gallery-block-content">
                             <div class="icon-circle"><i class="fa fa-globe"></i></div>
-                            <h3>Area of Expertise Title</h3>
+                            <h4>Area of Expertise Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -123,7 +122,7 @@ get_header(); ?>
                     <div class="gallery-block center bg">
                         <div class="gallery-block-content">
                             <div class="icon-circle"><i class="fa fa-globe"></i></div>
-                            <h3>Area of Expertise Title</h3>
+                            <h4>Area of Expertise Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -131,7 +130,7 @@ get_header(); ?>
                     <div class="gallery-block center bg">
                         <div class="gallery-block-content">
                             <div class="icon-circle"><i class="fa fa-globe"></i></div>
-                            <h3>Area of Expertise Title</h3>
+                            <h4>Area of Expertise Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -139,7 +138,7 @@ get_header(); ?>
                     <div class="gallery-block center bg">
                         <div class="gallery-block-content">
                             <div class="icon-circle"><i class="fa fa-globe"></i></div>
-                            <h3>Area of Expertise Title</h3>
+                            <h4>Area of Expertise Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -147,7 +146,7 @@ get_header(); ?>
                     <div class="gallery-block center outline">
                         <div class="gallery-block-content">
                             <div class="icon-circle"><i class="fa fa-globe"></i></div>
-                            <h3>Area of Expertise Title</h3>
+                            <h4>Area of Expertise Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -155,7 +154,7 @@ get_header(); ?>
                     <div class="gallery-block center outline">
                         <div class="gallery-block-content">
                             <div class="icon-circle"><i class="fa fa-globe"></i></div>
-                            <h3>Area of Expertise Title</h3>
+                            <h4>Area of Expertise Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -163,7 +162,7 @@ get_header(); ?>
                     <div class="gallery-block center outline">
                         <div class="gallery-block-content">
                             <div class="icon-circle"><i class="fa fa-globe"></i></div>
-                            <h3>Area of Expertise Title</h3>
+                            <h4>Area of Expertise Title</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
                         </div>
                         <p class="highlight-box secondary br-bottom"><small>Contact <a href="#">Federico Fipriot</a> for more information.</small></p>
@@ -177,7 +176,7 @@ get_header(); ?>
 <!---->
 <!--                        </div>-->
 <!--                        <div class="gallery-block-content">-->
-<!--                            <h3>Expertise Title</h3>-->
+<!--                            <h4>Expertise Title</h4>-->
 <!--                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>-->
 <!--                            <a href="#" class="btn primary">Find out more</a>-->
 <!--                        </div>-->

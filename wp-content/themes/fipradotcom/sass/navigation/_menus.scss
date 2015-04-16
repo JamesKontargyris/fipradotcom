@@ -4,18 +4,12 @@
   float: right;
   width: 100%;
   font-family: $font__sans;
-  @include media($media__medium) {
-    margin-top: $v-rhythm * 3;
-  }
-  @include media(max-width $media__medium) {
-    width: 100%;
-  }
+  @include media(max-width $media__medium) { width: 100%; }
+  @include media($media__medium) { margin-top: $v-rhythm * 3; }
 
   ul {
     display: none;
-    @include media($media__medium) {
-      display: block;
-    }
+    @include media($media__medium) { display: block; }
     list-style: none;
     margin: 0;
     padding-left: 0;
@@ -25,9 +19,7 @@
     & > li {
       @include media($media__medium) {
         float: left;
-        &:not(:last-child) {
-          margin-right: em(40px);
-        }
+        &:not(:last-child) { margin-right: em(40px); }
       }
       @include font-size(16);
       font-weight: $font__bold;
@@ -45,14 +37,10 @@
         padding: ($v-rhythm * 2) 0 $v-rhythm - rem(6px);
       }
 
-
-      &:hover > a,
-      &.focus > a {
-        color: $color__fipra-blue;
-      }
+      &:hover > a, &.focus > a { color: $color__fipra-blue; }
     }
 
-    //    Start of second level
+    // Start of second level
     ul {
       float: left;
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -65,28 +53,17 @@
       margin-top: -6px;
       width: 200px;
 
-      //      Start of third level
-      ul {
-        left: -999em;
-        top: 0;
-      }
+      // Start of third level
+      ul { left: -999em; top: 0; }
 
       li {
         @include font-size(14);
         border-bottom: 1px solid $color__fipra-periwinkle;
         line-height:$v-rhythm * 1.5;
-        &:hover > ul,
-        &.focus > ul {
-          left: 100%;
-        }
         width: 100%;
-        &:hover {
-          background-color: $color__fipra-periwinkle;
-        }
-        a {
-          display: block;
-          padding: $v-rhythm / 2 em(24px);
-        }
+        &:hover > ul, &.focus > ul { left: 100%; }
+        &:hover { background-color: $color__fipra-periwinkle; }
+        a { display: block; padding: $v-rhythm / 2 em(24px); }
         &.current-menu-item > a,
         &.current-page-ancestor > a {
           font-weight: $font__bold;
@@ -94,25 +71,14 @@
           border-bottom: 0;
           padding: $v-rhythm / 2 em(24px);
         }
-      }
-      //          End of third level
+      } // End of third level
 
+    } // End of second level
 
+    li:hover > ul, li.focus > ul { left: auto; }
+  } //  End of top level
 
-      a:hover,
-      a.focus {
-      }
-    }
-    //      End of second level
-
-    li:hover > ul,
-    li.focus > ul {
-      left: auto;
-    }
-  }
-  //  End of top level
-
-}
+} // End of .main-navigation
 
 /* Mobile menu */
 
@@ -129,17 +95,14 @@
     padding: ($v-rhythm / 2) em(12px);
     cursor: pointer;
   }
-
 }
 
 #primary-menu-mobile-container {
-  @include media($media__medium) {
-    display: none;
-  }
+  @include media($media__medium) { display: none; }
 
   #primary-menu-mobile {
     display: none;
-//    Mobile menu
+    // Mobile menu
     ul {
       font-family: $font__sans;
       font-weight: $font__bold;
@@ -149,24 +112,17 @@
         a {
           display:block;
           text-align: center;
-          padding:$v-rhythm * 1.5 em(10px);
+          padding:$v-rhythm em(10px);
           color:$color__fipra-blue;
-          &:hover {
-            background-color: lighten($color__fipra-periwinkle, 7%);
-          }
+          &:hover { background-color: lighten($color__fipra-periwinkle, 7%); }
         }
-      }
-    }
-  }
-
-}
+      } // End of li
+    } // End of ul
+  } // End of #primary-menu-mobile
+} // End of #primary-menu-mobile-container
 
 @include media($media__medium) {
-  //  .menu-toggle,
-  .mobile-menu-toggle,
-  .mobile-menu-search {
-    display: none;
-  }
+  .mobile-menu-toggle, .mobile-menu-search { display: none; }
 }
 
 .comment-navigation,
