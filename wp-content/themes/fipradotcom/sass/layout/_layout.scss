@@ -6,17 +6,14 @@
 #content-container {
   width:100%;
   background-color: $color__fipra-light-gray;
-//  background-repeat: no-repeat, no-repeat;
-//  @include media(max-width $media__medium) { background-size:contain, auto 600px; background-position: 0 0, top center; }
-//  @include media($media__medium) { background-size:contain, contain; }
+  &.with-hero-banner {
+    padding-top:0;
+    @include media($media__large) { background-size: contain; }
+  }
+
+  &.with-border { border-top:1px solid darken(white, 12%); }
   @include media($media__xlarge) {
     padding:$v-rhythm * 2 0;
-    &.with-hero-banner {
-      padding-top:0;
-    }
-    &.with-border {
-      border-top:1px solid darken(white, 12%);
-    }
   }
 
   .hero-banner-container {
