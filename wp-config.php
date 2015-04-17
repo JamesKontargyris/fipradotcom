@@ -19,21 +19,25 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
     define('WP_LOCAL_DEV', true);
 }
 else {
+    define('ENV', 'production');
+    // Don't show deprecations; useful under PHP 5.5
+    error_reporting(E_ALL ^ E_DEPRECATED);
+
     // ** MySQL settings - You can get this info from your web host ** //
     /** The name of the database for WordPress */
-    define('DB_NAME', $_ENV['DB_NAME']);
+    define('DB_NAME', getenv('DB_NAME'));
 
     /** MySQL database username */
-    define('DB_USER', $_ENV['DB_USER']);
+    define('DB_USER', getenv('DB_USER'));
 
     /** MySQL database password */
-    define('DB_PASSWORD', $_ENV['DB_PASSWORD']);
+    define('DB_PASSWORD', getenv('DB_PASSWORD'));
 
     /** MySQL hostname */
-    define('DB_HOST', $_ENV['DB_HOST']);
+    define('DB_HOST', getenv('DB_HOST'));
 
     /** Database Charset to use in creating database tables. */
-    define('DB_CHARSET', $_ENV['DB_CHARSET']);
+    define('DB_CHARSET', 'utf8');
 
     /** The Database Collate type. Don't change this if in doubt. */
     define('DB_COLLATE', '');
@@ -47,14 +51,14 @@ else {
      *
      * @since 2.6.0
      */
-    define('AUTH_KEY',         $_ENV['AUTH_KEY']);
-    define('SECURE_AUTH_KEY',  $_ENV['SECURE_AUTH_KEY']);
-    define('LOGGED_IN_KEY',    $_ENV['LOGGED_IN_KEY']);
-    define('NONCE_KEY',        $_ENV['NONCE_KEY']);
-    define('AUTH_SALT',        $_ENV['AUTH_SALT']);
-    define('SECURE_AUTH_SALT', $_ENV['SECURE_AUTH_SALT']);
-    define('LOGGED_IN_SALT',   $_ENV['LOGGED_IN_SALT']);
-    define('NONCE_SALT',       $_ENV['NONCE_SALT']);
+    define('AUTH_KEY',         getenv('AUTH_KEY'));
+    define('SECURE_AUTH_KEY',  getenv('SECURE_AUTH_KEY'));
+    define('LOGGED_IN_KEY',    getenv('LOGGED_IN_KEY'));
+    define('NONCE_KEY',        getenv('NONCE_KEY'));
+    define('AUTH_SALT',        getenv('AUTH_SALT'));
+    define('SECURE_AUTH_SALT', getenv('SECURE_AUTH_SALT'));
+    define('LOGGED_IN_SALT',   getenv('LOGGED_IN_SALT'));
+    define('NONCE_SALT',       getenv('NONCE_SALT'));
 
     /**#@-*/
 
@@ -65,7 +69,7 @@ else {
      * It is strongly recommended that plugin and theme developers use WP_DEBUG
      * in their development environments.
      */
-    define('WP_DEBUG', false);
+    define('WP_DEBUG', true);
 }
 
 /**#@-*/
