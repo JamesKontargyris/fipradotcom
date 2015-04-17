@@ -23,3 +23,4 @@ sitemap.xml.gz
 desktop.ini
 node_modules/
 .idea/
+local-config.php

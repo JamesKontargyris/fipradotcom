@@ -23,8 +23,6 @@
     @include row();
     @include outer-container($local-max-width: $container__content-width);
     padding:0 em(24px);
-//    @include radial-gradient(rgba(black,0.4) 30%, rgba(#3dc3d1, 0) 60%, $fallback: rgba(0,0,0,0));
-//    background-position: -150px;
   }
 
   #content {

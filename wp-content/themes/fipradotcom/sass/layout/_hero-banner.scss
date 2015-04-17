@@ -3,7 +3,8 @@
   @include span-columns(12);
   text-align: center;
   padding:($v-rhythm * 2) 0;
-  @include media($media__small) { padding:($v-rhythm * 6) 0; @include shift(1); @include span-columns(10); }
+  @include media($media__small) { padding:($v-rhythm * 6) 0; }
+  @include media($media__medium) { @include shift(1); @include span-columns(10); }
 
 //  In hero-banner, h1 looks the same as H5, H2 is same as H1 but light font weight
   h1, h2 {
@@ -57,20 +58,20 @@
   }
 
   &.left {
-    @include media($media__medium) { @include shift(1); @include span-columns(7); text-align:left; }
+    @include media($media__large) { @include shift(1); @include span-columns(7); text-align:left; }
     @include media($media__large) { @include shift(0); }
 
   }
   &.right {
-    @include media($media__medium) { @include shift(5); @include span-columns(7); text-align:left; }
+    @include media($media__large) { @include shift(5); @include span-columns(7); text-align:left; }
   }
 
   &.center {
-    @include media($media__medium) { @include shift(2); @include span-columns(8); text-align:center; }
+    @include media($media__large) { @include shift(2); @include span-columns(8); text-align:center; }
 
   }
 
-  @include media($media__medium) {
+  @include media($media__large) {
     text-align: left;
     padding:($v-rhythm * 7) 0 ($v-rhythm * 7);
     @include span-columns(7);

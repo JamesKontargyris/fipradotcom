@@ -247,7 +247,7 @@ h2 {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 1.875rem; }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 940px) {
     h2 {
       font-weight: 300;
       font-size: 32px;
@@ -258,18 +258,12 @@ h2 {
       font-size: 28px;
       font-size: 1.75rem;
       line-height: 2.25rem; } }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 940px) {
     h2.feature {
       font-weight: 300;
       font-size: 38px;
       font-size: 2.375rem;
       line-height: 3rem; } }
-  @media screen and (min-width: 940px) {
-    h2.feature {
-      font-weight: 300;
-      font-size: 50px;
-      font-size: 3.125rem;
-      line-height: 3.75rem; } }
 
 h3 {
   font-weight: 700;
@@ -1006,7 +1000,9 @@ table {
     margin-right: 0; }
   @media screen and (min-width: 481px) {
     .hero-banner {
-      padding: 4.5rem 0;
+      padding: 4.5rem 0; } }
+  @media screen and (min-width: 769px) {
+    .hero-banner {
       margin-left: 8.5298%;
       float: left;
       display: block;
@@ -1045,7 +1041,7 @@ table {
     .hero-banner.dark .btn.secondary:hover {
       border: 1px solid #5F697F;
       color: #5F697F; }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 940px) {
     .hero-banner.left {
       margin-left: 8.5298%;
       float: left;
@@ -1058,7 +1054,7 @@ table {
   @media screen and (min-width: 940px) {
     .hero-banner.left {
       margin-left: 0%; } }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 940px) {
     .hero-banner.right {
       margin-left: 42.64902%;
       float: left;
@@ -1068,7 +1064,7 @@ table {
       text-align: left; }
       .hero-banner.right:last-child {
         margin-right: 0; } }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 940px) {
     .hero-banner.center {
       margin-left: 17.05961%;
       float: left;
@@ -1078,7 +1074,7 @@ table {
       text-align: center; }
       .hero-banner.center:last-child {
         margin-right: 0; } }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 940px) {
     .hero-banner {
       text-align: left;
       padding: 5.25rem 0 5.25rem;

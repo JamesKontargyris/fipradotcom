@@ -11,15 +11,15 @@ get_header(); ?>
 /*    Styles to position gradient in correct position over photo */
 /*    Small and Medium Screens */
     .with-hero-banner {
-        background-image: linear-gradient(rgba(0,0,0, 0.4) 0px, rgba(40,40,40, 0.4) 600px, rgba(235, 234, 232, 1) 800px),
+        background-image: linear-gradient(rgba(0,0,0, 0.3) 0px, rgba(40,40,40, 0.3) 600px, rgba(235, 234, 232, 1) 800px),
             url('<?php echo get_template_directory_uri(); ?>/img/people.jpg');
         background-position: 0 0, top center;
         background-repeat: no-repeat, no-repeat;
         background-size:contain, auto 600px;
     }
 
-/* Large and Extra Large screens */
-    @media screen and (min-width: 769px) {
+/* Large screens */
+    @media screen and (min-width: 940px) {
         .with-hero-banner {
             background-image: linear-gradient(rgba(0,0,0, 0) 0px, rgba(40,40,40, 0) 600px, rgba(235, 234, 232, 1) 800px), linear-gradient(to right, rgba(0,0,0, 0) 30%, rgba(0,0,0, 0.7) 100%),
             url('<?php echo get_template_directory_uri(); ?>/img/people.jpg') !important;
@@ -28,15 +28,17 @@ get_header(); ?>
             background-size:contain, contain, contain !important;
         }
     }
-@media screen and (min-width: 1500px) {
-    .with-hero-banner {
-        background-image: linear-gradient(rgba(0,0,0, 0) 0px, rgba(40,40,40, 0) 600px, rgba(235, 234, 232, 1) 1000px), linear-gradient(to right, rgba(0,0,0, 0) 30%, rgba(0,0,0, 0.7) 100%),
-        url('<?php echo get_template_directory_uri(); ?>/img/people.jpg') !important;
-        background-position: 0 0, 0 0, top center !important;
-        background-repeat: no-repeat, no-repeat, no-repeat !important;
-        background-size:contain, contain, contain !important;
+
+/* Extra large screens */
+    @media screen and (min-width: 1500px) {
+        .with-hero-banner {
+            background-image: linear-gradient(rgba(0,0,0, 0) 0px, rgba(40,40,40, 0) 600px, rgba(235, 234, 232, 1) 1000px), linear-gradient(to right, rgba(0,0,0, 0) 30%, rgba(0,0,0, 0.7) 100%),
+            url('<?php echo get_template_directory_uri(); ?>/img/people.jpg') !important;
+            background-position: 0 0, 0 0, top center !important;
+            background-repeat: no-repeat, no-repeat, no-repeat !important;
+            background-size:contain, contain, contain !important;
+        }
     }
-}
 </style>
 
 <!--<div id="content-container">-->
@@ -45,7 +47,7 @@ get_header(); ?>
     <div class="hero-banner-container">
         <div class="hero-banner right light">
             <h1 class="feature"><?php the_title(); ?></h1>
-            <h2 class="feature">What We Do title is best on two lines like this.</h2>
+            <h2 class="feature">Professional Public Affairs in more than 60 countries.</h2>
             <p class="lead">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.</p>
             <a href="#" class="btn primary">Public Affairs Services</a> <a href="#" class="btn secondary">Areas of Expertise</a>
         </div>
