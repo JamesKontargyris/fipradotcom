@@ -685,7 +685,7 @@ table {
   background: -webkit-linear-gradient(to, #c7c5bf 100%);
   background: linear-gradient(to   , #c7c5bf 100%);
   border-top: 1px solid #b0aca4;
-  border-bottom: 1px solid #b0aca4; }
+  border-bottom: 5px solid #5F697F; }
   #footer-global-network-container #footer-global-network {
     text-align: center;
     font-family: 'Lato', Arial, Helvetica, sans-serif;

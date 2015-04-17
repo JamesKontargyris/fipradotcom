@@ -3,7 +3,7 @@
   background-color: darken($color__fipra-light-gray, 15%);
   @include background(linear-gradient(darken($color__fipra-light-gray, 10%) 40%, darken($color__fipra-light-gray, 15%) 100%));
   border-top:1px solid darken($color__fipra-light-gray, 25%);
-  border-bottom:1px solid darken($color__fipra-light-gray, 25%);
+  border-bottom:5px solid $color__fipra-blue-gray;
 
   #footer-global-network {
     text-align: center;
