@@ -123,6 +123,14 @@ function fipradotcom_scripts()
         'fipradotcom-fontawesome',
         'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
     );
+    wp_enqueue_style(
+        'fipradotcom-typicons',
+        get_template_directory_uri() . '/fonts/typicons.min.css'
+    );
+    wp_enqueue_style(
+        'fipradotcom-fontello',
+        get_template_directory_uri() . '/fonts/fontello/css/iconfonts.css'
+    );
 
 //    wp_enqueue_script(
 //        'fipradotcom-navigation',

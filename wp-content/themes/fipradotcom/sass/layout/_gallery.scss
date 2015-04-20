@@ -8,6 +8,8 @@
     margin-top: $v-rhythm * 2;
     color:$color__fipra-blue-gray;
 
+    h3, h4 { color: $color__fipra-blue; font-weight: $font__black; }
+
     .featured-image {
       img { @include border-top-radius(4px); width:100%; }
     }
@@ -16,20 +18,16 @@
       text-align: center;
     }
 
-    .gallery-block-content {
-      padding: $v-rhythm * 2 em(24px);
-      @include media($media__large) { min-height:em(300px); }
-    }
-
     &.bg {
       background: $color__fipra-light-gray;
+      @include background(linear-gradient($color__fipra-light-gray 0%, lighten($color__fipra-light-gray, 5%) 70%));
 
       &.orange {
         @include background(linear-gradient(bottom, lighten(orange, 4%) 0, darken(orange, 4%) 100%));
         color:white;
-        .icon-circle { color: orange; }
+        .circle-icon { color: orange; }
         .highlight-box {
-          background-color:darken(orange, 10%);
+          background:darken(orange, 10%);
           border-top:1px solid darken(orange, 12%);
           color:white;
           a {
@@ -42,9 +40,9 @@
       &.violet {
         @include background(linear-gradient(bottom, lighten($color__fipra-violet, 4%) 0, darken($color__fipra-violet, 4%) 100%));
         color:white;
-        .icon-circle { color: $color__fipra-violet; }
+        .circle-icon { color: $color__fipra-violet; }
         .highlight-box {
-          background-color:darken($color__fipra-violet, 10%);
+          background:darken($color__fipra-violet, 10%);
           border-top:1px solid darken($color__fipra-violet, 12%);
           color:white;
           a {
@@ -59,9 +57,9 @@
       &.turquoise {
         @include background(linear-gradient(bottom, lighten($color__fipra-turquoise, 4%) 0, darken($color__fipra-turquoise, 4%) 100%));
         color:white;
-        .icon-circle { color: $color__fipra-turquoise; }
+        .circle-icon { color: $color__fipra-turquoise; }
         .highlight-box {
-          background-color:darken($color__fipra-turquoise, 10%);
+          background:darken($color__fipra-turquoise, 10%);
           border-top:1px solid darken($color__fipra-turquoise, 12%);
           color:white;
           a {
@@ -71,7 +69,9 @@
             }
           }
         }
+
       }
+      &.orange, &.violet, &.turquoise { h3, h4 { color: white; } }
 
     }
 
@@ -86,13 +86,40 @@
 
   }
 
+  &.row-of-two {
+    .gallery-block {
+      @include media($media__large) {
+        @include span-columns(6);
+        @include omega(2n);
+      }
+      .gallery-block-content {
+        @include row();
+        @include media($media__large) { min-height:em(300px); }
+      }
+    }
+  }
+
   &.row-of-three {
-    margin-bottom: $v-rhythm * 3;
     .gallery-block {
       @include media($media__large) {
         @include span-columns(4);
         @include omega(3n);
       }
+      .gallery-block-content {
+        @include media($media__large) { min-height:em(300px); }
+      }
+    }
+  }
+
+  &.row-of-two, &.row-of-three {
+    margin-bottom: $v-rhythm * 3;
+
+    .gallery-block.full-width {
+      @include span-columns(12);
+      @include omega(1n);
+    }
+    .gallery-block-content {
+      padding: $v-rhythm * 2 em(24px);
     }
   }
 
