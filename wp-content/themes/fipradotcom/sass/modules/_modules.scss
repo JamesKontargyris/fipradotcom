@@ -24,7 +24,7 @@
       color:lighten($color__fipra-turquoise, 5%);
       font-weight:$font__black;
       &:hover {
-        color:$color__fipra-turquoise;
+//        color:$color__fipra-turquoise;
       }
     }
   }
@@ -32,52 +32,85 @@
     background-color: darken($color__fipra-light-gray, 10%);
     @include background(linear-gradient(darken($color__fipra-light-gray, 5%) 0%, $color__fipra-light-gray 70%));
     padding:$v-rhythm em(16px);
-    color:$color__fipra-blue-gray;
+    color:$color_soft-black;
     a {
-      color:darken($color__fipra-turquoise, 5%);
+      color:$color__fipra-turquoise;
       font-weight:$font__black;
       &:hover {
-        color:$color__fipra-turquoise;
+//        color:$color__fipra-turquoise;
       }
     }
   }
 }
 
-.circle-icon {
+.circle-icon, .square-icon {
   display:inline-block;
   margin-bottom:$v-rhythm;
   line-height:55px;
   width:55px;
   height:55px;
-  @include border-left-radius(50%);
-  @include border-right-radius(50%);
   background-color: white;
-  @include background(radial-gradient(to bottom, white 60%, darken(white, 15%) 80%));
   box-shadow: 0 4px 6px rgba(black, 0.3);
   text-shadow: 0px 2px 0px white;
-  color:$color__fipra-blue-gray;
+  text-align: center;
+  color:$color__fipra-blue;
   @include font-size(34);
+  i { margin-left:-2px; }
+  &.grey-icon { color:$color__fipra-blue-gray; }
   &.blue {
     color: white;
     background-color: $color__fipra-blue;
-    @include background(radial-gradient(to bottom, $color__fipra-blue 60%, darken($color__fipra-blue, 15%) 80%));
+    @include background(radial-gradient(to bottom, lighten($color__fipra-blue, 20%) 0%, $color__fipra-blue 60%, darken($color__fipra-blue, 20%) 90%));
     text-shadow: 0px -1px 0px darken($color__fipra-blue, 10%);
+  }
+  &.periwinkle {
+    color: darken($color__fipra-periwinkle, 40%);
+    background-color: $color__fipra-periwinkle;
+    @include background(radial-gradient(to bottom, lighten($color__fipra-periwinkle, 15%) 0%, $color__fipra-periwinkle 60%, darken($color__fipra-periwinkle, 15%) 90%));
+    text-shadow: 0px 1px 0px lighten($color__fipra-periwinkle, 10%);
+  }
+  &.turquoise {
+    color: white;
+    background-color: $color__fipra-turquoise;
+    @include background(radial-gradient(to bottom, lighten($color__fipra-turquoise, 30%) 0%, $color__fipra-turquoise 60%, darken($color__fipra-turquoise, 15%) 90%));
+    text-shadow: 0px -1px 0px darken($color__fipra-turquoise, 10%);
   }
   &.orange {
     color: white;
     background-color: orange;
-    @include background(radial-gradient(to bottom, orange 60%, darken(orange, 10%) 80%));
+    @include background(radial-gradient(to bottom, lighten(orange, 30%) 0%, orange 60%, darken(orange, 15%) 90%));
     text-shadow: 0px -1px 0px darken(orange, 10%);
+  }
+  &.violet {
+    color: white;
+    background-color: $color__fipra-violet;
+    @include background(radial-gradient(to bottom, lighten($color__fipra-violet, 15%) 0%, $color__fipra-violet 60%, darken($color__fipra-violet, 15%) 90%));
+    text-shadow: 0px -1px 0px darken($color__fipra-violet, 10%);
   }
 
   @include media($media__small) {
     width:80px;
     height:80px;
-    @include font-size(48);
+    @include font-size(42);
     line-height:80px;
     margin-bottom:$v-rhythm * 2;
   }
 }
+.circle-icon {
+  @include border-left-radius(50%);
+  @include border-right-radius(50%);
+  @include background(radial-gradient(to bottom, white 60%, darken(white, 15%) 80%));
+}
+.square-icon {
+  @include border-left-radius(4px);
+  @include border-right-radius(4px);
+  @include background(linear-gradient(to bottom, white 40%, darken(white, 10%) 80%));
+}
+
+.circle-icon, .square-icon {
+   &.transparent { background: none; box-shadow: none; }
+}
+
 //Gallery box with outline style
 .outline .circle-icon {
   background-color: $color__fipra-blue-gray;

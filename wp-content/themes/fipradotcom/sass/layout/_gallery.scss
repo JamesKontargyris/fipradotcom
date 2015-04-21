@@ -6,7 +6,6 @@
     @include border-left-radius(4px);
     @include border-right-radius(4px);
     margin-top: $v-rhythm * 2;
-    color:$color__fipra-blue-gray;
 
     h3, h4 { color: $color__fipra-blue; font-weight: $font__black; }
 
@@ -86,7 +85,20 @@
 
   }
 
-  &.row-of-two {
+  .row-of-1 {
+    .gallery-block {
+      @include media($media__large) {
+        @include span-columns(12);
+        @include omega(1n);
+      }
+      .gallery-block-content {
+        @include row();
+        @include media($media__large) { min-height:em(300px); }
+      }
+    }
+  }
+
+  .row-of-2 {
     .gallery-block {
       @include media($media__large) {
         @include span-columns(6);
@@ -99,19 +111,31 @@
     }
   }
 
-  &.row-of-three {
+  .row-of-3 {
     .gallery-block {
       @include media($media__large) {
         @include span-columns(4);
         @include omega(3n);
       }
       .gallery-block-content {
-        @include media($media__large) { min-height:em(300px); }
+        @include media($media__large) { min-height:em(350px); }
       }
     }
   }
 
-  &.row-of-two, &.row-of-three {
+  .row-of-4 {
+    .gallery-block {
+      @include media($media__large) {
+        @include span-columns(3);
+        @include omega(4n);
+      }
+      .gallery-block-content {
+        @include media($media__large) { min-height:em(450px); }
+      }
+    }
+  }
+
+  .row-of-1, .row-of-2, .row-of-3, .row-of-4 {
     margin-bottom: $v-rhythm * 3;
 
     .gallery-block.full-width {

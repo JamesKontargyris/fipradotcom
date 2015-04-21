@@ -26,6 +26,9 @@ hr {
 	border: 0;
 	height: 1px;
 	margin:$v-rhythm * 2 0;
+    &.medium { margin:$v-rhythm * 4 0; }
+    &.large { margin:$v-rhythm * 6 0; }
+    &.hidden { background-color:transparent;}
 }
 
 
