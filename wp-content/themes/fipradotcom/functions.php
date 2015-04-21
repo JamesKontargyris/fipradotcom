@@ -120,16 +120,16 @@ function fipradotcom_scripts()
         'http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic|PT+Serif:400,700,400italic,700italic'
     );
     wp_enqueue_style(
-        'fipradotcom-fontawesome',
-        'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
-    );
-    wp_enqueue_style(
         'fipradotcom-typicons',
         get_template_directory_uri() . '/fonts/typicons.min.css'
     );
     wp_enqueue_style(
         'fipradotcom-fontello',
         get_template_directory_uri() . '/fonts/fontello/css/iconfonts.css'
+    );
+    wp_enqueue_style(
+        'fipradotcom-jquery-modal',
+        get_template_directory_uri() . '/js/jquery-modal/jquery.modal.css'
     );
 
 //    wp_enqueue_script(
@@ -141,20 +141,28 @@ function fipradotcom_scripts()
 //    );
 
         wp_enqueue_script(
-        'fipradotcom-jquery',
-        'https://code.jquery.com/jquery-2.1.3.min.js',
-        array(),
-        '20120206',
-        true
-    );
+            'fipradotcom-jquery',
+            'https://code.jquery.com/jquery-2.1.3.min.js',
+            array(),
+            '20120206',
+            true
+        );
 
         wp_enqueue_script(
-        'fipradotcom-user-js',
-        get_template_directory_uri() . '/js/site.js',
-        array(),
-        '20120206',
-        true
-    );
+            'fipradotcom-user-js',
+            get_template_directory_uri() . '/js/site.js',
+            array(),
+            '20120206',
+            true
+        );
+
+        wp_enqueue_script(
+            'fipradotcom-jquery-modal',
+            get_template_directory_uri() . '/js/jquery-modal/jquery.modal.min.js',
+            array(),
+            '20120206',
+            true
+        );
 
     wp_enqueue_script(
         'fipradotcom-skip-link-focus-fix',
@@ -202,7 +210,7 @@ function fipra_sitewide_search_form( $form ) {
     $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
 	<div><label class="screen-reader-text" for="s">' . __( 'Search for:' ) . '</label>
 	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="Search..." />
-	<button class="button-search"><i class="fa fa-search fa-lg"></i><span class="screen-reader-text"> ' . esc_attr__( 'Search' ) . '</span></button>
+	<button class="button-search"><i class="icon-search"></i><span class="screen-reader-text"> ' . esc_attr__( 'Search' ) . '</span></button>
 	</div>
 	</form>';
 

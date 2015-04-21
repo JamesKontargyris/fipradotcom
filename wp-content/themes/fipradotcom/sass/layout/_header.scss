@@ -17,7 +17,8 @@
 #header-container {
   @include clearfix;
   border-top:$color__fipra-blue solid $v-rhythm / 2;
-  @include background(linear-gradient(white 90%, darken(white, 5%) 100%));
+//  @include background(linear-gradient(white 90%, darken(white, 5%) 100%));
+  @include background(linear-gradient(darken(white, 3%) 90%, darken(white, 5%) 100%));
 
   header.site-header {
     @include row();
@@ -97,9 +98,10 @@
   }
   .button-search {
     @include button-reset();
+    @include font-size(18);
     position:absolute;
-    top:10px;
-    right:10px;
+    top:6px;
+    right:6px;
     color:$color__fipra-blue-gray;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;

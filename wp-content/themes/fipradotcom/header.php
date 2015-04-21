@@ -41,14 +41,11 @@
             <div id="site-navigation-container">
                 <div class="search-global-network-button">
                     <?php get_search_form( true ); ?>
-                    <a class="global-network-button br-bottom" href="#"><i class="fa fa-globe"></i> Explore our Global Network</a>
+                    <a class="global-network-button br-bottom" href="#"><i class="icon-globe-6"></i> Explore our Global Network</a>
                 </div>
                 <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <a class="mobile-menu-search btn primary"><i class="fa fa-search"></i></a>
+                    <a class="mobile-menu-search btn primary"><i class="icon-search"></i></a>
                     <a class="mobile-menu-toggle btn secondary" aria-controls="primary-menu-mobile" aria-expanded="false"><i class="fa fa-bars"></i> <?php _e(strtoupper('Menu'), 'fipradotcom'); ?></a>
-<!--                    <button class="btn secondary"><i class="fa fa-search"></i></button>-->
-
-<!--                    <button class="mobile-menu-toggle btn secondary" href="#"><i class="fa fa-bars"></i> Menu</button>-->
 
                     <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
                 </nav>

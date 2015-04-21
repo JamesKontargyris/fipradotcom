@@ -66,7 +66,7 @@
                 <a href="#">Legal Link 1</a> | <a href="#">Legal Link 2</a> | <a href="#">Legal Link 3</a>
             </div>
             <div class="footer-social-links">
-                <strong>Connect with us</strong><br/> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a>
+                <strong>Connect with us</strong><br/> <a href="#"><i class="icon-twitter"></i></a> <a href="#"><i class="icon-linkedin"></i></a>
             </div>
         </div><!-- .site-info -->
     </div>

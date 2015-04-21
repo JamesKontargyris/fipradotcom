@@ -1,6 +1,6 @@
 @import "header";
 @import "footer";
-@import "gallery";
+@import "showcase";
 @import "hero-banner";
 
 #content-container {
@@ -11,7 +11,7 @@
     @include media($media__large) { background-size: contain; }
   }
 
-  &.with-border { border-top:1px solid darken(white, 12%); }
+  &.with-border { border-top:3px solid darken(white, 15%); }
   @include media($media__xlarge) {
     padding:$v-rhythm * 2 0;
   }

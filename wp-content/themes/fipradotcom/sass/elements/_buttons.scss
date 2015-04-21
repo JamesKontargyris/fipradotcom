@@ -12,6 +12,7 @@
   margin-bottom: $v-rhythm * 0.5;
   margin-right: em(16px);
   &:last-child { margin-right: 0; }
+  &.no-margin { margin:0; }
 
   &.primary {
     background-color: $color__fipra-blue;

@@ -13,4 +13,7 @@
             if($(this).hasClass('viewable')) { $(this).find('input[type=text]').focus(); }
         });
     });
+
+//    All internal anchor links slide to position on page
+    $("a[href^=#]").click(function(e) { e.preventDefault(); var dest = $(this).attr('href'); $('html,body').animate({ scrollTop: $(dest).offset().top - 30 }, 'slow'); });
 })();

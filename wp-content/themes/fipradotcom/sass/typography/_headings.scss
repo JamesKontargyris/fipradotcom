@@ -45,8 +45,8 @@ h2 {
 }
 
 h3 {
-  font-weight: $font__bold;
-  @include font-size(21);
+  font-weight: $font__black;
+  @include font-size(18);
   line-height: $v-rhythm * 2;
 
   @include media($media__medium) { @include font-size(24); line-height: $v-rhythm * 2; }

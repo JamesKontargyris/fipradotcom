@@ -22,10 +22,11 @@ blockquote, q {
 }
 
 hr {
-	background-color: $color__background-hr;
+	background-color: lighten($color__background-hr, 12%);
 	border: 0;
 	height: 1px;
 	margin:$v-rhythm * 2 0;
+    &.small { margin:$v-rhythm 0; }
     &.medium { margin:$v-rhythm * 4 0; }
     &.large { margin:$v-rhythm * 6 0; }
     &.hidden { background-color:transparent;}
