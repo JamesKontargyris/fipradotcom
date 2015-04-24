@@ -45,4 +45,10 @@
         $('#header-container').toggleClass('with-border');
        $('#global-network-menu-container').slideToggle(300);
     });
+
+//    Anchor links hide/show menu on small screens
+    $('.anchor-links-list .menu-title').on('click', function()
+    {
+        $(this).siblings('li').slideToggle();
+    });
 })();

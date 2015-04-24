@@ -165,8 +165,9 @@
       position: absolute;
       display: none;
       z-index: 99;
-      background-color:$color__fipra-blue-gray;
-      @include background(linear-gradient($color__fipra-blue-gray 60%, darken($color__fipra-blue-gray, 3%) 100%));
+//      background-color:$color__fipra-blue-gray;
+      background:url('img/global-network-megamenu-bg.png') top right no-repeat $color__fipra-blue-gray;
+//      @include background(linear-gradient($color__fipra-blue-gray 60%, darken($color__fipra-blue-gray, 3%) 100%));
       .country-tag {
         float:left;
         width:18.4%;

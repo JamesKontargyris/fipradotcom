@@ -8,6 +8,8 @@ h1, h2, h3, h4, h5, h6 {
   &.turquoise { color:$color__fipra-turquoise; }
   &.violet { color:$color__fipra-violet; }
   &.center { text-align: center; }
+
+  &.no-margin { margin:0; }
 }
 
 h1, h2 { margin:0 0 $v-rhythm * 2 0; }
@@ -18,7 +20,7 @@ h1 {
   @include font-size(22);
   line-height: $v-rhythm * 2.5;
 
-  @include media($media__medium) { @include font-size(36); line-height: $v-rhythm * 3; }
+  @include media($media__medium) { @include font-size(42); line-height: $v-rhythm * 4; }
 
 //  Style similar to H5 in .hero-banner and feature blocks
   &.feature {

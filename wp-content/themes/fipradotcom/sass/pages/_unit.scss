@@ -1,0 +1,40 @@
+#page-banner-content {
+  &.unit {
+    text-align: center;
+    h1 { @include font-size(36); letter-spacing: -1px; }
+    .meta { font-style: italic; margin-bottom:$v-rhythm; }
+    img {
+      display: inline-block;
+      width: 70px;
+      margin-bottom: $v-rhythm;
+    }
+
+    @include media($media__medium) {
+      text-align: left;
+      h1 { @include font-size(56); }
+    }
+
+    @include media($media__large) { padding:$v-rhythm * 16 em(40px) $v-rhythm * 4 !important; }
+
+    &.dark-text {
+      h1 { color: $color__fipra-blue !important; text-shadow:0px 1px 1px $color__fipra-light-gray !important; }
+      h2 { color: $color__fipra-blue; }
+      .meta { color:black; }
+      img {
+        box-shadow:0 0 5px 2px rgba(black, 0.2);
+      }
+      .btn.primary {
+        text-shadow:0px 1px 3px lighten($color__fipra-blue, 10%);
+      }
+      .btn.secondary {
+        border:1px solid $color__fipra-blue;
+        color:$color__fipra-blue;
+        &:hover {
+          border:1px solid $color__fipra-blue-gray;
+          color:$color__fipra-blue-gray;
+        }
+      }
+    }
+
+  }
+}

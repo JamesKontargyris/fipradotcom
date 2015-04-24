@@ -1,3 +1,11 @@
+.hero-banner-container {
+  @include row();
+  padding:0;
+  @include outer-container($local-max-width: $container__content-width);
+  &.full-width { @include outer-container($local-max-width: $container__outer-width); }
+}
+
+
 .hero-banner-gradient {
 
   &.dark-image {
@@ -53,6 +61,15 @@
   padding:($v-rhythm * 2) 0;
   @include media($media__small) { padding:($v-rhythm * 6) 0; }
   @include media($media__medium) { @include shift(1); @include span-columns(10); }
+
+  .btn {
+    display:block;
+    margin-right:0;
+    @include media($media__small) {
+      margin-right:em(6px);
+      display: inline-block;
+    }
+  }
 
 //  In hero-banner, h1 looks the same as H5, H2 is same as H1 but light font weight
   h1, h2 {
@@ -136,29 +153,5 @@
 
   @include media($media__xlarge) {
     padding:($v-rhythm * 10) 0 ($v-rhythm * 10);
-  }
-}
-
-.page-banner {
-  margin-bottom:$v-rhythm * 3;
-  &.left {
-    text-align: left;
-  }
-  &.center {
-    text-align: center;
-  }
-  &.right {
-    text-align: right;
-  }
-}
-
-.hero-banner, .page-banner {
-  .btn {
-    display:block;
-    margin-right:0;
-    @include media($media__small) {
-      margin-right:em(6px);
-      display: inline-block;
-    }
   }
 }

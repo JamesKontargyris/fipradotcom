@@ -28,7 +28,7 @@
     @include media($media__xlarge) { padding:0; }
 
     #site-branding-container {
-      @include span-columns(4);
+      @include span-columns(3);
       padding:$v-rhythm 0;
       @include media($media__medium) { @include span-columns(2); padding:0; }
 
@@ -46,7 +46,7 @@
 
     #site-navigation-container {
       position:relative;
-      @include span-columns(8);
+      @include span-columns(9);
       float:right;
       width:auto;
       @include media($media__medium) { @include span-columns(10); }

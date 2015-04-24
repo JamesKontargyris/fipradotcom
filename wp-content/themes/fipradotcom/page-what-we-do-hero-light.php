@@ -36,16 +36,6 @@ get_header(); ?>
 
                 <div id="primary" class="content-area full-width">
                     <main id="main" class="site-main" role="main">
-                        <div class="page-banner center">
-                            <h1 class="feature"><?php the_title(); ?></h1>
-                            <h2 class="feature">What we do title in the page banner</h2>
-                            <p class="lead">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.
-                                <br/><br/>
-                                <a href="#public_affairs_services" class="btn primary">Public Affairs Services</a> <a href="#areas_of_expertise" class="btn primary">Areas of Expertise</a>
-                            </p>
-                        </div>
-
-                        <hr />
 
                         <a id="public_affairs_services"></a>
                         <h2 class="center">Public Affairs Services</h2>
