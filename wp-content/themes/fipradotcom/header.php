@@ -199,6 +199,20 @@
         </div>
     </div>
 
+    <div id="mobile-header-global-network-container">
+        <div id="mobile-header-global-network">
+            <div class="title">Explore our Global Network:</div>
+            <select name="mobile-header-global-network-menu" id="mobile-header-global-network-menu">
+                <option value="">Please select...</option>
+                <optgroup label="Continent Name">
+                    <option value="1">Country Name</option>
+                    <option value="2">Country Name</option>
+                    <option value="3">Country Name</option>
+                </optgroup>
+            </select>
+        </div>
+    </div>
+
     <div id="mobile-search-container">
         <div id="mobile-search">
             <?php get_search_form( true ); ?>
@@ -222,8 +236,9 @@
                     <a class="global-network-button br-bottom" href="global-network"><i class="icon-globe"></i> Explore our Global Network</a>
                 </div>
                 <nav id="site-navigation" class="main-navigation" role="navigation">
+                    <a class="mobile-menu-global-network btn primary"><i class="icon-globe"></i></a>
                     <a class="mobile-menu-search btn primary"><i class="icon-search"></i></a>
-                    <a class="mobile-menu-toggle btn secondary" aria-controls="primary-menu-mobile" aria-expanded="false"><i class="fa fa-bars"></i> <?php _e(strtoupper('Menu'), 'fipradotcom'); ?></a>
+                    <a class="mobile-menu-toggle btn secondary" aria-controls="primary-menu-mobile" aria-expanded="false"><i class="icon-menu-1"></i> <?php _e(strtoupper('Menu'), 'fipradotcom'); ?></a>
 
                     <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
                 </nav>
