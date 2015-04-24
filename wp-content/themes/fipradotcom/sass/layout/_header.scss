@@ -16,9 +16,9 @@
 
 #header-container {
   @include clearfix;
-  border-top:$color__fipra-blue solid $v-rhythm / 2;
 //  @include background(linear-gradient(white 90%, darken(white, 5%) 100%));
   @include background(linear-gradient(darken(white, 3%) 90%, darken(white, 5%) 100%));
+  &.with-border { border-top:$color__fipra-blue solid $v-rhythm / 2; }
 
   header.site-header {
     @include row();
@@ -62,14 +62,16 @@
       }
       a.global-network-button {
         display: inline-block;
+        z-index:50;
         float:left;
         font-family: $font__sans;
         font-weight: $font__black;
         color:white;
         background-color: $color__fipra-blue;
-        @include background(linear-gradient($color__fipra-blue 60%, darken($color__fipra-blue, 7%) 100%));
         padding:$v-rhythm em(12) $v-rhythm / 2 em(12);
         @include transition(all 0.2s ease-out);
+        @include background(linear-gradient($color__fipra-blue 60%, darken($color__fipra-blue, 7%) 100%));
+        &.reverse-background { @include background(linear-gradient(darken($color__fipra-blue-gray, 15%) 0%, $color__fipra-blue-gray 60%)); }
         &:hover {
           padding-top:$v-rhythm * 2;
         }

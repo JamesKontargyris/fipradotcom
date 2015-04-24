@@ -7,7 +7,7 @@ ul, ol {
 ul {
   list-style: none;
 
-  li:not(.menu-item) {
+  li:not(.menu-item, #menuzord) {
     padding-left: em(30px);
     text-indent: em(-30px);
     margin-bottom: $v-rhythm;

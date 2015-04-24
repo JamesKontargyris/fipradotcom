@@ -6,7 +6,7 @@
     @include clearfix();
     @include border-left-radius(4px);
     @include border-right-radius(4px);
-    margin-top: $v-rhythm * 2;
+    margin-bottom: $v-rhythm * 2;
 
     h3, h4 { color: $color__fipra-blue; font-weight: $font__black; }
 

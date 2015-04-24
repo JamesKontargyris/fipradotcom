@@ -95,13 +95,13 @@ function fipradotcom_widgets_init()
 {
     register_sidebar(
         array(
-            'name'          => __('Sidebar', 'fipradotcom'),
-            'id'            => 'sidebar-1',
-            'description'   => '',
+            'name' => __('Sidebar', 'fipradotcom'),
+            'id' => 'sidebar-1',
+            'description' => '',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</aside>',
-            'before_title'  => '<h5 class="widget-title">',
-            'after_title'   => '</h5>',
+            'after_widget' => '</aside>',
+            'before_title' => '<h5 class="widget-title">',
+            'after_title' => '</h5>',
         )
     );
 }
@@ -113,8 +113,6 @@ add_action('widgets_init', 'fipradotcom_widgets_init');
  */
 function fipradotcom_scripts()
 {
-    wp_enqueue_style('fipradotcom-style', get_stylesheet_uri());
-
     wp_enqueue_style(
         'fipradotcom-google-fonts',
         'http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic|PT+Serif:400,700,400italic,700italic'
@@ -132,6 +130,8 @@ function fipradotcom_scripts()
         get_template_directory_uri() . '/js/jquery-modal/jquery.modal.css'
     );
 
+    wp_enqueue_style('fipradotcom-style', get_stylesheet_uri());
+
 //    wp_enqueue_script(
 //        'fipradotcom-navigation',
 //        get_template_directory_uri() . '/js/navigation.js',
@@ -140,29 +140,29 @@ function fipradotcom_scripts()
 //        true
 //    );
 
-        wp_enqueue_script(
-            'fipradotcom-jquery',
-            'https://code.jquery.com/jquery-2.1.3.min.js',
-            array(),
-            '20120206',
-            true
-        );
+    wp_enqueue_script(
+        'fipradotcom-jquery',
+        'https://code.jquery.com/jquery-2.1.3.min.js',
+        array(),
+        '20120206',
+        true
+    );
 
-        wp_enqueue_script(
-            'fipradotcom-user-js',
-            get_template_directory_uri() . '/js/site.js',
-            array(),
-            '20120206',
-            true
-        );
+    wp_enqueue_script(
+        'fipradotcom-menuzord-js',
+        get_template_directory_uri() . '/js/menuzord.js',
+        array(),
+        '20150423',
+        true
+    );
 
-        wp_enqueue_script(
-            'fipradotcom-jquery-modal',
-            get_template_directory_uri() . '/js/jquery-modal/jquery.modal.min.js',
-            array(),
-            '20120206',
-            true
-        );
+    wp_enqueue_script(
+        'fipradotcom-jquery-modal',
+        get_template_directory_uri() . '/js/jquery-modal/jquery.modal.min.js',
+        array(),
+        '20150423',
+        true
+    );
 
     wp_enqueue_script(
         'fipradotcom-skip-link-focus-fix',
@@ -171,6 +171,16 @@ function fipradotcom_scripts()
         '20130115',
         true
     );
+
+    wp_enqueue_script(
+        'fipradotcom-user-js',
+        get_template_directory_uri() . '/js/site.js',
+        array(),
+        '20120206',
+        true
+    );
+
+
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -206,15 +216,16 @@ require get_template_directory() . '/inc/jetpack.php';
 
 
 //User functions
-function fipra_sitewide_search_form( $form ) {
-    $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-	<div><label class="screen-reader-text" for="s">' . __( 'Search for:' ) . '</label>
+function fipra_sitewide_search_form($form)
+{
+    $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url('/') . '" >
+	<div><label class="screen-reader-text" for="s">' . __('Search for:') . '</label>
 	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="Search..." />
-	<button class="button-search"><i class="icon-search"></i><span class="screen-reader-text"> ' . esc_attr__( 'Search' ) . '</span></button>
+	<button class="button-search"><i class="icon-search"></i><span class="screen-reader-text"> ' . esc_attr__('Search') . '</span></button>
 	</div>
 	</form>';
 
     return $form;
 }
 
-add_filter( 'get_search_form', 'fipra_sitewide_search_form' );
+add_filter('get_search_form', 'fipra_sitewide_search_form');

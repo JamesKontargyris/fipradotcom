@@ -56,7 +56,6 @@
   text-align: center;
   color:$color__fipra-blue;
   @include font-size(34);
-  i { margin-left:-2px; }
   &.grey-icon { color:$color__fipra-blue-gray; }
   &.blue {
     color: white;
