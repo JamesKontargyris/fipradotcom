@@ -159,11 +159,12 @@ ul.anchor-links-list {
 
     @include media(max-width $media__medium) {
       display:none;
-      padding: $v-rhythm / 2 em(12px);
       background-color: lighten($color__fipra-periwinkle, 10%);
       border-bottom:1px solid white;
-      &.menu-title { display:block; background-color:$color__fipra-blue; color:white; cursor:pointer; }
-      a { display:block; }
+      &.menu-title { display:block; background-color:$color__fipra-blue; color:white; cursor:pointer; padding: $v-rhythm / 2 em(12px); }
+      a { display:block; padding: $v-rhythm / 2 em(12px);
+        &:hover { background-color: $color__fipra-turquoise; color:white; }
+      }
       i { position:absolute; right:em(12px); top:$v-rhythm / 2; }
 
     }
@@ -176,7 +177,7 @@ ul.anchor-links-list {
         padding:$v-rhythm / 2 em(6px);
         @include border-top-radius(6px);
         @include border-bottom-radius(6px);
-        &:hover { background-color: lighten($color__fipra-periwinkle, 5%); }
+        &:hover { background-color: $color__fipra-turquoise; color:white; }
       }
     }
   }
