@@ -49,7 +49,7 @@ get_header(); ?>
                                         <h3>Strategic Planning</h3>
                                         <p style="clear: both;">Jointly developing your Public Affairs action plan and objectives, clearly defining your strategic and tactical priorities.</p>
                                     </div>
-                                    <p class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Peter-Carlo Lehrell</a> for more information.</p>
+                                    <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Peter-Carlo Lehrell</a> for more information.</div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -57,7 +57,7 @@ get_header(); ?>
                                         <h3>Narrative Development</h3>
                                         <p>Ensuring that your story effectively communicates your key messages and resonates with your target audiences.</p>
                                     </div>
-                                    <p class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Dirk Hudig</a> for more information.</p>
+                                    <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Dirk Hudig</a> for more information.</div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -65,7 +65,7 @@ get_header(); ?>
                                         <h3>Stakeholder Mapping</h3>
                                         <p>Identifying the organisations and individuals that are relevant to your cause and helping you manage your contacts database.</p>
                                     </div>
-                                    <p class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Jan Ahlskog</a> for more information.</p>
+                                    <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Jan Ahlskog</a> for more information.</div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -73,7 +73,7 @@ get_header(); ?>
                                         <h3>Stakeholder Outreach</h3>
                                         <p>Hands-on support to establish constructive dialogue with key stakeholders and effectively execute your action plan.</p>
                                     </div>
-                                    <p class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Ukko Metsola</a> for more information.</p>
+                                    <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Ukko Metsola</a> for more information.</div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -81,7 +81,7 @@ get_header(); ?>
                                         <h3>Situation Analysis</h3>
                                         <p>Tailored, in-depth analysis and assessment of political and regulatory developments at international, national and local levels.</p>
                                     </div>
-                                    <p class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Daniel Furby</a> for more information.</p>
+                                    <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Daniel Furby</a> for more information.</div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -89,7 +89,7 @@ get_header(); ?>
                                         <h3>Targeted Monitoring</h3>
                                         <p>Serving as your ‘eyes and ears’ on the ground to provide you with real-time intelligence and regular newsletters on key issues impacting your PA objectives.</p>
                                     </div>
-                                    <p class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Laura Batchelor</a> for more information.</p>
+                                    <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Laura Batchelor</a> for more information.</div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -97,7 +97,7 @@ get_header(); ?>
                                         <h3>One-Stop-Shop PA Campaigns</h3>
                                         <p>Track record in leading and coordinating PA campaigns on the ground in over 60 countries, ensuring quality, consistency and timely delivery and execution.</p>
                                     </div>
-                                    <p class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Paul Buffet</a> for more information.</p>
+                                    <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Paul Buffet</a> for more information.</div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -105,7 +105,7 @@ get_header(); ?>
                                         <h3>In-House PA Capabilities Assessment</h3>
                                         <p>Identifying the strengths and weaknesses of your Government Affairs practice through personalised recommendations.</p>
                                     </div>
-                                    <p class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Laura Batchelor</a> for more information.</p>
+                                    <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Laura Batchelor</a> for more information.</div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -113,7 +113,7 @@ get_header(); ?>
                                         <h3>Training Sessions</h3>
                                         <p>Customised PA training sessions for your in-house policy and management personnel.</p>
                                     </div>
-                                    <p class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Dirk Hudig</a> for more information.</p>
+                                    <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Dirk Hudig</a> for more information.</div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -121,7 +121,7 @@ get_header(); ?>
                                         <h3>Complementary Media Support</h3>
                                         <p>Crafting press statements that support your public policy objectives and helping you organise and prepare for press conferences and media appearances.</p>
                                     </div>
-                                    <p class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">David Lawsky</a> for more information.</p>
+                                    <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">David Lawsky</a> for more information.</div>
                                 </div>
                                 <div class="showcase-block center bg shift-half-col">
                                     <div class="showcase-block-content">
@@ -129,7 +129,7 @@ get_header(); ?>
                                         <h3>EU Funding</h3>
                                         <p>Helping you understand what EU funds are available to your organisation and how to navigate the complex application process.</p>
                                     </div>
-                                    <p class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Peter-Carlo Lehrell</a> for more information.</p>
+                                    <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Peter-Carlo Lehrell</a> for more information.</div>
                                 </div>
                             </div>
 
@@ -149,7 +149,7 @@ get_header(); ?>
                                         <h4>Banking and Financial Services</h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
                                     </div>
-                                    <p class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></p>
+                                    <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -157,7 +157,7 @@ get_header(); ?>
                                         <h4>Chemical, Industrials and Mining</h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
                                     </div>
-                                    <p class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></p>
+                                    <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -165,7 +165,7 @@ get_header(); ?>
                                         <h4>Energy and Environment</h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
                                     </div>
-                                    <p class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></p>
+                                    <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -174,7 +174,7 @@ get_header(); ?>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
                                         </p>
                                     </div>
-                                    <p class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></p>
+                                    <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -182,7 +182,7 @@ get_header(); ?>
                                         <h4>Telecoms, Media and Technology</h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
                                     </div>
-                                    <p class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></p>
+                                    <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
                                 </div>
                                 <div class="showcase-block center bg">
                                     <div class="showcase-block-content">
@@ -190,7 +190,7 @@ get_header(); ?>
                                         <h4>Travel, Transport and Logistics</h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
                                     </div>
-                                    <p class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></p>
+                                    <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
                                 </div>
                                 <div class="showcase-block bg center shift-1-col">
                                     <div class="showcase-block-content">
@@ -198,11 +198,10 @@ get_header(); ?>
                                         <h4>Competition Policy</h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
                                     </div>
-                                    <p class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></p>
+                                    <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
                                 </div>
                             </div>
                         </div>
-
                     </main><!-- #main -->
                 </div><!-- #primary -->
 

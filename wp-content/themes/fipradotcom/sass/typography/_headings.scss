@@ -58,6 +58,7 @@ h4 {
   font-weight: $font__bold;
   @include font-size(18);
   line-height: $v-rhythm * 2;
+  color:$color__fipra-blue;
 
   @include media($media__medium) { @include font-size(21); line-height: $v-rhythm * 2; }
 }

@@ -2,7 +2,7 @@
   @include clearfix;
   font-family: $font__sans;
   color:white;
-  @include border-top-radius(4px);
+  @include media($media__medium) { @include border-top-radius(4px); }
 
   background-position: center;
   background-repeat: no-repeat;
@@ -16,7 +16,7 @@
   #page-banner-content {
     @include row();
 
-    padding:($v-rhythm * 4) em(40px);
+    padding:($v-rhythm * 2) em(40px);
     @include media($media__small) { padding:($v-rhythm * 6) em(40px); }
     @include media($media__large) { padding:($v-rhythm * 8) em(40px); }
     @include media($media__xlarge) { padding:($v-rhythm * 10) em(40px); }

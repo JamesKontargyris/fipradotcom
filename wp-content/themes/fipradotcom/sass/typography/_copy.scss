@@ -1,9 +1,6 @@
 p {
   margin-top:0;
   margin-bottom: $v-rhythm * 2;
-  &:last-child {
-    margin-bottom: 0;
-  }
 }
 
 dfn, cite, em, i {
@@ -16,7 +13,7 @@ cite {
 }
 
 blockquote {
-  margin: 0;
+  margin: 0 0 $v-rhythm * 2 0;
   @include font-size(28);
   line-height: $v-rhythm * 3;
   color: $color__fipra-blue-gray;

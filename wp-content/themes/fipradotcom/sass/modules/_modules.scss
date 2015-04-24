@@ -125,31 +125,3 @@
 }
 
 #modal { display:none; }
-
-ul.anchor-links-list {
-  @include clearfix;
-  font-family: $font__sans;
-  list-style: none;
-  margin-bottom:$v-rhythm * 2;
-  li {
-    position:relative;
-
-    @include media(max-width $media__medium) {
-      display:none;
-      font-weight: $font__bold;
-      padding: $v-rhythm / 2 em(12px);
-      background-color: lighten($color__fipra-periwinkle, 10%);
-      border-bottom:1px solid white;
-      &.menu-title { display:block; background-color:$color__fipra-blue; color:white; cursor:pointer; }
-      a { display:block; }
-      i { position:absolute; right:em(12px); top:$v-rhythm / 2; }
-
-    }
-
-    @include media($media__medium) {
-      float: left;
-      &.menu-title i { display:none; }
-      &:not(:first-child) { margin-left: em(18px); }
-    }
-  }
-}

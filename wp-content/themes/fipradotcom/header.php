@@ -236,9 +236,9 @@
                     <a class="global-network-button br-bottom" href="global-network"><i class="icon-globe"></i> Explore our Global Network</a>
                 </div>
                 <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <a class="mobile-menu-global-network btn primary"><i class="icon-globe"></i></a>
-                    <a class="mobile-menu-search btn primary"><i class="icon-search"></i></a>
-                    <a class="mobile-menu-toggle btn secondary" aria-controls="primary-menu-mobile" aria-expanded="false"><i class="icon-menu-1"></i> <?php _e(strtoupper('Menu'), 'fipradotcom'); ?></a>
+                    <a class="mobile-menu-global-network btn primary no-margin"><i class="icon-globe"></i></a>
+                    <a class="mobile-menu-search btn primary no-margin"><i class="icon-search"></i></a>
+                    <a class="mobile-menu-toggle btn secondary no-margin" aria-controls="primary-menu-mobile" aria-expanded="false"><i class="icon-menu-1"></i> <?php _e(strtoupper('Menu'), 'fipradotcom'); ?></a>
 
                     <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
                 </nav>
