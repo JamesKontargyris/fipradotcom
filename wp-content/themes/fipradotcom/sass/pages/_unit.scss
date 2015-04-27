@@ -40,15 +40,21 @@
         }
       }
     }
-
   }
 }
 
-.page-nav {
-  padding:$v-rhythm em(20px);
-  @include media($media__medium) {
-    padding:$v-rhythm em(40px);
-    background-color: lighten($color__fipra-periwinkle, 10%);
-    border-bottom:1px solid darken(white, 10%);
+#secondary {
+  .sidebar-contact {
+    @include clearfix;
+    @include border-top-radius(4px);
+    @include border-bottom-radius(4px);
+    margin-bottom:$v-rhythm;
+    border:1px solid $color__fipra-light-gray;
+    background-color: lighten($color__fipra-light-gray, 5%);
+//    @include background(linear-gradient(lighten($color__fipra-periwinkle, 12%) 0%, lighten($color__fipra-periwinkle, 7%) 100%));
+    padding:$v-rhythm em(12px);
+    @include media(max-width $media__medium) {
+      img { width:90%; }
+    }
   }
 }

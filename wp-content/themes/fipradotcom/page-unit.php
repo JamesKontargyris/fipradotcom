@@ -42,6 +42,7 @@ get_header(); ?>
                         <li><a href="#about-us">About Us <i class="icon-down-open"></i></a></li>
                         <li><a href="#our-team">Our Team <i class="icon-down-open"></i></a></li>
                         <li><a href="#our-location">Our Location <i class="icon-down-open"></i></a></li>
+                        <li class="hide-s"><a href="#get-in-touch">Get in Touch <i class="icon-down-open"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -79,7 +80,21 @@ get_header(); ?>
             </div><!-- #primary -->
 
             <div id="secondary" class="content-area">
-                sidebar
+                <h5 id="get-in-touch">Get in Touch</h5>
+                <div class="sidebar-contact">
+                    <div class="col-3-s no-margin">
+                        <img src="http://placehold.it/100x100" alt="Peter-Carlo Lehrell"/>
+                    </div>
+                    <div class="col-9-s no-margin">
+                        <p class="sans-serif no-margin">
+                            <strong class="black"><a href="#">Peter-Carlo Lehrell</a></strong><br/>
+                            <strong>Chairman, Fipra International</strong><br/>
+                            <span class="font-14">Tel. +01234 5678910 <br/>
+                            Fax. +01234 5678910 <br/>
+                            <a href="mailto:lehrell@fipra.com">lehrell@fipra.com</a></span>
+                        </p>
+                    </div>
+                </div>
             </div><!-- #secondary -->
 
 

@@ -38,6 +38,10 @@ img {
   max-width: 100%; /* Adhere to container width. */
 }
 
+strong {
+  &.black { font-weight: $font__black; }
+}
+
 @import "lists";
 @import "tables";
 @import "buttons";

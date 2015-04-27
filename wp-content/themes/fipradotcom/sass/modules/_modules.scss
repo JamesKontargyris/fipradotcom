@@ -111,12 +111,16 @@
    &.transparent { background: none; box-shadow: none; }
 }
 
-//Gallery box with outline style
+//Showcase box with outline style
 .outline .circle-icon {
   background-color: $color__fipra-blue;
   @include background(radial-gradient(to bottom, $color__fipra-blue 60%, darken($color__fipra-blue, 15%) 80%));
   color:white;
 }
+
+.sans-serif { font-family: $font__sans; }
+
+.font-14 { @include font-size(14); }
 
 
 //Text Colours

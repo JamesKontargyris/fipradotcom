@@ -58,8 +58,8 @@
   @include clearfix;
   @include span-columns(12);
   text-align: center;
-  padding:($v-rhythm * 2) 0;
-  @include media($media__small) { padding:($v-rhythm * 6) 0; }
+  padding:($v-rhythm * 2) em(30px);
+  @include media($media__small) { padding:($v-rhythm * 6) em(30px); }
   @include media($media__medium) { @include shift(1); @include span-columns(10); }
 
   .btn {

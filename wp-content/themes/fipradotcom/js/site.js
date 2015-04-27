@@ -33,7 +33,7 @@
     });
 
 //    All internal anchor links slide to position on page
-    $("a[href^=#]").click(function(e) { e.preventDefault(); var dest = $(this).attr('href'); $('html,body').animate({ scrollTop: $(dest).offset().top }, 'slow'); });
+    $("a[href^=#]").click(function(e) { e.preventDefault(); var dest = $(this).attr('href'); $('html,body').animate({ scrollTop: $(dest).offset().top - 20 }, 'slow'); });
 
 //    Initialise the Global Network menu on larger screens using the Menuzord plugin
     $("#menuzord").menuzord({effect: 'slide', scrollable: false, showSpeed: 200, hideSpeed: 50});

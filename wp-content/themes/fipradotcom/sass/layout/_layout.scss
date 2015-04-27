@@ -45,9 +45,19 @@
 
   .content-area {
     padding:$v-rhythm * 2 em(20px) 0;
-    @include media($media__medium) { padding:$v-rhythm * 2 em(40px) 0; }
+    @include media($media__medium) { padding:$v-rhythm * 2 em(30px) 0; }
     margin:0;
 
+  }
+}
+
+.page-nav {
+  padding:$v-rhythm em(20px);
+  @include media($media__medium) {
+    padding:$v-rhythm em(30px);
+    background-color: lighten($color__fipra-periwinkle, 10%);
+    @include background(linear-gradient(lighten($color__fipra-periwinkle, 12%) 60%, lighten($color__fipra-periwinkle, 7%) 100%));
+    border-bottom:1px solid darken(white, 13%);
   }
 }
 
