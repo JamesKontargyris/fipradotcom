@@ -8,12 +8,15 @@ h1, h2, h3, h4, h5, h6 {
   &.turquoise { color:$color__fipra-turquoise; }
   &.violet { color:$color__fipra-violet; }
   &.center { text-align: center; }
-
-  &.no-margin { margin:0; }
 }
 
 h1, h2 { margin:0 0 $v-rhythm * 2 0; }
-h3, h4, h5, h6 { margin:$v-rhythm 0 $v-rhythm * 2 0; }
+h3, h4 {
+  margin:$v-rhythm 0;
+  @include media($media__medium) { margin:$v-rhythm * 2 0; }
+  &:first-child { margin-top:0; }
+}
+h5, h6 { margin:0 0 $v-rhythm 0; }
 
 h1 {
   font-weight: $font__bold;
@@ -56,16 +59,17 @@ h3 {
 
 h4 {
   font-weight: $font__bold;
-  @include font-size(18);
+  @include font-size(21);
   line-height: $v-rhythm * 2;
   color:$color__fipra-blue;
 
-  @include media($media__medium) { @include font-size(21); line-height: $v-rhythm * 2; }
 }
 
-h5 { @include font-size(16); font-weight: $font__black; text-transform: uppercase; }
+h5 { @include font-size(14); font-weight: $font__black; text-transform: uppercase;
+@include media($media__medium) { @include font-size(16); } }
 
-h6 { @include font-size(14); font-weight: $font__bold; }
+h6 { @include font-size(14); font-weight: $font__black; }
 
+h1, h2, h3, h4, h5, h6 { &.no-margin { margin:0; } }
 
 //  In hero-banner, h1 looks the same as H5, H2 is same as H1 but light font weight

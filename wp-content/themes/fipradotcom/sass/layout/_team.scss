@@ -1,0 +1,107 @@
+.team-group {
+
+  .row-of-1 {
+    .team-member {
+      @include media($media__large) {
+        @include span-columns(12);
+        @include omega(1n);
+      }
+      .team-member-content {
+        @include media($media__large) { min-height:em(300px); }
+      }
+    }
+  }
+
+  .row-of-2 {
+    .team-member {
+      @include media($media__large) {
+        @include span-columns(6);
+        @include omega(2n);
+      }
+      .team-member-content {
+        @include media($media__large) { min-height:em(300px); }
+      }
+    }
+    @include media($media__medium) {
+      .shift-half-col { @include shift(3); }
+      .shift-1-col { @include shift(6); }
+    }
+  }
+
+  .row-of-3 {
+    .team-member {
+      @include media($media__large) {
+        @include span-columns(4);
+        @include omega(3n);
+      }
+      .team-member-content {
+        @include media($media__large) { min-height:em(400px); }
+      }
+    }
+    @include media($media__medium) {
+      .shift-half-col { @include shift(2); }
+      .shift-1-col { @include shift(4); }
+      .shift-2-col { @include shift(8); }
+    }
+  }
+
+  .row-of-4 {
+    .team-member {
+      @include media($media__large) {
+        @include span-columns(3);
+        @include omega(4n);
+      }
+      .team-member-content {
+        @include media($media__large) { min-height:em(450px); }
+      }
+    }
+    @include media($media__medium) {
+      .shift-half-col { @include shift(1.5); }
+      .shift-1-col { @include shift(3); }
+      .shift-2-col { @include shift(6); }
+      .shift-3-col { @include shift(9); }
+    }
+  }
+
+  .team-member {
+    position:relative;
+    @include clearfix();
+    @include border-left-radius(4px);
+    @include border-right-radius(4px);
+    @include font-size(18);
+    padding:$v-rhythm * 1.5 em(12px);
+    margin-bottom: $v-rhythm * 2;
+    background: $color__fipra-light-gray;
+    @include background(linear-gradient($color__fipra-light-gray 0%, lighten($color__fipra-light-gray, 6%) 70%));
+
+    p { @include font-size(14); margin-bottom:$v-rhythm; }
+    h5 {@include font-size(18); }
+    h6 { margin-bottom:$v-rhythm / 2; }
+    img {
+      @include media(max-width $media__small) { max-width:200px; margin-bottom:$v-rhythm; }
+    }
+
+    ul.team-member-expertise {
+      list-style: none;
+      li { float:left; margin-right:em(6px); margin-bottom:$v-rhythm / 2; @include font-size(18);
+        a {
+          display:block;
+          width:em(35px);
+          height:em(35px);
+          text-align: center;
+          background-color:$color__fipra-turquoise;
+//          @include background(linear-gradient($color__fipra-turquoise 50%, darken($color__fipra-turquoise, 5%) 90%));
+          @include border-top-radius(50%);
+          @include border-bottom-radius(50%);
+          color:white;
+          &:hover {
+            background-color: $color__fipra-blue-gray;
+//            @include background(linear-gradient($color__fipra-blue-gray 50%, darken($color__fipra-blue-gray, 5%) 90%));
+          }
+        }
+      }
+    }
+
+  }
+
+}

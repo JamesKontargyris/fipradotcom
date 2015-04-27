@@ -61,9 +61,52 @@ get_header(); ?>
 
                     <h4 id="our-team">Our Team</h4>
 
+                    <div class="team-group">
+                        <div class="row-of-1">
+                            <div class="team-member">
+                                <div class="col-2-s col-3-xs col-12-xxs no-bottom-margin">
+                                    <img src="<?= get_template_directory_uri(); ?>/img/300.gif" alt="Peter-Carlo Lehrell" />
+                                </div>
+                                <div class="col-10-s col-9-xs col-12-xxs no-bottom-margin">
+                                    <h5><a href="#">Peter-Carlo Lehrell</a></h5>
+                                    <div class="team-member-bio">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor ullamcorper eu tristique risus. Nulla consequat volutpat augue a elementum.
+                                            <a href="#">Full&nbsp;profile<i class="icon-right-open"></i></a></p>
+                                    </div>
+                                    <h6>Expertise</h6>
+                                    <ul class="team-member-expertise">
+                                        <li><a href="#"><i class="icon-plane"></i></a></li>
+                                        <li><a href="#"><i class="icon-industrial-building"></i></a></li>
+                                        <li><a href="#"><i class="icon-lightbulb"></i></a></li>
+                                        <li><a href="#"><i class="icon-bank"></i></a></li>
+                                        <li><a href="#"><i class="icon-monitor"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="col-2-s col-3-xs col-12-xxs no-bottom-margin">
+                                    <img src="<?= get_template_directory_uri(); ?>/img/300.gif" alt="Peter-Carlo Lehrell" />
+                                </div>
+                                <div class="col-10-s col-9-xs col-12-xxs no-bottom-margin">
+                                    <h5><a href="#">Peter-Carlo Lehrell</a></h5>
+                                    <div class="team-member-bio">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor ullamcorper eu tristique risus. Nulla consequat volutpat augue a elementum.
+                                            <a href="#">Full&nbsp;profile<i class="icon-right-open"></i></a></p>
+                                    </div>
+                                    <h6>Expertise</h6>
+                                    <ul class="team-member-expertise">
+                                        <li><a href="#"><i class="icon-plane"></i></a></li>
+                                        <li><a href="#"><i class="icon-industrial-building"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <h4 id="our-location">Our Location</h4>
                     <div class="row">
-                        <div class="col-8-m"><img src="http://placehold.it/700x400&text=Map" alt="Map"/></div>
+                        <div class="col-8-m"><img src="<?= get_template_directory_uri(); ?>/img/600x400.gif" alt="Map Placeholder" /></div>
                         <div class="col-4-m">
                             <address>
                                 Address Line 1 <br/>
@@ -82,17 +125,20 @@ get_header(); ?>
             <div id="secondary" class="content-area">
                 <h5 id="get-in-touch">Get in Touch</h5>
                 <div class="sidebar-contact">
-                    <div class="col-3-s no-margin">
-                        <img src="http://placehold.it/100x100" alt="Peter-Carlo Lehrell"/>
+                    <div class="col-12-m col-4-xs col-12-xxs no-bottom-margin">
+                        <img src="<?= get_template_directory_uri(); ?>/img/300x150.gif" alt="Peter-Carlo Lehrell" />
                     </div>
-                    <div class="col-9-s no-margin">
-                        <p class="sans-serif no-margin">
-                            <strong class="black"><a href="#">Peter-Carlo Lehrell</a></strong><br/>
-                            <strong>Chairman, Fipra International</strong><br/>
+                    <div class="col-12-m col-8-xs col-12-xxs no-bottom-margin">
+                        <div class="sidebar-contact-content">
+                            <h5 class="no-margin"><a href="#">Peter-Carlo Lehrell</a></h5>
+                            <p class="sans-serif no-bottom-margin">
+
+                                <strong>Chairman, Fipra International</strong><br/>
                             <span class="font-14">Tel. +01234 5678910 <br/>
                             Fax. +01234 5678910 <br/>
                             <a href="mailto:lehrell@fipra.com">lehrell@fipra.com</a></span>
-                        </p>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div><!-- #secondary -->

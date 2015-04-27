@@ -1,6 +1,7 @@
 @import "header";
 @import "footer";
 @import "showcase";
+@import "team";
 @import "hero-banner";
 @import "page-banner";
 @import "page-header";
@@ -44,7 +45,7 @@
   }
 
   .content-area {
-    padding:$v-rhythm * 2 em(20px) 0;
+    padding:$v-rhythm em(20px) 0;
     @include media($media__medium) { padding:$v-rhythm * 2 em(30px) 0; }
     margin:0;
 
@@ -65,15 +66,29 @@
 
 //Column classes
 @for $i from 1 through $grid-columns {
-  .col-#{$i}-s {
+  .col-#{$i}-xxs {
+    @include media(max-width $media__small) { @include span-columns($i); }
+    margin-bottom:$v-rhythm * 2;
+    &.no-margin { margin:0; }
+    &.no-bottom-margin { margin-bottom:0; }
+  }
+  .col-#{$i}-xs {
     @include media(max-width $media__medium) { @include span-columns($i); }
     margin-bottom:$v-rhythm * 2;
     &.no-margin { margin:0; }
+    &.no-bottom-margin { margin-bottom:0; }
+  }
+  .col-#{$i}-s {
+    @include media($media__medium) { @include span-columns($i); }
+    margin-bottom:$v-rhythm * 2;
+    &.no-margin { margin:0; }
+    &.no-bottom-margin { margin-bottom:0; }
   }
   .col-#{$i}-m {
     @include media($media__medium) { @include span-columns($i); }
     margin-bottom:$v-rhythm * 2;
     &.no-margin { margin:0; }
+    &.no-bottom-margin { margin-bottom:0; }
   }
   .col-#{$i}-l {
     @include media($media__large) { @include span-columns($i); }
@@ -83,6 +98,7 @@
   .col-#{$i}-xl { @include media($media__large) { @include span-columns($i); }
     margin-bottom:$v-rhythm * 2;
     &.no-margin { margin:0; }
+    &.no-bottom-margin { margin-bottom:0; }
   }
 }
 

@@ -49,12 +49,16 @@
     @include border-top-radius(4px);
     @include border-bottom-radius(4px);
     margin-bottom:$v-rhythm;
-    border:1px solid $color__fipra-light-gray;
-    background-color: lighten($color__fipra-light-gray, 5%);
-//    @include background(linear-gradient(lighten($color__fipra-periwinkle, 12%) 0%, lighten($color__fipra-periwinkle, 7%) 100%));
-    padding:$v-rhythm em(12px);
-    @include media(max-width $media__medium) {
-      img { width:90%; }
+    background: $color__fipra-light-gray;
+    @include background(linear-gradient($color__fipra-light-gray 0%, lighten($color__fipra-light-gray, 6%) 70%));
+
+    .sidebar-contact-content, img { padding:$v-rhythm em(12px) 0; }
+
+    img {
+      @include media(max-width $media__small) { max-width:200px; }
+      @include media($media__medium) {
+        padding:0; max-width:100%; @include border-top-radius(4px);
+      }
     }
   }
 }

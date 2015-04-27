@@ -37,7 +37,7 @@
         padding: ($v-rhythm * 2) 0 $v-rhythm - rem(4px);
       }
 
-      &:hover > a, &.focus > a { color: $color__fipra-blue; }
+      &:hover > a, &.focus > a { color: $color__fipra-turquoise; }
     }
 
     // Start of second level
@@ -62,7 +62,7 @@
         line-height:$v-rhythm * 1.5;
         width: 100%;
         &:hover > ul, &.focus > ul { left: 100%; }
-        &:hover { background-color: $color__fipra-periwinkle; }
+        &:hover { background-color: lighten($color__fipra-turquoise, 53%); }
         a { display: block; padding: $v-rhythm / 2 em(24px); }
         &.current-menu-item > a,
         &.current-page-ancestor > a {
