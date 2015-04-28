@@ -334,6 +334,8 @@ address {
   font-style: normal;
   font-weight: 700;
   margin: 0 0 1.5rem 0; }
+  address.no-bottom-margin {
+    margin-bottom: 0; }
 
 pre {
   background: #eef0f6;
@@ -373,7 +375,8 @@ dt {
 p.lead {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
   font-size: 18px;
-  font-size: 1.125rem; }
+  font-size: 1.125rem;
+  line-height: 2.25rem; }
 p.center {
   text-align: center; }
 @media screen and (min-width: 769px) {
@@ -402,7 +405,6 @@ blockquote, q {
 
 blockquote {
   position: relative;
-  margin-left: -30px;
   margin-top: 2.25rem;
   background-color: #d0f4fa;
   background-color: #e3f8fc;
@@ -416,27 +418,6 @@ blockquote {
   font-size: 1.125rem;
   line-height: 1.65rem;
   font-style: normal; }
-  @media screen and (min-width: 769px) {
-    blockquote {
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px; } }
-  @media screen and (max-width: 769px)  {
-    blockquote {
-      margin-right: -20px; } }
-  blockquote .triangle {
-    display: none;
-    position: absolute;
-    bottom: -11px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 10px 10px 0;
-    border-color: transparent rgba(20, 177, 204, 0.4) transparent transparent;
-    -webkit-transform: rotate(360deg); }
-    @media screen and (min-width: 769px) {
-      blockquote .triangle {
-        display: block; } }
   blockquote .quotemark {
     font-size: 32px;
     font-size: 2rem;
@@ -445,7 +426,7 @@ blockquote {
       blockquote .quotemark {
         font-size: 60px;
         font-size: 3.75rem;
-        text-align: right; } }
+        text-align: left; } }
   @media screen and (max-width: 769px)  {
     blockquote img {
       max-width: 70px; } }
@@ -460,6 +441,41 @@ blockquote {
     font-size: 0.8125rem;
     font-style: normal;
     line-height: 1.125rem; }
+  blockquote .triangle {
+    display: none;
+    position: absolute;
+    bottom: -11px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -webkit-transform: rotate(360deg); }
+    @media screen and (min-width: 769px) {
+      blockquote .triangle {
+        display: block; } }
+  blockquote.left {
+    margin-left: -50px;
+    margin-right: -50px; }
+    @media screen and (min-width: 769px) {
+      blockquote.left {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-right: 0px; } }
+    blockquote.left .triangle {
+      left: 0;
+      border-width: 0 10px 10px 0;
+      border-color: transparent rgba(20, 177, 204, 0.4) transparent transparent; }
+  blockquote.right {
+    margin-left: -50px;
+    margin-right: -50px; }
+    @media screen and (min-width: 769px) {
+      blockquote.right {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        margin-left: 0px; } }
+    blockquote.right .triangle {
+      right: 0;
+      border-width: 10px 10px 0 0;
+      border-color: rgba(20, 177, 204, 0.4) transparent transparent transparent; }
 
 hr {
   background-color: #ebebeb;
@@ -531,25 +547,25 @@ dt {
 dd {
   margin: 0 1.5rem 1.5em; }
 
-table {
+table:not(.no-style) {
   margin: 0 0 1.5em;
   width: 100%;
   font-family: 'Lato', Arial, Helvetica, sans-serif;
   text-align: left;
   border: 1px solid #ccd3e5; }
-  table thead {
+  table:not(.no-style) thead {
     border: 1px solid #00257f;
     font-weight: 900;
     background-color: #00257f;
     color: white; }
-    table thead tr th {
+    table:not(.no-style) thead tr th {
       padding: 0.5rem 0.625em;
       border-right: 1px solid #566da9; }
-      table thead tr th:last-child {
+      table:not(.no-style) thead tr th:last-child {
         border-right: 0; }
-  table tbody tr td, table tbody tr th {
+  table:not(.no-style) tbody tr td, table:not(.no-style) tbody tr th {
     padding: 0.5rem 0.625em; }
-  table tbody tr:nth-child(even) {
+  table:not(.no-style) tbody tr:nth-child(even) {
     background-color: #eef0f6; }
 
 .btn, .btn:link, .btn:visited {
@@ -575,12 +591,16 @@ table {
     margin: 0; }
   .btn.primary, .btn:link.primary, .btn:visited.primary {
     background-color: #00257f;
+    background-image: -webkit-linear-gradient(#00257f 60%, #00164c 100%);
+    background-image: linear-gradient(#00257f 60%, #00164c 100%);
     color: white;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
     text-shadow: 0px -1px 0px black; }
     .btn.primary:hover, .btn:link.primary:hover, .btn:visited.primary:hover {
-      background-color: #5F697F; }
+      background-color: #5F697F;
+      background-image: -webkit-linear-gradient(bottom, #5F697F 60%, #495162 100%);
+      background-image: linear-gradient(to top,#5F697F 60%, #495162 100%); }
   .btn.secondary, .btn:link.secondary, .btn:visited.secondary {
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid #5F697F;
@@ -592,9 +612,6 @@ table {
       color: #00257f; }
   .btn.full-width, .btn:link.full-width, .btn:visited.full-width {
     display: block; }
-  .btn.btn-small, .btn:link.btn-small, .btn:visited.btn-small {
-    font-size: 12px;
-    font-size: 0.75rem; }
 
 /*--------------------------------------------------------------
 # Layout
@@ -855,7 +872,7 @@ table {
     #footer-container a.primary {
       color: #5F697F;
       text-shadow: none;
-      background-color: white; }
+      background: white; }
       #footer-container a.primary:hover {
         background-color: #cccccc; }
     #footer-container a.secondary {
@@ -1006,6 +1023,21 @@ table {
       background-color: #EBEAE8;
       background-image: -webkit-linear-gradient(#EBEAE8 0%, #f9f9f8 70%);
       background-image: linear-gradient(#EBEAE8 0%, #f9f9f8 70%); }
+      .showcase .showcase-block.bg.blue {
+        background-color: #002b93;
+        background-image: -webkit-linear-gradient(bottom, #002b93 0, #001f6b 100%);
+        background-image: linear-gradient(to top,#002b93 0, #001f6b 100%);
+        color: white; }
+        .showcase .showcase-block.bg.blue .circle-icon {
+          color: #00257f; }
+        .showcase .showcase-block.bg.blue .highlight-box {
+          background: #00164c;
+          border-top: 1px solid #001342;
+          color: white; }
+          .showcase .showcase-block.bg.blue .highlight-box a {
+            color: white; }
+            .showcase .showcase-block.bg.blue .highlight-box a:hover {
+              color: #0034b2; }
       .showcase .showcase-block.bg.orange {
         background-color: #ffac14;
         background-image: -webkit-linear-gradient(bottom, #ffac14 0, #eb9800 100%);
@@ -1051,7 +1083,7 @@ table {
             color: white; }
             .showcase .showcase-block.bg.turquoise .highlight-box a:hover {
               color: #29ceea; }
-      .showcase .showcase-block.bg.orange h3, .showcase .showcase-block.bg.orange h4, .showcase .showcase-block.bg.violet h3, .showcase .showcase-block.bg.violet h4, .showcase .showcase-block.bg.turquoise h3, .showcase .showcase-block.bg.turquoise h4 {
+      .showcase .showcase-block.bg.blue h3, .showcase .showcase-block.bg.blue h4, .showcase .showcase-block.bg.orange h3, .showcase .showcase-block.bg.orange h4, .showcase .showcase-block.bg.violet h3, .showcase .showcase-block.bg.violet h4, .showcase .showcase-block.bg.turquoise h3, .showcase .showcase-block.bg.turquoise h4 {
         color: white; }
     .showcase .showcase-block.outline {
       border: 1px solid #EBEAE8; }
@@ -1119,6 +1151,18 @@ table {
       margin-left: 34.11922%; }
     .showcase .row-of-3 .shift-2-col {
       margin-left: 68.23843%; } }
+  @media screen and (min-width: 481px) and (max-width: 940px)  {
+    .showcase .row-of-4 .showcase-block {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      .showcase .row-of-4 .showcase-block:last-child {
+        margin-right: 0; }
+      .showcase .row-of-4 .showcase-block:nth-child(2n) {
+        margin-right: 0; }
+      .showcase .row-of-4 .showcase-block:nth-child(2n+1) {
+        clear: left; } }
   @media screen and (min-width: 940px) {
     .showcase .row-of-4 .showcase-block {
       float: left;
@@ -1452,7 +1496,7 @@ table {
   .hero-banner.light-text .btn.primary {
     text-shadow: none;
     color: #00257f;
-    background-color: white; }
+    background: white; }
   .hero-banner.light-text .btn.secondary {
     color: white;
     border-color: white; }
@@ -1532,7 +1576,7 @@ table {
     clear: both;
     content: "";
     display: table; }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 940px) {
     #page-banner {
       border-top-left-radius: 4px;
       border-top-right-radius: 4px; } }
@@ -1550,13 +1594,13 @@ table {
       display: table; }
     @media screen and (min-width: 481px) {
       #page-banner #page-banner-content {
-        padding: 4.5rem 2.5em; } }
+        padding: 4.5rem 1.25em; } }
     @media screen and (min-width: 940px) {
       #page-banner #page-banner-content {
-        padding: 6rem 2.5em; } }
+        padding: 6rem 1.25em; } }
     @media screen and (min-width: 1200px) {
       #page-banner #page-banner-content {
-        padding: 7.5rem 2.5em; } }
+        padding: 7.5rem 1.25em; } }
     #page-banner #page-banner-content a {
       display: inline;
       margin-right: 1em; }
@@ -1581,8 +1625,6 @@ table {
     #page-banner #page-banner-content.dark-text h1, #page-banner #page-banner-content.dark-text .lead {
       color: #222;
       text-shadow: 0px 1px 1px #EBEAE8; }
-    #page-banner #page-banner-content.dark-text .btn.primary {
-      text-shadow: 0px 1px 3px #0034b2; }
     #page-banner #page-banner-content.dark-text .btn.secondary {
       border: 1px solid #00257f;
       color: #00257f; }
@@ -2155,11 +2197,16 @@ table {
       padding-top: 1.5rem;
       border-top: 1px solid #e6e6e6; }
   #content-container .content-area {
-    padding: 1.5rem 1.25em 0;
+    padding: 1.5rem 2.5em 0;
     margin: 0; }
+  @media screen and (min-width: 769px) {
+    #content-container #primary ~ #secondary.content-area {
+      padding-left: 0; }
+    #content-container #secondary ~ #primary.content-area {
+      padding-left: 0; } }
 
 .page-nav {
-  padding: 0.75rem 1.25em; }
+  padding: 0.75rem 2.5em; }
   @media screen and (min-width: 769px) {
     .page-nav {
       background-color: #eef0f6;
@@ -3970,49 +4017,52 @@ embed, iframe, object {
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
-#page-banner-content.unit {
+#page-banner.unit #page-banner-content {
   text-align: center; }
-  #page-banner-content.unit h1 {
+  #page-banner.unit #page-banner-content h1 {
     font-size: 30px;
     font-size: 1.875rem; }
-  #page-banner-content.unit .meta {
+  #page-banner.unit #page-banner-content .meta {
     font-style: italic;
     margin-bottom: 0.75rem; }
-  #page-banner-content.unit img {
+  #page-banner.unit #page-banner-content img {
     display: none;
     width: 70px;
     margin-bottom: 0.75rem; }
   @media screen and (min-width: 481px) {
-    #page-banner-content.unit h1 {
+    #page-banner.unit #page-banner-content h1 {
       font-size: 36px;
       font-size: 2.25rem;
       letter-spacing: -1px; }
-    #page-banner-content.unit img {
+    #page-banner.unit #page-banner-content img {
       display: inline-block; } }
   @media screen and (min-width: 769px) {
-    #page-banner-content.unit {
+    #page-banner.unit #page-banner-content {
       text-align: left; }
-      #page-banner-content.unit h1 {
+      #page-banner.unit #page-banner-content h1 {
         font-size: 56px;
         font-size: 3.5rem; } }
+  @media screen and (min-width: 769px) {
+    #page-banner.unit #page-banner-content {
+      padding: 10.5rem 2.5em 1.5rem !important; } }
   @media screen and (min-width: 940px) {
-    #page-banner-content.unit {
+    #page-banner.unit #page-banner-content {
       padding: 13.5rem 2.5em 1.5rem !important; } }
-  #page-banner-content.unit.dark-text h1 {
+  #page-banner.unit #page-banner-content.dark-text h1 {
     color: #00257f !important;
     text-shadow: 0px 1px 1px #EBEAE8 !important; }
-  #page-banner-content.unit.dark-text h2 {
+  #page-banner.unit #page-banner-content.dark-text h2 {
     color: #00257f; }
-  #page-banner-content.unit.dark-text .meta {
+  #page-banner.unit #page-banner-content.dark-text .meta {
     color: black; }
-  #page-banner-content.unit.dark-text img {
+  #page-banner.unit #page-banner-content.dark-text img {
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2); }
-  #page-banner-content.unit.dark-text .btn.primary {
+  #page-banner.unit #page-banner-content.dark-text .btn.primary {
     text-shadow: 0px 1px 3px #0034b2; }
-  #page-banner-content.unit.dark-text .btn.secondary {
+  #page-banner.unit #page-banner-content.dark-text .btn.secondary {
     border: 1px solid #00257f;
     color: #00257f; }
-    #page-banner-content.unit.dark-text .btn.secondary:hover {
+    #page-banner.unit #page-banner-content.dark-text .btn.secondary:hover {
       border: 1px solid #5F697F;
       color: #5F697F; }
 
@@ -4057,3 +4107,95 @@ embed, iframe, object {
       border-bottom-right-radius: 4px; }
       #secondary ul.country-list li a:hover {
         background-color: #EBEAE8; }
+
+#page-banner.profile {
+  background-position: 0 0, bottom left 0.625em, top left, 0 0;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  background-size: contain, auto 95%, contain, 400px 324px; }
+  @media screen and (max-width: 481px)  {
+    #page-banner.profile {
+      background-image: -webkit-linear-gradient(top, rgba(125, 125, 125, 0) 90%, rgba(125, 125, 125, 0.2) 100%), url('img/grey_@2X.png');
+      background-image: linear-gradient(to bottom, rgba(125, 125, 125, 0) 90%, rgba(125, 125, 125, 0.2) 100%), url('img/grey_@2X.png');
+      background-size: contain, 400px 324px;
+      background-position: 0 0, 0 0;
+      background-repeat: no-repeat, repeat;
+      text-align: center; } }
+  @media screen and (min-width: 769px) {
+    #page-banner.profile {
+      background-position: 0 0, bottom left 2.5em, top left, 0 0;
+      background-size: contain, auto 90%, contain, 794px 644px; } }
+  #page-banner.profile #page-banner-content .profile-header-content {
+    padding: 0 1.25em 0 0; }
+    @media screen and (min-width: 481px) {
+      #page-banner.profile #page-banner-content .profile-header-content {
+        margin-left: 34.11922%; } }
+    #page-banner.profile #page-banner-content .profile-header-content h1 {
+      text-shadow: none !important;
+      margin-bottom: 0.75rem;
+      letter-spacing: -1px;
+      font-size: 28px;
+      font-size: 1.75rem;
+      line-height: 2.25rem; }
+      @media screen and (min-width: 769px) {
+        #page-banner.profile #page-banner-content .profile-header-content h1 {
+          font-size: 42px;
+          font-size: 2.625rem;
+          margin-bottom: 1.125rem; } }
+    #page-banner.profile #page-banner-content .profile-header-content h2 {
+      text-shadow: none !important;
+      margin-bottom: 1.5rem;
+      font-size: 18px;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      font-weight: 700; }
+      @media screen and (min-width: 940px) {
+        #page-banner.profile #page-banner-content .profile-header-content h2 {
+          font-size: 26px;
+          font-size: 1.625rem;
+          font-weight: 400;
+          letter-spacing: -1px; } }
+  @media screen and (max-width: 769px)  {
+    #page-banner.profile #page-banner-content {
+      padding: 2.25rem 1.25em !important; } }
+  @media screen and (min-width: 940px) {
+    #page-banner.profile #page-banner-content {
+      padding: 7.5rem 1.25em !important; } }
+  #page-banner.profile #page-banner-content.dark-text h1 {
+    color: #222 !important; }
+  #page-banner.profile #page-banner-content.dark-text h2 {
+    color: #00257f; }
+  #page-banner.profile #page-banner-content.dark-text .btn.secondary {
+    border: 1px solid #00257f;
+    color: #00257f; }
+    #page-banner.profile #page-banner-content.dark-text .btn.secondary:hover {
+      border: 1px solid #5F697F;
+      color: #5F697F; }
+
+.profile-content-area p.lead {
+  color: #00257f;
+  line-height: 1.875rem; }
+  @media screen and (min-width: 481px) {
+    .profile-content-area p.lead {
+      font-size: 22px;
+      font-size: 1.375rem;
+      line-height: 2.25rem; } }
+
+.profile-expertise-showcase .showcase-block {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
+  .profile-expertise-showcase .showcase-block:hover {
+    opacity: 0.7; }
+.profile-expertise-showcase h3 {
+  margin: 0;
+  font-weight: 400 !important;
+  font-size: 18px;
+  font-size: 1.125rem; }
+
+#secondary ul.languages-list {
+  list-style: none; }
+  #secondary ul.languages-list li {
+    float: left; }
+    #secondary ul.languages-list li:not(:last-child) {
+      margin-right: 0.75em; }
+    #secondary ul.languages-list li .languages-list-flag {
+      width: 2.5em; }

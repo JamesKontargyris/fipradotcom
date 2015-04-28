@@ -23,9 +23,6 @@ blockquote, q {
 
 blockquote {
   position:relative;
-  margin-left:-30px;
-  @include media($media__medium) { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
-  @include media(max-width $media__medium) { margin-right:-20px; }
   margin-top:$v-rhythm * 3;
   background-color: lighten($color__fipra-turquoise, 46%);
   @include linear-gradient(lighten($color__fipra-turquoise, 50%) 0, lighten($color__fipra-turquoise, 42%) 100%);
@@ -37,28 +34,36 @@ blockquote {
   line-height: $v-rhythm * 2.2;
   font-style: normal;
 
-  .triangle {
-    display:none;
-    @include media($media__medium) { display:block; }
-    position:absolute;
-    bottom:-11px;
-    left:0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 10px 10px 0;
-    border-color: transparent rgba($color__fipra-turquoise, 0.4) transparent transparent;
-//    border-style: inset;
-    -webkit-transform:rotate(360deg);
-  }
-
-  .quotemark { @include font-size(32); color:rgba($color__fipra-blue, 0.1); @include media($media__medium) { @include font-size(60); text-align: right; } }
+  .quotemark { @include font-size(32); color:rgba($color__fipra-blue, 0.1); @include media($media__medium) { @include font-size(60); text-align: left; } }
 
   img { @include media(max-width $media__medium) { max-width:70px; } }
 
   p { margin-bottom:$v-rhythm; }
 
   .author { color:$color__fipra-blue-gray; font-weight:$font__black; text-transform: uppercase; margin:0; @include font-size(13);  font-style: normal; line-height: $v-rhythm * 1.5; }
+
+  .triangle {
+    display:none;
+    @include media($media__medium) { display:block; }
+    position:absolute;
+    bottom:-11px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    //    border-style: inset;
+    -webkit-transform:rotate(360deg);
+  }
+
+  &.left {
+    margin-left:-50px; margin-right:-50px;
+    @include media($media__medium) { border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin-right:0px; }
+    .triangle { left:0; border-width: 0 10px 10px 0; border-color: transparent rgba($color__fipra-turquoise, 0.4) transparent transparent; }
+  }
+  &.right {
+    margin-left:-50px; margin-right:-50px;
+    @include media($media__medium) { border-top-left-radius: 10px; border-bottom-left-radius: 10px; margin-left:0px; }
+    .triangle { right:0; border-width: 10px 10px 0 0; border-color: rgba($color__fipra-turquoise, 0.4) transparent transparent transparent; }
+  }
 
 }
 

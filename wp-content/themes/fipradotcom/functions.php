@@ -126,6 +126,10 @@ function fipradotcom_scripts()
         get_template_directory_uri() . '/fonts/fontello/css/iconfonts.css'
     );
     wp_enqueue_style(
+        'fipradotcom-tooltipster',
+        get_template_directory_uri() . '/css/tooltipster.css'
+    );
+    wp_enqueue_style(
         'fipradotcom-jquery-modal',
         get_template_directory_uri() . '/js/jquery-modal/jquery.modal.css'
     );
@@ -159,6 +163,14 @@ function fipradotcom_scripts()
     wp_enqueue_script(
         'fipradotcom-matchheights-js',
         get_template_directory_uri() . '/js/jquery.matchHeight-min.js',
+        array(),
+        '20150428',
+        true
+    );
+
+    wp_enqueue_script(
+        'fipradotcom-tooltipster-js',
+        get_template_directory_uri() . '/js/jquery.tooltipster.min.js',
         array(),
         '20150428',
         true

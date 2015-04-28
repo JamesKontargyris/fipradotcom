@@ -1,4 +1,4 @@
-table {
+table:not(.no-style) {
 	margin: 0 0 1.5em;
 	width: 100%;
   font-family: $font__sans;

@@ -15,13 +15,13 @@
   &.no-margin { margin:0; }
 
   &.primary {
-    background-color: $color__fipra-blue;
+    @include linear-gradient($color__fipra-blue 60%, darken($color__fipra-blue, 10%) 100%);
     color: white;
     @include transition(all 0.2s);
     text-shadow:0px -1px 0px darken($color__fipra-blue, 30%);
 //    border-bottom:2px solid darken($color__fipra-blue, 15%);
     &:hover {
-      background-color: $color__fipra-blue-gray;
+      @include linear-gradient(to top, $color__fipra-blue-gray 60%, darken($color__fipra-blue-gray, 10%) 100%);
     }
   }
 
@@ -38,8 +38,5 @@
 
   &.full-width {
     display:block;
-  }
-  &.btn-small {
-    @include font-size(12);
   }
 }

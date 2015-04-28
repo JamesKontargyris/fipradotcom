@@ -23,6 +23,21 @@
       background: $color__fipra-light-gray;
       @include linear-gradient($color__fipra-light-gray 0%, lighten($color__fipra-light-gray, 6%) 70%);
 
+      &.blue {
+        @include linear-gradient(bottom, lighten($color__fipra-blue, 4%) 0, darken($color__fipra-blue, 4%) 100%);
+        color:white;
+        .circle-icon { color: $color__fipra-blue; }
+        .highlight-box {
+          background:darken($color__fipra-blue, 10%);
+          border-top:1px solid darken($color__fipra-blue, 12%);
+          color:white;
+          a {
+            color:white;
+            &:hover { color: lighten($color__fipra-blue, 10%); }
+          }
+        }
+      }
+
       &.orange {
         @include linear-gradient(bottom, lighten(orange, 4%) 0, darken(orange, 4%) 100%);
         color:white;
@@ -72,7 +87,7 @@
         }
 
       }
-      &.orange, &.violet, &.turquoise { h3, h4 { color: white; } }
+      &.blue, &.orange, &.violet, &.turquoise { h3, h4 { color: white; } }
 
     }
 
@@ -133,12 +148,15 @@
 
   .row-of-4 {
     .showcase-block {
+      @include media(min-width $media__small max-width $media__large) {
+        @include span-columns(6);
+        @include omega(2n);
+      }
       @include media($media__large) {
         @include span-columns(3);
         @include omega(4n);
       }
-      .showcase-block-content {
-      }
+
     }
     @include media($media__large) {
       .shift-half-col { @include shift(1.5); }

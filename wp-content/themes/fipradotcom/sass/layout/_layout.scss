@@ -48,14 +48,30 @@
   }
 
   .content-area {
-    padding:$v-rhythm * 2 em(20px) 0;
+    padding:$v-rhythm * 2 em(40px) 0;
     margin:0;
 
   }
+
+  @include media($media__medium) {
+    #primary ~ #secondary {
+      &.content-area {
+        padding-left:0;
+      }
+
+    }
+
+    #secondary ~ #primary {
+      &.content-area {
+        padding-left:0;
+      }
+    }
+  }
+
 }
 
 .page-nav {
-  padding:$v-rhythm em(20px);
+  padding:$v-rhythm em(40px);
   @include media($media__medium) {
     background-color: lighten($color__fipra-periwinkle, 10%);
     @include linear-gradient(lighten($color__fipra-periwinkle, 12%) 60%, lighten($color__fipra-periwinkle, 7%) 100%);

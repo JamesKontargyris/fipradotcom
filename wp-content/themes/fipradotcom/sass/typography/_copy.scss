@@ -27,6 +27,7 @@ address {
   font-style: normal;
   font-weight: $font__bold;
   margin:0 0 $v-rhythm * 2 0;
+  &.no-bottom-margin { margin-bottom:0; }
 }
 
 pre {
@@ -73,6 +74,7 @@ p {
   &.lead {
     font-family: $font__sans;
     @include font-size(18);
+    line-height: $v-rhythm * 3;
   }
   &.center {
     text-align: center;

@@ -1,0 +1,87 @@
+#page-banner {
+  &.profile {
+    background-position: 0 0, bottom left em(10px), top left, 0 0;
+    background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+    background-size:contain, auto 95%, contain, 400px 324px;
+
+    @include media(max-width $media__small) {
+      background-image: linear-gradient(to bottom, rgba(125, 125, 125, 0) 90%, rgba(125, 125, 125, 0.2) 100%), url('img/grey_@2X.png');
+      background-size:contain, 400px 324px; background-position: 0 0, 0 0; background-repeat:no-repeat, repeat; text-align:center; }
+
+    @include media($media__medium) {
+      background-position: 0 0, bottom left em(40px), top left, 0 0;
+      background-size:contain, auto 90%, contain, 794px 644px;
+    }
+
+    #page-banner-content {
+        .profile-header-content {
+          padding:0 em(20px) 0 0;
+
+          @include media($media__small) { @include shift(4); }
+
+          h1 {
+            text-shadow:none !important;
+            margin-bottom:$v-rhythm;
+            letter-spacing: -1px;
+            @include font-size(28);
+            line-height: $v-rhythm * 3;
+            @include media($media__medium) { @include font-size(42); margin-bottom:$v-rhythm * 1.5; }
+          }
+          h2 {
+            text-shadow:none !important;
+            margin-bottom:$v-rhythm * 2;
+            @include font-size(18);
+            line-height: $v-rhythm * 2;
+            font-weight: $font__bold;
+            @include media($media__large) { @include font-size(26); font-weight: $font__normal; letter-spacing: -1px; }
+          }
+        }
+
+      @include media(max-width $media__medium) { padding:$v-rhythm * 3 em(20px) !important; }
+      @include media($media__large) { padding:$v-rhythm * 10 em(20px) !important; }
+
+        &.dark-text {
+          h1 {
+            color: $color_soft-black !important;
+          }
+          h2 {
+            color: $color__fipra-blue;
+          }
+          .btn.secondary {
+            border:1px solid $color__fipra-blue;
+            color:$color__fipra-blue;
+            &:hover {
+              border:1px solid $color__fipra-blue-gray;
+              color:$color__fipra-blue-gray;
+            }
+          }
+        }
+      }
+    }
+  }
+
+.profile-content-area {
+  p.lead {
+    color:$color__fipra-blue; line-height:$v-rhythm * 2.5;
+    @include media($media__small) { @include font-size(22); line-height:$v-rhythm * 3 }
+  }
+}
+
+.profile-expertise-showcase {
+  .showcase-block {
+    @include transition(all 0.5s);
+    &:hover { opacity:0.7; }
+  }
+  h3 { margin:0; font-weight: $font__normal !important; @include font-size(18); }
+}
+
+#secondary {
+  ul.languages-list {
+    list-style: none;
+
+    li { float:left;
+      &:not(:last-child) { margin-right: em(12px); }
+      .languages-list-flag { width:em(40px); }
+    }
+  }
+}

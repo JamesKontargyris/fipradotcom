@@ -20,8 +20,8 @@ get_header(); ?>
 
         <div id="content" class="site-content">
 
-            <div id="page-banner">
-                <div id="page-banner-content" class="unit light-text">
+            <div id="page-banner" class="unit">
+                <div id="page-banner-content" class="light-text">
                     <div class="col-12-m no-margin">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/flags/united-kingdom.png" alt="Flag" />
                     </div>
@@ -59,7 +59,7 @@ get_header(); ?>
 
                     <p>Aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus. Integer vitae felis egestas, sodales eros ut, luctus erat.</p>
 
-                    <blockquote cite="http://test.com">
+                    <blockquote cite="http://test.com" class="left">
                         <div class="row">
                             <div class="col-2-m col-2-xs no-bottom-margin">
                                 <div class="quotemark">
@@ -95,10 +95,10 @@ get_header(); ?>
                                 <div class="col-3-m col-12-xs top-margin no-bottom-margin">
                                     <h6>Expertise</h6>
                                     <ul class="team-member-expertise">
-                                        <li><a href="#"><i class="icon-plane"></i></a></li>
-                                        <li><a href="#"><i class="icon-industrial-building"></i></a></li>
-                                        <li><a href="#"><i class="icon-lightbulb"></i></a></li>
-                                        <li><a href="#"><i class="icon-bank"></i></a></li>
+                                        <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-plane"></i></a></li>
+                                        <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-industrial-building"></i></a></li>
+                                        <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-lightbulb"></i></a></li>
+                                        <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-bank"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -115,8 +115,8 @@ get_header(); ?>
                                 <div class="col-3-m col-12-xs top-margin no-bottom-margin">
                                     <h6>Expertise</h6>
                                     <ul class="team-member-expertise">
-                                        <li><a href="#"><i class="icon-plane"></i></a></li>
-                                        <li><a href="#"><i class="icon-industrial-building"></i></a></li>
+                                        <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-plane"></i></a></li>
+                                        <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-industrial-building"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
