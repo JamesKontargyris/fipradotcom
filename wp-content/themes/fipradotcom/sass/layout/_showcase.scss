@@ -167,7 +167,9 @@
   }
 
   .row-of-1, .row-of-2, .row-of-3, .row-of-4 {
-    margin-bottom: $v-rhythm * 3;
+    @include clearfix;
+    margin-bottom: $v-rhythm * 2;
+    &:last-child { margin-bottom:0; }
 
     .showcase-block.full-width {
       @include span-columns(12);

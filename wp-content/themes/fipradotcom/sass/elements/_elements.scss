@@ -34,7 +34,11 @@ blockquote {
   line-height: $v-rhythm * 2.2;
   font-style: normal;
 
-  .quotemark { @include font-size(32); color:rgba($color__fipra-blue, 0.1); @include media($media__medium) { @include font-size(60); text-align: left; } }
+  .quotemark {
+    @include font-size(32); color:rgba($color__fipra-blue, 0.1);
+    @include media($media__medium) { @include font-size(60); text-align: left; }
+    img { width:90%; }
+  }
 
   img { @include media(max-width $media__medium) { max-width:70px; } }
 

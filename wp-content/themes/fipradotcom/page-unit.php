@@ -61,13 +61,14 @@ get_header(); ?>
 
                     <blockquote cite="http://test.com" class="left">
                         <div class="row">
-                            <div class="col-2-m col-2-xs no-bottom-margin">
+                            <div class="col-1-m col-2-xs no-bottom-margin">
                                 <div class="quotemark">
-                                    <i class="icon-quote-1"></i>
+<!--                                    <i class="icon-quote-1"></i>-->
+                                    <img src="<?= get_template_directory_uri(); ?>/img/quotemark.png" alt="''"/>
                                 </div>
                                 <!--<img src="--><?//= get_template_directory_uri(); ?><!--/img/300.gif" alt="Peter-Carlo Lehrell" />-->
                             </div>
-                            <div class="col-10-m col-10-xs no-bottom-margin">
+                            <div class="col-11-m col-10-xs no-bottom-margin">
                                 <p>Testimonial with quote mark. Can also feature a photo of the author instead of the quote mark.  Quisque a iaculis nisi. Aliquam porta dolor feugiat eleifend elementum.</p>
                                 <footer class="author">
                                     Author Name<br/>Position, Organisation</strong>

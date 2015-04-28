@@ -11,7 +11,7 @@ get_header(); ?>
 /*    Styles to position gradient in correct position over photo */
 /*    Small and Medium Screens */
     #page-banner {
-        background-image: linear-gradient(to bottom, rgba(125, 125, 125, 0) 96%, rgba(125, 125, 125, 0.1) 100%), url('<?php echo get_template_directory_uri(); ?>/img/fipriots/ukko_metsola.gif'), linear-gradient(rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0) 100%), url('<?php echo get_template_directory_uri(); ?>/img/grey_@2X.png');
+        background-image: linear-gradient(to bottom, rgba(125, 125, 125, 0) 94%, rgba(125, 125, 125, 0.2) 100%), url('<?php echo get_template_directory_uri(); ?>/img/fipriots/ukko_metsola.gif'), linear-gradient(rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0) 100%), url('<?php echo get_template_directory_uri(); ?>/img/grey_@2X.png');
 
     }
 
@@ -86,13 +86,14 @@ get_header(); ?>
 
                     <blockquote cite="http://test.com" class="right">
                         <div class="row">
-                            <div class="col-2-m col-2-xs no-bottom-margin">
+                            <div class="col-1-m col-2-xs no-bottom-margin">
                                 <div class="quotemark">
-                                    <i class="icon-quote-1"></i>
+<!--                                    <i class="icon-quote-1"></i>-->
+                                    <img src="<?= get_template_directory_uri(); ?>/img/quotemark.png" alt="''"/>
                                 </div>
                                 <!--<img src="--><?//= get_template_directory_uri(); ?><!--/img/300.gif" alt="Peter-Carlo Lehrell" />-->
                             </div>
-                            <div class="col-9-m col-10-xs no-bottom-margin">
+                            <div class="col-10-m col-10-xs no-bottom-margin">
                                 <p>Testimonial with quote mark. Can also feature a photo of the author instead of the quote mark.  Quisque a iaculis nisi. Aliquam porta dolor feugiat eleifend elementum.</p>
                                 <footer class="author">
                                     Author Name<br/>Position, Organisation</strong>
