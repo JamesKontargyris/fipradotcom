@@ -1,7 +1,7 @@
 #footer-global-network-container {
   clear:both;
   background-color: darken($color__fipra-light-gray, 15%);
-  @include background(linear-gradient(darken($color__fipra-light-gray, 10%) 40%, darken($color__fipra-light-gray, 15%) 100%));
+  @include linear-gradient(darken($color__fipra-light-gray, 10%) 40%, darken($color__fipra-light-gray, 15%) 100%);
   border-top:1px solid darken($color__fipra-light-gray, 25%);
   border-bottom:5px solid $color__fipra-blue-gray;
 
@@ -31,7 +31,7 @@
       width:80%;
       border:0;
       background-color: $color__fipra-light-gray;
-      @include background(linear-gradient(darken($color__fipra-light-gray, 5%) 0%, lighten($color__fipra-light-gray, 5%) 20%));
+      @include linear-gradient(darken($color__fipra-light-gray, 5%) 0%, lighten($color__fipra-light-gray, 5%) 20%);
       border-top:1px solid darken($color__fipra-light-gray, 15%);
       border-bottom:1px solid white;
       background-color: $color__fipra-light-gray;
@@ -51,7 +51,7 @@
   font-family:$font__sans;
   color:lighten($color__fipra-blue-gray, 45%);
   background-color: lighten($color__fipra-blue-gray, 10%);
-  @include background(linear-gradient(lighten($color__fipra-blue-gray, 5%) 0%, $color__fipra-blue-gray 100%));
+  @include linear-gradient(lighten($color__fipra-blue-gray, 5%) 0%, $color__fipra-blue-gray 100%);
 
   h5 { color:lighten($color__fipra-blue-gray, 30%); }
   a {
@@ -99,7 +99,7 @@
   font-family: $font__sans;
   @include font-size(12);
   background-color: darken($color__fipra-blue-gray, 12%);
-  @include background(linear-gradient(darken($color__fipra-blue-gray, 12%) 80%, darken($color__fipra-blue-gray, 16%) 100%));
+  @include linear-gradient(darken($color__fipra-blue-gray, 12%) 80%, darken($color__fipra-blue-gray, 16%) 100%);
 
   .site-info {
     a {

@@ -1,5 +1,5 @@
 .team-group {
-
+  @include clearfix;
   .row-of-1 {
     .team-member {
       @include media($media__large) {
@@ -70,33 +70,35 @@
     @include border-right-radius(4px);
     @include font-size(18);
     padding:$v-rhythm * 1.5 em(12px);
-    margin-bottom: $v-rhythm * 2;
-    background: $color__fipra-light-gray;
-    @include background(linear-gradient($color__fipra-light-gray 0%, lighten($color__fipra-light-gray, 6%) 70%));
+    &:not(:last-child) { margin-bottom: $v-rhythm * 2; }
+    background-color: lighten($color__fipra-light-gray, 5%);
+    @include linear-gradient(lighten($color__fipra-light-gray, 6%) 40%, lighten($color__fipra-light-gray, 3%) 100%);
+//    @include linear-gradient($color__fipra-light-gray 0%, lighten($color__fipra-light-gray, 6%) 70%);
 
-    p { @include font-size(14); margin-bottom:$v-rhythm; }
+    p { @include font-size(14); }
     h5 {@include font-size(18); }
     h6 { margin-bottom:$v-rhythm / 2; }
     img {
-      @include media(max-width $media__small) { max-width:200px; margin-bottom:$v-rhythm; }
+      @include media(max-width $media__medium) { max-width:100px; margin-bottom:$v-rhythm; }
     }
 
     ul.team-member-expertise {
       list-style: none;
-      li { float:left; margin-right:em(6px); margin-bottom:$v-rhythm / 2; @include font-size(18);
+      li { float:left; margin-right:em(6px); margin-bottom:$v-rhythm / 2; @include font-size(16);
         a {
           display:block;
-          width:em(35px);
-          height:em(35px);
+          width:em(30px);
+          height:em(30px);
+          line-height:28px;
           text-align: center;
           background-color:$color__fipra-turquoise;
-//          @include background(linear-gradient($color__fipra-turquoise 50%, darken($color__fipra-turquoise, 5%) 90%));
+//          @include linear-gradient($color__fipra-turquoise 50%, darken($color__fipra-turquoise, 5%) 90%);
           @include border-top-radius(50%);
           @include border-bottom-radius(50%);
           color:white;
           &:hover {
             background-color: $color__fipra-blue-gray;
-//            @include background(linear-gradient($color__fipra-blue-gray 50%, darken($color__fipra-blue-gray, 5%) 90%));
+//            @include linear-gradient($color__fipra-blue-gray 50%, darken($color__fipra-blue-gray, 5%) 90%);
           }
         }
       }

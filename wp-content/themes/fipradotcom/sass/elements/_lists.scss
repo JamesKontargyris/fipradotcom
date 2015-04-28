@@ -6,6 +6,7 @@ ul, ol {
 
 ul {
   list-style: none;
+  &.no-bottom-margin { margin-bottom: 0; }
 
   li:not(.menu-item, #menuzord) {
     padding-left: em(30px);

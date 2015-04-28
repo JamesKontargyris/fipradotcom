@@ -7,6 +7,7 @@
     @include border-left-radius(4px);
     @include border-right-radius(4px);
     margin-bottom: $v-rhythm * 2;
+    &:last-child { margin-bottom: 0; }
 
     h3, h4 { color: $color__fipra-blue; font-weight: $font__black; }
 
@@ -20,10 +21,10 @@
 
     &.bg {
       background: $color__fipra-light-gray;
-      @include background(linear-gradient($color__fipra-light-gray 0%, lighten($color__fipra-light-gray, 6%) 70%));
+      @include linear-gradient($color__fipra-light-gray 0%, lighten($color__fipra-light-gray, 6%) 70%);
 
       &.orange {
-        @include background(linear-gradient(bottom, lighten(orange, 4%) 0, darken(orange, 4%) 100%));
+        @include linear-gradient(bottom, lighten(orange, 4%) 0, darken(orange, 4%) 100%);
         color:white;
         .circle-icon { color: orange; }
         .highlight-box {
@@ -38,7 +39,7 @@
       }
 
       &.violet {
-        @include background(linear-gradient(bottom, lighten($color__fipra-violet, 4%) 0, darken($color__fipra-violet, 4%) 100%));
+        @include linear-gradient(bottom, lighten($color__fipra-violet, 4%) 0, darken($color__fipra-violet, 4%) 100%);
         color:white;
         .circle-icon { color: $color__fipra-violet; }
         .highlight-box {
@@ -55,7 +56,7 @@
       }
 
       &.turquoise {
-        @include background(linear-gradient(bottom, lighten($color__fipra-turquoise, 4%) 0, darken($color__fipra-turquoise, 4%) 100%));
+        @include linear-gradient(bottom, lighten($color__fipra-turquoise, 4%) 0, darken($color__fipra-turquoise, 4%) 100%);
         color:white;
         .circle-icon { color: $color__fipra-turquoise; }
         .highlight-box {
@@ -94,7 +95,6 @@
       }
       .showcase-block-content {
         @include row();
-        @include media($media__large) { min-height:em(300px); }
       }
     }
   }
@@ -107,10 +107,9 @@
       }
       .showcase-block-content {
         @include row();
-        @include media($media__large) { min-height:em(300px); }
       }
     }
-    @include media($media__medium) {
+    @include media($media__large) {
       .shift-half-col { @include shift(3); }
       .shift-1-col { @include shift(6); }
     }
@@ -123,10 +122,9 @@
         @include omega(3n);
       }
       .showcase-block-content {
-        @include media($media__large) { min-height:em(400px); }
       }
     }
-    @include media($media__medium) {
+    @include media($media__large) {
       .shift-half-col { @include shift(2); }
       .shift-1-col { @include shift(4); }
       .shift-2-col { @include shift(8); }
@@ -140,10 +138,9 @@
         @include omega(4n);
       }
       .showcase-block-content {
-        @include media($media__large) { min-height:em(450px); }
       }
     }
-    @include media($media__medium) {
+    @include media($media__large) {
       .shift-half-col { @include shift(1.5); }
       .shift-1-col { @include shift(3); }
       .shift-2-col { @include shift(6); }

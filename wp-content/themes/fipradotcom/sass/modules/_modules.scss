@@ -31,7 +31,7 @@
   }
   &.secondary {
     background-color: darken($color__fipra-light-gray, 10%);
-    @include background(linear-gradient(darken($color__fipra-light-gray, 5%) 0%, $color__fipra-light-gray 70%));
+    @include linear-gradient(darken($color__fipra-light-gray, 5%) 0%, $color__fipra-light-gray 70%);
     padding:$v-rhythm em(16px);
     color:$color_soft-black;
     a {
@@ -104,7 +104,7 @@
 .square-icon {
   @include border-left-radius(4px);
   @include border-right-radius(4px);
-  @include background(linear-gradient(to bottom, white 40%, darken(white, 10%) 80%));
+  @include linear-gradient(to bottom, white 40%, darken(white, 10%) 80%);
 }
 
 .circle-icon, .square-icon {

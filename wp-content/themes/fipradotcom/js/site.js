@@ -51,4 +51,7 @@
     {
         $(this).siblings('li').slideToggle();
     });
+
+//    Set equal heights of content blocks in showcase groups
+    $('.showcase.equal-heights .showcase-block-content').matchHeight();
 })();

@@ -42,11 +42,13 @@
   #secondary {
     @include span-columns(12);
     @include media($media__medium) { @include span-columns(4); }
+    aside {
+      &:not(:first-child) { margin-top:$v-rhythm * 2; padding-top:$v-rhythm * 2; border-top:1px solid darken(white, 10%); }
+    }
   }
 
   .content-area {
-    padding:$v-rhythm em(20px) 0;
-    @include media($media__medium) { padding:$v-rhythm * 2 em(30px) 0; }
+    padding:$v-rhythm * 2 em(20px) 0;
     margin:0;
 
   }
@@ -55,9 +57,8 @@
 .page-nav {
   padding:$v-rhythm em(20px);
   @include media($media__medium) {
-    padding:$v-rhythm em(30px);
     background-color: lighten($color__fipra-periwinkle, 10%);
-    @include background(linear-gradient(lighten($color__fipra-periwinkle, 12%) 60%, lighten($color__fipra-periwinkle, 7%) 100%));
+    @include linear-gradient(lighten($color__fipra-periwinkle, 12%) 60%, lighten($color__fipra-periwinkle, 7%) 100%);
     border-bottom:1px solid darken(white, 13%);
   }
 }
@@ -71,34 +72,41 @@
     margin-bottom:$v-rhythm * 2;
     &.no-margin { margin:0; }
     &.no-bottom-margin { margin-bottom:0; }
+    &.top-margin { margin-top:$v-rhythm * 2; }
   }
   .col-#{$i}-xs {
     @include media(max-width $media__medium) { @include span-columns($i); }
     margin-bottom:$v-rhythm * 2;
     &.no-margin { margin:0; }
     &.no-bottom-margin { margin-bottom:0; }
+    &.top-margin { margin-top:$v-rhythm * 2; }
   }
   .col-#{$i}-s {
     @include media($media__medium) { @include span-columns($i); }
     margin-bottom:$v-rhythm * 2;
     &.no-margin { margin:0; }
     &.no-bottom-margin { margin-bottom:0; }
+    &.top-margin { margin-top:$v-rhythm * 2; }
   }
   .col-#{$i}-m {
     @include media($media__medium) { @include span-columns($i); }
     margin-bottom:$v-rhythm * 2;
     &.no-margin { margin:0; }
     &.no-bottom-margin { margin-bottom:0; }
+    &.top-margin { margin-top:$v-rhythm * 2; }
   }
   .col-#{$i}-l {
     @include media($media__large) { @include span-columns($i); }
     margin-bottom:$v-rhythm * 2;
     &.no-margin { margin:0; }
+    &.no-bottom-margin { margin-bottom:0; }
+    &.top-margin { margin-top:$v-rhythm * 2; }
   }
   .col-#{$i}-xl { @include media($media__large) { @include span-columns($i); }
     margin-bottom:$v-rhythm * 2;
     &.no-margin { margin:0; }
     &.no-bottom-margin { margin-bottom:0; }
+    &.top-margin { margin-top:$v-rhythm * 2; }
   }
 }
 

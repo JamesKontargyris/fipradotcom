@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2 { margin:0 0 $v-rhythm * 2 0; }
 h3, h4 {
   margin:$v-rhythm 0;
-  @include media($media__medium) { margin:$v-rhythm * 2 0; }
+  @include media($media__medium) { margin:$v-rhythm * 3 0 $v-rhythm * 2; }
   &:first-child { margin-top:0; }
 }
 h5, h6 { margin:0 0 $v-rhythm 0; }
@@ -58,15 +58,14 @@ h3 {
 }
 
 h4 {
-  font-weight: $font__bold;
+  font-weight: $font__black;
   @include font-size(21);
   line-height: $v-rhythm * 2;
   color:$color__fipra-blue;
 
 }
 
-h5 { @include font-size(14); font-weight: $font__black; text-transform: uppercase;
-@include media($media__medium) { @include font-size(16); } }
+h5 { @include font-size(16); font-weight: $font__black; text-transform: uppercase; }
 
 h6 { @include font-size(14); font-weight: $font__black; }
 

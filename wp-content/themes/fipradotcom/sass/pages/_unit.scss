@@ -49,15 +49,28 @@
     @include border-top-radius(4px);
     @include border-bottom-radius(4px);
     margin-bottom:$v-rhythm;
-    background: $color__fipra-light-gray;
-    @include background(linear-gradient($color__fipra-light-gray 0%, lighten($color__fipra-light-gray, 6%) 70%));
+    background-color: lighten($color__fipra-light-gray, 5%);
+    @include linear-gradient(lighten($color__fipra-light-gray, 6%) 40%, lighten($color__fipra-light-gray, 3%) 100%);
 
-    .sidebar-contact-content, img { padding:$v-rhythm em(12px) 0; }
+    padding:$v-rhythm em(12px);
 
     img {
-      @include media(max-width $media__small) { max-width:200px; }
-      @include media($media__medium) {
-        padding:0; max-width:100%; @include border-top-radius(4px);
+      @include media($media__medium) { max-width:100px; }
+    }
+  }
+
+  ul.country-list {
+    list-style-type: none;
+    font-family: $font__sans;
+    li {
+      display:block;
+      margin-bottom:$v-rhythm;
+      .country-list-flag { width: em(24px); height:em(16px); margin-right:em(5px); }
+
+      a { display:block; padding:$v-rhythm / 4 em(12px); background-color: lighten($color__fipra-light-gray, 5%);
+        @include linear-gradient(lighten($color__fipra-light-gray, 6%) 40%, lighten($color__fipra-light-gray, 3%) 100%);
+        @include border-top-radius(4px); @include border-bottom-radius(4px);
+        &:hover { background-color: $color__fipra-light-gray; }
       }
     }
   }

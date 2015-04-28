@@ -157,6 +157,14 @@ function fipradotcom_scripts()
     );
 
     wp_enqueue_script(
+        'fipradotcom-matchheights-js',
+        get_template_directory_uri() . '/js/jquery.matchHeight-min.js',
+        array(),
+        '20150428',
+        true
+    );
+
+    wp_enqueue_script(
         'fipradotcom-jquery-modal',
         get_template_directory_uri() . '/js/jquery-modal/jquery.modal.min.js',
         array(),

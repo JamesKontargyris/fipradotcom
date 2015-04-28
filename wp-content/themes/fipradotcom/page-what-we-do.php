@@ -21,7 +21,7 @@
                 <h2 class="center">Public Affairs Services</h2>
                 <p class="center narrow">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pretium ipsum leo, nec faucibus magna finibus congue. Integer nisl tellus, volutpat nec tellus at, ullamcorper finibus lectus. Aliquam erat volutpat.</p>
 
-                <div class="showcase">
+                <div class="showcase equal-heights">
                     <div class="row-of-2">
                         <div class="showcase-block center bg">
                             <div class="showcase-block-content">
@@ -115,13 +115,13 @@
 
                 </div>
 
-                <hr class="medium"/>
+                <hr class="medium hidden no-top-margin"/>
 
                 <a id="areas_of_expertise"></a>
                 <h2 class="center">Areas of Expertise</h2>
                 <p class="center narrow">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pretium ipsum leo, nec faucibus magna finibus congue. Integer nisl tellus, volutpat nec tellus at, ullamcorper finibus lectus. Aliquam erat volutpat.</p>
 
-                <div class="showcase">
+                <div class="showcase equal-heights">
                     <div class="row-of-3">
                         <div class="showcase-block center bg">
                             <div class="showcase-block-content">

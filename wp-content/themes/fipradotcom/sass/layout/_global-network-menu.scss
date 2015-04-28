@@ -2,7 +2,7 @@
   width:100%;
   display:none;
   background-color: $color__fipra-blue;
-  @include background(linear-gradient(lighten($color__fipra-blue, 5%) 0%, $color__fipra-blue 100%));
+  @include linear-gradient(lighten($color__fipra-blue, 5%) 0%, $color__fipra-blue 100%);
 
   #global-network-menu {
     @include outer-container($container__outer-width);
@@ -66,7 +66,7 @@
       &:not(:last-child) { border-right:1px solid desaturate(lighten($color__fipra-blue, 12%), 30%); }
       &:hover {
         background-color:$color__fipra-blue-gray;
-//        @include background(linear-gradient(darken($color__fipra-blue-gray, 20%) 0%, $color__fipra-blue-gray 15%));
+//        @include linear-gradient(darken($color__fipra-blue-gray, 20%) 0%, $color__fipra-blue-gray 15%);
         -webkit-box-shadow: inset 0px 9px 13px -2px darken($color__fipra-blue-gray, 20%);
         -moz-box-shadow: inset 0px 9px 13px -2px darken($color__fipra-blue-gray, 20%);
         box-shadow: inset 0px 9px 13px -2px darken($color__fipra-blue-gray, 20%);
@@ -167,7 +167,7 @@
       z-index: 99;
 //      background-color:$color__fipra-blue-gray;
       background:url('img/global-network-megamenu-bg.png') top right no-repeat $color__fipra-blue-gray;
-//      @include background(linear-gradient($color__fipra-blue-gray 60%, darken($color__fipra-blue-gray, 3%) 100%));
+//      @include linear-gradient($color__fipra-blue-gray 60%, darken($color__fipra-blue-gray, 3%) 100%);
       .country-tag {
         float:left;
         width:18.4%;
@@ -562,7 +562,7 @@
   @include media($media__medium) { display:none; }
   clear:both;
   background-color: darken($color__fipra-light-gray, 15%);
-  @include background(linear-gradient(darken($color__fipra-light-gray, 10%) 40%, darken($color__fipra-light-gray, 15%) 100%));
+  @include linear-gradient(darken($color__fipra-light-gray, 10%) 40%, darken($color__fipra-light-gray, 15%) 100%);
 
   #mobile-header-global-network {
     display:none;
@@ -588,7 +588,7 @@
       width:80%;
       border:0;
       background-color: $color__fipra-light-gray;
-      @include background(linear-gradient(darken($color__fipra-light-gray, 5%) 0%, lighten($color__fipra-light-gray, 5%) 20%));
+      @include linear-gradient(darken($color__fipra-light-gray, 5%) 0%, lighten($color__fipra-light-gray, 5%) 20%);
       border-top:1px solid darken($color__fipra-light-gray, 15%);
       border-bottom:1px solid white;
       background-color: $color__fipra-light-gray;
