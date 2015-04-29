@@ -44,7 +44,7 @@
   }
 }
 
-.circle-icon, .square-icon {
+.circle-icon, .square-icon, .circle-icon-outline {
   display:inline-block;
   margin-bottom:$v-rhythm;
   line-height:55px;
@@ -100,6 +100,15 @@
   @include border-left-radius(50%);
   @include border-right-radius(50%);
   @include background(radial-gradient(to bottom, white 60%, darken(white, 15%) 80%));
+}
+.circle-icon-outline {
+  @include border-left-radius(50%);
+  @include border-right-radius(50%);
+  background:none;
+  box-shadow: none;
+  text-shadow: none;
+  color:white;
+  border:1px solid white;
 }
 .square-icon {
   @include border-left-radius(4px);

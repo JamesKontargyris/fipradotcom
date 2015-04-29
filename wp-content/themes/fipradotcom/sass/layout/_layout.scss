@@ -17,7 +17,7 @@
 
   &.with-border { border-top:3px solid darken(white, 15%); }
   @include media($media__xlarge) {
-    padding:$v-rhythm * 2 0;
+    padding-top:$v-rhythm * 2;
   }
 
   #content {
@@ -55,16 +55,11 @@
 
   @include media($media__medium) {
     #primary ~ #secondary {
-      &.content-area {
-        padding-left:0;
-      }
-
+      &.content-area { padding-left:0; }
     }
 
     #secondary ~ #primary {
-      &.content-area {
-        padding-left:0;
-      }
+      &.content-area { padding-left:0; }
     }
   }
 
@@ -118,7 +113,8 @@
     &.no-bottom-margin { margin-bottom:0; }
     &.top-margin { margin-top:$v-rhythm * 2; }
   }
-  .col-#{$i}-xl { @include media($media__large) { @include span-columns($i); }
+  .col-#{$i}-xl {
+    @include media($media__large) { @include span-columns($i); }
     margin-bottom:$v-rhythm * 2;
     &.no-margin { margin:0; }
     &.no-bottom-margin { margin-bottom:0; }

@@ -8,8 +8,6 @@
 get_header(); ?>
 
 <style>
-/*    Styles to position gradient in correct position over photo */
-/*    Small and Medium Screens */
     #page-banner {
         background-image: url('<?php echo get_template_directory_uri(); ?>/img/tower_bridge.jpg');
     }

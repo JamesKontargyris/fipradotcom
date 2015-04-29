@@ -38,7 +38,7 @@
         }
 
       @include media(max-width $media__medium) { padding:$v-rhythm * 3 em(20px) !important; }
-      @include media($media__large) { padding:$v-rhythm * 10 em(20px) !important; }
+      @include media($media__large) { padding:$v-rhythm * 8 em(20px) !important; }
 
         &.dark-text {
           h1 {
@@ -63,7 +63,7 @@
 .profile-content-area {
   p.lead {
     color:$color__fipra-blue; line-height:$v-rhythm * 2.5;
-    @include media($media__small) { @include font-size(22); line-height:$v-rhythm * 3 }
+    @include media($media__small) { @include font-size(24); line-height:$v-rhythm * 3 }
   }
 }
 
