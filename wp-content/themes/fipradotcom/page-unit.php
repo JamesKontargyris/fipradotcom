@@ -8,10 +8,14 @@
 get_header(); ?>
 
 <style>
+    /*    If dark photo*/
     #page-banner {
-        background-image: url('<?php echo get_template_directory_uri(); ?>/img/tower_bridge.jpg');
+        background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 90%, rgba(0,0,0, 0.3) 100%), linear-gradient(to bottom, rgba(0,37,127, 0.7) 50%, rgba(0,37,127, 0.9) 100%), url('<?php echo get_template_directory_uri(); ?>/img/tower_bridge_orig.jpg');
     }
-
+    /*If light photo*/
+    /*    #page-banner {*/
+    /*        background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 90%, rgba(0,0,0, 0.3) 100%), linear-gradient(to bottom, rgba(255,255,255, 0.7) 0%, rgba(255,255,255, 0.9) 100%), url('*/<?php //echo get_template_directory_uri(); ?>/*/img/tower_bridge.jpg');*/
+    /*    }*/
 </style>
 
 <div id="content-container" class="with-border">
@@ -143,7 +147,7 @@ get_header(); ?>
 
             <div id="secondary" class="content-area">
                 <aside>
-                    <h5 id="get-in-touch">Get in Touch</h5>
+                    <h5 id="get-in-touch">Lead Contact Title</h5>
                     <div class="sidebar-contact">
                         <div class="col-12-m col-4-xs col-12-xxs no-bottom-margin">
                             <img src="<?= get_template_directory_uri(); ?>/img/300.gif" alt="Peter-Carlo Lehrell" />

@@ -253,8 +253,8 @@ h1 {
 h2 {
   font-weight: 700;
   color: #00257f;
-  font-size: 20px;
-  font-size: 1.25rem;
+  font-size: 22px;
+  font-size: 1.375rem;
   line-height: 1.875rem; }
   @media screen and (min-width: 940px) {
     h2 {
@@ -269,7 +269,6 @@ h2 {
       line-height: 2.25rem; } }
   @media screen and (min-width: 940px) {
     h2.feature {
-      font-weight: 400;
       font-size: 38px;
       font-size: 2.375rem;
       line-height: 3rem; } }
@@ -415,7 +414,7 @@ blockquote {
   border-bottom: 2px solid rgba(20, 177, 204, 0.4);
   color: #00257f;
   font-family: 'Lato', Arial, Helvetica, sans-serif;
-  padding: 1.125rem 2.25em 1.125rem 1.875em;
+  padding: 1.125rem 3.125em 1.125rem 3.125em;
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.65rem;
@@ -1590,7 +1589,7 @@ table:not(.no-style) {
     clear: both;
     content: "";
     display: table; }
-  @media screen and (min-width: 940px) {
+  @media screen and (min-width: 1200px) {
     #page-banner {
       border-top-left-radius: 4px;
       border-top-right-radius: 4px; } }
@@ -2142,8 +2141,9 @@ table:not(.no-style) {
     @media screen and (min-width: 940px) {
       #content-container.with-hero-banner {
         background-size: contain; } }
-  #content-container.with-border {
-    border-top: 3px solid #d9d9d9; }
+  @media screen and (min-width: 1200px) {
+    #content-container.with-border {
+      border-top: 3px solid #d9d9d9; } }
   @media screen and (min-width: 1200px) {
     #content-container {
       padding-top: 1.5rem; } }
@@ -2210,19 +2210,38 @@ table:not(.no-style) {
       margin-top: 1.5rem;
       padding-top: 1.5rem;
       border-top: 1px solid #e6e6e6; }
+  #content-container #page-footer {
+    margin-top: 1.5rem;
+    margin-bottom: -1.5rem;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    #content-container #page-footer::after {
+      clear: both;
+      content: "";
+      display: table; }
+    #content-container #page-footer:last-child {
+      margin-right: 0; }
   #content-container .content-area {
     padding: 1.5rem 2.5em 0;
     margin: 0; }
+    @media screen and (max-width: 769px)  {
+      #content-container .content-area {
+        padding: 1.5rem 1.25em 0; } }
   @media screen and (min-width: 769px) {
     #content-container #primary ~ #secondary.content-area {
-      padding-left: 0; }
+      padding-left: 0;
+      margin-right: 0; }
     #content-container #secondary ~ #primary.content-area {
-      padding-left: 0; } }
+      padding-left: 0;
+      margin-right: 0; } }
 
 .page-nav {
-  padding: 0.75rem 2.5em; }
+  padding: 0.75rem 1.25em; }
   @media screen and (min-width: 769px) {
     .page-nav {
+      padding: 0.75rem 2.5em;
       background-color: #eef0f6;
       background-color: #f5f6fa;
       background-image: -webkit-linear-gradient(#f5f6fa 60%, #e4e7f1 100%);
@@ -4042,6 +4061,9 @@ embed, iframe, object {
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
+@media screen and (max-width: 481px)  {
+  #page-banner.unit {
+    background: #00257f !important; } }
 #page-banner.unit #page-banner-content {
   text-align: center; }
   #page-banner.unit #page-banner-content h1 {
@@ -4106,6 +4128,10 @@ embed, iframe, object {
     clear: both;
     content: "";
     display: table; }
+  @media screen and (min-width: 769px) {
+    #secondary .sidebar-contact {
+      margin-right: -2.5em;
+      padding: 0.75rem 3.25em 0.75rem 0.75em; } }
   @media screen and (min-width: 769px) {
     #secondary .sidebar-contact img {
       max-width: 100px; } }
@@ -4225,6 +4251,9 @@ embed, iframe, object {
     #secondary ul.languages-list li .languages-list-flag {
       width: 2.5em; }
 
+@media screen and (max-width: 481px)  {
+  #page-banner.expertise {
+    padding: 0.75rem 1.25em; } }
 #page-banner.expertise #page-banner-content {
   position: relative;
   text-align: center; }
@@ -4241,11 +4270,14 @@ embed, iframe, object {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 65.88078%; }
+      width: 48.82117%; }
       #page-banner.expertise #page-banner-content:last-child {
         margin-right: 0; } }
   #page-banner.expertise #page-banner-content h1 {
     margin-top: -6px; }
+  @media screen and (max-width: 481px)  {
+    #page-banner.expertise #page-banner-content .circle-icon-outline {
+      display: none; } }
   @media screen and (max-width: 769px)  {
     #page-banner.expertise #page-banner-content .circle-icon-outline {
       font-size: 24px;
@@ -4290,11 +4322,11 @@ embed, iframe, object {
         display: block; } }
   @media screen and (min-width: 769px) {
     #page-banner.expertise #page-banner-content {
-      padding: 10.5rem 2.5em 0.75rem !important;
+      padding: 9rem 2.5em 2.25rem !important;
       text-align: left; } }
   @media screen and (min-width: 940px) {
     #page-banner.expertise #page-banner-content {
-      padding: 12rem 2.5em 0.75rem !important; } }
+      padding: 10.5rem 2.5em 2.25rem !important; } }
   #page-banner.expertise #page-banner-content.dark-text h1 {
     color: #222 !important; }
   #page-banner.expertise #page-banner-content.dark-text h2 {
@@ -4333,28 +4365,65 @@ embed, iframe, object {
     content: "";
     display: table; }
   @media screen and (min-width: 769px) {
+    #secondary .sidebar-contact {
+      margin-right: -2.5em;
+      padding: 0.75rem 3.25em 0.75rem 0.75em; } }
+  @media screen and (min-width: 769px) {
     #secondary .sidebar-contact img {
       max-width: 100px; } }
-#secondary ul.country-list {
-  list-style-type: none;
-  font-family: 'Lato', Arial, Helvetica, sans-serif; }
-  #secondary ul.country-list li {
-    display: block;
-    margin-bottom: 0.75rem; }
-    #secondary ul.country-list li .country-list-flag {
-      width: 1.5em;
-      height: 1em;
-      margin-right: 0.3125em; }
-    #secondary ul.country-list li a {
-      display: block;
-      padding: 0.1875rem 0.75em;
-      background-color: #f7f6f6;
-      background-color: #f9f9f8;
-      background-image: -webkit-linear-gradient(#f9f9f8 40%, #f2f1f0 100%);
-      background-image: linear-gradient(#f9f9f8 40%, #f2f1f0 100%);
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px; }
-      #secondary ul.country-list li a:hover {
-        background-color: #EBEAE8; }
+
+#page-footer {
+  background-position: 0 0, top left, 0 0;
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-size: contain, contain, 400px 324px;
+  background: -webkit-linear-gradient(bottom, rgba(125, 125, 125, 0) 94%, rgba(125, 125, 125, 0.2) 100%), -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.4) 70%), url('img/grey_@2X.png');
+  background: linear-gradient(to top, rgba(125, 125, 125, 0) 94%, rgba(125, 125, 125, 0.2) 100%), linear-gradient(to top, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.4) 70%), url('img/grey_@2X.png');
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 1.5rem inherit; }
+  #page-footer .content-area {
+    padding-bottom: 0.75rem; }
+    #page-footer .content-area::after {
+      clear: both;
+      content: "";
+      display: table; }
+  #page-footer h3 {
+    color: #00257f; }
+
+.carousel-control {
+  height: 150px;
+  display: none; }
+  .carousel-control.left {
+    text-align: right; }
+  .carousel-control.right {
+    text-align: left; }
+  .carousel-control:hover {
+    cursor: pointer; }
+  .carousel-control i {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 34px;
+    font-size: 2.125rem;
+    color: #00257f; }
+    .carousel-control i:hover {
+      color: #5F697F; }
+  @media screen and (min-width: 769px) {
+    .carousel-control {
+      display: block; } }
+
+#expertise-carousel .showcase-block {
+  padding: 1.5rem 0.75em;
+  margin: 0 auto;
+  width: 90%; }
+  #expertise-carousel .showcase-block h3 {
+    color: white; }
+
+.owl-page {
+  opacity: 0.4; }
+  .owl-page.active {
+    opacity: 1; }
+  .owl-page span {
+    background: #00257f !important; }

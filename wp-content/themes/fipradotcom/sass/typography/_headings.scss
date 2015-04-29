@@ -37,7 +37,7 @@ h1 {
 h2 {
   font-weight: $font__bold;
   color:$color__fipra-blue;
-  @include font-size(20);
+  @include font-size(22);
   line-height: $v-rhythm * 2.5;
 
   @include media($media__large) { font-weight: $font__light; @include font-size(32); line-height: $v-rhythm * 3; }
@@ -45,7 +45,7 @@ h2 {
   //  Style similar to H1 in .hero-banner and feature blocks
   &.feature {
     @include media($media__small) { @include font-size(28); line-height: $v-rhythm * 3; }
-    @include media($media__large) { font-weight: $font__normal; @include font-size(38); line-height: $v-rhythm * 4; }
+    @include media($media__large) { @include font-size(38); line-height: $v-rhythm * 4; }
   }
 }
 

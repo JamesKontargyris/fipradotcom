@@ -2,7 +2,7 @@
   @include clearfix;
   font-family: $font__sans;
   color:white;
-  @include media($media__large) { @include border-top-radius(4px); }
+  @include media($media__xlarge) { @include border-top-radius(4px); }
 
   background-position: center;
   background-repeat: no-repeat;

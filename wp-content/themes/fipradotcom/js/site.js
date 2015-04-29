@@ -57,4 +57,14 @@
 
 //    Trigger tooltipster for .tooltip classes
     $('.tooltip').tooltipster();
+
+//    Initialise owl carousel and add custom navigation events
+    $("#expertise-carousel").owlCarousel();
+    // Custom Navigation Events
+    $(".owl-next").click(function(){
+        $("#expertise-carousel").trigger('owl.next');
+    })
+    $(".owl-prev").click(function(){
+        $("#expertise-carousel").trigger('owl.prev');
+    })
 })();

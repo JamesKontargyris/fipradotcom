@@ -15,7 +15,11 @@
     @include media($media__large) { background-size: contain; }
   }
 
-  &.with-border { border-top:3px solid darken(white, 15%); }
+  &.with-border {
+    @include media($media__xlarge) {
+      border-top: 3px solid darken(white, 15%);
+    }
+  }
   @include media($media__xlarge) {
     padding-top:$v-rhythm * 2;
   }
@@ -47,27 +51,37 @@
     }
   }
 
+  #page-footer {
+    @include clearfix();
+    margin-top:$v-rhythm * 2;
+    margin-bottom:-$v-rhythm * 2;
+    @include span-columns(12);
+  }
+
   .content-area {
     padding:$v-rhythm * 2 em(40px) 0;
+    @include media(max-width $media__medium) { padding:$v-rhythm * 2 em(20px) 0; }
     margin:0;
 
   }
 
   @include media($media__medium) {
     #primary ~ #secondary {
-      &.content-area { padding-left:0; }
+      &.content-area { padding-left:0; @include omega(); }
     }
 
     #secondary ~ #primary {
-      &.content-area { padding-left:0; }
+      &.content-area { padding-left:0; @include omega(); }
     }
   }
 
 }
 
 .page-nav {
-  padding:$v-rhythm em(40px);
+  padding:$v-rhythm em(20px);
+
   @include media($media__medium) {
+    padding:$v-rhythm em(40px);
     background-color: lighten($color__fipra-periwinkle, 10%);
     @include linear-gradient(lighten($color__fipra-periwinkle, 12%) 60%, lighten($color__fipra-periwinkle, 7%) 100%);
     border-bottom:1px solid darken(white, 13%);

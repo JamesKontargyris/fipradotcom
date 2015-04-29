@@ -1,5 +1,7 @@
 #page-banner {
   &.unit {
+    @include media(max-width $media__small) { background:$color__fipra-blue !important; }
+
     #page-banner-content {
       text-align: center;
       h1 { @include font-size(30); }
@@ -54,8 +56,8 @@
       margin-bottom:$v-rhythm;
       background-color: lighten($color__fipra-light-gray, 5%);
       @include linear-gradient(lighten($color__fipra-light-gray, 6%) 40%, lighten($color__fipra-light-gray, 3%) 100%);
-
       padding:$v-rhythm em(12px);
+      @include media($media__medium) { margin-right:em(-40px); padding:$v-rhythm em(52px) $v-rhythm em(12px); }
 
       img {
         @include media($media__medium) { max-width:100px; }

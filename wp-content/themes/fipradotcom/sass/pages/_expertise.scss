@@ -1,16 +1,19 @@
 #page-banner {
   &.expertise {
+    @include media(max-width $media__small) { padding:$v-rhythm em(20px); }
+
     #page-banner-content {
       position:relative;
       text-align: center;
       @include media(min-width $media__medium max-width $media__large) { @include span-columns(12); }
-      @include media($media__large) { @include span-columns(8); }
-//      padding:0 !important;
+      @include media($media__large) { @include span-columns(6); }
 
       h1 {
         margin-top:-6px;
       }
+
       .circle-icon-outline {
+        @include media(max-width $media__small) { display:none; }
         @include media(max-width $media__medium) {
           @include font-size(24);
           width:50px; height:50px;
@@ -54,38 +57,9 @@
         border-color: transparent rgba(darken(white, 70%), 0.4) transparent transparent;
       }
 
-//      @include media($media__medium) {
-//        .title-bar {
-//          background-color:rgba($color__fipra-blue, 0.6);
-//          padding:0 em(24px) $v-rhythm;
-//
-//        }
-//      }
-
-//      h1 {
-//        text-shadow:none !important;
-//        margin-bottom:$v-rhythm;
-//        @include font-size(28);
-//        line-height: $v-rhythm * 3;
-//        @include media($media__medium) { @include font-size(50); letter-spacing: -2px; margin-bottom:$v-rhythm * 1.5; line-height: $v-rhythm * 4; }
-//      }
-//      h2 {
-//        text-shadow:none !important;
-//        margin-bottom:$v-rhythm * 2;
-//        @include font-size(18);
-//        line-height: $v-rhythm * 2;
-//        font-weight: $font__bold;
-//        @include media($media__large) { @include font-size(26); font-weight: $font__normal; letter-spacing: -1px; }
-//      }
-
-//      @include media($media__medium) {
-//        padding:$v-rhythm * 6 0 !important;
-//        h1 { letter-spacing: -1px; }
-//      }
-
-      @include media($media__medium) { padding:$v-rhythm * 14 em(40px) $v-rhythm !important;
+      @include media($media__medium) { padding:$v-rhythm * 12 em(40px) $v-rhythm * 3 !important;
         text-align: left; }
-      @include media($media__large) { padding:$v-rhythm * 16 em(40px) $v-rhythm !important; }
+      @include media($media__large) { padding:$v-rhythm * 14 em(40px) $v-rhythm * 3 !important; }
 
       &.dark-text {
         h1 {
@@ -115,35 +89,64 @@
   }
 }
 
-  #secondary {
-    .sidebar-contact {
-      @include clearfix;
-      @include border-top-radius(4px);
-      @include border-bottom-radius(4px);
-      margin-bottom:$v-rhythm;
-      background-color: lighten($color__fipra-light-gray, 5%);
-      @include linear-gradient(lighten($color__fipra-light-gray, 6%) 40%, lighten($color__fipra-light-gray, 3%) 100%);
+#secondary {
+  .sidebar-contact {
+    @include clearfix;
+    @include border-top-radius(4px);
+    @include border-bottom-radius(4px);
+    margin-bottom:$v-rhythm;
+    background-color: lighten($color__fipra-light-gray, 5%);
+    @include linear-gradient(lighten($color__fipra-light-gray, 6%) 40%, lighten($color__fipra-light-gray, 3%) 100%);
+    padding:$v-rhythm em(12px);
+    @include media($media__medium) { margin-right:em(-40px); padding:$v-rhythm em(52px) $v-rhythm em(12px); }
 
-      padding:$v-rhythm em(12px);
-
-      img {
-        @include media($media__medium) { max-width:100px; }
-      }
-    }
-
-    ul.country-list {
-      list-style-type: none;
-      font-family: $font__sans;
-      li {
-        display:block;
-        margin-bottom:$v-rhythm;
-        .country-list-flag { width: em(24px); height:em(16px); margin-right:em(5px); }
-
-        a { display:block; padding:$v-rhythm / 4 em(12px); background-color: lighten($color__fipra-light-gray, 5%);
-          @include linear-gradient(lighten($color__fipra-light-gray, 6%) 40%, lighten($color__fipra-light-gray, 3%) 100%);
-          @include border-top-radius(4px); @include border-bottom-radius(4px);
-          &:hover { background-color: $color__fipra-light-gray; }
-        }
-      }
+    img {
+      @include media($media__medium) { max-width:100px; }
     }
   }
+}
+
+#page-footer {
+
+  background-position: 0 0, top left, 0 0;
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-size:contain, contain, 400px 324px;
+  background: linear-gradient(to top, rgba(125, 125, 125, 0) 94%, rgba(125, 125, 125, 0.2) 100%),  linear-gradient(to top, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.4) 70%), url('img/grey_@2X.png');
+
+  @include border-bottom-radius(4px);
+  padding:$v-rhythm * 2 inherit;
+  .content-area { @include clearfix; padding-bottom:$v-rhythm; }
+  h3 { color:$color__fipra-blue; }
+}
+.carousel-control {
+  height:150px;
+  &.left { text-align: right; }
+  &.right { text-align: left; }
+  &:hover { cursor: pointer; }
+  display:none;
+  i {
+    @include vertical-align;
+    @include font-size(34);
+    color:$color__fipra-blue;
+    &:hover { color:$color__fipra-blue-gray; }
+  }
+  @include media($media__medium) { display:block;}
+}
+
+#expertise-carousel {
+  .showcase-block {
+    h3 { color:white; }
+    padding:$v-rhythm * 2 em(12px);
+    margin:0 auto;
+    width:90%;
+  }
+}
+//Owl carousel pagination
+.owl-page {
+  opacity:0.4;
+  &.active { opacity: 1; }
+  span {
+    background:$color__fipra-blue !important;
+  }
+}
+

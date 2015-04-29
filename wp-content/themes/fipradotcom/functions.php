@@ -133,6 +133,14 @@ function fipradotcom_scripts()
         'fipradotcom-jquery-modal',
         get_template_directory_uri() . '/js/jquery-modal/jquery.modal.css'
     );
+    wp_enqueue_style(
+        'fipradotcom-owl-carousel',
+        get_template_directory_uri() . '/js/owl-carousel/owl.carousel.css'
+    );
+    wp_enqueue_style(
+        'fipradotcom-owl-carousel-theme',
+        get_template_directory_uri() . '/js/owl-carousel/owl.theme.css'
+    );
 
     wp_enqueue_style('fipradotcom-style', get_stylesheet_uri());
 
@@ -181,6 +189,14 @@ function fipradotcom_scripts()
         get_template_directory_uri() . '/js/jquery-modal/jquery.modal.min.js',
         array(),
         '20150423',
+        true
+    );
+
+    wp_enqueue_script(
+        'fipradotcom-jquery-owl-carousel',
+        get_template_directory_uri() . '/js/owl-carousel/owl.carousel.min.js',
+        array(),
+        '20150429',
         true
     );
 
