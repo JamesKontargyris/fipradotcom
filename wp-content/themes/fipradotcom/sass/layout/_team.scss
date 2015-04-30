@@ -2,6 +2,8 @@
   @include clearfix;
   .row-of-1 {
     .team-member {
+      border-bottom:1px solid darken($color__fipra-light-gray, 7%);
+
       @include media($media__large) {
         @include span-columns(12);
         @include omega(1n);
@@ -69,11 +71,13 @@
     @include border-left-radius(4px);
     @include border-right-radius(4px);
     @include font-size(18);
-    padding:$v-rhythm * 1.5 em(12px);
-    &:not(:last-child) { margin-bottom: $v-rhythm * 2; }
+    padding:$v-rhythm em(12px);
+    &:not(:last-child) { margin-bottom: $v-rhythm; }
     background-color: lighten($color__fipra-light-gray, 5%);
-    @include linear-gradient(lighten($color__fipra-light-gray, 6%) 40%, lighten($color__fipra-light-gray, 3%) 100%);
-//    @include linear-gradient($color__fipra-light-gray 0%, lighten($color__fipra-light-gray, 6%) 70%);
+    @include linear-gradient(lighten($color__fipra-light-gray, 6%) 80%, lighten($color__fipra-light-gray, 0%) 100%);
+    @include media(min-width $media__small max-width $media__medium) {
+      @include span-columns(6); @include omega(2n);
+    }
 
     p { @include font-size(14); }
     h5 {@include font-size(18); }

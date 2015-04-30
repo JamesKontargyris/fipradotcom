@@ -77,6 +77,7 @@
 
 #secondary {
   ul.languages-list {
+    @include clearfix;
     list-style: none;
 
     li { float:left;

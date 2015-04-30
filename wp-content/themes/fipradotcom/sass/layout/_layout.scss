@@ -9,30 +9,22 @@
 
 #content-container {
   width:100%;
-  background-color: $color__fipra-light-gray;
-  &.with-hero-banner {
-    padding-top:0;
-    @include media($media__large) { background-size: contain; }
-  }
 
-  &.with-border {
-    @include media($media__xlarge) {
-      border-top: 3px solid darken(white, 15%);
-    }
-  }
-  @include media($media__xlarge) {
-    padding-top:$v-rhythm * 2;
-  }
+  &.with-border { border-top: 3px solid darken(white, 15%); }
+
+  @include media($media__xlarge) { padding-top:$v-rhythm * 2; }
+  &.with-hero-banner { padding-top:0; }
 
   #content {
     @include row();
     @include outer-container($local-max-width: $container__outer-width);
     background-color: white;
-    padding-bottom:$v-rhythm * 2;
+    padding-bottom: $v-rhythm * 2;
+    box-shadow:0 0 10px rgba(black, 0.1);
     @include media($media__xlarge) {
-      @include border-left-radius(4px);
-      @include border-right-radius(4px);
+      @include border-left-radius(4px); @include border-right-radius(4px);
       border:1px solid darken($color__fipra-light-gray, 5%);
+      margin-bottom:$v-rhythm * 2;
     }
 
   }
@@ -47,6 +39,7 @@
     @include span-columns(12);
     @include media($media__medium) { @include span-columns(4); }
     aside {
+      @include clearfix;
       &:not(:first-child) { margin-top:$v-rhythm * 2; padding-top:$v-rhythm * 2; border-top:1px solid darken(white, 10%); }
     }
   }
@@ -60,19 +53,13 @@
 
   .content-area {
     padding:$v-rhythm * 2 em(40px) 0;
-    @include media(max-width $media__medium) { padding:$v-rhythm * 2 em(20px) 0; }
+    @include media(max-width $media__small) { padding:$v-rhythm * 2 em(20px) 0; }
     margin:0;
-
   }
 
   @include media($media__medium) {
-    #primary ~ #secondary {
-      &.content-area { padding-left:0; @include omega(); }
-    }
-
-    #secondary ~ #primary {
-      &.content-area { padding-left:0; @include omega(); }
-    }
+    #primary ~ #secondary { &.content-area { padding-left:0; @include omega(); } }
+    #secondary ~ #primary { &.content-area { padding-left:0; @include omega(); } }
   }
 
 }

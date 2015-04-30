@@ -20,46 +20,48 @@ h5, h6 { margin:0 0 $v-rhythm 0; }
 
 h1 {
   font-weight: $font__black;
-  @include font-size(28);
+  @include font-size(32);
   line-height: $v-rhythm * 3;
 
-  @include media($media__medium) { @include font-size(42); line-height: $v-rhythm * 4; }
+  @include media($media__medium) { @include font-size(42); letter-spacing:-1px; line-height: $v-rhythm * 4; }
 
 //  Style similar to H5 in .hero-banner and feature blocks
   &.feature {
-    margin:0;
+    margin:0 0 $v-rhythm 0;
+    letter-spacing: normal;
     @include font-size(16);
+    line-height: $v-rhythm * 2;
     font-weight: $font__black;
     text-transform: uppercase;
   }
 }
 
 h2 {
-  font-weight: $font__bold;
+  font-weight: $font__normal;
   color:$color__fipra-blue;
-  @include font-size(22);
-  line-height: $v-rhythm * 2.5;
+  @include font-size(28);
+  line-height: $v-rhythm * 3;
 
-  @include media($media__large) { font-weight: $font__light; @include font-size(32); line-height: $v-rhythm * 3; }
+  @include media($media__large) { @include font-size(36); letter-spacing:-1px; line-height: $v-rhythm * 4; }
 
   //  Style similar to H1 in .hero-banner and feature blocks
   &.feature {
-    @include media($media__small) { @include font-size(28); line-height: $v-rhythm * 3; }
-    @include media($media__large) { @include font-size(38); line-height: $v-rhythm * 4; }
+//    @include media($media__small) { @include font-size(28); line-height: $v-rhythm * 3; }
+//    @include media($media__large) { @include font-size(38); line-height: $v-rhythm * 4; }
   }
 }
 
 h3 {
   font-weight: $font__black;
-  @include font-size(18);
+  @include font-size(21);
   line-height: $v-rhythm * 2;
 
-  @include media($media__medium) { @include font-size(24); line-height: $v-rhythm * 2; }
+  @include media($media__medium) { @include font-size(24); line-height: $v-rhythm * 2.5; }
 }
 
 h4 {
   font-weight: $font__black;
-  @include font-size(21);
+  @include font-size(18);
   line-height: $v-rhythm * 2;
   color:$color__fipra-blue;
 

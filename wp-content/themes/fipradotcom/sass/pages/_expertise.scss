@@ -1,5 +1,6 @@
 #page-banner {
   &.expertise {
+    min-height:em(420px);
     @include media(max-width $media__small) { padding:$v-rhythm em(20px); }
 
     #page-banner-content {
@@ -89,25 +90,7 @@
   }
 }
 
-#secondary {
-  .sidebar-contact {
-    @include clearfix;
-    @include border-top-radius(4px);
-    @include border-bottom-radius(4px);
-    margin-bottom:$v-rhythm;
-    background-color: lighten($color__fipra-light-gray, 5%);
-    @include linear-gradient(lighten($color__fipra-light-gray, 6%) 40%, lighten($color__fipra-light-gray, 3%) 100%);
-    padding:$v-rhythm em(12px);
-    @include media($media__medium) { margin-right:em(-40px); padding:$v-rhythm em(52px) $v-rhythm em(12px); }
-
-    img {
-      @include media($media__medium) { max-width:100px; }
-    }
-  }
-}
-
 #page-footer {
-
   background-position: 0 0, top left, 0 0;
   background-repeat: no-repeat, no-repeat, repeat;
   background-size:contain, contain, 400px 324px;

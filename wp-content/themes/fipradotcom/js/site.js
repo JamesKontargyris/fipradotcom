@@ -33,7 +33,12 @@
     });
 
 //    All internal anchor links slide to position on page
-    $("a[href^=#]").click(function(e) { e.preventDefault(); var dest = $(this).attr('href'); $('html,body').animate({ scrollTop: $(dest).offset().top - 20 }, 'slow'); });
+    $("a[href^=#]").click(function(e) {
+        if($(this).attr('rel') != "modal:open")
+        {
+            e.preventDefault(); var dest = $(this).attr('href'); $('html,body').animate({ scrollTop: $(dest).offset().top - 20 }, 'slow');
+        }
+    });
 
 //    Initialise the Global Network menu on larger screens using the Menuzord plugin
     $("#menuzord").menuzord({effect: 'slide', scrollable: false, showSpeed: 200, hideSpeed: 50});
@@ -67,4 +72,13 @@
     $(".owl-prev").click(function(){
         $("#expertise-carousel").trigger('owl.prev');
     })
+
+    //Add a fade in/out to modals by default
+    $.extend($.modal.defaults, { fadeDuration: 250 });
+
+//    Function: element has attribute?
+    $.fn.hasAttr = function(attr) {
+        var attribVal = this.attr(attr);
+        return (attribVal !== undefined) && (attribVal !== false);
+    };
 })();

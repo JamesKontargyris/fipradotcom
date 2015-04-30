@@ -46,7 +46,7 @@
 
 .circle-icon, .square-icon, .circle-icon-outline {
   display:inline-block;
-  margin-bottom:$v-rhythm;
+  margin-bottom:$v-rhythm * 2;
   line-height:55px;
   width:55px;
   height:55px;
@@ -55,51 +55,45 @@
   text-shadow: 0px 2px 0px white;
   text-align: center;
   color:$color__fipra-blue;
-  @include font-size(34);
+  @include font-size(30);
   &.grey-icon { color:$color__fipra-blue-gray; }
   &.blue {
     color: white;
-    background-color: $color__fipra-blue;
-    @include background(radial-gradient(to bottom, lighten($color__fipra-blue, 20%) 0%, $color__fipra-blue 60%, darken($color__fipra-blue, 20%) 90%));
+    @include radial-gradient(circle at 50% 10%, $color__fipra-blue 60%, darken($color__fipra-blue, 15%) 80%);
     text-shadow: 0px -1px 0px darken($color__fipra-blue, 10%);
   }
   &.periwinkle {
     color: darken($color__fipra-periwinkle, 40%);
-    background-color: $color__fipra-periwinkle;
-    @include background(radial-gradient(to bottom, lighten($color__fipra-periwinkle, 15%) 0%, $color__fipra-periwinkle 60%, darken($color__fipra-periwinkle, 15%) 90%));
+    @include radial-gradient(circle at 50% 10%, $color__fipra-periwinkle 60%, darken($color__fipra-periwinkle, 15%) 80%);
     text-shadow: 0px 1px 0px lighten($color__fipra-periwinkle, 10%);
   }
   &.turquoise {
     color: white;
-    background-color: $color__fipra-turquoise;
-    @include background(radial-gradient(to bottom, lighten($color__fipra-turquoise, 30%) 0%, $color__fipra-turquoise 60%, darken($color__fipra-turquoise, 15%) 90%));
+    @include radial-gradient(circle at 50% 10%, $color__fipra-turquoise 60%, darken($color__fipra-turquoise, 15%) 80%);
     text-shadow: 0px -1px 0px darken($color__fipra-turquoise, 10%);
   }
   &.orange {
     color: white;
-    background-color: orange;
-    @include background(radial-gradient(to bottom, lighten(orange, 30%) 0%, orange 60%, darken(orange, 15%) 90%));
+    @include radial-gradient(circle at 50% 10%, orange 60%, darken(orange, 15%) 80%);
     text-shadow: 0px -1px 0px darken(orange, 10%);
   }
   &.violet {
     color: white;
-    background-color: $color__fipra-violet;
-    @include background(radial-gradient(to bottom, lighten($color__fipra-violet, 15%) 0%, $color__fipra-violet 60%, darken($color__fipra-violet, 15%) 90%));
+    @include radial-gradient(circle at 50% 10%, $color__fipra-violet 60%, darken($color__fipra-violet, 15%) 80%);
     text-shadow: 0px -1px 0px darken($color__fipra-violet, 10%);
   }
 
-  @include media($media__small) {
+  @include media($media__medium) {
     width:80px;
     height:80px;
     @include font-size(42);
     line-height:80px;
-    margin-bottom:$v-rhythm * 2;
   }
 }
 .circle-icon {
   @include border-left-radius(50%);
   @include border-right-radius(50%);
-  @include background(radial-gradient(to bottom, white 60%, darken(white, 15%) 80%));
+  @include radial-gradient(circle at 50% 10%, white 60%, darken(white, 15%) 80%);
 }
 .circle-icon-outline {
   @include border-left-radius(50%);
@@ -113,7 +107,7 @@
 .square-icon {
   @include border-left-radius(4px);
   @include border-right-radius(4px);
-  @include linear-gradient(to bottom, white 40%, darken(white, 10%) 80%);
+  @include radial-gradient(circle at 50% 10%, white 60%, darken(white, 15%) 80%);
 }
 
 .circle-icon, .square-icon {
@@ -123,7 +117,7 @@
 //Showcase box with outline style
 .outline .circle-icon {
   background-color: $color__fipra-blue;
-  @include background(radial-gradient(to bottom, $color__fipra-blue 60%, darken($color__fipra-blue, 15%) 80%));
+  @include radial-gradient(circle at 50% 10%, $color__fipra-blue 60%, darken($color__fipra-blue, 15%) 80%);
   color:white;
 }
 
@@ -138,3 +132,23 @@
 }
 
 #modal { display:none; }
+
+.sidebar-contact {
+  @include clearfix;
+  border-bottom:1px solid darken($color__fipra-light-gray, 7%);
+  @include border-top-radius(4px);
+  @include border-bottom-radius(4px);
+  margin-bottom:$v-rhythm;
+  @include linear-gradient(lighten($color__fipra-light-gray, 5%) 80%, lighten($color__fipra-light-gray, 0%) 100%);
+  padding:$v-rhythm em(12px);
+
+  @include media($media__medium) { margin-right:em(-41px); padding:$v-rhythm em(52px) $v-rhythm em(12px); border-top-right-radius: 0px; border-bottom-right-radius: 0px; }
+
+  img {
+    max-width:100px;
+  }
+
+  @include media(min-width $media__small max-width $media__medium) {
+    @include span-columns(6); @include omega(2n);
+  }
+}

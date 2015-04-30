@@ -10,12 +10,12 @@ get_header(); ?>
 <style>
     /*    If dark photo*/
     #page-banner {
-        background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 90%, rgba(0,0,0, 0.3) 100%), linear-gradient(to bottom, rgba(0,37,127, 0.7) 50%, rgba(0,37,127, 0.9) 100%), url('<?php echo get_template_directory_uri(); ?>/img/tower_bridge_orig.jpg');
+        background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 90%, rgba(0,0,0, 0.3) 100%), linear-gradient(to bottom, rgba(0,37,127, 0.6) 50%, rgba(0,37,127, 0.9) 100%), url('<?php echo get_template_directory_uri(); ?>/img/tower_bridge_orig.jpg');
     }
     /*If light photo*/
-    /*    #page-banner {*/
-    /*        background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 90%, rgba(0,0,0, 0.3) 100%), linear-gradient(to bottom, rgba(255,255,255, 0.7) 0%, rgba(255,255,255, 0.9) 100%), url('*/<?php //echo get_template_directory_uri(); ?>/*/img/tower_bridge.jpg');*/
-    /*    }*/
+/*        #page-banner {*/
+/*            background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 90%, rgba(0,0,0, 0.3) 100%), linear-gradient(to bottom, rgba(255,255,255, 0.7) 0%, rgba(255,255,255, 0.9) 100%), url('*/<?php //echo get_template_directory_uri(); ?>/*/img/tower_bridge_orig.jpg');*/
+/*        }*/
 </style>
 
 <div id="content-container" class="with-border">
@@ -68,7 +68,7 @@ get_header(); ?>
 <!--                                    <i class="icon-quote-1"></i>-->
                                     <img src="<?= get_template_directory_uri(); ?>/img/quotemark.png" alt="''"/>
                                 </div>
-                                <!--<img src="--><?//= get_template_directory_uri(); ?><!--/img/300.gif" alt="Peter-Carlo Lehrell" />-->
+                                <!--<img src="--><?//= get_template_directory_uri(); ?><!--/img/fipriots/peter-carlo-lehrell.jpg" alt="Peter-Carlo Lehrell" />-->
                             </div>
                             <div class="col-11-m col-10-xs no-bottom-margin">
                                 <p>Testimonial with quote mark. Can also feature a photo of the author instead of the quote mark.  Quisque a iaculis nisi. Aliquam porta dolor feugiat eleifend elementum.</p>
@@ -87,15 +87,15 @@ get_header(); ?>
                         <div class="row-of-1">
                             <div class="team-member">
                                 <div class="col-2-m col-12-xs col-12-xxs no-bottom-margin">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/300.gif" alt="Peter-Carlo Lehrell" />
+                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell.jpg" alt="Peter-Carlo Lehrell" />
                                 </div>
                                 <div class="col-7-m col-12-xs col-12-xxs no-bottom-margin">
-                                    <h5><a href="#">Peter-Carlo Lehrell</a></h5>
+                                    <h5 class="no-margin"><a href="#">Peter-Carlo Lehrell</a></h5>
                                     <div class="team-member-bio">
                                         <p class="no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. <a href="#">Full&nbsp;profile</a></p>
                                     </div>
                                 </div>
-                                <div class="col-3-m col-12-xs top-margin no-bottom-margin">
+                                <div class="col-3-m col-12-xs no-bottom-margin">
                                     <h6>Expertise</h6>
                                     <ul class="team-member-expertise">
                                         <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-plane"></i></a></li>
@@ -107,15 +107,15 @@ get_header(); ?>
                             </div>
                             <div class="team-member">
                                 <div class="col-2-m col-12-xs col-12-xxs no-bottom-margin">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/300.gif" alt="Peter-Carlo Lehrell" />
+                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola.jpg" alt="Ukko Metsola" />
                                 </div>
                                 <div class="col-7-m col-12-xs col-12-xxs no-bottom-margin">
-                                    <h5><a href="#">Peter-Carlo Lehrell</a></h5>
+                                    <h5 class="no-margin"><a href="#">Ukko Metsola</a></h5>
                                     <div class="team-member-bio">
                                         <p class="no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. <a href="#">Full&nbsp;profile</a></p>
                                     </div>
                                 </div>
-                                <div class="col-3-m col-12-xs top-margin no-bottom-margin">
+                                <div class="col-3-m col-12-xs no-bottom-margin">
                                     <h6>Expertise</h6>
                                     <ul class="team-member-expertise">
                                         <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-plane"></i></a></li>
@@ -147,27 +147,26 @@ get_header(); ?>
 
             <div id="secondary" class="content-area">
                 <aside>
-                    <h5 id="get-in-touch">Lead Contact Title</h5>
-                    <div class="sidebar-contact">
-                        <div class="col-12-m col-4-xs col-12-xxs no-bottom-margin">
-                            <img src="<?= get_template_directory_uri(); ?>/img/300.gif" alt="Peter-Carlo Lehrell" />
-                        </div>
-                        <div class="col-12-m col-8-xs col-12-xxs no-bottom-margin">
+                    <h5 id="get-in-touch">Lead Contact</h5>
+                    <div class="row">
+                        <div class="sidebar-contact">
                             <div class="sidebar-contact-content">
-                                <h5 class="no-margin"><a href="#">Peter-Carlo Lehrell</a></h5>
-                                <p class="sans-serif no-bottom-margin">
-
+                                <a href="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell.jpg" alt="Peter-Carlo Lehrell" />
+                                    <h5 class="no-margin">Peter-Carlo Lehrell</h5>
+                                </a>
+                                <p class="no-bottom-margin">
                                     <strong>Chairman, Fipra International</strong><br/>
-                            <span class="font-14">Tel. +01234 5678910 <br/>
-                            Fax. +01234 5678910 <br/>
-                            <a href="mailto:lehrell@fipra.com">lehrell@fipra.com</a></span>
+                                    <span class="font-14">Tel. +01234 5678910 <br/>
+                                    Fax. +01234 5678910 <br/>
+                                    <a href="mailto:lehrell@fipra.com">lehrell@fipra.com</a></span>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </aside>
 
-                <aside class="sans-serif">
+                <aside>
                     <h5>More Units</h5>
                     <ul class="country-list no-bottom-margin">
                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/France.png" class="country-list-flag" alt="United Kingdom"/> <strong class="black">France</strong></a></li>
@@ -175,6 +174,11 @@ get_header(); ?>
                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/Italy.png" class="country-list-flag" alt="United Kingdom"/> <strong class="black">Italy</strong></a></li>
                     </ul>
                     <a href="#"><small>Explore our Global Network <i class="icon-right-open"></i></small></a>
+                </aside>
+
+                <aside>
+                    <h5>Sidebar title</h5>
+                    <p>More sidebar blocks can be added here, controlled in the CMS.</p>
                 </aside>
             </div><!-- #secondary -->
 

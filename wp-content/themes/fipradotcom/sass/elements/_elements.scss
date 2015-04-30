@@ -10,6 +10,7 @@ html {
 
 body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+  background: url('img/noise_bg.png') top left repeat, $color__fipra-light-gray;
 }
 
 blockquote, q {
@@ -29,7 +30,6 @@ blockquote {
   border-bottom:2px solid rgba($color__fipra-turquoise, 0.4);
   color:$color__fipra-blue;
   font-family: $font__sans;
-  padding:$v-rhythm * 1.5 em(50px) $v-rhythm * 1.5 em(50px);
   @include font-size(18);
   line-height: $v-rhythm * 2.2;
   font-style: normal;
@@ -60,15 +60,16 @@ blockquote {
 
   &.left {
     margin-left:-50px; margin-right:-50px;
+    padding:$v-rhythm * 1.5 em(50px) $v-rhythm * 1.5 em(50px);
     @include media($media__medium) { border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin-right:0px; }
     .triangle { left:0; border-width: 0 10px 10px 0; border-color: transparent rgba($color__fipra-turquoise, 0.4) transparent transparent; }
   }
   &.right {
     margin-left:-50px; margin-right:-50px;
-    @include media($media__medium) { border-top-left-radius: 10px; border-bottom-left-radius: 10px; margin-left:0px; }
+    padding:$v-rhythm * 1.5 em(50px) $v-rhythm * 1.5 em(50px);
+    @include media($media__medium) { border-top-left-radius: 10px; border-bottom-left-radius: 10px; margin-left:0px; padding:$v-rhythm * 1.5 em(60px) $v-rhythm * 1.5 em(24px); }
     .triangle { right:0; border-width: 10px 10px 0 0; border-color: rgba($color__fipra-turquoise, 0.4) transparent transparent transparent; }
   }
-
 }
 
 hr {

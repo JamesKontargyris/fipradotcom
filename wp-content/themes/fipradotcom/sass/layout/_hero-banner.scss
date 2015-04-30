@@ -1,58 +1,24 @@
+.with-hero-banner, .hero-banner-gradient {
+  background-size:auto 650px;
+  @include media($media__xlarge) { background-size: contain; }
+  @include media($media__xxlarge) { background-size: 1920px 1000px; }
+}
+
+.hero-banner-gradient {
+  &.dark {
+    @include media(max-width $media__large) { background-image: url('img/herobanner/hero-banner-overlay-dark-center.png') !important; }
+  }
+  &.light {
+    @include media(max-width $media__large) { background-image: url('img/herobanner/hero-banner-overlay-light-center.png') !important; }
+  }
+}
+
 .hero-banner-container {
   @include row();
   padding:0;
-
   @include outer-container($local-max-width: $container__content-width);
   &.full-width { @include outer-container($local-max-width: $container__outer-width); }
 }
-
-
-.hero-banner-gradient {
-  &.dark-image {
-    &.gradient-left, &.gradient-right, &.gradient-center { background-image: linear-gradient(rgba(black, 0.3) 0%, rgba(black, 0.3) 100%); }
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size:contain;
-
-    @include media($media__large) {
-      &.gradient-left { background-image: linear-gradient(rgba(black, 0) 0px, rgba(40, 40, 40, 0) 550px, rgba($color__fipra-light-gray, 1) 800px), linear-gradient(to left, rgba(black, 0) 20%, rgba(black, 0.6) 100%); }
-      &.gradient-right { background-image: linear-gradient(rgba(black, 0) 0px, rgba(40, 40, 40, 0) 550px, rgba($color__fipra-light-gray, 1) 800px), linear-gradient(to right, rgba(black, 0) 20%, rgba(black, 0.6) 100%); }
-      &.gradient-center { background-image: linear-gradient(rgba(black, 0) 0px, rgba(40, 40, 40, 0) 550px, rgba($color__fipra-light-gray, 1) 800px), linear-gradient(rgba(black, 0.3) 0%, rgba(black, 0.3) 100%); }
-      background-position: 0 0, 0 0;
-      background-repeat: no-repeat, no-repeat;
-      background-size:contain, contain;
-    }
-
-    @include media($media__xxlarge) {
-      &.gradient-left { background-image: linear-gradient(rgba(black, 0) 0px, rgba(40, 40, 40, 0) 600px, rgba($color__fipra-light-gray, 1) 1000px), linear-gradient(to left, rgba(black, 0) 0%, rgba(black, 0.5) 100%); }
-      &.gradient-right { background-image: linear-gradient(rgba(black, 0) 0px, rgba(40, 40, 40, 0) 600px, rgba($color__fipra-light-gray, 1) 1000px), linear-gradient(to right, rgba(black, 0) 0%, rgba(black, 0.5) 100%); }
-      &.gradient-center { background-image: linear-gradient(rgba(black, 0) 0px, rgba(40, 40, 40, 0) 600px, rgba($color__fipra-light-gray, 1) 1000px), linear-gradient(rgba(black, 0.3) 0%, rgba(black, 0.3) 100%); }
-    }
-  }
-
-  &.light-image {
-    &.gradient-left, &.gradient-right, &.gradient-center { background-image: linear-gradient(rgba(white, 0.3) 0%, rgba(white, 0.3) 100%); }
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size:contain;
-
-    @include media($media__large) {
-      &.gradient-left { background-image: linear-gradient(rgba(white, 0) 0px, rgba(white, 0) 550px, rgba($color__fipra-light-gray, 1) 800px), linear-gradient(to left, rgba(white, 0) 20%, rgba(white, 0.6) 100%); }
-      &.gradient-right { background-image: linear-gradient(rgba(white, 0) 0px, rgba(white, 0) 550px, rgba($color__fipra-light-gray, 1) 800px), linear-gradient(to right, rgba(white, 0) 20%, rgba(white, 0.6) 100%); }
-      &.gradient-center { background-image: linear-gradient(rgba(white, 0) 0px, rgba(white, 0) 550px, rgba($color__fipra-light-gray, 1) 800px), linear-gradient(rgba(white, 0.3) 0%, rgba(white, 0.3) 100%); }
-      background-position: 0 0, 0 0;
-      background-repeat: no-repeat, no-repeat;
-      background-size:contain, contain;
-    }
-
-    @include media($media__xxlarge) {
-      &.gradient-left { background-image: linear-gradient(rgba(white, 0) 0px, rgba(white, 0) 600px, rgba($color__fipra-light-gray, 1) 1000px), linear-gradient(to left, rgba(white, 0) 0%, rgba(white, 0.5) 100%); }
-      &.gradient-right { background-image: linear-gradient(rgba(white, 0) 0px, rgba(white, 0) 600px, rgba($color__fipra-light-gray, 1) 1000px), linear-gradient(to right, rgba(white, 0) 0%, rgba(white, 0.5) 100%); }
-      &.gradient-center { background-image: linear-gradient(rgba(white, 0) 0px, rgba(white, 0) 600px, rgba($color__fipra-light-gray, 1) 1000px), linear-gradient(rgba(white, 0.3) 0%, rgba(white, 0.3) 100%); }
-    }
-  }
-}
-
 
 .hero-banner {
   @include clearfix;
@@ -71,30 +37,21 @@
     }
   }
 
-//  In hero-banner, h1 looks the same as H5, H2 is same as H1 but light font weight
-  h1, h2 {
-    color:white;
-  }
+  //  In hero-banner, h1 looks the same as H5, H2 is same as H1 but light font weight
+  h1, h2 { color:white; }
 
   .lead {
-    @include media(max-width $media__large) {
-      @include font-size(16);
-    }
+    @include media(max-width $media__large) { @include font-size(16); }
   }
-  a {
-    display:block;
-    margin:$v-rhythm 0;
-  }
+  a { display:block; margin:$v-rhythm 0; }
 
   &.light-text {
-    h1, h2, .lead {
-      color:white;
-      text-shadow:0px 1px 1px black;
-    }
+    h1, h2, .lead { color:white; text-shadow:0px 1px 1px black; }
+
     .btn.primary {
       text-shadow:none;
       color:$color__fipra-blue;
-      background: white;
+      @include linear-gradient(white 60%, darken(white, 10%) 100%);
     }
     .btn.secondary {
       color:white;
@@ -124,22 +81,22 @@
   }
 
   &.left {
-    @include media($media__large) { @include shift(1); @include span-columns(7); text-align:left; }
-    @include media($media__large) { @include shift(0); }
+    @include media($media__large) { @include shift(0); @include span-columns(6); text-align:left; }
+    @include media($media__xxlarge) { @include shift(0); @include span-columns(7); }
 
   }
   &.right {
-    @include media($media__large) { @include shift(5); @include span-columns(7); text-align:left; }
+    @include media($media__large) { @include shift(6); @include span-columns(6); text-align:left; }
+    @include media($media__xxlarge) { @include shift(5); @include span-columns(7); }
   }
 
   &.center {
-    @include media($media__large) { @include shift(2); @include span-columns(8); text-align:center; }
-
+    @include media($media__large) { @include shift(1); @include span-columns(10); text-align:center; }
   }
 
   @include media($media__large) {
     text-align: left;
-    padding:($v-rhythm * 7) 0 ($v-rhythm * 7);
+    padding:($v-rhythm * 7) 0;
     @include span-columns(7);
     @include shift(1);
     a {
@@ -152,6 +109,9 @@
   }
 
   @include media($media__xlarge) {
-    padding:($v-rhythm * 10) 0 ($v-rhythm * 10);
+    padding:($v-rhythm * 7) 0;
+  }
+  @include media($media__xxlarge) {
+    padding:($v-rhythm * 16) 0;
   }
 }

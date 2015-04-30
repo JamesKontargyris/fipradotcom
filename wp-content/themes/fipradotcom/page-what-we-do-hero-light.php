@@ -8,20 +8,22 @@
 get_header(); ?>
 
 <style>
-/*    Styles to position gradient in correct position over photo */
-/*    Small and Medium Screens */
     .with-hero-banner {
-        background-image: url('<?php echo get_template_directory_uri(); ?>/img/street_feather.jpg');
+        background-image: url('<?php echo get_template_directory_uri(); ?>/img/street_1920x1000_light.jpg');
         background-position: top center;
         background-repeat: no-repeat;
-        background-size:auto 650px;
-    }
 
+    }
+    .hero-banner-gradient {
+        background-image: url('<?php echo get_template_directory_uri(); ?>/img/herobanner/hero-banner-overlay-light-center.png');
+        background-position: top center;
+        background-repeat: no-repeat;
+    }
 </style>
 
 <!--<div id="content-container">-->
     <div id="content-container" class="with-hero-banner">
-        <div class="hero-banner-gradient gradient-center light-image">
+        <div class="hero-banner-gradient light">
 
             <div class="hero-banner-container">
                 <div class="hero-banner center dark-text">
