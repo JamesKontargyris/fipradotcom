@@ -4,43 +4,49 @@ ul, ol {
   line-height: $v-rhythm * 3;
 }
 
-ul {
-  list-style: none;
-  &.no-bottom-margin { margin-bottom: 0; }
+#content, footer {
+  ul {
+    list-style: none;
+    &.no-bottom-margin { margin-bottom: 0; }
 
-  li:not(.menu-item, #menuzord) {
-    padding-left: em(30px);
-    text-indent: em(-30px);
-    margin-bottom: $v-rhythm;
-    &:before {
-      content: "■ ";
-      padding-right: em(16px);
-      color: $color__fipra-blue;
-    }
-  }
-  &.no-bullet {
     li {
-      padding-left:0;
-      text-indent: 0;
-      &:before { content: none; padding-right:0; }
+      padding-left: em(30px);
+      text-indent: em(-30px);
+      margin-bottom: $v-rhythm;
+      line-height: $v-rhythm * 2;
+      &:before {
+        content: "■ ";
+        @include font-size(12);
+        padding-right: em(28px);
+        color: $color__fipra-blue;
+      }
+    }
+    &.no-bullet {
+      list-style:none !important;
+      li {
+        list-style:none !important;
+        padding-left:0;
+        text-indent: 0;
+        &:before { content: none; padding-right:0; }
+      }
+    }
+    &.no-v-spacing { li { margin-bottom:0; } }
+  }
+
+  ol {
+    list-style: decimal;
+    padding-left: em(24px);
+    li {
+      margin-bottom: $v-rhythm;
     }
   }
-  &.no-v-spacing { li { margin-bottom:0; } }
-}
 
-ol {
-  list-style: decimal;
-  padding-left: em(24px);
-  li {
-    margin-bottom: $v-rhythm;
+  li > ul,
+  li > ol {
+    margin-top: $v-rhythm;
+    margin-bottom: 0;
+    margin-left: em(24px);
   }
-}
-
-li > ul,
-li > ol {
-  margin-top: $v-rhythm;
-  margin-bottom: 0;
-  margin-left: em(24px);
 }
 
 dt {

@@ -19,6 +19,7 @@
     @include row();
     @include outer-container($local-max-width: $container__outer-width);
     background-color: white;
+    padding-top: $v-rhythm;
     padding-bottom: $v-rhythm * 2;
     box-shadow:0 0 10px rgba(black, 0.1);
     @include media($media__xlarge) {

@@ -39,7 +39,7 @@ get_header(); ?>
 
             <div class="page-nav">
                 <div class="row">
-                    <ul class="anchor-links-list no-margin">
+                    <ul class="anchor-links-list no-margin no-bullet">
                         <li class="menu-title">Jump to: <i class="icon-menu-1"></i></li>
                         <li><a href="#about-us">About Us <i class="icon-down-open"></i></a></li>
                         <li><a href="#our-team">Our Team <i class="icon-down-open"></i></a></li>
@@ -97,7 +97,7 @@ get_header(); ?>
                                 </div>
                                 <div class="col-3-m col-12-xs no-bottom-margin">
                                     <h6>Expertise</h6>
-                                    <ul class="team-member-expertise">
+                                    <ul class="team-member-expertise no-bullet">
                                         <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-plane"></i></a></li>
                                         <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-industrial-building"></i></a></li>
                                         <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-lightbulb"></i></a></li>
@@ -117,7 +117,7 @@ get_header(); ?>
                                 </div>
                                 <div class="col-3-m col-12-xs no-bottom-margin">
                                     <h6>Expertise</h6>
-                                    <ul class="team-member-expertise">
+                                    <ul class="team-member-expertise no-bullet">
                                         <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-plane"></i></a></li>
                                         <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-industrial-building"></i></a></li>
                                     </ul>
@@ -168,7 +168,7 @@ get_header(); ?>
 
                 <aside>
                     <h5>More Units</h5>
-                    <ul class="country-list no-bottom-margin">
+                    <ul class="country-list no-bottom-margin no-bullet">
                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/France.png" class="country-list-flag" alt="United Kingdom"/> <strong class="black">France</strong></a></li>
                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/Germany.png" class="country-list-flag" alt="United Kingdom"/> <strong class="black">Germany</strong></a></li>
                         <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/Italy.png" class="country-list-flag" alt="United Kingdom"/> <strong class="black">Italy</strong></a></li>

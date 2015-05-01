@@ -56,7 +56,7 @@ h3 {
   @include font-size(21);
   line-height: $v-rhythm * 2;
 
-  @include media($media__medium) { @include font-size(24); line-height: $v-rhythm * 2.5; }
+  @include media($media__medium) { @include font-size(24); }
 }
 
 h4 {

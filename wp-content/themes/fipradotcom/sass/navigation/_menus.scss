@@ -155,6 +155,7 @@ ul.anchor-links-list {
   margin-bottom:$v-rhythm * 2;
   &.no-margin { margin:0; }
   li {
+    margin-bottom:0 !important;
     position:relative;
 
     &.hide-s { @include media($media__medium) { display:none; } }
@@ -163,7 +164,7 @@ ul.anchor-links-list {
       display:none;
       background-color: lighten($color__fipra-periwinkle, 10%);
       border-bottom:1px solid white;
-      &.menu-title { display:block; background-color:$color__fipra-blue; color:white; cursor:pointer; padding: $v-rhythm / 2 em(12px); }
+      &.menu-title { display:block; background-color:$color__fipra-blue; color:white; cursor:pointer; padding: $v-rhythm / 2 em(12px) !important; }
       a { display:block; padding: $v-rhythm / 2 em(12px);
         &:hover { background-color: $color__fipra-turquoise; color:white; }
       }

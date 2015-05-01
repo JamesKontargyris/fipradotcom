@@ -1,20 +1,19 @@
-<?php
-/**
- * The template for displaying search results pages.
- *
- * @package fipradotcom
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<div id="content-container" class="with-border">
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <div id="content" class="site-content">
+
+        <div id="primary" class="content-area full-width">
+            <main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'fipradotcom' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+				<h1 class="feature no-margin"><i class="icon-search"></i> Search Results</h1>
+				<h2 class="page-title feature no-margin"><?php printf( __( 'Searching for: %s', 'fipradotcom' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+                <hr />
+            </header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -38,8 +37,10 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+            </main><!-- #main -->
+        </div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+    </div><!-- #content -->
+</div><!-- #content-container   -->
+
 <?php get_footer(); ?>

@@ -2,6 +2,7 @@
   @include clearfix;
   font-family: $font__sans;
   color:white;
+  margin-top:-$v-rhythm;
   @include media($media__xlarge) { @include border-top-radius(4px); }
 
   background-position: center;

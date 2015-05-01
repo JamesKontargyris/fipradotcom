@@ -274,8 +274,7 @@ h3 {
   @media screen and (min-width: 769px) {
     h3 {
       font-size: 24px;
-      font-size: 1.5rem;
-      line-height: 1.875rem; } }
+      font-size: 1.5rem; } }
 
 h4 {
   font-weight: 900;
@@ -508,34 +507,38 @@ ul, ol {
   padding-left: 0;
   line-height: 2.25rem; }
 
-ul {
+#content ul, footer ul {
   list-style: none; }
-  ul.no-bottom-margin {
+  #content ul.no-bottom-margin, footer ul.no-bottom-margin {
     margin-bottom: 0; }
-  ul li:not(.menu-item, #menuzord) {
+  #content ul li, footer ul li {
     padding-left: 1.875em;
     text-indent: -1.875em;
-    margin-bottom: 0.75rem; }
-    ul li:not(.menu-item, #menuzord):before {
+    margin-bottom: 0.75rem;
+    line-height: 1.5rem; }
+    #content ul li:before, footer ul li:before {
       content: "■ ";
-      padding-right: 1em;
+      font-size: 12px;
+      font-size: 0.75rem;
+      padding-right: 1.75em;
       color: #00257f; }
-  ul.no-bullet li {
-    padding-left: 0;
-    text-indent: 0; }
-    ul.no-bullet li:before {
-      content: none;
-      padding-right: 0; }
-  ul.no-v-spacing li {
+  #content ul.no-bullet, footer ul.no-bullet {
+    list-style: none !important; }
+    #content ul.no-bullet li, footer ul.no-bullet li {
+      list-style: none !important;
+      padding-left: 0;
+      text-indent: 0; }
+      #content ul.no-bullet li:before, footer ul.no-bullet li:before {
+        content: none;
+        padding-right: 0; }
+  #content ul.no-v-spacing li, footer ul.no-v-spacing li {
     margin-bottom: 0; }
-
-ol {
+#content ol, footer ol {
   list-style: decimal;
   padding-left: 1.5em; }
-  ol li {
+  #content ol li, footer ol li {
     margin-bottom: 0.75rem; }
-
-li > ul, li > ol {
+#content li > ul, #content li > ol, footer li > ul, footer li > ol {
   margin-top: 0.75rem;
   margin-bottom: 0;
   margin-left: 1.5em; }
@@ -588,6 +591,9 @@ table:not(.no-style) {
     margin-right: 0; }
   .btn.no-margin, .btn:link.no-margin, .btn:visited.no-margin {
     margin: 0; }
+  .btn.btn-small, .btn:link.btn-small, .btn:visited.btn-small {
+    font-size: 12px;
+    font-size: 0.75rem; }
   .btn.primary, .btn:link.primary, .btn:visited.primary {
     background-color: #00257f;
     background-image: -webkit-linear-gradient(#00257f 60%, #00164c 100%);
@@ -1565,6 +1571,7 @@ table:not(.no-style) {
 #page-banner {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
   color: white;
+  margin-top: -0.75rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto 650px; }
@@ -1629,7 +1636,13 @@ table:not(.no-style) {
         color: #5F697F; }
 
 .page-header {
-  margin-bottom: 2.25rem; }
+  max-width: 1020px;
+  margin-left: auto;
+  margin-right: auto; }
+  .page-header::after {
+    clear: both;
+    content: "";
+    display: table; }
   .page-header.left {
     text-align: left; }
   .page-header.center {
@@ -1643,6 +1656,9 @@ table:not(.no-style) {
       .page-header .btn {
         margin-right: 0.375em;
         display: inline-block; } }
+
+.page-header > #primary {
+  padding-top: 0 !important; }
 
 #global-network-menu-container {
   width: 100%;
@@ -2131,6 +2147,7 @@ table:not(.no-style) {
     margin-left: auto;
     margin-right: auto;
     background-color: white;
+    padding-top: 0.75rem;
     padding-bottom: 1.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
     #content-container #content::after {
@@ -3509,7 +3526,7 @@ a {
   color: #14b1cc;
   text-decoration: none; }
   a:visited {
-    color: #6f5ce5; }
+    color: #14b1cc; }
   a:hover, a:focus, a:active {
     color: #5F697F; }
   a:focus {
@@ -3653,6 +3670,7 @@ ul.anchor-links-list {
   ul.anchor-links-list.no-margin {
     margin: 0; }
   ul.anchor-links-list li {
+    margin-bottom: 0 !important;
     position: relative; }
     @media screen and (min-width: 769px) {
       ul.anchor-links-list li.hide-s {
@@ -3667,7 +3685,7 @@ ul.anchor-links-list {
           background-color: #00257f;
           color: white;
           cursor: pointer;
-          padding: 0.375rem 0.75em; }
+          padding: 0.375rem 0.75em !important; }
         ul.anchor-links-list li a {
           display: block;
           padding: 0.375rem 0.75em; }
@@ -4128,8 +4146,7 @@ embed, iframe, object {
       margin-right: 0.3125em; }
     #secondary ul.country-list li a {
       display: block;
-      padding: 0.1875rem 0.75em;
-      background-color: #f7f6f6;
+      padding: 0.375rem 0.75em;
       background-color: #f7f6f6;
       background-image: -webkit-linear-gradient(#f7f6f6 80%, #ebeae8 100%);
       background-image: linear-gradient(#f7f6f6 80%, #ebeae8 100%);
@@ -4392,3 +4409,6 @@ embed, iframe, object {
     opacity: 1; }
   .owl-page span {
     background: #00257f !important; }
+
+p.lead {
+  font-weight: 700; }

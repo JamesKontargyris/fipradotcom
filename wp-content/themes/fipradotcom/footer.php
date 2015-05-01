@@ -32,7 +32,7 @@
             </div>
             <div class="footer-section">
                 <h5>Browse</h5>
-                <ul class="no-bullet no-v-spacing">
+                <ul class="no-bullet">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About Fipra</a></li>
                     <li><a href="#">What We Do</a></li>
