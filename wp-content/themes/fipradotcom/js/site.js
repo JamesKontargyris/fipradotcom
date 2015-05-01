@@ -20,6 +20,33 @@
         $('#mobile-header-global-network').slideToggle(200);
     });
 
+    //Mobile navigation menu sub-menu reveal
+    $('#primary-menu-mobile ul > li.menu-item-has-children a').on('click', function(e)
+    {
+        // If the sub menu ul doesn't have the sub-menu-open class, it is not currently open
+        // So open it and close the currently open sub-menu
+        // (This also means the top-level link of the currently opened sub-menu will work as a link,
+        // rather than a trigger for the sub-menu)
+        if(! $(this).next('ul').hasClass('sub-menu-open') && ! $(this).parents('ul').hasClass('sub-menu'))
+        {
+            e.preventDefault();
+            $('ul.sub-menu-open').slideUp().removeClass('sub-menu-open');
+            $(this).next('ul').slideDown().addClass('sub-menu-open');
+        }
+    });
+    $('#primary-menu-mobile ul.sub-menu li.menu-item-has-children a').on('click', function(e)
+    {
+        // If the sub menu ul doesn't have the sub-sub-menu-open class, it is not currently open so open it
+        // (This also means the top-level link of the currently opened sub-sub-menu will work as a link,
+        // rather than a trigger for the sub-menu)
+        if(! $(this).next('ul').hasClass('sub-sub-menu-open'))
+        {
+            e.preventDefault();
+            $(this).next('ul.sub-menu').slideToggle().toggleClass('sub-sub-menu-open');
+        }
+    });
+
+
     $('.search-global-network-button #searchform #s').focus(function()
     {
         /*to make this flexible, I'm storing the current width in an attribute*/

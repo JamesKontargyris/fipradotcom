@@ -13,10 +13,11 @@
     list-style: none;
     margin: 0;
     padding-left: 0;
-    position: relative;
+//    position: relative;
     float: right;
 
     & > li {
+      position: relative;
       @include media($media__medium) {
         float: left;
         &:not(:last-child) { margin-right: em(40px); }
@@ -30,7 +31,8 @@
         color: $color__fipra-blue-gray;
       }
       &.current-menu-item > a,
-      &.current_page_ancestor > a {
+      &.current_page_ancestor > a,
+      &.current-menu-ancestor > a {
         font-weight: $font__black;
         color: $color__fipra-blue;
         border-bottom: 4px solid $color__fipra-blue;
@@ -53,19 +55,18 @@
       margin-top: -4px;
       width: 200px;
 
-      // Start of third level
-      ul { left: -999em; top: 0; }
 
       li {
         @include font-size(14);
         border-bottom: 1px solid $color__fipra-periwinkle;
         line-height:$v-rhythm * 1.5;
         width: 100%;
-        &:hover > ul, &.focus > ul { left: 100%; }
+        &:hover > ul, &.focus > ul { right: 100%; }
         &:hover { background-color: lighten($color__fipra-turquoise, 53%); }
         a { display: block; padding: $v-rhythm / 2 em(24px); }
         &.current-menu-item > a,
-        &.current-page-ancestor > a {
+        &.current_page_ancestor > a,
+        &.current_menu_ancestor > a {
           font-weight: $font__bold;
           color: $color__fipra-blue-gray;
           border-bottom: 0;
@@ -73,9 +74,12 @@
         }
       } // End of third level
 
+      // Start of third level
+      ul { left: -999em; top: 0; border-top:1px solid $color__fipra-periwinkle; margin-top:0; }
+
     } // End of second level
 
-    li:hover > ul, li.focus > ul { left: auto; }
+    li:hover > ul, li.focus > ul { left: auto; right:0; }
   } //  End of top level
 
 } // End of .main-navigation
@@ -114,10 +118,23 @@
           text-align: center;
           padding:$v-rhythm em(10px);
           color:$color__fipra-blue;
-          &:hover { background-color: lighten($color__fipra-periwinkle, 7%); }
         }
-      } // End of li
-    } // End of ul
+        &.menu-item-has-children > a:after { font-family: 'iconfonts'; content: " \e871"; }
+//        Second level
+        > ul {
+          display:none;
+          background-color: lighten($color__fipra-periwinkle, 5%);
+          font-weight: $font__normal;
+          li { border-top:1px solid white;
+//            Third level
+            > ul {
+              background-color: lighten($color__fipra-periwinkle, 10%);
+              li a { color:$color__fipra-blue-gray; }
+            } // End of third level
+          } // End of second level li
+        } // End of second level ul
+      } // End of first level li
+    } // End of first level ul
   } // End of #primary-menu-mobile
 } // End of #primary-menu-mobile-container
 

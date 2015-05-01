@@ -2,7 +2,7 @@
 
 <div id="content-container" class="with-border">
 
-    <div id="content" class="site-content">
+    <div id="content" class="site-content job-listing">
 
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">

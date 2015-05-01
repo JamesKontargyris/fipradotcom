@@ -41,7 +41,15 @@
     }
   }
 
-  &.full-width {
-    display:block;
+  &.btn-clear {
+    background:none;
+    border:0;
+    padding:$v-rhythm * 0.5 em(4px) !important;
   }
+
+  &.btn-large { @include font-size(22); }
+
+  &.btn-omega { margin-right:0 !important; }
+
+  &.full-width { display:block; }
 }
