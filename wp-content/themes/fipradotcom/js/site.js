@@ -34,7 +34,7 @@
             $(this).next('ul').slideDown().addClass('sub-menu-open');
         }
     });
-    $('#primary-menu-mobile ul.sub-menu li.menu-item-has-children a').on('click', function(e)
+    $('#primary-menu-mobile ul.sub-menu > li.menu-item-has-children > a').on('click', function(e)
     {
         // If the sub menu ul doesn't have the sub-sub-menu-open class, it is not currently open so open it
         // (This also means the top-level link of the currently opened sub-sub-menu will work as a link,
