@@ -30,152 +30,152 @@
                             <div class="megamenu-row">
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Austria.png" class="global-network-menu-flag" alt="United Kingdom"/> Austria
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/austria.png" class="global-network-menu-flag" alt="United Kingdom"/> Austria
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Belarus.png" class="global-network-menu-flag" alt="United Kingdom"/> Belarus
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/belarus.png" class="global-network-menu-flag" alt="United Kingdom"/> Belarus
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Belgium.png" class="global-network-menu-flag" alt="United Kingdom"/> Belgium
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/belgium.png" class="global-network-menu-flag" alt="United Kingdom"/> Belgium
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Bulgaria.png" class="global-network-menu-flag" alt="United Kingdom"/> Bulgaria
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/bulgaria.png" class="global-network-menu-flag" alt="United Kingdom"/> Bulgaria
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Croatia.png" class="global-network-menu-flag" alt="United Kingdom"/> Croatia
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="megamenu-row">
-                                <div class="country-tag">
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Czech-Republic.png" class="global-network-menu-flag" alt="United Kingdom"/> Czech Republic
-                                    </a>
-                                </div>
-                                <div class="country-tag">
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Denmark.png" class="global-network-menu-flag" alt="United Kingdom"/> Denmark
-                                    </a>
-                                </div>
-                                <div class="country-tag">
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Estonia.png" class="global-network-menu-flag" alt="United Kingdom"/> Estonia
-                                    </a>
-                                </div>
-                                <div class="country-tag">
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Finland.png" class="global-network-menu-flag" alt="United Kingdom"/> Finland
-                                    </a>
-                                </div>
-                                <div class="country-tag">
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/France.png" class="global-network-menu-flag" alt="United Kingdom"/> France
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/croatia.png" class="global-network-menu-flag" alt="United Kingdom"/> Croatia
                                     </a>
                                 </div>
                             </div>
                             <div class="megamenu-row">
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Germany.png" class="global-network-menu-flag" alt="United Kingdom"/> Germany
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/czech-republic.png" class="global-network-menu-flag" alt="United Kingdom"/> Czech Republic
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Hungary.png" class="global-network-menu-flag" alt="United Kingdom"/> Hungary
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/denmark.png" class="global-network-menu-flag" alt="United Kingdom"/> Denmark
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Italy.png" class="global-network-menu-flag" alt="United Kingdom"/> Italy
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/estonia.png" class="global-network-menu-flag" alt="United Kingdom"/> Estonia
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Latvia.png" class="global-network-menu-flag" alt="United Kingdom"/> Latvia
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/finland.png" class="global-network-menu-flag" alt="United Kingdom"/> Finland
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Lithuania.png" class="global-network-menu-flag" alt="United Kingdom"/> Lithuania
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="megamenu-row">
-                                <div class="country-tag">
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Luxembourg.png" class="global-network-menu-flag" alt="United Kingdom"/> Luxembourg
-                                    </a>
-                                </div>
-                                <div class="country-tag">
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Netherlands.png" class="global-network-menu-flag" alt="United Kingdom"/> Netherlands
-                                    </a>
-                                </div>
-                                <div class="country-tag">
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Norway.png" class="global-network-menu-flag" alt="United Kingdom"/> Norway
-                                    </a>
-                                </div>
-                                <div class="country-tag">
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Poland.png" class="global-network-menu-flag" alt="United Kingdom"/> Poland
-                                    </a>
-                                </div>
-                                <div class="country-tag">
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Portugal.png" class="global-network-menu-flag" alt="United Kingdom"/> Portugal
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/france.png" class="global-network-menu-flag" alt="United Kingdom"/> France
                                     </a>
                                 </div>
                             </div>
                             <div class="megamenu-row">
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Romania.png" class="global-network-menu-flag" alt="United Kingdom"/> Romania
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/germany.png" class="global-network-menu-flag" alt="United Kingdom"/> Germany
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Slovakia.png" class="global-network-menu-flag" alt="United Kingdom"/> Slovakia
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/hungary.png" class="global-network-menu-flag" alt="United Kingdom"/> Hungary
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Slovenia.png" class="global-network-menu-flag" alt="United Kingdom"/> Slovenia
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/italy.png" class="global-network-menu-flag" alt="United Kingdom"/> Italy
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Spain.png" class="global-network-menu-flag" alt="United Kingdom"/> Spain
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/latvia.png" class="global-network-menu-flag" alt="United Kingdom"/> Latvia
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Sweden.png" class="global-network-menu-flag" alt="United Kingdom"/> Sweden
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/lithuania.png" class="global-network-menu-flag" alt="United Kingdom"/> Lithuania
                                     </a>
                                 </div>
                             </div>
                             <div class="megamenu-row">
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Turkey.png" class="global-network-menu-flag" alt="United Kingdom"/> Turkey
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/luxembourg.png" class="global-network-menu-flag" alt="United Kingdom"/> Luxembourg
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/Ukraine.png" class="global-network-menu-flag" alt="United Kingdom"/> Ukraine
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/netherlands.png" class="global-network-menu-flag" alt="United Kingdom"/> Netherlands
                                     </a>
                                 </div>
                                 <div class="country-tag">
                                     <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/United-Kingdom.png" class="global-network-menu-flag" alt="United Kingdom"/> United Kingdom
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/norway.png" class="global-network-menu-flag" alt="United Kingdom"/> Norway
+                                    </a>
+                                </div>
+                                <div class="country-tag">
+                                    <a href="#">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/poland.png" class="global-network-menu-flag" alt="United Kingdom"/> Poland
+                                    </a>
+                                </div>
+                                <div class="country-tag">
+                                    <a href="#">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/portugal.png" class="global-network-menu-flag" alt="United Kingdom"/> Portugal
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="megamenu-row">
+                                <div class="country-tag">
+                                    <a href="#">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/romania.png" class="global-network-menu-flag" alt="United Kingdom"/> Romania
+                                    </a>
+                                </div>
+                                <div class="country-tag">
+                                    <a href="#">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/slovakia.png" class="global-network-menu-flag" alt="United Kingdom"/> Slovakia
+                                    </a>
+                                </div>
+                                <div class="country-tag">
+                                    <a href="#">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/slovenia.png" class="global-network-menu-flag" alt="United Kingdom"/> Slovenia
+                                    </a>
+                                </div>
+                                <div class="country-tag">
+                                    <a href="#">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/spain.png" class="global-network-menu-flag" alt="United Kingdom"/> Spain
+                                    </a>
+                                </div>
+                                <div class="country-tag">
+                                    <a href="#">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/sweden.png" class="global-network-menu-flag" alt="United Kingdom"/> Sweden
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="megamenu-row">
+                                <div class="country-tag">
+                                    <a href="#">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/turkey.png" class="global-network-menu-flag" alt="United Kingdom"/> Turkey
+                                    </a>
+                                </div>
+                                <div class="country-tag">
+                                    <a href="#">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/ukraine.png" class="global-network-menu-flag" alt="United Kingdom"/> Ukraine
+                                    </a>
+                                </div>
+                                <div class="country-tag">
+                                    <a href="#">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/flags/united-kingdom.png" class="global-network-menu-flag" alt="United Kingdom"/> United Kingdom
                                     </a>
                                 </div>
                             </div>
