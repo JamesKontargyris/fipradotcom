@@ -169,9 +169,9 @@ get_header(); ?>
                 <aside>
                     <h5>More Units</h5>
                     <ul class="sidebar-list no-bottom-margin no-bullet">
-                        <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/France.png" class="sidebar-list-flag" alt="United Kingdom"/> <strong class="black">France</strong></a></li>
-                        <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/Germany.png" class="sidebar-list-flag" alt="United Kingdom"/> <strong class="black">Germany</strong></a></li>
-                        <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/Italy.png" class="sidebar-list-flag" alt="United Kingdom"/> <strong class="black">Italy</strong></a></li>
+                        <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/france.png" class="sidebar-list-flag" alt="France"/> <strong class="black">France</strong></a></li>
+                        <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/germany.png" class="sidebar-list-flag" alt="Germany"/> <strong class="black">Germany</strong></a></li>
+                        <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/italy.png" class="sidebar-list-flag" alt="Italy"/> <strong class="black">Italy</strong></a></li>
                     </ul>
                     <a href="#"><small>Explore our Global Network <i class="icon-right-open"></i></small></a>
                 </aside>

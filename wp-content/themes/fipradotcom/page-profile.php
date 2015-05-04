@@ -68,10 +68,10 @@ get_header(); ?>
                 <aside>
                     <h5>Languages Spoken</h5>
                     <ul class="languages-list no-bottom-margin no-bullet">
-                        <li><img src="<?php echo get_template_directory_uri(); ?>/img/flags/Finland.png" class="languages-list-flag tooltip" alt="Finnish" title="Finnish"/></li>
-                        <li><img src="<?php echo get_template_directory_uri(); ?>/img/flags/United-Kingdom.png" class="languages-list-flag tooltip" alt="English" title="English"/></li>
-                        <li><img src="<?php echo get_template_directory_uri(); ?>/img/flags/Sweden.png" class="languages-list-flag tooltip" alt="Swedish" title="Swedish"/></li>
-                        <li><img src="<?php echo get_template_directory_uri(); ?>/img/flags/France.png" class="languages-list-flag tooltip" alt="French" title="French"/></li>
+                        <li><img src="<?php echo get_template_directory_uri(); ?>/img/flags/finland.png" class="languages-list-flag tooltip" alt="Finnish" title="Finnish"/></li>
+                        <li><img src="<?php echo get_template_directory_uri(); ?>/img/flags/united-kingdom.png" class="languages-list-flag tooltip" alt="English" title="English"/></li>
+                        <li><img src="<?php echo get_template_directory_uri(); ?>/img/flags/sweden.png" class="languages-list-flag tooltip" alt="Swedish" title="Swedish"/></li>
+                        <li><img src="<?php echo get_template_directory_uri(); ?>/img/flags/france.png" class="languages-list-flag tooltip" alt="French" title="French"/></li>
                     </ul>
                 </aside>
 

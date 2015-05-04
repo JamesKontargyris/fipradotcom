@@ -264,4 +264,20 @@ function fipra_sitewide_search_form($form)
     return $form;
 }
 
+/*
+  Plugin Name: case-insensitive-url
+  Plugin URI: http://www.unfocus.com/projects/
+  Description: A plugin to make wordpress case insensitive in regards to urls.
+  Version: 1.0a
+  Author: Kevin Newman
+  Author URI: http://www.unfocus.com/projects/
+  */
+function case_insensitive_url() {
+    if (preg_match('/[A-Z]/', $_SERVER['REQUEST_URI'])) {
+        $_SERVER['REQUEST_URI'] = strtolower($_SERVER['REQUEST_URI']);
+        $_SERVER['PATH_INFO']   = strtolower($_SERVER['PATH_INFO']);
+    }
+}
+add_action('init', 'case_insensitive_url');
+
 add_filter('get_search_form', 'fipra_sitewide_search_form');
