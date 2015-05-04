@@ -34,6 +34,8 @@ blockquote {
   line-height: $v-rhythm * 2.2;
   font-style: normal;
 
+  &.no-margin { margin-top: $v-rhythm; }
+
   .quotemark {
     @include font-size(32); color:rgba($color__fipra-blue, 0.1);
     @include media($media__medium) { @include font-size(60); text-align: left; }

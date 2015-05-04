@@ -1,0 +1,17 @@
+ul.sidebar-list {
+  list-style-type: none;
+  font-family: $font__sans;
+  li {
+    display:block;
+    margin-bottom:$v-rhythm;
+    i { @include font-size(18); margin-right:em(12px); color:darken($color__fipra-light-gray, 40%); }
+    .sidebar-list-flag { width: em(24px); height:em(16px); margin-right:em(5px); }
+
+    a { display:block; padding:$v-rhythm / 2 em(12px);
+      @include linear-gradient(lighten($color__fipra-light-gray, 5%) 80%, lighten($color__fipra-light-gray, 0%) 100%);
+      @include border-top-radius(4px); @include border-bottom-radius(4px);
+      border-bottom:1px solid darken($color__fipra-light-gray, 7%);
+      &:hover { background-color: $color__fipra-light-gray; }
+    }
+  }
+}

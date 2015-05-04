@@ -23,8 +23,8 @@
   header.site-header {
     @include row();
     @include outer-container($container__outer-width);
-    padding:0 20px;
-    @include media($media__large) { padding: 0 40px; }
+    padding:0 em(20px);
+    @include media($media__medium) { padding: 0 em(40px); }
     @include media($media__xlarge) { padding:0; }
 
     #site-branding-container {

@@ -33,6 +33,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Alignments
 # Clearings
 # User Modules
+# Sidebar Modules
 # Widgets
 # Content
     ## Posts and pages
@@ -98,6 +99,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # User Modules
 --------------------------------------------------------------*/
 @import "modules/modules";
+
+/*--------------------------------------------------------------
+# Sidebar Modules
+--------------------------------------------------------------*/
+@import "modules/sidebar";
 
 /*--------------------------------------------------------------
 # Widgets

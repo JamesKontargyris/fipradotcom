@@ -2,14 +2,23 @@
 
 <div id="content-container" class="with-border">
 
+    <div id="breadcrumbs">
+        <div class="row">
+            <div class="col-12-m breadcrumbs-content no-margin">
+                <a href="#">Home</a> <span class="divider"><i class="icon-right-open"></i></span> <a href="#">Careers with Fipra</a> <span class="divider"><i class="icon-right-open"></i></span> <span class="active">Job Listing</span>
+            </div>
+        </div>
+    </div>
+
     <div id="content" class="site-content job-listing">
 
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
-                <h5 class="no-margin">Job Listing</h5>
+
+                <h1 class="feature no-margin">Job Listing</h1>
                 <h2 class="no-margin">Account Executive</h2>
                 <hr class="small"/>
-                <h4 class="no-top-margin">Fipra International</h4>
+                <h4 class="no-top-margin">Fipra International | €25,000-30,000 per annum</h4>
                 <p class="lead blue">This listing is stolen from the Uber site... This is a unique opportunity to be a founding member of the Uber for Business Sales organization. With this role, you’ll have the opportunity to join a small team that has the ability to make a big impact.</p>
 
                 <p>We need creative thinkers and builders with previous sales and business development experience who are passionate about developing a new kind of sales organization at Uber.</p>
