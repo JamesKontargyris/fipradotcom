@@ -23,8 +23,8 @@
         &:not(:last-child) { margin-right: em(40px); }
       }
       @include font-size(16);
-      font-weight: $font__bold;
       & > a {
+        font-weight: $font__bold;
         display: block;
         text-decoration: none;
         padding: ($v-rhythm * 2) 0 $v-rhythm;
@@ -39,7 +39,7 @@
         padding: ($v-rhythm * 2) 0 $v-rhythm - rem(4px);
       }
 
-      &:hover > a, &.focus > a { color: $color__fipra-turquoise; }
+      &:hover > a, &.focus > a { color: $color__fipra-blue; }
     }
 
     // Start of second level
@@ -62,7 +62,7 @@
         line-height:$v-rhythm * 1.5;
         width: 100%;
         &:hover > ul, &.focus > ul { right: 100%; }
-        &:hover { background-color: lighten($color__fipra-turquoise, 53%); }
+        &:hover { background-color: lighten($color__fipra-blue, 70%); }
         a { display: block; padding: $v-rhythm / 2 em(24px); }
         &.current-menu-item > a,
         &.current_page_ancestor > a,
@@ -183,7 +183,7 @@ ul.anchor-links-list {
       border-bottom:1px solid white;
       &.menu-title { display:block; background-color:$color__fipra-blue; color:white; cursor:pointer; padding: $v-rhythm / 2 em(12px) !important; }
       a { display:block; padding: $v-rhythm / 2 em(12px);
-        &:hover { background-color: $color__fipra-turquoise; color:white; }
+        &:hover { background-color: $color__fipra-blue; color:white; }
       }
       i { position:absolute; right:em(12px); top:$v-rhythm / 2; }
 
@@ -197,7 +197,7 @@ ul.anchor-links-list {
         padding:$v-rhythm / 2 em(6px);
         @include border-top-radius(6px);
         @include border-bottom-radius(6px);
-        &:hover { background-color: $color__fipra-turquoise; color:white; }
+        &:hover { background-color: $color__fipra-blue; color:white; }
       }
     }
   }

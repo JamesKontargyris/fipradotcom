@@ -10,7 +10,7 @@ get_header(); ?>
 <style>
 /*    If dark photo*/
     #page-banner {
-        background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 90%, rgba(0,0,0, 0.3) 100%), linear-gradient(to bottom, rgba(0,37,127, 0.6) 50%, rgba(0,37,127, 0.9) 100%), url('<?php echo get_template_directory_uri(); ?>/img/plane.jpg');
+        background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 90%, rgba(0,0,0, 0.3) 100%), linear-gradient(to bottom, rgba(69,76,92, 0.8) 0%, rgba(69,76,92, 0.9) 100%), url('<?php echo get_template_directory_uri(); ?>/img/plane.jpg');
     }
     /*If light photo*/
 /*    #page-banner {*/
@@ -87,7 +87,7 @@ get_header(); ?>
                             <div class="sidebar-contact">
                                 <div class="sidebar-contact-content">
                                     <a href="#">
-                                        <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell.jpg" alt="Peter-Carlo Lehrell" />
+                                        <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" style="background-color: white"/>
                                         <h5 class="no-margin">Peter-Carlo Lehrell</h5>
                                     </a>
                                     <p class="no-bottom-margin">
@@ -110,12 +110,12 @@ get_header(); ?>
 
                 <div id="page-footer">
                     <div class="content-area">
-                        <h3 class="center white">Our Expertise</h3>
+                        <h2 class="center white">Our Expertise</h2>
                         <div class="col-1-m no-bottom-margin carousel-control left owl-prev"><i class="icon-angle-circled-left"></i></div>
                         <div class="col-10-m col-12-xs no-bottom-margin">
                             <div class="showcase profile-expertise-showcase equal-heights">
                                 <div id="expertise-carousel">
-                                    <div class="showcase-block bg blue center">
+                                    <div class="showcase-block bg center">
                                         <a href="#">
                                             <div class="showcase-block-content">
                                                 <div class="circle-icon"><i class="icon-lightbulb"></i></div>
@@ -123,7 +123,7 @@ get_header(); ?>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="showcase-block bg blue center">
+                                    <div class="showcase-block bg center">
                                         <a href="#">
                                             <div class="showcase-block-content">
                                                 <div class="circle-icon"><i class="icon-industrial-building"></i></div>
@@ -131,7 +131,7 @@ get_header(); ?>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="showcase-block bg blue center">
+                                    <div class="showcase-block bg center">
                                         <a href="#">
                                             <div class="showcase-block-content">
                                                 <div class="circle-icon"><i class="icon-plane"></i></div>
@@ -139,7 +139,7 @@ get_header(); ?>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="showcase-block bg blue center">
+                                    <div class="showcase-block bg center">
                                         <a href="#">
                                             <div class="showcase-block-content">
                                                 <div class="circle-icon"><i class="icon-bank"></i></div>
@@ -147,7 +147,7 @@ get_header(); ?>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="showcase-block bg blue center">
+                                    <div class="showcase-block bg center">
                                         <a href="#">
                                             <div class="showcase-block-content">
                                                 <div class="circle-icon"><i class="icon-lightbulb"></i></div>
@@ -155,7 +155,7 @@ get_header(); ?>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="showcase-block bg blue center">
+                                    <div class="showcase-block bg center">
                                         <a href="#">
                                             <div class="showcase-block-content">
                                                 <div class="circle-icon"><i class="icon-industrial-building"></i></div>

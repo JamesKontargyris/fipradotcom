@@ -87,11 +87,22 @@
 //    Set equal heights of content blocks in showcase groups
     $('.showcase.equal-heights .showcase-block-content').matchHeight();
 
+    //    Set equal heights of content blocks in team member groups
+    $('.team-group.equal-heights .team-member').matchHeight();
+
 //    Trigger tooltipster for .tooltip classes
     $('.tooltip').tooltipster();
 
 //    Initialise owl carousel and add custom navigation events
     $("#expertise-carousel").owlCarousel();
+    $("#public-affairs-services-carousel").owlCarousel({
+        items: 1,
+        itemsDesktop: [1199, 1],
+        itemsDesktopSmall: [979, 1],
+        itemsTablet: [768, 1],
+        itemsMobile: [479, 1],
+        autoPlay: 5000
+    });
     // Custom Navigation Events
     $(".owl-next").click(function(){
         $("#expertise-carousel").trigger('owl.next');

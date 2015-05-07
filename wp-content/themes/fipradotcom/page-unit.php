@@ -10,7 +10,7 @@ get_header(); ?>
 <style>
     /*    If dark photo*/
     #page-banner {
-        background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 90%, rgba(0,0,0, 0.3) 100%), linear-gradient(to bottom, rgba(0,37,127, 0.6) 50%, rgba(0,37,127, 0.9) 100%), url('<?php echo get_template_directory_uri(); ?>/img/tower_bridge_orig.jpg');
+        background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 90%, rgba(0,0,0, 0.3) 100%), linear-gradient(to bottom, rgba(69,76,92, 0.8) 0%, rgba(69,76,92, 0.9) 100%), url('<?php echo get_template_directory_uri(); ?>/img/tower_bridge_orig.jpg');
     }
     /*If light photo*/
 /*        #page-banner {*/
@@ -52,7 +52,7 @@ get_header(); ?>
             <div id="primary" class="content-area">
                 <main id="main" class="site-main" role="main">
 
-                    <h4 id="about-us">About Us</h4>
+                    <h3 id="about-us">About Us</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor ullamcorper eu tristique risus. Nulla consequat volutpat augue a elementum.</p>
 
                     <p>Aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus. Integer vitae felis egestas, sodales eros ut, luctus erat.</p>
@@ -81,13 +81,13 @@ get_header(); ?>
                     </blockquote>
 
 
-                    <h4 id="our-team">Our Team</h4>
+                    <h3 id="our-team">Our Team</h3>
 
-                    <div class="team-group">
+                    <div class="team-group equal-heights">
                         <div class="row-of-1">
                             <div class="team-member">
                                 <div class="col-2-m col-12-xs col-12-xxs no-bottom-margin">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell.jpg" alt="Peter-Carlo Lehrell" />
+                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" style="background-color:white;" /></a>
                                 </div>
                                 <div class="col-7-m col-12-xs col-12-xxs no-bottom-margin">
                                     <h5 class="no-margin"><a href="#">Peter-Carlo Lehrell</a></h5>
@@ -107,7 +107,7 @@ get_header(); ?>
                             </div>
                             <div class="team-member">
                                 <div class="col-2-m col-12-xs col-12-xxs no-bottom-margin">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola.jpg" alt="Ukko Metsola" />
+                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Ukko Metsola" style="background-color:white;" /></a>
                                 </div>
                                 <div class="col-7-m col-12-xs col-12-xxs no-bottom-margin">
                                     <h5 class="no-margin"><a href="#">Ukko Metsola</a></h5>
@@ -127,7 +127,7 @@ get_header(); ?>
                     </div>
 
 
-                    <h4 id="our-location">Our Location</h4>
+                    <h3 id="our-location">Our Location</h3>
                     <div class="row">
                         <div class="col-7-m"><img src="<?= get_template_directory_uri(); ?>/img/600x400.gif" alt="Map Placeholder" /></div>
                         <div class="col-5-m">
@@ -152,7 +152,7 @@ get_header(); ?>
                         <div class="sidebar-contact">
                             <div class="sidebar-contact-content">
                                 <a href="#">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell.jpg" alt="Peter-Carlo Lehrell" />
+                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" style="background-color: white;" />
                                     <h5 class="no-margin">Peter-Carlo Lehrell</h5>
                                 </a>
                                 <p class="no-bottom-margin">

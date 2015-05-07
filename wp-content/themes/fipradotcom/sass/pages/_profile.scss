@@ -1,23 +1,21 @@
 #page-banner {
   &.profile {
-    background-position: 0 0, bottom left em(10px), top left, 0 0;
+    background-position: 0 0, bottom right em(10px), top left, 0 0;
     background-repeat: no-repeat, no-repeat, no-repeat, repeat;
     background-size:contain, auto 95%, contain, 400px 324px;
 
     @include media(max-width $media__small) {
-      background-image: linear-gradient(to bottom, rgba(125, 125, 125, 0) 90%, rgba(125, 125, 125, 0.2) 100%), url('img/grey_@2X.png');
-      background-size:contain, 400px 324px; background-position: 0 0, 0 0; background-repeat:no-repeat, repeat; text-align:center; }
+//      background-image: linear-gradient(to bottom, rgba(235, 235, 235, 1) 0%, rgba(235, 235, 235, 1) 100%);
+      @include linear-gradient(to top, $color__fipra-light-gray 0%, white 50%);
+      text-align:center; }
 
     @include media($media__medium) {
-      background-position: 0 0, bottom left em(40px), top left, 0 0;
+      background-position: 0 0, bottom right em(60px), top left, 0 0;
       background-size:contain, auto 90%, contain, 794px 644px;
     }
 
     #page-banner-content {
         .profile-header-content {
-          padding:0 em(20px) 0 0;
-
-          @include media($media__small) { @include shift(4); }
 
           h1 {
             text-shadow:none !important;
@@ -37,15 +35,16 @@
           }
         }
 
-      @include media(max-width $media__medium) { padding:$v-rhythm * 3 em(20px) !important; }
-      @include media($media__large) { padding:$v-rhythm * 8 em(20px) !important; }
+      @include media(max-width $media__small) { padding:$v-rhythm * 3 em(20px); }
+      @include media($media__small) { padding:$v-rhythm * 3 em(200px) $v-rhythm * 3 em(40px); }
+      @include media($media__large) { padding:$v-rhythm * 8 em(40px); }
 
         &.dark-text {
           h1 {
             color: $color_soft-black !important;
           }
           h2 {
-            color: $color__fipra-blue;
+//            color: $color__fipra-blue;
           }
           .btn.secondary {
             border:1px solid $color__fipra-blue;
@@ -62,7 +61,7 @@
 
 .profile-content-area {
   p.lead {
-    color:$color__fipra-blue; line-height:$v-rhythm * 2.5;
+    color:$color__fipra-brown; line-height:$v-rhythm * 2.5;
     @include media($media__small) { @include font-size(24); line-height:$v-rhythm * 3 }
   }
 }
@@ -70,9 +69,10 @@
 .profile-expertise-showcase {
   .showcase-block {
     @include transition(all 0.2s);
-    &:hover { opacity:0.7; }
+    &.bg { @include linear-gradient($color__fipra-light-gray 50%, darken($color__fipra-light-gray, 7%) 100%); }
+    &:hover { opacity:0.5; }
   }
-  h3 { margin:0; font-weight: $font__normal !important; @include font-size(18); }
+  h3 { margin:0; @include font-size(16); line-height:$v-rhythm * 1.7; }
 }
 
 #secondary {

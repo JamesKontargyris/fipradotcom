@@ -8,8 +8,11 @@
     @include border-right-radius(4px);
     margin-bottom: $v-rhythm * 2;
     &:last-child { margin-bottom: 0; }
+    .showcase-block-content {
+      &.large-text { @include media($media__medium) {  @include font-size(18); } }
+    }
 
-    h3, h4 { color: $color__fipra-blue; font-weight: $font__black; }
+    h3, h4 { color:$color__fipra-brown; font-weight: $font__bold; }
 
     .featured-image {
       img { @include border-top-radius(4px); width:100%; }
@@ -20,7 +23,6 @@
     }
 
     &.bg {
-      background: $color__fipra-light-gray;
       @include linear-gradient($color__fipra-light-gray 0%, lighten($color__fipra-light-gray, 6%) 70%);
 
       &.blue {
@@ -110,6 +112,7 @@
       }
       .showcase-block-content {
         @include row();
+        @include media($media__large) { width:75%; margin:0 auto; }
       }
     }
   }

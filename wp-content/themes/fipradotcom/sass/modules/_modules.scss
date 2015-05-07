@@ -22,7 +22,7 @@
     padding:$v-rhythm em(16px);
     color:white;
     a {
-      color:lighten($color__fipra-turquoise, 5%);
+      color:$color__fipra-blue;
       font-weight:$font__black;
       &:hover {
         color:$color__fipra-blue-gray;
@@ -35,7 +35,7 @@
     padding:$v-rhythm em(16px);
     color:$color_soft-black;
     a {
-      color:$color__fipra-turquoise;
+      color:$color__fipra-blue;
       font-weight:$font__black;
       &:hover {
         color:$color__fipra-blue-gray;
@@ -116,7 +116,6 @@
 
 //Showcase box with outline style
 .outline .circle-icon {
-  background-color: $color__fipra-blue;
   @include radial-gradient(circle at 50% 10%, $color__fipra-blue 60%, darken($color__fipra-blue, 15%) 80%);
   color:white;
 }
@@ -139,7 +138,7 @@
   @include border-top-radius(4px);
   @include border-bottom-radius(4px);
   margin-bottom:$v-rhythm;
-  @include linear-gradient(lighten($color__fipra-light-gray, 5%) 80%, lighten($color__fipra-light-gray, 0%) 100%);
+  @include linear-gradient(lighten($color__fipra-light-gray, 4%) 80%, darken($color__fipra-light-gray, 1%) 100%);
   padding:$v-rhythm em(12px);
 
   @include media($media__medium) { margin-right:em(-41px); padding:$v-rhythm em(52px) $v-rhythm em(12px); border-top-right-radius: 0px; border-bottom-right-radius: 0px; }

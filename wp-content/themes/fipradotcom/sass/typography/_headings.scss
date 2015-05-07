@@ -38,7 +38,7 @@ h1 {
 
 h2 {
   font-weight: $font__normal;
-  color:$color__fipra-blue;
+  color:$color__fipra-brown;
   @include font-size(28);
   line-height: $v-rhythm * 3;
 
@@ -52,18 +52,19 @@ h2 {
 }
 
 h3 {
-  font-weight: $font__black;
+  font-weight: $font__bold;
   @include font-size(21);
   line-height: $v-rhythm * 2;
+  color:$color__fipra-brown;
 
-  @include media($media__medium) { @include font-size(24); }
+  @include media($media__medium) { @include font-size(24); line-height: $v-rhythm * 2.5; }
 }
 
 h4 {
-  font-weight: $font__black;
+  font-weight: $font__bold;
   @include font-size(18);
   line-height: $v-rhythm * 2;
-  color:$color__fipra-blue;
+  color:$color__fipra-blue-gray;
 
 }
 

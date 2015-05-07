@@ -9,9 +9,7 @@
       @include media(min-width $media__medium max-width $media__large) { @include span-columns(12); }
       @include media($media__large) { @include span-columns(6); }
 
-      h1 {
-        margin-top:-6px;
-      }
+      h1 { margin-top:-6px; }
 
       .circle-icon-outline {
         @include media(max-width $media__small) { display:none; }
@@ -67,7 +65,7 @@
           color: $color_soft-black !important;
         }
         h2 {
-          color: $color__fipra-blue;
+//          color: $color__fipra-blue;
         }
         .lead { color:$color__fipra-blue; }
         .btn.secondary {
@@ -94,12 +92,12 @@
   background-position: 0 0, top left, 0 0;
   background-repeat: no-repeat, no-repeat, repeat;
   background-size:contain, contain, 400px 324px;
-  background: linear-gradient(to top, rgba(125, 125, 125, 0) 94%, rgba(125, 125, 125, 0.2) 100%),  linear-gradient(to top, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.4) 70%), url('img/grey_@2X.png');
+  background: linear-gradient(to top, rgba(125, 125, 125, 0) 94%, rgba(125, 125, 125, 0.2) 100%), linear-gradient(to bottom, $color__fipra-light-gray 0%, white 50%);
 
   @include border-bottom-radius(4px);
   padding:$v-rhythm * 2 inherit;
   .content-area { @include clearfix; padding-bottom:$v-rhythm; }
-  h3 { color:$color__fipra-blue; }
+  h3 { color:$color__fipra-blue-gray; }
 }
 .carousel-control {
   height:150px;
@@ -118,10 +116,11 @@
 
 #expertise-carousel {
   .showcase-block {
-    h3 { color:white; }
+    h3 { color:$color__fipra-blue; }
     padding:$v-rhythm * 2 em(12px);
     margin:0 auto;
     width:90%;
+    &.bg { @include linear-gradient($color__fipra-light-gray 50%, darken($color__fipra-light-gray, 7%) 100%); }
   }
 }
 //Owl carousel pagination

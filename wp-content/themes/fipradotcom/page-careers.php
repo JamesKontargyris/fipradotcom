@@ -10,7 +10,7 @@ get_header(); ?>
 <style>
 /*    If dark photo*/
     #page-banner {
-        background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 90%, rgba(0,0,0, 0.3) 100%), linear-gradient(to bottom, rgba(0,37,127, 0.6) 50%, rgba(0,37,127, 0.9) 100%), url('<?php echo get_template_directory_uri(); ?>/img/careers.jpg');
+        background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 90%, rgba(0,0,0, 0.3) 100%), linear-gradient(to bottom, rgba(69,76,92, 0.8) 0%, rgba(69,76,92, 0.9) 100%), url('<?php echo get_template_directory_uri(); ?>/img/careers.jpg');
     }
     /*If light photo*/
 /*    #page-banner {*/

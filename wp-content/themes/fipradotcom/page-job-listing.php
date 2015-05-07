@@ -18,7 +18,7 @@
                 <h1 class="feature no-margin">Job Listing</h1>
                 <h2 class="no-margin">Account Executive</h2>
                 <hr class="small"/>
-                <h4 class="no-top-margin">Fipra International | €25,000-30,000 per annum</h4>
+                <h4 class="no-top-margin">Fipra International | &euro;25,000-&euro;30,000 per annum</h4>
                 <p class="lead blue">This listing is stolen from the Uber site... This is a unique opportunity to be a founding member of the Uber for Business Sales organization. With this role, you’ll have the opportunity to join a small team that has the ability to make a big impact.</p>
 
                 <p>We need creative thinkers and builders with previous sales and business development experience who are passionate about developing a new kind of sales organization at Uber.</p>
@@ -71,7 +71,7 @@
                 <div class="row">
                     <div class="sidebar-contact">
                         <div class="sidebar-contact-content">
-                                <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell.jpg" alt="Peter-Carlo Lehrell" />
+                                <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" style="background-color: white"/>
                                 <h5 class="no-margin">Peter-Carlo Lehrell</h5>
                             <p class="no-bottom-margin">
                                 <strong>Chairman, Fipra International</strong><br/><br/>

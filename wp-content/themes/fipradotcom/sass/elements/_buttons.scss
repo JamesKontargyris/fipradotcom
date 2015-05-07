@@ -16,12 +16,11 @@
   &.btn-small { @include font-size(12); }
 
   &.primary {
-    @include linear-gradient($color__fipra-blue 60%, darken($color__fipra-blue, 10%) 100%);
+    @include linear-gradient(lighten($color__fipra-blue, 5%) 50%, $color__fipra-blue 100%);
     color: white;
-    @include transition(all 0.2s);
     text-shadow:0px -1px 0px darken($color__fipra-blue, 30%);
     @include transition(all 0.2s);
-//    border-bottom:2px solid darken($color__fipra-blue, 15%);
+    border-bottom:2px solid rgba(0,0,0, 0.2);
     &:hover {
 //      @include linear-gradient(to top, $color__fipra-blue-gray 60%, darken($color__fipra-blue-gray, 10%) 100%);
       opacity:0.7;
@@ -31,13 +30,11 @@
 
   &.secondary {
     background-color:rgba(255,255,255,0);
-    border: 1px solid $color__fipra-blue-gray;
-    color: $color__fipra-blue-gray;
+    border: 1px solid $color__fipra-blue;
+    color: $color__fipra-blue;
     @include transition(all 0.2s);
     &:hover {
       opacity:0.7;
-      border: 1px solid $color__fipra-blue;
-      color: $color__fipra-blue;
     }
   }
 

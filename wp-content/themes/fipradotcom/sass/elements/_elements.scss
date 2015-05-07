@@ -25,13 +25,12 @@ blockquote, q {
 blockquote {
   position:relative;
   margin-top:$v-rhythm * 3;
-  background-color: lighten($color__fipra-turquoise, 46%);
-  @include linear-gradient(lighten($color__fipra-turquoise, 50%) 0, lighten($color__fipra-turquoise, 42%) 100%);
-  border-bottom:2px solid rgba($color__fipra-turquoise, 0.4);
-  color:$color__fipra-blue;
-  font-family: $font__sans;
-  @include font-size(18);
-  line-height: $v-rhythm * 2.2;
+  @include linear-gradient($color__fipra-blue-gray 30%, darken($color__fipra-blue-gray, 5%) 100%);
+//  background: darken($color__fipra-blue-gray, 0%);
+  border-bottom:2px solid rgba(lighten($color__fipra-blue-gray, 40%), 0.6);
+  color:white;
+  @include font-size(16);
+  line-height: $v-rhythm * 2;
   font-style: normal;
 
   &.no-margin { margin-top: $v-rhythm; }
@@ -46,13 +45,13 @@ blockquote {
 
   p { margin-bottom:$v-rhythm; }
 
-  .author { color:$color__fipra-blue-gray; font-weight:$font__black; text-transform: uppercase; margin:0; @include font-size(13);  font-style: normal; line-height: $v-rhythm * 1.5; }
+  .author { color:white; font-weight:$font__black; text-transform: uppercase; margin:0; @include font-size(12);  font-style: normal; line-height: $v-rhythm * 1.5; }
 
   .triangle {
     display:none;
     @include media($media__medium) { display:block; }
     position:absolute;
-    bottom:-11px;
+    bottom:-17px;
     width: 0;
     height: 0;
     border-style: solid;
@@ -61,16 +60,16 @@ blockquote {
   }
 
   &.left {
-    margin-left:-50px; margin-right:-50px;
+    margin-left:-56px; margin-right:-50px;
     padding:$v-rhythm * 1.5 em(50px) $v-rhythm * 1.5 em(50px);
-    @include media($media__medium) { border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin-right:0px; }
-    .triangle { left:0; border-width: 0 10px 10px 0; border-color: transparent rgba($color__fipra-turquoise, 0.4) transparent transparent; }
+    @include media($media__medium) { border-top-right-radius: 5px; border-bottom-right-radius: 5px; margin-right:0px; }
+    .triangle { left:0; border-width: 0 15px 15px 0; border-color: transparent rgba($color__fipra-blue-gray, 0.4) transparent transparent; }
   }
   &.right {
-    margin-left:-50px; margin-right:-50px;
+    margin-left:-50px; margin-right:-56px;
     padding:$v-rhythm * 1.5 em(50px) $v-rhythm * 1.5 em(50px);
-    @include media($media__medium) { border-top-left-radius: 10px; border-bottom-left-radius: 10px; margin-left:0px; padding:$v-rhythm * 1.5 em(60px) $v-rhythm * 1.5 em(24px); }
-    .triangle { right:0; border-width: 10px 10px 0 0; border-color: rgba($color__fipra-turquoise, 0.4) transparent transparent transparent; }
+    @include media($media__medium) { border-top-left-radius: 5px; border-bottom-left-radius: 5px; margin-left:0px; padding:$v-rhythm * 1.5 em(60px) $v-rhythm * 1.5 em(24px); }
+    .triangle { right:0; border-width: 15px 15px 0 0; border-color: rgba($color__fipra-blue-gray, 0.4) transparent transparent transparent; }
   }
 }
 
