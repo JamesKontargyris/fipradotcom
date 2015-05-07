@@ -4300,11 +4300,12 @@ embed, iframe, object {
     background-image: linear-gradient(#EBEAE8 50%, #dad9d5 100%); }
   .profile-expertise-showcase .showcase-block:hover {
     opacity: 0.5; }
-.profile-expertise-showcase h3 {
-  margin: 0;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.275rem; }
+  .profile-expertise-showcase .showcase-block h3 {
+    margin: 0;
+    font-size: 16px;
+    font-size: 1rem;
+    color: #00257f;
+    line-height: 1.275rem; }
 
 #secondary ul.languages-list {
   list-style: none; }

@@ -71,8 +71,8 @@
     @include transition(all 0.2s);
     &.bg { @include linear-gradient($color__fipra-light-gray 50%, darken($color__fipra-light-gray, 7%) 100%); }
     &:hover { opacity:0.5; }
+    h3 { margin:0; @include font-size(16); color:$color__fipra-blue; line-height:$v-rhythm * 1.7; }
   }
-  h3 { margin:0; @include font-size(16); line-height:$v-rhythm * 1.7; }
 }
 
 #secondary {
