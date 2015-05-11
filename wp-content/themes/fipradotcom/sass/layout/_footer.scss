@@ -1,9 +1,9 @@
 #footer-global-network-container {
   clear:both;
   background-color: darken($color__fipra-light-gray, 15%);
-  @include linear-gradient(darken($color__fipra-light-gray, 10%) 40%, darken($color__fipra-light-gray, 15%) 100%);
-  border-top:1px solid darken($color__fipra-light-gray, 25%);
-  border-bottom:5px solid $color__fipra-blue-gray;
+//  @include linear-gradient(darken($color__fipra-light-gray, 10%) 40%, darken($color__fipra-light-gray, 15%) 100%);
+//  border-top:1px solid darken($color__fipra-light-gray, 25%);
+  border-bottom:3px solid darken($color__fipra-blue-gray, 10%);
 
   #footer-global-network {
     text-align: center;
@@ -35,8 +35,8 @@
       border-top:1px solid darken($color__fipra-light-gray, 15%);
       border-bottom:1px solid white;
       background-color: $color__fipra-light-gray;
-      @include border-left-radius(4px);
-      @include border-right-radius(4px);
+
+
       @include media($media__medium) {
         padding:$v-rhythm / 2 em(20px);
         @include font-size(18);
@@ -50,7 +50,8 @@
   @include clearfix;
   font-family:$font__sans;
   color:lighten($color__fipra-blue-gray, 45%);
-  @include linear-gradient(lighten($color__fipra-blue-gray, 5%) 0%, $color__fipra-blue-gray 100%);
+  background: $color__fipra-blue-gray;
+//  @include linear-gradient(lighten($color__fipra-blue-gray, 5%) 0%, $color__fipra-blue-gray 100%);
 
   h5 { color:lighten($color__fipra-blue-gray, 30%); }
   a {
@@ -97,7 +98,7 @@
   font-family: $font__sans;
   @include font-size(12);
   background-color: darken($color__fipra-blue-gray, 12%);
-  @include linear-gradient(darken($color__fipra-blue-gray, 12%) 80%, darken($color__fipra-blue-gray, 16%) 100%);
+//  @include linear-gradient(darken($color__fipra-blue-gray, 12%) 80%, darken($color__fipra-blue-gray, 16%) 100%);
 
   .site-info {
     a {
@@ -127,8 +128,8 @@
         display:inline-block;
         margin-right:em(4px);
         @include media($media__medium) { margin:0 0 0 em(4px); }
-        @include border-top-radius(4px);
-        @include border-bottom-radius(4px);
+
+
         text-shadow: 0 -2px 0px $color__fipra-blue-gray;
         border-bottom:1px solid darken($color__fipra-blue-gray, 10%);
         padding:$v-rhythm / 2 em(12px);

@@ -209,10 +209,26 @@ function fipradotcom_scripts()
     );
 
     wp_enqueue_script(
+        'fipradotcom-jquery-actual-height-of-hidden-elements',
+        get_template_directory_uri() . '/js/jquery.actual.min.js',
+        array(),
+        '20150511',
+        true
+    );
+
+    wp_enqueue_script(
         'fipradotcom-user-js',
         get_template_directory_uri() . '/js/site.js',
         array(),
         '20120206',
+        true
+    );
+
+    wp_enqueue_script(
+        'fipradotcom-user-menu-link-and-entries-js',
+        get_template_directory_uri() . '/js/menu-list-and-entries.js',
+        array(),
+        '20150511',
         true
     );
 
@@ -275,7 +291,7 @@ function fipra_sitewide_search_form($form)
 function case_insensitive_url() {
     if (preg_match('/[A-Z]/', $_SERVER['REQUEST_URI'])) {
         $_SERVER['REQUEST_URI'] = strtolower($_SERVER['REQUEST_URI']);
-        $_SERVER['PATH_INFO']   = strtolower($_SERVER['PATH_INFO']);
+//        $_SERVER['PATH_INFO']   = strtolower($_SERVER['PATH_INFO']);
     }
 }
 add_action('init', 'case_insensitive_url');

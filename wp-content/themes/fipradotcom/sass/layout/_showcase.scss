@@ -4,8 +4,8 @@
 
   .showcase-block {
     @include clearfix();
-    @include border-left-radius(4px);
-    @include border-right-radius(4px);
+
+
     margin-bottom: $v-rhythm * 2;
     &:last-child { margin-bottom: 0; }
     .showcase-block-content {
@@ -15,7 +15,7 @@
     h3, h4 { color:$color__fipra-brown; font-weight: $font__bold; }
 
     .featured-image {
-      img { @include border-top-radius(4px); width:100%; }
+      img {  width:100%; }
     }
 
     &.center {

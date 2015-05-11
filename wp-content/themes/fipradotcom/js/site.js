@@ -1,4 +1,50 @@
-( function() {
+( function($) {
+
+    //    Function: element has attribute?
+    $.fn.hasAttr = function(attr) {
+        var attribVal = this.attr(attr);
+        return (attribVal !== undefined) && (attribVal !== false);
+    };
+    $.fn.extend({
+        sizeToHighestElement: function(elem) {
+            // Size elements to height of longest element in each parent
+            $.each(this, function()
+            {
+                // Get an array of all element heights
+                var elementHeights = $(elem).map(function() {
+                    return $(this).actual('outerHeight');
+                }).get();
+
+                // Math.max takes a variable number of arguments
+                // `apply` is equivalent to passing each height as an argument
+                var maxHeight = Math.max.apply(null, elementHeights);
+
+                // Set each height to the max height
+                $(elem).height(maxHeight);
+
+            });
+            return true;
+        }
+    });
+
+    jQuery.fn.animateAuto = function(prop, speed, callback){
+        var elem, height, width;
+        return this.each(function(i, el){
+            el = jQuery(el), elem = el.clone().css({"height":"auto","width":"auto"}).appendTo("body");
+            height = elem.css("height"),
+                width = elem.css("width"),
+                elem.remove();
+
+            if(prop === "height")
+                el.animate({"height":height}, speed, callback);
+            else if(prop === "width")
+                el.animate({"width":width}, speed, callback);
+            else if(prop === "both")
+                el.animate({"width":width,"height":height}, speed, callback);
+        });
+    }
+
+
     //Display/hide mobile menu when .mobile-menu-toggle is tapped
     $('.mobile-menu-toggle').on('click', function()
     {
@@ -60,7 +106,7 @@
     });
 
 //    All internal anchor links slide to position on page
-    $("a[href^=#]").click(function(e) {
+    $(".jump-to-link").click(function(e) {
         if($(this).attr('rel') != "modal:open")
         {
             e.preventDefault(); var dest = $(this).attr('href'); $('html,body').animate({ scrollTop: $(dest).offset().top - 20 }, 'slow');
@@ -90,6 +136,7 @@
     //    Set equal heights of content blocks in team member groups
     $('.team-group.equal-heights .team-member').matchHeight();
 
+
 //    Trigger tooltipster for .tooltip classes
     $('.tooltip').tooltipster();
 
@@ -114,9 +161,13 @@
     //Add a fade in/out to modals by default
     $.extend($.modal.defaults, { fadeDuration: 250 });
 
-//    Function: element has attribute?
-    $.fn.hasAttr = function(attr) {
-        var attribVal = this.attr(attr);
-        return (attribVal !== undefined) && (attribVal !== false);
-    };
-})();
+//    Size all .entry elements to highest element in each .entry-group parent element
+//    var entryGroups = $('.entry-group');
+    //entryGroups.sizeToHighestElement('.entry');
+//    Do the same when the window is resized
+//    $(window).resize(function()
+//    {
+//        $('.entry-group').sizeToHighestElement('.entry');
+//    });
+
+})(jQuery);

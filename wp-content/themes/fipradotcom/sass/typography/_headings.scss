@@ -19,11 +19,11 @@ h3, h4 {
 h5, h6 { margin:0 0 $v-rhythm 0; }
 
 h1 {
-  font-weight: $font__black;
+  font-weight: $font__normal;
   @include font-size(32);
   line-height: $v-rhythm * 3;
 
-  @include media($media__medium) { @include font-size(42); letter-spacing:-1px; line-height: $v-rhythm * 4; }
+  @include media($media__medium) { @include font-size(40); letter-spacing:-1px; line-height: $v-rhythm * 4; }
 
 //  Style similar to H5 in .hero-banner and feature blocks
   &.feature {
@@ -34,11 +34,15 @@ h1 {
     font-weight: $font__black;
     text-transform: uppercase;
   }
+
+  &.upper {
+    font-weight: $font__light; letter-spacing: 5px; @include font-size(24); text-transform: uppercase;
+  }
 }
 
 h2 {
   font-weight: $font__normal;
-  color:$color__fipra-brown;
+  color:$color__fipra-blue-gray;
   @include font-size(28);
   line-height: $v-rhythm * 3;
 
@@ -52,25 +56,25 @@ h2 {
 }
 
 h3 {
-  font-weight: $font__bold;
-  @include font-size(21);
+  font-weight: $font__normal;
+  @include font-size(18);
   line-height: $v-rhythm * 2;
-  color:$color__fipra-brown;
+  color:$color__fipra-blue-gray;
 
   @include media($media__medium) { @include font-size(24); line-height: $v-rhythm * 2.5; }
 }
 
 h4 {
-  font-weight: $font__bold;
-  @include font-size(18);
+  font-weight: $font__normal;
+  @include font-size(16);
   line-height: $v-rhythm * 2;
   color:$color__fipra-blue-gray;
 
 }
 
-h5 { @include font-size(16); font-weight: $font__black; text-transform: uppercase; }
+h5 { @include font-size(14); font-weight: $font__black; text-transform: uppercase; }
 
-h6 { @include font-size(14); font-weight: $font__black; }
+h6 { @include font-size(12); font-weight: $font__black; }
 
 h1, h2, h3, h4, h5, h6 { &.no-margin { margin:0; } &.no-top-margin { margin-top:0; } }
 

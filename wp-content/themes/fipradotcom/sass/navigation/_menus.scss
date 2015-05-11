@@ -179,14 +179,10 @@ ul.anchor-links-list {
 
     @include media(max-width $media__medium) {
       display:none;
-      background-color: lighten($color__fipra-periwinkle, 10%);
-      border-bottom:1px solid white;
-      &.menu-title { display:block; background-color:$color__fipra-blue; color:white; cursor:pointer; padding: $v-rhythm / 2 em(12px) !important; }
-      a { display:block; padding: $v-rhythm / 2 em(12px);
-        &:hover { background-color: $color__fipra-blue; color:white; }
-      }
-      i { position:absolute; right:em(12px); top:$v-rhythm / 2; }
-
+//      background-color: lighten($color__fipra-periwinkle, 10%);
+      &:not(.menu-title) { border-top:1px solid darken($color__fipra-light-gray, 5%); }
+      &.menu-title { display:block; padding:$v-rhythm * 0.25 0; cursor:pointer; }
+      a { display:block; padding:$v-rhythm * 0.5 0; }
     }
 
     @include media($media__medium) {
@@ -195,9 +191,6 @@ ul.anchor-links-list {
       &:not(:first-child) { margin-left: em(12px); }
       a {
         padding:$v-rhythm / 2 em(6px);
-        @include border-top-radius(6px);
-        @include border-bottom-radius(6px);
-        &:hover { background-color: $color__fipra-blue; color:white; }
       }
     }
   }
