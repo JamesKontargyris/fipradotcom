@@ -10,15 +10,17 @@
 
     <div id="footer-global-network-container">
         <div id="footer-global-network">
-            <div class="title">Explore our Global Network:</div>
-            <select name="footer-global-network" id="footer-global-network">
-                <option value="">Please select...</option>
-                <optgroup label="Continent Name">
-                    <option value="1">Country Name</option>
-                    <option value="2">Country Name</option>
-                    <option value="3">Country Name</option>
-                </optgroup>
-            </select>
+            <label for="footer-global-network">Explore&nbsp;our&nbsp;Global&nbsp;Network:</label>
+            <div class="select-wrapper">
+                <select name="footer-global-network" id="footer-global-network">
+                    <option value="">Please select...</option>
+                    <optgroup label="Continent Name">
+                        <option value="1">Country Name</option>
+                        <option value="2">Country Name</option>
+                        <option value="3">Country Name</option>
+                    </optgroup>
+                </select>
+            </div>
         </div>
     </div>
 
@@ -28,7 +30,7 @@
             <div class="footer-section">
                 <h5>About Us</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
-                <p><a href="#" class="btn secondary">Find out more</a></p>
+                <p><a href="#" class="btn secondary btn-white btn-small">Find out more</a></p>
             </div>
             <div class="footer-section">
                 <h5>Browse</h5>
@@ -53,7 +55,7 @@
                     Tel.: +32 2 613 2828<br/>
                     Fax: +32 2 613 2849<br/>
                 </address>
-                <p><a class="btn primary" href="#">Contact Us</a></p>
+                <p><a class="btn primary btn-white btn-small" href="#">Contact Us</a></p>
             </div>
 
         </footer><!-- #colophon -->

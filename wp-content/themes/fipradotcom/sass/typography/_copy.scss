@@ -73,7 +73,7 @@ dt {
 p {
   &.lead {
     font-family: $font__sans;
-    @include font-size(18);
+    @include media($media__medium) { @include font-size(18); }
     line-height: $v-rhythm * 2;
   }
   &.center {

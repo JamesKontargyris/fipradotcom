@@ -35,7 +35,7 @@
         <div class="full-width-block-content">
             <div class="row">
                 <div class="col-12-l no-m-margin">
-                    <h1 class="upper no-margin">Areas of Expertise</h1>
+                    <h1 class="upper">Areas of Expertise</h1>
                     <p class="lead">Cras laoreet eros quis pharetra ullamcorper. Etiam consequat varius luctus. Quisque mollis, magna vitae vehicula mattis, quam sem fringilla justo, sit amet faucibus nulla arcu eu ex. Curabitur metus eros, euismod ac faucibus sit amet, tempor eu mauris.</p>
                 </div>
             </div>
@@ -142,11 +142,11 @@
         </div>
     </section>
 
-    <section id="public-affairs-services" class="full-width-block-container public-affairs-services-block grey">
+    <section id="public-affairs-services" class="full-width-block-container public-affairs-services-block light-grey">
         <div class="full-width-block-content">
             <div class="row">
                 <div class="col-12-l no-m-margin">
-                    <h1 class="upper no-margin">Public Affairs Services</h1>
+                    <h1 class="upper">Public Affairs Services</h1>
                 </div>
             </div>
             <div class="menu-list-and-entries-block">

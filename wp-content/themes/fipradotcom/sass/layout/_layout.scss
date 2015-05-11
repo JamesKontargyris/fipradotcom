@@ -5,6 +5,7 @@
 @import "hero-banner";
 @import "page-banner";
 @import "page-header";
+@import "full-width-block";
 @import "global-network-menu";
 
 #content-container {
@@ -70,17 +71,6 @@
     @include span-columns(12);
   }
 
-  .content-area {
-    @include outer-container($container__content-width);
-    padding-left:em(20px);
-    padding-right:em(20px);
-
-    @include media($media__large) { @include outer-container($container__outer-width); padding:0; }
-//    padding:$v-rhythm * 2 em(40px) 0;
-//    @include media(max-width $media__small) { padding:$v-rhythm * 2 em(20px) 0; }
-//    margin:0;
-  }
-
   @include media($media__medium) {
     #primary ~ #secondary { &.content-area { padding-left:0; @include omega(); } }
     #secondary ~ #primary { &.content-area { padding-left:0; @include omega(); } }
@@ -90,15 +80,22 @@
 
 .page-nav {
   background-color: $color__fipra-light-gray;
-  border-bottom:2px solid rgba(black, 0.2);
-  @include media($media__medium) {
-    padding:$v-rhythm * 0.5 0;
-    //    @include linear-gradient(lighten($color__fipra-periwinkle, 12%) 60%, lighten($color__fipra-periwinkle, 7%) 100%);
-//    border-bottom:1px solid darken(white, 13%);
-  }
+  border-bottom:1px solid darken($color__fipra-light-gray, 8%);
+  @include media($media__medium) { padding:$v-rhythm * 0.5 0; }
 }
 
 .row { @include row(); }
+
+.content-area {
+  @include outer-container($container__content-width);
+  padding-left:em(20px);
+  padding-right:em(20px);
+
+  @include media($media__large) { @include outer-container($container__outer-width); padding-left:0; padding-right:0; }
+  //    padding:$v-rhythm * 2 em(40px) 0;
+  //    @include media(max-width $media__small) { padding:$v-rhythm * 2 em(20px) 0; }
+  //    margin:0;
+}
 
 //Column classes
 @for $i from 1 through $grid-columns {
@@ -148,71 +145,4 @@
 
     &.no-m-margin { @include media(max-width $media__medium) { margin:0; } }
   }
-}
-
-
-.full-width-block-container {
-  position:relative;
-
-  .full-width-block-content {
-    @extend .content-area;
-    padding-top:$v-rhythm * 2 !important;
-    padding-bottom:$v-rhythm * 2 !important;
-//    &.no-margin { padding:0 em(20px); }
-//    @include media($media__large) { padding:$v-rhythm * 3 0; &.no-margin { padding:0; } }
-
-//    color:darken(#f1f3f5, 45%);
-    h1, h2, h3, h4, h5, h6 { color:$color_soft-black; }
-  }
-
-
-  &.dark-grey {
-    background-color: rgba(darken($color__fipra-blue-gray, 12%), 0.9);
-//    @include linear-gradient(rgba(darken($color__fipra-blue-gray, 10%), 0.8) 0%, rgba(darken($color__fipra-blue-gray, 14%), 0.8) 100%);
-    color:lighten($color__fipra-blue-gray, 34%) !important;
-    a { color:lighten($color__fipra-blue-gray, 34%); }
-  }
-
-  &.grey {
-    background-color: rgba($color__fipra-blue-gray, 0.9);
-//    @include linear-gradient(rgba($color__fipra-blue-gray, 0.9) 0%, rgba(darken($color__fipra-blue-gray, 5%), 0.9));
-    color:lighten($color__fipra-blue-gray, 40%) !important;
-    h1, h3 { color:white; }
-    a { color:lighten($color__fipra-blue-gray, 40%); }
-  }
-  &.light-grey {
-    background-color: rgba(lighten($color__fipra-blue-gray, 12%), 0.9);
-    color:lighten($color__fipra-blue-gray, 42%) !important;
-    h1, h3 { color:white; }
-    a { color:lighten($color__fipra-blue-gray, 42%); }
-  }
-  &.periwinkle {
-    background-color: rgba($color__fipra-periwinkle, 0.9);
-    color:darken($color__fipra-periwinkle, 40%) !important;
-    h1, h3 { color:$color_soft-black; }
-    a {
-      color:$color__fipra-blue;
-      &:hover { color:$color__fipra-blue-gray; }
-    }
-  }
-  &.turquoise {
-    background-color: rgba($color__fipra-turquoise, 0.9);
-    color:lighten($color__fipra-turquoise, 42%) !important;
-    h1, h3 { color:white; }
-    a { color:lighten($color__fipra-turquoise, 42%); }
-  }
-  &.violet {
-    background-color: rgba($color__fipra-violet, 0.9);
-    color:lighten($color__fipra-violet, 28%) !important;
-    h1, h3 { color:white; }
-    a { color:lighten($color__fipra-violet, 42%); }
-  }
-
-  &.dark-grey, &.grey, &.light-grey, &.turquoise, &.violet {
-    h1, h2, h3, h4, h5, h6 { color:white; }
-    .btn { @extend .btn-white; }
-    li.active a { background:rgba(white, 0.1); color:white !important; }
-    a:hover { color:white; }
-  }
-
 }

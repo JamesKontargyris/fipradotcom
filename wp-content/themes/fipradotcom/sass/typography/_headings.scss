@@ -20,10 +20,10 @@ h5, h6 { margin:0 0 $v-rhythm 0; }
 
 h1 {
   font-weight: $font__normal;
-  @include font-size(32);
-  line-height: $v-rhythm * 3;
+  @include font-size(21);
+  line-height: $v-rhythm * 2;
 
-  @include media($media__medium) { @include font-size(40); letter-spacing:-1px; line-height: $v-rhythm * 4; }
+  @include media($media__medium) { @include font-size(26); letter-spacing:-1px; line-height: $v-rhythm * 3; }
 
 //  Style similar to H5 in .hero-banner and feature blocks
   &.feature {
@@ -33,10 +33,6 @@ h1 {
     line-height: $v-rhythm * 2;
     font-weight: $font__black;
     text-transform: uppercase;
-  }
-
-  &.upper {
-    font-weight: $font__light; letter-spacing: 5px; @include font-size(24); text-transform: uppercase;
   }
 }
 
@@ -61,7 +57,7 @@ h3 {
   line-height: $v-rhythm * 2;
   color:$color__fipra-blue-gray;
 
-  @include media($media__medium) { @include font-size(24); line-height: $v-rhythm * 2.5; }
+  @include media($media__large) { @include font-size(24); line-height: $v-rhythm * 2.5; }
 }
 
 h4 {
@@ -72,10 +68,14 @@ h4 {
 
 }
 
-h5 { @include font-size(14); font-weight: $font__black; text-transform: uppercase; }
+h5 { @include font-size(14); font-weight: $font__normal; text-transform: uppercase; letter-spacing:2px; }
 
-h6 { @include font-size(12); font-weight: $font__black; }
+h6 { @include font-size(12); font-weight: $font__bold; }
 
-h1, h2, h3, h4, h5, h6 { &.no-margin { margin:0; } &.no-top-margin { margin-top:0; } }
+h1, h2, h3, h4, h5, h6 {
+  &.no-margin { margin:0; }
+  &.no-top-margin { margin-top:0; }
+  &.upper { font-weight: $font__normal; letter-spacing: 5px; text-transform: uppercase; }
+}
 
 //  In hero-banner, h1 looks the same as H5, H2 is same as H1 but light font weight
