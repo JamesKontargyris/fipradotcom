@@ -161,7 +161,7 @@
     @include media(max-width $media__large) { display:none; }
     &.with-line {
       li:not(:last-child):before {
-        z-index:10;
+        z-index:2;
         content:"";
         width:1px;
         position:absolute;
@@ -183,13 +183,12 @@
       &:last-child { border-bottom: 0; }
       a {
         display:block;
-        //      @include linear-gradient(to right, rgba(black, 0) 90%, rgba(black, 0.05) 100%);
         padding:$v-rhythm * 0.5 em(10px);
         line-height: em(32px);
         &:hover { background-color: rgba(black, 0.1); }
         i { display: inline-block; margin-right:em(4px); }
         .icon {
-          z-index:20;
+          z-index:5;
           position: relative;
           display: inline-block;
           color:$color__fipra-blue;

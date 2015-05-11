@@ -159,7 +159,7 @@
     })
 
     //Add a fade in/out to modals by default
-    $.extend($.modal.defaults, { fadeDuration: 250 });
+    $.extend($.modal.defaults, { fadeDuration: 250, zIndex:20 });
 
 //    Size all .entry elements to highest element in each .entry-group parent element
 //    var entryGroups = $('.entry-group');

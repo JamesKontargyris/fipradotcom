@@ -62,7 +62,7 @@
 
     .footer-section {
       @include span-columns(12);
-      padding:$v-rhythm * 1.5 em(24px) $v-rhythm * 1.5 0;
+      padding:$v-rhythm * 2 em(24px) $v-rhythm * 2 0;
       @include font-size(14);
       @include media($media__medium) {
         @include span-columns(4);
@@ -77,22 +77,16 @@
   font-family: $font__sans;
   @include font-size(12);
   background-color: darken($color__fipra-blue-gray, 12%);
-//  @include linear-gradient(darken($color__fipra-blue-gray, 12%) 80%, darken($color__fipra-blue-gray, 16%) 100%);
 
   .site-info {
-    a {
-      color: white;
-      &:hover {
-        color: darken(white, 20%);
-      }
+    @extend .content-area;
+    a { color: white;
+      &:hover { opacity:0.7; }
     }
     @include row();
     color:lighten($color__fipra-blue-gray, 35%);
-    padding:$v-rhythm 20px $v-rhythm * 2;
-    @include outer-container($container__outer-width);
-    @include media($media__xlarge) {
-      padding:$v-rhythm 0 $v-rhythm * 2;
-    }
+    padding-top:$v-rhythm;
+    padding-bottom: $v-rhythm * 2;
 
     .footer-copyright, .footer-social-links {
       @include span-columns(12);
@@ -110,11 +104,11 @@
 
 
         text-shadow: 0 -2px 0px $color__fipra-blue-gray;
-        border-bottom:1px solid darken($color__fipra-blue-gray, 10%);
         padding:$v-rhythm / 2 em(12px);
         background-color:lighten($color__fipra-blue-gray, 10%);
         color:white;
-        &:hover { background-color: lighten($color__fipra-blue-gray, 5%); border-bottom:0px; }
+        @include transition(all 0.3s);
+        &:hover { opacity:0.7; }
 
       }
     }

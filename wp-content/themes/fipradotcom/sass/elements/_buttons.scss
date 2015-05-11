@@ -6,27 +6,22 @@
   background-color: $color__fipra-periwinkle;
   font-family: $font__sans;
   font-weight: $font__bold;
-  padding: $v-rhythm * 0.5 em(16px);
+  padding: $v-rhythm * 0.25 em(16px);
   margin-bottom: $v-rhythm * 0.5;
   margin-right: em(16px);
   &:last-child { margin-right: 0; }
   &.no-margin { margin:0; }
-  &.btn-small { @include font-size(12); }
+  &.btn-small { @include font-size(14); }
 
   &.primary {
     background-color: $color__fipra-blue;
-//    @include linear-gradient(lighten($color__fipra-blue, 5%) 50%, $color__fipra-blue 100%);
     color: white;
-//    text-shadow:0px -1px 0px darken($color__fipra-blue, 30%);
+    text-shadow:0px -1px 0px darken($color__fipra-blue, 30%);
     @include transition(all 0.2s);
-//    border-bottom:2px solid rgba(0,0,0, 0.2);
-    &:hover {
-//      @include linear-gradient(to top, $color__fipra-blue-gray 60%, darken($color__fipra-blue-gray, 10%) 100%);
-      opacity:0.7;
-      color:white;
-    }
+    border-bottom:2px solid darken($color__fipra-blue, 20%);
+    &:hover { opacity:0.7; color:white; }
 
-    &.btn-white { background-color: white; color:$color__fipra-blue; }
+    &.btn-white { text-shadow:0px -1px 0px darken(white, 15%); border-bottom:2px solid darken(white, 30%); background-color: white; color:$color__fipra-blue; }
   }
 
   &.secondary {

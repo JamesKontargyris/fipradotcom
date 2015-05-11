@@ -153,17 +153,17 @@
                 <div class="row">
                     <div class="col-5-l">
                         <ul class="menu-list with-line" data-entry-group="2">
-                            <li class="active"><a href="#entry-1"><i class="icon icon-globe"></i> Strategic Planning</a></li>
-                            <li><a href="#entry-2"><i class="icon icon-globe"></i> Narrative Development</a></li>
-                            <li><a href="#entry-3"><i class="icon icon-globe"></i> Stakeholder Mapping</a></li>
-                            <li><a href="#entry-4"><i class="icon icon-globe"></i> Stakeholder Outreach</a></li>
-                            <li><a href="#entry-5"><i class="icon icon-globe"></i> Situation Analysis</a></li>
-                            <li><a href="#entry-6"><i class="icon icon-globe"></i> Targeted Monitoring</a></li>
-                            <li><a href="#entry-7"><i class="icon icon-globe"></i> One-Stop-Shop PA Campaigns</a></li>
-                            <li><a href="#entry-8"><i class="icon icon-globe"></i> In-house Capabilities Assessment</a></li>
-                            <li><a href="#entry-9"><i class="icon icon-globe"></i> Training Sessions</a></li>
-                            <li><a href="#entry-10"><i class="icon icon-globe"></i> Complementary Media Support</a></li>
-                            <li><a href="#entry-11"><i class="icon icon-globe"></i> EU Funding</a></li>
+                            <li class="active"><a href="#entry-1"><i class="icon icon-list-numbered"></i> Strategic Planning</a></li>
+                            <li><a href="#entry-2"><i class="icon icon-book-open-1"></i> Narrative Development</a></li>
+                            <li><a href="#entry-3"><i class="icon icon-sitemap"></i> Stakeholder Mapping</a></li>
+                            <li><a href="#entry-4"><i class="icon icon-chat"></i> Stakeholder Outreach</a></li>
+                            <li><a href="#entry-5"><i class="icon icon-eye-outline"></i> Situation Analysis</a></li>
+                            <li><a href="#entry-6"><i class="icon icon-target"></i> Targeted Monitoring</a></li>
+                            <li><a href="#entry-7"><i class="icon icon-flag"></i> One-Stop-Shop PA Campaigns</a></li>
+                            <li><a href="#entry-8"><i class="icon icon-warehouse"></i> In-house Capabilities Assessment</a></li>
+                            <li><a href="#entry-9"><i class="icon icon-award-2"></i> Training Sessions</a></li>
+                            <li><a href="#entry-10"><i class="icon icon-video-chat"></i> Complementary Media Support</a></li>
+                            <li><a href="#entry-11"><i class="icon icon-dollar-1"></i> EU Funding</a></li>
                         </ul>
                     </div>
                     <div class="col-7-l entry-group" id="entry-group-2">
@@ -173,7 +173,8 @@
                                 <h3 class="no-margin">Strategic Planning <i class="icon-toggle icon-down-open"></i></h3>
                             </div>
                             <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+                                <p>Jointly developing your Public Affairs action plan and objectives, clearly defining your strategic and tactical priorities.</p>
+                                <p>Contact <a href="#modal" rel="modal:open">Peter-Carlo Lehrell</a> for more information.</p>
                             </div>
                         </div>
 
@@ -182,7 +183,9 @@
                                 <h3 class="no-margin">Narrative Development <i class="icon-toggle icon-down-open"></i></h3>
                             </div>
                             <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+                                <p>Ensuring that your story effectively communicates your key messages and resonates with your target audiences.</p>
+
+                                <p>Contact <a href="#modal" rel="modal:open">Dirk Hudig</a> for more information.</p>
                             </div>
                         </div>
 
@@ -191,7 +194,8 @@
                                 <h3 class="no-margin">Stakeholder Mapping <i class="icon-toggle icon-down-open"></i></h3>
                             </div>
                             <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+                                <p>Identifying the organisations and individuals that are relevant to your cause and helping you manage your contacts database.</p>
+                                <p>Contact <a href="#modal" rel="modal:open">Jan Ahlskog</a> for more information.</p>
                             </div>
                         </div>
 
@@ -200,7 +204,8 @@
                                 <h3 class="no-margin">Stakeholder Outreach <i class="icon-toggle icon-down-open"></i></h3>
                             </div>
                             <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+                                <p>Hands-on support to establish constructive dialogue with key stakeholders and effectively execute your action plan.</p>
+                                <p>Contact <a href="#modal" rel="modal:open">Ukko Metsola</a> for more information.</p>
                             </div>
                         </div>
 
@@ -209,7 +214,8 @@
                                 <h3 class="no-margin">Situation Analysis <i class="icon-toggle icon-down-open"></i></h3>
                             </div>
                             <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+                                <p>Tailored, in-depth analysis and assessment of political and regulatory developments at international, national and local levels.</p>
+                                <p>Contact <a href="#modal" rel="modal:open">Daniel Furby</a> for more information.</p>
                             </div>
                         </div>
 
@@ -218,7 +224,8 @@
                                 <h3 class="no-margin">Targeted Monitoring <i class="icon-toggle icon-down-open"></i></h3>
                             </div>
                             <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+                                <p>Serving as your ‘eyes and ears’ on the ground to provide you with real-time intelligence and regular newsletters on key issues impacting your PA objectives.</p>
+                                <p>Contact <a href="#modal" rel="modal:open">Laura Batchelor</a> for more information.</p>
                             </div>
                         </div>
 
@@ -227,7 +234,8 @@
                                 <h3 class="no-margin">One-Stop-Shop PA Campaigns <i class="icon-toggle icon-down-open"></i></h3>
                             </div>
                             <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+                                <p>Track record in leading and coordinating PA campaigns on the ground in over 60 countries, ensuring quality, consistency and timely delivery and execution.</p>
+                                <p>Contact <a href="#modal" rel="modal:open">Paul Buffet</a> for more information.</p>
                             </div>
                         </div>
 
@@ -236,7 +244,8 @@
                                 <h3 class="no-margin">In-house Capabilities Assessment <i class="icon-toggle icon-down-open"></i></h3>
                             </div>
                             <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+                                <p>Identifying the strengths and weaknesses of your Government Affairs practice through personalised recommendations.</p>
+                                <p>Contact <a href="#modal" rel="modal:open">Laura Batchelor</a> for more information.</p>
                             </div>
                         </div>
 
@@ -245,7 +254,8 @@
                                 <h3 class="no-margin">Training Sessions <i class="icon-toggle icon-down-open"></i></h3>
                             </div>
                             <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+                                <p>Customised PA training sessions for your in-house policy and management personnel.</p>
+                                <p>Contact <a href="#modal" rel="modal:open">Dirk Hudig</a> for more information.</p>
                             </div>
                         </div>
 
@@ -254,7 +264,8 @@
                                 <h3 class="no-margin">Complementary Media Support <i class="icon-toggle icon-down-open"></i></h3>
                             </div>
                             <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+                                <p>Crafting press statements that support your public policy objectives and helping you organise and prepare for press conferences and media appearances.</p>
+                                <p>Contact <a href="#modal" rel="modal:open">David Lawsky</a> for more information.</p>
                             </div>
                         </div>
 
@@ -263,7 +274,8 @@
                                 <h3 class="no-margin">EU Funding <i class="icon-toggle icon-down-open"></i></h3>
                             </div>
                             <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+                                <p>Helping you understand what EU funds are available to your organisation and how to navigate the complex application process.</p>
+                                <p>Contact <a href="#modal" rel="modal:open">Peter-Carlo Lehrell</a> for more information.</p>
                             </div>
                         </div>
 
@@ -276,3 +288,7 @@
 </div><!-- #content-container   -->
 
 <?php get_footer(); ?>
+
+<div id="modal">
+    This pop-up will contain contact details for the relevant person.
+</div>
