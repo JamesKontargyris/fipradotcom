@@ -36,9 +36,7 @@
 
   #site-content-container {
     margin-top:$v-rhythm * 3;
-    #content {
-      @extend .content-area;
-    }
+    #content { @extend .content-area; }
   }
 
   #primary {
@@ -52,7 +50,8 @@
     @include media($media__medium) { @include span-columns(4); }
     aside {
       @include clearfix;
-      &:not(:first-child) { margin-top:$v-rhythm * 2; padding-top:$v-rhythm * 2; border-top:1px solid darken(white, 10%); }
+      &:not(:first-child) { margin-top:$v-rhythm * 1.5; padding-top:$v-rhythm; border-top:1px solid darken($color__fipra-lighter-gray, 7%); }
+      @include media($media__medium) { padding-bottom: $v-rhythm * 2; }
     }
   }
 
@@ -63,17 +62,18 @@
     @include span-columns(12);
   }
 
-  @include media($media__medium) {
-    #primary ~ #secondary { &.content-area { padding-left:0; @include omega(); } }
-    #secondary ~ #primary { &.content-area { padding-left:0; @include omega(); } }
-  }
+//  @include media($media__medium) {
+//    #primary ~ #secondary { &.content-area { padding-left:0; @include omega(); } }
+//    #secondary ~ #primary { &.content-area { padding-left:0; @include omega(); } }
+//  }
 
 }
 
 .page-nav {
+  @include clearfix;
   background-color: $color__fipra-light-gray;
   border-bottom:1px solid darken($color__fipra-light-gray, 8%);
-  @include media($media__medium) { padding:$v-rhythm * 0.5 0; }
+//  @include media($media__medium) { padding:$v-rhythm * 0.5 0; }
 }
 
 .row { @include row(); }

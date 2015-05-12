@@ -30,7 +30,7 @@ get_header(); ?>
                 <div class="col-8-l no-margin">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/flags/united-kingdom.png" alt="Flag" /> <h1 class="upper">United Kingdom</h1>
                     <p class="meta">Unit, Correspondent or Special Adviser</p>
-                    <p class="lead">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.</p>
+                    <p class="lead no-margin">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.</p>
                 </div>
             </div>
         </div>
@@ -38,11 +38,11 @@ get_header(); ?>
         <div class="page-nav">
             <div class="row content-area">
                 <ul class="anchor-links-list no-margin no-bullet">
-                    <li class="menu-title">Jump to... <i class="icon-menu-1"></i></li>
-                    <li><a class="jump-to-link" href="#about-us">About Us <i class="icon-down-open"></i></a></li>
-                    <li><a class="jump-to-link" href="#our-team">Our Team <i class="icon-down-open"></i></a></li>
-                    <li><a class="jump-to-link" href="#our-location">Our Location <i class="icon-down-open"></i></a></li>
-                    <li class="hide-s"><a href="#get-in-touch">Get in Touch <i class="icon-down-open"></i></a></li>
+                    <li class="menu-title"><i class="icon-menu-1"></i> Jump to...</li>
+                    <li class="hide-s"><a class="jump-to-link" href="#about-us">About Us <i class="icon-down-open"></i></a></li>
+                    <li class="hide-s"><a class="jump-to-link" href="#our-team">Our Team <i class="icon-down-open"></i></a></li>
+                    <li class="hide-s"><a class="jump-to-link" href="#our-location">Our Location <i class="icon-down-open"></i></a></li>
+                    <li class="hide-s hide-m"><a href="#get-in-touch">Get in Touch <i class="icon-down-open"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -55,15 +55,12 @@ get_header(); ?>
                 <main id="main" class="site-main" role="main">
 
                     <h3 id="about-us">About Us</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor ullamcorper eu tristique risus. Nulla consequat volutpat augue a elementum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis, ligula in ornare malesuada, erat ante gravida augue, non fermentum ligula odio vitae eros. Donec elit purus, tristique sit amet finibus vitae, interdum ut nisi. Nam mattis, lorem volutpat accumsan iaculis, ante justo elementum urna, eget tempor justo lacus quis leo. Pellentesque metus ligula, facilisis eu diam eget, semper maximus lorem. Vivamus fringilla mi vitae risus viverra, ac tempor urna elementum. Duis semper odio quis erat finibus, eget tincidunt est ultrices. Morbi sit amet ante a mauris auctor finibus. Quisque eget risus at ligula egestas dapibus sit amet et enim.</p>
 
-                    <p>Aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus. Integer vitae felis egestas, sodales eros ut, luctus erat.</p>
+                    <p>Phasellus quis accumsan dolor, eget tempus tortor. Vivamus iaculis massa a nibh pretium, sed interdum dui molestie. Suspendisse non ipsum eu ligula tincidunt vulputate vitae nec metus. Donec maximus sagittis magna, id auctor purus dapibus eu. Vestibulum gravida, libero at aliquet euismod, orci libero consectetur tellus, sit amet mattis velit lorem in velit. Nam quis nisl porta, placerat est in, consectetur dolor. Proin condimentum, nunc a malesuada interdum, neque nisi euismod dui, et luctus felis felis a ligula. Nam maximus lacus vel quam mattis, nec elementum est tempor. Phasellus pulvinar diam sed nisi scelerisque efficitur. Sed fringilla varius dolor, at placerat velit. Duis aliquet convallis ipsum, vel ultrices felis aliquet quis. Aliquam imperdiet magna eget turpis fringilla pellentesque.</p>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor ullamcorper eu tristique risus. Nulla consequat volutpat augue a elementum.</p>
+                    <p>Vestibulum sed pulvinar orci, efficitur tristique arcu. Fusce a rutrum neque, vel efficitur urna. Vivamus ut iaculis mi. Etiam eget tortor ut metus sagittis semper a at urna. Mauris sit amet lacinia nunc, vestibulum elementum urna. Sed a lorem non leo consequat venenatis mattis a arcu. Sed a sapien malesuada ipsum convallis mattis. Nunc lacinia lorem sit amet urna lacinia placerat. Curabitur cursus mauris vitae nisi vulputate tincidunt. Integer sit amet efficitur neque. Aenean tincidunt imperdiet est sit amet dictum. In tortor augue, tempus nec justo ac, tincidunt blandit lacus. Nullam mi leo, venenatis pretium ipsum ac, iaculis cursus orci.</p>
 
-                    <p>Aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus. Integer vitae felis egestas, sodales eros ut, luctus erat.</p>
-
-                    <h3 id="testimonials">Testimonials <i class="icon-left-open owl-prev" data-carousel=".testimonial-group"></i><i class="icon-right-open owl-next" data-carousel=".testimonial-group"></i></h3>
                     <div class="testimonial-group">
                         <blockquote cite="http://test.com" class="testimonial">
                             <div class="quote">
@@ -102,6 +99,14 @@ get_header(); ?>
                             <span class="triangle"></span>
                         </blockquote>
                     </div>
+                    <div class="testimonial-group-carousel-controls">
+                        <button class="button owl-prev" data-carousel=".testimonial-group">
+                            <i class="icon-left-open-2" ></i> Previous
+                        </button>
+                        <button class="button owl-next" data-carousel=".testimonial-group">
+                            Next <i class="icon-right-open-2"></i>
+                        </button>
+                    </div>
 
 
                     <h3 id="our-team">Our Team</h3>
@@ -113,7 +118,8 @@ get_header(); ?>
                                     <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" /></a>
                                 </div>
                                 <div class="col-7-m col-12-xs col-12-xxs no-bottom-margin">
-                                    <h4><a href="#">Peter-Carlo Lehrell</a></h4>
+                                    <h4 class="no-margin"><a href="#">Peter-Carlo Lehrell</a></h4>
+                                    <h6>Position</h6>
                                     <div class="team-member-bio">
                                         <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. <a href="#">Full&nbsp;profile</a></p>
                                     </div>
@@ -134,6 +140,7 @@ get_header(); ?>
                                 </div>
                                 <div class="col-7-m col-12-xs col-12-xxs no-bottom-margin">
                                     <h4 class="no-margin"><a href="#">Ukko Metsola</a></h4>
+                                    <h6>Position</h6>
                                     <div class="team-member-bio">
                                         <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. <a href="#">Full&nbsp;profile</a></p>
                                     </div>
@@ -169,32 +176,51 @@ get_header(); ?>
             </div><!-- #primary -->
 
             <div id="secondary">
-                <aside>
+
+                <div class="sidebar-contacts-container">
                     <h5 id="get-in-touch">Lead Contact</h5>
-                    <div class="row">
+
+                    <div class="sidebar-contacts-group">
                         <div class="sidebar-contact">
                             <div class="sidebar-contact-content">
                                 <a href="#">
                                     <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" style="background-color: white;" />
-                                    <h5 class="no-margin">Peter-Carlo Lehrell</h5>
+                                    <strong>Peter-Carlo Lehrell</strong>
                                 </a>
                                 <p class="no-bottom-margin">
                                     <strong>Chairman, Fipra International</strong><br/>
-                                    <span class="font-14">Tel. +01234 5678910 <br/>
-                                    Fax. +01234 5678910 <br/>
-                                    <a href="mailto:lehrell@fipra.com">lehrell@fipra.com</a></span>
+                            <span class="font-14">Tel. +01234 5678910 <br/>
+                            Fax. +01234 5678910 <br/>
+                            <a href="mailto:lehrell@fipra.com">lehrell@fipra.com</a></span>
                                 </p>
                             </div>
                         </div>
+
+<!--                        <div class="sidebar-contact">-->
+<!--                            <div class="sidebar-contact-content">-->
+<!--                                <a href="#">-->
+<!--                                    <img src="--><?//= get_template_directory_uri(); ?><!--/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" style="background-color: white;" />-->
+<!--                                    <strong>Peter-Carlo Lehrell</strong>-->
+<!--                                </a>-->
+<!--                                <p class="no-bottom-margin">-->
+<!--                                    <strong>Chairman, Fipra International</strong><br/>-->
+<!--                            <span class="font-14">Tel. +01234 5678910 <br/>-->
+<!--                            Fax. +01234 5678910 <br/>-->
+<!--                            <a href="mailto:lehrell@fipra.com">lehrell@fipra.com</a></span>-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
                     </div>
-                </aside>
+                </div>
+
 
                 <aside>
                     <h5>More Units</h5>
                     <ul class="sidebar-list no-bottom-margin no-bullet">
-                        <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/france.png" class="sidebar-list-flag" alt="France"/> <strong class="black">France</strong></a></li>
-                        <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/germany.png" class="sidebar-list-flag" alt="Germany"/> <strong class="black">Germany</strong></a></li>
-                        <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/italy.png" class="sidebar-list-flag" alt="Italy"/> <strong class="black">Italy</strong></a></li>
+                        <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/france.png" class="sidebar-list-flag" alt="France"/> France</a></li>
+                        <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/germany.png" class="sidebar-list-flag" alt="Germany"/> Germany</a></li>
+                        <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/flags/italy.png" class="sidebar-list-flag" alt="Italy"/> Italy</a></li>
                     </ul>
                     <a href="#"><small>Explore our Global Network <i class="icon-right-open"></i></small></a>
                 </aside>

@@ -8,6 +8,7 @@ $color__fipra-turquoise: #14b1cc;
 $color__fipra-gold: #e5c75c;
 $color__fipra-lighter-gray: #f0f0f5;
 $color__fipra-light-gray: #e1e2e6;
+$color__fipra-mid-gray: lighten(#d1d5d9, 5%);
 $color__fipra-dark-gray: darken(saturate($color__fipra-blue-gray,10%), 12%);
 $color__fipra-orange: #DE8A56;
 $color__fipra-brown: #866551;

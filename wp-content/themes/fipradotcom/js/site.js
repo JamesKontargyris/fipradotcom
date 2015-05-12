@@ -127,14 +127,8 @@
 //    Anchor links hide/show menu on small screens
     $('.anchor-links-list .menu-title').on('click', function()
     {
-        $(this).siblings('li').slideToggle();
+        $(this).siblings('li').toggleClass('hide-s', '');
     });
-
-//    Set equal heights of content blocks in showcase groups
-    $('.showcase.equal-heights .showcase-block-content').matchHeight();
-
-    //    Set equal heights of content blocks in team member groups
-    $('.team-group.equal-heights .team-member').matchHeight();
 
 
 //    Trigger tooltipster for .tooltip classes
@@ -144,10 +138,10 @@
     $("#expertise-carousel").owlCarousel();
     $(".testimonial-group").owlCarousel({
         singleItem:true,
-        //slideSpeed: 10,
-        //paginationSpeed: 10,
-        //rewindSpeed: 10,
-        transitionStyle: "goDown",
+        slideSpeed: 500,
+        paginationSpeed: 500,
+        rewindSpeed: 500,
+        //transitionStyle: "goDown",
         pagination: false
     });
     $("#public-affairs-services-carousel").owlCarousel({
@@ -165,13 +159,16 @@
     //Add a fade in/out to modals by default
     $.extend($.modal.defaults, { fadeDuration: 250, zIndex:20 });
 
-//    Size all .entry elements to highest element in each .entry-group parent element
-//    var entryGroups = $('.entry-group');
-    //entryGroups.sizeToHighestElement('.entry');
-//    Do the same when the window is resized
-//    $(window).resize(function()
-//    {
-//        $('.entry-group').sizeToHighestElement('.entry');
-//    });
+    $(window).resize(function()
+    {
+        //    Set equal heights of content blocks in showcase groups
+        $('.showcase.equal-heights .showcase-block-content').matchHeight();
+
+        //    Set equal heights of content blocks in team member groups
+        $('.team-group.equal-heights .team-member').matchHeight();
+
+        //    Set equal heights of testimonial quotes
+        $('.testimonial-group .quote').matchHeight();
+    }).resize();
 
 })(jQuery);

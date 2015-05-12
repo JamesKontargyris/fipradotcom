@@ -169,22 +169,29 @@ ul.anchor-links-list {
     margin-bottom:0 !important;
     position:relative;
 
-    &.hide-s { @include media($media__medium) { display:none; } }
+    &.hide-s { @include media(max-width $media__medium) { display:none; } }
+    &.hide-m { @include media($media__medium) { display:none; } }
 
     @include media(max-width $media__medium) {
-      display:none;
 //      background-color: lighten($color__fipra-periwinkle, 10%);
       &:not(.menu-title) { border-top:1px solid darken($color__fipra-light-gray, 5%); }
-      &.menu-title { display:block; padding:$v-rhythm * 0.25 0; cursor:pointer; }
+      &.menu-title { display:block; padding:$v-rhythm * 0.5 0; cursor:pointer; }
       a { display:block; padding:$v-rhythm * 0.5 0; }
+      i { position:absolute; right:0; top:6px; }
     }
 
     @include media($media__medium) {
       float: left;
-      &.menu-title i { display:none; }
+      &.menu-title {
+        padding:$v-rhythm * 0.5 em(6px);
+        i { display:none; }
+      }
       &:not(:first-child) { margin-left: em(12px); }
       a {
-        padding:$v-rhythm / 2 em(6px);
+        display:inline-block;
+        padding:$v-rhythm * 0.5 em(6px);
+        border-bottom:2px solid transparent;
+        &:hover { border-bottom:2px solid $color__fipra-blue-gray; }
       }
     }
   }

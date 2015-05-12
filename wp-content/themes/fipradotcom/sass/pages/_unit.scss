@@ -14,10 +14,10 @@
         margin-top:-4px;
       }
       h1 { line-height: $v-rhythm * 2.5; }
-      img, h1 { display: inline-block; }
+      img, h1 { @include media($media__large) { display: inline-block; } }
 
-      @include media($media__large) { padding:$v-rhythm * 18 0 $v-rhythm !important; text-align: left; }
-      @include media($media__xlarge) { padding:$v-rhythm * 28 0 $v-rhythm !important; }
+      @include media($media__large) { padding:$v-rhythm * 18 0 $v-rhythm * 3 !important; text-align: left; }
+      @include media($media__xlarge) { padding:$v-rhythm * 28 0 $v-rhythm * 3 !important; }
 
 //      &.dark-text {
 //        h1 { color: $color__fipra-blue !important; text-shadow:0px 1px 1px $color__fipra-light-gray !important; }
