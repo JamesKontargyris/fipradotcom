@@ -3,7 +3,7 @@
 @import "showcase";
 @import "team";
 @import "hero-banner";
-@import "page-banner";
+//@import "page-banner";
 @import "page-header";
 @import "full-width-block";
 @import "global-network-menu";
@@ -34,19 +34,11 @@
 
   }
 
-  #content {
-    @include row();
-    @include outer-container($container__outer-width);
-//    background-color: white;
-//    padding-top: $v-rhythm;
-//    padding-bottom: $v-rhythm * 2;
-//    box-shadow:0 0 10px rgba(black, 0.1);
-    @include media($media__xlarge) {
-
-//      border:1px solid darken($color__fipra-light-gray, 5%);
-      margin-bottom:$v-rhythm * 2;
+  #site-content-container {
+    margin-top:$v-rhythm * 3;
+    #content {
+      @extend .content-area;
     }
-
   }
 
   #primary {

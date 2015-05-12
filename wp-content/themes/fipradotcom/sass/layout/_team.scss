@@ -2,7 +2,7 @@
   @include clearfix;
   .row-of-1 {
     .team-member {
-      border-bottom:1px solid darken($color__fipra-light-gray, 7%);
+      border-bottom:2px solid darken(white, 10%);
 
       @include media($media__large) {
         @include span-columns(12);
@@ -37,7 +37,7 @@
         @include omega(3n);
       }
       .team-member-content {
-        @include media($media__large) { min-height:em(400px); }
+//        @include media($media__large) { min-height:em(400px); }
       }
     }
     @include media($media__medium) {
@@ -73,16 +73,20 @@
     @include font-size(18);
     padding:$v-rhythm em(12px);
     &:not(:last-child) { margin-bottom: $v-rhythm; }
-    @include linear-gradient(lighten($color__fipra-light-gray, 4%) 80%, darken($color__fipra-light-gray, 3%) 100%);
+    background-color: white;
+//    @include linear-gradient(lighten($color__fipra-light-gray, 4%) 80%, darken($color__fipra-light-gray, 3%) 100%);
     @include media(min-width $media__small max-width $media__medium) {
       @include span-columns(6); @include omega(2n);
     }
 
-    p { @include font-size(14); }
+    p.bio { @include font-size(14); line-height:$v-rhythm * 1.5; }
+    h4 { margin-bottom: $v-rhythm; }
     h5 {@include font-size(18); }
-    h6 { margin-bottom:$v-rhythm / 2; }
+    h6 { margin-bottom:$v-rhythm / 2;
+      @include media(max-width $media__large) { margin-top: $v-rhythm * 0.5; } }
     img {
       @include media(max-width $media__medium) { max-width:100px; margin-bottom:$v-rhythm; }
+      @include media(max-width $media__small) { max-width:75px; margin-bottom:0; }
     }
 
     ul.team-member-expertise {

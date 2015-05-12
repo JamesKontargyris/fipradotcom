@@ -4,8 +4,6 @@
   color:$color__fipra-blue;
   &:hover { color: $color__fipra-blue-gray; }
   background-color: $color__fipra-periwinkle;
-  font-family: $font__sans;
-  font-weight: $font__bold;
   padding: $v-rhythm * 0.25 em(16px);
   margin-bottom: $v-rhythm * 0.5;
   margin-right: em(16px);
@@ -48,3 +46,5 @@
 
   &.full-width { display:block; }
 }
+
+.owl-prev, .owl-next { cursor: pointer; }

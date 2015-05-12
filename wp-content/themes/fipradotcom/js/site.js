@@ -142,20 +142,24 @@
 
 //    Initialise owl carousel and add custom navigation events
     $("#expertise-carousel").owlCarousel();
+    $(".testimonial-group").owlCarousel({
+        singleItem:true,
+        //slideSpeed: 10,
+        //paginationSpeed: 10,
+        //rewindSpeed: 10,
+        transitionStyle: "goDown",
+        pagination: false
+    });
     $("#public-affairs-services-carousel").owlCarousel({
-        items: 1,
-        itemsDesktop: [1199, 1],
-        itemsDesktopSmall: [979, 1],
-        itemsTablet: [768, 1],
-        itemsMobile: [479, 1],
+        singleItem:true,
         autoPlay: 5000
     });
     // Custom Navigation Events
     $(".owl-next").click(function(){
-        $("#expertise-carousel").trigger('owl.next');
+        $($(this).data('carousel')).trigger('owl.next');
     })
     $(".owl-prev").click(function(){
-        $("#expertise-carousel").trigger('owl.prev');
+        $($(this).data('carousel')).trigger('owl.prev');
     })
 
     //Add a fade in/out to modals by default

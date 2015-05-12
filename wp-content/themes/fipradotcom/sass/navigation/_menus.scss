@@ -3,7 +3,6 @@
   display: block;
   float: right;
   width: 100%;
-  font-family: $font__sans;
   @include media(max-width $media__medium) { width: 100%; }
   @include media($media__medium) { margin-top: $v-rhythm * 3; }
 
@@ -24,7 +23,6 @@
       }
       @include font-size(16);
       & > a {
-        font-weight: $font__bold;
         display: block;
         text-decoration: none;
         padding: ($v-rhythm * 2) 0 $v-rhythm;
@@ -62,7 +60,7 @@
         line-height:$v-rhythm * 1.5;
         width: 100%;
         &:hover > ul, &.focus > ul { right: 100%; }
-        &:hover { background-color: lighten($color__fipra-blue, 70%); }
+        &:hover { background-color: lighten($color__fipra-light-gray, 6%); }
         a { display: block; padding: $v-rhythm / 2 em(24px); }
         &.current-menu-item > a,
         &.current_page_ancestor > a,
@@ -108,11 +106,9 @@
     display: none;
     // Mobile menu
     ul {
-      font-family: $font__sans;
-      font-weight: $font__bold;
       margin-bottom:0;
       li {
-        border-top:1px solid lighten($color__fipra-periwinkle, 7%);
+        border-top:1px solid $color__fipra-light-gray;
         a {
           display:block;
           text-align: center;
@@ -123,12 +119,12 @@
 //        Second level
         > ul {
           display:none;
-          background-color: lighten($color__fipra-periwinkle, 5%);
+          background-color: $color__fipra-light-gray;
           font-weight: $font__normal;
           li { border-top:1px solid white;
 //            Third level
             > ul {
-              background-color: lighten($color__fipra-periwinkle, 10%);
+              background-color: lighten($color__fipra-light-gray, 5%);
               li a { color:$color__fipra-blue-gray; }
             } // End of third level
           } // End of second level li
@@ -166,8 +162,6 @@
 ul.anchor-links-list {
   @include clearfix;
   @include font-size(14);
-  font-family: $font__sans;
-  font-weight: $font__bold;
   list-style: none;
   margin-bottom:$v-rhythm * 2;
   &.no-margin { margin:0; }

@@ -35,8 +35,8 @@
         <div class="full-width-block-content">
             <div class="row">
                 <div class="col-12-l no-m-margin">
-                    <h1 class="upper">Areas of Expertise</h1>
-                    <p class="lead">Cras laoreet eros quis pharetra ullamcorper. Etiam consequat varius luctus. Quisque mollis, magna vitae vehicula mattis, quam sem fringilla justo, sit amet faucibus nulla arcu eu ex. Curabitur metus eros, euismod ac faucibus sit amet, tempor eu mauris.</p>
+                    <h1 class="upper small">Areas of Expertise</h1>
+                    <p>Cras laoreet eros quis pharetra ullamcorper. Etiam consequat varius luctus. Quisque mollis, magna vitae vehicula mattis, quam sem fringilla justo, sit amet faucibus nulla arcu eu ex. Curabitur metus eros, euismod ac faucibus sit amet, tempor eu mauris.</p>
                 </div>
             </div>
             <div class="menu-list-and-entries-block">
@@ -55,7 +55,7 @@
                     <div class="col-7-l entry-group" id="entry-group-1">
                         <div class="entry" id="entry-1">
                             <div class="entry-title">
-                                <h3 class="no-margin">Banking and Financial Services <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Banking and Financial Services <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
@@ -70,7 +70,7 @@
 
                         <div class="entry" id="entry-2">
                             <div class="entry-title">
-                                <h3 class="no-margin">Chemical, Industrials and Mining <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Chemical, Industrials and Mining <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
@@ -83,7 +83,7 @@
 
                         <div class="entry" id="entry-3">
                             <div class="entry-title">
-                                <h3 class="no-margin">Energy and Environment <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Energy and Environment <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
@@ -94,7 +94,7 @@
 
                         <div class="entry" id="entry-4">
                             <div class="entry-title">
-                                <h3 class="no-margin">Healthcare and Pharma <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Healthcare and Pharma <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
@@ -105,7 +105,7 @@
 
                         <div class="entry" id="entry-5">
                             <div class="entry-title">
-                                <h3 class="no-margin">Telecoms, Media and Technology <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Telecoms, Media and Technology <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
@@ -116,10 +116,14 @@
 
                         <div class="entry" id="entry-6">
                             <div class="entry-title">
-                                <h3 class="no-margin">Travel, Transport and Logistics <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Travel, Transport and Logistics <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+                                <p>Fipra’s Travel, Transport and Logistics (TTL) practice, lead by <a href="#">Ukko Metsola</a>, is composed of experienced staff and Special Advisers with diverse expertise in the policies and regulatory frameworks that affect the TTL industries.</p>
+
+                                <p>The TTL business unit services are geared to deliver bottom-line savings, or reduced regulatory risks and costs, to our clients.</p>
+
+                                <p>Since 2000, Fipra’s TTL practice has supported a large number of clients at different levels of political decision-making: we have a proven track record of working closely and constructively with political and regulatory bodies including local and national governments more than 25 countries, and vis-à-vis the Institutions of the European Union and intergovernmental organizations (e.g. International Maritime Organisation, World Trade Organisation).</p>
 
                                 <p><a href="#" class="btn primary">Read more</a></p>
                             </div>
@@ -127,7 +131,7 @@
 
                         <div class="entry" id="entry-7">
                             <div class="entry-title">
-                                <h3 class="no-margin">Competition Policy <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Competition Policy <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
@@ -146,7 +150,7 @@
         <div class="full-width-block-content">
             <div class="row">
                 <div class="col-12-l no-m-margin">
-                    <h1 class="upper">Public Affairs Services</h1>
+                    <h1 class="upper small">Public Affairs Services</h1>
                 </div>
             </div>
             <div class="menu-list-and-entries-block">
@@ -170,7 +174,7 @@
 
                         <div class="entry" id="entry-1">
                             <div class="entry-title">
-                                <h3 class="no-margin">Strategic Planning <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Strategic Planning <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Jointly developing your Public Affairs action plan and objectives, clearly defining your strategic and tactical priorities.</p>
@@ -180,7 +184,7 @@
 
                         <div class="entry" id="entry-2">
                             <div class="entry-title">
-                                <h3 class="no-margin">Narrative Development <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Narrative Development <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Ensuring that your story effectively communicates your key messages and resonates with your target audiences.</p>
@@ -191,7 +195,7 @@
 
                         <div class="entry" id="entry-3">
                             <div class="entry-title">
-                                <h3 class="no-margin">Stakeholder Mapping <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Stakeholder Mapping <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Identifying the organisations and individuals that are relevant to your cause and helping you manage your contacts database.</p>
@@ -201,7 +205,7 @@
 
                         <div class="entry" id="entry-4">
                             <div class="entry-title">
-                                <h3 class="no-margin">Stakeholder Outreach <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Stakeholder Outreach <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Hands-on support to establish constructive dialogue with key stakeholders and effectively execute your action plan.</p>
@@ -211,7 +215,7 @@
 
                         <div class="entry" id="entry-5">
                             <div class="entry-title">
-                                <h3 class="no-margin">Situation Analysis <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Situation Analysis <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Tailored, in-depth analysis and assessment of political and regulatory developments at international, national and local levels.</p>
@@ -221,7 +225,7 @@
 
                         <div class="entry" id="entry-6">
                             <div class="entry-title">
-                                <h3 class="no-margin">Targeted Monitoring <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Targeted Monitoring <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Serving as your ‘eyes and ears’ on the ground to provide you with real-time intelligence and regular newsletters on key issues impacting your PA objectives.</p>
@@ -231,7 +235,7 @@
 
                         <div class="entry" id="entry-7">
                             <div class="entry-title">
-                                <h3 class="no-margin">One-Stop-Shop PA Campaigns <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">One-Stop-Shop PA Campaigns <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Track record in leading and coordinating PA campaigns on the ground in over 60 countries, ensuring quality, consistency and timely delivery and execution.</p>
@@ -241,7 +245,7 @@
 
                         <div class="entry" id="entry-8">
                             <div class="entry-title">
-                                <h3 class="no-margin">In-house Capabilities Assessment <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">In-house Capabilities Assessment <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Identifying the strengths and weaknesses of your Government Affairs practice through personalised recommendations.</p>
@@ -251,7 +255,7 @@
 
                         <div class="entry" id="entry-9">
                             <div class="entry-title">
-                                <h3 class="no-margin">Training Sessions <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Training Sessions <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Customised PA training sessions for your in-house policy and management personnel.</p>
@@ -261,7 +265,7 @@
 
                         <div class="entry" id="entry-10">
                             <div class="entry-title">
-                                <h3 class="no-margin">Complementary Media Support <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">Complementary Media Support <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Crafting press statements that support your public policy objectives and helping you organise and prepare for press conferences and media appearances.</p>
@@ -271,7 +275,7 @@
 
                         <div class="entry" id="entry-11">
                             <div class="entry-title">
-                                <h3 class="no-margin">EU Funding <i class="icon-toggle icon-down-open"></i></h3>
+                                <h4 class="no-margin">EU Funding <i class="icon-toggle icon-down-open"></i></h4>
                             </div>
                             <div class="entry-content">
                                 <p>Helping you understand what EU funds are available to your organisation and how to navigate the complex application process.</p>
