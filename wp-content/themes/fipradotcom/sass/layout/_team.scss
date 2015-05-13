@@ -65,6 +65,25 @@
     }
   }
 
+  .row-of-6 {
+    .team-member {
+      @include media($media__large) {
+        @include span-columns(2);
+        @include omega(6n);
+      }
+      .team-member-content {
+        @include media($media__large) { min-height:em(450px); }
+      }
+    }
+    @include media($media__medium) {
+      .shift-half-col { @include shift(1); }
+      .shift-1-col { @include shift(2); }
+      .shift-2-col { @include shift(4); }
+      .shift-3-col { @include shift(6); }
+      .shift-4-col { @include shift(8); }
+    }
+  }
+
   .team-member {
     @include clearfix;
     position:relative;
@@ -73,9 +92,9 @@
     &:not(:last-child) { margin-bottom: $v-rhythm; }
     background-color: white;
 //    @include linear-gradient(lighten($color__fipra-light-gray, 4%) 80%, darken($color__fipra-light-gray, 3%) 100%);
-    @include media(min-width $media__small max-width $media__medium) {
-      @include span-columns(6); @include omega(2n);
-    }
+//    @include media(min-width $media__small max-width $media__medium) {
+//      @include span-columns(6); @include omega(2n);
+//    }
 
     p.bio { @include font-size(14); line-height:$v-rhythm * 1.5; }
 //    h4 { margin-bottom: $v-rhythm; }

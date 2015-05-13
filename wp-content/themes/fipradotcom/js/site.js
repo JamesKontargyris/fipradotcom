@@ -135,7 +135,6 @@
     $('.tooltip').tooltipster();
 
 //    Initialise owl carousel and add custom navigation events
-    $("#expertise-carousel").owlCarousel();
     $(".testimonial-group").owlCarousel({
         singleItem:true,
         slideSpeed: 500,
@@ -148,6 +147,16 @@
         singleItem:true,
         autoPlay: 5000
     });
+    $("#practice-staff-carousel").owlCarousel({
+        items: 5,
+        itemsCustom: [[0,1], [480,2], [768,3], [940,4]]
+    });
+    $("#expertise-carousel").owlCarousel({
+        //items: 4,
+        itemsCustom: [[0,1], [480,2], [768,3], [940,4]],
+        addClassActive: true
+    });
+
     // Custom Navigation Events
     $(".owl-next").click(function(){
         $($(this).data('carousel')).trigger('owl.next');
@@ -169,6 +178,9 @@
 
         //    Set equal heights of testimonial quotes
         $('.testimonial-group .quote').matchHeight();
+
+        //    Set equal heights of testimonial quotes
+        $('#expertise-carousel .expertise-area-content').matchHeight();
     }).resize();
 
 })(jQuery);

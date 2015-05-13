@@ -1,9 +1,10 @@
 #page-banner {
   &.unit {
-//    min-height:em(420px);
+    @include media($media__medium) { min-height:em(400px); }
     //    @include media(max-width $media__small) { background:$color__fipra-blue !important; }
 
     .full-width-block-content {
+      @extend .content-area;
       text-align: center;
       .meta { font-style: italic; margin-bottom:$v-rhythm; @include font-size(18); }
       img {
@@ -13,11 +14,10 @@
         vertical-align: top;
         margin-top:-4px;
       }
-      h1 { line-height: $v-rhythm * 2.5; }
-      img, h1 { @include media($media__large) { display: inline-block; } }
+      img, h1 { @include media($media__medium) { display: inline-block; } }
 
-      @include media($media__large) { padding:$v-rhythm * 18 0 $v-rhythm * 3 !important; text-align: left; }
-      @include media($media__xlarge) { padding:$v-rhythm * 28 0 $v-rhythm * 3 !important; }
+      @include media($media__medium) { padding-top:$v-rhythm * 10 !important; padding-bottom:$v-rhythm * 10 !important; text-align: left; }
+      @include media($media__xlarge) { padding-top:$v-rhythm * 24 !important; padding-bottom:$v-rhythm * 4 !important; }
 
 //      &.dark-text {
 //        h1 { color: $color__fipra-blue !important; text-shadow:0px 1px 1px $color__fipra-light-gray !important; }

@@ -1,9 +1,6 @@
 #page-banner {
   @include clearfix;
-  font-family: $font__sans;
   color:white;
-//  margin-top:-$v-rhythm;
-  @include media($media__xlarge) {  }
 
   background-position: center;
   background-repeat: no-repeat;

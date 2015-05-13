@@ -12,19 +12,20 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, h2 { margin:0 0 $v-rhythm * 2 0; }
 h3, h4 {
-  margin:$v-rhythm 0;
-  @include media($media__medium) { margin:$v-rhythm * 3 0 $v-rhythm * 2; }
+  margin-top:$v-rhythm;
+  margin-bottom:$v-rhythm;
+  @include media($media__medium) { margin-top:$v-rhythm * 3; margin-bottom:$v-rhythm * 2; }
   &:first-child { margin-top:0; }
 }
 h5, h6 { margin:0 0 $v-rhythm 0; }
 
 h1 {
   font-weight: $font__bold;
-  @include font-size(24);
+  @include font-size(21);
   line-height: $v-rhythm * 2;
 
-  @include media($media__medium) { @include font-size(32); letter-spacing:-1px; line-height: $v-rhythm * 3; }
-  @include media($media__large) { @include font-size(38); letter-spacing:-1px; line-height: $v-rhythm * 3.5; }
+  @include media($media__medium) { @include font-size(24); letter-spacing:-1px; line-height: $v-rhythm * 3; }
+  @include media($media__large) { @include font-size(28); letter-spacing:-1px; line-height: $v-rhythm * 3.5; }
 
   &.small {
 //    font-weight: $font__normal;
@@ -63,6 +64,12 @@ h3 {
   line-height: $v-rhythm * 2;
   color:$color__fipra-blue-gray;
 
+  &.small {
+    //    font-weight: $font__normal;
+    @include font-size(18);
+    @include media($media__medium) { @include font-size(21); }
+  }
+
   @include media($media__large) { @include font-size(24); line-height: $v-rhythm * 2.5; }
 }
 
@@ -72,7 +79,7 @@ h4 {
   line-height: $v-rhythm * 2;
   color:$color__fipra-blue-gray;
 
-  @include media($media__large) { @include font-size(21); }
+  @include media($media__large) { @include font-size(21); line-height: $v-rhythm * 2.5; }
 
 }
 
@@ -84,8 +91,7 @@ h6 { @include font-size(14); font-weight: $font__bold; }
 
 h1, h2, h3, h4, h5, h6 {
   &.no-margin { margin:0; }
+  &.no-bottom-margin { bottom-margin:0 !important; }
   &.no-top-margin { margin-top:0; }
   &.upper { font-weight: $font__normal; letter-spacing: 7px; text-transform: uppercase; }
 }
-
-//  In hero-banner, h1 looks the same as H5, H2 is same as H1 but light font weight

@@ -27,7 +27,7 @@ get_header(); ?>
 
         <div id="page-banner" class="full-width-block-container unit grey">
             <div class="full-width-block-content">
-                <div class="col-8-l no-margin">
+                <div class="col-8-m no-margin">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/flags/united-kingdom.png" alt="Flag" /> <h1 class="upper">United Kingdom</h1>
                     <p class="meta">Unit, Correspondent or Special Adviser</p>
                     <p class="lead no-margin">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.</p>

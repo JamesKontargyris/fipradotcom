@@ -1,134 +1,163 @@
-#page-banner {
+#hero {
   &.expertise {
-    min-height:em(420px);
-    @include media(max-width $media__small) { padding:$v-rhythm em(20px); }
+//    @include media($media__medium) { min-height:em(500px); }
+//    @include media($media__xlarge) { min-height:em(600px); }
+    //    @include media(max-width $media__small) { background:$color__fipra-blue !important; }
 
-    #page-banner-content {
-      position:relative;
-      text-align: center;
-      @include media(min-width $media__medium max-width $media__large) { @include span-columns(12); }
-      @include media($media__large) { @include span-columns(6); }
+    .full-width-block-content-container {
 
-      h1 { margin-top:-6px; }
+      h1 { margin-bottom: $v-rhythm; }
 
-      .circle-icon-outline {
-        @include media(max-width $media__small) { display:none; }
-        @include media(max-width $media__medium) {
-          @include font-size(24);
-          width:50px; height:50px;
-          line-height: 47px;
-          margin-bottom: $v-rhythm * 2;
-        }
-        @include media($media__medium) {
-          display:none;
-        }
+      .circle-icon {
+        margin-bottom: $v-rhythm;
+        border-bottom:2px solid rgba(darken($color__fipra-dark-gray, 10%), 0.6);
       }
+    }
 
-      .icon-tab {
-        @include media(max-width $media__medium) {
-          display:none;
-        }
-        @include media($media__medium) {
-          position:absolute; top: $v-rhythm * 2; left:-10px;
-          background-color: white;
-          color:$color__fipra-blue;
-          box-shadow: 1px 2px 1px rgba(black, 0.3);
-          padding:$v-rhythm em(6px) $v-rhythm em(26px);
-          @include font-size(32);
-          text-align: left;
-          border-top-right-radius: 7px;
-          border-bottom-right-radius: 7px;
-        }
-      }
+    .content-bar {
+      @include media($media__medium) { padding-top:0; }
+      .circle-icon { @include media($media__medium) { margin-top:-110px; } }
+    }
+  }
+  .expertise-content-area {
+    p.lead {
+      color:$color__fipra-blue; line-height:$v-rhythm * 2.5;
+      @include media($media__small) { @include font-size(20); line-height:$v-rhythm * 2.5 }
+    }
+  }
 
-      .triangle {
-        display:none;
-        @include media($media__medium) { display:block; }
-        position:absolute;
-        bottom:-11px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        //    border-style: inset;
-        -webkit-transform:rotate(360deg);
-        left:0;
-        border-width: 0 10px 10px 0;
-        border-color: transparent rgba(darken(white, 70%), 0.4) transparent transparent;
-      }
+}
 
-      @include media($media__medium) { padding:$v-rhythm * 12 em(40px) $v-rhythm * 3 !important;
-        text-align: left; }
-      @include media($media__large) { padding:$v-rhythm * 14 em(40px) $v-rhythm * 3 !important; }
+#staff-menu-container {
+  .team-member {
+    position:relative;
+    padding:0;
+//    img { margin-bottom: $v-rhythm; }
+    margin:0 12px;
+    text-align: left;
+    overflow:hidden;
+    height:320px;
 
-      &.dark-text {
-        h1 {
-          color: $color_soft-black !important;
-        }
-        h2 {
-//          color: $color__fipra-blue;
-        }
-        .lead { color:$color__fipra-blue; }
-        .btn.secondary {
-          border:1px solid $color__fipra-blue;
-          color:$color__fipra-blue;
-          &:hover {
-            border:1px solid $color__fipra-blue-gray;
-            color:$color__fipra-blue-gray;
-          }
-        }
-      }
+    img { max-width: 100%; }
+
+    .team-member-profile-photo { background-color: white; text-align:center; &:hover { opacity:0.7; } }
+    .team-member-details {
+      position:absolute;
+      top:180px;
+      left:0;
+      background-color: lighten(desaturate($color__fipra-dark-gray, 10%), 15%);
+      padding:$v-rhythm 18px;
+      height:100%;
+      width:100%;
+      @include transition(all 0.5s);
+      .bio { display: none; @include animation(fadeIn 1s); }
+
+      &:hover { top:0; .bio { display:block; } }
+    }
+  }
+
+  h3 {
+    position:relative;
+    color:white;
+    padding:0 24px;
+    margin:0 12px $v-rhythm * 2 12px;
+    i { @include font-size(21); }
+    .owl-prev, .owl-next { position:absolute; }
+    .owl-prev { left:0; top:0; }
+    .owl-next { right:0; top:0; }
+  }
+
+  .owl-page {
+    margin-top:$v-rhythm;
+    opacity:0.4;
+    &.active { opacity: 1; }
+    span {
+      background:white !important;
     }
   }
 }
 
-.expertise-content-area {
-  p.lead {
-    color:$color__fipra-blue; line-height:$v-rhythm * 2.5;
-    @include media($media__small) { @include font-size(20); line-height:$v-rhythm * 2.5 }
+#expertise-menu-container {
+  h3 {
+    position:relative;
+    color:white;
+    padding:0 24px;
+    margin:0 12px $v-rhythm * 2 12px;
+    i { @include font-size(21); }
+    .owl-prev, .owl-next { position:absolute; color:$color__fipra-blue; }
+    .owl-prev { left:0; top:0; }
+    .owl-next { right:0; top:0; }
+  }
+
+  .expertise-area {
+//    background-color: darken($color__fipra-light-gray, 2%);
+//    border-left:1px solid darken($color__fipra-light-gray, 6%);
+//    border-right:1px solid darken($color__fipra-light-gray, 4%);
+//    border-top:1px solid darken($color__fipra-light-gray, 14%);
+//    border-bottom:1px solid lighten($color__fipra-light-gray, 7%);
+    text-align: center;
+//    margin:0 12px;
+    .expertise-area-content {
+      padding:$v-rhythm * 3 24px;
+
+      .circle-icon { margin-bottom:0; border-bottom:2px solid darken($color__fipra-light-gray, 10%); }
+
+      h4 { color: $color__fipra-blue !important; margin-top:$v-rhythm * 1.5; margin-bottom:0; }
+
+      &:hover { background-color: darken($color__fipra-light-gray, 5%); }
+    }
+
+  }
+  .owl-item.active {
+     &:not(:last-child) { border-right:1px solid $color__fipra-lighter-gray; }
+  }
+
+  .owl-page {
+    margin-top:$v-rhythm;
+    opacity:0.4;
+    &.active { opacity: 1; }
+    span {
+      background:$color__fipra-blue !important;
+    }
   }
 }
 
-#page-footer {
-  background-position: 0 0, top left, 0 0;
-  background-repeat: no-repeat, no-repeat, repeat;
-  background-size:contain, contain, 400px 324px;
-  background: linear-gradient(to top, rgba(125, 125, 125, 0) 94%, rgba(125, 125, 125, 0.2) 100%), linear-gradient(to bottom, $color__fipra-light-gray 0%, white 50%);
 
-
-  padding:$v-rhythm * 2 inherit;
-  .content-area { @include clearfix; padding-bottom:$v-rhythm; }
-  h3 { color:$color__fipra-blue-gray; }
-}
-.carousel-control {
-  height:150px;
-  &.left { text-align: right; }
-  &.right { text-align: left; }
-  &:hover { cursor: pointer; }
-  display:none;
-  i {
-    @include vertical-align;
-    @include font-size(34);
-    color:$color__fipra-blue;
-    &:hover { color:$color__fipra-blue-gray; }
-  }
-  @include media($media__medium) { display:block;}
-}
-
-#expertise-carousel {
-  .showcase-block {
-    h3 { color:$color__fipra-blue; }
-    padding:$v-rhythm * 2 em(12px);
-    margin:0 auto;
-    width:90%;
-    &.bg { @include linear-gradient($color__fipra-light-gray 50%, darken($color__fipra-light-gray, 7%) 100%); }
-  }
-}
+//#page-footer {
+//  background-position: 0 0, top left, 0 0;
+//  background-repeat: no-repeat, no-repeat, repeat;
+//  background-size:contain, contain, 400px 324px;
+//  background: linear-gradient(to top, rgba(125, 125, 125, 0) 94%, rgba(125, 125, 125, 0.2) 100%), linear-gradient(to bottom, $color__fipra-light-gray 0%, white 50%);
+//
+//
+//  padding:$v-rhythm * 2 inherit;
+//  .content-area { @include clearfix; padding-bottom:$v-rhythm; }
+//  h3 { color:$color__fipra-blue-gray; }
+//}
+//.carousel-control {
+//  height:150px;
+//  &.left { text-align: right; }
+//  &.right { text-align: left; }
+//  &:hover { cursor: pointer; }
+//  display:none;
+//  i {
+//    @include vertical-align;
+//    @include font-size(34);
+//    color:$color__fipra-blue;
+//    &:hover { color:$color__fipra-blue-gray; }
+//  }
+//  @include media($media__medium) { display:block;}
+//}
+//
+//#expertise-carousel {
+//  .showcase-block {
+//    h3 { color:$color__fipra-blue; }
+//    padding:$v-rhythm * 2 em(12px);
+//    margin:0 auto;
+//    width:90%;
+//    &.bg { @include linear-gradient($color__fipra-light-gray 50%, darken($color__fipra-light-gray, 7%) 100%); }
+//  }
+//}
 //Owl carousel pagination
-.owl-page {
-  opacity:0.4;
-  &.active { opacity: 1; }
-  span {
-    background:$color__fipra-blue !important;
-  }
-}
+
 

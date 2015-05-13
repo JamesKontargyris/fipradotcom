@@ -50,11 +50,34 @@
   width: 55px;
   height: 55px;
   background-color: white;
-  box-shadow: 0 4px 6px rgba(black, 0.3);
+//  box-shadow: 0 0 6px rgba(black, 0.1);
   text-shadow: 0px 2px 0px white;
   text-align: center;
   color: $color__fipra-blue;
-  @include font-size(30);
+  @include font-size(26);
+
+  @include media($media__medium) {
+    width: 80px;
+    height: 80px;
+    @include font-size(42);
+    line-height: 80px;
+  }
+
+  &.small {
+    width: 40px;
+    height: 40px;
+    @include font-size(21);
+    line-height: 38px;
+
+    @include media($media__medium) {
+      width: 55px;
+      height: 55px;
+      @include font-size(26);
+      line-height: 55px;
+    }
+  }
+
+
   &.grey-icon { color: $color__fipra-blue-gray; }
   &.blue {
     color: white;
@@ -82,18 +105,13 @@
     text-shadow: 0px -1px 0px darken($color__fipra-violet, 10%);
   }
 
-  @include media($media__medium) {
-    width: 80px;
-    height: 80px;
-    @include font-size(42);
-    line-height: 80px;
-  }
+
 }
 
 .circle-icon {
   @include border-left-radius(50%);
   @include border-right-radius(50%);
-  @include radial-gradient(circle at 50% 10%, white 60%, darken(white, 15%) 80%);
+//  @include radial-gradient(circle at 50% 10%, white 60%, darken(white, 15%) 80%);
 }
 
 .circle-icon-outline {

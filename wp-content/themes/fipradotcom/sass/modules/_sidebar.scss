@@ -26,7 +26,7 @@ ul.sidebar-list {
   margin-bottom: $v-rhythm;
 
   @include media($media__medium) {
-    @include linear-gradient(darken($color__fipra-blue-gray, 6%) 0%, $color__fipra-blue-gray 20px);
+    @include linear-gradient(darken($color__fipra-blue-gray, 8%) 0%, $color__fipra-blue-gray 25px);
     padding: $v-rhythm * 3 em(12px) $v-rhythm em(12px);
     margin-top:-$v-rhythm * 3;
   }
