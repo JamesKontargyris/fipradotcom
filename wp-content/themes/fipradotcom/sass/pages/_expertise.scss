@@ -9,8 +9,8 @@
       h1 { margin-bottom: $v-rhythm; }
 
       .circle-icon {
-        margin-bottom: $v-rhythm;
-        border-bottom:2px solid rgba(darken($color__fipra-dark-gray, 10%), 0.6);
+//        margin-bottom: $v-rhythm;
+//        border-bottom:2px solid rgba(darken($color__fipra-dark-gray, 10%), 0.6);
       }
     }
 
@@ -19,13 +19,14 @@
       .circle-icon { @include media($media__medium) { margin-top:-110px; } }
     }
   }
-  .expertise-content-area {
-    p.lead {
-      color:$color__fipra-blue; line-height:$v-rhythm * 2.5;
-      @include media($media__small) { @include font-size(20); line-height:$v-rhythm * 2.5 }
-    }
-  }
 
+}
+
+.site-content-expertise {
+  p.lead {
+    color:$color__fipra-blue-gray; line-height:$v-rhythm * 2.5; font-weight: $font__bold;
+    @include media($media__small) { @include font-size(20); line-height:$v-rhythm * 2.5 }
+  }
 }
 
 #staff-menu-container {
@@ -37,6 +38,7 @@
     text-align: left;
     overflow:hidden;
     height:320px;
+    border-bottom: 2px solid darken($color__fipra-dark-gray, 3%);
 
     img { max-width: 100%; }
 
@@ -45,7 +47,7 @@
       position:absolute;
       top:180px;
       left:0;
-      background-color: lighten(desaturate($color__fipra-dark-gray, 10%), 15%);
+      background-color: lighten($color__fipra-dark-gray, 15%);
       padding:$v-rhythm 18px;
       height:100%;
       width:100%;
@@ -79,37 +81,39 @@
 
 #expertise-menu-container {
   h3 {
-    position:relative;
-    color:white;
-    padding:0 24px;
-    margin:0 12px $v-rhythm * 2 12px;
+    position: relative;
+    color: white;
+    padding: 0 24px;
+    margin: 0 12px $v-rhythm * 2 12px;
     i { @include font-size(21); }
-    .owl-prev, .owl-next { position:absolute; color:$color__fipra-blue; }
-    .owl-prev { left:0; top:0; }
-    .owl-next { right:0; top:0; }
+    .owl-prev, .owl-next { position: absolute; color: $color__fipra-blue; }
+    .owl-prev { left: 0; top: 0; }
+    .owl-next { right: 0; top: 0; }
   }
 
   .expertise-area {
-//    background-color: darken($color__fipra-light-gray, 2%);
-//    border-left:1px solid darken($color__fipra-light-gray, 6%);
-//    border-right:1px solid darken($color__fipra-light-gray, 4%);
-//    border-top:1px solid darken($color__fipra-light-gray, 14%);
-//    border-bottom:1px solid lighten($color__fipra-light-gray, 7%);
     text-align: center;
-//    margin:0 12px;
+
     .expertise-area-content {
-      padding:$v-rhythm * 3 24px;
+      margin: 0 12px;
+      padding: $v-rhythm * 2 24px;
+      background-color: lighten($color__fipra-light-gray, 4%);
+      border-bottom: 2px solid darken($color__fipra-lighter-gray, 7%);
 
-      .circle-icon { margin-bottom:0; border-bottom:2px solid darken($color__fipra-light-gray, 10%); }
+      .circle-icon { margin-bottom: 0; border-bottom: 2px solid darken($color__fipra-light-gray, 10%); }
+      h4 { color: $color__fipra-blue !important; margin-top: $v-rhythm * 1.5; margin-bottom: 0; }
 
-      h4 { color: $color__fipra-blue !important; margin-top:$v-rhythm * 1.5; margin-bottom:0; }
-
-      &:hover { background-color: darken($color__fipra-light-gray, 5%); }
+      &:hover { background-color: darken($color__fipra-light-gray, 5%);
+        background-color: $color__fipra-light-gray;
+        border-top: 2px solid darken($color__fipra-light-gray, 7%);
+        border-left: 1px solid darken($color__fipra-light-gray, 3%);
+        border-right: 1px solid darken($color__fipra-light-gray, 3%);
+        border-bottom: 2px solid lighten($color__fipra-light-gray, 5%);
+      }
     }
-
   }
   .owl-item.active {
-     &:not(:last-child) { border-right:1px solid $color__fipra-lighter-gray; }
+//     &:not(:last-child) { border-right:1px solid $color__fipra-lighter-gray; }
   }
 
   .owl-page {

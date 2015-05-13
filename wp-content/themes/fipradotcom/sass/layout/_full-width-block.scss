@@ -43,51 +43,65 @@
   height:100%;
   padding-top: $v-rhythm * 3; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 3;
 
+  &.blue {
+    background-color: $color__fipra-blue;
+    //        @include linear-gradient(rgba(saturate(darken($color__fipra-blue-gray, 15%), 5%), 0.8) 0%, rgba(saturate(darken($color__fipra-blue-gray, 20%), 5%), 0.8) 100%);
+    color:lighten($color__fipra-blue, 65%);
+    &.bg-image { background-color: rgba($color__fipra-blue, 0.7); }
+  }
+
   &.dark-grey {
-    background-color: rgba(saturate(darken($color__fipra-blue-gray, 20%), 5%), 0.8);
+    background-color: $color__fipra-dark-gray;
     //        @include linear-gradient(rgba(saturate(darken($color__fipra-blue-gray, 15%), 5%), 0.8) 0%, rgba(saturate(darken($color__fipra-blue-gray, 20%), 5%), 0.8) 100%);
     color:lighten($color__fipra-blue-gray, 34%);
+    &.bg-image { background-color: rgba(saturate(darken($color__fipra-blue-gray, 20%), 5%), 0.8); }
   }
 
   &.grey {
-    background-color: rgba(saturate(darken($color__fipra-blue-gray, 5%), 5%), 0.8);
+    background-color: $color__fipra-blue-gray;
     //    @include linear-gradient(rgba($color__fipra-blue-gray, 0.6) 50%, rgba($color__fipra-blue-gray, 0.8) 100%);
     color:lighten($color__fipra-blue-gray, 42%);
+    &.bg-image { background-color: rgba(saturate(darken($color__fipra-blue-gray, 5%), 5%), 0.8); }
   }
 
   &.light-grey {
-    background-color: rgba(saturate($color__fipra-light-gray, 3%), 0.9);
+    background-color: $color__fipra-light-gray;
     color:darken($color__fipra-light-gray, 50%);
     h1, h2, h3, h4, h5, h6 { color:$color_soft-black !important; }
     li.active a { color:$color_soft-black !important;}
+    &.bg-image { background-color: rgba(saturate($color__fipra-light-gray, 3%), 0.9); }
   }
 
   &.periwinkle {
-    background-color: rgba(saturate($color__fipra-periwinkle, 3%), 0.8);
+    background-color: $color__fipra-periwinkle;
     color:darken($color__fipra-periwinkle, 46%);
     h1, h2, h3, h4, h5, h6 { color:$color_soft-black !important; }
+    &.bg-image { background-color: rgba(saturate($color__fipra-periwinkle, 3%), 0.8); }
   }
 
   &.turquoise {
-    background-color: rgba(saturate($color__fipra-turquoise, 3%), 0.8);
+    background-color: $color__fipra-turquoise;
     color:lighten($color__fipra-turquoise, 46%);
     li.active { background:rgba(white, 0.2) !important; }
+    &.bg-image { background-color: rgba(saturate($color__fipra-turquoise, 3%), 0.8); }
   }
 
   &.violet {
-    background-color: rgba(saturate($color__fipra-violet, 4%), 0.8);
+    background-color: $color__fipra-violet;
     color:lighten($color__fipra-violet, 32%);
     li.active { background:rgba(white, 0.1) !important; }
+    &.bg-image { background-color: rgba(saturate($color__fipra-violet, 4%), 0.8); }
   }
 
   &.gold {
-    background-color: rgba(saturate($color__fipra-gold, 4%), 0.8);
+    background-color: $color__fipra-gold;
     h1, h2, h3, h4, h5, h6 { color:$color_soft-black !important; }
     color:darken($color__fipra-gold, 45%);
     li.active a { color:$color_soft-black !important;}
+    &.bg-image { background-color: rgba(saturate($color__fipra-gold, 4%), 0.9); }
   }
 
-  &.dark-grey, &.grey, &.turquoise, &.violet {
+  &.blue, &.dark-grey, &.grey, &.turquoise, &.violet {
     h1, h2, h3, h4, h5, h6 { color:white; }
     a { color: white; &:hover { color:darken(white, 10%);} }
     .btn { @extend .btn-white; }

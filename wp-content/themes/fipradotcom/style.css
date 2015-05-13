@@ -406,13 +406,11 @@ q {
 dt {
   font-family: 'Lato', Arial, Helvetica, sans-serif; }
 
-p.lead {
-  font-family: 'Lato', Arial, Helvetica, sans-serif; }
-  @media screen and (min-width: 769px) {
-    p.lead {
-      font-size: 18px;
-      font-size: 1.125rem;
-      line-height: 1.875rem; } }
+@media screen and (min-width: 769px) {
+  p.lead {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1.875rem; } }
 p.center {
   text-align: center; }
 @media screen and (min-width: 769px) {
@@ -562,7 +560,7 @@ table:not(.no-style) {
     .btn.primary:hover, .btn:link.primary:hover, .btn:visited.primary:hover {
       opacity: 0.7;
       color: white; }
-    .btn.primary.btn-white, .full-width-block-content-container.dark-grey .btn.primary, .full-width-block-content-container.grey .btn.primary, .full-width-block-content-container.turquoise .btn.primary, .full-width-block-content-container.violet .btn.primary, .btn:link.primary.btn-white, .full-width-block-content-container.dark-grey .btn:link.primary, .full-width-block-content-container.grey .btn:link.primary, .full-width-block-content-container.turquoise .btn:link.primary, .full-width-block-content-container.violet .btn:link.primary, .btn:visited.primary.btn-white, .full-width-block-content-container.dark-grey .btn:visited.primary, .full-width-block-content-container.grey .btn:visited.primary, .full-width-block-content-container.turquoise .btn:visited.primary, .full-width-block-content-container.violet .btn:visited.primary {
+    .btn.primary.btn-white, .full-width-block-content-container.blue .btn.primary, .full-width-block-content-container.dark-grey .btn.primary, .full-width-block-content-container.grey .btn.primary, .full-width-block-content-container.turquoise .btn.primary, .full-width-block-content-container.violet .btn.primary, .btn:link.primary.btn-white, .full-width-block-content-container.blue .btn:link.primary, .full-width-block-content-container.dark-grey .btn:link.primary, .full-width-block-content-container.grey .btn:link.primary, .full-width-block-content-container.turquoise .btn:link.primary, .full-width-block-content-container.violet .btn:link.primary, .btn:visited.primary.btn-white, .full-width-block-content-container.blue .btn:visited.primary, .full-width-block-content-container.dark-grey .btn:visited.primary, .full-width-block-content-container.grey .btn:visited.primary, .full-width-block-content-container.turquoise .btn:visited.primary, .full-width-block-content-container.violet .btn:visited.primary {
       text-shadow: 0px -1px 0px #d9d9d9;
       border-bottom: 2px solid #b3b3b3;
       background-color: white;
@@ -575,7 +573,7 @@ table:not(.no-style) {
     transition: all 0.2s; }
     .btn.secondary:hover, .btn:link.secondary:hover, .btn:visited.secondary:hover {
       opacity: 0.7; }
-    .btn.secondary.btn-white, .full-width-block-content-container.dark-grey .btn.secondary, .full-width-block-content-container.grey .btn.secondary, .full-width-block-content-container.turquoise .btn.secondary, .full-width-block-content-container.violet .btn.secondary, .btn:link.secondary.btn-white, .full-width-block-content-container.dark-grey .btn:link.secondary, .full-width-block-content-container.grey .btn:link.secondary, .full-width-block-content-container.turquoise .btn:link.secondary, .full-width-block-content-container.violet .btn:link.secondary, .btn:visited.secondary.btn-white, .full-width-block-content-container.dark-grey .btn:visited.secondary, .full-width-block-content-container.grey .btn:visited.secondary, .full-width-block-content-container.turquoise .btn:visited.secondary, .full-width-block-content-container.violet .btn:visited.secondary {
+    .btn.secondary.btn-white, .full-width-block-content-container.blue .btn.secondary, .full-width-block-content-container.dark-grey .btn.secondary, .full-width-block-content-container.grey .btn.secondary, .full-width-block-content-container.turquoise .btn.secondary, .full-width-block-content-container.violet .btn.secondary, .btn:link.secondary.btn-white, .full-width-block-content-container.blue .btn:link.secondary, .full-width-block-content-container.dark-grey .btn:link.secondary, .full-width-block-content-container.grey .btn:link.secondary, .full-width-block-content-container.turquoise .btn:link.secondary, .full-width-block-content-container.violet .btn:link.secondary, .btn:visited.secondary.btn-white, .full-width-block-content-container.blue .btn:visited.secondary, .full-width-block-content-container.dark-grey .btn:visited.secondary, .full-width-block-content-container.grey .btn:visited.secondary, .full-width-block-content-container.turquoise .btn:visited.secondary, .full-width-block-content-container.violet .btn:visited.secondary {
       border: 1px solid white;
       color: white; }
   .btn.btn-clear, .btn:link.btn-clear, .btn:visited.btn-clear {
@@ -1641,48 +1639,67 @@ table:not(.no-style) {
   padding-right: 0;
   padding-left: 0;
   padding-bottom: 2.25rem; }
+  .full-width-block-content-container.blue {
+    background-color: #00257f;
+    color: #ccdbff; }
+    .full-width-block-content-container.blue.bg-image {
+      background-color: rgba(0, 37, 127, 0.7); }
   .full-width-block-content-container.dark-grey {
-    background-color: rgba(48, 56, 72, 0.8);
+    background-color: #3d4964;
     color: #bdc3ce; }
+    .full-width-block-content-container.dark-grey.bg-image {
+      background-color: rgba(48, 56, 72, 0.8); }
   .full-width-block-content-container.grey {
-    background-color: rgba(79, 91, 117, 0.8);
+    background-color: #5F697F;
     color: #d5d8df; }
+    .full-width-block-content-container.grey.bg-image {
+      background-color: rgba(79, 91, 117, 0.8); }
   .full-width-block-content-container.light-grey {
-    background-color: rgba(224, 226, 231, 0.9);
+    background-color: #e1e2e6;
     color: #5b5f6d; }
     .full-width-block-content-container.light-grey h1, .full-width-block-content-container.light-grey h2, .full-width-block-content-container.light-grey h3, .full-width-block-content-container.light-grey h4, .full-width-block-content-container.light-grey h5, .full-width-block-content-container.light-grey h6 {
       color: #222 !important; }
     .full-width-block-content-container.light-grey li.active a {
       color: #222 !important; }
+    .full-width-block-content-container.light-grey.bg-image {
+      background-color: rgba(224, 226, 231, 0.9); }
   .full-width-block-content-container.periwinkle {
-    background-color: rgba(203, 210, 230, 0.8);
+    background-color: #ccd3e5;
     color: #435583; }
     .full-width-block-content-container.periwinkle h1, .full-width-block-content-container.periwinkle h2, .full-width-block-content-container.periwinkle h3, .full-width-block-content-container.periwinkle h4, .full-width-block-content-container.periwinkle h5, .full-width-block-content-container.periwinkle h6 {
       color: #222 !important; }
+    .full-width-block-content-container.periwinkle.bg-image {
+      background-color: rgba(203, 210, 230, 0.8); }
   .full-width-block-content-container.turquoise {
-    background-color: rgba(17, 179, 207, 0.8);
+    background-color: #14b1cc;
     color: #d0f4fa; }
     .full-width-block-content-container.turquoise li.active {
       background: rgba(255, 255, 255, 0.2) !important; }
+    .full-width-block-content-container.turquoise.bg-image {
+      background-color: rgba(17, 179, 207, 0.8); }
   .full-width-block-content-container.violet {
-    background-color: rgba(108, 88, 233, 0.8);
+    background-color: #6f5ce5;
     color: #ebe9fb; }
     .full-width-block-content-container.violet li.active {
       background: rgba(255, 255, 255, 0.1) !important; }
+    .full-width-block-content-container.violet.bg-image {
+      background-color: rgba(108, 88, 233, 0.8); }
   .full-width-block-content-container.gold {
-    background-color: rgba(233, 201, 88, 0.8);
+    background-color: #e5c75c;
     color: #4f400d; }
     .full-width-block-content-container.gold h1, .full-width-block-content-container.gold h2, .full-width-block-content-container.gold h3, .full-width-block-content-container.gold h4, .full-width-block-content-container.gold h5, .full-width-block-content-container.gold h6 {
       color: #222 !important; }
     .full-width-block-content-container.gold li.active a {
       color: #222 !important; }
-  .full-width-block-content-container.dark-grey h1, .full-width-block-content-container.dark-grey h2, .full-width-block-content-container.dark-grey h3, .full-width-block-content-container.dark-grey h4, .full-width-block-content-container.dark-grey h5, .full-width-block-content-container.dark-grey h6, .full-width-block-content-container.grey h1, .full-width-block-content-container.grey h2, .full-width-block-content-container.grey h3, .full-width-block-content-container.grey h4, .full-width-block-content-container.grey h5, .full-width-block-content-container.grey h6, .full-width-block-content-container.turquoise h1, .full-width-block-content-container.turquoise h2, .full-width-block-content-container.turquoise h3, .full-width-block-content-container.turquoise h4, .full-width-block-content-container.turquoise h5, .full-width-block-content-container.turquoise h6, .full-width-block-content-container.violet h1, .full-width-block-content-container.violet h2, .full-width-block-content-container.violet h3, .full-width-block-content-container.violet h4, .full-width-block-content-container.violet h5, .full-width-block-content-container.violet h6 {
+    .full-width-block-content-container.gold.bg-image {
+      background-color: rgba(233, 201, 88, 0.9); }
+  .full-width-block-content-container.blue h1, .full-width-block-content-container.blue h2, .full-width-block-content-container.blue h3, .full-width-block-content-container.blue h4, .full-width-block-content-container.blue h5, .full-width-block-content-container.blue h6, .full-width-block-content-container.dark-grey h1, .full-width-block-content-container.dark-grey h2, .full-width-block-content-container.dark-grey h3, .full-width-block-content-container.dark-grey h4, .full-width-block-content-container.dark-grey h5, .full-width-block-content-container.dark-grey h6, .full-width-block-content-container.grey h1, .full-width-block-content-container.grey h2, .full-width-block-content-container.grey h3, .full-width-block-content-container.grey h4, .full-width-block-content-container.grey h5, .full-width-block-content-container.grey h6, .full-width-block-content-container.turquoise h1, .full-width-block-content-container.turquoise h2, .full-width-block-content-container.turquoise h3, .full-width-block-content-container.turquoise h4, .full-width-block-content-container.turquoise h5, .full-width-block-content-container.turquoise h6, .full-width-block-content-container.violet h1, .full-width-block-content-container.violet h2, .full-width-block-content-container.violet h3, .full-width-block-content-container.violet h4, .full-width-block-content-container.violet h5, .full-width-block-content-container.violet h6 {
     color: white; }
-  .full-width-block-content-container.dark-grey a, .full-width-block-content-container.grey a, .full-width-block-content-container.turquoise a, .full-width-block-content-container.violet a {
+  .full-width-block-content-container.blue a, .full-width-block-content-container.dark-grey a, .full-width-block-content-container.grey a, .full-width-block-content-container.turquoise a, .full-width-block-content-container.violet a {
     color: white; }
-    .full-width-block-content-container.dark-grey a:hover, .full-width-block-content-container.grey a:hover, .full-width-block-content-container.turquoise a:hover, .full-width-block-content-container.violet a:hover {
+    .full-width-block-content-container.blue a:hover, .full-width-block-content-container.dark-grey a:hover, .full-width-block-content-container.grey a:hover, .full-width-block-content-container.turquoise a:hover, .full-width-block-content-container.violet a:hover {
       color: #e6e6e6; }
-  .full-width-block-content-container.dark-grey li.active a, .full-width-block-content-container.grey li.active a, .full-width-block-content-container.turquoise li.active a, .full-width-block-content-container.violet li.active a {
+  .full-width-block-content-container.blue li.active a, .full-width-block-content-container.dark-grey li.active a, .full-width-block-content-container.grey li.active a, .full-width-block-content-container.turquoise li.active a, .full-width-block-content-container.violet li.active a {
     background: rgba(255, 255, 255, 0.1);
     color: white !important; }
   .full-width-block-content-container.periwinkle h1, .full-width-block-content-container.periwinkle h2, .full-width-block-content-container.periwinkle h3, .full-width-block-content-container.periwinkle h4, .full-width-block-content-container.periwinkle h5, .full-width-block-content-container.periwinkle h6, .full-width-block-content-container.light-grey h1, .full-width-block-content-container.light-grey h2, .full-width-block-content-container.light-grey h3, .full-width-block-content-container.light-grey h4, .full-width-block-content-container.light-grey h5, .full-width-block-content-container.light-grey h6 {
@@ -4441,20 +4458,19 @@ embed, iframe, object {
 
 #hero.expertise .full-width-block-content-container h1 {
   margin-bottom: 0.75rem; }
-#hero.expertise .full-width-block-content-container .circle-icon {
-  margin-bottom: 0.75rem;
-  border-bottom: 2px solid rgba(41, 50, 68, 0.6); }
 @media screen and (min-width: 769px) {
   #hero.expertise .content-bar {
     padding-top: 0; } }
 @media screen and (min-width: 769px) {
   #hero.expertise .content-bar .circle-icon {
     margin-top: -110px; } }
-#hero .expertise-content-area p.lead {
-  color: #00257f;
-  line-height: 1.875rem; }
+
+.site-content-expertise p.lead {
+  color: #5F697F;
+  line-height: 1.875rem;
+  font-weight: 700; }
   @media screen and (min-width: 481px) {
-    #hero .expertise-content-area p.lead {
+    .site-content-expertise p.lead {
       font-size: 20px;
       font-size: 1.25rem;
       line-height: 1.875rem; } }
@@ -4465,7 +4481,8 @@ embed, iframe, object {
   margin: 0 12px;
   text-align: left;
   overflow: hidden;
-  height: 320px; }
+  height: 320px;
+  border-bottom: 2px solid #37425b; }
   #staff-menu-container .team-member img {
     max-width: 100%; }
   #staff-menu-container .team-member .team-member-profile-photo {
@@ -4477,7 +4494,7 @@ embed, iframe, object {
     position: absolute;
     top: 180px;
     left: 0;
-    background-color: #667088;
+    background-color: #5a6c94;
     padding: 0.75rem 18px;
     height: 100%;
     width: 100%;
@@ -4535,7 +4552,10 @@ embed, iframe, object {
 #expertise-menu-container .expertise-area {
   text-align: center; }
   #expertise-menu-container .expertise-area .expertise-area-content {
-    padding: 2.25rem 24px; }
+    margin: 0 12px;
+    padding: 1.5rem 24px;
+    background-color: #ecedef;
+    border-bottom: 2px solid #dbdbe7; }
     #expertise-menu-container .expertise-area .expertise-area-content .circle-icon {
       margin-bottom: 0;
       border-bottom: 2px solid #c5c7cf; }
@@ -4544,9 +4564,12 @@ embed, iframe, object {
       margin-top: 1.125rem;
       margin-bottom: 0; }
     #expertise-menu-container .expertise-area .expertise-area-content:hover {
-      background-color: #d3d5da; }
-#expertise-menu-container .owl-item.active:not(:last-child) {
-  border-right: 1px solid #f0f0f5; }
+      background-color: #d3d5da;
+      background-color: #e1e2e6;
+      border-top: 2px solid #cecfd6;
+      border-left: 1px solid #d9dadf;
+      border-right: 1px solid #d9dadf;
+      border-bottom: 2px solid #efeff2; }
 #expertise-menu-container .owl-page {
   margin-top: 0.75rem;
   opacity: 0.4; }

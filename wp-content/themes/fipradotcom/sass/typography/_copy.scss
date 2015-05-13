@@ -72,8 +72,7 @@ dt {
 
 p {
   &.lead {
-    font-family: $font__sans;
-    @include media($media__medium) { @include font-size(18); line-height: $v-rhythm * 2.5; }
+    @include media($media__medium) { @include font-size(20); line-height: $v-rhythm * 2.5; }
   }
   &.center {
     text-align: center;

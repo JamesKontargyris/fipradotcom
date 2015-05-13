@@ -19,11 +19,11 @@ get_header(); ?>
 <div id="content-container" class="with-border">
 
         <div id="hero" class="full-width-block-container expertise">
-            <div class="full-width-block-content-container bottom grey">
-                <div class="full-width-block-content left narrow">
+            <div class="full-width-block-content-container blue bg-image">
+                <div class="full-width-block-content center narrow">
                     <div class="circle-icon small"><i class="icon-plane"></i></div>
                     <h1 class="upper">Travel, Transport and Logistics</h1>
-                    <p class="lead no-margin">Fipra’s Travel, Transport a d Logistics (TTL) practice, lead by <a
+                    <p class="lead no-margin">Fipra’s Travel, Transport &amp; Logistics (TTL) practice, lead by <a
                             href="#">Ukko Metsola</a>, is composed of experienced staff and <a href="#">Special Advisers</a> with diverse expertise in the policies and regulatory frameworks that affect the TTL industries.</p>
                 </div>
             </div>
@@ -42,7 +42,7 @@ get_header(); ?>
 
     <div id="site-content-container">
 
-        <div id="content" class="site-content">
+        <div id="content" class="site-content site-content-expertise">
 
             <div id="primary">
                 <main id="main" class="site-main" role="main">
@@ -179,23 +179,7 @@ get_header(); ?>
                                 </a>
                             </div>
                             <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Ukko Metsola</a></h4>
-                                <h6>Position</h6>
-                                <div class="team-member-bio">
-                                    <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
-                                        <br/><br/><a href="#">Full profile <i class="icon-right-open"></i></a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="team-member">
-                            <div class="team-member-profile-photo">
-                                <a href="#">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt=""/>
-                                </a>
-                            </div>
-                            <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Peter-Carlo Lehrell</a></h4>
+                                <h4 class="no-margin"><a href="#">Ukko Metsola 1</a></h4>
                                 <h6>Position</h6>
                                 <div class="team-member-bio">
                                     <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
@@ -211,7 +195,7 @@ get_header(); ?>
                                 </a>
                             </div>
                             <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Ukko Metsola</a></h4>
+                                <h4 class="no-margin"><a href="#">Ukko Metsola 2</a></h4>
                                 <h6>Position</h6>
                                 <div class="team-member-bio">
                                     <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
@@ -219,15 +203,29 @@ get_header(); ?>
                                 </div>
                             </div>
                         </div>
-
                         <div class="team-member">
                             <div class="team-member-profile-photo">
                                 <a href="#">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt=""/>
+                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt=""/>
                                 </a>
                             </div>
                             <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Peter-Carlo Lehrell</a></h4>
+                                <h4 class="no-margin"><a href="#">Ukko Metsola 3</a></h4>
+                                <h6>Position</h6>
+                                <div class="team-member-bio">
+                                    <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
+                                        <br/><br/><a href="#">Full profile <i class="icon-right-open"></i></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-member-profile-photo">
+                                <a href="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt=""/>
+                                </a>
+                            </div>
+                            <div class="team-member-details">
+                                <h4 class="no-margin"><a href="#">Ukko Metsola 4</a></h4>
                                 <h6>Position</h6>
                                 <div class="team-member-bio">
                                     <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
@@ -243,23 +241,7 @@ get_header(); ?>
                                 </a>
                             </div>
                             <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Ukko Metsola</a></h4>
-                                <h6>Position</h6>
-                                <div class="team-member-bio">
-                                    <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
-                                        <br/><br/><a href="#">Full profile <i class="icon-right-open"></i></a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="team-member">
-                            <div class="team-member-profile-photo">
-                                <a href="#">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt=""/>
-                                </a>
-                            </div>
-                            <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Peter-Carlo Lehrell</a></h4>
+                                <h4 class="no-margin"><a href="#">Ukko Metsola 5</a></h4>
                                 <h6>Position</h6>
                                 <div class="team-member-bio">
                                     <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
@@ -275,7 +257,7 @@ get_header(); ?>
                                 </a>
                             </div>
                             <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Ukko Metsola</a></h4>
+                                <h4 class="no-margin"><a href="#">Ukko Metsola 6</a></h4>
                                 <h6>Position</h6>
                                 <div class="team-member-bio">
                                     <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
@@ -283,23 +265,6 @@ get_header(); ?>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="team-member">
-                            <div class="team-member-profile-photo">
-                                <a href="#">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt=""/>
-                                </a>
-                            </div>
-                            <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Peter-Carlo Lehrell</a></h4>
-                                <h6>Position</h6>
-                                <div class="team-member-bio">
-                                    <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
-                                        <br/><br/><a href="#">Full profile <i class="icon-right-open"></i></a></p>
-                                </div>
-                            </div>
-                        </div>
-
 
                     </div>
 
