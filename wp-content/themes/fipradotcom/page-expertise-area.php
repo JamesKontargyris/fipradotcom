@@ -16,7 +16,7 @@ get_header(); ?>
     }
 </style>
 
-<div id="content-container" class="with-border">
+<div id="content-container">
 
         <div id="hero" class="full-width-block-container expertise">
             <div class="full-width-block-content-container blue bg-image">
@@ -118,7 +118,7 @@ get_header(); ?>
 
             <div id="secondary">
 
-                <div class="sidebar-contacts-container">
+                <div class="sidebar-contacts-container ribbon">
                     <h5 id="practice-lead">Practice Lead</h5>
 
                     <div class="sidebar-contacts-group">

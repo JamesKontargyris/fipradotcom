@@ -11,7 +11,7 @@ ul.sidebar-list {
     a { display:block; padding:$v-rhythm / 2 em(12px);
       background-color: white;
       border-bottom:1px solid darken($color__fipra-light-gray, 7%);
-      &:hover { opacity:0.7; }
+      &:hover { background-color: $color__fipra-mid-gray; }
     }
   }
 
@@ -25,11 +25,13 @@ ul.sidebar-list {
   padding: $v-rhythm em(12px);
   margin-bottom: $v-rhythm;
 
-  @include media($media__medium) {
-    @include linear-gradient(darken($color__fipra-blue-gray, 8%) 0%, $color__fipra-blue-gray 25px);
-    padding: $v-rhythm * 3 em(12px) $v-rhythm em(12px);
-    margin-top:-$v-rhythm * 3;
-  }
+    &.ribbon {
+      @include media($media__medium) {
+        padding: $v-rhythm * 3 em(12px) $v-rhythm em(12px);
+        @include linear-gradient(darken($color__fipra-blue-gray, 10%) 0%, $color__fipra-blue-gray 20px);
+        margin-top:-$v-rhythm * 3;
+      }
+    }
 
   .sidebar-contacts-group {
 

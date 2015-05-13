@@ -6,12 +6,11 @@ $color__fipra-periwinkle: #ccd3e5;
 $color__fipra-violet: #6f5ce5;
 $color__fipra-turquoise: #14b1cc;
 $color__fipra-gold: #e5c75c;
-$color__fipra-lighter-gray: #f0f0f5;
-$color__fipra-light-gray: #e1e2e6;
+$color__fipra-lighter-gray: #eceef2;
+$color__fipra-light-gray: #dde0e1;
 $color__fipra-mid-gray: lighten(#d1d5d9, 5%);
-$color__fipra-dark-gray: darken(saturate($color__fipra-blue-gray,10%), 12%);
+$color__fipra-dark-gray: darken($color__fipra-blue-gray, 12%);
 $color__fipra-orange: #DE8A56;
-$color__fipra-brown: #866551;
 $color__fipra-light-orange: #fce5c3;
 
 $color_soft-black: #222;
@@ -22,7 +21,7 @@ $color_white: #fff;
 //Underscores colours
 $color__background-body: $color__fipra-lighter-gray;
 $color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
+$color__background-hr: darken($color__fipra-lighter-gray, 17%);
 $color__background-button: #e6e6e6;
 $color__background-pre: lighten($color__fipra-periwinkle, 10%);
 $color__background-ins: $color__fipra-periwinkle;

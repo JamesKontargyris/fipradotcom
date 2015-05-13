@@ -45,23 +45,20 @@
 
   &.blue {
     background-color: $color__fipra-blue;
-    //        @include linear-gradient(rgba(saturate(darken($color__fipra-blue-gray, 15%), 5%), 0.8) 0%, rgba(saturate(darken($color__fipra-blue-gray, 20%), 5%), 0.8) 100%);
     color:lighten($color__fipra-blue, 65%);
-    &.bg-image { background-color: rgba($color__fipra-blue, 0.7); }
+    &.bg-image { background-color: rgba($color__fipra-blue, 0.8); }
   }
 
   &.dark-grey {
     background-color: $color__fipra-dark-gray;
-    //        @include linear-gradient(rgba(saturate(darken($color__fipra-blue-gray, 15%), 5%), 0.8) 0%, rgba(saturate(darken($color__fipra-blue-gray, 20%), 5%), 0.8) 100%);
     color:lighten($color__fipra-blue-gray, 34%);
     &.bg-image { background-color: rgba(saturate(darken($color__fipra-blue-gray, 20%), 5%), 0.8); }
   }
 
   &.grey {
     background-color: $color__fipra-blue-gray;
-    //    @include linear-gradient(rgba($color__fipra-blue-gray, 0.6) 50%, rgba($color__fipra-blue-gray, 0.8) 100%);
     color:lighten($color__fipra-blue-gray, 42%);
-    &.bg-image { background-color: rgba(saturate(darken($color__fipra-blue-gray, 5%), 5%), 0.8); }
+    &.bg-image { background-color: rgba(saturate(darken($color__fipra-blue-gray, 5%), 5%), 0.9); }
   }
 
   &.light-grey {
@@ -121,9 +118,13 @@
 
 .full-width-block-content {
   @extend .content-area;
-  text-align: center;
+
+  &.center {
+    text-align: center;
+  }
 
   &.left {
+    text-align: center;
     @include media($media__medium) {
       text-align: left;
       &.narrow { padding-right:$column * 5; }
@@ -131,6 +132,7 @@
   }
 
   &.right {
+    text-align: center;
     @include media($media__medium) {
       text-align: right;
       &.narrow { padding-left:$column * 5; }

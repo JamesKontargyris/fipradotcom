@@ -2,8 +2,6 @@
   @include clearfix;
   .row-of-1 {
     .team-member {
-      border-bottom:2px solid darken(white, 10%);
-
       @include media($media__large) {
         @include span-columns(12);
         @include omega(1n);
@@ -85,12 +83,11 @@
   }
 
   .team-member {
+    @extend .white-box;
     @include clearfix;
     position:relative;
     @include font-size(18);
-    padding:$v-rhythm em(12px);
     &:not(:last-child) { margin-bottom: $v-rhythm; }
-    background-color: white;
 //    @include linear-gradient(lighten($color__fipra-light-gray, 4%) 80%, darken($color__fipra-light-gray, 3%) 100%);
 //    @include media(min-width $media__small max-width $media__medium) {
 //      @include span-columns(6); @include omega(2n);

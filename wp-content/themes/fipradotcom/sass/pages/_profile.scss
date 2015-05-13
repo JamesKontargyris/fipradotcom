@@ -59,13 +59,6 @@
     }
   }
 
-.profile-content-area {
-  p.lead {
-    color:$color__fipra-brown; line-height:$v-rhythm * 2.5;
-    @include media($media__small) { @include font-size(24); line-height:$v-rhythm * 3 }
-  }
-}
-
 .profile-expertise-showcase {
   .showcase-block {
     @include transition(all 0.2s);

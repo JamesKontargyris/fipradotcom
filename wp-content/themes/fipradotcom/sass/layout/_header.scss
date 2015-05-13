@@ -21,7 +21,7 @@
   @include media($media__medium) { background-color: $color__fipra-lighter-gray; }
 //  @include linear-gradient(white 90%, darken(white, 5%) 100%);
 //  @include linear-gradient(darken(white, 3%) 90%, darken(white, 5%) 100%);
-  &.with-border { @include media($media__large) { border-top:$color__fipra-blue solid $v-rhythm / 2; } }
+  &.with-border { @include media($media__medium) { border-top:$color__fipra-blue solid 3px; } }
 
   header.site-header {
     @include row();

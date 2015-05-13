@@ -9,26 +9,18 @@ get_header(); ?>
 
 <style>
     /*    If dark photo*/
-    #page-banner:before {
-        content:"";
+    #hero {
         background:url('<?php echo get_template_directory_uri(); ?>/img/tower_bridge_orig.jpg') center no-repeat;
         background-size:cover;
-        position:absolute;
-        top:0; left: 0; bottom: 0; right: 0;
-        z-index:-1;
     }
-    /*If light photo*/
-/*        #page-banner {*/
-/*            background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 90%, rgba(0,0,0, 0.3) 100%), linear-gradient(to bottom, rgba(255,255,255, 0.7) 0%, rgba(255,255,255, 0.9) 100%), url('*/<?php //echo get_template_directory_uri(); ?>/*/img/tower_bridge_orig.jpg');*/
-/*        }*/
 </style>
 
-<div id="content-container" class="with-border">
+<div id="content-container">
 
-        <div id="page-banner" class="full-width-block-container unit grey">
-            <div class="full-width-block-content">
-                <div class="col-8-m no-margin">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/flags/united-kingdom.png" alt="Flag" /> <h1 class="upper">United Kingdom</h1>
+        <div id="hero" class="full-width-block-container with-content-bar unit">
+            <div class="full-width-block-content-container content-bar blue bottom bg-image">
+                <div class="full-width-block-content left narrow">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/flags/united-kingdom.png" alt="Flag" /> <h1 class="upper no-margin">United Kingdom</h1>
                     <p class="meta">Unit, Correspondent or Special Adviser</p>
                     <p class="lead no-margin">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.</p>
                 </div>
@@ -177,7 +169,7 @@ get_header(); ?>
 
             <div id="secondary">
 
-                <div class="sidebar-contacts-container">
+                <div class="sidebar-contacts-container ribbon">
                     <h5 id="get-in-touch">Lead Contact</h5>
 
                     <div class="sidebar-contacts-group">

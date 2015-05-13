@@ -22,12 +22,7 @@
 
 }
 
-.site-content-expertise {
-  p.lead {
-    color:$color__fipra-blue-gray; line-height:$v-rhythm * 2.5; font-weight: $font__bold;
-    @include media($media__small) { @include font-size(20); line-height:$v-rhythm * 2.5 }
-  }
-}
+
 
 #staff-menu-container {
   .team-member {
@@ -97,14 +92,14 @@
     .expertise-area-content {
       margin: 0 12px;
       padding: $v-rhythm * 2 24px;
-      background-color: lighten($color__fipra-light-gray, 4%);
-      border-bottom: 2px solid darken($color__fipra-lighter-gray, 7%);
+      background-color: lighten($color__fipra-light-gray, 6%);
+      border-bottom: 2px solid darken($color__fipra-lighter-gray, 12%);
 
       .circle-icon { margin-bottom: 0; border-bottom: 2px solid darken($color__fipra-light-gray, 10%); }
       h4 { color: $color__fipra-blue !important; margin-top: $v-rhythm * 1.5; margin-bottom: 0; }
 
-      &:hover { background-color: darken($color__fipra-light-gray, 5%);
-        background-color: $color__fipra-light-gray;
+      &:hover {
+        background-color: lighten($color__fipra-light-gray, 2%);
         border-top: 2px solid darken($color__fipra-light-gray, 7%);
         border-left: 1px solid darken($color__fipra-light-gray, 3%);
         border-right: 1px solid darken($color__fipra-light-gray, 3%);

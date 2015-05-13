@@ -1,40 +1,19 @@
-#page-banner {
+.full-width-block-container {
   &.unit {
     @include media($media__medium) { min-height:em(400px); }
     //    @include media(max-width $media__small) { background:$color__fipra-blue !important; }
 
     .full-width-block-content {
-      @extend .content-area;
-      text-align: center;
-      .meta { font-style: italic; margin-bottom:$v-rhythm; @include font-size(18); }
+      .meta { font-style: italic; @include font-size(18); }
       img {
-        height: 38px;
+        height: 32px;
         margin-right:em(12px);
         margin-bottom: $v-rhythm;
         vertical-align: top;
-        margin-top:-4px;
+        margin-top:4px;
       }
       img, h1 { @include media($media__medium) { display: inline-block; } }
 
-      @include media($media__medium) { padding-top:$v-rhythm * 10 !important; padding-bottom:$v-rhythm * 10 !important; text-align: left; }
-      @include media($media__xlarge) { padding-top:$v-rhythm * 24 !important; padding-bottom:$v-rhythm * 4 !important; }
-
-//      &.dark-text {
-//        h1 { color: $color__fipra-blue !important; text-shadow:0px 1px 1px $color__fipra-light-gray !important; }
-//        h2 { color: $color__fipra-blue; }
-//        .meta { color:black; }
-//        .btn.primary {
-//          text-shadow:0px 1px 3px lighten($color__fipra-blue, 10%);
-//        }
-//        .btn.secondary {
-//          border:1px solid $color__fipra-blue;
-//          color:$color__fipra-blue;
-//          &:hover {
-//            border:1px solid $color__fipra-blue-gray;
-//            color:$color__fipra-blue-gray;
-//          }
-//        }
-//      }
     }
   }
 }

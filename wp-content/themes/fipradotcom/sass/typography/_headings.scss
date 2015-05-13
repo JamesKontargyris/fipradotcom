@@ -21,11 +21,11 @@ h5, h6 { margin:0 0 $v-rhythm 0; }
 
 h1 {
   font-weight: $font__bold;
-  @include font-size(21);
-  line-height: $v-rhythm * 2;
+  @include font-size(24);
+  line-height: $v-rhythm * 2.5;
 
   @include media($media__medium) { @include font-size(24); letter-spacing:-1px; line-height: $v-rhythm * 3; }
-  @include media($media__large) { @include font-size(28); letter-spacing:-1px; line-height: $v-rhythm * 3.5; }
+  @include media($media__large) { @include font-size(30); line-height: $v-rhythm * 3.5; }
 
   &.small {
 //    font-weight: $font__normal;
@@ -83,7 +83,7 @@ h4 {
 
 }
 
-h5 { @include font-size(14); font-weight: $font__normal; text-transform: uppercase; letter-spacing:2px;
+h5 { @include font-size(14); font-weight: $font__bold; text-transform: uppercase; letter-spacing:2px;
   @include media($media__small) { @include font-size(16); }
 }
 

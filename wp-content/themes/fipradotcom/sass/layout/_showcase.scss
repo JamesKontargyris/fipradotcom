@@ -12,7 +12,7 @@
       &.large-text { @include media($media__medium) {  @include font-size(18); } }
     }
 
-    h3, h4 { color:$color__fipra-brown; font-weight: $font__bold; }
+    h3, h4 { font-weight: $font__bold; }
 
     .featured-image {
       img {  width:100%; }

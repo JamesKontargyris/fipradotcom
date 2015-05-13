@@ -72,7 +72,7 @@ dt {
 
 p {
   &.lead {
-    @include media($media__medium) { @include font-size(20); line-height: $v-rhythm * 2.5; }
+    @include media($media__medium) { @include font-size(18); line-height: $v-rhythm * 2.5; }
   }
   &.center {
     text-align: center;
@@ -82,5 +82,12 @@ p {
       padding-left:$column;
       padding-right:$column;
     }
+  }
+}
+
+.site-content {
+  p.lead {
+    color:$color__fipra-blue-gray; line-height:$v-rhythm * 2.5;
+    @include media($media__small) { @include font-size(19); line-height:$v-rhythm * 2.5 }
   }
 }

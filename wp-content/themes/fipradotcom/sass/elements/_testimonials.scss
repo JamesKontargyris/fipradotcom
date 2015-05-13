@@ -1,14 +1,13 @@
 .testimonial-group {
+
   blockquote.testimonial {
     background: $color__fipra-mid-gray;
-    //    border:1px solid $color__fipra-mid-gray;
     border-bottom: 2px solid $color__fipra-mid-gray;
     margin-bottom: 0;
-    &:not(:last-child) {
-      margin-bottom: $v-rhythm * 2;
-    }
+    &:not(:last-child) { margin-bottom: $v-rhythm * 2; }
+
     .quote {
-      width: 85%;
+      width: 90%;
       padding: $v-rhythm * 2 0 $v-rhythm * 2 24px;
       font-weight: $font__normal;
       letter-spacing: 1px;
@@ -17,6 +16,7 @@
       font-style: italic;
       line-height: $v-rhythm * 2;
     }
+
     .author {
       @include clearfix;
       //      background: lighten($color__fipra-mid-gray, 5%);
@@ -63,7 +63,7 @@
   @include clearfix;
   padding: 0;
   margin-bottom: $v-rhythm * 2;
-
+  &.with-bottom-border { border-bottom: 1px solid darken($color__fipra-lighter-gray, 7%); }
   .button {
     cursor: pointer;
     border-radius: 0;
@@ -75,7 +75,6 @@
     float: left;
     width: 50%;
     @include font-size(12);
-    border-bottom: 1px solid darken($color__fipra-lighter-gray, 7%);
     padding: $v-rhythm * 0.5 24px;
     line-height: 2;
     color: $color__fipra-blue;
@@ -86,6 +85,8 @@
       background-color: darken($color__fipra-light-gray, 5%);
       color:white;
     }
+
   }
+  &.no-margin { margin: 0; }
 
 }
