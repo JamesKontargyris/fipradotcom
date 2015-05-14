@@ -149,7 +149,7 @@
     });
     $("#practice-staff-carousel").owlCarousel({
         items: 5,
-        itemsCustom: [[0,1], [480,2], [768,3], [940,4]]
+        itemsCustom: [[0,1], [480,3], [768,4], [940,5]]
     });
     $("#expertise-carousel").owlCarousel({
         //items: 4,

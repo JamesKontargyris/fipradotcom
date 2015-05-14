@@ -32,53 +32,55 @@ get_header(); ?>
 
                             <hr/>
 
-                            <h5 id="get-in-touch">Working for Fipra</h5>
+                            <div class="testimonial-container hide-s">
+                                <h5 id="get-in-touch">Working for Fipra</h5>
 
-                            <div class="testimonial-group">
-                                <blockquote cite="http://test.com" class="testimonial">
-                                    <div class="quote">
-                                        "Testimonial number 1 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada."
-                                    </div>
-                                    <footer class="author">
-                                        <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />
-                                        <div class="author-details">
-                                            <span class="name">Author Name</span><br/>Position, Organisation</strong>
+                                <div class="testimonial-group">
+                                    <blockquote cite="http://test.com" class="testimonial">
+                                        <div class="quote">
+                                            "Testimonial number 1 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada."
                                         </div>
-                                    </footer>
-                                    <span class="triangle"></span>
-                                </blockquote>
-                                <blockquote cite="http://test.com" class="testimonial">
-                                    <div class="quote">
-                                        "Testimonial number 2 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada. Fusce eget orci convallis."
-                                    </div>
-                                    <footer class="author">
-                                        <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />
-                                        <div class="author-details">
-                                            <span class="name">Author Name</span><br/>Position, Organisation</strong>
+                                        <footer class="author">
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />
+                                            <div class="author-details">
+                                                <span class="name">Author Name</span><br/>Position, Organisation</strong>
+                                            </div>
+                                        </footer>
+                                        <span class="triangle"></span>
+                                    </blockquote>
+                                    <blockquote cite="http://test.com" class="testimonial">
+                                        <div class="quote">
+                                            "Testimonial number 2 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada. Fusce eget orci convallis."
                                         </div>
-                                    </footer>
-                                    <span class="triangle"></span>
-                                </blockquote>
-                                <blockquote cite="http://test.com" class="testimonial">
-                                    <div class="quote">
-                                        "Testimonial number 3 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada."
-                                    </div>
-                                    <footer class="author">
-                                        <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />
-                                        <div class="author-details">
-                                            <span class="name">Author Name</span><br/>Position, Organisation</strong>
+                                        <footer class="author">
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />
+                                            <div class="author-details">
+                                                <span class="name">Author Name</span><br/>Position, Organisation</strong>
+                                            </div>
+                                        </footer>
+                                        <span class="triangle"></span>
+                                    </blockquote>
+                                    <blockquote cite="http://test.com" class="testimonial">
+                                        <div class="quote">
+                                            "Testimonial number 3 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada."
                                         </div>
-                                    </footer>
-                                    <span class="triangle"></span>
-                                </blockquote>
-                            </div>
-                            <div class="testimonial-group-carousel-controls no-margin">
-                                <button class="button owl-prev" data-carousel=".testimonial-group">
-                                    <i class="icon-left-open-2" ></i> Previous
-                                </button>
-                                <button class="button owl-next" data-carousel=".testimonial-group">
-                                    Next <i class="icon-right-open-2"></i>
-                                </button>
+                                        <footer class="author">
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />
+                                            <div class="author-details">
+                                                <span class="name">Author Name</span><br/>Position, Organisation</strong>
+                                            </div>
+                                        </footer>
+                                        <span class="triangle"></span>
+                                    </blockquote>
+                                </div>
+                                <div class="testimonial-group-carousel-controls no-margin">
+                                    <button class="button owl-prev" data-carousel=".testimonial-group">
+                                        <i class="icon-left-open-2" ></i> Previous
+                                    </button>
+                                    <button class="button owl-next" data-carousel=".testimonial-group">
+                                        Next <i class="icon-right-open-2"></i>
+                                    </button>
+                                </div>
                             </div>
 
                         </div>
@@ -98,7 +100,7 @@ get_header(); ?>
                                 </div>
                                 <div class="row">
                                     <div class="job-listing-overview">
-                                        <p>Job overview lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. Nulla facilisi. Quisque a iaculis nisi.</p>
+                                        <p>This listing is stolen from the Uber site... This is a unique opportunity to be a founding member of the Uber for Business Sales organization. With this role, you’ll have the opportunity to join a small team that has the ability to make a big impact.</p>
                                         <p class="no-margin"><a href="#" class="btn btn-extra-small primary">Read more</a></p>
                                     </div>
                                 </div>

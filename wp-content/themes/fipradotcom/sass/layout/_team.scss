@@ -85,6 +85,8 @@
   .team-member {
     @extend .white-box;
     @include clearfix;
+
+    padding:$v-rhythm em(18px);
     position:relative;
     @include font-size(18);
     &:not(:last-child) { margin-bottom: $v-rhythm; }

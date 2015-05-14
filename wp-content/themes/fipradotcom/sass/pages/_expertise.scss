@@ -23,24 +23,42 @@
 }
 
 
+#staff-menu-container, #expertise-menu-container {
+  h3 {
+    position: relative;
+    padding: 0 24px;
+    margin-bottom: $v-rhythm * 2;
+    i { @include font-size(24); }
+    .owl-prev, .owl-next { position: absolute; }
+    .owl-prev { left: 0; top: 0; }
+    .owl-next { right: 0; top: 0; }
+  }
+
+  .owl-page {
+    margin-top:$v-rhythm;
+    opacity:0.4;
+    &.active { opacity: 1; }
+  }
+}
 
 #staff-menu-container {
   .team-member {
     position:relative;
     padding:0;
-//    img { margin-bottom: $v-rhythm; }
-    margin:0 12px;
+    margin:0 8px;
     text-align: left;
     overflow:hidden;
-    height:320px;
+    height:300px;
     border-bottom: 2px solid darken($color__fipra-dark-gray, 3%);
 
     img { max-width: 100%; }
+    h4 { line-height: $v-rhythm * 2; }
 
     .team-member-profile-photo { background-color: white; text-align:center; &:hover { opacity:0.7; } }
     .team-member-details {
       position:absolute;
       top:180px;
+      @include media(min-width $media__small max-width $media__medium) { top: 160px; }
       left:0;
       background-color: lighten($color__fipra-dark-gray, 15%);
       padding:$v-rhythm 18px;
@@ -53,110 +71,18 @@
     }
   }
 
-  h3 {
-    position:relative;
-    color:white;
-    padding:0 24px;
-    margin:0 12px $v-rhythm * 2 12px;
-    i { @include font-size(21); }
-    .owl-prev, .owl-next { position:absolute; }
-    .owl-prev { left:0; top:0; }
-    .owl-next { right:0; top:0; }
-  }
-
-  .owl-page {
-    margin-top:$v-rhythm;
-    opacity:0.4;
-    &.active { opacity: 1; }
-    span {
-      background:white !important;
-    }
-  }
+  .owl-page { span { background:white !important; } }
 }
 
 #expertise-menu-container {
-  h3 {
-    position: relative;
-    color: white;
-    padding: 0 24px;
-    margin: 0 12px $v-rhythm * 2 12px;
-    i { @include font-size(21); }
-    .owl-prev, .owl-next { position: absolute; color: $color__fipra-blue; }
-    .owl-prev { left: 0; top: 0; }
-    .owl-next { right: 0; top: 0; }
-  }
+  .owl-prev, .owl-next { color:$color__fipra-blue; }
 
-  .expertise-area {
-    text-align: center;
-
-    .expertise-area-content {
-      margin: 0 12px;
-      padding: $v-rhythm * 2 24px;
-      background-color: lighten($color__fipra-light-gray, 6%);
-      border-bottom: 2px solid darken($color__fipra-lighter-gray, 12%);
-
-      .circle-icon { margin-bottom: 0; border-bottom: 2px solid darken($color__fipra-light-gray, 10%); }
-      h4 { color: $color__fipra-blue !important; margin-top: $v-rhythm * 1.5; margin-bottom: 0; }
-
-      &:hover {
-        background-color: lighten($color__fipra-light-gray, 2%);
-        border-top: 2px solid darken($color__fipra-light-gray, 7%);
-        border-left: 1px solid darken($color__fipra-light-gray, 3%);
-        border-right: 1px solid darken($color__fipra-light-gray, 3%);
-        border-bottom: 2px solid lighten($color__fipra-light-gray, 5%);
-      }
+  #expertise-carousel {
+    .showcase-block {
+      margin:0 8px;
+      h4 { margin:0; color:$color__fipra-blue !important; }
     }
   }
-  .owl-item.active {
-//     &:not(:last-child) { border-right:1px solid $color__fipra-lighter-gray; }
-  }
 
-  .owl-page {
-    margin-top:$v-rhythm;
-    opacity:0.4;
-    &.active { opacity: 1; }
-    span {
-      background:$color__fipra-blue !important;
-    }
-  }
+  .owl-page { span { background:$color__fipra-blue !important; } }
 }
-
-
-//#page-footer {
-//  background-position: 0 0, top left, 0 0;
-//  background-repeat: no-repeat, no-repeat, repeat;
-//  background-size:contain, contain, 400px 324px;
-//  background: linear-gradient(to top, rgba(125, 125, 125, 0) 94%, rgba(125, 125, 125, 0.2) 100%), linear-gradient(to bottom, $color__fipra-light-gray 0%, white 50%);
-//
-//
-//  padding:$v-rhythm * 2 inherit;
-//  .content-area { @include clearfix; padding-bottom:$v-rhythm; }
-//  h3 { color:$color__fipra-blue-gray; }
-//}
-//.carousel-control {
-//  height:150px;
-//  &.left { text-align: right; }
-//  &.right { text-align: left; }
-//  &:hover { cursor: pointer; }
-//  display:none;
-//  i {
-//    @include vertical-align;
-//    @include font-size(34);
-//    color:$color__fipra-blue;
-//    &:hover { color:$color__fipra-blue-gray; }
-//  }
-//  @include media($media__medium) { display:block;}
-//}
-//
-//#expertise-carousel {
-//  .showcase-block {
-//    h3 { color:$color__fipra-blue; }
-//    padding:$v-rhythm * 2 em(12px);
-//    margin:0 auto;
-//    width:90%;
-//    &.bg { @include linear-gradient($color__fipra-light-gray 50%, darken($color__fipra-light-gray, 7%) 100%); }
-//  }
-//}
-//Owl carousel pagination
-
-

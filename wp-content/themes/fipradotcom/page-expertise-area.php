@@ -16,10 +16,16 @@ get_header(); ?>
     }
 </style>
 
-<div id="content-container">
+<div id="content-container" class="with-border">
+
+    <div id="breadcrumbs">
+        <div class="breadcrumbs-content">
+            <a href="#">Home</a> <span class="divider"><i class="icon-right-open"></i></span> <a href="#">Our Expertise</a> <span class="divider"><i class="icon-right-open"></i></span> <span class="active">Travel, Transport and Logistics</span>
+        </div>
+    </div>
 
         <div id="hero" class="full-width-block-container expertise">
-            <div class="full-width-block-content-container blue bg-image">
+            <div class="full-width-block-content-container grey bg-image">
                 <div class="full-width-block-content center narrow">
                     <div class="circle-icon small"><i class="icon-plane"></i></div>
                     <h1 class="upper">Travel, Transport and Logistics</h1>
@@ -33,6 +39,7 @@ get_header(); ?>
             <div class="row content-area">
                 <ul class="anchor-links-list no-margin no-bullet">
                     <li class="menu-title"><i class="icon-menu-1"></i> Jump to...</li>
+                    <li class="hide-s"><a class="jump-to-link" href="#testimonials">Testimonials <i class="icon-down-open"></i></a></li>
                     <li class="hide-s"><a class="jump-to-link" href="#staff-menu-container">Practice Staff <i class="icon-down-open"></i></a></li>
                     <li class="hide-s hide-m"><a class="jump-to-link" href="#practice-lead">Practice Lead <i class="icon-down-open"></i></a></li>
                     <li class="hide-s"><a class="jump-to-link" href="#expertise-menu-container">More of our Expertise <i class="icon-down-open"></i></a></li>
@@ -66,7 +73,7 @@ get_header(); ?>
                     <p>To learn more about how Fipra’s TTL team can support you please contact <a href="#">Ukko Metsola</a>.</p>
 
 
-                    <div class="testimonial-group">
+                    <div id="testimonials" class="testimonial-group">
                         <blockquote cite="http://test.com" class="testimonial">
                             <div class="quote">
                                 "Testimonial number 1 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada. Fusce eget orci convallis, finibus nunc vel, sagittis nibh. Donec eu gravida est. Aliquam vulputate felis augue."
@@ -137,21 +144,6 @@ get_header(); ?>
                             </div>
                         </div>
 
-<!--                        <div class="sidebar-contact">-->
-<!--                            <div class="sidebar-contact-content">-->
-<!--                                <a href="#">-->
-<!--                                    <img src="--><?//= get_template_directory_uri(); ?><!--/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" style="background-color: white;" />-->
-<!--                                    <strong>Peter-Carlo Lehrell</strong>-->
-<!--                                </a>-->
-<!--                                <p class="no-bottom-margin">-->
-<!--                                    <strong>Chairman, Fipra International</strong><br/>-->
-<!--                            <span class="font-14">Tel. +01234 5678910 <br/>-->
-<!--                            Fax. +01234 5678910 <br/>-->
-<!--                            <a href="mailto:lehrell@fipra.com">lehrell@fipra.com</a></span>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
                     </div>
                 </div>
 
@@ -168,7 +160,7 @@ get_header(); ?>
         <div class="full-width-block-content-container dark-grey">
 
             <div class="full-width-block-content">
-                <h3 id="staff" class="upper small center"><i class="icon-angle-circled-left owl-prev" data-carousel="#practice-staff-carousel"></i> Practice Staff <i class="icon-angle-circled-right owl-next" data-carousel="#practice-staff-carousel"></i></h3>
+                <h3 id="staff" class="upper small center"><i class="icon-left-circle-1 owl-prev" data-carousel="#practice-staff-carousel"></i> Practice Staff <i class="icon-right-circle-1 owl-next" data-carousel="#practice-staff-carousel"></i></h3>
                 <div class="team-group equal-heights">
                     <div id="practice-staff-carousel">
 
@@ -179,7 +171,7 @@ get_header(); ?>
                                 </a>
                             </div>
                             <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Ukko Metsola 1</a></h4>
+                                <h4 class="no-margin"><a href="#">Name Surname</a></h4>
                                 <h6>Position</h6>
                                 <div class="team-member-bio">
                                     <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
@@ -195,7 +187,7 @@ get_header(); ?>
                                 </a>
                             </div>
                             <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Ukko Metsola 2</a></h4>
+                                <h4 class="no-margin"><a href="#">Name Surname</a></h4>
                                 <h6>Position</h6>
                                 <div class="team-member-bio">
                                     <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
@@ -210,7 +202,7 @@ get_header(); ?>
                                 </a>
                             </div>
                             <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Ukko Metsola 3</a></h4>
+                                <h4 class="no-margin"><a href="#">Name Surname</a></h4>
                                 <h6>Position</h6>
                                 <div class="team-member-bio">
                                     <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
@@ -225,7 +217,7 @@ get_header(); ?>
                                 </a>
                             </div>
                             <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Ukko Metsola 4</a></h4>
+                                <h4 class="no-margin"><a href="#">Name Surname</a></h4>
                                 <h6>Position</h6>
                                 <div class="team-member-bio">
                                     <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
@@ -241,7 +233,7 @@ get_header(); ?>
                                 </a>
                             </div>
                             <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Ukko Metsola 5</a></h4>
+                                <h4 class="no-margin"><a href="#">Name Surname</a></h4>
                                 <h6>Position</h6>
                                 <div class="team-member-bio">
                                     <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
@@ -257,7 +249,7 @@ get_header(); ?>
                                 </a>
                             </div>
                             <div class="team-member-details">
-                                <h4 class="no-margin"><a href="#">Ukko Metsola 6</a></h4>
+                                <h4 class="no-margin"><a href="#">Name Surname</a></h4>
                                 <h6>Position</h6>
                                 <div class="team-member-bio">
                                     <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
@@ -266,70 +258,85 @@ get_header(); ?>
                             </div>
                         </div>
 
+                        <div class="team-member">
+                            <div class="team-member-profile-photo">
+                                <a href="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt=""/>
+                                </a>
+                            </div>
+                            <div class="team-member-details">
+                                <h4 class="no-margin"><a href="#">Name Surname</a></h4>
+                                <h6>Position</h6>
+                                <div class="team-member-bio">
+                                    <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum.
+                                        <br/><br/><a href="#">Full profile <i class="icon-right-open"></i></a></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 
     <div id="expertise-menu-container" class="full-width-block-container">
-        <div class="full-width-block-content-container light-grey">
+        <div class="full-width-block-content-container">
             <div class="full-width-block-content">
-                <h3 id="expertise-menu" class="upper small center"><i class="icon-angle-circled-left owl-prev" data-carousel="#expertise-carousel"></i> Our Expertise <i class="icon-angle-circled-right owl-next" data-carousel="#expertise-carousel"></i></h3>
+                <h3 id="expertise-menu" class="upper small center"><i class="icon-left-circle-1 owl-prev" data-carousel="#expertise-carousel"></i> Our Expertise <i class="icon-right-circle-1 owl-next" data-carousel="#expertise-carousel"></i></h3>
 
-                <div id="expertise-carousel">
-
-                    <div class="expertise-area">
-                        <a href="#">
-                            <div class="expertise-area-content">
-                                <div class="circle-icon"><i class="icon-lightbulb"></i></div>
-                                <h4>Energy and Environment</h4>
-                            </div>
-                        </a>
+                <div class="showcase equal-heights">
+                    <div id="expertise-carousel">
+                        <div class="showcase-block center">
+                            <a href="#">
+                                <div class="showcase-block-content">
+                                    <div class="circle-icon blue"><i class="icon-lightbulb"></i></div>
+                                    <h4>Energy and Environment</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="showcase-block center">
+                            <a href="#">
+                                <div class="showcase-block-content">
+                                    <div class="circle-icon blue"><i class="icon-industrial-building"></i></div>
+                                    <h4>Chemical, Industrials and Mining</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="showcase-block center">
+                            <a href="#">
+                                <div class="showcase-block-content">
+                                    <div class="circle-icon blue"><i class="icon-plane"></i></div>
+                                    <h4>Travel, Transport and Logistics</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="showcase-block center">
+                            <a href="#">
+                                <div class="showcase-block-content">
+                                    <div class="circle-icon blue"><i class="icon-bank"></i></div>
+                                    <h4>Banking and Financial Services</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="showcase-block center">
+                            <a href="#">
+                                <div class="showcase-block-content">
+                                    <div class="circle-icon blue"><i class="icon-plane"></i></div>
+                                    <h4>Travel, Transport and Logistics</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="showcase-block center">
+                            <a href="#">
+                                <div class="showcase-block-content">
+                                    <div class="circle-icon blue"><i class="icon-bank"></i></div>
+                                    <h4>Banking and Financial Services</h4>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="expertise-area">
-                        <a href="#">
-                            <div class="expertise-area-content">
-                                <div class="circle-icon"><i class="icon-industrial-building"></i></div>
-                                <h4>Chemical, Industrials and Mining</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="expertise-area">
-                        <a href="#">
-                            <div class="expertise-area-content">
-                                <div class="circle-icon"><i class="icon-plane"></i></div>
-                                <h4>Travel, Transport and Logistics</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="expertise-area">
-                        <a href="#">
-                            <div class="expertise-area-content">
-                                <div class="circle-icon"><i class="icon-bank"></i></div>
-                                <h4>Banking and Financial Services</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="expertise-area">
-                        <a href="#">
-                            <div class="expertise-area-content">
-                                <div class="circle-icon"><i class="icon-lightbulb"></i></div>
-                                <h4>Energy and Environment 2</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="expertise-area">
-                        <a href="#">
-                            <div class="expertise-area-content">
-                                <div class="circle-icon"><i class="icon-industrial-building"></i></div>
-                                <h4>Chemical, Industrials and Mining 2</h4>
-                            </div>
-                        </a>
-                    </div>
-
                 </div>
+
             </div>
         </div>
     </div>

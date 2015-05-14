@@ -81,8 +81,13 @@
   &.grey-icon { color: $color__fipra-blue-gray; }
   &.blue {
     color: white;
-    @include radial-gradient(circle at 50% 10%, $color__fipra-blue 60%, darken($color__fipra-blue, 15%) 80%);
+    background: $color__fipra-blue;
     text-shadow: 0px -1px 0px darken($color__fipra-blue, 10%);
+  }
+  &.grey {
+    color: white;
+    background: $color__fipra-blue-gray;
+    text-shadow: 0px -1px 0px darken($color__fipra-blue-gray, 10%);
   }
   &.periwinkle {
     color: darken($color__fipra-periwinkle, 40%);
@@ -131,14 +136,6 @@
 .circle-icon, .square-icon {
   &.transparent { background: none; box-shadow: none; }
 }
-
-//Showcase box with outline style
-.outline .circle-icon {
-  @include radial-gradient(circle at 50% 10%, $color__fipra-blue 60%, darken($color__fipra-blue, 15%) 80%);
-  color: white;
-}
-
-.sans-serif { font-family: $font__sans; }
 
 .font-14 { @include font-size(14); }
 
@@ -237,8 +234,8 @@
 
 .white-box {
   background-color:white;
-  padding:$v-rhythm em(18px);
-  border-bottom:2px solid darken(white, 10%);
+//  padding:$v-rhythm em(18px);
+  border-bottom:2px solid darken(white, 13%);
 }
 
 .blue-text { color: $color__fipra-blue !important; }

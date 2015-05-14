@@ -19,7 +19,7 @@
         }
     </style>
 
-<div id="content-container" class="with-border">
+<div id="content-container">
 
     <div class="page-nav">
         <div class="row content-area">

@@ -18,17 +18,15 @@
   &.with-hero-banner { padding-top:0; }
 
   #breadcrumbs {
-    @include outer-container($container__outer-width);
-    .breadcrumbs-content {
-      @include font-size(13);
-    }
+    @extend .content-area;
+    margin-bottom: $v-rhythm;
+    .breadcrumbs-content { @include font-size(13); }
     color:darken(white, 35%);
     .divider { padding:0 em(4px); }
     .active { font-weight: $font__black; color:$color__fipra-blue-gray; }
     a { font-weight: $font__bold; }
 
     @include media(max-width $media__medium) { display:none; }
-    @include media(min-width $media__medium max-width $media__xlarge) { padding-top:$v-rhythm * 2; padding-left:em(40px); padding-right:em(40px); }
 
   }
 

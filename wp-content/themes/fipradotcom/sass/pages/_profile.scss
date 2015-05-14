@@ -1,69 +1,38 @@
-#page-banner {
+#content-container {
+  @include media(max-width $media__medium) { &.with-border { padding-top:0; } }
+}
+
+
+.full-width-block-container {
   &.profile {
-    background-position: 0 0, bottom right em(10px), top left, 0 0;
-    background-repeat: no-repeat, no-repeat, no-repeat, repeat;
-    background-size:contain, auto 95%, contain, 400px 324px;
+    @include media($media__medium) { padding-top: $v-rhythm * 2 !important; }
 
-    @include media(max-width $media__small) {
-//      background-image: linear-gradient(to bottom, rgba(235, 235, 235, 1) 0%, rgba(235, 235, 235, 1) 100%);
-      @include linear-gradient(to top, $color__fipra-light-gray 0%, white 50%);
-      text-align:center; }
+    .full-width-block-content-container {
+      padding-top: $v-rhythm * 6 !important;
+      padding-bottom: $v-rhythm * 6 !important;
 
-    @include media($media__medium) {
-      background-position: 0 0, bottom right em(60px), top left, 0 0;
-      background-size:contain, auto 90%, contain, 794px 644px;
-    }
-
-    #page-banner-content {
-        .profile-header-content {
-
-          h1 {
-            text-shadow:none !important;
-            margin-bottom:$v-rhythm;
-            letter-spacing: -1px;
-            @include font-size(28);
-            line-height: $v-rhythm * 3;
-            @include media($media__medium) { @include font-size(42); margin-bottom:$v-rhythm * 1.5; }
-          }
-          h2 {
-            text-shadow:none !important;
-            margin-bottom:$v-rhythm * 2;
-            @include font-size(18);
-            line-height: $v-rhythm * 2;
-            font-weight: $font__bold;
-            @include media($media__large) { @include font-size(26); font-weight: $font__normal; letter-spacing: -1px; }
-          }
-        }
-
-      @include media(max-width $media__small) { padding:$v-rhythm * 3 em(20px); }
-      @include media($media__small) { padding:$v-rhythm * 3 em(200px) $v-rhythm * 3 em(40px); }
-      @include media($media__large) { padding:$v-rhythm * 8 em(40px); }
-
-        &.dark-text {
-          h1 {
-            color: $color_soft-black !important;
-          }
-          h2 {
-//            color: $color__fipra-blue;
-          }
-          .btn.secondary {
-            border:1px solid $color__fipra-blue;
-            color:$color__fipra-blue;
-            &:hover {
-              border:1px solid $color__fipra-blue-gray;
-              color:$color__fipra-blue-gray;
-            }
-          }
+      .full-width-block-content {
+        position:relative;
+        @include media($media__small) { text-align:left; padding-right:220px; }
+        h4 { color: lighten($color__fipra-blue-gray, 35%) !important; }
+        img {
+          display:none;
+          @include media($media__small) { display:block; position:absolute; bottom:-$v-rhythm * 6; right:20px; height:230px; }
+          @include media($media__medium) { height:280px; }
+          @include media($media__large) { height:320px; }
         }
       }
+
     }
   }
+}
+
+.profile-content-area {
+  p.lead { @include font-size(18); @include media($media__medium) { @include font-size(24); line-height: $v-rhythm * 3; } color:$color__fipra-dark-gray; }
+}
 
 .profile-expertise-showcase {
   .showcase-block {
-    @include transition(all 0.2s);
-    &.bg { @include linear-gradient($color__fipra-light-gray 50%, darken($color__fipra-light-gray, 7%) 100%); }
-    &:hover { opacity:0.5; }
     h3 { margin:0; @include font-size(16); color:$color__fipra-blue; line-height:$v-rhythm * 1.7; }
   }
 }

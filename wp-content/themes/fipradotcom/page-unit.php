@@ -8,7 +8,6 @@
 get_header(); ?>
 
 <style>
-    /*    If dark photo*/
     #hero {
         background:url('<?php echo get_template_directory_uri(); ?>/img/tower_bridge_orig.jpg') center no-repeat;
         background-size:cover;
@@ -18,7 +17,7 @@ get_header(); ?>
 <div id="content-container">
 
         <div id="hero" class="full-width-block-container with-content-bar unit">
-            <div class="full-width-block-content-container content-bar blue bottom bg-image">
+            <div class="full-width-block-content-container content-bar grey bottom bg-image">
                 <div class="full-width-block-content left narrow">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/flags/united-kingdom.png" alt="Flag" /> <h1 class="upper no-margin">United Kingdom</h1>
                     <p class="meta">Unit, Correspondent or Special Adviser</p>
@@ -34,7 +33,7 @@ get_header(); ?>
                     <li class="hide-s"><a class="jump-to-link" href="#about-us">About Us <i class="icon-down-open"></i></a></li>
                     <li class="hide-s"><a class="jump-to-link" href="#our-team">Our Team <i class="icon-down-open"></i></a></li>
                     <li class="hide-s"><a class="jump-to-link" href="#our-location">Our Location <i class="icon-down-open"></i></a></li>
-                    <li class="hide-s hide-m"><a href="#get-in-touch">Get in Touch <i class="icon-down-open"></i></a></li>
+                    <li class="hide-s hide-m"><a class="jump-to-link" href="#get-in-touch">Get in Touch <i class="icon-down-open"></i></a></li>
                 </ul>
             </div>
         </div>

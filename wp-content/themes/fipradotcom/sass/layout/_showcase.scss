@@ -1,21 +1,29 @@
 .showcase {
   @include clearfix();
-  margin:0;
+  margin: 0;
 
   .showcase-block {
     @include clearfix();
-
-
     margin-bottom: $v-rhythm * 2;
     &:last-child { margin-bottom: 0; }
+
     .showcase-block-content {
-      &.large-text { @include media($media__medium) {  @include font-size(18); } }
+      padding: $v-rhythm * 2 em(18px);
+      &.large-text {
+        @include media($media__medium) { @include font-size(18); }
+      }
+    }
+
+    a {
+      .showcase-block-content:hover {
+        opacity: 0.7;
+      }
     }
 
     h3, h4 { font-weight: $font__bold; }
 
     .featured-image {
-      img {  width:100%; }
+      img { width: 100%; }
     }
 
     &.center {
@@ -23,86 +31,18 @@
     }
 
     &.bg {
-      @include linear-gradient($color__fipra-light-gray 0%, lighten($color__fipra-light-gray, 6%) 70%);
-
-      &.blue {
-        @include linear-gradient(bottom, lighten($color__fipra-blue, 4%) 0, darken($color__fipra-blue, 4%) 100%);
-        color:white;
-        .circle-icon { color: $color__fipra-blue; }
-        .highlight-box {
-          background:darken($color__fipra-blue, 10%);
-          border-top:1px solid darken($color__fipra-blue, 12%);
-          color:white;
-          a {
-            color:white;
-            &:hover { color: lighten($color__fipra-blue, 10%); }
-          }
-        }
-      }
-
-      &.orange {
-        @include linear-gradient(bottom, lighten(orange, 4%) 0, darken(orange, 4%) 100%);
-        color:white;
-        .circle-icon { color: orange; }
-        .highlight-box {
-          background:darken(orange, 10%);
-          border-top:1px solid darken(orange, 12%);
-          color:white;
-          a {
-            color:white;
-            &:hover { color: lighten(orange, 10%); }
-          }
-        }
-      }
-
-      &.violet {
-        @include linear-gradient(bottom, lighten($color__fipra-violet, 4%) 0, darken($color__fipra-violet, 4%) 100%);
-        color:white;
-        .circle-icon { color: $color__fipra-violet; }
-        .highlight-box {
-          background:darken($color__fipra-violet, 10%);
-          border-top:1px solid darken($color__fipra-violet, 12%);
-          color:white;
-          a {
-            color:white;
-            &:hover {
-              color:lighten($color__fipra-violet, 10%);
-            }
-          }
-        }
-      }
-
-      &.turquoise {
-        @include linear-gradient(bottom, lighten($color__fipra-turquoise, 4%) 0, darken($color__fipra-turquoise, 4%) 100%);
-        color:white;
-        .circle-icon { color: $color__fipra-turquoise; }
-        .highlight-box {
-          background:darken($color__fipra-turquoise, 10%);
-          border-top:1px solid darken($color__fipra-turquoise, 12%);
-          color:white;
-          a {
-            color:white;
-            &:hover {
-              color:lighten($color__fipra-turquoise, 10%);
-            }
-          }
-        }
-
-      }
-      &.blue, &.orange, &.violet, &.turquoise { h3, h4 { color: white; } }
-
+      .showcase-block-content { @extend .white-box; }
     }
 
     &.outline {
-      border: 1px solid $color__fipra-light-gray;
-      .highlight-box {
-        background-color:$color__fipra-light-gray;
-        border-top:1px solid darken($color__fipra-light-gray, 3%);
-        color:$color__fipra-blue-gray;
-      }
+      .showcase-block-content { border: 1px solid darken($color__fipra-lighter-gray, 7%); }
     }
 
   }
+
+  //      Temporarily change gutter width for showcase blocks (reset further down)
+  $reset-fg-gutter: $fg-gutter;
+  $fg-gutter: golden-ratio(1em, 1);
 
   .row-of-1 {
     .showcase-block {
@@ -112,7 +52,7 @@
       }
       .showcase-block-content {
         @include row();
-        @include media($media__large) { width:75%; margin:0 auto; }
+        @include media($media__large) { width: 75%; margin: 0 auto; }
       }
     }
   }
@@ -151,6 +91,7 @@
 
   .row-of-4 {
     .showcase-block {
+
       @include media(min-width $media__small max-width $media__large) {
         @include span-columns(6);
         @include omega(2n);
@@ -172,28 +113,28 @@
   .row-of-1, .row-of-2, .row-of-3, .row-of-4 {
     @include clearfix;
     margin-bottom: $v-rhythm * 2;
-    &:last-child { margin-bottom:0; }
+    &:last-child { margin-bottom: 0; }
 
     .showcase-block.full-width {
       @include span-columns(12);
       @include omega(1n);
     }
-    .showcase-block-content {
-      padding: $v-rhythm * 2 em(24px);
-    }
   }
+
+  //  Reset gutter width
+  $fg-gutter: $reset-fg-gutter;
 
   &.list {
     @include clearfix();
     @include row();
     text-align: center;
-    color:$color__fipra-blue-gray;
+    color: $color__fipra-blue-gray;
     @include media($media__medium) {
-      text-align:left;
+      text-align: left;
     }
     .showcase-block-content {
       @include media($media__medium) {
-        float:left;
+        float: left;
         @include span-columns(8);
       }
     }
