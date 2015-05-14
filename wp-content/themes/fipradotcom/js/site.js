@@ -97,12 +97,12 @@
     {
         /*to make this flexible, I'm storing the current width in an attribute*/
         $(this).attr('data-default', $(this).width());
-        $(this).animate({ width: 300 }, 'slow');
+        $(this).animate({ width: 400 }, 'slow');
     }).blur(function()
     {
         /* lookup the original width */
         var w = $(this).attr('data-default');
-        $(this).animate({ width: 150 }, 'slow');
+        $(this).animate({ width: 200 }, 'slow');
     });
 
 //    All internal anchor links slide to position on page

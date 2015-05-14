@@ -1,24 +1,5 @@
 <?php get_header(); ?>
 
-    <style>
-        .areas-of-expertise-block:before {
-            content:"";
-/*            background:url('*/<?php //echo get_template_directory_uri(); ?>/*/img/people_1920x1000.jpg') center no-repeat;*/
-            background-size:cover;
-            position:absolute;
-            top:0; left: 0; bottom: 0; right: 0;
-            z-index:-1;
-        }
-        .public-affairs-services-block:before {
-            content:"";
-/*            background:url('*/<?php //echo get_template_directory_uri(); ?>/*/img/tower_bridge_orig.jpg') center no-repeat;*/
-            background-size:cover;
-            position:absolute;
-            top:0; left: 0; bottom: 0; right: 0;
-            z-index:-1;
-        }
-    </style>
-
 <div id="content-container">
 
     <div class="page-nav">

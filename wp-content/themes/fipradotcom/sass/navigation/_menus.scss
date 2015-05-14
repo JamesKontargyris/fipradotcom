@@ -25,16 +25,16 @@
       & > a {
         display: block;
         text-decoration: none;
-        padding: ($v-rhythm * 2) 0 $v-rhythm;
+        padding: $v-rhythm * 1.25 0 $v-rhythm * 0.75;
         color: $color__fipra-blue-gray;
+        font-weight: $font__bold;
       }
       &.current-menu-item > a,
       &.current_page_ancestor > a,
       &.current-menu-ancestor > a {
-        font-weight: $font__black;
         color: $color__fipra-blue;
         border-bottom: 4px solid $color__fipra-blue;
-        padding: ($v-rhythm * 2) 0 $v-rhythm - rem(4px);
+        padding: $v-rhythm * 1.25 0 $v-rhythm * 0.75 - rem(4px);
       }
 
       &:hover > a, &.focus > a { color: $color__fipra-blue; }
@@ -47,7 +47,7 @@
       background-color: white;
       border-top: 4px solid $color__fipra-blue-gray;
       position: absolute;
-      top: $v-rhythm * 6;
+      top: $v-rhythm * 5;
       left: -999em;
       z-index: 99999;
       margin-top: -4px;
@@ -61,7 +61,7 @@
         width: 100%;
         &:hover > ul, &.focus > ul { right: 100%; }
         &:hover { background-color: lighten($color__fipra-light-gray, 6%); }
-        a { display: block; padding: $v-rhythm / 2 em(24px); }
+        a { display: block; padding: $v-rhythm / 2 em(24px); font-weight: $font__normal; }
         &.current-menu-item > a,
         &.current_page_ancestor > a,
         &.current_menu_ancestor > a {
@@ -92,7 +92,7 @@
 .main-navigation {
   //  Mobile nav buttons
   .btn {
-    margin-top: $v-rhythm * 1.5;
+    margin-top: $v-rhythm * 1.2;
     margin-right: em(5px);
     padding: ($v-rhythm / 2) em(12px);
     cursor: pointer;
@@ -119,12 +119,12 @@
 //        Second level
         > ul {
           display:none;
-          background-color: $color__fipra-light-gray;
+          background-color: $color__fipra-lighter-gray;
           font-weight: $font__normal;
           li { border-top:1px solid white;
 //            Third level
             > ul {
-              background-color: lighten($color__fipra-light-gray, 5%);
+              background-color: darken($color__fipra-lighter-gray, 3%);
               li a { color:$color__fipra-blue-gray; }
             } // End of third level
           } // End of second level li

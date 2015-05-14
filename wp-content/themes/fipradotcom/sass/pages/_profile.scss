@@ -5,7 +5,7 @@
 
 .full-width-block-container {
   &.profile {
-    @include media($media__medium) { padding-top: $v-rhythm * 2 !important; }
+    @include media($media__medium) { padding-top: $v-rhythm !important; }
 
     .full-width-block-content-container {
       padding-top: $v-rhythm * 6 !important;
@@ -17,7 +17,7 @@
         h4 { color: lighten($color__fipra-blue-gray, 35%) !important; }
         img {
           display:none;
-          @include media($media__small) { display:block; position:absolute; bottom:-$v-rhythm * 6; right:20px; height:230px; }
+          @include media($media__small) { display:block; position:absolute; bottom:-$v-rhythm * 6; right:20px; height:250px; }
           @include media($media__medium) { height:280px; }
           @include media($media__large) { height:320px; }
         }

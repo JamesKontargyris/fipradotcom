@@ -14,29 +14,35 @@ get_header(); ?>
     }
 </style>
 
-<div id="content-container">
+<div id="content-container" class="with-border">
 
-        <div id="hero" class="full-width-block-container with-content-bar unit">
-            <div class="full-width-block-content-container content-bar grey bottom bg-image">
-                <div class="full-width-block-content left narrow">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/flags/united-kingdom.png" alt="Flag" /> <h1 class="upper no-margin">United Kingdom</h1>
-                    <p class="meta">Unit, Correspondent or Special Adviser</p>
-                    <p class="lead no-margin">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.</p>
-                </div>
+    <div id="breadcrumbs">
+        <div class="breadcrumbs-content">
+            <a href="#">Home</a> <span class="divider"><i class="icon-right-open"></i></span> <a href="#">Our Global Network</a> <span class="divider"><i class="icon-right-open"></i></span> <span class="active">United Kingdom</span>
+        </div>
+    </div>
+
+    <div id="hero" class="full-width-block-container with-content-bar unit">
+        <div class="full-width-block-content-container content-bar grey bottom bg-image">
+            <div class="full-width-block-content left narrow">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/flags/united-kingdom.png" alt="Flag" /> <h1 class="upper no-margin">United Kingdom</h1>
+                <p class="meta">Unit, Correspondent or Special Adviser</p>
+                <p class="lead no-margin">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.</p>
             </div>
         </div>
+    </div>
 
-        <div class="page-nav">
-            <div class="row content-area">
-                <ul class="anchor-links-list no-margin no-bullet">
-                    <li class="menu-title"><i class="icon-menu-1"></i> Jump to...</li>
-                    <li class="hide-s"><a class="jump-to-link" href="#about-us">About Us <i class="icon-down-open"></i></a></li>
-                    <li class="hide-s"><a class="jump-to-link" href="#our-team">Our Team <i class="icon-down-open"></i></a></li>
-                    <li class="hide-s"><a class="jump-to-link" href="#our-location">Our Location <i class="icon-down-open"></i></a></li>
-                    <li class="hide-s hide-m"><a class="jump-to-link" href="#get-in-touch">Get in Touch <i class="icon-down-open"></i></a></li>
-                </ul>
-            </div>
+    <div class="page-nav">
+        <div class="row content-area">
+            <ul class="anchor-links-list no-margin no-bullet">
+                <li class="menu-title"><i class="icon-menu-1"></i> Jump to...</li>
+                <li class="hide-s"><a class="jump-to-link" href="#about-us">About Us <i class="icon-down-open"></i></a></li>
+                <li class="hide-s"><a class="jump-to-link" href="#our-team">Our Team <i class="icon-down-open"></i></a></li>
+                <li class="hide-s"><a class="jump-to-link" href="#our-location">Our Location <i class="icon-down-open"></i></a></li>
+                <li class="hide-s hide-m"><a class="jump-to-link" href="#get-in-touch">Get in Touch <i class="icon-down-open"></i></a></li>
+            </ul>
         </div>
+    </div>
 
     <div id="site-content-container">
 

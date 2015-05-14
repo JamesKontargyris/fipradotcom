@@ -2,45 +2,48 @@
 
 <div id="content-container" class="with-border">
 
-    <div id="content" class="site-content">
+    <div id="site-content-container">
 
-        <div id="primary" class="content-area full-width">
-            <main id="main" class="site-main" role="main">
+        <div id="content" class="site-content">
 
-		<?php if ( have_posts() ) : ?>
+            <div id="primary" class="full-width">
+                <main id="main" class="site-main" role="main">
 
-			<header class="page-header">
-				<h1 class="feature no-margin"><i class="icon-search"></i> Search Results</h1>
-				<h2 class="page-title feature no-margin"><?php printf( __( 'Searching for: %s', 'fipradotcom' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
-                <hr />
-            </header><!-- .page-header -->
+                    <?php if ( have_posts() ) : ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+                        <header>
+                            <h1 class="feature no-margin"><i class="icon-search"></i> Search Results</h1>
+                            <h2 class="page-title feature no-margin"><?php printf( __( 'Searching for: %s', 'fipradotcom' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+                            <hr />
+                        </header><!-- .page-header -->
 
-				<?php
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'content', 'search' );
-				?>
+                        <?php /* Start the Loop */ ?>
+                        <?php while ( have_posts() ) : the_post(); ?>
 
-			<?php endwhile; ?>
+                            <?php
+                            /**
+                             * Run the loop for the search to output the results.
+                             * If you want to overload this in a child theme then include a file
+                             * called content-search.php and that will be used instead.
+                             */
+                            get_template_part( 'content', 'search' );
+                            ?>
 
-			<?php the_posts_navigation(); ?>
+                        <?php endwhile; ?>
 
-		<?php else : ?>
+                        <?php the_posts_navigation(); ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+                    <?php else : ?>
 
-		<?php endif; ?>
+                        <?php get_template_part( 'content', 'none' ); ?>
 
-            </main><!-- #main -->
-        </div><!-- #primary -->
+                    <?php endif; ?>
 
-    </div><!-- #content -->
+                </main><!-- #main -->
+            </div><!-- #primary -->
+
+        </div><!-- #content -->
+    </div>
 </div><!-- #content-container   -->
 
 <?php get_footer(); ?>

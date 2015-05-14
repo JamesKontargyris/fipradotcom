@@ -748,16 +748,17 @@ table:not(.no-style) {
           #header-container header.site-header #site-branding-container:last-child {
             margin-right: 0; } }
       #header-container header.site-header #site-branding-container h1.site-title {
+        line-height: 1rem;
         margin-bottom: 0; }
         #header-container header.site-header #site-branding-container h1.site-title img {
-          width: 50px;
-          height: 50px; }
+          width: 40px;
+          height: 40px; }
         @media screen and (min-width: 769px) {
           #header-container header.site-header #site-branding-container h1.site-title {
-            margin: 1.125rem 0 0 0; }
+            margin: 0.975rem 0 0 0; }
             #header-container header.site-header #site-branding-container h1.site-title img {
-              width: 72px;
-              height: 72px; } }
+              width: 64px;
+              height: 64px; } }
     #header-container header.site-header #site-navigation-container {
       position: relative;
       float: left;
@@ -808,12 +809,10 @@ table:not(.no-style) {
   position: relative;
   width: auto;
   margin-top: 8px;
-  margin-right: 5px;
-  font-family: 'Lato', Arial, Helvetica, sans-serif; }
+  margin-right: 5px; }
   .searchform input[type=text] {
     padding-right: 40px;
-    width: 150px;
-    font-family: 'Lato', Arial, Helvetica, sans-serif; }
+    width: 200px; }
   .searchform .button-search {
     background: none;
     border: none;
@@ -2140,6 +2139,9 @@ table:not(.no-style) {
         #mobile-header-global-network-container #mobile-header-global-network select {
           font-size: 16px;
           font-size: 1rem; } }
+
+.search-result-row {
+  border-bottom: 1px solid #ced3dd; }
 
 #content-container {
   width: 100%; }
@@ -3652,13 +3654,13 @@ a {
       .main-navigation ul > li > a {
         display: block;
         text-decoration: none;
-        padding: 1.5rem 0 0.75rem;
-        color: #5c6882; }
+        padding: 0.9375rem 0 0.5625rem;
+        color: #5c6882;
+        font-weight: 700; }
       .main-navigation ul > li.current-menu-item > a, .main-navigation ul > li.current_page_ancestor > a, .main-navigation ul > li.current-menu-ancestor > a {
-        font-weight: 900;
         color: #00257f;
         border-bottom: 4px solid #00257f;
-        padding: 1.5rem 0 0.5rem; }
+        padding: 0.9375rem 0 0.3125rem; }
       .main-navigation ul > li:hover > a, .main-navigation ul > li.focus > a {
         color: #00257f; }
     .main-navigation ul ul {
@@ -3667,7 +3669,7 @@ a {
       background-color: white;
       border-top: 4px solid #5c6882;
       position: absolute;
-      top: 4.5rem;
+      top: 3.75rem;
       left: -999em;
       z-index: 99999;
       margin-top: -4px;
@@ -3684,7 +3686,8 @@ a {
           background-color: #edefef; }
         .main-navigation ul ul li a {
           display: block;
-          padding: 0.375rem 1.5em; }
+          padding: 0.375rem 1.5em;
+          font-weight: 400; }
         .main-navigation ul ul li.current-menu-item > a, .main-navigation ul ul li.current_page_ancestor > a, .main-navigation ul ul li.current_menu_ancestor > a {
           font-weight: 700;
           color: #00257f;
@@ -3701,7 +3704,7 @@ a {
 
 /* Mobile menu */
 .main-navigation .btn {
-  margin-top: 1.125rem;
+  margin-top: 0.9rem;
   margin-right: 0.3125em;
   padding: 0.375rem 0.75em;
   cursor: pointer; }
@@ -3725,12 +3728,12 @@ a {
         content: " \e871"; }
       #primary-menu-mobile-container #primary-menu-mobile ul li > ul {
         display: none;
-        background-color: #dde0e1;
+        background-color: #eceef2;
         font-weight: 400; }
         #primary-menu-mobile-container #primary-menu-mobile ul li > ul li {
           border-top: 1px solid white; }
           #primary-menu-mobile-container #primary-menu-mobile ul li > ul li > ul {
-            background-color: #ebeced; }
+            background-color: #e3e6ec; }
             #primary-menu-mobile-container #primary-menu-mobile ul li > ul li > ul li a {
               color: #5c6882; }
 
@@ -4310,7 +4313,7 @@ embed, iframe, object {
 
 @media screen and (min-width: 769px) {
   .full-width-block-container.profile {
-    padding-top: 1.5rem !important; } }
+    padding-top: 0.75rem !important; } }
 .full-width-block-container.profile .full-width-block-content-container {
   padding-top: 4.5rem !important;
   padding-bottom: 4.5rem !important; }
@@ -4330,7 +4333,7 @@ embed, iframe, object {
           position: absolute;
           bottom: -4.5rem;
           right: 20px;
-          height: 230px; } }
+          height: 250px; } }
       @media screen and (min-width: 769px) {
         .full-width-block-container.profile .full-width-block-content-container .full-width-block-content img {
           height: 280px; } }
@@ -4448,6 +4451,12 @@ embed, iframe, object {
     color: #00257f !important; }
 #expertise-menu-container .owl-page span {
   background: #00257f !important; }
+
+.areas-of-expertise-block .full-width-block-content {
+  text-align: left !important; }
+
+.public-affairs-services-block .full-width-block-content {
+  text-align: left !important; }
 
 .job-listing-block {
   padding: 0.75rem 1.125em;

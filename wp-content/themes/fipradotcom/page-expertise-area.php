@@ -24,28 +24,28 @@ get_header(); ?>
         </div>
     </div>
 
-        <div id="hero" class="full-width-block-container expertise">
-            <div class="full-width-block-content-container grey bg-image">
-                <div class="full-width-block-content center narrow">
-                    <div class="circle-icon small"><i class="icon-plane"></i></div>
-                    <h1 class="upper">Travel, Transport and Logistics</h1>
-                    <p class="lead no-margin">Fipra’s Travel, Transport &amp; Logistics (TTL) practice, lead by <a
-                            href="#">Ukko Metsola</a>, is composed of experienced staff and <a href="#">Special Advisers</a> with diverse expertise in the policies and regulatory frameworks that affect the TTL industries.</p>
-                </div>
+    <div id="hero" class="full-width-block-container expertise">
+        <div class="full-width-block-content-container grey bg-image">
+            <div class="full-width-block-content center narrow">
+                <div class="circle-icon small"><i class="icon-plane"></i></div>
+                <h1 class="upper">Travel, Transport and Logistics</h1>
+                <p class="lead no-margin">Fipra’s Travel, Transport &amp; Logistics (TTL) practice, lead by <a
+                        href="#">Ukko Metsola</a>, is composed of experienced staff and <a href="#">Special Advisers</a> with diverse expertise in the policies and regulatory frameworks that affect the TTL industries.</p>
             </div>
         </div>
+    </div>
 
-        <div class="page-nav">
-            <div class="row content-area">
-                <ul class="anchor-links-list no-margin no-bullet">
-                    <li class="menu-title"><i class="icon-menu-1"></i> Jump to...</li>
-                    <li class="hide-s"><a class="jump-to-link" href="#testimonials">Testimonials <i class="icon-down-open"></i></a></li>
-                    <li class="hide-s"><a class="jump-to-link" href="#staff-menu-container">Practice Staff <i class="icon-down-open"></i></a></li>
-                    <li class="hide-s hide-m"><a class="jump-to-link" href="#practice-lead">Practice Lead <i class="icon-down-open"></i></a></li>
-                    <li class="hide-s"><a class="jump-to-link" href="#expertise-menu-container">More of our Expertise <i class="icon-down-open"></i></a></li>
-                </ul>
-            </div>
+    <div class="page-nav">
+        <div class="row content-area">
+            <ul class="anchor-links-list no-margin no-bullet">
+                <li class="menu-title"><i class="icon-menu-1"></i> Jump to...</li>
+                <li class="hide-s"><a class="jump-to-link" href="#testimonials">Testimonials <i class="icon-down-open"></i></a></li>
+                <li class="hide-s"><a class="jump-to-link" href="#staff-menu-container">Practice Staff <i class="icon-down-open"></i></a></li>
+                <li class="hide-s hide-m"><a class="jump-to-link" href="#practice-lead">Practice Lead <i class="icon-down-open"></i></a></li>
+                <li class="hide-s"><a class="jump-to-link" href="#expertise-menu-container">More of our Expertise <i class="icon-down-open"></i></a></li>
+            </ul>
         </div>
+    </div>
 
     <div id="site-content-container">
 
