@@ -784,7 +784,8 @@ table:not(.no-style) {
             display: block;
             position: absolute;
             top: 0;
-            right: 0; } }
+            right: 0;
+            z-index: 3; } }
       #header-container header.site-header #site-navigation-container a.global-network-button {
         display: inline-block;
         z-index: 5;
@@ -2154,7 +2155,7 @@ table:not(.no-style) {
     display: table; }
   #content-container.with-border {
     padding-top: 0.75rem;
-    border-top: 1px solid #d4d8e1; }
+    border-top: 1px solid #dde0e1; }
   #content-container.with-hero-banner {
     padding-top: 0; }
   #content-container #breadcrumbs {
@@ -3658,24 +3659,23 @@ a {
         display: block;
         text-decoration: none;
         padding: 0.9375rem 0 0.5625rem;
-        color: #3e4a62;
-        font-weight: 700; }
+        color: #00257f; }
       .main-navigation ul > li.current-menu-item > a, .main-navigation ul > li.current_page_ancestor > a, .main-navigation ul > li.current-menu-ancestor > a {
-        color: #00257f;
-        border-bottom: 4px solid #00257f;
-        padding: 0.9375rem 0 0.3125rem; }
+        font-weight: 700;
+        border-bottom: 3px solid #00257f;
+        padding: 0.9375rem 0 0.375rem; }
       .main-navigation ul > li:hover > a, .main-navigation ul > li.focus > a {
         color: #00257f; }
     .main-navigation ul ul {
       float: left;
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       background-color: white;
-      border-top: 4px solid #5c6882;
+      border-top: 3px solid #5c6882;
       position: absolute;
       top: 3.75rem;
       left: -999em;
       z-index: 99999;
-      margin-top: -4px;
+      margin-top: -3px;
       width: 225px; }
       .main-navigation ul ul li {
         font-size: 14px;
@@ -3801,9 +3801,9 @@ ul.anchor-links-list {
         ul.anchor-links-list li a {
           display: inline-block;
           padding: 0.375rem 0.375em;
-          border-bottom: 2px solid transparent; }
+          border-bottom: 3px solid transparent; }
           ul.anchor-links-list li a:hover {
-            border-bottom: 2px solid #5c6882; } }
+            border-bottom: 3px solid #5c6882; } }
 
 /*--------------------------------------------------------------
 # Accessibility

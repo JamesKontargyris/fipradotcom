@@ -13,7 +13,7 @@
   @include clearfix;
   width:100%;
 
-  &.with-border { padding-top:$v-rhythm; border-top:1px solid darken($color__fipra-lighter-gray, 8%); }
+  &.with-border { padding-top:$v-rhythm; border-top:1px solid $color__fipra-light-gray; }
 
 //  @include media($media__xlarge) { padding-top:$v-rhythm * 2; }
   &.with-hero-banner { padding-top:0; }

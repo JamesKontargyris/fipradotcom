@@ -26,15 +26,15 @@
         display: block;
         text-decoration: none;
         padding: $v-rhythm * 1.25 0 $v-rhythm * 0.75;
-        color: $color__fipra-dark-gray;
-        font-weight: $font__bold;
+        color: $color__fipra-blue;
+//        font-weight: $font__bold;
       }
       &.current-menu-item > a,
       &.current_page_ancestor > a,
       &.current-menu-ancestor > a {
-        color: $color__fipra-blue;
-        border-bottom: 4px solid $color__fipra-blue;
-        padding: $v-rhythm * 1.25 0 $v-rhythm * 0.75 - rem(4px);
+        font-weight: $font__bold;
+        border-bottom: 3px solid $color__fipra-blue;
+        padding: $v-rhythm * 1.25 0 $v-rhythm * 0.75 - rem(3px);
       }
 
       &:hover > a, &.focus > a { color: $color__fipra-blue; }
@@ -45,12 +45,12 @@
       float: left;
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       background-color: white;
-      border-top: 4px solid $color__fipra-blue-gray;
+      border-top: 3px solid $color__fipra-blue-gray;
       position: absolute;
       top: $v-rhythm * 5;
       left: -999em;
       z-index: 99999;
-      margin-top: -4px;
+      margin-top: -3px;
       width: 225px;
 
 
@@ -190,8 +190,8 @@ ul.anchor-links-list {
       a {
         display:inline-block;
         padding:$v-rhythm * 0.5 em(6px);
-        border-bottom:2px solid transparent;
-        &:hover { border-bottom:2px solid $color__fipra-blue-gray; }
+        border-bottom:3px solid transparent;
+        &:hover { border-bottom:3px solid $color__fipra-blue-gray; }
       }
     }
   }
