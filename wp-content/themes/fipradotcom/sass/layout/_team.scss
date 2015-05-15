@@ -1,5 +1,10 @@
 .team-group {
   @include clearfix;
+
+  //      Temporarily change gutter width for showcase blocks (reset further down)
+  $reset-fg-gutter: $fg-gutter;
+  $fg-gutter: golden-ratio(0em, 1);
+
   .row-of-1 {
     .team-member {
       @include media($media__large) {
@@ -47,12 +52,38 @@
 
   .row-of-4 {
     .team-member {
+      @include media(min-width $media__medium max-width $media__large) {
+        @include span-columns(4); @include omega(3n);
+      }
       @include media($media__large) {
         @include span-columns(3);
         @include omega(4n);
       }
       .team-member-content {
         @include media($media__large) { min-height:em(450px); }
+      }
+    }
+    @include media($media__medium) {
+      .shift-half-col { @include shift(1.5); }
+      .shift-1-col { @include shift(3); }
+      .shift-2-col { @include shift(6); }
+      .shift-3-col { @include shift(9); }
+    }
+  }
+
+  .row-of-5 {
+    .team-member {
+//      @include media(min-width $media__small max-width $media__medium) {
+//        @include span-columns(4); @include omega(3n);
+//      }
+      @include media(min-width $media__medium max-width $media__large) {
+        @include span-columns(4); @include omega(3n);
+      }
+      @include media($media__large) {
+        @include span-columns(2.4); @include omega(5n);
+      }
+      .team-member-content {
+//        @include media($media__large) { min-height:em(450px); }
       }
     }
     @include media($media__medium) {
@@ -81,6 +112,9 @@
       .shift-4-col { @include shift(8); }
     }
   }
+
+  //  Reset gutter width
+  $fg-gutter: $reset-fg-gutter;
 
   .team-member {
     @extend .white-box;

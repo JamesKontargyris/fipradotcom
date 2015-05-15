@@ -1,0 +1,123 @@
+.our-people {
+  .full-width-block-content { padding-top: $v-rhythm; padding-bottom: $v-rhythm; }
+
+  @include media($media__large) {
+    .full-width-block-content { padding-top: $v-rhythm * 2; padding-bottom: $v-rhythm * 2; }
+  }
+}
+
+.site-content-our-people {
+
+  .people-group {
+//    font-size: 0.1px; /* IE 9 & 10 don't like font-size: 0; */
+    text-align: justify;
+    &:after {
+      display:inline-block;
+      width:100%;
+      content:'';
+    }
+
+    .person {
+      position:relative;
+      text-align: left;
+      overflow:hidden;
+      width:100%;
+      background-color:white;
+      margin-bottom:$v-rhythm;
+
+      @include media($media__medium) { display:inline-block; width:33.3333333%; height:270px; border-left:6px solid $color__fipra-lighter-gray; border-right:6px solid $color__fipra-lighter-gray; }
+
+      @include media($media__large) { width:25%; }
+
+      h4 { @include font-size(18); font-weight:$font__bold; line-height: $v-rhythm * 2 !important; }
+      h6 { margin:0; line-height:$v-rhythm * 1.75 !important; }
+
+      .person-profile-photo {
+        line-height:1 !important;
+        max-height:95%;
+
+        @include media(max-width $media__small) { display: none !important; }
+
+        @include media(min-width $media__small max-width $media__medium) {
+          @include span-columns(3);
+          img { max-width: 90%; margin-bottom:0; }
+        }
+        @include media($media__medium) {
+          background-color: $color__fipra-lighter-gray;
+          img { max-width: 90%; margin-bottom:0; }
+        }
+
+        text-align:center;
+        line-height:$v-rhythm;
+        &:hover { opacity:0.7; }
+
+      }
+
+      .person-details {
+        padding: $v-rhythm em(70px) $v-rhythm em(8px);
+
+        @include media(min-width $media__small max-width $media__medium) {
+          @include span-columns(9); padding: $v-rhythm em(30px) $v-rhythm em(8px);
+        }
+
+        @include media($media__medium) {
+          padding:$v-rhythm * 0.75 rem(12px);
+          position:absolute;
+          top:180px;
+          left:0;
+
+          background-color: white;
+          height:100%;
+          width:100%;
+          @include transition(all 0.5s);
+
+          &:hover {
+            top:0;
+            background-color: $color__fipra-dark-gray;
+            color:lighten($color__fipra-blue-gray, 42%);
+            a { color:white; &:hover { color:lighten($color__fipra-blue-gray, 42%); } }
+            .person-contact-details { display:block; }
+          }
+        }
+
+        @include media($media__large) { top:170px; }
+
+        .btn-container {
+          @include media($media__medium) { display: none; }
+          position:absolute;
+          top:0;
+          right:em(6px);
+          height:100%;
+
+          .btn {
+            display:table;
+            background-color: transparent;
+            height:100%;
+            padding:0 em(12px);
+            border:0;
+            .btn-text { height:100%; display:table-cell; vertical-align: middle; }
+          }
+        }
+
+        .person-contact-details {
+          display: none;
+          @include animation(fadeIn 1s);
+          margin-top:$v-rhythm;
+          @include font-size(14);
+          line-height:$v-rhythm * 1.5;
+          overflow: hidden;
+          word-break: break-all;
+          word-wrap: break-word;
+
+          table tr td { padding: $v-rhythm * 0.25 0; }
+        }
+      }
+
+    }
+  }
+}
+
+.filter-group {
+  border-top:1px solid darken($color__fipra-dark-gray, 5%);
+  &.hide { display:none; }
+}

@@ -16,12 +16,12 @@
   }
 
   &.flex {
-    @include media($media__medium) { padding-top: 0; padding-right: 0; padding-left: 0; padding-bottom: 0; }
+    padding-top: 0; padding-right: 0; padding-left: 0; padding-bottom: 0;
   }
 }
 
 #hero {
-  .full-width-block-content-container {
+  .full-width-block-content-container:not(.flex) {
     @include media($media__medium) { padding-top: $v-rhythm * 7; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 7; }
     @include media($media__xlarge) { padding-top: $v-rhythm * 11; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 11; }
 
@@ -39,10 +39,6 @@
       @include media($media__medium) { padding-top: $v-rhythm * 3; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 3; }
     }
 
-    &.flex {
-      @include media($media__medium) { padding-top: 0; padding-right: 0; padding-left: 0; padding-bottom: 0; }
-    }
-
     &.page-width { @extend .content-area; }
   }
 }
@@ -50,6 +46,10 @@
 .full-width-block-content-container {
   height:100%;
   padding-top: $v-rhythm * 3; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 3;
+
+  &.flex {
+    padding-top: 0; padding-right: 0; padding-left: 0; padding-bottom: 0;
+  }
 }
 
 .full-width-block-container, .full-width-block-content-container {

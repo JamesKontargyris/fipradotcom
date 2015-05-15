@@ -221,6 +221,22 @@ function fipradotcom_scripts()
     );
 
     wp_enqueue_script(
+        'fipradotcom-jquery-izotone',
+        get_template_directory_uri() . '/js/isotope.pkgd.min.js',
+        array(),
+        '20150514',
+        true
+    );
+
+    wp_enqueue_script(
+        'fipradotcom-jquery-equalize',
+        get_template_directory_uri() . '/js/equalize.min.js',
+        array(),
+        '20150514',
+        true
+    );
+
+    wp_enqueue_script(
         'fipradotcom-user-js',
         get_template_directory_uri() . '/js/site.js',
         array(),

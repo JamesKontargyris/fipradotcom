@@ -241,5 +241,5 @@
 .blue-text { color: $color__fipra-blue !important; }
 .black-text { color: $color_soft-black !important; }
 
-.hide-s { @include media(max-width $media__medium) { display:none; } }
-.hide-m { @include media($media__medium) { display:none; } }
+.hide-s { @include media(max-width $media__medium) { display:none !important; } }
+.hide-m { @include media($media__medium) { display:none !important; } }

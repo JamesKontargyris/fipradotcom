@@ -5,6 +5,13 @@
         var attribVal = this.attr(attr);
         return (attribVal !== undefined) && (attribVal !== false);
     };
+    // Make all elements selected the same width (i.e. scale to size of the widest element)
+    $.fn.matchWidths = function() {
+        var widest = 0;
+        $(this).css('width', 'auto');
+        $(this).each(function () { widest = Math.max(widest, $(this).outerWidth()); }).width(widest);
+    }
+
     $.fn.extend({
         sizeToHighestElement: function(elem) {
             // Size elements to height of longest element in each parent
@@ -124,10 +131,13 @@
        $('#global-network-menu-container').slideToggle(300);
     });
 
-//    Anchor links hide/show menu on small screens
-    $('.anchor-links-list .menu-title').on('click', function()
+
+
+    //    Anchor links hide/show menu on small screens
+    $('.filter-list-title').on('click', function()
     {
-        $(this).siblings('li').toggleClass('hide-s', '');
+        $(this).toggleClass('menu-open', '');
+        $(this).next('.filter-list').find('li').toggleClass('hide-s', '');
     });
 
 
@@ -168,6 +178,8 @@
     //Add a fade in/out to modals by default
     $.extend($.modal.defaults, { fadeDuration: 250, zIndex:20 });
 
+
+
     $(window).resize(function()
     {
         //    Set equal heights of content blocks in showcase groups
@@ -181,6 +193,95 @@
 
         //    Set equal heights of testimonial quotes
         $('#expertise-carousel .expertise-area-content').matchHeight();
+
+
+        if($(window).width() >= 769) {
+            //Make menu-titles in anchor links lists the same width, if more than one is present on the page
+            $('.anchor-links-list .menu-title').matchWidths();
+            $('.menu-title').removeClass('menu-title-small');
+        } else {
+            //Otherwise if screen is smaller than 769px width, set .menu-title widths to auto
+            $('.anchor-links-list .menu-title').css('width', 'auto');
+            $('.menu-title').addClass('menu-title-small');
+        }
     }).resize();
+
+    var grid = $('.people-group').isotope({
+        itemSelector: '.person',
+        //containerStyle: null,
+        layoutMode: 'fitRows'
+    });
+
+    //When a filter option is clicked, get isotope to filter the items
+    //then make the current choice active
+    $('.filter-list').on( 'click', 'li a', function(e) {
+        e.preventDefault();
+        var filterValue = $( this ).attr('data-filter');
+        grid.isotope({ filter: filterValue });
+
+        $('.filter-list li a').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    //When .clear-filter is clicked, reset the filtering
+    //and reset the active filter option
+    $('.clear-filter').on('click', function()
+    {
+        grid.isotope({ filter: '' });
+        $('.filter-list li a').removeClass('active');
+    });
+
+    //When a link with class .filter-group-trigger is clicked,
+    //open the filter-group with the id in the data-filter-group field
+    $('.filter-group-trigger').on('click', function(e)
+    {
+        e.preventDefault();
+        //Is the current trigger active?
+        if($(this).hasClass('active'))
+        {
+            //Yes: close the filter group box
+            $($(this).data('filter-group')).addClass('hide');
+            //Remove the active class
+            $(this).removeClass('active');
+        //    Change the icon
+            $(this).find('i').removeClass('icon-up-open').addClass('icon-down-open');
+        //    Remove the .menu-open class from .menu-title in case the browser is resized to a smaller size
+            $(this).parents().find('.menu-title').removeClass('menu-open');
+            $(this).parents().find('li:not(.menu-title)').addClass('hide-s');
+        }
+        else
+        {
+            //No: hide all filter-groups and activate current link/filter-group
+            $('.filter-group-trigger').removeClass('active');
+            $('.filter-group').addClass('hide');
+            $(this).addClass('active');
+            $($(this).data('filter-group')).removeClass('hide');
+            //    Change the icon
+            $('.filter-group-trigger i').removeClass('icon-up-open').addClass('icon-down-open');
+            $(this).find('i').removeClass('icon-down-open').addClass('icon-up-open');
+            //    Add the .menu-open class to .menu-title in case the browser is resized to a smaller size
+            //    otherwise the menu won't open
+            $(this).parents().find('.menu-title').addClass('menu-open');
+            $(this).parents().find('li:not(.menu-title)').removeClass('hide-s');
+        }
+    });
+
+    //The window resize function above adds a .menu-title-small class to .menu-title
+    //at small and medium screen sizes
+    //If the menu is open and the user clicks to close it, close any filter group triggers
+    //and filter-groups too
+    $('.menu-title-small').on('click', function()
+    {
+        if($(this).hasClass('menu-open'))
+        {
+            $('.filter-group-trigger').removeClass('active');
+            $('.filter-group-trigger').find('i').addClass('icon-down-open').removeClass('icon-up-open');
+            $('.filter-group').addClass('hide');
+        }
+
+        $(this).toggleClass('menu-open', '');
+        $(this).siblings('li:not(.menu-title)').toggleClass('hide-s', '');
+    });
+
 
 })(jQuery);

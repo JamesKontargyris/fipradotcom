@@ -4,6 +4,7 @@
 @import "team";
 @import "hero-banner";
 //@import "page-banner";
+@import "page-nav";
 @import "page-header";
 @import "full-width-block";
 @import "global-network-menu";
@@ -64,12 +65,6 @@
 //    #secondary ~ #primary { &.content-area { padding-left:0; @include omega(); } }
 //  }
 
-}
-
-.page-nav {
-  @include clearfix;
-  background-color: $color__fipra-light-gray;
-//  border-bottom:2px solid darken($color__fipra-light-gray, 5%);
 }
 
 .row { @include row(); }
