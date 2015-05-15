@@ -18,11 +18,11 @@ get_header(); ?>
 
 <div id="content-container">
 
-    <div id="hero" class="full-width-block-container our-people grey">
-        <div class="full-width-block-content-container flex">
+    <div id="hero" class="full-width-block-container our-people">
+        <div class="full-width-block-content-container flex grey">
             <div class="full-width-block-content center narrow">
-                <h1 class="upper no-margin">Our People</h1>
-<!--                <p class="lead no-margin">Maecenas vehicula tellus at nisi semper laoreet. Donec sed rhoncus mi, ut gravida libero. Fusce tellus metus, dapibus at elit ac, viverra faucibus enim. Donec luctus velit erat, eget pellentesque sapien iaculis in.</p>-->
+                <h1 class="upper">Our People</h1>
+                <p class="no-margin">Maecenas vehicula tellus at nisi semper laoreet. Donec sed rhoncus mi, ut gravida libero. Fusce tellus metus, dapibus at elit ac, viverra faucibus enim. Donec luctus velit erat, eget pellentesque sapien iaculis in.</p>
             </div>
         </div>
     </div>
@@ -31,9 +31,9 @@ get_header(); ?>
         <div class="row content-area">
             <div class="col-6-m no-margin">
                 <ul class="anchor-links-list no-margin no-bullet">
-                    <li class="menu-title"><i class="icon-menu-1"></i> Filter by</li>
-                    <li class="hide-s"><a href="#" class="filter-group-trigger" data-filter-group="#expertise-filter-group">Expertise Area <i class="icon-down-open"></i></a></li>
-                    <li class="hide-s"><a href="#" class="filter-group-trigger">Country <i class="icon-down-open"></i></a></li>
+                    <li class="menu-title">Filter by</li>
+                    <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#expertise-filter-group">Expertise Area <i class="icon-down-open"></i></a></li>
+                    <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#continents">Country <i class="icon-down-open"></i></a></li>
                 </ul>
             </div>
             <div class="col-6-m no-margin" style="text-align: right">
@@ -42,21 +42,52 @@ get_header(); ?>
         </div>
     </div>
 
-    <div id="expertise-filter-group" class="page-nav with-padding dark-grey filter-group hide">
-        <div class="row content-area">
-            <div class="filter-list-container">
-                <ul class="filter-list no-margin no-bullet">
-                    <li><a href="#" class="filter" data-filter=".banking-and-financial-services">Banking and Financial Services</i></a></li>
-                    <li><a href="#" class="filter" data-filter=".chemical-industrials-and-mining">Chemical, Industrials and Mining</a></li>
-                    <li><a href="#" class="filter" data-filter=".energy-and-environment">Energy and Environment</a></li>
-                    <li><a href="#" class="filter">Healthcare and Pharma</a></li>
-                    <li><a href="#" class="filter">Telecoms, Media and Technology</a></li>
-                    <li><a href="#" class="filter">Travel, Transport and Logistics</a></li>
-                    <li><a href="#" class="filter">Competition Policy</a></li>
-                </ul>
+    <div class="filter-group-container">
+
+        <div id="continents" class="page-nav filter-group hide">
+            <div class="row content-area">
+                <div class="col-8-m no-margin">
+                    <ul class="anchor-links-list no-margin no-bullet">
+                        <li class="menu-title">Continents</li>
+                        <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#europe-filter-group">Europe <i class="icon-down-open"></i></a></li>
+                        <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#asia-filter-group">Asia <i class="icon-down-open"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-4-m no-margin" style="text-align: right">
+                    <!--                <input type="text"/>-->
+                </div>
             </div>
         </div>
+
+        <div id="expertise-filter-group" class="page-nav with-padding dark-grey filter-group hide">
+            <div class="row content-area">
+                <div class="filter-list-container">
+                    <div class="filter-group-close"></div>
+                    <ul class="filter-list no-margin no-bullet">
+                        <li><a href="#" class="filter" data-filter=".banking-and-financial-services" data-filtering-on-text="Banking and Financial Services">Banking and Financial Services</i></a></li>
+                        <li><a href="#" class="filter" data-filter=".chemical-industrials-and-mining" data-filtering-on-text="Chemical, Industrials and Mining">Chemical, Industrials and Mining</a></li>
+                        <li><a href="#" class="filter" data-filtering-on-text="Energy and Environment">Energy and Environment</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="europe-filter-group" class="page-nav with-padding dark-grey filter-group hide">
+            <div class="row content-area">
+                <div class="filter-list-container">
+                    <div class="filter-group-close"></div>
+                    <h5 class="filter-list-title">Europe</h5>
+                    <ul class="filter-list no-margin no-bullet">
+                        <li><a href="#" class="filter" data-filter=".banking-and-financial-services" data-filtering-on-text="Country 1">Country 1</i></a></li>
+                        <li><a href="#" class="filter" data-filter=".chemical-industrials-and-mining" data-filtering-on-text="Country 2">Country 2</a></li>
+                        <li><a href="#" class="filter" data-filter=".energy-and-environment" data-filtering-on-text="Country 3">Country 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
+
 
 
 
@@ -66,7 +97,15 @@ get_header(); ?>
 
             <div id="primary" class="full-width">
                 <main id="main" class="site-main" role="main">
-                    <a href="#" class="clear-filter">Reset Filters</a>
+
+<!--                    Used by jQuery to update filtering-on-title when clear filter button is clicked -->
+                    <div class="hide-s hide-m number-of-fipriots">15</div>
+
+                    <div class="filtering-on-container">
+                        <h4 class="no-margin filtering-on-title">Showing all 15 Fipriots</h4>
+                        <a href="#" class="btn btn-small secondary clear-filter hide"><i class="icon-cancel-1"></i> Clear Filter</a>
+                    </div>
+
                     <div class="people-selector-container">
 
                         <div class="people-group">

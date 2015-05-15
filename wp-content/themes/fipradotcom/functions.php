@@ -221,6 +221,14 @@ function fipradotcom_scripts()
     );
 
     wp_enqueue_script(
+        'fipradotcom-jquery-imagesLoaded',
+        get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js',
+        array(),
+        '20150515',
+        true
+    );
+
+    wp_enqueue_script(
         'fipradotcom-jquery-izotone',
         get_template_directory_uri() . '/js/isotope.pkgd.min.js',
         array(),
@@ -241,6 +249,14 @@ function fipradotcom_scripts()
         get_template_directory_uri() . '/js/site.js',
         array(),
         '20120206',
+        true
+    );
+
+    wp_enqueue_script(
+        'fipradotcom-user-js-our-people',
+        get_template_directory_uri() . '/js/our-people.js',
+        array(),
+        '20150515',
         true
     );
 

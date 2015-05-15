@@ -3814,89 +3814,114 @@ a {
   text-align: right;
   width: 50%; }
 
-ul.anchor-links-list, .filter-list-container ul.filter-list {
+ul.anchor-links-list, .filter-group-container .filter-list-container ul.filter-list {
   font-size: 14px;
   font-size: 0.875rem;
   list-style: none;
   margin-bottom: 1.5rem; }
-  ul.anchor-links-list::after, .filter-list-container ul.filter-list::after {
+  ul.anchor-links-list::after, .filter-group-container .filter-list-container ul.filter-list::after {
     clear: both;
     content: "";
     display: table; }
-  ul.anchor-links-list.no-margin, .filter-list-container ul.no-margin.filter-list {
+  ul.anchor-links-list.no-margin, .filter-group-container .filter-list-container ul.no-margin.filter-list {
     margin: 0; }
-  ul.anchor-links-list li, .filter-list-container ul.filter-list li {
+  ul.anchor-links-list li, .filter-group-container .filter-list-container ul.filter-list li {
     position: relative;
     margin-bottom: 0 !important; }
     @media screen and (max-width: 769px)  {
-      ul.anchor-links-list li.hide-s, .filter-list-container ul.filter-list li.hide-s {
+      ul.anchor-links-list li.hide-s, .filter-group-container .filter-list-container ul.filter-list li.hide-s {
         display: none; } }
     @media screen and (min-width: 769px) {
-      ul.anchor-links-list li.hide-m, .filter-list-container ul.filter-list li.hide-m {
+      ul.anchor-links-list li.hide-m, .filter-group-container .filter-list-container ul.filter-list li.hide-m {
         display: none; } }
     @media screen and (max-width: 769px)  {
-      ul.anchor-links-list li:not(.menu-title), .filter-list-container ul.filter-list li:not(.menu-title) {
-        border-top: 1px solid #cfd4d5; }
-      ul.anchor-links-list li.menu-title, .filter-list-container ul.filter-list li.menu-title {
+      ul.anchor-links-list li:not(.menu-title), .filter-group-container .filter-list-container ul.filter-list li:not(.menu-title) {
+        border-top: 1px solid rgba(255, 255, 255, 0.4); }
+      ul.anchor-links-list li.menu-title, .filter-group-container .filter-list-container ul.filter-list li.menu-title {
         display: block;
-        padding: 0.375rem 0;
+        padding: 0.1875rem 0.5em; }
+      ul.anchor-links-list li.menu-title-toggle, .filter-group-container .filter-list-container ul.filter-list li.menu-title-toggle {
         cursor: pointer; }
-      ul.anchor-links-list li a, .filter-list-container ul.filter-list li a {
+      ul.anchor-links-list li a, .filter-group-container .filter-list-container ul.filter-list li a {
         display: block;
-        padding: 0.375rem 0; }
-      ul.anchor-links-list li i, .filter-list-container ul.filter-list li i {
+        padding: 0.375rem 0.5em; }
+      ul.anchor-links-list li i, .filter-group-container .filter-list-container ul.filter-list li i {
         position: absolute;
-        right: 0;
-        top: 6px; } }
+        right: 0.5em;
+        top: 6px; }
+      ul.anchor-links-list li.inline-s, .filter-group-container .filter-list-container ul.filter-list li.inline-s {
+        display: inline; }
+        ul.anchor-links-list li.inline-s:not(.menu-title), .filter-group-container .filter-list-container ul.filter-list li.inline-s:not(.menu-title) {
+          border-top: 0px solid rgba(255, 255, 255, 0.4); }
+        ul.anchor-links-list li.inline-s a, .filter-group-container .filter-list-container ul.filter-list li.inline-s a {
+          display: inline-block;
+          padding: 0.1875rem 0.5em; }
+        ul.anchor-links-list li.inline-s i, .filter-group-container .filter-list-container ul.filter-list li.inline-s i {
+          position: static; } }
     @media screen and (min-width: 769px) {
-      ul.anchor-links-list li, .filter-list-container ul.filter-list li {
+      ul.anchor-links-list li, .filter-group-container .filter-list-container ul.filter-list li {
         float: left; }
-        ul.anchor-links-list li.menu-title, .filter-list-container ul.filter-list li.menu-title {
+        ul.anchor-links-list li.menu-title, .filter-group-container .filter-list-container ul.filter-list li.menu-title {
           padding: 0.375rem 0.375em; }
-          ul.anchor-links-list li.menu-title i, .filter-list-container ul.filter-list li.menu-title i {
+          ul.anchor-links-list li.menu-title i, .filter-group-container .filter-list-container ul.filter-list li.menu-title i {
             display: none; }
-        ul.anchor-links-list li:not(:first-child), .filter-list-container ul.filter-list li:not(:first-child) {
+        ul.anchor-links-list li:not(:first-child), .filter-group-container .filter-list-container ul.filter-list li:not(:first-child) {
           margin-left: 0.75em; }
-        ul.anchor-links-list li a, .filter-list-container ul.filter-list li a {
+        ul.anchor-links-list li a, .filter-group-container .filter-list-container ul.filter-list li a {
           display: inline-block;
           padding: 0.375rem 0.75em;
           border-bottom: 4px solid transparent; }
-          ul.anchor-links-list li a:hover, .filter-list-container ul.filter-list li a:hover {
+          ul.anchor-links-list li a:hover, .filter-group-container .filter-list-container ul.filter-list li a:hover {
             border-bottom: 4px solid #5c6882; } }
-    ul.anchor-links-list li a.active, .filter-list-container ul.filter-list li a.active {
+    ul.anchor-links-list li a.active, .filter-group-container .filter-list-container ul.filter-list li a.active {
       background-color: #343e53;
       font-weight: 700; }
 
-.filter-list-container {
-  position: relative; }
-  .filter-list-container .filter-list-title {
+.filter-group-container .filter-group .filter-group-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  font-size: 1.125rem; }
+  .filter-group-container .filter-group .filter-group-close:before {
+    content: '\f02b';
+    font-family: "iconfonts";
+    speak: none; }
+.filter-group-container .filter-list-container {
+  position: relative;
+  padding-right: 32px; }
+  .filter-group-container .filter-list-container .filter-list-title {
     margin: 0;
     cursor: pointer; }
-    .filter-list-container .filter-list-title i {
+    .filter-group-container .filter-list-container .filter-list-title i {
       position: absolute;
       right: 0;
       top: 0; }
     @media screen and (min-width: 769px) {
-      .filter-list-container .filter-list-title {
+      .filter-group-container .filter-list-container .filter-list-title {
         margin: 0; }
-        .filter-list-container .filter-list-title i {
+        .filter-group-container .filter-list-container .filter-list-title i {
           display: none; } }
-  .filter-list-container ul.filter-list li {
+  .filter-group-container .filter-list-container ul.filter-list li {
     margin-left: 0 !important;
     border-top: 0 !important;
     float: left; }
-    .filter-list-container ul.filter-list li .filter {
+    .filter-group-container .filter-list-container ul.filter-list li .filter {
       display: inline-block !important;
       height: auto;
       margin: 0.375rem 0.5em 0.375rem 0;
       margin-right: 0.5em;
+      font-size: 13px;
+      font-size: 0.8125rem;
       display: block;
-      padding: 0.75rem;
+      padding: 0.375rem;
       line-height: 1.125rem;
-      border: 1px solid rgba(255, 255, 255, 0.1); }
-      .filter-list-container ul.filter-list li .filter:hover {
-        border: 1px solid rgba(255, 255, 255, 0.4); }
-      .filter-list-container ul.filter-list li .filter.active {
+      border: 1px solid rgba(255, 255, 255, 0.2); }
+      .filter-group-container .filter-list-container ul.filter-list li .filter:hover {
+        border: 1px solid rgba(255, 255, 255, 0.6); }
+      .filter-group-container .filter-list-container ul.filter-list li .filter.active {
         background-color: white;
         color: #5c6882; }
 
@@ -4592,132 +4617,147 @@ embed, iframe, object {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem; } }
 
-.site-content-our-people .people-group {
-  text-align: justify; }
-  .site-content-our-people .people-group:after {
-    display: inline-block;
-    width: 100%;
-    content: ''; }
-  .site-content-our-people .people-group .person {
-    position: relative;
-    text-align: left;
-    overflow: hidden;
-    width: 100%;
-    background-color: white;
-    margin-bottom: 0.75rem; }
+@media screen and (min-width: 769px) {
+  .site-content-our-people .people-group {
+    text-align: justify; }
+    .site-content-our-people .people-group:after {
+      display: inline-block;
+      width: 100%;
+      content: ''; } }
+.site-content-our-people .people-group .person {
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #e6e6e6; }
+  @media screen and (min-width: 769px) {
+    .site-content-our-people .people-group .person {
+      display: inline-block;
+      width: 33.33333%;
+      height: 270px;
+      border-left: 3px solid #eceef2;
+      border-right: 3px solid #eceef2; } }
+  @media screen and (min-width: 1200px) {
+    .site-content-our-people .people-group .person {
+      width: 25%; } }
+  .site-content-our-people .people-group .person h4 {
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.5rem !important; }
+  .site-content-our-people .people-group .person h6 {
+    margin: 0;
+    line-height: 1.3125rem !important; }
+  .site-content-our-people .people-group .person .person-profile-photo {
+    line-height: 1 !important;
+    max-height: 95%;
+    text-align: center;
+    line-height: 0.75rem; }
+    @media screen and (max-width: 481px)  {
+      .site-content-our-people .people-group .person .person-profile-photo {
+        display: none !important; } }
+    @media screen and (min-width: 481px) and (max-width: 769px)  {
+      .site-content-our-people .people-group .person .person-profile-photo {
+        width: 20%;
+        float: left; }
+        .site-content-our-people .people-group .person .person-profile-photo img {
+          max-width: 90%;
+          margin-bottom: 0; } }
     @media screen and (min-width: 769px) {
-      .site-content-our-people .people-group .person {
-        display: inline-block;
-        width: 33.33333%;
-        height: 270px;
-        border-left: 6px solid #eceef2;
-        border-right: 6px solid #eceef2; } }
-    @media screen and (min-width: 1200px) {
-      .site-content-our-people .people-group .person {
-        width: 25%; } }
-    .site-content-our-people .people-group .person h4 {
-      font-size: 18px;
-      font-size: 1.125rem;
-      font-weight: 700;
-      line-height: 1.5rem !important; }
-    .site-content-our-people .people-group .person h6 {
-      margin: 0;
-      line-height: 1.3125rem !important; }
-    .site-content-our-people .people-group .person .person-profile-photo {
-      line-height: 1 !important;
-      max-height: 95%;
-      text-align: center;
-      line-height: 0.75rem; }
-      @media screen and (max-width: 481px)  {
-        .site-content-our-people .people-group .person .person-profile-photo {
-          display: none !important; } }
-      @media screen and (min-width: 481px) and (max-width: 769px)  {
-        .site-content-our-people .people-group .person .person-profile-photo {
-          float: left;
-          display: block;
-          margin-right: 4.2434%;
-          width: 21.81745%; }
-          .site-content-our-people .people-group .person .person-profile-photo:last-child {
-            margin-right: 0; }
-          .site-content-our-people .people-group .person .person-profile-photo img {
-            max-width: 90%;
-            margin-bottom: 0; } }
-      @media screen and (min-width: 769px) {
-        .site-content-our-people .people-group .person .person-profile-photo {
-          background-color: #eceef2; }
-          .site-content-our-people .people-group .person .person-profile-photo img {
-            max-width: 90%;
-            margin-bottom: 0; } }
-      .site-content-our-people .people-group .person .person-profile-photo:hover {
-        opacity: 0.7; }
-    .site-content-our-people .people-group .person .person-details {
-      padding: 0.75rem 4.375em 0.75rem 0.5em; }
-      @media screen and (min-width: 481px) and (max-width: 769px)  {
-        .site-content-our-people .people-group .person .person-details {
-          float: left;
-          display: block;
-          margin-right: 4.2434%;
-          width: 73.93915%;
-          padding: 0.75rem 1.875em 0.75rem 0.5em; }
-          .site-content-our-people .people-group .person .person-details:last-child {
-            margin-right: 0; } }
-      @media screen and (min-width: 769px) {
-        .site-content-our-people .people-group .person .person-details {
-          padding: 0.5625rem 0.75rem;
-          position: absolute;
-          top: 180px;
-          left: 0;
-          background-color: white;
-          height: 100%;
-          width: 100%;
-          -webkit-transition: all 0.5s;
-          transition: all 0.5s; }
-          .site-content-our-people .people-group .person .person-details:hover {
-            top: 0;
-            background-color: #3e4a62;
-            color: #d4d8e1; }
-            .site-content-our-people .people-group .person .person-details:hover a {
-              color: white; }
-              .site-content-our-people .people-group .person .person-details:hover a:hover {
-                color: #d4d8e1; }
-            .site-content-our-people .people-group .person .person-details:hover .person-contact-details {
-              display: block; } }
-      @media screen and (min-width: 1200px) {
-        .site-content-our-people .people-group .person .person-details {
-          top: 170px; } }
-      .site-content-our-people .people-group .person .person-details .btn-container {
+      .site-content-our-people .people-group .person .person-profile-photo {
+        background-color: #eceef2; }
+        .site-content-our-people .people-group .person .person-profile-photo img {
+          max-width: 90%;
+          margin-bottom: 0; } }
+    .site-content-our-people .people-group .person .person-profile-photo:hover {
+      opacity: 0.7; }
+  .site-content-our-people .people-group .person .person-details {
+    padding: 0.75rem 4.375em 0.75rem 0.5em; }
+    @media screen and (min-width: 481px) and (max-width: 769px)  {
+      .site-content-our-people .people-group .person .person-details {
+        width: 80%;
+        float: left;
+        padding: 0.75rem 1.875em 0.75rem 0.5em; } }
+    @media screen and (min-width: 769px) {
+      .site-content-our-people .people-group .person .person-details {
+        padding: 0.5625rem 0.75rem;
         position: absolute;
-        top: 0;
-        right: 0.375em;
-        height: 100%; }
-        @media screen and (min-width: 769px) {
-          .site-content-our-people .people-group .person .person-details .btn-container {
-            display: none; } }
-        .site-content-our-people .people-group .person .person-details .btn-container .btn {
-          display: table;
-          background-color: transparent;
+        top: 180px;
+        left: 0;
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s; }
+        .site-content-our-people .people-group .person .person-details:hover {
+          top: 0;
+          background-color: #3e4a62;
+          color: #d4d8e1; }
+          .site-content-our-people .people-group .person .person-details:hover a {
+            color: white; }
+            .site-content-our-people .people-group .person .person-details:hover a:hover {
+              color: #d4d8e1; }
+          .site-content-our-people .people-group .person .person-details:hover .person-contact-details {
+            display: block; } }
+    @media screen and (min-width: 1200px) {
+      .site-content-our-people .people-group .person .person-details {
+        top: 170px; } }
+    .site-content-our-people .people-group .person .person-details .btn-container {
+      position: absolute;
+      top: 0;
+      right: 0.375em;
+      height: 100%; }
+      @media screen and (min-width: 769px) {
+        .site-content-our-people .people-group .person .person-details .btn-container {
+          display: none; } }
+      .site-content-our-people .people-group .person .person-details .btn-container .btn {
+        display: table;
+        background-color: transparent;
+        height: 100%;
+        padding: 0 0.75em;
+        border: 0; }
+        .site-content-our-people .people-group .person .person-details .btn-container .btn .btn-text {
           height: 100%;
-          padding: 0 0.75em;
-          border: 0; }
-          .site-content-our-people .people-group .person .person-details .btn-container .btn .btn-text {
-            height: 100%;
-            display: table-cell;
-            vertical-align: middle; }
-      .site-content-our-people .people-group .person .person-details .person-contact-details {
-        display: none;
-        -webkit-animation: fadeIn 1s;
-        animation: fadeIn 1s;
-        margin-top: 0.75rem;
-        font-size: 14px;
-        font-size: 0.875rem;
-        line-height: 1.125rem;
-        overflow: hidden;
-        word-break: break-all;
-        word-wrap: break-word; }
-        .site-content-our-people .people-group .person .person-details .person-contact-details table tr td {
-          padding: 0.1875rem 0; }
+          display: table-cell;
+          vertical-align: middle; }
+    .site-content-our-people .people-group .person .person-details .person-contact-details {
+      display: none;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s;
+      margin-top: 0.75rem;
+      font-size: 14px;
+      font-size: 0.875rem;
+      line-height: 1.125rem;
+      overflow: hidden;
+      word-break: break-all;
+      word-wrap: break-word; }
+      .site-content-our-people .people-group .person .person-details .person-contact-details table tr td {
+        padding: 0.1875rem 0; }
 
 .filter-group {
   border-top: 1px solid #343e53; }
   .filter-group.hide {
     display: none; }
+
+.filtering-on-container {
+  position: relative;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #ced3dd;
+  margin-bottom: 1.5rem; }
+  .filtering-on-container::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .filtering-on-container .clear-filter {
+    display: inline-block;
+    margin-top: 0.75rem; }
+    .filtering-on-container .clear-filter.hide {
+      display: none; }
+    @media screen and (min-width: 769px) {
+      .filtering-on-container .clear-filter {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-top: 0; } }

@@ -10,11 +10,14 @@
 
   .people-group {
 //    font-size: 0.1px; /* IE 9 & 10 don't like font-size: 0; */
-    text-align: justify;
-    &:after {
-      display:inline-block;
-      width:100%;
-      content:'';
+
+    @include media($media__medium) {
+      text-align: justify;
+      &:after {
+        display:inline-block;
+        width:100%;
+        content:'';
+      }
     }
 
     .person {
@@ -24,8 +27,9 @@
       width:100%;
       background-color:white;
       margin-bottom:$v-rhythm;
+      border-bottom:2px solid darken(white, 10%);
 
-      @include media($media__medium) { display:inline-block; width:33.3333333%; height:270px; border-left:6px solid $color__fipra-lighter-gray; border-right:6px solid $color__fipra-lighter-gray; }
+      @include media($media__medium) { display:inline-block; width:33.3333333%; height:270px; border-left:3px solid $color__fipra-lighter-gray; border-right:3px solid $color__fipra-lighter-gray; }
 
       @include media($media__large) { width:25%; }
 
@@ -39,9 +43,10 @@
         @include media(max-width $media__small) { display: none !important; }
 
         @include media(min-width $media__small max-width $media__medium) {
-          @include span-columns(3);
+          width:20%; float:left;
           img { max-width: 90%; margin-bottom:0; }
         }
+
         @include media($media__medium) {
           background-color: $color__fipra-lighter-gray;
           img { max-width: 90%; margin-bottom:0; }
@@ -57,7 +62,7 @@
         padding: $v-rhythm em(70px) $v-rhythm em(8px);
 
         @include media(min-width $media__small max-width $media__medium) {
-          @include span-columns(9); padding: $v-rhythm em(30px) $v-rhythm em(8px);
+          width:80%; float:left; padding: $v-rhythm em(30px) $v-rhythm em(8px);
         }
 
         @include media($media__medium) {
@@ -120,4 +125,25 @@
 .filter-group {
   border-top:1px solid darken($color__fipra-dark-gray, 5%);
   &.hide { display:none; }
+}
+
+.filtering-on-container {
+  @include clearfix;
+  position:relative;
+  padding-bottom: $v-rhythm;
+  border-bottom:1px solid darken($color__fipra-lighter-gray, 10%);
+  margin-bottom:$v-rhythm * 2;
+
+  .clear-filter {
+    display:inline-block;
+    margin-top:$v-rhythm;
+    &.hide { display:none; }
+
+    @include media($media__medium) {
+      position:absolute;
+      bottom:0; right:0;
+      margin-top:0;
+    }
+  }
+
 }

@@ -35,7 +35,7 @@ get_header(); ?>
     <div class="page-nav">
         <div class="row content-area">
             <ul class="anchor-links-list no-margin no-bullet">
-                <li class="menu-title"><i class="icon-menu-1"></i> Jump to...</li>
+                <li class="menu-title menu-title-toggle"><i class="icon-menu-1"></i> Jump to...</li>
                 <li class="hide-s"><a class="jump-to-link" href="#about-us">About Us <i class="icon-down-open"></i></a></li>
                 <li class="hide-s"><a class="jump-to-link" href="#our-team">Our Team <i class="icon-down-open"></i></a></li>
                 <li class="hide-s"><a class="jump-to-link" href="#our-location">Our Location <i class="icon-down-open"></i></a></li>
