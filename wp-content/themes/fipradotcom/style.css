@@ -4447,15 +4447,13 @@ embed, iframe, object {
         display: inline-block;
         width: 33.33333%;
         height: 260px;
-        border-left: 8px solid #eceef2;
-        border-right: 8px solid #eceef2; } }
+        border-left: 5px solid #eceef2;
+        border-right: 5px solid #eceef2; } }
     @media screen and (min-width: 841px) {
       .site-content-our-people .people-group-container .person {
         display: inline-block;
         width: 25%;
-        height: 260px;
-        border-left: 8px solid #eceef2;
-        border-right: 8px solid #eceef2; } }
+        height: 260px; } }
     @media screen and (min-width: 1200px) {
       .site-content-our-people .people-group-container .person {
         width: 20%;
@@ -4464,10 +4462,11 @@ embed, iframe, object {
       font-size: 18px;
       font-size: 1.125rem;
       font-weight: 700;
-      line-height: 1.5rem !important; }
+      line-height: 1.125rem !important; }
     .site-content-our-people .people-group-container .person h6 {
       margin: 0;
-      line-height: 1.3125rem !important; }
+      line-height: 1.3125rem !important;
+      font-weight: 400; }
     .site-content-our-people .people-group-container .person .person-profile-photo {
       line-height: 1 !important;
       max-height: 90%;
