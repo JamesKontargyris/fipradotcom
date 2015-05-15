@@ -61,7 +61,7 @@ h2 {
 h3 {
   font-weight: $font__normal;
   @include font-size(21);
-  line-height: $v-rhythm * 2;
+  line-height: $v-rhythm * 2.5;
   color:$color__fipra-dark-gray;
 
   &.small {

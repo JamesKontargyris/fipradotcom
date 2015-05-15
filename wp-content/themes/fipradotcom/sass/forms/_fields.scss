@@ -19,7 +19,13 @@ input[type="url"],
 input[type="password"],
 input[type="search"] {
 	padding: 3px;
+    font-style: normal;
 }
+
+::-webkit-input-placeholder { font-style: italic; }
+::-moz-placeholder { font-style: italic; } /* firefox 19+ */
+:-ms-input-placeholder { font-style: italic; } /* ie */
+input:-moz-placeholder { font-style: italic; }
 
 textarea {
 	padding-left: 3px;

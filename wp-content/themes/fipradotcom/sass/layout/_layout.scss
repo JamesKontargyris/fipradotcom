@@ -93,14 +93,14 @@
     &.no-bottom-margin { margin-bottom:0; }
     &.top-margin { margin-top:$v-rhythm * 2; }
   }
-  .col-#{$i}-s {
-    @include media($media__medium) { @include span-columns($i); }
-    margin-bottom:$v-rhythm * 2;
-    &.no-margin { margin:0; }
-    &.no-bottom-margin { margin-bottom:0; }
-    &.top-margin { margin-top:$v-rhythm * 2; }
-  }
-  .col-#{$i}-m {
+//  .col-#{$i}-s {
+//    @include media($media__medium) { @include span-columns($i); }
+//    margin-bottom:$v-rhythm * 2;
+//    &.no-margin { margin:0; }
+//    &.no-bottom-margin { margin-bottom:0; }
+//    &.top-margin { margin-top:$v-rhythm * 2; }
+//  }
+  .col-#{$i}-m, .col-#{$i} {
     @include media($media__medium) { @include span-columns($i); }
     margin-bottom:$v-rhythm * 2;
     &.no-margin { margin:0; }

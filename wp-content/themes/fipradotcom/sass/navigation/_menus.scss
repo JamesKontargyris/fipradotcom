@@ -175,15 +175,17 @@ ul.anchor-links-list {
     @include media(max-width $media__medium) {
 
       &:not(.menu-title) { border-top:1px solid rgba(white, 0.4); }
-      &.menu-title { display:block; padding:$v-rhythm * 0.25 em(8px); }
+      &.menu-title { display:block; padding:$v-rhythm * 0.25 em(6px); }
       &.menu-title-toggle { cursor:pointer; }
-      a { display: block; padding: $v-rhythm * 0.5 em(8px); }
-      i { position:absolute; right:em(8px); top:6px; }
+      a { display: block; padding: $v-rhythm * 0.5 em(6px); }
+      i { position:absolute; right:em(6px); top:6px; }
 
       &.inline-s {
         display:inline;
+        margin-right:em(8px);
         &:not(.menu-title) { border-top:0px solid rgba(white, 0.4); }
-        a { display:inline-block; padding: $v-rhythm * 0.25 em(8px); }
+        &.menu-title { display:inline; }
+        a { display:inline-block; }
         i { position: static; }
       }
     }
@@ -249,7 +251,6 @@ ul.anchor-links-list {
           display:inline-block !important;
           height: auto;
           margin: $v-rhythm * 0.5 em(8px) $v-rhythm * 0.5 0;
-          margin-right: em(8px);
           @include font-size(13);
           display: block; padding: $v-rhythm * 0.5; line-height: $v-rhythm * 1.5; border: 1px solid rgba(white, 0.2);
           &:hover { border: 1px solid rgba(white, 0.6); }

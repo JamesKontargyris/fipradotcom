@@ -112,23 +112,4 @@
       color:$color__fipra-blue;
     }
   }
-  ::-webkit-input-placeholder {
-    font-style:italic;
-    font-family: $font__sans;
-  }
-
-  :-moz-placeholder { /* Firefox 18- */
-    font-style:italic;
-    font-family: $font__sans;
-  }
-
-  ::-moz-placeholder {  /* Firefox 19+ */
-    font-style:italic;
-    font-family: $font__sans;
-  }
-
-  :-ms-input-placeholder {
-    font-style:italic;
-    font-family: $font__sans;
-  }
 }
