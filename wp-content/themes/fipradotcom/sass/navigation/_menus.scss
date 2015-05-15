@@ -198,13 +198,13 @@ ul.anchor-links-list {
       a {
         display:inline-block;
         padding:$v-rhythm * 0.5 em(12px);
-        border-bottom:4px solid transparent;
-        &:hover { border-bottom:4px solid $color__fipra-blue-gray; }
+        border-bottom:3px solid transparent;
+        &:hover { border-bottom:3px solid $color__fipra-blue-gray; }
       }
     }
 
     a.active {
-      background-color: darken($color__fipra-dark-gray, 5%);
+      background-color: $color__fipra-dark-gray;
       font-weight: $font__bold;
     }
   }

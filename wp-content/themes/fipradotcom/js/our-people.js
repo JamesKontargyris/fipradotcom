@@ -51,10 +51,11 @@ $('.filter-group-close').on('click', function()
 
 //When .clear-filter is clicked, reset the filtering
 //and reset the active filter option
-$('.clear-filter').on('click', function()
+$('.clear-filter').on('click', function(e)
 {
     people.isotope({ filter: '' });
     $('.filter-list li a').removeClass('active');
     $(this).addClass('hide');
     $('.filtering-on-title').text('Showing all ' + $('.number-of-fipriots').text() + ' Fipriots');
+    e.preventDefault();
 });
