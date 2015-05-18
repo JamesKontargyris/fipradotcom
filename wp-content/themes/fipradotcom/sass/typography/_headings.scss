@@ -46,10 +46,10 @@ h1 {
 h2 {
   font-weight: $font__normal;
   color:$color__fipra-blue-gray;
-  @include font-size(28);
+  @include font-size(24);
   line-height: $v-rhythm * 3;
 
-  @include media($media__large) { @include font-size(36); letter-spacing:-1px; line-height: $v-rhythm * 4; }
+  @include media($media__large) { @include font-size(28); letter-spacing:-1px; line-height: $v-rhythm * 4; }
 
   //  Style similar to H1 in .hero-banner and feature blocks
   &.feature {
@@ -83,7 +83,7 @@ h4 {
 
 }
 
-h5 { @include font-size(14); font-weight: $font__bold; text-transform: uppercase; letter-spacing:2px;
+h5 { @include font-size(14); font-weight: $font__normal; text-transform: uppercase; letter-spacing:2px;
   @include media($media__small) { @include font-size(16); }
 }
 

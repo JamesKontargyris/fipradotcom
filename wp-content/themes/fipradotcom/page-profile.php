@@ -7,13 +7,9 @@
 
 get_header(); ?>
 
-<div id="content-container" class="with-border">
+<div id="content-container">
 
-    <div id="breadcrumbs">
-        <div class="breadcrumbs-content">
-            <a href="#">Home</a> <span class="divider"><i class="icon-right-open"></i></span> <a href="#">Our People</a> <span class="divider"><i class="icon-right-open"></i></span> <span class="active">Ukko Metsola</span>
-        </div>
-    </div>
+    <?php get_template_part('inc/breadcrumbs'); ?>
 
     <div id="hero" class="full-width-block-container with-content-bar content-bar-bottom profile">
         <div class="full-width-block-content-container content-bar grey">
@@ -50,59 +46,34 @@ get_header(); ?>
                     <p>Prior to joining Fipra in 2005, Ukko completed a graduate degree at the Harvard Kennedy School (with Fulbright scholarship). He contested the last European Parliament elections in Finland in June 2009 for the liberal conservative National Coalition Party.</p>
                     <p>Ukko speaks fluent Finnish and English, good Swedish, and some French.</p>
 
-                    <div id="testimonials" class="testimonial-group">
-                        <blockquote cite="http://test.com" class="testimonial">
-                            <div class="quote">
-                                "Testimonial number 1 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada. Fusce eget orci convallis, finibus nunc vel, sagittis nibh. Donec eu gravida est. Aliquam vulputate felis augue."
-                            </div>
-                            <footer class="author">
-                                <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />
-                                <div class="author-details">
-                                    <span class="name">Author Name</span><br/>Position, Organisation</strong>
-                                </div>
-                            </footer>
-                            <span class="triangle"></span>
-                        </blockquote>
-                    </div>
-
                     <h3 id="expertise">Ukko's Expertise</h3>
 
-                    <div class="showcase profile-expertise-showcase equal-heights">
-                        <div class="row-of-4">
-                            <div class="showcase-block bg center">
+                    <div class="profile-expertise-showcase equal-heights">
+                            <div class="expertise-area">
                                 <a href="#">
-                                    <div class="showcase-block-content">
-                                        <div class="circle-icon blue small"><i class="icon-lightbulb"></i></div>
-                                        <h3>Energy and Environment</h3>
-                                    </div>
+                                    <i class="icon-globe"></i>
+                                    <div class="expertise-area-name">Expertise Area Name</div>
                                 </a>
                             </div>
-                            <div class="showcase-block bg center">
+                            <div class="expertise-area">
                                 <a href="#">
-                                    <div class="showcase-block-content">
-                                        <div class="circle-icon blue small"><i class="icon-industrial-building"></i></div>
-                                        <h3>Chemical, Industrials and Mining</h3>
-                                    </div>
+                                    <i class="icon-globe"></i>
+                                    <div class="expertise-area-name">Expertise Area Name</div>
                                 </a>
                             </div>
-                            <div class="showcase-block bg center">
+                            <div class="expertise-area">
                                 <a href="#">
-                                    <div class="showcase-block-content">
-                                        <div class="circle-icon blue small"><i class="icon-plane"></i></div>
-                                        <h3>Travel, Transport and Logistics</h3>
-                                    </div>
+                                    <i class="icon-globe"></i>
+                                    <div class="expertise-area-name">Expertise Area Name</div>
                                 </a>
                             </div>
-                            <div class="showcase-block bg center">
+                            <div class="expertise-area">
                                 <a href="#">
-                                    <div class="showcase-block-content">
-                                        <div class="circle-icon blue small"><i class="icon-bank"></i></div>
-                                        <h3>Banking and Financial Services</h3>
-                                    </div>
+                                    <i class="icon-globe"></i>
+                                    <div class="expertise-area-name">Expertise Area Name</div>
                                 </a>
                             </div>
                         </div>
-                    </div>
 
                 </main><!-- #main -->
             </div><!-- #primary -->

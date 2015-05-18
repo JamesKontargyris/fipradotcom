@@ -117,6 +117,11 @@
     a { color: white; &:hover { color:darken(white, 10%);} }
     .btn { @extend .btn-white; }
     li.active a { background:rgba(white, 0.1); color:white !important; }
+
+    //    Owl Carousel pagination is dark grey
+    .owl-page {
+      span { background:white !important; }
+    }
   }
 
   &.periwinkle, &.light-grey {
@@ -139,22 +144,21 @@
 
   &.left {
     text-align: center;
-    @include media($media__medium) {
-      text-align: left;
-      &.narrow { padding-right:$column * 5; }
+    @include media($media__medium) { text-align: left; }
+    @include media($media__large) { &.narrow { padding-right:$column * 5; }
     }
   }
 
   &.right {
     text-align: center;
-    @include media($media__medium) {
-      text-align: right;
+    @include media($media__medium) { text-align: right; }
+    @include media($media__large) {
       &.narrow { padding-left:$column * 5; }
     }
   }
 
   &.center {
-    &.narrow { @include media($media__medium) { padding-left:$column * 2.5; padding-right:$column * 2.5; } }
+    &.narrow { @include media($media__large) { padding-left:$column * 2.5; padding-right:$column * 2.5; } }
   }
 
 }

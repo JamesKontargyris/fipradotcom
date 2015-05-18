@@ -1,12 +1,8 @@
 <?php get_header(); ?>
 
-<div id="content-container" class="with-border">
+<div id="content-container">
 
-    <div id="breadcrumbs">
-        <div class="breadcrumbs-content">
-            <a href="#">Home</a> <span class="divider"><i class="icon-right-open"></i></span> <a href="#">Careers with Fipra</a> <span class="divider"><i class="icon-right-open"></i></span> <span class="active">Job Listing</span>
-        </div>
-    </div>
+    <?php get_template_part('inc/breadcrumbs'); ?>
 
     <div id="site-content-container">
 

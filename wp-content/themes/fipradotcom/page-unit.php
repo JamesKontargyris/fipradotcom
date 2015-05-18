@@ -14,13 +14,9 @@ get_header(); ?>
     }
 </style>
 
-<div id="content-container" class="with-border">
+<div id="content-container">
 
-    <div id="breadcrumbs">
-        <div class="breadcrumbs-content">
-            <a href="#">Home</a> <span class="divider"><i class="icon-right-open"></i></span> <a href="#">Our Global Network</a> <span class="divider"><i class="icon-right-open"></i></span> <span class="active">United Kingdom</span>
-        </div>
-    </div>
+    <?php get_template_part('inc/breadcrumbs'); ?>
 
     <div id="hero" class="full-width-block-container with-content-bar unit">
         <div class="full-width-block-content-container content-bar grey bottom bg-image">
@@ -58,116 +54,22 @@ get_header(); ?>
 
                     <p>Vestibulum sed pulvinar orci, efficitur tristique arcu. Fusce a rutrum neque, vel efficitur urna. Vivamus ut iaculis mi. Etiam eget tortor ut metus sagittis semper a at urna. Mauris sit amet lacinia nunc, vestibulum elementum urna. Sed a lorem non leo consequat venenatis mattis a arcu. Sed a sapien malesuada ipsum convallis mattis. Nunc lacinia lorem sit amet urna lacinia placerat. Curabitur cursus mauris vitae nisi vulputate tincidunt. Integer sit amet efficitur neque. Aenean tincidunt imperdiet est sit amet dictum. In tortor augue, tempus nec justo ac, tincidunt blandit lacus. Nullam mi leo, venenatis pretium ipsum ac, iaculis cursus orci.</p>
 
-                    <div class="testimonial-group">
-                        <blockquote cite="http://test.com" class="testimonial">
-                            <div class="quote">
-                                "Testimonial number 1 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada. Fusce eget orci convallis, finibus nunc vel, sagittis nibh. Donec eu gravida est. Aliquam vulputate felis augue."
-                            </div>
-                            <footer class="author">
-                                <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />
-                                <div class="author-details">
-                                    <span class="name">Author Name</span><br/>Position, Organisation</strong>
-                                </div>
-                            </footer>
-                                    <span class="triangle"></span>
-                        </blockquote>
-                        <blockquote cite="http://test.com" class="testimonial">
-                            <div class="quote">
-                                "Testimonial number 2 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada. Fusce eget orci convallis, finibus nunc vel, sagittis nibh. Donec eu gravida est. Aliquam vulputate felis augue. Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada."
-                            </div>
-                            <footer class="author">
-                                <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />
-                                <div class="author-details">
-                                    <span class="name">Author Name</span><br/>Position, Organisation</strong>
-                                </div>
-                            </footer>
-                            <span class="triangle"></span>
-                        </blockquote>
-                        <blockquote cite="http://test.com" class="testimonial">
-                            <div class="quote">
-                                "Testimonial number 3 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada. Fusce eget orci convallis, finibus nunc vel, sagittis nibh. Donec eu gravida est. Aliquam vulputate felis augue."
-                            </div>
-                            <footer class="author">
-                                <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />
-                                <div class="author-details">
-                                    <span class="name">Author Name</span><br/>Position, Organisation</strong>
-                                </div>
-                            </footer>
-                            <span class="triangle"></span>
-                        </blockquote>
-                    </div>
-                    <div class="testimonial-group-carousel-controls">
-                        <button class="button owl-prev" data-carousel=".testimonial-group">
-                            <i class="icon-left-open-2" ></i> Previous
-                        </button>
-                        <button class="button owl-next" data-carousel=".testimonial-group">
-                            Next <i class="icon-right-open-2"></i>
-                        </button>
-                    </div>
-
-
-                    <h3 id="our-team">Our Team</h3>
-
-                    <div class="team-group equal-heights">
-                        <div class="row-of-1">
-                            <div class="team-member">
-                                <div class="col-2-m col-12-xs col-12-xxs no-bottom-margin">
-                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" /></a>
-                                </div>
-                                <div class="col-7-m col-12-xs col-12-xxs no-bottom-margin">
-                                    <h4 class="no-margin"><a href="#">Peter-Carlo Lehrell</a></h4>
-                                    <h6>Position</h6>
-                                    <div class="team-member-bio">
-                                        <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. <a href="#">Full&nbsp;profile</a></p>
-                                    </div>
-                                </div>
-                                <div class="col-3-m col-12-xs no-bottom-margin">
-                                    <h6>Expertise</h6>
-                                    <ul class="team-member-expertise no-bullet">
-                                        <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-plane"></i></a></li>
-                                        <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-industrial-building"></i></a></li>
-                                        <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-lightbulb"></i></a></li>
-                                        <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-bank"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="col-2-m col-12-xs col-12-xxs no-bottom-margin">
-                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Ukko Metsola" style="background-color:white;" /></a>
-                                </div>
-                                <div class="col-7-m col-12-xs col-12-xxs no-bottom-margin">
-                                    <h4 class="no-margin"><a href="#">Ukko Metsola</a></h4>
-                                    <h6>Position</h6>
-                                    <div class="team-member-bio">
-                                        <p class="bio no-bottom-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. <a href="#">Full&nbsp;profile</a></p>
-                                    </div>
-                                </div>
-                                <div class="col-3-m col-12-xs no-bottom-margin">
-                                    <h6>Expertise</h6>
-                                    <ul class="team-member-expertise no-bullet">
-                                        <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-plane"></i></a></li>
-                                        <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-industrial-building"></i></a></li>
-                                    </ul>
-                                </div>
+                    <section class="our-location">
+                        <h3 id="our-location">Our Location</h3>
+                        <div class="row">
+                            <div class="col-7-m"><img src="<?= get_template_directory_uri(); ?>/img/600x400.gif" alt="Map Placeholder" /></div>
+                            <div class="col-5-m">
+                                <address>
+                                    Address Line 1 <br/>
+                                    Address Line 2 <br/>
+                                    Address Line 3 <br/>
+                                    Address Line 4 <br/>
+                                </address>
                             </div>
                         </div>
-                    </div>
 
-
-                    <h3 id="our-location">Our Location</h3>
-                    <div class="row">
-                        <div class="col-7-m"><img src="<?= get_template_directory_uri(); ?>/img/600x400.gif" alt="Map Placeholder" /></div>
-                        <div class="col-5-m">
-                            <address>
-                                Address Line 1 <br/>
-                                Address Line 2 <br/>
-                                Address Line 3 <br/>
-                                Address Line 4 <br/>
-                            </address>
-                        </div>
-                    </div>
-
-                    <p><em>Info on location lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor ullamcorper eu tristique risus.</em></p>
+                        <p><em>Info on location lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor ullamcorper eu tristique risus.</em></p>
+                    </section>
 
                 </main><!-- #main -->
             </div><!-- #primary -->
@@ -193,21 +95,6 @@ get_header(); ?>
                             </div>
                         </div>
 
-<!--                        <div class="sidebar-contact">-->
-<!--                            <div class="sidebar-contact-content">-->
-<!--                                <a href="#">-->
-<!--                                    <img src="--><?//= get_template_directory_uri(); ?><!--/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" style="background-color: white;" />-->
-<!--                                    <strong>Peter-Carlo Lehrell</strong>-->
-<!--                                </a>-->
-<!--                                <p class="no-bottom-margin">-->
-<!--                                    <strong>Chairman, Fipra International</strong><br/>-->
-<!--                            <span class="font-14">Tel. +01234 5678910 <br/>-->
-<!--                            Fax. +01234 5678910 <br/>-->
-<!--                            <a href="mailto:lehrell@fipra.com">lehrell@fipra.com</a></span>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
                     </div>
                 </div>
 
@@ -229,6 +116,71 @@ get_header(); ?>
             </div><!-- #secondary -->
 
         </div><!-- #content -->
+
+        <section id="team-menu-container" class="full-width-block-container">
+            <div class="full-width-block-content-container flex light-grey">
+
+                <div class="full-width-block-content">
+                    <h3 id="staff" class="upper small center"><i class="icon-left-circle-1 owl-prev" data-carousel="#practice-staff-carousel"></i> Our Team <i class="icon-right-circle-1 owl-next" data-carousel="#practice-staff-carousel"></i></h3>
+
+                    <div id="our-team-carousel" class="team-carousel" data-number-of-items="3">
+                        <?php for($i = 1; $i <= 3; $i++): ?>
+                            <div style="" class="team-member">
+                                <div class="profile-photo">
+                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Ukko Metsola" /></a>
+                                </div>
+                                    <h4 class="no-margin"><a href="#">Ukko Metsola</a></h4>
+                                <h6>Position</h6>
+                                <ul class="team-member-expertise no-bullet">
+                                    <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-plane"></i></a></li>
+                                    <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-industrial-building"></i></a></li>
+                                    <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-plane"></i></a></li>
+                                    <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-industrial-building"></i></a></li>
+                                </ul>
+                            </div>
+                        <?php endfor; ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="public-affairs-services" class="full-width-block-container public-affairs-services-block">
+            <div class="full-width-block-content-container dark-grey">
+
+                <div class="full-width-block-content left">
+
+                    <div id="testimonial-carousel" class="testimonial-group carousel">
+
+                        <blockquote cite="http://test.com" class="testimonial">
+                            <div class="quote">
+                                "Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada."
+                            </div>
+                            <footer class="author">
+<!--                                <img src="--><?//= get_template_directory_uri(); ?><!--/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />-->
+                                <div class="author-details">
+                                    <span class="name">Author Name</span><br/>Position, Organisation</strong>
+                                </div>
+                            </footer>
+                            <span class="triangle"></span>
+                        </blockquote>
+                        <blockquote cite="http://test.com" class="testimonial">
+                            <div class="quote">
+                                "Donec eu gravida est. Aliquam vulputate felis augue. Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada."
+                            </div>
+                            <footer class="author">
+<!--                                <img src="--><?//= get_template_directory_uri(); ?><!--/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />-->
+                                <div class="author-details">
+                                    <span class="name">Author Name</span><br/>Position, Organisation</strong>
+                                </div>
+                            </footer>
+                            <span class="triangle"></span>
+                        </blockquote>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </div><!-- #site-content-container -->
 </div><!-- #content-container   -->
 

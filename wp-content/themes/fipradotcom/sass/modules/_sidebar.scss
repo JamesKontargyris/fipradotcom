@@ -6,7 +6,7 @@ ul.sidebar-list {
     margin-bottom:$v-rhythm;
 
     i { @include font-size(18); margin-right:em(12px); color:darken($color__fipra-light-gray, 40%); }
-    .sidebar-list-flag { width: em(24px); height:em(16px); margin-right:em(5px); }
+    .sidebar-list-flag { width: em(32px); margin-right:em(5px); vertical-align: middle; }
 
     a { display:block; padding:$v-rhythm / 2 em(12px);
       background-color: white;
@@ -40,7 +40,9 @@ ul.sidebar-list {
 
       &:first-child { border:0; padding-top:0; }
 
-      img { max-width: 100px; display:block; margin-bottom:$v-rhythm; }
+      img { max-width: 100px; display:block; margin-bottom:$v-rhythm;
+        @include media($media__xlarge) { float:left; margin-right:em(18px); }
+      }
 
       @include media(min-width $media__small max-width $media__medium) {
         @include span-columns(6); @include omega(2n);

@@ -1,5 +1,4 @@
 ( function($) {
-
     //    Function: element has attribute?
     $.fn.hasAttr = function(attr) {
         var attribVal = this.attr(attr);
@@ -50,7 +49,6 @@
                 el.animate({"width":width,"height":height}, speed, callback);
         });
     }
-
 
     //Display/hide mobile menu when .mobile-menu-toggle is tapped
     $('.mobile-menu-toggle').on('click', function()
@@ -141,21 +139,26 @@
         slideSpeed: 500,
         paginationSpeed: 500,
         rewindSpeed: 500,
-        //transitionStyle: "goDown",
-        pagination: false
+        autoPlay: 5000,
+        transitionStyle: "fade",
+        pagination: true
     });
     $("#public-affairs-services-carousel").owlCarousel({
         singleItem:true,
         autoPlay: 5000
     });
-    $("#practice-staff-carousel").owlCarousel({
-        items: 5,
-        itemsCustom: [[0,1], [480,3], [768,4], [940,5]]
+
+    //Get number of items in team-carousel and work out how many to display in the carousel
+    var numberOfItems = $('.team-carousel').data('number-of-items');
+    $(".team-carousel").owlCarousel({
+        itemsCustom: [[0,1], [480,(numberOfItems < 2) ? numberOfItems : 2], [768,(numberOfItems < 3) ? numberOfItems : 3], [940, (numberOfItems < 4) ? numberOfItems : 4], [1300, (numberOfItems < 5) ? numberOfItems : 5]]
     });
+
+    //Get number of items in expertise-carousel and work out how many to display in the carousel
+    var numberOfItems = $('#expertise-carousel').data('number-of-items');
     $("#expertise-carousel").owlCarousel({
         //items: 4,
-        itemsCustom: [[0,1], [480,2], [768,3], [940,4]],
-        addClassActive: true
+        itemsCustom: [[0,1], [480,(numberOfItems < 2) ? numberOfItems : 2], [768,(numberOfItems < 3) ? numberOfItems : 3], [940, (numberOfItems < 4) ? numberOfItems : 4], [1300, (numberOfItems < 5) ? numberOfItems : 5]]
     });
 
     // Custom Navigation Events
@@ -179,11 +182,11 @@
         //    Set equal heights of content blocks in team member groups
         $('.team-group.equal-heights .team-member').matchHeight();
 
-        //    Set equal heights of testimonial quotes
-        $('.testimonial-group .quote').matchHeight();
+        //    Set equal heights of content blocks in expertise carousel groups
+        $('.expertise-area-name').matchHeight();
 
         //    Set equal heights of testimonial quotes
-        $('#expertise-carousel .expertise-area-content').matchHeight();
+        $('.testimonial-group .quote').matchHeight();
 
 
         if($(window).width() >= 769) {
@@ -200,3 +203,4 @@
         { $(this).siblings('li:not(.menu-title)').toggleClass('hide-s'); });
 
 })(jQuery);
+

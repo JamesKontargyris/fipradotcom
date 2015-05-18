@@ -9,6 +9,8 @@
 @import "full-width-block";
 @import "global-network-menu";
 @import "search";
+@import "people";
+@import "carousel";
 
 #content-container {
   @include clearfix;
@@ -20,16 +22,14 @@
   &.with-hero-banner { padding-top:0; }
 
   #breadcrumbs {
-    @extend .content-area;
-    margin-bottom: $v-rhythm;
-    .breadcrumbs-content { @include font-size(13); }
+
+//    margin-bottom: $v-rhythm;
+    .breadcrumbs-content { @include font-size(13); @extend .content-area; }
     color:darken(white, 35%);
     .divider { padding:0 em(4px); }
-    .active { font-weight: $font__black; color:$color__fipra-blue-gray; }
-    a { font-weight: $font__bold; }
+    .active { color:$color__fipra-red; }
 
     @include media(max-width $media__medium) { display:none; }
-
   }
 
   #site-content-container {
@@ -74,24 +74,28 @@
   padding-left:em(20px);
   padding-right:em(20px);
 
-  @include media($media__large) { @include outer-container($container__outer-width); padding-left:0; padding-right:0; }
+  @include media($media__medium) { @include outer-container($container__outer-width); padding-left:em(40px); padding-right:em(40px); }
 }
 
 //Column classes
 @for $i from 1 through $grid-columns {
   .col-#{$i}-xxs {
-    @include media(max-width $media__small) { @include span-columns($i); }
-    margin-bottom:$v-rhythm * 2;
-    &.no-margin { margin:0; }
-    &.no-bottom-margin { margin-bottom:0; }
-    &.top-margin { margin-top:$v-rhythm * 2; }
+    @include media(max-width $media__small) {
+      @include span-columns($i);
+      margin-bottom:$v-rhythm * 2;
+      &.no-margin { margin:0; }
+      &.no-bottom-margin { margin-bottom:0; }
+      &.top-margin { margin-top:$v-rhythm * 2; }
+    }
   }
   .col-#{$i}-xs {
-    @include media(max-width $media__medium) { @include span-columns($i); }
-    margin-bottom:$v-rhythm * 2;
-    &.no-margin { margin:0; }
-    &.no-bottom-margin { margin-bottom:0; }
-    &.top-margin { margin-top:$v-rhythm * 2; }
+    @include media(max-width $media__medium) {
+      @include span-columns($i);
+      margin-bottom:$v-rhythm * 2;
+      &.no-margin { margin:0; }
+      &.no-bottom-margin { margin-bottom:0; }
+      &.top-margin { margin-top:$v-rhythm * 2; }
+    }
   }
 //  .col-#{$i}-s {
 //    @include media($media__medium) { @include span-columns($i); }
@@ -101,28 +105,33 @@
 //    &.top-margin { margin-top:$v-rhythm * 2; }
 //  }
   .col-#{$i}-m, .col-#{$i} {
-    @include media($media__medium) { @include span-columns($i); }
-    margin-bottom:$v-rhythm * 2;
-    &.no-margin { margin:0; }
-    &.no-bottom-margin { margin-bottom:0; }
-    &.top-margin { margin-top:$v-rhythm * 2; }
+    @include media($media__medium) {
+      @include span-columns($i);
+      margin-bottom:$v-rhythm * 2;
+      &.no-margin { margin:0; }
+      &.no-bottom-margin { margin-bottom:0; }
+      &.top-margin { margin-top:$v-rhythm * 2; }
+    }
   }
   .col-#{$i}-l {
-    @include media($media__large) { @include span-columns($i); }
-    margin-bottom:$v-rhythm * 2;
-    &.no-margin { margin:0; }
-    &.no-bottom-margin { margin-bottom:0; }
-    &.top-margin { margin-top:$v-rhythm * 2; }
+    @include media($media__large) {
+      @include span-columns($i);
+      margin-bottom:$v-rhythm * 2;
+      &.no-margin { margin:0; }
+      &.no-bottom-margin { margin-bottom:0; }
+      &.top-margin { margin-top:$v-rhythm * 2; }
+    }
 
     &.no-m-margin { @include media(max-width $media__medium) { margin:0; } }
   }
   .col-#{$i}-xl {
-    @include media($media__large) { @include span-columns($i); }
-    margin-bottom:$v-rhythm * 2;
-    &.no-margin { margin:0; }
-    &.no-bottom-margin { margin-bottom:0; }
-    &.top-margin { margin-top:$v-rhythm * 2; }
-
-    &.no-m-margin { @include media(max-width $media__medium) { margin:0; } }
+    @include media($media__xlarge) {
+      @include span-columns($i);
+      margin-bottom:$v-rhythm * 2;
+      &.no-margin { margin:0; }
+      &.no-bottom-margin { margin-bottom:0; }
+      &.top-margin { margin-top:$v-rhythm * 2; }
+      &.no-m-margin { @include media(max-width $media__medium) { margin:0; } }
+    }
   }
 }

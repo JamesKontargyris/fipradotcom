@@ -33,11 +33,12 @@
       &.current_page_ancestor > a,
       &.current-menu-ancestor > a {
         font-weight: $font__bold;
-        border-bottom: 3px solid $color__fipra-blue;
+        color: $color__fipra-red;
+        border-bottom: 3px solid $color__fipra-red;
         padding: $v-rhythm * 1.25 0 $v-rhythm * 0.75 - rem(3px);
       }
 
-      &:hover > a, &.focus > a { color: $color__fipra-blue; }
+      &:hover > a, &.focus > a { color: $color__fipra-red; }
     }
 
     // Start of second level
@@ -45,7 +46,7 @@
       float: left;
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       background-color: white;
-      border-top: 3px solid $color__fipra-blue-gray;
+      border-top: 3px solid $color__fipra-red;
       position: absolute;
       top: $v-rhythm * 5;
       left: -999em;
@@ -66,7 +67,7 @@
         &.current_page_ancestor > a,
         &.current_menu_ancestor > a {
           font-weight: $font__bold;
-          color: $color__fipra-blue;
+          color: $color__fipra-red;
           border-bottom: 0;
           padding: $v-rhythm / 2 em(24px);
         }
@@ -201,7 +202,7 @@ ul.anchor-links-list {
         display:inline-block;
         padding:$v-rhythm * 0.5 em(12px);
         border-bottom:3px solid transparent;
-        &:hover { border-bottom:3px solid $color__fipra-blue-gray; }
+        &:hover { color:$color__fipra-red; border-bottom:3px solid $color__fipra-red; }
       }
     }
 

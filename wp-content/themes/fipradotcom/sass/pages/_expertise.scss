@@ -6,11 +6,10 @@
 
     .full-width-block-content-container {
 
-      h1 { margin-bottom: $v-rhythm; }
-
-      .circle-icon {
-//        margin-bottom: $v-rhythm;
-//        border-bottom:2px solid rgba(darken($color__fipra-dark-gray, 10%), 0.6);
+      h1 { margin-bottom: $v-rhythm;
+        i { display:block;
+          @include media($media__medium) { display:inline-block; margin-right:rem(8px); }
+        }
       }
     }
 
@@ -23,7 +22,7 @@
 }
 
 
-#staff-menu-container, #expertise-menu-container {
+#team-menu-container, #expertise-menu-container {
   h3 {
     position: relative;
     padding: 0 24px;
@@ -34,57 +33,34 @@
     .owl-next { right: 0; top: 0; }
   }
 
-  .owl-page {
-    margin-top:$v-rhythm;
-    opacity:0.4;
-    &.active { opacity: 1; }
-  }
+
 }
 
-#staff-menu-container {
-  .team-member {
-    position:relative;
-    padding:0;
-    margin:0 8px;
-    text-align: left;
-    overflow:hidden;
-    height:300px;
-    border-bottom: 2px solid darken($color__fipra-dark-gray, 3%);
-
-    img { max-width: 100%; }
-    h4 { line-height: $v-rhythm * 2; }
-
-    .team-member-profile-photo { background-color: white; text-align:center; &:hover { opacity:0.7; } }
-    .team-member-details {
-      position:absolute;
-      top:180px;
-      @include media(min-width $media__small max-width $media__medium) { top: 160px; }
-      left:0;
-      background-color: lighten($color__fipra-dark-gray, 15%);
-      padding:$v-rhythm 18px;
-      height:100%;
-      width:100%;
-      @include transition(all 0.5s);
-      .bio { display: none; @include animation(fadeIn 1s); }
-
-      &:hover { top:0; .bio { display:block; } }
-    }
-  }
-
-  .owl-page { span { background:white !important; } }
+#team-menu-container {
+  h3 { .owl-prev, .owl-next { color:$color__fipra-blue; } }
+  .full-width-block-content { padding-top: $v-rhythm * 2; padding-bottom: $v-rhythm * 2; }
 }
 
 #expertise-menu-container {
-  .owl-prev, .owl-next { color:$color__fipra-blue; }
 
   #expertise-carousel {
-    .showcase-block {
-      margin:0 8px;
-      h4 { margin:0; color:$color__fipra-blue !important; }
+    margin-top: $v-rhythm * 3;
+    .expertise-area {
+      margin:0 12px;
+      a {
+        display:block;
+//        @extend .white-box;
+        width:100%; height:100%;
+        text-align: center;
+        &:hover { opacity: 0.5; }
+
+        i { @include font-size(42); display: block; background-color: $color__fipra-blue-gray; color: white; padding:$v-rhythm * 2 em(12px); }
+        .circle-icon { margin-bottom:0; }
+        .expertise-area-name { @include font-size(18); padding: $v-rhythm em(12px); }
+      }
     }
   }
 
-  .owl-page { span { background:$color__fipra-blue !important; } }
 }
 
 // Expertise landing page

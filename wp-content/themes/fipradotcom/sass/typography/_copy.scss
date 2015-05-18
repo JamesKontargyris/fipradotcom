@@ -16,16 +16,12 @@ cite {
 
 blockquote {
   margin: 0 0 $v-rhythm * 2 0;
-  @include font-size(28);
-  line-height: $v-rhythm * 3;
-  color: $color__fipra-blue-gray;
-  font-style: italic;
+  @include font-size(21);
+  line-height: $v-rhythm * 2.5;
 }
 
 address {
-  font-family: $font__sans;
   font-style: normal;
-  font-weight: $font__bold;
   margin:0 0 $v-rhythm * 2 0;
   &.no-bottom-margin { margin-bottom:0; }
 }

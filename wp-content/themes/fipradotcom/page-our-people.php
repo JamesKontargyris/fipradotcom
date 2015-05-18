@@ -18,17 +18,17 @@ get_header(); ?>
 
 <div id="content-container">
 
-    <div id="hero" class="full-width-block-container our-people">
-        <div class="full-width-block-content-container flex grey bg-image">
+    <div id="hero" class="full-width-block-container with-content-bar our-people">
+        <div class="full-width-block-content-container content-bar flex grey bg-image">
             <div class="full-width-block-content">
                 <h1 class="upper center">Our People</h1>
                 <h3 class="center no-top-margin">Praesent a magna tincidunt, elementum velit sed, sollicitudin mauris</h3>
                 <div class="row">
                     <div class="col-6-m no-bottom-margin">
-                        <p>In venenatis neque et hendrerit iaculis. Cras velit sem, consectetur quis semper nec, finibus sit amet libero. Aliquam ut ante tristique, egestas tortor et, ullamcorper odio. Donec quis mi efficitur, mattis diam pulvinar, facilisis dolor. Suspendisse in placerat sapien.</p>
+                        <p class="no-bottom-margin">In venenatis neque et hendrerit iaculis. Cras velit sem, consectetur quis semper nec, finibus sit amet libero. Aliquam ut ante tristique, egestas tortor et, ullamcorper odio. Donec quis mi efficitur, mattis diam pulvinar, facilisis dolor. Suspendisse in placerat sapien.</p>
                     </div>
                     <div class="col-6-m no-bottom-margin">
-                        <p>Etiam vehicula commodo fringilla. Praesent a magna tincidunt, elementum velit sed, sollicitudin mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam commodo nec eros sed suscipit. Vivamus nunc nulla, tristique nec pellentesque ac, egestas sed leo.</p>
+                        <p class="no-bottom-margin">Etiam vehicula commodo fringilla. Praesent a magna tincidunt, elementum velit sed, sollicitudin mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam commodo nec eros sed suscipit. Vivamus nunc nulla, tristique nec pellentesque ac, egestas sed leo.</p>
                     </div>
                 </div>
             </div>
@@ -167,7 +167,7 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                                <?php for($i = 1; $i <= 4; $i++): ?>
+                            <?php for($i = 1; $i <= 4; $i++): ?>
                                 <div class="person banking-and-financial-services country-3">
                                     <div class="person-profile-photo">
                                         <a href="/profile">
@@ -179,7 +179,7 @@ get_header(); ?>
                                         <h6>Country 3, Banking and Financial Services</h6>
                                         <div class="btn-container">
                                             <a href="/profile" class="btn">
-                                               <div class="btn-text"><i class="icon-right-circle-1"></i></div>
+                                                <div class="btn-text"><i class="icon-right-circle-1"></i></div>
                                             </a>
                                         </div>
                                         <div class="person-contact-details">
@@ -216,7 +216,7 @@ get_header(); ?>
                                         <h6>Country 2, Chemical, Industrials and Mining</h6>
                                         <div class="btn-container">
                                             <a href="/profile" class="btn">
-                                               <div class="btn-text"><i class="icon-right-circle-1"></i></div>
+                                                <div class="btn-text"><i class="icon-right-circle-1"></i></div>
                                             </a>
                                         </div>
                                         <div class="person-contact-details">
@@ -253,7 +253,7 @@ get_header(); ?>
                                         <h6>Country 1, Energy and Environment</h6>
                                         <div class="btn-container">
                                             <a href="/profile" class="btn">
-                                               <div class="btn-text"><i class="icon-right-circle-1"></i></div>
+                                                <div class="btn-text"><i class="icon-right-circle-1"></i></div>
                                             </a>
                                         </div>
                                         <div class="person-contact-details">
@@ -353,9 +353,9 @@ get_header(); ?>
                                         </div>
                                     </div>
                                 </div>
-                                <?php endfor; ?>
+                            <?php endfor; ?>
 
-                            </div>
+                        </div>
                     </div>
 
                 </main><!-- #main -->

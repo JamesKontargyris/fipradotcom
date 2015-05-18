@@ -12,6 +12,7 @@ $color__fipra-mid-gray: lighten(#d1d5d9, 5%);
 $color__fipra-dark-gray: darken(saturate($color__fipra-blue-gray, 5%), 12%);
 $color__fipra-orange: #DE8A56;
 $color__fipra-light-orange: #fce5c3;
+$color__fipra-red: #cc0a12;
 
 $color_soft-black: #222;
 $color_black: #000;
@@ -31,7 +32,7 @@ $color__text-input: #666;
 $color__text-input-focus: #111;
 $color__link: $color__fipra-blue;
 $color__link-visited: $color__fipra-violet;
-$color__link-hover: $color__fipra-blue-gray;
+$color__link-hover: $color__fipra-red;
 $color__text-main: #222222;
 
 $color__border-button: #ccc #ccc #bbb;

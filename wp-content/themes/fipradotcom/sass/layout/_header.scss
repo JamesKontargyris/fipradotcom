@@ -72,6 +72,7 @@
         &.reverse-background { @include linear-gradient(darken($color__fipra-blue-gray, 15%) 0%, $color__fipra-blue-gray 25%);}
         &:hover {
           padding-top:$v-rhythm * 1.5;
+          text-decoration: none;
         }
         &:focus {
           outline:0;
