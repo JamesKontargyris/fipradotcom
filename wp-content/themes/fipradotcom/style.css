@@ -598,36 +598,38 @@ table:not(.no-style) {
 .owl-prev, .owl-next {
   cursor: pointer; }
 
-.testimonial-group blockquote.testimonial {
-  margin-bottom: 0; }
-  .testimonial-group blockquote.testimonial:not(:last-child) {
-    margin-bottom: 1.5rem; }
-  .testimonial-group blockquote.testimonial .quote {
-    width: 100%;
-    padding: 1.5rem 0;
-    font-weight: 400;
-    letter-spacing: 1px;
-    font-size: 21px;
-    font-size: 1.3125rem;
-    font-style: normal;
-    line-height: 1.875rem;
-    text-align: center; }
-  .testimonial-group blockquote.testimonial .author {
-    padding: 1.125rem 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-size: 0.875rem;
-    font-style: normal;
-    line-height: 1.125rem;
-    padding: 0.75rem 0;
-    text-align: center; }
-    .testimonial-group blockquote.testimonial .author::after {
-      clear: both;
-      content: "";
-      display: table; }
-    @media screen and (min-width: 769px) {
-      .testimonial-group blockquote.testimonial .author {
-        display: block; } }
+.testimonial-group {
+  text-align: center; }
+  .testimonial-group.left {
+    text-align: left !important; }
+  .testimonial-group blockquote.testimonial {
+    margin-bottom: 0; }
+    .testimonial-group blockquote.testimonial:not(:last-child) {
+      margin-bottom: 1.5rem; }
+    .testimonial-group blockquote.testimonial .quote {
+      width: 100%;
+      padding: 0.75rem 0;
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-size: 21px;
+      font-size: 1.3125rem;
+      font-style: normal;
+      line-height: 1.875rem; }
+    .testimonial-group blockquote.testimonial .author {
+      padding: 1.125rem 0;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-size: 0.875rem;
+      font-style: normal;
+      line-height: 1.125rem;
+      padding: 0.75rem 0; }
+      .testimonial-group blockquote.testimonial .author::after {
+        clear: both;
+        content: "";
+        display: table; }
+      @media screen and (min-width: 769px) {
+        .testimonial-group blockquote.testimonial .author {
+          display: block; } }
 
 /*--------------------------------------------------------------
 # Layout
@@ -4384,6 +4386,9 @@ embed, iframe, object {
 
 .job-listing p.lead {
   font-weight: 700; }
+
+.careers-content-area .owl-controls {
+  text-align: left !important; }
 
 .our-people .full-width-block-content {
   padding-top: 0.75rem;

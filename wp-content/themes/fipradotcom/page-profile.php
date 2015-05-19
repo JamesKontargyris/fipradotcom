@@ -26,7 +26,6 @@ get_header(); ?>
         <div class="row content-area">
             <ul class="anchor-links-list no-margin no-bullet">
                 <li class="menu-title menu-title-toggle"><i class="icon-menu-1"></i> Jump to...</li>
-                <li class="hide-s"><a class="jump-to-link" href="#testimonials">Testimonials <i class="icon-down-open"></i></a></li>
                 <li class="hide-s"><a class="jump-to-link" href="#expertise">Ukko's Expertise <i class="icon-down-open"></i></a></li>
                 <li class="hide-s hide-m"><a class="jump-to-link" href="#contact">Contact Ukko <i class="icon-down-open"></i></a></li>
                 <li class="hide-s hide-m"><a class="jump-to-link" href="#languages">Languages Spoken <i class="icon-down-open"></i></a></li>
@@ -126,6 +125,7 @@ get_header(); ?>
             </div><!-- #secondary -->
 
         </div><!-- #content -->
+
     </div>
 </div><!-- #content-container   -->
 

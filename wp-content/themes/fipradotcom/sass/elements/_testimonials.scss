@@ -1,4 +1,6 @@
 .testimonial-group {
+  text-align: center;
+  &.left { text-align: left !important; }
 
   blockquote.testimonial {
     margin-bottom: 0;
@@ -6,14 +8,14 @@
 
     .quote {
       width: 100%;
-      padding: $v-rhythm * 2 0;
+      padding: $v-rhythm 0;
       font-weight: $font__normal;
       letter-spacing: 1px;
 //      color: $color__fipra-dark-gray;
       @include font-size(21);
       font-style: normal;
       line-height: $v-rhythm * 2.5;
-      text-align: center;
+
     }
 
     .author {
@@ -26,7 +28,6 @@
       line-height: $v-rhythm * 1.5;
       //      margin-top:$v-rhythm * 2;
       padding: $v-rhythm 0;
-      text-align: center;
 
 
       @include media($media__medium) {

@@ -21,3 +21,7 @@
 .job-listing {
   p.lead { font-weight: $font__bold; }
 }
+
+.careers-content-area {
+  .owl-controls { text-align: left !important; }
+}

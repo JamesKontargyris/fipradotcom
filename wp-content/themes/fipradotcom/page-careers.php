@@ -18,7 +18,7 @@ get_header(); ?>
 
 
                     <div class="row">
-                        <div class="col-5-m">
+                        <div class="col-4-m">
                             <h1>Careers with Fipra</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor ullamcorper eu tristique risus. Nulla consequat volutpat augue a elementum.</p>
 
@@ -32,60 +32,9 @@ get_header(); ?>
 
                             <hr/>
 
-                            <div class="testimonial-container hide-s">
-                                <h5 id="get-in-touch">Working for Fipra</h5>
-
-                                <div class="testimonial-group">
-                                    <blockquote cite="http://test.com" class="testimonial">
-                                        <div class="quote">
-                                            "Testimonial number 1 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada."
-                                        </div>
-                                        <footer class="author">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />
-                                            <div class="author-details">
-                                                <span class="name">Author Name</span><br/>Position, Organisation</strong>
-                                            </div>
-                                        </footer>
-                                        <span class="triangle"></span>
-                                    </blockquote>
-                                    <blockquote cite="http://test.com" class="testimonial">
-                                        <div class="quote">
-                                            "Testimonial number 2 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada. Fusce eget orci convallis."
-                                        </div>
-                                        <footer class="author">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />
-                                            <div class="author-details">
-                                                <span class="name">Author Name</span><br/>Position, Organisation</strong>
-                                            </div>
-                                        </footer>
-                                        <span class="triangle"></span>
-                                    </blockquote>
-                                    <blockquote cite="http://test.com" class="testimonial">
-                                        <div class="quote">
-                                            "Testimonial number 3 Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada."
-                                        </div>
-                                        <footer class="author">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />
-                                            <div class="author-details">
-                                                <span class="name">Author Name</span><br/>Position, Organisation</strong>
-                                            </div>
-                                        </footer>
-                                        <span class="triangle"></span>
-                                    </blockquote>
-                                </div>
-                                <div class="testimonial-group-carousel-controls no-margin">
-                                    <button class="button owl-prev" data-carousel=".testimonial-group">
-                                        <i class="icon-left-open-2" ></i> Previous
-                                    </button>
-                                    <button class="button owl-next" data-carousel=".testimonial-group">
-                                        Next <i class="icon-right-open-2"></i>
-                                    </button>
-                                </div>
-                            </div>
-
                         </div>
 
-                        <div class="col-7-m">
+                        <div class="col-8-m">
                             <h4>4 Jobs Available</h4>
 
                             <div class="job-listing-block">
@@ -171,9 +120,46 @@ get_header(); ?>
                 </main><!-- #main -->
             </div><!-- #primary -->
 
-
-
         </div><!-- #content -->
+
+        <div class="full-width-block-container testimonial-container hide-s">
+            <div class="full-width-block-content-container dark-grey">
+                <div class="full-width-block-content">
+
+                    <h5 class="center">Working for Fipra</h5>
+                    <section id="testimonial-carousel" class="testimonial-group carousel">
+
+                        <blockquote cite="http://test.com" class="testimonial">
+                            <div class="quote">
+                                "Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada."
+                            </div>
+                            <footer class="author">
+                                <!--                                <img src="--><?//= get_template_directory_uri(); ?><!--/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />-->
+                                <div class="author-details">
+                                    <span class="name">Author Name</span><br/>Position, Organisation</strong>
+                                </div>
+                            </footer>
+                            <span class="triangle"></span>
+                        </blockquote>
+                        <blockquote cite="http://test.com" class="testimonial">
+                            <div class="quote">
+                                "Donec eu gravida est. Aliquam vulputate felis augue. Vestibulum commodo nec ex id tempor. Etiam pulvinar dolor quis enim porttitor malesuada."
+                            </div>
+                            <footer class="author">
+                                <!--                                <img src="--><?//= get_template_directory_uri(); ?><!--/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" />-->
+                                <div class="author-details">
+                                    <span class="name">Author Name</span><br/>Position, Organisation</strong>
+                                </div>
+                            </footer>
+                            <span class="triangle"></span>
+                        </blockquote>
+
+                    </section>
+
+                </div>
+
+            </div>
+        </div>
     </div>
 </div><!-- #content-container   -->
 

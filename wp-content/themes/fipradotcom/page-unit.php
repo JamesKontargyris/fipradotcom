@@ -144,7 +144,7 @@ get_header(); ?>
             </div>
         </section>
 
-        <section id="public-affairs-services" class="full-width-block-container public-affairs-services-block">
+        <section id="testimonials" class="full-width-block-container public-affairs-services-block">
             <div class="full-width-block-content-container dark-grey">
 
                 <div class="full-width-block-content left">
