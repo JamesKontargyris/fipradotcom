@@ -1,6 +1,6 @@
 .full-width-block-container {
   &.unit {
-    @include media($media__medium) { min-height:em(400px); }
+//    @include media($media__medium) { min-height:em(400px); }
     //    @include media(max-width $media__small) { background:$color__fipra-blue !important; }
 
     .full-width-block-content {

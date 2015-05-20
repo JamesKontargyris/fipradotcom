@@ -48,3 +48,28 @@
   &.no-margin { margin: 0; }
 
 }
+
+.full-width-block-container {
+  h1, h2, h3 {
+    &.with-carousel-controls {
+      position: relative;
+      padding: 0 24px;
+      margin-bottom: $v-rhythm * 2;
+      i { @include font-size(24); }
+      .owl-prev, .owl-next { position: absolute; }
+      .owl-prev { left: 0; top: 0; }
+      .owl-next { right: 0; top: 0; }
+    }
+  }
+}
+
+.owl-carousel { &.with-controls { padding: 0 48px; } }
+.owl-buttons {
+  position:absolute;
+  width:100%;
+  top:50%;
+  margin-top:-32px;
+  left:0;
+  .owl-prev { position:absolute; left:0; }
+  .owl-next { position:absolute; right:0; }
+}

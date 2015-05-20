@@ -145,20 +145,33 @@
     });
     $("#public-affairs-services-carousel").owlCarousel({
         singleItem:true,
-        autoPlay: 5000
+        autoPlay: 5000,
+        navigation:true,
+        navigationText: ['<i class="icon-left-open-2"></i>', '<i class="icon-right-open-2"></i>']
+    });
+    $("#home-hero-carousel").owlCarousel({
+        singleItem:true,
+        autoPlay: 5000,
+        transitionStyle: "fade",
+        pagination:true
     });
 
     //Get number of items in team-carousel and work out how many to display in the carousel
     var numberOfItems = $('.team-carousel').data('number-of-items');
     $(".team-carousel").owlCarousel({
-        itemsCustom: [[0,1], [480,(numberOfItems < 2) ? numberOfItems : 2], [768,(numberOfItems < 3) ? numberOfItems : 3], [940, (numberOfItems < 4) ? numberOfItems : 4], [1300, (numberOfItems < 5) ? numberOfItems : 5]]
+        itemsCustom: [[0,1], [480,(numberOfItems < 2) ? numberOfItems : 2], [768,(numberOfItems < 3) ? numberOfItems : 3], [940, (numberOfItems < 4) ? numberOfItems : 4], [1300, (numberOfItems < 5) ? numberOfItems : 5]],
+        navigation:true,
+        navigationText: ['<i class="icon-left-open-2"></i>', '<i class="icon-right-open-2"></i>']
+
     });
 
     //Get number of items in expertise-carousel and work out how many to display in the carousel
     var numberOfItems = $('#expertise-carousel').data('number-of-items');
     $("#expertise-carousel").owlCarousel({
         //items: 4,
-        itemsCustom: [[0,1], [480,(numberOfItems < 2) ? numberOfItems : 2], [768,(numberOfItems < 3) ? numberOfItems : 3], [940, (numberOfItems < 4) ? numberOfItems : 4], [1300, (numberOfItems < 5) ? numberOfItems : 5]]
+        itemsCustom: [[0,1], [480,(numberOfItems < 2) ? numberOfItems : 2], [768,(numberOfItems < 3) ? numberOfItems : 3], [940, (numberOfItems < 4) ? numberOfItems : 4], [1300, (numberOfItems < 5) ? numberOfItems : 5]],
+        navigation:true,
+        navigationText: ['<i class="icon-left-open-2"></i>', '<i class="icon-right-open-2"></i>']
     });
 
     // Custom Navigation Events
@@ -187,6 +200,14 @@
 
         //    Set equal heights of testimonial quotes
         $('.testimonial-group .quote').matchHeight();
+
+        //    Set equal heights of homepage hero carousel elements
+        $('#home-hero-carousel .owl-item').matchHeight();
+        $('#home-hero-carousel .full-width-block-container').matchHeight();
+        $('#home-hero-carousel .full-width-block-content-container').matchHeight();
+
+        //Set equal heights of services and expertise boxes on homepage
+        $('#home-block-services-and-expertise').find('showcase-block').matchHeight();
 
 
         if($(window).width() >= 769) {

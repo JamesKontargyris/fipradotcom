@@ -75,10 +75,11 @@ p {
   }
   &.narrow {
     @include media($media__medium) {
-      padding-left:$column;
-      padding-right:$column;
+      padding-left:$column * 3;
+      padding-right:$column * 3;
     }
   }
+  &.small { @include font-size(14); }
 }
 
 .site-content {

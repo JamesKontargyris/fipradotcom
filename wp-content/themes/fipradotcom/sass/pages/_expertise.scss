@@ -1,44 +1,15 @@
 #hero {
   &.expertise {
-//    @include media($media__medium) { min-height:em(500px); }
-//    @include media($media__xlarge) { min-height:em(600px); }
-    //    @include media(max-width $media__small) { background:$color__fipra-blue !important; }
 
     .full-width-block-content-container {
-
       h1 { margin-bottom: $v-rhythm;
         i { display:block;
           @include media($media__medium) { display:inline-block; margin-right:rem(8px); }
         }
       }
     }
-
-    .content-bar {
-      @include media($media__medium) { padding-top:0; }
-      .circle-icon { @include media($media__medium) { margin-top:-110px; } }
-    }
   }
 
-}
-
-
-#team-menu-container, #expertise-menu-container {
-  h3 {
-    position: relative;
-    padding: 0 24px;
-    margin-bottom: $v-rhythm * 2;
-    i { @include font-size(24); }
-    .owl-prev, .owl-next { position: absolute; }
-    .owl-prev { left: 0; top: 0; }
-    .owl-next { right: 0; top: 0; }
-  }
-
-
-}
-
-#team-menu-container {
-  h3 { .owl-prev, .owl-next { color:$color__fipra-blue; } }
-  .full-width-block-content { padding-top: $v-rhythm * 2; padding-bottom: $v-rhythm * 2; }
 }
 
 #expertise-menu-container {

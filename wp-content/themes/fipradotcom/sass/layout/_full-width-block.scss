@@ -15,13 +15,20 @@
     }
   }
 
-  &.flex {
-    padding-top: 0; padding-right: 0; padding-left: 0; padding-bottom: 0;
+  &.collapse {
+    padding-top: 0 !important; padding-right: 0 !important; padding-left: 0 !important; padding-bottom: 0 !important;
   }
 }
 
-#hero {
-  .full-width-block-content-container:not(.flex) {
+.hero, #hero {
+//  Hero version
+  .full-width-block-content-container {
+    height:100%;
+//    Base padding
+    padding-top: $v-rhythm * 2; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 2;
+    @include media($media__small) { padding-top: $v-rhythm * 5; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 5; }
+
+//    Medium and large screen overrides
     @include media($media__medium) { padding-top: $v-rhythm * 7; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 7; }
     @include media($media__xlarge) { padding-top: $v-rhythm * 11; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 11; }
 
@@ -34,28 +41,29 @@
       @include media($media__medium) { padding-bottom: $v-rhythm * 3; padding-right: 0; padding-left: 0; padding-top: $v-rhythm * 11; }
       @include media($media__xlarge) { padding-bottom: $v-rhythm * 3; padding-right: 0; padding-left: 0; padding-top: $v-rhythm * 19; }
     }
-
+//    If this is a content bar, alter the padding so it doesn't fill the whole block area
     &.content-bar {
       @include media($media__medium) { padding-top: $v-rhythm * 3; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 3; }
     }
 
-    &.page-width { @extend .content-area; }
   }
 }
 
+// Non-hero version
 .full-width-block-content-container {
-  height:100%;
+  height: 100%;
   padding-top: $v-rhythm * 3; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 3;
+  @include media($media__medium) { padding-top: $v-rhythm * 5; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 5; }
 
-  &.flex {
-    padding-top: 0; padding-right: 0; padding-left: 0; padding-bottom: 0;
-  }
+  &.page-width { @extend .content-area; }
+  &.collapse { padding-top: 0; padding-right: 0; padding-left: 0; padding-bottom: 0; }
 }
 
 .full-width-block-container, .full-width-block-content-container {
 
-  color:darken($color__fipra-lighter-gray, 46%);
-  h1, h2, h3, h4, h5, h6 { color:$color_soft-black !important; }
+//  color:darken($color__fipra-lighter-gray, 46%);
+  color:darken($color__fipra-lighter-gray, 55%);
+  h1, h2, h3, h4, h5, h6 { color:$color__fipra-dark-gray !important; }
 
   &.blue {
     background-color: $color__fipra-blue;
@@ -78,7 +86,7 @@
   &.light-grey {
     background-color: $color__fipra-light-gray;
     color:darken($color__fipra-light-gray, 50%);
-    h1, h2, h3, h4, h5, h6 { color:$color_soft-black !important; }
+    h1, h2, h3, h4, h5, h6 { color:$color__fipra-dark-gray !important; }
     li.active a { color:$color_soft-black !important;}
     &.bg-image { background-color: rgba(saturate($color__fipra-light-gray, 3%), 0.9); }
   }
@@ -112,6 +120,14 @@
     &.bg-image { background-color: rgba(saturate($color__fipra-gold, 4%), 0.9); }
   }
 
+  &.faint-grey {
+    background-color: $color__fipra-lighter-gray;
+    h1, h2, h3, h4, h5, h6 { color:$color_soft-black !important; }
+    color:$color_soft-black;
+    li.active a { color:$color_soft-black !important;}
+    &.bg-image { background-color: rgba($color__fipra-lighter-gray, 0.7); @include media($media__medium) { background-color: rgba($color__fipra-lighter-gray, 0.3); } }
+  }
+
   &.blue, &.dark-grey, &.grey, &.turquoise, &.violet {
     h1, h2, h3, h4, h5, h6 { color:white !important; }
     a { color: white; &:hover { color:darken(white, 10%);} }
@@ -122,11 +138,21 @@
     .owl-page {
       span { background:white !important; }
     }
+    //    Owl Carousel navigation controls
+    .owl-buttons {
+      .owl-prev, .owl-next { background:white !important; i { color:$color__fipra-blue; } }
+    }
   }
 
   &.periwinkle, &.light-grey {
     h1, h2, h3, h4, h5, h6 { color:$color_soft-black; }
     li.active a { color:$color_soft-black !important;}
+
+    //    Owl Carousel navigation controls
+    .owl-buttons {
+      .owl-prev, .owl-next { background:$color__fipra-blue !important; i { color:white; } }
+    }
+
     @include media(max-width $media__large) {
       .entry {
         &:not(:last-child) { border-bottom:1px solid rgba(black, 0.1) !important; }
@@ -144,21 +170,25 @@
 
   &.left {
     text-align: center;
-    @include media($media__medium) { text-align: left; }
-    @include media($media__large) { &.narrow { padding-right:$column * 5; }
-    }
+    @include media($media__medium) { text-align: left; &.narrow { padding-right:$column * 6; } }
+    @include media($media__large) { &.narrow { padding-right:$column * 8; } }
+    @include media($media__xlarge) { &.narrow { padding-right:$column * 10; } }
   }
 
   &.right {
     text-align: center;
-    @include media($media__medium) { text-align: right; }
-    @include media($media__large) {
-      &.narrow { padding-left:$column * 5; }
-    }
+    @include media($media__medium) { text-align: left; &.narrow { padding-left:$column * 6; } }
+    @include media($media__large) { text-align: left; &.narrow { padding-left:$column * 8; } }
+    @include media($media__xlarge) { text-align: left; &.narrow { padding-left:$column * 10; } }
   }
 
   &.center {
-    &.narrow { @include media($media__large) { padding-left:$column * 2.5; padding-right:$column * 2.5; } }
+    &.narrow {
+      @include media($media__medium) {&.narrow { padding-left:$column * 3; padding-right:$column * 3; } }
+      @include media($media__large) { &.narrow { padding-left:$column * 4; padding-right:$column * 4; } }
+      @include media($media__xlarge) { &.narrow { padding-left:$column * 5; padding-right:$column * 5; } }
+    }
+
   }
 
 }

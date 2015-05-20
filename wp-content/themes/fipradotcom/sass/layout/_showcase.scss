@@ -46,20 +46,20 @@
 
   .row-of-1 {
     .showcase-block {
-      @include media($media__large) {
+      @include media($media__medium) {
         @include span-columns(12);
         @include omega(1n);
       }
       .showcase-block-content {
         @include row();
-        @include media($media__large) { width: 75%; margin: 0 auto; }
+        @include media($media__medium) { width: 75%; margin: 0 auto; }
       }
     }
   }
 
   .row-of-2 {
     .showcase-block {
-      @include media($media__large) {
+      @include media($media__medium) {
         @include span-columns(6);
         @include omega(2n);
       }
@@ -67,7 +67,7 @@
         @include row();
       }
     }
-    @include media($media__large) {
+    @include media($media__medium) {
       .shift-half-col { @include shift(3); }
       .shift-1-col { @include shift(6); }
     }
@@ -75,14 +75,14 @@
 
   .row-of-3 {
     .showcase-block {
-      @include media($media__large) {
+      @include media($media__medium) {
         @include span-columns(4);
         @include omega(3n);
       }
       .showcase-block-content {
       }
     }
-    @include media($media__large) {
+    @include media($media__medium) {
       .shift-half-col { @include shift(2); }
       .shift-1-col { @include shift(4); }
       .shift-2-col { @include shift(8); }
@@ -92,17 +92,17 @@
   .row-of-4 {
     .showcase-block {
 
-      @include media(min-width $media__small max-width $media__large) {
+      @include media(min-width $media__small max-width $media__medium) {
         @include span-columns(6);
         @include omega(2n);
       }
-      @include media($media__large) {
+      @include media($media__medium) {
         @include span-columns(3);
         @include omega(4n);
       }
 
     }
-    @include media($media__large) {
+    @include media($media__medium) {
       .shift-half-col { @include shift(1.5); }
       .shift-1-col { @include shift(3); }
       .shift-2-col { @include shift(6); }
@@ -113,17 +113,17 @@
   .row-of-5 {
     .showcase-block {
 
-      @include media(min-width $media__small max-width $media__large) {
+      @include media(min-width $media__small max-width $media__medium) {
         @include span-columns(6);
         @include omega(2n);
       }
-      @include media($media__large) {
+      @include media($media__medium) {
         @include span-columns(2.4);
         @include omega(5n);
       }
 
     }
-    @include media($media__large) {
+    @include media($media__medium) {
       .shift-half-col { @include shift(1.5); }
       .shift-1-col { @include shift(3); }
       .shift-2-col { @include shift(6); }

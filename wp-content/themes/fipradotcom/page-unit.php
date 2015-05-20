@@ -117,19 +117,19 @@ get_header(); ?>
 
         </div><!-- #content -->
 
-        <section id="team-menu-container" class="full-width-block-container">
-            <div class="full-width-block-content-container flex light-grey">
+        <section id="team-menu-container" class="full-width-block-container collapse">
+            <div class="full-width-block-content-container light-grey">
 
                 <div class="full-width-block-content">
-                    <h3 id="staff" class="upper small center"><i class="icon-left-circle-1 owl-prev" data-carousel="#practice-staff-carousel"></i> Our Team <i class="icon-right-circle-1 owl-next" data-carousel="#practice-staff-carousel"></i></h3>
+                    <h3 id="staff" class="upper small center">Our Team</h3>
 
-                    <div id="our-team-carousel" class="team-carousel" data-number-of-items="3">
-                        <?php for($i = 1; $i <= 3; $i++): ?>
+                    <div id="our-team-carousel" class="team-carousel with-controls" data-number-of-items="8">
+                        <?php for($i = 1; $i <= 8; $i++): ?>
                             <div style="" class="team-member">
                                 <div class="profile-photo">
                                     <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Ukko Metsola" /></a>
                                 </div>
-                                    <h4 class="no-margin"><a href="#">Ukko Metsola</a></h4>
+                                    <h4 class="no-bottom-margin"><a href="#">Ukko Metsola</a></h4>
                                 <h6>Position</h6>
                                 <ul class="team-member-expertise no-bullet">
                                     <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-plane"></i></a></li>
@@ -144,7 +144,7 @@ get_header(); ?>
             </div>
         </section>
 
-        <section id="testimonials" class="full-width-block-container public-affairs-services-block">
+        <section id="testimonials" class="full-width-block-container collapse">
             <div class="full-width-block-content-container dark-grey">
 
                 <div class="full-width-block-content left">

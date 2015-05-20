@@ -243,3 +243,5 @@
 
 .hide-s { @include media(max-width $media__medium) { display:none !important; } }
 .hide-m { @include media($media__medium) { display:none !important; } }
+
+.v-align { @include vertical-align; }

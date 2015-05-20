@@ -23,7 +23,6 @@ get_header(); ?>
     <div id="hero" class="full-width-block-container with-content-bar expertise">
         <div class="full-width-block-content-container content-bar grey bg-image">
             <div class="full-width-block-content left narrow">
-<!--                <div class="circle-icon small"><i class="icon-plane"></i></div>-->
                 <h1 class="upper"><i class="icon-plane"></i> Travel, Transport and Logistics</h1>
                 <p class="lead no-margin">Fipra’s Travel, Transport &amp; Logistics (TTL) practice, lead by <a
                         href="#">Ukko Metsola</a>, is composed of experienced staff and <a href="#">Special Advisers</a> with diverse expertise in the policies and regulatory frameworks that affect the TTL industries.</p>
@@ -35,7 +34,6 @@ get_header(); ?>
         <div class="row content-area">
             <ul class="anchor-links-list no-margin no-bullet">
                 <li class="menu-title menu-title-toggle"><i class="icon-menu-1"></i> Jump to...</li>
-                <li class="hide-s"><a class="jump-to-link" href="#testimonials">Testimonials <i class="icon-down-open"></i></a></li>
                 <li class="hide-s"><a class="jump-to-link" href="#staff-menu-container">Practice Staff <i class="icon-down-open"></i></a></li>
                 <li class="hide-s hide-m"><a class="jump-to-link" href="#practice-lead">Practice Lead <i class="icon-down-open"></i></a></li>
                 <li class="hide-s"><a class="jump-to-link" href="#expertise-menu-container">More of our Expertise <i class="icon-down-open"></i></a></li>
@@ -105,33 +103,33 @@ get_header(); ?>
         </div><!-- #content -->
     </div><!-- #site-content-container -->
 
-    <div id="team-menu-container" class="full-width-block-container">
-        <div class="full-width-block-content-container flex light-grey">
+    <section id="team-menu-container" class="full-width-block-container collapse">
+        <div class="full-width-block-content-container light-grey">
 
             <div class="full-width-block-content">
-                <h3 id="staff" class="upper small center"><i class="icon-left-circle-1 owl-prev" data-carousel="#practice-staff-carousel"></i> Practice Staff <i class="icon-right-circle-1 owl-next" data-carousel="#practice-staff-carousel"></i></h3>
+                <h3 id="staff" class="upper small center">Practice Staff</h3>
 
-                <div id="practice-staff-carousel" class="team-carousel" data-number-of-items="12">
+                <div id="practice-staff-carousel" class="team-carousel with-controls" data-number-of-items="12">
                     <?php for($i = 1; $i <= 12; $i++): ?>
                         <div style="" class="team-member">
                             <div class="profile-photo">
                                 <a href="#"> <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Ukko Metsola" /></a>
                             </div>
-                                <h4 class="no-margin"><a href="#">Ukko Metsola</a></h4>
+                                <h4 class="no-bottom-margin"><a href="#">Ukko Metsola</a></h4>
                             <h6>Position, Fipra Unit</h6>
                         </div>
                     <?php endfor; ?>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div id="expertise-menu-container" class="full-width-block-container">
+    <section id="expertise-menu-container" class="full-width-block-container collapse">
         <div class="full-width-block-content-container dark-grey">
             <div class="full-width-block-content">
-                <h3 id="expertise-menu" class="upper small center"><i class="icon-left-circle-1 owl-prev" data-carousel="#expertise-carousel"></i> Our Expertise <i class="icon-right-circle-1 owl-next" data-carousel="#expertise-carousel"></i></h3>
+                <h3 id="expertise-menu" class="upper small center">Our Expertise</h3>
 
-                <div id="expertise-carousel" data-number-of-items="7">
+                <div id="expertise-carousel" class="with-controls" data-number-of-items="7">
                     <?php for($i = 1; $i <= 7; $i++): ?>
                         <div class="expertise-area center">
                             <a href="#">
@@ -144,7 +142,7 @@ get_header(); ?>
 
             </div>
         </div>
-    </div>
+    </section>
 
 </div><!-- #content-container   -->
 

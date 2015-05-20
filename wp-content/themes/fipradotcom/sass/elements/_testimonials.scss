@@ -15,6 +15,10 @@
       @include font-size(21);
       font-style: normal;
       line-height: $v-rhythm * 2.5;
+      @include media($media__medium) {
+        padding-left:$column * 3;
+        padding-right:$column * 3;
+      }
 
     }
 

@@ -24,8 +24,7 @@ h1 {
   @include font-size(24);
   line-height: $v-rhythm * 2.5;
 
-  @include media($media__medium) { @include font-size(24); letter-spacing:-1px; line-height: $v-rhythm * 3; }
-  @include media($media__large) { @include font-size(30); line-height: $v-rhythm * 3.5; }
+  @include media($media__large) { letter-spacing:-1px; @include font-size(30); line-height: $v-rhythm * 3.5; }
 
   &.small {
 //    font-weight: $font__normal;
@@ -38,7 +37,7 @@ h1 {
     letter-spacing: normal;
     @include font-size(16);
     line-height: $v-rhythm * 2;
-    font-weight: $font__black;
+    font-weight: $font__bold;
     text-transform: uppercase;
   }
 }
@@ -53,8 +52,8 @@ h2 {
 
   //  Style similar to H1 in .hero-banner and feature blocks
   &.feature {
-//    @include media($media__small) { @include font-size(28); line-height: $v-rhythm * 3; }
-//    @include media($media__large) { @include font-size(38); line-height: $v-rhythm * 4; }
+    @include media($media__small) { @include font-size(28); line-height: $v-rhythm * 3; }
+    @include media($media__large) { @include font-size(38); line-height: $v-rhythm * 4; font-weight: $font__light; }
   }
 }
 
@@ -90,8 +89,8 @@ h5 { @include font-size(14); font-weight: $font__normal; text-transform: upperca
 h6 { @include font-size(14); font-weight: $font__bold; }
 
 h1, h2, h3, h4, h5, h6 {
-  &.no-margin { margin:0; }
-  &.no-bottom-margin { bottom-margin:0 !important; }
+  &.no-margin { margin:0 !important; }
+  &.no-bottom-margin { margin-bottom:0 !important; }
   &.no-top-margin { margin-top:0; }
   &.upper { font-weight: $font__normal; letter-spacing: 7px; text-transform: uppercase; }
 }

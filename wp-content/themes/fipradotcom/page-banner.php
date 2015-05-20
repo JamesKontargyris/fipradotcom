@@ -136,7 +136,7 @@
             <h1 class="upper small center">Public Affairs Services</h1>
             <div class="full-width-block-content left">
 
-                <div id="public-affairs-services-carousel" class="carousel">
+                <div id="public-affairs-services-carousel" class="carousel with-controls">
                     <div>
                         <div class="circle-icon"><i class="icon-globe"></i></div>
                         <h2 class="no-top-margin center">Strategic Planning</h2>
@@ -215,14 +215,6 @@
                     </div>
                 </div>
 
-                <div class="carousel-controls">
-                    <button class="button owl-prev" data-carousel="#public-affairs-services-carousel">
-                        <i class="icon-left-open-2" ></i> Previous
-                    </button>
-                    <button class="button owl-next" data-carousel="#public-affairs-services-carousel">
-                        Next <i class="icon-right-open-2"></i>
-                    </button>
-                </div>
             </div>
         </div>
     </section>

@@ -8,7 +8,6 @@
 get_header(); ?>
 
 <style>
-    /*    If dark photo*/
     .full-width-block-container.our-people {
         content:"";
         background:url('<?php echo get_template_directory_uri(); ?>/img/group_shot.jpg') center no-repeat;
@@ -19,7 +18,7 @@ get_header(); ?>
 <div id="content-container">
 
     <div id="hero" class="full-width-block-container with-content-bar our-people">
-        <div class="full-width-block-content-container content-bar flex grey bg-image">
+        <div class="full-width-block-content-container content-bar grey bg-image">
             <div class="full-width-block-content">
                 <h1 class="upper center">Our People</h1>
                 <h3 class="center no-top-margin">Praesent a magna tincidunt, elementum velit sed, sollicitudin mauris</h3>
