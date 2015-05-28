@@ -245,6 +245,14 @@ function fipradotcom_scripts()
     );
 
     wp_enqueue_script(
+        'fipradotcom-hover-touch-unstick',
+        get_template_directory_uri() . '/js/hoverTouchUnstick.js',
+        array(),
+        '20150528',
+        true
+    );
+
+    wp_enqueue_script(
         'fipradotcom-user-js',
         get_template_directory_uri() . '/js/site.js',
         array(),

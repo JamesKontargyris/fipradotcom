@@ -9,7 +9,7 @@ get_header(); ?>
 
 <style>
     #hero {
-        background:url('<?php echo get_template_directory_uri(); ?>/img/amsterdam.jpg') top no-repeat;
+        background:url('<?php echo get_template_directory_uri(); ?>/img/amsterdam3.jpg') center no-repeat;
         background-size:cover;
     }
 </style>

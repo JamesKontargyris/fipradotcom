@@ -24,7 +24,7 @@ get_header(); ?>
             <div class="full-width-block-content left narrow">
                 <h1 class="upper"><div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/arrows.svg"); ?></div> Travel, Transport and Logistics</h1>
                 <p class="lead no-margin">Fipra’s Travel, Transport &amp; Logistics (TTL) practice, lead by <a
-                        href="#">Ukko Metsola</a>, is composed of experienced staff and <a href="#">Special Advisers</a> with diverse expertise in the policies and regulatory frameworks that affect the TTL industries.</p>
+                        href="#">Ukko Metsola</a>, is composed of experienced staff and Special Advisers with diverse expertise in the policies and regulatory frameworks that affect the industries within the sector.  We aim to help deliver bottom-line savings, or reduced regulatory risks and costs, to our clients.</p>
             </div>
         </div>
     </div>
@@ -47,21 +47,38 @@ get_header(); ?>
             <div id="primary">
                 <main id="main" class="site-main" role="main">
 
-                    <p>The TTL business unit services are geared to deliver bottom-line savings, or reduced regulatory risks and costs, to our clients.</p>
+                    <p>Since 2000, Fipra’s Transport, Travel and Logistics practice  has supported a large
+                        number of clients at different levels of political decision-making. We have a proven track
+                        record of working closely and constructively with political and regulatory bodies including
+                        national Governments (also at Regional and Local Government) in countries around the world, including vis-à-vis the Institutions of the European Union and intergovernmental organizations (e.g. International Maritime Organisation, World Trade Organisation).</p>
 
-                    <p>Since 2000, Fipra’s TTL practice has supported a large number of clients at different levels of political decision-making: we have a proven track record of working closely and constructively with political and regulatory bodies including local and national governments more than 25 countries, and vis-à-vis the Institutions of the European Union and intergovernmental organizations (e.g. International Maritime Organisation, World Trade Organisation).</p>
+                    <p>Through Fipra’s Global Network and our network of <a href="#">Special Advisers</a> we are able
+                        to devise and execute effective ‘one-stop-shop’ campaigns across multiple jurisdictions. We
+                        regularly serve as an extension to some of the world’s largest companies’ in-house government
+                        affairs teams. Fipra provides across-the-board Public Affairs services to our clients to help
+                        ensure they are able to navigate complex policy and regulatory issues quickly and effectively.
+                        We are also used to working closely with leading law firms, management consultancies and PR
+                        firms retained by our clients, as well as with colleagues from elsewhere in the public affairs
+                        industry.</p>
 
-                    <p>Current and prior clients come from aviation, rail, road freight, maritime, cruising, express services, private for-hire transport and others. Our long-lasting partnership with a number of clients is a testimony to our ability to continuously generate a positive return on our clients’ investment through Fipra.</p>
+                    <p>Current and prior clients come from aviation, rail, road freight, maritime, cruising, express
+                        services, private for-hire transport and other industries within the sector. Our long-lasting
+                        partnership with a number of clients is a testimony to our ability to continuously generate a
+                        positive return on our clients’ investment through Fipra.</p>
 
-                    <p>Besides transportation policies we have worked extensively on environmental policies, particularly in the political context of the EU / Brussels.</p>
+                    <p>As part of our work on transportation policies, we have also worked extensively on related
+                        environmental policies and issues, particularly in the political context of the European Union
+                        and the EU institutions in Brussels and Strasbourg.</p>
 
-                    <p>Through Fipra’s Global Network we are able to devise and execute effective ‘one-stop-shop’ campaigns across multiple jurisdictions. We regularly serve as an extension to some of the world’s largest companies’ in-house Government Affairs teams. Fipra provides holistic Public Affairs services to our clients ensuring that they are able to navigate complex policy and regulatory issues quickly and effectively. We have experience working seamlessly with leading law firms, management consultancies and PR firms, as well as with colleagues from the Public Affairs sector.</p>
+                    <p>As a result of the range and diversity of our clients in the transportation industries, Fipra is
+                        well placed to identify patterns in the overall threats and opportunities that organisations
+                        face and to assist pro-actively with the creation of industry or issue-specific alliances
+                        between like-minded organisations.</p>
 
-                    <p>Our industry-leading standards for professionalism and transparency have made Fipra a trusted interlocutor in the areas of Travel, Transport & Logistics and ensure that our clients are always at the forefront of discussions on important policy and regulatory decisions.</p>
-
-                    <p>As a result of the number and diversity of our TTL clients Fipra is uniquely able to identify patterns in the threats and opportunities that organisations face and to proactively assist with the creation of industry or issue-specific alliances between likeminded organisations.</p>
-
-                    <p>We are experts in political processes. Where requested, Fipra is well-positioned to provide complimentary media support services by assisting with the preparation and distribution of press releases, arranging interviews with leading media outlets, and organising press conferences.</p>
+                    <p>We are experts in political and regulatory processes. Where requested, Fipra is also
+                        well-positioned to assist with complimentary media support services, including drafting of press
+                        releases, arranging interviews with leading media outlets, and assist clients in preparing for
+                        press conferences.</p>
 
                     <p>To learn more about how Fipra’s TTL team can support you please contact <a href="#">Ukko Metsola</a>.</p>
 

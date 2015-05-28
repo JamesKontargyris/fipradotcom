@@ -5,19 +5,18 @@
 
       .full-width-block-content {
         h1 { margin-bottom: $v-rhythm; position:relative;
-          @include media($media__medium) { padding-left: 60px; }
+          @include media($media__medium) { padding-left: 52px; }
 
           .svg-icon {
             @include media(max-width $media__medium) { display:none; }
             position: absolute;
             top:6px; left:0;
-            width: 42px; height: 42px;
+            width: 36px; height: 36px;
             margin-right:0;
           }
         }
       }
 
-      p { @include media($media__medium) { padding-left: 60px; } }
     }
 
   }

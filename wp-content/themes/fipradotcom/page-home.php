@@ -29,7 +29,11 @@ get_header(); ?>
 
     <div id="site-content-container">
 
-        <div id="home-hero-carousel">
+        <section id="home-hero-carousel-container">
+            <i class="owl-prev icon-left-circle-1" data-carousel="#home-hero-carousel"></i>
+            <i class="owl-next icon-right-circle-1" data-carousel="#home-hero-carousel"></i>
+
+            <div id="home-hero-carousel">
 
             <div class="hero hero-1">
                 <div class="full-width-block-container with-content-bar">
@@ -87,6 +91,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
+        </section>
 
         <section id="intro">
             <div class="full-width-block-container">
@@ -111,7 +116,7 @@ get_header(); ?>
 
         <section id="about-fipra" class="home-feature-block">
             <div class="full-width-block-container">
-                <div class="full-width-block-content-container grey">
+                <div class="full-width-block-content-container grey small-padding">
                     <div class="full-width-block-content">
                         <div class="row">
                             <div class="col-6-m no-bottom-margin home-feature-block-text">
