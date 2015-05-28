@@ -18,6 +18,10 @@
   &.collapse {
     padding-top: 0 !important; padding-right: 0 !important; padding-left: 0 !important; padding-bottom: 0 !important;
   }
+
+  &.small-padding {
+    padding-top: $v-rhythm * 3 !important; padding-right: 0 !important; padding-left: 0 !important; padding-bottom: $v-rhythm * 3 !important;
+  }
 }
 
 .hero, #hero {
@@ -171,21 +175,21 @@
   &.left {
     text-align: center;
     @include media($media__medium) { text-align: left; &.narrow { padding-right:$column * 6; } }
-    @include media($media__large) { &.narrow { padding-right:$column * 8; } }
+//    @include media($media__large) { &.narrow { padding-right:$column * 8; } }
     @include media($media__xlarge) { &.narrow { padding-right:$column * 10; } }
   }
 
   &.right {
     text-align: center;
     @include media($media__medium) { text-align: left; &.narrow { padding-left:$column * 6; } }
-    @include media($media__large) { text-align: left; &.narrow { padding-left:$column * 8; } }
+//    @include media($media__large) { text-align: left; &.narrow { padding-left:$column * 8; } }
     @include media($media__xlarge) { text-align: left; &.narrow { padding-left:$column * 10; } }
   }
 
   &.center {
     &.narrow {
       @include media($media__medium) {&.narrow { padding-left:$column * 3; padding-right:$column * 3; } }
-      @include media($media__large) { &.narrow { padding-left:$column * 4; padding-right:$column * 4; } }
+//      @include media($media__large) { &.narrow { padding-left:$column * 4; padding-right:$column * 4; } }
       @include media($media__xlarge) { &.narrow { padding-left:$column * 5; padding-right:$column * 5; } }
     }
 

@@ -4,23 +4,23 @@ get_header(); ?>
 
 <style>
     #home-hero-carousel .owl-item:nth-child(1) {
-        background:url('<?php echo get_template_directory_uri(); ?>/img/row_of_people.jpg') top no-repeat;
+        background:url('<?php echo get_template_directory_uri(); ?>/img/buildings9.jpg') center no-repeat;
         background-size:cover;
     }
     #home-hero-carousel .owl-item:nth-child(2) {
-        background:url('<?php echo get_template_directory_uri(); ?>/img/conference.jpg') center no-repeat;
+        background:url('<?php echo get_template_directory_uri(); ?>/img/buildings4.jpg') center no-repeat;
         background-size:cover;
     }
     #home-hero-carousel .owl-item:nth-child(3) {
-        background:url('<?php echo get_template_directory_uri(); ?>/img/people.jpg') center no-repeat;
+        background:url('<?php echo get_template_directory_uri(); ?>/img/buildings14.jpg') center no-repeat;
         background-size:cover;
     }
     #home-hero-carousel .owl-item:nth-child(4) {
-        background:url('<?php echo get_template_directory_uri(); ?>/img/speaker2.jpg') top no-repeat;
+        background:url('<?php echo get_template_directory_uri(); ?>/img/buildings15.jpg') center no-repeat;
         background-size:cover;
     }
     #home-hero-carousel .owl-item:nth-child(5) {
-        background:url('<?php echo get_template_directory_uri(); ?>/img/row_of_people2.jpg') top no-repeat;
+        background:url('<?php echo get_template_directory_uri(); ?>/img/buildings10.jpg') top no-repeat;
         background-size:cover;
     }
 </style>
@@ -37,42 +37,42 @@ get_header(); ?>
 
                 <div class="hero hero-1">
                     <div class="full-width-block-container with-content-bar">
-                        <div class="full-width-block-content-container content-bar dark-grey bg-image">
-                            <div class="full-width-block-content center narrow">
-                                <h1>Professional Public Affairs <br/> in over 50 Countries</h1>
+                        <div class="full-width-block-content-container content-bar blue bg-image">
+                            <div class="full-width-block-content left narrow">
+                                <h1 class="upper">Professional Public Affairs in over 50 Countries</h1>
                                 <p class="blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ipsum modi molestiae necessitatibus, non quae quaerat qui voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <p class="no-margin"><a class="btn primary btn-large" href="#">About Fipra</a></p>
+                                <p class="no-margin"><a class="btn primary" href="#">About Fipra</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="hero hero-2">
                     <div class="full-width-block-container with-content-bar">
-                        <div class="full-width-block-content-container content-bar dark-grey bg-image">
-                            <div class="full-width-block-content center narrow">
-                                <h1>Dedicated Expertise</h1>
+                        <div class="full-width-block-content-container content-bar grey bg-image">
+                            <div class="full-width-block-content left narrow">
+                                <h1 class="upper">Dedicated Expertise</h1>
                                 <p class="blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ipsum modi molestiae necessitatibus, non quae quaerat qui voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <p class="no-margin"><a class="btn primary btn-large" href="#">Our areas of expertise</a></p>
+                                <p class="no-margin"><a class="btn primary" href="#">Our areas of expertise</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="hero hero-3">
                     <div class="full-width-block-container with-content-bar">
-                        <div class="full-width-block-content-container content-bar dark-grey bg-image">
-                            <div class="full-width-block-content center narrow">
-                                <h1>Experts in Political Process</h1>
+                        <div class="full-width-block-content-container content-bar light-grey bg-image">
+                            <div class="full-width-block-content left narrow">
+                                <h1 class="upper">Experts in Political Process</h1>
                                 <p class="blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ipsum modi molestiae necessitatibus, non quae quaerat qui voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <p class="no-margin"><a class="btn primary btn-large" href="#">Read more</a></p>
+                                <p class="no-margin"><a class="btn primary" href="#">Read more</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="hero hero-4">
                     <div class="full-width-block-container with-content-bar">
-                        <div class="full-width-block-content-container content-bar faint-grey bg-image">
+                        <div class="full-width-block-content-container content-bar turquoise bg-image">
                             <div class="full-width-block-content left narrow">
-                                <h1>Experience in the field</h1>
+                                <h1 class="upper">Experience in the field</h1>
                                 <p class="blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ipsum modi molestiae necessitatibus, non quae quaerat qui voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <p class="no-margin"><a class="btn primary" href="#">Our Special Advisers</a></p>
                             </div>
@@ -81,9 +81,9 @@ get_header(); ?>
                 </div>
                 <div class="hero hero-5">
                     <div class="full-width-block-container with-content-bar">
-                        <div class="full-width-block-content-container content-bar dark-grey bg-image">
-                            <div class="full-width-block-content right narrow">
-                                <h1>A global one-stop-shop <br/> for policy and regulatory affairs</h1>
+                        <div class="full-width-block-content-container content-bar violet bg-image">
+                            <div class="full-width-block-content left narrow">
+                                <h1 class="upper">A one-stop-shop for policy and regulatory affairs</h1>
                                 <p class="blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ipsum modi molestiae necessitatibus, non quae quaerat qui voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <p class="no-margin"><a class="btn primary" href="#">Read more</a></p>
                             </div>
@@ -97,18 +97,16 @@ get_header(); ?>
             <div class="full-width-block-container">
                 <div class="full-width-block-content-container">
                     <div class="full-width-block-content">
-                        <h2 class="center">Introduction Title</h2>
+                        <h2 class="feature center">Introduction Title</h2>
                         <div class="row">
                             <div class="col-6-m no-bottom-margin">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate, quam sed scelerisque commodo, orci massa posuere libero, eget bibendum quam mauris non turpis. Cras dignissim risus id aliquam luctus. Etiam pretium odio nulla, eu consectetur justo condimentum nec. Donec ac vestibulum eros.</p>
-                                <p>Mauris ullamcorper lacus vel arcu laoreet sollicitudin. Donec ligula dolor, commodo at pharetra vitae, tincidunt aliquam libero. Nullam vestibulum efficitur sem, ullamcorper luctus nibh facilisis ac. Phasellus at ultricies magna, at lobortis quam. Proin non ex vel nisi commodo fringilla. Donec convallis laoreet velit luctus fermentum. Nam sit amet velit vulputate, porta tortor eget, eleifend orci. Suspendisse efficitur nisi convallis, dapibus odio pretium, ultricies lorem.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate, quam sed scelerisque commodo, orci massa posuere libero, eget bibendum quam mauris non turpis. Cras dignissim risus id aliquam luctus. Etiam pretium odio nulla, eu consectetur justo condimentum nec. Donec ac vestibulum eros. Mauris ullamcorper lacus vel arcu laoreet sollicitudin. Donec ligula dolor, commodo at pharetra vitae, tincidunt aliquam libero.</p>
                             </div>
                             <div class="col-6-m no-bottom-margin">
-                                <p>Curabitur blandit interdum quam a rutrum. Morbi viverra posuere nulla, a aliquet erat scelerisque nec. Sed lectus purus, viverra vel placerat quis, condimentum at tellus. Etiam suscipit euismod dui, et elementum quam laoreet eget. Proin eu enim augue. Curabitur eget eleifend felis. Donec maximus est at porta euismod.</p>
-                                <p>Vivamus ac nibh quis nisi ultrices vestibulum et vel urna. Sed nunc nibh, vehicula ultrices placerat in, dictum non lectus. Nam nec aliquet dolor. Duis malesuada varius lacus, id condimentum massa ornare non. Vestibulum tincidunt, ligula id consectetur suscipit, turpis purus sodales ex, ornare elementum urna neque eget augue. Nullam tellus dui, malesuada nec lorem non, cursus aliquet neque. Vivamus ac nibh quis nisi ultrices vestibulum et vel urna.</p>
+                                <p>Curabitur blandit interdum quam a rutrum. Morbi viverra posuere nulla, a aliquet erat scelerisque nec. Sed lectus purus, viverra vel placerat quis, condimentum at tellus. Etiam suscipit euismod dui, et elementum quam laoreet eget. Proin eu enim augue. Curabitur eget eleifend felis. Donec maximus est at porta euismod. Vivamus ac nibh quis nisi ultrices vestibulum et vel urna. Sed nunc nibh, vehicula ultrices placerat in, dictum non lectus.</p>
                             </div>
                         </div>
-                        <p class="center no-margin"><a class="btn btn-large primary" href="#">About Fipra</a></p>
+                        <p class="center no-margin"><a class="btn primary" href="#">About Fipra</a></p>
                     </div>
                 </div>
             </div>
@@ -123,29 +121,10 @@ get_header(); ?>
                                 <h1 class="feature no-margin">About Fipra</h1>
                                 <h2 class="feature">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at debitis deleniti facere id itaque labore laborum maiores, molestiae molestias, nemo numquam officia porro quam, repudiandae rerum temporibus velit voluptatem.</p>
-                                <p class="no-margin"><a href="#" class="btn primary btn-large">Find out more</a></p>
+                                <p class="no-margin"><a href="#" class="btn primary">Find out more</a></p>
                             </div>
                             <div class="col-6-m no-bottom-margin home-feature-block-image">
                                 <img src="http://placehold.it/1500x1000" alt="Image"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="text-section" class="home-feature-block">
-            <div class="full-width-block-container">
-                <div class="full-width-block-content-container grey">
-                    <div class="full-width-block-content">
-                        <div class="row">
-                            <div class="col-6-m no-bottom-margin home-feature-block-image">
-                                <img src="http://placehold.it/1500x1000" alt="Image"/>
-                            </div>
-                            <div class="col-6-m no-bottom-margin home-feature-block-text">
-                                <h1 class="feature no-margin">Another text section</h1>
-                                <h2 class="feature">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at debitis deleniti facere id itaque labore laborum maiores, molestiae molestias, nemo numquam officia porro quam, repudiandae rerum temporibus velit voluptatem.</p>
-                                <p class="no-margin"><a href="#" class="btn primary btn-large">Find out more</a></p>
                             </div>
                         </div>
                     </div>
@@ -206,7 +185,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>
-        <section id="testimonials" class="full-width-block-container public-affairs-services-block">
+        <section id="testimonials" class="full-width-block-container with-content-bar small-padding light-grey">
             <div class="full-width-block-content-container dark-grey">
 
                 <div class="full-width-block-content left">

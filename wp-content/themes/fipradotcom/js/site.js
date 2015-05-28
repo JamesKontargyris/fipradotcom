@@ -141,7 +141,7 @@
         rewindSpeed: 500,
         autoPlay: 5000,
         transitionStyle: "fade",
-        pagination: true
+        pagination: false
     });
     $("#public-affairs-services-carousel").owlCarousel({
         singleItem:true,
@@ -203,8 +203,8 @@
 
         //    Set equal heights of homepage hero carousel elements
         $('#home-hero-carousel .owl-item').matchHeight();
-        $('#home-hero-carousel .full-width-block-container').matchHeight();
         $('#home-hero-carousel .full-width-block-content-container').matchHeight();
+        $('#home-hero-carousel .full-width-block-container').matchHeight();
 
         //Set equal heights of services and expertise boxes on homepage
         $('#home-block-services-and-expertise').find('showcase-block').matchHeight();

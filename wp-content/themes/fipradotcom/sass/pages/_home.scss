@@ -1,22 +1,22 @@
 .home {
 
-  .full-width-block-container {
-    //    Change default padding on content-bar
-    &.with-content-bar {
-      @include media($media__large) { padding: $v-rhythm * 8 0; }
-      @include media($media__xlarge) { padding: $v-rhythm * 15 0; }
-
-      &.content-bar-top {
-        @include media($media__large) { padding: 0 0 $v-rhythm * 16; }
-        @include media($media__xlarge) { padding: 0 0 $v-rhythm * 30; }
-      }
-
-      &.content-bar-bottom {
-        @include media($media__large) { padding: $v-rhythm * 16 0 0; }
-        @include media($media__xlarge) { padding: $v-rhythm * 30 0 0; }
-      }
-    }
-  }
+//  .full-width-block-container {
+//    //    Change default padding on content-bar
+//    &.with-content-bar {
+//      @include media($media__large) { padding: $v-rhythm * 8 0; }
+//      @include media($media__xlarge) { padding: $v-rhythm * 15 0; }
+//
+//      &.content-bar-top {
+//        @include media($media__large) { padding: 0 0 $v-rhythm * 16; }
+//        @include media($media__xlarge) { padding: 0 0 $v-rhythm * 30; }
+//      }
+//
+//      &.content-bar-bottom {
+//        @include media($media__large) { padding: $v-rhythm * 16 0 0; }
+//        @include media($media__xlarge) { padding: $v-rhythm * 30 0 0; }
+//      }
+//    }
+//  }
 
   #site-content-container { margin-top:0 !important; }
 
@@ -58,10 +58,10 @@
       }
 
       @include media(max-width $media__medium) {
-        h1 { @include font-size(24); line-height: $v-rhythm * 3; }
+//        h1 { @include font-size(24); line-height: $v-rhythm * 3; }
       }
       @include media($media__medium) {
-        h1 { @include font-size(36); line-height: $v-rhythm * 3.5; }
+//        h1 { @include font-size(36); line-height: $v-rhythm * 3.5; }
       }
     }
 
@@ -96,6 +96,8 @@
   p { margin:0 rem(12px); }
   #our-people-carousel { margin:$v-rhythm * 3 0; }
   h1, h2, h3 { .owl-prev, .owl-next { color:$color__fipra-blue; } }
+
+  .full-width-block-content-container { padding-bottom:0; }
 }
 
 
