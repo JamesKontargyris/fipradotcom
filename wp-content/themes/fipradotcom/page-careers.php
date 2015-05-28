@@ -11,7 +11,7 @@ get_header(); ?>
 
     <div id="site-content-container">
 
-        <div id="content" class="site-content">
+        <div id="site-content">
 
             <div id="primary" class="full-width careers-content-area">
                 <main id="main" class="site-main" role="main">
@@ -122,8 +122,8 @@ get_header(); ?>
 
         </div><!-- #content -->
 
-        <div class="full-width-block-container testimonial-container hide-s">
-            <div class="full-width-block-content-container dark-grey">
+        <div class="full-width-block-container testimonial-container hide-s with-content-bar small-padding">
+            <div class="full-width-block-content-container content-bar dark-grey">
                 <div class="full-width-block-content">
 
                     <h5 class="center">Working for Fipra</h5>

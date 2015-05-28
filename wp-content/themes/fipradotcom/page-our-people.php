@@ -15,7 +15,7 @@ get_header(); ?>
     }
 </style>
 
-<div id="content-container">
+<div id="content-container" class="our-people">
 
     <div id="hero" class="full-width-block-container with-content-bar our-people">
         <div class="full-width-block-content-container content-bar grey bg-image">
@@ -111,7 +111,7 @@ get_header(); ?>
 
     <div id="site-content-container">
 
-        <div id="content" class="site-content site-content-our-people">
+        <div id="site-content">
 
             <div id="primary" class="full-width">
                 <main id="main" class="site-main" role="main">

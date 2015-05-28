@@ -8,6 +8,8 @@
  */
 ?>
 
+    </div> <!-- #content-->
+
     <div id="footer-global-network-container">
         <div id="footer-global-network">
             <label for="footer-global-network">Explore&nbsp;our&nbsp;Global&nbsp;Network:</label>

@@ -97,6 +97,7 @@
     margin-right: em(5px);
     padding: ($v-rhythm / 2) em(12px);
     cursor: pointer;
+    @include font-size(20);
   }
 }
 

@@ -9,25 +9,18 @@ ul, ol {
     list-style: none;
     &.no-bottom-margin { margin-bottom: 0; }
 
-    li {
-      padding-left: em(30px);
-      text-indent: em(-30px);
-      margin-bottom: $v-rhythm;
-      line-height: $v-rhythm * 2;
-      &:before {
-        content: "■ ";
-        @include font-size(12);
-        padding-right: em(28px);
-        color: $color__fipra-blue;
-      }
-    }
-    &.no-bullet {
-      list-style:none !important;
+    &.bullets {
       li {
-        list-style:none !important;
-        padding-left:0;
-        text-indent: 0;
-        &:before { content: none; padding-right:0; }
+        padding-left: em(30px);
+        text-indent: em(-30px);
+        margin-bottom: $v-rhythm;
+        line-height: $v-rhythm * 2;
+        &:before {
+          content: "■ ";
+          @include font-size(12);
+          padding-right: em(28px);
+          color: $color__fipra-blue;
+        }
       }
     }
     &.no-v-spacing { li { margin-bottom:0; } }

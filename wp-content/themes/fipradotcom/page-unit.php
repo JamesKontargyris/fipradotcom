@@ -9,21 +9,21 @@ get_header(); ?>
 
 <style>
     #hero {
-        background:url('<?php echo get_template_directory_uri(); ?>/img/tower_bridge_orig.jpg') center no-repeat;
+        background:url('<?php echo get_template_directory_uri(); ?>/img/amsterdam.jpg') top no-repeat;
         background-size:cover;
     }
 </style>
 
-<div id="content-container">
+<div id="content-container" class="unit">
 
     <?php get_template_part('inc/breadcrumbs'); ?>
 
-    <div id="hero" class="full-width-block-container with-content-bar unit">
+    <div id="hero" class="full-width-block-container with-content-bar">
         <div class="full-width-block-content-container content-bar grey bottom bg-image">
             <div class="full-width-block-content left narrow">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/flags/united-kingdom.png" alt="Flag" /> <h1 class="upper no-margin">United Kingdom</h1>
-                <p class="meta">Unit, Correspondent or Special Adviser</p>
-                <p class="lead no-margin">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.</p>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/flags/netherlands.png" alt="Flag" /> <h1 class="upper no-margin">The Netherlands</h1>
+<!--                <p class="meta">Fipra Unit</p>-->
+                <p class="lead no-margin">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar.</p>
             </div>
         </div>
     </div>
@@ -33,8 +33,8 @@ get_header(); ?>
             <ul class="anchor-links-list no-margin no-bullet">
                 <li class="menu-title menu-title-toggle"><i class="icon-menu-1"></i> Jump to...</li>
                 <li class="hide-s"><a class="jump-to-link" href="#about-us">About Us <i class="icon-down-open"></i></a></li>
-                <li class="hide-s"><a class="jump-to-link" href="#our-team">Our Team <i class="icon-down-open"></i></a></li>
                 <li class="hide-s"><a class="jump-to-link" href="#our-location">Our Location <i class="icon-down-open"></i></a></li>
+                <li class="hide-s"><a class="jump-to-link" href="#our-team">Our Team <i class="icon-down-open"></i></a></li>
                 <li class="hide-s hide-m"><a class="jump-to-link" href="#get-in-touch">Get in Touch <i class="icon-down-open"></i></a></li>
             </ul>
         </div>
@@ -42,7 +42,7 @@ get_header(); ?>
 
     <div id="site-content-container">
 
-        <div id="content" class="site-content">
+        <div id="site-content">
 
             <div id="primary">
                 <main id="main" class="site-main" role="main">
@@ -57,13 +57,13 @@ get_header(); ?>
                     <section class="our-location">
                         <h3 id="our-location">Our Location</h3>
                         <div class="row">
-                            <div class="col-7-m"><img src="<?= get_template_directory_uri(); ?>/img/600x400.gif" alt="Map Placeholder" /></div>
+                            <div class="col-7-m"><img src="<?= get_template_directory_uri(); ?>/img/unit-location-map.jpg" alt="Map Placeholder" /></div>
                             <div class="col-5-m">
                                 <address>
-                                    Address Line 1 <br/>
-                                    Address Line 2 <br/>
-                                    Address Line 3 <br/>
-                                    Address Line 4 <br/>
+                                    Bezuidenhoutseweg 101a<br/>
+                                    Den Haag<br/>
+                                    2594 AC<br/>
+                                    The Netherlands
                                 </address>
                             </div>
                         </div>
@@ -76,21 +76,21 @@ get_header(); ?>
 
             <div id="secondary">
 
-                <div class="sidebar-contacts-container ribbon">
+                <div class="sidebar-contacts-container">
                     <h5 id="get-in-touch">Lead Contact</h5>
 
                     <div class="sidebar-contacts-group">
                         <div class="sidebar-contact">
                             <div class="sidebar-contact-content">
                                 <a href="#">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter-carlo-lehrell_thumb.gif" alt="Peter-Carlo Lehrell" style="background-color: white;" />
-                                    <strong>Peter-Carlo Lehrell</strong>
+                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/pieter-walraven_thumb.gif" alt="Pieter Walraven" style="background-color: white;" />
+                                    <strong>Pieter Walraven</strong>
                                 </a>
                                 <p class="no-bottom-margin">
-                                    <strong>Chairman, Fipra International</strong><br/>
+                                    <strong>Head of Unit, Fipra Netherlands</strong><br/>
                             <span class="font-14">Tel. +01234 5678910 <br/>
                             Fax. +01234 5678910 <br/>
-                            <a href="mailto:lehrell@fipra.com">lehrell@fipra.com</a></span>
+                            <a href="mailto:pieter.walraven@fipra.com">pieter.walraven@fipra.com</a></span>
                                 </p>
                             </div>
                         </div>
@@ -127,15 +127,23 @@ get_header(); ?>
                         <?php for($i = 1; $i <= 8; $i++): ?>
                             <div style="" class="team-member">
                                 <div class="profile-photo">
-                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Ukko Metsola" /></a>
+                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Name Surname" /></a>
                                 </div>
-                                    <h4 class="no-bottom-margin"><a href="#">Ukko Metsola</a></h4>
+                                    <h4 class="no-bottom-margin"><a href="#">Name Surname</a></h4>
                                 <h6>Position</h6>
-                                <ul class="team-member-expertise no-bullet">
-                                    <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-plane"></i></a></li>
-                                    <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-industrial-building"></i></a></li>
-                                    <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-plane"></i></a></li>
-                                    <li><a href="#" class="tooltip" title="Expertise Title"><i class="icon-industrial-building"></i></a></li>
+                                <ul class="team-member-expertise">
+                                    <li>
+                                        <a href="#" class="tooltip svg-icon" title="Expertise Title">
+                                            <?php echo file_get_contents(get_template_directory_uri() . "/img/icons/heart.svg"); ?>
+                                        </a>
+                                        <a href="#" class="tooltip svg-icon" title="Expertise Title">
+                                            <?php echo file_get_contents(get_template_directory_uri() . "/img/icons/gears.svg"); ?>
+                                        </a>
+
+                                        <a href="#" class="tooltip svg-icon" title="Expertise Title">
+                                            <?php echo file_get_contents(get_template_directory_uri() . "/img/icons/monitor.svg"); ?>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         <?php endfor; ?>
@@ -144,7 +152,7 @@ get_header(); ?>
             </div>
         </section>
 
-        <section id="testimonials" class="full-width-block-container collapse">
+        <section id="testimonials" class="full-width-block-container small-padding light-grey">
             <div class="full-width-block-content-container dark-grey">
 
                 <div class="full-width-block-content left">

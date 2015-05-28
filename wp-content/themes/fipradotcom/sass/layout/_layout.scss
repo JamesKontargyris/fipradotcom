@@ -34,7 +34,7 @@
 
   #site-content-container {
     margin-top:$v-rhythm * 3;
-    #content { @extend .content-area; padding-bottom:$v-rhythm * 3; }
+    #site-content { @extend .content-area; padding-bottom:$v-rhythm * 3; }
   }
 
   #primary {

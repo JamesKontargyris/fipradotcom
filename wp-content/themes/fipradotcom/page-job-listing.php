@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
-<div id="content-container">
+<div id="content-container" class="job-listing">
 
     <?php get_template_part('inc/breadcrumbs'); ?>
 
     <div id="site-content-container">
 
-        <div id="content" class="site-content job-listing">
+        <div id="site-content">
 
 
 
@@ -23,7 +23,7 @@
                     <p>You’ll be on the frontlines introducing Uber to the enterprise, through both sales and marketing efforts. The right candidate will have a passion for Uber, and will develop a global strategy for how we sell and market to large corporations across every industry.</p>
 
                     <h5>What You'll Do</h5>
-                    <ul>
+                    <ul class="bullets">
                         <li>Develop, drive and own Uber’s strategy for selling and marketing to enterprises</li>
                         <li>Build relationships with executives at large scale enterprises</li>
                         <li>Construct, forecast, and manage your sales and marketing activity and pipeline to consistently exceed revenue targets and company goals</li>
@@ -33,7 +33,7 @@
                     </ul>
 
                     <h5>What You'll Need</h5>
-                    <ul>
+                    <ul class="bullets">
                         <li>4+ years of B2B sales, business development or marketing experience; sales management experience preferred</li>
                         <li>Undergraduate degree from an accredited university, MBA or Masters is a plus</li>
                         <li>Experience at a high-growth technology company or a startup is a serious plus</li>
@@ -45,7 +45,7 @@
                     </ul>
 
                     <h5>Perks</h5>
-                    <ul>
+                    <ul class="bullets">
                         <li>Employees are showered with Uber credits each month.</li>
                         <li>Ground floor opportunity with the team; shape the strategic direction of the company.</li>
                         <li>The rare opportunity to change the world such that everyone around you is using the product you built. We’re not just another social web app, we’re moving real people and assets and reinventing transportation and logistics globally.</li>
@@ -53,7 +53,7 @@
                     </ul>
 
                     <h5>Benefits</h5>
-                    <ul>
+                    <ul class="bullets">
                         <li>401(k) plan, gym reimbursement, nine paid company holidays.</li>
                         <li>Full medical/dental/vision package to fit your needs.</li>
                         <li>Unlimited vacation policy; work hard and take time when you need it.</li>
@@ -79,7 +79,7 @@
 
             <aside>
                 <h5>Please include:</h5>
-                <ul>
+                <ul class="bullets">
                     <li>Your curriculum vitae</li>
                     <li>Information on your experience</li>
                     <li>Examples of written work</li>

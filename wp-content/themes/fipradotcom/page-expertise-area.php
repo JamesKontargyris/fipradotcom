@@ -8,22 +8,21 @@
 get_header(); ?>
 
 <style>
-    /*    If dark photo*/
-    .full-width-block-container.expertise {
+    #hero {
         content:"";
-        background:url('<?php echo get_template_directory_uri(); ?>/img/plane.jpg') center no-repeat;
+        background:url('<?php echo get_template_directory_uri(); ?>/img/movement.jpg') center no-repeat;
         background-size:cover;
     }
 </style>
 
-<div id="content-container">
+<div id="content-container" class="expertise-area">
 
     <?php get_template_part('inc/breadcrumbs'); ?>
 
-    <div id="hero" class="full-width-block-container with-content-bar expertise">
+    <div id="hero" class="full-width-block-container with-content-bar">
         <div class="full-width-block-content-container content-bar grey bg-image">
             <div class="full-width-block-content left narrow">
-                <h1 class="upper"><i class="icon-plane"></i> Travel, Transport and Logistics</h1>
+                <h1 class="upper"><div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/arrows.svg"); ?></div> Travel, Transport and Logistics</h1>
                 <p class="lead no-margin">Fipra’s Travel, Transport &amp; Logistics (TTL) practice, lead by <a
                         href="#">Ukko Metsola</a>, is composed of experienced staff and <a href="#">Special Advisers</a> with diverse expertise in the policies and regulatory frameworks that affect the TTL industries.</p>
             </div>
@@ -43,7 +42,7 @@ get_header(); ?>
 
     <div id="site-content-container">
 
-        <div id="content" class="site-content site-content-expertise">
+        <div id="site-content">
 
             <div id="primary">
                 <main id="main" class="site-main" role="main">
@@ -72,7 +71,7 @@ get_header(); ?>
 
             <div id="secondary">
 
-                <div class="sidebar-contacts-container ribbon">
+                <aside class="sidebar-contacts-container">
                     <h5 id="practice-lead">Practice Lead</h5>
 
                     <div class="sidebar-contacts-group">
@@ -92,7 +91,17 @@ get_header(); ?>
                         </div>
 
                     </div>
-                </div>
+                </aside>
+
+                <aside>
+                    <h5 id="languages">Languages</h5>
+                    <ul class="languages-list no-bottom-margin no-bullet">
+                        <li><img src="<?php echo get_template_directory_uri(); ?>/img/flags/finland.png" class="languages-list-flag tooltip" alt="Finnish" title="Finnish"/></li>
+                        <li><img src="<?php echo get_template_directory_uri(); ?>/img/flags/united-kingdom.png" class="languages-list-flag tooltip" alt="English" title="English"/></li>
+                        <li><img src="<?php echo get_template_directory_uri(); ?>/img/flags/sweden.png" class="languages-list-flag tooltip" alt="Swedish" title="Swedish"/></li>
+                        <li><img src="<?php echo get_template_directory_uri(); ?>/img/flags/france.png" class="languages-list-flag tooltip" alt="French" title="French"/></li>
+                    </ul>
+                </aside>
 
                 <aside>
                     <h5>Sidebar title</h5>
@@ -133,7 +142,7 @@ get_header(); ?>
                     <?php for($i = 1; $i <= 7; $i++): ?>
                         <div class="expertise-area center">
                             <a href="#">
-                                <i class="icon-globe"></i>
+                                <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div>
                                 <div class="expertise-area-name">Expertise Area Name</div>
                             </a>
                         </div>

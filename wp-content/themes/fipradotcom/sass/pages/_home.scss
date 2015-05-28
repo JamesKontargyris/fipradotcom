@@ -84,8 +84,17 @@
 
 #home-block-services-and-expertise {
   .showcase {
-    .circle-icon { float:left; margin-right:18px; border-bottom:2px solid darken($color__fipra-light-gray, 10%); margin-bottom:$v-rhythm * 6;
-      @include media(max-width $media__medium) { display:none; } }
+    .svg-icon {
+      float:left;
+      background-color: white;
+      width: 52px; height: 52px;
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      border-bottom:2px solid darken($color__fipra-light-gray, 10%); margin-bottom:$v-rhythm * 6;
+      @include media(max-width $media__medium) { display:none; }
+      &:hover { opacity: 0.7; }
+      svg { fill:$color__fipra-blue; width:60%; }
+    }
     h1, h2, h3, h4, h5, h6 { display:inline-block; }
 
     .showcase-block { @include media(max-width $media__medium) { margin-bottom:0; border-top:1px solid rgba(black, 0.1); padding-top:$v-rhythm; text-align: center; } }

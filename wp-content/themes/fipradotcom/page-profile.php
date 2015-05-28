@@ -35,7 +35,7 @@ get_header(); ?>
 
     <div id="site-content-container">
 
-        <div id="content" class="site-content">
+        <div id="site-content">
 
             <div id="primary" class="profile-content-area">
                 <main id="main" class="site-main" role="main">
@@ -50,25 +50,25 @@ get_header(); ?>
                     <div class="profile-expertise-showcase equal-heights">
                             <div class="expertise-area">
                                 <a href="#">
-                                    <i class="icon-globe"></i>
+                                    <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div>
                                     <div class="expertise-area-name">Expertise Area Name</div>
                                 </a>
                             </div>
                             <div class="expertise-area">
                                 <a href="#">
-                                    <i class="icon-globe"></i>
+                                    <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div>
                                     <div class="expertise-area-name">Expertise Area Name</div>
                                 </a>
                             </div>
                             <div class="expertise-area">
                                 <a href="#">
-                                    <i class="icon-globe"></i>
+                                    <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div>
                                     <div class="expertise-area-name">Expertise Area Name</div>
                                 </a>
                             </div>
                             <div class="expertise-area">
                                 <a href="#">
-                                    <i class="icon-globe"></i>
+                                    <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div>
                                     <div class="expertise-area-name">Expertise Area Name</div>
                                 </a>
                             </div>

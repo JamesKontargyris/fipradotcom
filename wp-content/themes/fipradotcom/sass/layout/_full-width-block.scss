@@ -1,16 +1,16 @@
 .full-width-block-container {
 
   &.with-content-bar {
-    @include media($media__medium) { padding: $v-rhythm * 7 0; }
+    @include media($media__medium) { padding: $v-rhythm * 8 0; }
     @include media($media__xlarge) { padding: $v-rhythm * 11 0; }
 
     &.content-bar-top {
-      @include media($media__medium) { padding: 0 0 $v-rhythm * 14; }
+      @include media($media__medium) { padding: 0 0 $v-rhythm * 16; }
       @include media($media__xlarge) { padding: 0 0 $v-rhythm * 22; }
     }
 
     &.content-bar-bottom {
-      @include media($media__medium) { padding: $v-rhythm * 14 0 0; }
+      @include media($media__medium) { padding: $v-rhythm * 16 0 0; }
       @include media($media__xlarge) { padding: $v-rhythm * 22 0 0; }
     }
   }
@@ -56,7 +56,7 @@
 // Non-hero version
 .full-width-block-content-container {
   height: 100%;
-  padding-top: $v-rhythm * 3; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 3;
+  padding-top: $v-rhythm * 2; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 2;
   @include media($media__medium) { padding-top: $v-rhythm * 5; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 5; }
 
   &.page-width { @extend .content-area; }
@@ -174,22 +174,22 @@
 
   &.left {
     text-align: center;
-    @include media($media__medium) { text-align: left; &.narrow { padding-right:$column * 6; } }
-//    @include media($media__large) { &.narrow { padding-right:$column * 8; } }
+    @include media($media__medium) { text-align: left; &.narrow { padding-right:$column * 4; } }
+    @include media($media__large) { &.narrow { padding-right:$column * 6; } }
     @include media($media__xlarge) { &.narrow { padding-right:$column * 10; } }
   }
 
   &.right {
     text-align: center;
-    @include media($media__medium) { text-align: left; &.narrow { padding-left:$column * 6; } }
-//    @include media($media__large) { text-align: left; &.narrow { padding-left:$column * 8; } }
+    @include media($media__medium) { text-align: left; &.narrow { padding-left:$column * 4; } }
+    @include media($media__large) { text-align: left; &.narrow { padding-left:$column * 6; } }
     @include media($media__xlarge) { text-align: left; &.narrow { padding-left:$column * 10; } }
   }
 
   &.center {
     &.narrow {
-      @include media($media__medium) {&.narrow { padding-left:$column * 3; padding-right:$column * 3; } }
-//      @include media($media__large) { &.narrow { padding-left:$column * 4; padding-right:$column * 4; } }
+      @include media($media__medium) {&.narrow { padding-left:$column * 2; padding-right:$column * 2; } }
+      @include media($media__large) { &.narrow { padding-left:$column * 3; padding-right:$column * 3; } }
       @include media($media__xlarge) { &.narrow { padding-left:$column * 5; padding-right:$column * 5; } }
     }
 
