@@ -4,16 +4,14 @@
     .full-width-block-content-container {
 
       .full-width-block-content {
+        svg {
+          @include media(max-width $media__medium) { display:none; }
+          width: 60px; height: 60px;
+          fill:white;
+        }
+
         h1 { margin-bottom: $v-rhythm; position:relative;
           @include media($media__medium) { padding-left: 52px; }
-
-          .svg-icon {
-            @include media(max-width $media__medium) { display:none; }
-            position: absolute;
-            top:6px; left:0;
-            width: 36px; height: 36px;
-            margin-right:0;
-          }
         }
       }
 
@@ -34,7 +32,7 @@
           text-align: center;
           &:hover { opacity: 0.5; }
 
-          .svg-icon { display: block !important; width:100%; background-color: $color__fipra-blue-gray; padding:$v-rhythm * 3; margin-bottom:$v-rhythm;
+          .svg-icon { display: block !important; width:100%; padding:$v-rhythm * 3; margin-bottom:$v-rhythm;
             svg { height:70%; }}
           .expertise-area-name { @include font-size(18); padding: $v-rhythm em(12px); }
         }

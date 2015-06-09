@@ -1,3 +1,27 @@
 @import "buttons";
-
 @import "fields";
+
+.contact-form {
+  &.with-border { border:1px solid $color__fipra-light-gray; padding:$v-rhythm 20px; }
+
+  .form-group { margin-bottom:$v-rhythm; }
+
+  label, input {
+    display:block;
+    &.full-width {
+      width:100%;
+    }
+  }
+
+  label { font-weight: $font__bold; margin-bottom:$v-rhythm / 2; }
+
+  input[type=submit] {
+    background:$color__fipra-blue;
+    border:none;
+    box-shadow:none;
+    text-shadow: none;
+    padding:$v-rhythm;
+    @extend .btn;
+    @extend .primary;
+  }
+}

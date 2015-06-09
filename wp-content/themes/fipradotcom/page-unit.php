@@ -9,7 +9,7 @@ get_header(); ?>
 
 <style>
     #hero {
-        background:url('<?php echo get_template_directory_uri(); ?>/img/amsterdam3.jpg') center no-repeat;
+        background:url('<?php echo get_template_directory_uri(); ?>/img/amsterdam4.jpg') center no-repeat;
         background-size:cover;
     }
 </style>
@@ -20,10 +20,10 @@ get_header(); ?>
 
     <div id="hero" class="full-width-block-container with-content-bar">
         <div class="full-width-block-content-container content-bar grey bottom bg-image">
-            <div class="full-width-block-content left narrow">
+            <div class="full-width-block-content center narrow">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/flags/netherlands.png" alt="Flag" /> <h1 class="upper no-margin">The Netherlands</h1>
 <!--                <p class="meta">Fipra Unit</p>-->
-                <p class="lead no-margin">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar.</p>
+                <p class="lead no-margin">Fipra Netherlands was founded in 2001. Our motto: target based communications = result based influencing.</p>
             </div>
         </div>
     </div>
@@ -48,11 +48,13 @@ get_header(); ?>
                 <main id="main" class="site-main" role="main">
 
                     <h3 id="about-us">About Us</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis, ligula in ornare malesuada, erat ante gravida augue, non fermentum ligula odio vitae eros. Donec elit purus, tristique sit amet finibus vitae, interdum ut nisi. Nam mattis, lorem volutpat accumsan iaculis, ante justo elementum urna, eget tempor justo lacus quis leo. Pellentesque metus ligula, facilisis eu diam eget, semper maximus lorem. Vivamus fringilla mi vitae risus viverra, ac tempor urna elementum. Duis semper odio quis erat finibus, eget tincidunt est ultrices. Morbi sit amet ante a mauris auctor finibus. Quisque eget risus at ligula egestas dapibus sit amet et enim.</p>
+                    <p>Fipra Netherlands advises organizations that are in the centre of the political and public arena; want to face, make and manage issues; shape public perception and influence the process of decision making.</p>
 
-                    <p>Phasellus quis accumsan dolor, eget tempus tortor. Vivamus iaculis massa a nibh pretium, sed interdum dui molestie. Suspendisse non ipsum eu ligula tincidunt vulputate vitae nec metus. Donec maximus sagittis magna, id auctor purus dapibus eu. Vestibulum gravida, libero at aliquet euismod, orci libero consectetur tellus, sit amet mattis velit lorem in velit. Nam quis nisl porta, placerat est in, consectetur dolor. Proin condimentum, nunc a malesuada interdum, neque nisi euismod dui, et luctus felis felis a ligula. Nam maximus lacus vel quam mattis, nec elementum est tempor. Phasellus pulvinar diam sed nisi scelerisque efficitur. Sed fringilla varius dolor, at placerat velit. Duis aliquet convallis ipsum, vel ultrices felis aliquet quis. Aliquam imperdiet magna eget turpis fringilla pellentesque.</p>
+                    <p>Our core business is to analyse and interpret external developments and frame internal positions with the objective to influence public affairs and lobbying target audiences.</p>
 
-                    <p>Vestibulum sed pulvinar orci, efficitur tristique arcu. Fusce a rutrum neque, vel efficitur urna. Vivamus ut iaculis mi. Etiam eget tortor ut metus sagittis semper a at urna. Mauris sit amet lacinia nunc, vestibulum elementum urna. Sed a lorem non leo consequat venenatis mattis a arcu. Sed a sapien malesuada ipsum convallis mattis. Nunc lacinia lorem sit amet urna lacinia placerat. Curabitur cursus mauris vitae nisi vulputate tincidunt. Integer sit amet efficitur neque. Aenean tincidunt imperdiet est sit amet dictum. In tortor augue, tempus nec justo ac, tincidunt blandit lacus. Nullam mi leo, venenatis pretium ipsum ac, iaculis cursus orci.</p>
+                    <p>The Fipra Netherlands team currently consists of fifteen experts in public affairs, lobbying and communication management. They all have working experience in parliament, companies, ministry, or public interest groups. For example as adviser to a Member of European Parliament, Minister, as in-house lobbyist or civil servant. Consultants are societally and/or politically active and are experienced campaigners.</p>
+
+                    <p>All consultants have expertise in the formal and informal  decision- making process at local, national ('The Hague') and EU level, and have in-depth knowledge of precisely timing and shaping messages that will help change perceptions of relevant key decision makers. Based on day-to-day experience, consultants regularly give training and workshops. Fipra Netherlands is the first Dutch independent firm with a Code of Conduct.</p>
 
                     <section class="our-location">
                         <h3 id="our-location">Our Location</h3>
@@ -68,7 +70,7 @@ get_header(); ?>
                             </div>
                         </div>
 
-                        <p><em>Info on location lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor ullamcorper eu tristique risus.</em></p>
+                        <p><em>Fipra Netherlands is strategically located in The Hague (governmental city of The Netherlands) next to the Ministry of Economic Affairs.</em></p>
                     </section>
 
                 </main><!-- #main -->
@@ -83,14 +85,13 @@ get_header(); ?>
                         <div class="sidebar-contact">
                             <div class="sidebar-contact-content">
                                 <a href="#">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/pieter-walraven_thumb.gif" alt="Pieter Walraven" style="background-color: white;" />
-                                    <strong>Pieter Walraven</strong>
+                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans_thumb.gif" alt="Miriam Offermans" style="background-color: white;" />
+                                    <strong>Miriam Offermans</strong>
                                 </a>
                                 <p class="no-bottom-margin">
-                                    <strong>Head of Unit, Fipra Netherlands</strong><br/>
-                            <span class="font-14">Tel. +01234 5678910 <br/>
-                            Fax. +01234 5678910 <br/>
-                            <a href="mailto:pieter.walraven@fipra.com">pieter.walraven@fipra.com</a></span>
+                                    <strong>Director, Fipra Netherlands</strong><br/>
+                                    <span class="font-14">Tel. +31 703 046 487 <br/>
+                                    <a href="mailto:miriam.offermans@fipra.com">miriam.offermans@fipra.com</a></span>
                                 </p>
                             </div>
                         </div>
@@ -127,9 +128,30 @@ get_header(); ?>
                         <?php for($i = 1; $i <= 8; $i++): ?>
                             <div style="" class="team-member">
                                 <div class="profile-photo">
-                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Name Surname" /></a>
+                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans_thumb.gif" alt="Name Surname" /></a>
                                 </div>
                                     <h4 class="no-bottom-margin"><a href="#">Name Surname</a></h4>
+                                <h6>Position</h6>
+                                <ul class="team-member-expertise">
+                                    <li>
+                                        <a href="#" class="tooltip svg-icon" title="Expertise Title">
+                                            <?php echo file_get_contents(get_template_directory_uri() . "/img/icons/heart.svg"); ?>
+                                        </a>
+                                        <a href="#" class="tooltip svg-icon" title="Expertise Title">
+                                            <?php echo file_get_contents(get_template_directory_uri() . "/img/icons/gears.svg"); ?>
+                                        </a>
+
+                                        <a href="#" class="tooltip svg-icon" title="Expertise Title">
+                                            <?php echo file_get_contents(get_template_directory_uri() . "/img/icons/monitor.svg"); ?>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="" class="team-member">
+                                <div class="profile-photo">
+                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Name Surname" style="width:200px;" /></a>
+                                </div>
+                                <h4 class="no-bottom-margin"><a href="#">Name Surname</a></h4>
                                 <h6>Position</h6>
                                 <ul class="team-member-expertise">
                                     <li>

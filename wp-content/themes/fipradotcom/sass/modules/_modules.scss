@@ -26,6 +26,11 @@
     margin: auto;
     fill: white;
   }
+  &.svg-blue {
+    svg {
+      fill:$color__fipra-blue;
+    }
+  }
 }
 
 .highlight-box {

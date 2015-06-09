@@ -31,20 +31,13 @@
 
             <div class="footer-section">
                 <h5>About Us</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
-                <p><a href="#" class="btn secondary btn-white btn-small">Find out more</a></p>
+                <p>Founded in 2000, Fipra is today the leading and most extensive global public affairs consultancy network, advising clients on a range of government relations and regulatory policy issues. </p>
+                <p><a href="/about-fipra" class="btn secondary btn-white btn-small">Find out more</a></p>
             </div>
             <div class="footer-section">
                 <h5>Browse</h5>
-                <ul class="no-bullet">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Fipra</a></li>
-                    <li><a href="#">What We Do</a></li>
-                    <li><a href="#">Our People</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Explore our Global Network</a></li>
-                </ul>
+
+                <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu', 'depth' => '1')); ?>
             </div>
             <div class="footer-section">
                 <h5>Get in Touch</h5>
@@ -57,7 +50,7 @@
                     Tel.: +32 2 613 2828<br/>
                     Fax: +32 2 613 2849<br/>
                 </address>
-                <p><a class="btn primary btn-white btn-small" href="#">Contact Us</a></p>
+                <p><a class="btn primary btn-white btn-small" href="/contact-us">Contact Us</a></p>
             </div>
 
         </footer><!-- #colophon -->

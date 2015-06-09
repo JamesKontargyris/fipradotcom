@@ -169,7 +169,7 @@
     var numberOfItems = $('#expertise-carousel').data('number-of-items');
     $("#expertise-carousel").owlCarousel({
         //items: 4,
-        itemsCustom: [[0,1], [480,(numberOfItems < 2) ? numberOfItems : 2], [768,(numberOfItems < 3) ? numberOfItems : 3], [940, (numberOfItems < 4) ? numberOfItems : 4], [1300, (numberOfItems < 5) ? numberOfItems : 5]],
+        itemsCustom: [[0,1], [480,(numberOfItems < 2) ? numberOfItems : 2], [768,(numberOfItems < 3) ? numberOfItems : 3], [940, (numberOfItems < 4) ? numberOfItems : 4], [1300, (numberOfItems < 4) ? numberOfItems : 4]],
         navigation:true,
         navigationText: ['<i class="icon-left-open-2"></i>', '<i class="icon-right-open-2"></i>']
     });

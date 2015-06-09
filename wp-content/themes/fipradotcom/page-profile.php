@@ -17,7 +17,7 @@ get_header(); ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/fipriots/ukko_metsola_blue.gif" alt="Ukko Metsola"/>
                 <h1 class="upper no-margin">Ukko Metsola</h1>
                 <h4 class="no-top-margin">Account Director, Fipra International</h4>
-                <a class="btn primary" href="#">Contact Ukko</a>
+                <a class="btn primary" href="mailto:ukko.metsola@fipra.com">Contact Ukko</a>
             </div>
         </div>
     </div>
@@ -51,25 +51,19 @@ get_header(); ?>
                             <div class="expertise-area">
                                 <a href="#">
                                     <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div>
-                                    <div class="expertise-area-name">Expertise Area Name</div>
+                                    <div class="expertise-area-name">Energy and Environment</div>
                                 </a>
                             </div>
                             <div class="expertise-area">
                                 <a href="#">
-                                    <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div>
-                                    <div class="expertise-area-name">Expertise Area Name</div>
+                                    <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/monitor.svg"); ?></div>
+                                    <div class="expertise-area-name">Telecoms, Media and Technology</div>
                                 </a>
                             </div>
                             <div class="expertise-area">
                                 <a href="#">
-                                    <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div>
-                                    <div class="expertise-area-name">Expertise Area Name</div>
-                                </a>
-                            </div>
-                            <div class="expertise-area">
-                                <a href="#">
-                                    <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div>
-                                    <div class="expertise-area-name">Expertise Area Name</div>
+                                    <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/logistics.svg"); ?></div>
+                                    <div class="expertise-area-name">Travel, Transport and Logistics</div>
                                 </a>
                             </div>
                         </div>

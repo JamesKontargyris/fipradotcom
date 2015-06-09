@@ -16,7 +16,7 @@ get_header(); ?>
         background-size:cover;
     }
     #home-hero-carousel .owl-item:nth-child(4) {
-        background:url('<?php echo get_template_directory_uri(); ?>/img/buildings16.jpg') center no-repeat;
+        background:url('<?php echo get_template_directory_uri(); ?>/img/buildings10.jpg') center no-repeat;
         background-size:cover;
     }
     #home-hero-carousel .owl-item:nth-child(5) {
@@ -37,30 +37,30 @@ get_header(); ?>
 
             <div class="hero hero-1">
                 <div class="full-width-block-container with-content-bar">
-                    <div class="full-width-block-content-container content-bar light-grey bg-image">
-                        <div class="full-width-block-content left narrow">
+                    <div class="full-width-block-content-container content-bar grey bg-image">
+                        <div class="full-width-block-content center narrow">
                             <h1 class="upper">Professional Public Affairs in over 50 Countries</h1>
                             <p class="blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ipsum modi molestiae necessitatibus, non quae quaerat qui voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <p class="no-margin"><a class="btn primary btn-large" href="#">About Fipra</a></p>
+                            <p class="no-margin"><a class="btn primary btn-large" href="/about-fipra">About Fipra</a></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="hero hero-2">
                 <div class="full-width-block-container with-content-bar">
-                    <div class="full-width-block-content-container content-bar light-grey bg-image">
-                        <div class="full-width-block-content left narrow">
+                    <div class="full-width-block-content-container content-bar grey bg-image">
+                        <div class="full-width-block-content center narrow">
                             <h1 class="upper">Dedicated Expertise</h1>
                             <p class="blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ipsum modi molestiae necessitatibus, non quae quaerat qui voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <p class="no-margin"><a class="btn primary btn-large" href="#">Our areas of expertise</a></p>
+                            <p class="no-margin"><a class="btn primary btn-large" href="/banner">Our areas of expertise</a></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="hero hero-3">
                 <div class="full-width-block-container with-content-bar">
-                    <div class="full-width-block-content-container content-bar light-grey bg-image">
-                        <div class="full-width-block-content left narrow">
+                    <div class="full-width-block-content-container content-bar grey bg-image">
+                        <div class="full-width-block-content center narrow">
                             <h1 class="upper">Experts in Political Process</h1>
                             <p class="blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ipsum modi molestiae necessitatibus, non quae quaerat qui voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <p class="no-margin"><a class="btn primary btn-large" href="#">Read more</a></p>
@@ -70,8 +70,8 @@ get_header(); ?>
             </div>
             <div class="hero hero-4">
                 <div class="full-width-block-container with-content-bar">
-                    <div class="full-width-block-content-container content-bar light-grey bg-image">
-                        <div class="full-width-block-content left narrow">
+                    <div class="full-width-block-content-container content-bar grey bg-image">
+                        <div class="full-width-block-content center narrow">
                             <h1 class="upper">Experience in the field</h1>
                             <p class="blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ipsum modi molestiae necessitatibus, non quae quaerat qui voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <p class="no-margin"><a class="btn primary btn-large" href="#">Our Special Advisers</a></p>
@@ -81,8 +81,8 @@ get_header(); ?>
             </div>
             <div class="hero hero-5">
                 <div class="full-width-block-container with-content-bar">
-                    <div class="full-width-block-content-container content-bar light-grey bg-image">
-                        <div class="full-width-block-content left narrow">
+                    <div class="full-width-block-content-container content-bar grey bg-image">
+                        <div class="full-width-block-content center narrow">
                             <h1 class="upper">A one-stop-shop for policy and regulatory affairs</h1>
                             <p class="blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ipsum modi molestiae necessitatibus, non quae quaerat qui voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <p class="no-margin"><a class="btn primary btn-large" href="#">Read more</a></p>
@@ -108,7 +108,7 @@ get_header(); ?>
                                 <p>In Europe, we are the only consultancy with top level public affairs advisers not only in Brussels, but throughout each and every of the 28 Member States of the European Union. In addition, we have experienced public affairs advisers in a number of European Economic Area Countries and EU candidate countries, as well as many of the EU’s neighbouring countries.</p>
                             </div>
                         </div>
-                        <p class="center no-margin"><a class="btn primary" href="#">Find out more</a> <a class="btn secondary" href="#">Contact us</a></p>
+                        <p class="center no-margin"><a class="btn primary" href="/about-fipra">Find out more</a> <a class="btn secondary" href="/contact-us">Contact us</a></p>
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@ get_header(); ?>
                                 <h1 class="feature no-margin">About Fipra</h1>
                                 <h2 class="feature">Global reach with dedicated local political and regulatory expertise</h2>
                                 <p>Since 2000, Fipra has expanded across the globe and now operates in over 50 countries and is present on every single continent.</p>
-                                <p class="no-margin"><a href="#" class="btn primary">Find out more</a></p>
+                                <p class="no-margin"><a href="/about-fipra" class="btn primary">Find out more</a></p>
                             </div>
                             <div class="col-6-m no-bottom-margin home-feature-block-image">
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/buildings19.jpg" alt="Image"/>
@@ -147,17 +147,26 @@ get_header(); ?>
 
                         <div class="showcase">
                             <div class="row-of-2">
-                                <?php for($i = 1; $i <= 6; $i++): ?>
+                                <?php $expertise_areas = [
+                                    ['title' => 'Banking and Financial Services', 'svg' => 'coins'],
+                                    ['title' => 'Chemical, Industrials and Mining', 'svg' => 'gears'],
+                                    ['title' => 'Energy and Environment', 'svg' => 'windmill'],
+                                    ['title' => 'Healthcare and Pharma', 'svg' => 'heart'],
+                                    ['title' => 'Telecoms, Media and Technology', 'svg' => 'monitor'],
+                                    ['title' => 'Travel, Transport and Logistics', 'svg' => 'logistics'],
+                                    ['title' => 'Competition Policy', 'svg' => 'podium']
+                                ] ?>
+                                <?php for($i = 0; $i <= 5; $i++): ?>
                                 <div class="showcase-block">
-                                    <a href="#"><div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div></a>
+                                    <a href="/expertise-area"><div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/" . $expertise_areas[$i]['svg'] . ".svg"); ?></div></a>
                                     <div>
-                                        <h4 class="no-margin"><a href="#">Area Title</a></h4>
+                                        <h4 class="no-margin"><a href="/expertise-area"><?= $expertise_areas[$i]['title']; ?></a></h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores beatae distinctio ea, earum eligendi eum fugiat ipsa natus obcaecati pariatur.</p>
                                     </div>
                                 </div>
                                 <?php endfor; ?>
                             </div>
-                            <p class="center"><a class="btn primary" href="#">More Services and Expertise</a></p>
+                            <p class="center"><a class="btn primary btn-large" href="/banner">More Services and Expertise</a></p>
                         </div>
                     </div>
                 </div>
@@ -172,18 +181,26 @@ get_header(); ?>
                     <p class="center narrow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam assumenda cum delectus doloribus ex ipsam itaque iusto nam nesciunt numquam possimus quae quasi qui quia repellendus temporibus, veniam voluptatum.</p>
 
                     <div id="our-people-carousel" class="team-carousel with-controls" data-number-of-items="12">
-                        <?php for($i = 1; $i <= 12; $i++): ?>
-                            <div style="" class="team-member">
+                        <?php for($i = 1; $i <= 6; $i++): ?>
+                            <div class="team-member">
                                 <div class="profile-photo">
-                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Ukko Metsola" /></a>
+                                    <a href="/profile"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Name Surname" /></a>
                                 </div>
-                                <h4 class="no-bottom-margin"><a href="#">Ukko Metsola</a></h4>
+                                <h4 class="no-bottom-margin"><a href="/profile">Name Surname</a></h4>
+                                <h6>Position</h6>
+                                <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab doloribus error ipsa rerum. At blanditiis doloremque earum eum explicabo in iure maiores.</p>
+                            </div>
+                            <div class="team-member">
+                                <div class="profile-photo">
+                                    <a href="/profile"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans_thumb.gif" alt="Name Surname" /></a>
+                                </div>
+                                <h4 class="no-bottom-margin"><a href="/profile">Name Surname</a></h4>
                                 <h6>Position</h6>
                                 <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab doloribus error ipsa rerum. At blanditiis doloremque earum eum explicabo in iure maiores.</p>
                             </div>
                         <?php endfor; ?>
                     </div>
-                    <p class="center"><a class="btn primary" href="#">More Fipriots</a></p>
+                    <p class="center"><a class="btn primary btn-large" href="/our-people">More Fipriots</a></p>
                 </div>
             </div>
         </section>

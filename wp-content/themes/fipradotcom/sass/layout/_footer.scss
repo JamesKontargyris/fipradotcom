@@ -76,7 +76,7 @@
   @include clearfix;
   font-family: $font__sans;
   @include font-size(12);
-  background-color: $color__fipra-blue-gray;
+  background-color: $color__fipra-dark-gray;
   border-top:1px solid lighten($color__fipra-blue-gray, 9%);
 
   .site-info {

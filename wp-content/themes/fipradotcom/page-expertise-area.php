@@ -21,8 +21,9 @@ get_header(); ?>
 
     <div id="hero" class="full-width-block-container with-content-bar">
         <div class="full-width-block-content-container content-bar grey bg-image">
-            <div class="full-width-block-content left narrow">
-                <h1 class="upper"><div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/arrows.svg"); ?></div> Travel, Transport and Logistics</h1>
+            <div class="full-width-block-content center narrow">
+                <h1 class="upper"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/logistics.svg"); ?>
+                    <br/>Travel, Transport and Logistics</h1>
                 <p class="lead no-margin">Fipra’s Travel, Transport &amp; Logistics (TTL) practice, lead by <a
                         href="#">Ukko Metsola</a>, is composed of experienced staff and Special Advisers with diverse expertise in the policies and regulatory frameworks that affect the industries within the sector.  We aim to help deliver bottom-line savings, or reduced regulatory risks and costs, to our clients.</p>
             </div>
@@ -94,8 +95,8 @@ get_header(); ?>
                     <div class="sidebar-contacts-group">
                         <div class="sidebar-contact">
                             <div class="sidebar-contact-content">
-                                <a href="#">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Peter-Carlo Lehrell" style="background-color: white;" />
+                                <a href="/expertise-area">
+                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Ukko Metsola" style="background-color: white;" />
                                     <strong>Ukko Metsola</strong>
                                 </a>
                                 <p class="no-bottom-margin">
@@ -136,12 +137,19 @@ get_header(); ?>
                 <h3 id="staff" class="upper small center">Practice Staff</h3>
 
                 <div id="practice-staff-carousel" class="team-carousel with-controls" data-number-of-items="12">
-                    <?php for($i = 1; $i <= 12; $i++): ?>
-                        <div style="" class="team-member">
+                    <?php for($i = 1; $i <= 6; $i++): ?>
+                        <div class="team-member">
                             <div class="profile-photo">
                                 <a href="#"> <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Ukko Metsola" /></a>
                             </div>
-                                <h4 class="no-bottom-margin"><a href="#">Ukko Metsola</a></h4>
+                                <h4 class="no-bottom-margin"><a href="#">Name Surname</a></h4>
+                            <h6>Position, Fipra Unit</h6>
+                        </div>
+                        <div class="team-member">
+                            <div class="profile-photo">
+                                <a href="#"> <img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans_thumb.gif" alt="Miriam Offermans" /></a>
+                            </div>
+                            <h4 class="no-bottom-margin"><a href="#">Name Surname</a></h4>
                             <h6>Position, Fipra Unit</h6>
                         </div>
                     <?php endfor; ?>
@@ -156,11 +164,20 @@ get_header(); ?>
                 <h3 id="expertise-menu" class="upper small center">Our Expertise</h3>
 
                 <div id="expertise-carousel" class="with-controls" data-number-of-items="7">
-                    <?php for($i = 1; $i <= 7; $i++): ?>
+                    <?php $expertise_areas = [
+                        ['title' => 'Banking and Financial Services', 'svg' => 'coins'],
+                        ['title' => 'Chemical, Industrials and Mining', 'svg' => 'gears'],
+                        ['title' => 'Energy and Environment', 'svg' => 'windmill'],
+                        ['title' => 'Healthcare and Pharma', 'svg' => 'heart'],
+                        ['title' => 'Telecoms, Media and Technology', 'svg' => 'monitor'],
+                        ['title' => 'Travel, Transport and Logistics', 'svg' => 'logistics'],
+                        ['title' => 'Competition Policy', 'svg' => 'podium']
+                    ] ?>
+                    <?php for($i = 0; $i <= 6; $i++): ?>
                         <div class="expertise-area center">
                             <a href="#">
-                                <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div>
-                                <div class="expertise-area-name">Expertise Area Name</div>
+                                <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/" . $expertise_areas[$i]['svg'] . ".svg"); ?></div>
+                                <div class="expertise-area-name"><?= $expertise_areas[$i]['title'] ?></div>
                             </a>
                         </div>
                     <?php endfor; ?>

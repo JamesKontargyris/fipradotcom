@@ -28,7 +28,7 @@
 .full-width-block-content-container {
   height: 100%;
   padding-top: $v-rhythm * 2; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 2;
-  @include media($media__medium) { padding-top: $v-rhythm * 5; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 5; }
+  @include media($media__medium) { padding-top: $v-rhythm * 3; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 3; }
 
   &.page-width { @extend .content-area; }
   &.collapse { padding-top: 0; padding-right: 0; padding-left: 0; padding-bottom: 0; }

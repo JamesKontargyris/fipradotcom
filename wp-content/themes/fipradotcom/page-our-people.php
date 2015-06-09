@@ -10,7 +10,7 @@ get_header(); ?>
 <style>
     .full-width-block-container.our-people {
         content:"";
-        background:url('<?php echo get_template_directory_uri(); ?>/img/group_shot.jpg') center no-repeat;
+        background:url('<?php echo get_template_directory_uri(); ?>/img/our-people.jpg') center no-repeat;
         background-size:cover;
     }
 </style>
@@ -34,7 +34,7 @@ get_header(); ?>
         </div>
     </div>
 
-    <div class="page-nav grey">
+    <div class="page-nav">
         <div class="row content-area">
             <div class="col-9-m no-margin">
                 <ul class="anchor-links-list no-margin no-bullet">
@@ -44,7 +44,7 @@ get_header(); ?>
                 </ul>
             </div>
             <div class="col-3-m no-margin hide-s">
-                <input type="text" id="text-filter" placeholder="Filter..." />
+                <input type="text" id="text-filter" placeholder="Type to filter..." />
             </div>
         </div>
     </div>
@@ -117,54 +117,16 @@ get_header(); ?>
                 <main id="main" class="site-main" role="main">
 
 <!--                    Used by jQuery to update filtering-on-title when clear filter button is clicked -->
-                    <div class="hide-s hide-m number-of-fipriots">21</div>
+                    <div class="hide-s hide-m number-of-fipriots">20</div>
 
                     <div class="filtering-on-container">
-                        <h4 class="no-margin filtering-on-title">Showing all 21 Fipriots</h4>
+                        <h4 class="no-margin filtering-on-title">Showing all 20 Fipriots</h4>
                         <a href="#" class="btn btn-small secondary clear-filter hide"><i class="icon-cancel-1"></i> Clear Filter</a>
                     </div>
 
                     <div class="people-group-container">
 
                         <div class="people-group">
-
-                            <div class="person banking-and-financial-services country-3">
-                                <div class="person-profile-photo">
-                                    <a href="/profile">
-                                        <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb_small.gif" alt=""/>
-                                    </a>
-                                </div>
-                                <div class="person-details">
-                                    <h4 class="no-margin"><a href="#">Peter-Carlo Lehrell</a></h4>
-                                    <h6>Country 3, Banking and Financial Services</h6>
-                                    <div class="btn-container">
-                                        <a href="/profile" class="btn">
-                                            <div class="btn-text"><i class="icon-right-circle-1"></i></div>
-                                        </a>
-                                    </div>
-                                    <div class="person-contact-details">
-                                        <table class="no-style" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                            <tr>
-                                                <td>Tel</td>
-                                                <td>+01 2 34 56 78 90</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Mobile</td>
-                                                <td>+01 2 34 56 78 90</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Fax</td>
-                                                <td>+01 2 34 56 78 90</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2"><a href="mailto:name.surname@fipra.com">name.surname@fipra.com</a> </td>
-                                            </tr>
-                                        </table>
-
-                                        <br/><a href="/profile" class="full-profile-link">Full profile <i class="icon-right-open"></i></a>
-                                    </div>
-                                </div>
-                            </div>
 
                             <?php for($i = 1; $i <= 4; $i++): ?>
                                 <div class="person banking-and-financial-services country-3">
@@ -207,11 +169,11 @@ get_header(); ?>
                                 <div class="person chemical-industrials-and-mining country-2">
                                     <div class="person-profile-photo">
                                         <a href="/profile">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb_small.gif" alt=""/>
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans_thumb_small.gif" alt=""/>
                                         </a>
                                     </div>
                                     <div class="person-details">
-                                        <h4 class="no-margin"><a href="#">Name Surname</a></h4>
+                                        <h4 class="no-margin"><a href="#">Miriam Offermans</a></h4>
                                         <h6>Country 2, Chemical, Industrials and Mining</h6>
                                         <div class="btn-container">
                                             <a href="/profile" class="btn">
@@ -281,7 +243,7 @@ get_header(); ?>
                                 <div class="person energy-and-environment country-3">
                                     <div class="person-profile-photo">
                                         <a href="/profile">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb_small.gif" alt=""/>
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans_thumb_small.gif" alt=""/>
                                         </a>
                                     </div>
                                     <div class="person-details">

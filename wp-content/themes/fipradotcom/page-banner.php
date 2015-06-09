@@ -46,7 +46,7 @@
                                     Telecoms, Media and Technology
                                 </a></li>
                                 <li><a href="#entry-6">
-                                    <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/arrows.svg"); ?></div>
+                                    <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/logistics.svg"); ?></div>
                                     Travel, Transport and Logistics
                                 </a></li>
                                 <li><a href="#entry-7">
@@ -140,7 +140,7 @@
                             <div class="entry" id="entry-6">
                                 <div class="entry-title">
                                     <h4 class="no-margin">
-                                        <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/arrows.svg"); ?></div>
+                                        <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/logistics.svg"); ?></div>
                                         Travel, Transport and Logistics
                                         <i class="icon-toggle icon-down-open"></i>
                                     </h4>
