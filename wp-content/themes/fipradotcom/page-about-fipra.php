@@ -70,26 +70,6 @@ get_header(); ?>
                     <a class="btn primary btn-large full-width" href="/contact-us"><i class="icon-mail-2" style="margin-right:6px;"></i> Contact Us</a>
                 </aside>
 
-                <?php $expertise_areas = [
-                    ['title' => 'Banking and Financial Services', 'svg' => 'coins'],
-                    ['title' => 'Chemical, Industrials and Mining', 'svg' => 'gears'],
-                    ['title' => 'Energy and Environment', 'svg' => 'windmill'],
-                    ['title' => 'Healthcare and Pharma', 'svg' => 'heart'],
-                    ['title' => 'Telecoms, Media and Technology', 'svg' => 'monitor'],
-                    ['title' => 'Travel, Transport and Logistics', 'svg' => 'logistics'],
-                    ['title' => 'Competition Policy', 'svg' => 'podium']
-                ] ?>
-
-                <aside>
-                    <h5>Our Expertise</h5>
-                    <ul class="sidebar-list no-bottom-margin no-bullet">
-                        <?php for($i = 0; $i <= 6; $i++): ?>
-                            <li><a href="#"><div class="svg-icon svg-blue margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/" . $expertise_areas[$i]['svg'] . ".svg"); ?></div> <?= $expertise_areas[$i]['title'] ?></a></li>
-                        <?php endfor; ?>
-                    </ul>
-                </aside>
-
-
                 <aside>
                     <h5>Sidebar title</h5>
                     <p>More sidebar blocks can be added here, controlled in the CMS.</p>

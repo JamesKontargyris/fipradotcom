@@ -132,20 +132,6 @@ get_header(); ?>
                                 </div>
                                     <h4 class="no-bottom-margin"><a href="#">Name Surname</a></h4>
                                 <h6>Position</h6>
-                                <ul class="team-member-expertise">
-                                    <li>
-                                        <a href="#" class="tooltip svg-icon" title="Expertise Title">
-                                            <?php echo file_get_contents(get_template_directory_uri() . "/img/icons/heart.svg"); ?>
-                                        </a>
-                                        <a href="#" class="tooltip svg-icon" title="Expertise Title">
-                                            <?php echo file_get_contents(get_template_directory_uri() . "/img/icons/gears.svg"); ?>
-                                        </a>
-
-                                        <a href="#" class="tooltip svg-icon" title="Expertise Title">
-                                            <?php echo file_get_contents(get_template_directory_uri() . "/img/icons/monitor.svg"); ?>
-                                        </a>
-                                    </li>
-                                </ul>
                             </div>
                             <div style="" class="team-member">
                                 <div class="profile-photo">
@@ -153,20 +139,6 @@ get_header(); ?>
                                 </div>
                                 <h4 class="no-bottom-margin"><a href="#">Name Surname</a></h4>
                                 <h6>Position</h6>
-                                <ul class="team-member-expertise">
-                                    <li>
-                                        <a href="#" class="tooltip svg-icon" title="Expertise Title">
-                                            <?php echo file_get_contents(get_template_directory_uri() . "/img/icons/heart.svg"); ?>
-                                        </a>
-                                        <a href="#" class="tooltip svg-icon" title="Expertise Title">
-                                            <?php echo file_get_contents(get_template_directory_uri() . "/img/icons/gears.svg"); ?>
-                                        </a>
-
-                                        <a href="#" class="tooltip svg-icon" title="Expertise Title">
-                                            <?php echo file_get_contents(get_template_directory_uri() . "/img/icons/monitor.svg"); ?>
-                                        </a>
-                                    </li>
-                                </ul>
                             </div>
                         <?php endfor; ?>
                     </div>

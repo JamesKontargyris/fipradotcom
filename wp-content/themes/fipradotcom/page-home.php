@@ -12,7 +12,7 @@ get_header(); ?>
         background-size:cover;
     }
     #home-hero-carousel .owl-item:nth-child(3) {
-        background:url('<?php echo get_template_directory_uri(); ?>/img/buildings14.jpg') center no-repeat;
+        background:url('<?php echo get_template_directory_uri(); ?>/img/parliament1.jpg') bottom no-repeat;
         background-size:cover;
     }
     #home-hero-carousel .owl-item:nth-child(4) {
@@ -39,7 +39,7 @@ get_header(); ?>
                 <div class="full-width-block-container with-content-bar">
                     <div class="full-width-block-content-container content-bar grey bg-image">
                         <div class="full-width-block-content center narrow">
-                            <h1 class="upper">Professional Public Affairs in over 50 Countries</h1>
+                            <h1 class="upper">Professional Government Relations in over 50 Countries</h1>
                             <p class="blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ipsum modi molestiae necessitatibus, non quae quaerat qui voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <p class="no-margin"><a class="btn primary btn-large" href="/about-fipra">About Fipra</a></p>
                         </div>
@@ -128,45 +128,6 @@ get_header(); ?>
                             <div class="col-6-m no-bottom-margin home-feature-block-image">
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/buildings19.jpg" alt="Image"/>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="home-block-services-and-expertise">
-            <div class="full-width-block-container collapse">
-                <div class="full-width-block-content-container">
-                    <div class="full-width-block-content">
-                        <div class="row">
-                            <div class="col-12-m">
-                                <h1 class="feature center">Our Services and Expertise</h1>
-                                <h2 class="feature center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-                                <p class="narrow center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequuntur cum doloremque placeat voluptas. Accusamus aliquid animi aspernatur atque doloremque dolores error fuga, harum, laudantium magni, nesciunt possimus ratione sunt.</p>
-                            </div>
-                        </div>
-
-                        <div class="showcase">
-                            <div class="row-of-2">
-                                <?php $expertise_areas = [
-                                    ['title' => 'Banking and Financial Services', 'svg' => 'coins'],
-                                    ['title' => 'Chemical, Industrials and Mining', 'svg' => 'gears'],
-                                    ['title' => 'Energy and Environment', 'svg' => 'windmill'],
-                                    ['title' => 'Healthcare and Pharma', 'svg' => 'heart'],
-                                    ['title' => 'Telecoms, Media and Technology', 'svg' => 'monitor'],
-                                    ['title' => 'Travel, Transport and Logistics', 'svg' => 'logistics'],
-                                    ['title' => 'Competition Policy', 'svg' => 'podium']
-                                ] ?>
-                                <?php for($i = 0; $i <= 5; $i++): ?>
-                                <div class="showcase-block">
-                                    <a href="/expertise-area"><div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/" . $expertise_areas[$i]['svg'] . ".svg"); ?></div></a>
-                                    <div>
-                                        <h4 class="no-margin"><a href="/expertise-area"><?= $expertise_areas[$i]['title']; ?></a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores beatae distinctio ea, earum eligendi eum fugiat ipsa natus obcaecati pariatur.</p>
-                                    </div>
-                                </div>
-                                <?php endfor; ?>
-                            </div>
-                            <p class="center"><a class="btn primary btn-large" href="/banner">More Services and Expertise</a></p>
                         </div>
                     </div>
                 </div>
