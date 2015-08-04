@@ -176,7 +176,10 @@
   }
   .team-member {
     margin:0; text-align:center;
-    .profile-photo { line-height:0; border-bottom:1px solid darken($color__fipra-lighter-gray, 15%); }
+    .profile-photo { line-height:0;
+//      border-bottom:1px solid darken($color__fipra-lighter-gray, 15%);
+      img { border-radius: 50%; background-color: lighten($color__fipra-mid-gray, 3%); border:10px solid lighten($color__fipra-mid-gray, 3%); }
+    }
     h4 { font-weight: $font__bold; margin-top: $v-rhythm * 0.5; }
 //    img { background-color: $color__fipra-lighter-gray; }
   }

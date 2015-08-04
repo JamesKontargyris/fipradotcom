@@ -96,7 +96,7 @@ get_header(); ?>
                         <div class="sidebar-contact">
                             <div class="sidebar-contact-content">
                                 <a href="/expertise-area">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Ukko Metsola" style="background-color: white;" />
+                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/headshot_test.png" alt="Ukko Metsola" style="background-color: white;" />
                                     <strong>Ukko Metsola</strong>
                                 </a>
                                 <p class="no-bottom-margin">

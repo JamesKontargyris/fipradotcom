@@ -132,7 +132,7 @@ get_header(); ?>
                                 <div class="person banking-and-financial-services country-3">
                                     <div class="person-profile-photo">
                                         <a href="/profile">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb_small.gif" alt=""/>
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko_metsola.png" alt=""/>
                                         </a>
                                     </div>
                                     <div class="person-details">
@@ -169,7 +169,7 @@ get_header(); ?>
                                 <div class="person chemical-industrials-and-mining country-2">
                                     <div class="person-profile-photo">
                                         <a href="/profile">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans_thumb_small.gif" alt=""/>
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans.png" alt=""/>
                                         </a>
                                     </div>
                                     <div class="person-details">
@@ -206,11 +206,11 @@ get_header(); ?>
                                 <div class="person energy-and-environment country-1">
                                     <div class="person-profile-photo">
                                         <a href="/profile">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb_small.gif" alt=""/>
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/petercarlo_lehrell.png" alt=""/>
                                         </a>
                                     </div>
                                     <div class="person-details">
-                                        <h4 class="no-margin"><a href="#">Name Surname</a></h4>
+                                        <h4 class="no-margin"><a href="#">Peter-Carlo Lehrell</a></h4>
                                         <h6>Country 1, Energy and Environment</h6>
                                         <div class="btn-container">
                                             <a href="/profile" class="btn">
@@ -243,7 +243,7 @@ get_header(); ?>
                                 <div class="person energy-and-environment country-3">
                                     <div class="person-profile-photo">
                                         <a href="/profile">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans_thumb_small.gif" alt=""/>
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/headshot_test.png" alt=""/>
                                         </a>
                                     </div>
                                     <div class="person-details">
@@ -280,7 +280,7 @@ get_header(); ?>
                                 <div class="person banking-and-financial-services country-2">
                                     <div class="person-profile-photo">
                                         <a href="/profile">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb_small.gif" alt=""/>
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/headshot_test.png" alt=""/>
                                         </a>
                                     </div>
                                     <div class="person-details">

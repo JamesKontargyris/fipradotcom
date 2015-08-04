@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying all single profiles.
  *
  * @package fipradotcom
  */
@@ -14,7 +14,7 @@ get_header(); ?>
     <div id="hero" class="full-width-block-container with-content-bar content-bar-bottom profile">
         <div class="full-width-block-content-container content-bar grey">
             <div class="full-width-block-content left">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/fipriots/ukko_metsola_blue.gif" alt="Ukko Metsola"/>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/fipriots/ukko_metsola.png" alt="Ukko Metsola"/>
                 <h1 class="upper no-margin">Ukko Metsola</h1>
                 <h4 class="no-top-margin">Account Director, Fipra International</h4>
                 <a class="btn primary" href="mailto:ukko.metsola@fipra.com">Contact Ukko</a>

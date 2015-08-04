@@ -19,25 +19,25 @@
     text-align: left;
     overflow:hidden;
     width:100%;
-    background-color:white;
     margin-bottom:$v-rhythm;
-    border-bottom:2px solid darken(white, 10%);
+    background-color:white;
+//    border-bottom:2px solid darken(white, 10%);
 
-    @include media($media__medium) { display:inline-block; width:33.333333%; height:260px; border-left:5px solid $color__fipra-lighter-gray; border-right:5px solid $color__fipra-lighter-gray; }
+    @include media($media__medium) { display:inline-block; width:33.333333%; height:300px; border-left:5px solid $color__fipra-lighter-gray; border-right:5px solid $color__fipra-lighter-gray; background-color: transparent; }
 
-    @include media($media__medium-plus) { width:25%; }
+    @include media($media__medium-plus) { width:25%; height:300px; }
 
-    @include media($media__large) { width:20%; height:280px; }
-    @include media($media__xlarge) { width:16.66666666666667%; }
+    @include media($media__large) { width:20%; height:330px; }
+    @include media($media__xlarge) { width:16.66666666666667%; height:310px; }
 
     &.full-width { width:100%; border:0; }
 
-    h4 { @include font-size(18); font-weight:$font__bold; line-height: $v-rhythm * 1.5 !important; }
+    h4 { @include font-size(21); font-weight:$font__bold; line-height: $v-rhythm * 1.5 !important; }
     h6 { margin:0; line-height:$v-rhythm * 1.75 !important; font-weight: $font__normal; }
 
     .person-profile-photo {
       line-height:1 !important;
-      max-height:90%;
+      //      max-height:90%;
 
       @include media(max-width $media__small) { display: none !important; }
 
@@ -48,12 +48,13 @@
 
       @include media($media__medium) {
         background-color: $color__fipra-lighter-gray;
-        img { max-width: 90%; margin-bottom:0; }
+        img { max-width: 90%; margin-bottom:0; border-radius: 50%; border:10px solid $color__fipra-light-gray;  background-color: $color__fipra-light-gray; }
       }
 
       text-align:center;
       line-height:$v-rhythm;
-      &:hover { opacity:0.7; }
+      &:hover { opacity:0.7; border-radius: 50%;
+      }
 
     }
 
@@ -67,15 +68,15 @@
       @include media($media__medium) {
         padding:$v-rhythm * 0.75 rem(12px);
         position:absolute;
-        top:160px;
+        top:200px;
         left:0;
 
-        background-color: white;
+//        background-color: white;
         height:100%;
         width:100%;
         @include transition(all 0.5s);
 
-        h4 { @include font-size(16); }
+        h4 { @include font-size(17); }
 
         &:hover {
           top:0;
@@ -86,7 +87,9 @@
         }
       }
 
-      @include media($media__large) { top:150px; }
+      @include media($media__medium-plus) { top:210px; }
+      @include media($media__large) { top:230px; }
+      @include media($media__xlarge) { top:200px; }
 
       .btn-container {
         @include media($media__medium) { display: none; }
