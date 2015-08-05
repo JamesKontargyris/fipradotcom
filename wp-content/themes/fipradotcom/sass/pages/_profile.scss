@@ -13,15 +13,16 @@
 
       .full-width-block-content {
         position:relative;
-        @include media($media__small) { text-align:left; padding-right:220px; }
+        @include media($media__small) { text-align:left; padding-left:200px; }
+        @include media($media__medium) { padding-left:250px; }
         h4 { color: lighten($color__fipra-blue-gray, 35%) !important; }
         img {
           display:none;
           border-radius: 50%;
           background-color: $color__fipra-mid-gray;
           border:10px solid $color__fipra-mid-gray;
-          @include media($media__small) { display:block; position:absolute; bottom:0; right:20px; height:200px; top:50%; margin-top:-100px; }
-          @include media($media__medium) { margin-top:-125px; height:250px; }
+          @include media($media__small) { display:block; position:absolute; bottom:0; left:20px; height:150px; top:50%; margin-top:-75px; }
+          @include media($media__medium) { margin-top:-100px; height:200px; }
         }
       }
 

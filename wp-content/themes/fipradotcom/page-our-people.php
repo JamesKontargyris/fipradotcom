@@ -243,11 +243,11 @@ get_header(); ?>
                                 <div class="person energy-and-environment country-3">
                                     <div class="person-profile-photo">
                                         <a href="/profile">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/headshot_test.png" alt=""/>
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/alp_mehmet.png" alt=""/>
                                         </a>
                                     </div>
                                     <div class="person-details">
-                                        <h4 class="no-margin"><a href="#">Name Surname</a></h4>
+                                        <h4 class="no-margin"><a href="#">Alp Mehmet</a></h4>
                                         <h6>Country 3, Energy and Environment</h6>
                                         <div class="btn-container">
                                             <a href="/profile" class="btn">
@@ -280,11 +280,11 @@ get_header(); ?>
                                 <div class="person banking-and-financial-services country-2">
                                     <div class="person-profile-photo">
                                         <a href="/profile">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/headshot_test.png" alt=""/>
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/laura_batchelor.png" alt=""/>
                                         </a>
                                     </div>
                                     <div class="person-details">
-                                        <h4 class="no-margin"><a href="#">Name Surname</a></h4>
+                                        <h4 class="no-margin"><a href="#">Laura Batchelor</a></h4>
                                         <h6>Country 2, Banking and Financial Services</h6>
                                         <div class="btn-container">
                                             <a href="/profile" class="btn">
