@@ -184,7 +184,7 @@ get_header(); ?>
                         <?php for($i = 1; $i <= 6; $i++): ?>
                             <div class="team-member">
                                 <div class="profile-photo">
-                                    <a href="/profile"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans.png" alt="Name Surname" style="width:200px;" /></a>
+                                    <a href="/profile"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/arunas_pemkus.png" alt="Name Surname" style="width:200px;" /></a>
                                 </div>
                                 <h4 class="no-bottom-margin"><a href="/profile">Name Surname</a></h4>
                                 <h6>Position</h6>
@@ -192,7 +192,31 @@ get_header(); ?>
                             </div>
                             <div class="team-member">
                                 <div class="profile-photo">
-                                    <a href="/profile"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/headshot_test.png" alt="Name Surname" style="width:200px;" /></a>
+                                    <a href="/profile"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/rositsa_velkova.png" alt="Name Surname" style="width:200px;" /></a>
+                                </div>
+                                <h4 class="no-bottom-margin"><a href="/profile">Name Surname</a></h4>
+                                <h6>Position</h6>
+                                <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab doloribus error ipsa rerum. At blanditiis doloremque earum eum explicabo in iure maiores.</p>
+                            </div>
+                            <div class="team-member">
+                                <div class="profile-photo">
+                                    <a href="/profile"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/tamas_sardi.png" alt="Name Surname" style="width:200px;" /></a>
+                                </div>
+                                <h4 class="no-bottom-margin"><a href="/profile">Name Surname</a></h4>
+                                <h6>Position</h6>
+                                <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab doloribus error ipsa rerum. At blanditiis doloremque earum eum explicabo in iure maiores.</p>
+                            </div>
+                            <div class="team-member">
+                                <div class="profile-photo">
+                                    <a href="/profile"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/laura_batchelor.png" alt="Name Surname" style="width:200px;" /></a>
+                                </div>
+                                <h4 class="no-bottom-margin"><a href="/profile">Name Surname</a></h4>
+                                <h6>Position</h6>
+                                <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab doloribus error ipsa rerum. At blanditiis doloremque earum eum explicabo in iure maiores.</p>
+                            </div>
+                            <div class="team-member">
+                                <div class="profile-photo">
+                                    <a href="/profile"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter_carlo_lehrell.png" alt="Name Surname" style="width:200px;" /></a>
                                 </div>
                                 <h4 class="no-bottom-margin"><a href="/profile">Name Surname</a></h4>
                                 <h6>Position</h6>

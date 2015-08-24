@@ -132,7 +132,7 @@ get_header(); ?>
                                 <div class="person banking-and-financial-services country-3">
                                     <div class="person-profile-photo">
                                         <a href="/profile-spad">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/juan-prat_thumb_small.gif" alt=""/>
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/juan_prat_y_coll.png" alt="Name Surname"/>
                                         </a>
                                     </div>
                                     <div class="person-details">
@@ -169,7 +169,7 @@ get_header(); ?>
                                 <div class="person chemical-industrials-and-mining country-2">
                                     <div class="person-profile-photo">
                                         <a href="/profile-spad">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/juan-prat_thumb_small.gif" alt=""/>
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/juan_prat_y_coll.png" alt="Name Surname"/>
                                         </a>
                                     </div>
                                     <div class="person-details">
@@ -206,7 +206,7 @@ get_header(); ?>
                                 <div class="person energy-and-environment country-1">
                                     <div class="person-profile-photo">
                                         <a href="/profile-spad">
-                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/juan-prat_thumb_small.gif" alt=""/>
+                                            <img src="<?= get_template_directory_uri(); ?>/img/fipriots/juan_prat_y_coll.png" alt="Name Surname"/>
                                         </a>
                                     </div>
                                     <div class="person-details">

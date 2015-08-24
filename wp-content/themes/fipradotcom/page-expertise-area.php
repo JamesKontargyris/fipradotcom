@@ -96,7 +96,7 @@ get_header(); ?>
                         <div class="sidebar-contact">
                             <div class="sidebar-contact-content">
                                 <a href="/expertise-area">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/headshot_test.png" alt="Ukko Metsola" style="background-color: white;" />
+                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko_metsola.png" alt="Ukko Metsola" style="background-color: white;" />
                                     <strong>Ukko Metsola</strong>
                                 </a>
                                 <p class="no-bottom-margin">
@@ -137,17 +137,31 @@ get_header(); ?>
                 <h3 id="staff" class="upper small center">Practice Staff</h3>
 
                 <div id="practice-staff-carousel" class="team-carousel with-controls" data-number-of-items="12">
-                    <?php for($i = 1; $i <= 6; $i++): ?>
+                    <?php for($i = 1; $i <= 3; $i++): ?>
                         <div class="team-member">
                             <div class="profile-photo">
-                                <a href="#"> <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Ukko Metsola" /></a>
+                                <a href="#"> <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko_metsola.png" alt="Ukko Metsola" style="width:200px;" /></a>
                             </div>
                                 <h4 class="no-bottom-margin"><a href="#">Name Surname</a></h4>
                             <h6>Position, Fipra Unit</h6>
                         </div>
                         <div class="team-member">
                             <div class="profile-photo">
-                                <a href="#"> <img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans_thumb.gif" alt="Miriam Offermans" /></a>
+                                <a href="#"> <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ann_kelly.png" alt="Ann Kelly" style="width:200px;" /></a>
+                            </div>
+                            <h4 class="no-bottom-margin"><a href="#">Name Surname</a></h4>
+                            <h6>Position, Fipra Unit</h6>
+                        </div>
+                        <div class="team-member">
+                            <div class="profile-photo">
+                                <a href="#"> <img src="<?= get_template_directory_uri(); ?>/img/fipriots/ilari_marzano.png" alt="Ilari Marzano" style="width:200px;" /></a>
+                            </div>
+                            <h4 class="no-bottom-margin"><a href="#">Name Surname</a></h4>
+                            <h6>Position, Fipra Unit</h6>
+                        </div>
+                        <div class="team-member">
+                            <div class="profile-photo">
+                                <a href="#"> <img src="<?= get_template_directory_uri(); ?>/img/fipriots/jana_marco.png" alt="Jana Marco" style="width:200px;" /></a>
                             </div>
                             <h4 class="no-bottom-margin"><a href="#">Name Surname</a></h4>
                             <h6>Position, Fipra Unit</h6>

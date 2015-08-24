@@ -85,7 +85,7 @@ get_header(); ?>
                         <div class="sidebar-contact">
                             <div class="sidebar-contact-content">
                                 <a href="#">
-                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans_thumb.gif" alt="Miriam Offermans" style="background-color: white;" />
+                                    <img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans.png" alt="Miriam Offermans" style="background-color: white;" />
                                     <strong>Miriam Offermans</strong>
                                 </a>
                                 <p class="no-bottom-margin">
@@ -124,11 +124,11 @@ get_header(); ?>
                 <div class="full-width-block-content">
                     <h3 id="staff" class="upper small center">Our Team</h3>
 
-                    <div id="our-team-carousel" class="team-carousel with-controls" data-number-of-items="8">
-                        <?php for($i = 1; $i <= 8; $i++): ?>
+                    <div id="our-team-carousel" class="team-carousel with-controls" data-number-of-items="2">
+                        <?php for($i = 1; $i <= 1; $i++): ?>
                             <div style="" class="team-member">
                                 <div class="profile-photo">
-                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans_thumb.gif" alt="Name Surname" /></a>
+                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/miriam_offermans.png" alt="Name Surname" style="width:200px;" /></a>
                                 </div>
                                     <h4 class="no-bottom-margin"><a href="#">Name Surname</a></h4>
                                 <h6>Position</h6>
@@ -149,7 +149,7 @@ get_header(); ?>
                             </div>
                             <div style="" class="team-member">
                                 <div class="profile-photo">
-                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/ukko-metsola_thumb.gif" alt="Name Surname" style="width:200px;" /></a>
+                                    <a href="#"><img src="<?= get_template_directory_uri(); ?>/img/fipriots/peter_van_keulen.png" alt="Name Surname" style="width:200px;" /></a>
                                 </div>
                                 <h4 class="no-bottom-margin"><a href="#">Name Surname</a></h4>
                                 <h6>Position</h6>

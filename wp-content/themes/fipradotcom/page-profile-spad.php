@@ -14,7 +14,7 @@ get_header(); ?>
     <div id="hero" class="full-width-block-container with-content-bar content-bar-bottom profile">
         <div class="full-width-block-content-container content-bar grey">
             <div class="full-width-block-content left">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/fipriots/juan_prat_blue.gif" alt="Juan Prat y Coll"/>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/fipriots/juan_prat_y_coll.png" alt="Juan Prat y Coll"/>
                 <h1 class="upper no-margin">Juan Prat y Coll</h1>
                 <h4 class="no-top-margin">Special Adviser, International Affairs</h4>
                 <a class="btn primary" href="mailto:juan.pratcoll@fipra.com">Contact Juan</a>
