@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying expertise area pages.
  *
  * @package fipradotcom
  */
@@ -16,8 +16,6 @@ get_header(); ?>
 </style>
 
 <div id="content-container" class="expertise-area">
-
-    <?php get_template_part('inc/breadcrumbs'); ?>
 
     <div id="hero" class="full-width-block-container with-content-bar">
         <div class="full-width-block-content-container content-bar grey bg-image">

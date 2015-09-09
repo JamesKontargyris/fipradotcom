@@ -54,7 +54,7 @@
 
         //Is the value entered empty?
         if(filter == '') {
-            $('.filtering-on-title').text('Showing all ' + $('.number-of-fipriots').text() + ' Fipriots');
+            $('.filtering-on-title').text('Showing ' + $('.number-of-fipriots').text() + ' Fipriots');
             $('.clear-filter').addClass('hide');
         } else {
             var s = (count == 1) ? '' : 's';
@@ -110,7 +110,7 @@
     $('.clear-filter').on('click', function(e) {
         e.preventDefault();
         clearFilter();
-        $('.filtering-on-title').text('Showing all ' + $('.number-of-fipriots').text() + ' Fipriots');
+        $('.filtering-on-title').text('Showing ' + $('.number-of-fipriots').text() + ' Fipriots');
         //Clear the text filter input
         $('#text-filter').val('');
     });

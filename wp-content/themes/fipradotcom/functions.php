@@ -324,6 +324,33 @@ function fipra_sitewide_search_form($form)
     return $form;
 }
 
+function get_all_fipriots($include_spads = false) {
+
+    global $post;
+
+    $args = [
+        'post_type' => 'fipriot',
+        'post_status' => 'publish',
+        'meta_key' => 'last_name',
+        'orderby' => 'meta_value',
+        'order' => 'ASC',
+    ];
+
+    if($include_spads) {
+        $args['meta_query'] = [
+            [
+                'key'     => 'is_special_adviser',
+                'value'   => '1',
+                'compare' => 'LIKE',
+            ]
+        ];
+    }
+
+    $query = new WP_Query($args);
+
+    return $query;
+}
+
 /*
   Plugin Name: case-insensitive-url
   Plugin URI: http://www.unfocus.com/projects/
@@ -341,3 +368,9 @@ function case_insensitive_url() {
 add_action('init', 'case_insensitive_url');
 
 add_filter('get_search_form', 'fipra_sitewide_search_form');
+
+
+
+
+// Thumbnail sizes
+add_image_size( 'profile-photo', 300, 300 );
