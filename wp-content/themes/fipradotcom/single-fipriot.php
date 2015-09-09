@@ -99,12 +99,20 @@ get_header(); ?>
                     </aside>
 
 <!--TODO update languages loop-->
-                    <aside>
-                        <h5 id="languages">Languages Spoken</h5>
-                        <ul class="languages-list no-bottom-margin no-bullet">
-                            <li><img src="<?php echo get_template_directory_uri(); ?>/img/flags/finland.png" class="languages-list-flag tooltip" alt="Finnish" title="Finnish"/></li>
-                        </ul>
-                    </aside>
+
+                        <?php $languages = get_field('languages');
+                            if($languages): ?>
+
+                                <aside>
+                                    <h5 id="languages">Languages Spoken</h5>
+                                    <ul class="languages-list no-bottom-margin no-bullet">
+                                        <?php foreach($languages as $language) : ?>
+                                            <li><img src="<?= get_language_flag_url($language->term_id); ?>" class="languages-list-flag tooltip" alt="<?= $language->name; ?>" title="<?= $language->name; ?>"/></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </aside>
+
+                        <?php endif; ?>
 
                 </div><!-- #secondary -->
 

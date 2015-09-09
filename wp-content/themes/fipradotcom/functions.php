@@ -346,9 +346,29 @@ function get_all_fipriots($include_spads = false) {
         ];
     }
 
-    $query = new WP_Query($args);
+    return new WP_Query($args);
+}
 
-    return $query;
+function get_all_spads() {
+
+    global $post;
+
+    $args = [
+        'post_type' => 'fipriot',
+        'post_status' => 'publish',
+        'meta_key' => 'last_name',
+        'orderby' => 'meta_value',
+        'order' => 'ASC',
+        'meta_query' => [
+            [
+                'key'     => 'is_special_adviser',
+                'value'   => '1',
+                'compare' => 'LIKE',
+            ],
+        ],
+    ];
+
+    return new WP_Query($args);
 }
 
 /*
@@ -374,3 +394,78 @@ add_filter('get_search_form', 'fipra_sitewide_search_form');
 
 // Thumbnail sizes
 add_image_size( 'profile-photo', 300, 300 );
+
+/**
+ * Registering meta sections for taxonomies
+ *
+ * All the definitions of meta sections are listed below with comments, please read them carefully.
+ * Note that each validation method of the Validation Class MUST return value.
+ *
+ * You also should read the changelog to know what has been changed
+ *
+ */
+
+// Hook to 'admin_init' to make sure the class is loaded before
+// (in case using the class in another plugin)
+add_action( 'admin_init', 'fipradotcom_register_taxonomy_meta_boxes' );
+
+/**
+ * Register meta boxes
+ *
+ * @return void
+ */
+function fipradotcom_register_taxonomy_meta_boxes()
+{
+    // Make sure there's no errors when the plugin is deactivated or during upgrade
+    if ( !class_exists( 'RW_Taxonomy_Meta' ) )
+        return;
+
+    $meta_sections = array();
+
+    // First meta section
+    $meta_sections[] = array(
+        'title'      => '',             // section title
+        'taxonomies' => array('language'), // list of taxonomies. Default is array('category', 'post_tag'). Optional
+        'id'         => 'flag_section',                 // ID of each section, will be the option name
+
+        'fields' => array(                             // List of meta fields
+            // IMAGE
+            array(
+                'name' => 'Flag',
+                'id'   => 'image',
+                'type' => 'image',
+            ),
+        ),
+    );
+
+    foreach ( $meta_sections as $meta_section )
+    {
+        new RW_Taxonomy_Meta( $meta_section );
+    }
+}
+
+
+// Get language flag
+function get_language_flag_url($term_id) {
+
+
+    $meta = get_option('flag_section');
+    if (empty($meta)) $meta = array();
+    if (!is_array($meta)) $meta = (array) $meta;
+    $meta = isset($meta[$term_id]) ? $meta[$term_id] : array();
+    $images = $meta['image'];
+    foreach ($images as $att) {
+        // get image's source based on size, can be 'thumbnail', 'medium', 'large', 'full' or registed post thumbnails sizes
+        $src = wp_get_attachment_image_src($att, 'full');
+        $src = $src[0];
+
+        // return URL
+        return $src;
+    }
+}
+
+// Remove languages taxonomy metabox from sidebar of Fipriots add/edit pages
+function remove_language_meta() {
+    remove_meta_box( 'tagsdiv-language' , 'fipriot' , 'side' );
+}
+add_action( 'admin_menu' , 'remove_language_meta' );
