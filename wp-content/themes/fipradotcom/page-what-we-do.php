@@ -1,192 +1,261 @@
 <?php get_header(); ?>
 
-<div id="content-container" class="with-border">
+<div id="content-container">
 
-    <div id="content" class="site-content">
+    <div class="page-nav grey">
+        <div class="row content-area">
+            <ul class="anchor-links-list no-margin no-bullet">
+                <li class="menu-title menu-title-toggle"><i class="icon-menu-1"></i> Jump to...</li>
+                <li class="hide-s"><a class="jump-to-link" href="#areas-of-expertise">Areas of Expertise <i class="icon-down-open"></i></a></li>
+                <li class="hide-s"><a class="jump-to-link" href="#public-affairs-services">Public Affairs Services <i class="icon-down-open"></i></a></li>
+            </ul>
+        </div>
+    </div>
 
-        <div id="primary" class="content-area full-width">
-            <main id="main" class="site-main" role="main">
-                <div class="page-header center">
-                    <h1 class="feature"><?php the_title(); ?></h1>
-                    <h2 class="feature">What we do title in the page header</h2>
-                    <p class="lead">Lead paragraph aenean vel augue nec erat dignissim euismod sed nec erat. Morbi aliquam sit amet magna vel pulvinar. Maecenas ultrices urna sed lectus faucibus facilisis. In eu risus sed est pulvinar eleifend et in lectus.
-                        <br/><br/>
-                        <a href="#public_affairs_services" class="btn primary">Public Affairs Services</a> <a href="#areas_of_expertise" class="btn primary">Areas of Expertise</a>
-                    </p>
+    <section id="areas-of-expertise" class="full-width-block-container areas-of-expertise-block">
+        <div class="full-width-block-content-container dark-grey">
+
+            <div class="full-width-block-content">
+                <div class="row">
+                    <div class="col-12-l no-m-margin">
+                        <h1 class="upper small center">Areas of Expertise</h1>
+                        <p class="center narrow">Cras laoreet eros quis pharetra ullamcorper. Etiam consequat varius luctus. Quisque mollis, magna vitae vehicula mattis, quam sem fringilla justo, sit amet faucibus nulla arcu eu ex. Curabitur metus eros, euismod ac faucibus sit amet, tempor eu mauris.</p>
+                    </div>
                 </div>
+                <div class="menu-list-and-entries-block">
+                    <div class="row">
+                        <div class="col-5-l">
+                            <ul class="menu-list with-line" data-entry-group="1">
+                                <li class="active"><a href="#entry-1">
+                                    <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/coins.svg"); ?></div>
+                                    Banking and Financial Services
+                                </a></li>
+                                <li><a href="#entry-2">
+                                    <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/gears.svg"); ?></div>
+                                    Chemical, Industrials and Mining
+                                </a></li>
+                                <li><a href="#entry-3">
+                                    <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div>
+                                    Energy and Environment
+                                </a></li>
+                                <li><a href="#entry-4">
+                                    <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/heart.svg"); ?></div> Healthcare and Pharma
+                                </a></li>
+                                <li><a href="#entry-5">
+                                    <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/monitor.svg"); ?></div>
+                                    Telecoms, Media and Technology
+                                </a></li>
+                                <li><a href="#entry-6">
+                                    <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/logistics.svg"); ?></div>
+                                    Travel, Transport and Logistics
+                                </a></li>
+                                <li><a href="#entry-7">
+                                    <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/podium.svg"); ?></div>
+                                    Competition Policy
+                                </a></li>
+                            </ul>
+                        </div>
+                        <div class="col-7-l entry-group" id="entry-group-1">
+                            <div class="entry" id="entry-1">
+                                <div class="entry-title">
+                                    <h4 class="no-margin">
+                                        <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/coins.svg"); ?></div>
+                                        Banking and Financial Services
+                                        <i class="icon-toggle icon-down-open"></i>
+                                    </h4>
+                                </div>
+                                <div class="entry-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
 
-                <hr />
+                                    <p>Nam condimentum blandit mauris vestibulum dignissim. Quisque semper enim vitae urna elementum, vel lacinia metus finibus. Fusce et posuere augue. Curabitur dolor libero, eleifend id odio at, finibus luctus dui. Phasellus aliquam porttitor rutrum. Sed dignissim elementum lectus, vel sollicitudin velit suscipit et. Nulla rutrum scelerisque est, a facilisis felis egestas in. Donec id molestie justo.</p>
 
-                <a id="areas_of_expertise"></a>
-                <h2 class="center">Areas of Expertise</h2>
-                <p class="center narrow">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pretium ipsum leo, nec faucibus magna finibus congue. Integer nisl tellus, volutpat nec tellus at, ullamcorper finibus lectus. Aliquam erat volutpat.</p>
+                                    <p>Nam condimentum blandit mauris vestibulum dignissim. Quisque semper enim vitae urna elementum, vel lacinia metus finibus. Fusce et posuere augue. Curabitur dolor libero, eleifend id odio at, finibus luctus dui. Phasellus aliquam porttitor rutrum. Sed dignissim elementum lectus, vel sollicitudin velit suscipit et. Nulla rutrum scelerisque est, a facilisis felis egestas in. Donec id molestie justo.</p>
 
-                <div class="showcase equal-heights">
-                    <div class="row-of-3">
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content">
-                                <div class="circle-icon"><i class="icon-bank"></i></div>
-                                <h3 class="no-top-margin">Banking and Financial Services</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
+                                    <p><a href="#" class="btn primary">Read more</a></p>
+                                </div>
                             </div>
-                            <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content">
-                                <div class="circle-icon"><i class="icon-industrial-building"></i></div>
-                                <h3 class="no-top-margin">Chemical, Industrials and Mining</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
+
+                            <div class="entry" id="entry-2">
+                                <div class="entry-title">
+                                    <h4 class="no-margin">
+                                        <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/gears.svg"); ?></div>
+                                        Chemical, Industrials and Mining
+                                        <i class="icon-toggle icon-down-open"></i>
+                                    </h4>
+                                </div>
+                                <div class="entry-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+
+                                    <p>Nam condimentum blandit mauris vestibulum dignissim. Quisque semper enim vitae urna elementum, vel lacinia metus finibus. Fusce et posuere augue. Curabitur dolor libero, eleifend id odio at, finibus luctus dui. Phasellus aliquam porttitor rutrum. Sed dignissim elementum lectus, vel sollicitudin velit suscipit et. Nulla rutrum scelerisque est, a facilisis felis egestas in. Donec id molestie justo.</p>
+
+                                    <p><a href="#" class="btn primary">Read more</a></p>
+                                </div>
                             </div>
-                            <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content">
-                                <div class="circle-icon"><i class="icon-lightbulb-1"></i></div>
-                                <h3 class="no-top-margin">Energy and Environment</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
+
+                            <div class="entry" id="entry-3">
+                                <div class="entry-title">
+                                    <h4 class="no-margin">
+                                        <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div>
+                                        Energy and Environment
+                                        <i class="icon-toggle icon-down-open"></i>
+                                    </h4>
+                                </div>
+                                <div class="entry-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+
+                                    <p><a href="#" class="btn primary">Read more</a></p>
+                                </div>
                             </div>
-                            <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content">
-                                <div class="circle-icon"><i class="icon-plus-2"></i></div>
-                                <h3 class="no-top-margin">Healthcare and Pharma</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
-                                </p>
+
+                            <div class="entry" id="entry-4">
+                                <div class="entry-title">
+                                    <h4 class="no-margin">
+                                        <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/heart.svg"); ?></div>
+                                        Healthcare and Pharma
+                                        <i class="icon-toggle icon-down-open"></i>
+                                    </h4>
+                                </div>
+                                <div class="entry-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+
+                                    <p><a href="#" class="btn primary">Read more</a></p>
+                                </div>
                             </div>
-                            <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content">
-                                <div class="circle-icon"><i class="icon-monitor"></i></div>
-                                <h3 class="no-top-margin">Telecoms, Media and Technology</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
+
+                            <div class="entry" id="entry-5">
+                                <div class="entry-title">
+                                    <h4 class="no-margin">
+                                        <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/monitor.svg"); ?></div>
+                                        Telecoms, Media and Technology
+                                        <i class="icon-toggle icon-down-open"></i>
+                                    </h4>
+                                </div>
+                                <div class="entry-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+
+                                    <p><a href="#" class="btn primary">Read more</a></p>
+                                </div>
                             </div>
-                            <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content">
-                                <div class="circle-icon"><i class="icon-airport"></i></div>
-                                <h3 class="no-top-margin">Travel, Transport and Logistics</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
+
+                            <div class="entry" id="entry-6">
+                                <div class="entry-title">
+                                    <h4 class="no-margin">
+                                        <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/logistics.svg"); ?></div>
+                                        Travel, Transport and Logistics
+                                        <i class="icon-toggle icon-down-open"></i>
+                                    </h4>
+                                </div>
+                                <div class="entry-content">
+                                    <p>Fipra’s Travel, Transport and Logistics (TTL) practice, lead by <a href="#">Ukko Metsola</a>, is composed of experienced staff and Special Advisers with diverse expertise in the policies and regulatory frameworks that affect the TTL industries.</p>
+
+                                    <p>The TTL business unit services are geared to deliver bottom-line savings, or reduced regulatory risks and costs, to our clients.</p>
+
+                                    <p>Since 2000, Fipra’s TTL practice has supported a large number of clients at different levels of political decision-making: we have a proven track record of working closely and constructively with political and regulatory bodies including local and national governments more than 25 countries, and vis-à-vis the Institutions of the European Union and intergovernmental organizations (e.g. International Maritime Organisation, World Trade Organisation).</p>
+
+                                    <p><a href="#" class="btn primary">Read more</a></p>
+                                </div>
                             </div>
-                            <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
-                        </div>
-                        <div class="showcase-block bg center shift-1-col">
-                            <div class="showcase-block-content">
-                                <div class="circle-icon"><i class="icon-users"></i></div>
-                                <h3 class="no-top-margin">Competition Policy</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Quisque a iaculis nisi. Phasellus et libero non quam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
+
+                            <div class="entry" id="entry-7">
+                                <div class="entry-title">
+                                    <h4 class="no-margin">
+                                        <div class="svg-icon margin-r"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/podium.svg"); ?></div>
+                                        Competition Policy
+                                        <i class="icon-toggle icon-down-open"></i>
+                                    </h4>
+                                </div>
+                                <div class="entry-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt felis in purus venenatis, nec suscipit ipsum ullamcorper. Praesent id dui consectetur elit laoreet gravida. Suspendisse a vestibulum velit. Suspendisse iaculis consectetur nisl vitae sagittis. Sed faucibus erat odio, nec auctor urna fermentum id. Vestibulum nisl nisl, molestie sit amet nunc nec, consequat scelerisque lorem. Nunc aliquet massa ac rhoncus condimentum. Quisque condimentum, lectus ut malesuada lacinia, magna nibh rhoncus mauris, eget condimentum justo lacus ut ipsum. Duis vel fermentum felis. Fusce eu purus at mauris ultricies fermentum. Vestibulum augue metus, porta quis interdum sed, viverra a nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat.</p>
+
+                                    <p><a href="#" class="btn primary">Read more</a></p>
+                                </div>
                             </div>
-                            <div class="highlight-box secondary br-bottom"><a href="#" class="btn primary no-margin">Find out more</a></div>
+
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <hr class="medium"/>
+    <section id="public-affairs-services" class="full-width-block-container public-affairs-services-block">
+        <div class="full-width-block-content-container light-grey">
 
-                <a id="public_affairs_services"></a>
-                <h2 class="center">Public Affairs Services</h2>
-                <p class="center narrow">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pretium ipsum leo, nec faucibus magna finibus congue. Integer nisl tellus, volutpat nec tellus at, ullamcorper finibus lectus. Aliquam erat volutpat.</p>
+            <h1 class="upper small center">Public Affairs Services</h1>
+            <div class="full-width-block-content left">
 
-                <div class="showcase equal-heights">
-                    <div id="public-affairs-services-carousel" class="row-of-1 owl-carousel">
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content large-text">
-                                <div class="circle-icon"><i class="icon-list-numbered"></i></div>
-                                <h3 class="no-top-margin">Strategic Planning</h3>
-                                <p style="clear: both;">Jointly developing your Public Affairs action plan and objectives, clearly defining your strategic and tactical priorities.</p>
-                            </div>
-                            <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Peter-Carlo Lehrell</a> for more information.</div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content large-text">
-                                <div class="circle-icon"><i class="icon-book-open-1"></i></div>
-                                <h3 class="no-top-margin">Narrative Development</h3>
-                                <p>Ensuring that your story effectively communicates your key messages and resonates with your target audiences.</p>
-                            </div>
-                            <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Dirk Hudig</a> for more information.</div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content large-text">
-                                <div class="circle-icon"><i class="icon-sitemap"></i></div>
-                                <h3 class="no-top-margin">Stakeholder Mapping</h3>
-                                <p>Identifying the organisations and individuals that are relevant to your cause and helping you manage your contacts database.</p>
-                            </div>
-                            <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Jan Ahlskog</a> for more information.</div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content large-text">
-                                <div class="circle-icon"><i class="icon-chat"></i></div>
-                                <h3 class="no-top-margin">Stakeholder Outreach</h3>
-                                <p>Hands-on support to establish constructive dialogue with key stakeholders and effectively execute your action plan.</p>
-                            </div>
-                            <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Ukko Metsola</a> for more information.</div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content large-text">
-                                <div class="circle-icon"><i class="icon-eye-outline"></i></div>
-                                <h3 class="no-top-margin">Situation Analysis</h3>
-                                <p>Tailored, in-depth analysis and assessment of political and regulatory developments at international, national and local levels.</p>
-                            </div>
-                            <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Daniel Furby</a> for more information.</div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content large-text">
-                                <div class="circle-icon"><i class="icon-target"></i></div>
-                                <h3 class="no-top-margin">Targeted Monitoring</h3>
-                                <p>Serving as your ‘eyes and ears’ on the ground to provide you with real-time intelligence and regular newsletters on key issues impacting your PA objectives.</p>
-                            </div>
-                            <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Laura Batchelor</a> for more information.</div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content large-text">
-                                <div class="circle-icon"><i class="icon-flag"></i></div>
-                                <h3 class="no-top-margin">One-Stop-Shop PA Campaigns</h3>
-                                <p>Track record in leading and coordinating PA campaigns on the ground in over 60 countries, ensuring quality, consistency and timely delivery and execution.</p>
-                            </div>
-                            <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Paul Buffet</a> for more information.</div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content large-text">
-                                <div class="circle-icon"><i class="icon-warehouse"></i></div>
-                                <h3 class="no-top-margin">In-House PA Capabilities Assessment</h3>
-                                <p>Identifying the strengths and weaknesses of your Government Affairs practice through personalised recommendations.</p>
-                            </div>
-                            <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Laura Batchelor</a> for more information.</div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content large-text">
-                                <div class="circle-icon"><i class="icon-award-2"></i></div>
-                                <h3 class="no-top-margin">Training Sessions</h3>
-                                <p>Customised PA training sessions for your in-house policy and management personnel.</p>
-                            </div>
-                            <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Dirk Hudig</a> for more information.</div>
-                        </div>
-                        <div class="showcase-block center bg">
-                            <div class="showcase-block-content large-text">
-                                <div class="circle-icon"><i class="icon-video-chat"></i></div>
-                                <h3 class="no-top-margin">Complementary Media Support</h3>
-                                <p>Crafting press statements that support your public policy objectives and helping you organise and prepare for press conferences and media appearances.</p>
-                            </div>
-                            <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">David Lawsky</a> for more information.</div>
-                        </div>
-                        <div class="showcase-block center bg shift-half-col">
-                            <div class="showcase-block-content large-text">
-                                <div class="circle-icon"><i class="icon-dollar-1"></i></div>
-                                <h3 class="no-top-margin">EU Funding</h3>
-                                <p>Helping you understand what EU funds are available to your organisation and how to navigate the complex application process.</p>
-                            </div>
-                            <div class="highlight-box secondary br-bottom">Contact <a href="#modal" rel="modal:open">Peter-Carlo Lehrell</a> for more information.</div>
-                        </div>
+                <div id="public-affairs-services-carousel" class="carousel with-controls">
+                    <div>
+                        <h2 class="no-top-margin center">Strategic Planning</h2>
+                        <p class="center">Jointly developing your Public Affairs action plan and objectives, clearly defining your strategic and tactical priorities.</p>
+                        <p class="center">Contact <a href="#modal" rel="modal:open">Peter-Carlo Lehrell</a> for more information.</p>
                     </div>
 
+                    <div>
+                        <h2 class="no-top-margin">Narrative Development</h2>
+                        <p>Ensuring that your story effectively communicates your key messages and resonates with your target audiences.</p>
+
+                    </div>
+
+                    <div>
+                        <h2 class="no-top-margin">Stakeholder Mapping</h2>
+                        <p>Identifying the organisations and individuals that are relevant to your cause and helping you manage your contacts database.</p>
+                        <p>Contact <a href="#modal" rel="modal:open">Jan Ahlskog</a> for more information.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="no-top-margin">Stakeholder Outreach</h2>
+                        <p>Hands-on support to establish constructive dialogue with key stakeholders and effectively execute your action plan.</p>
+                        <p>Contact <a href="#modal" rel="modal:open">Ukko Metsola</a> for more information.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="no-top-margin">Situation Analysis</h2>
+                        <p>Tailored, in-depth analysis and assessment of political and regulatory developments at international, national and local levels.</p>
+                        <p>Contact <a href="#modal" rel="modal:open">Daniel Furby</a> for more information.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="no-top-margin">Targeted Monitoring</h2>
+                        <p>Serving as your ‘eyes and ears’ on the ground to provide you with real-time intelligence and regular newsletters on key issues impacting your PA objectives.</p>
+                        <p>Contact <a href="#modal" rel="modal:open">Laura Batchelor</a> for more information.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="no-top-margin">One-Stop-Shop PA Campaigns</h2>
+                        <p>Track record in leading and coordinating PA campaigns on the ground in over 60 countries, ensuring quality, consistency and timely delivery and execution.</p>
+                        <p>Contact <a href="#modal" rel="modal:open">Paul Buffet</a> for more information.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="no-top-margin">In-house Capabilities Assessment</h2>
+                        <p>Identifying the strengths and weaknesses of your Government Affairs practice through personalised recommendations.</p>
+                        <p>Contact <a href="#modal" rel="modal:open">Laura Batchelor</a> for more information.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="no-top-margin">Training Sessions</h2>
+                        <p>Customised PA training sessions for your in-house policy and management personnel.</p>
+                        <p>Contact <a href="#modal" rel="modal:open">Dirk Hudig</a> for more information.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="no-top-margin">Complementary Media Support</h2>
+                        <p>Crafting press statements that support your public policy objectives and helping you organise and prepare for press conferences and media appearances.</p>
+                        <p>Contact <a href="#modal" rel="modal:open">David Lawsky</a> for more information.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="no-top-margin">EU Funding</h2>
+                        <p>Helping you understand what EU funds are available to your organisation and how to navigate the complex application process.</p>
+                        <p>Contact <a href="#modal" rel="modal:open">Peter-Carlo Lehrell</a> for more information.</p>
+                    </div>
                 </div>
 
-            </main><!-- #main -->
-        </div><!-- #primary -->
+            </div>
+        </div>
+    </section>
 
-    </div><!-- #content -->
 </div><!-- #content-container   -->
 
 <?php get_footer(); ?>

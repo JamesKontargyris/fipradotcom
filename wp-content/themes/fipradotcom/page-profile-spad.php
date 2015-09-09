@@ -9,8 +9,6 @@ get_header(); ?>
 
 <div id="content-container">
 
-    <?php get_template_part('inc/breadcrumbs'); ?>
-
     <div id="hero" class="full-width-block-container with-content-bar content-bar-bottom profile">
         <div class="full-width-block-content-container content-bar grey">
             <div class="full-width-block-content left">

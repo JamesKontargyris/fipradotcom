@@ -95,13 +95,13 @@ function fipradotcom_widgets_init()
 {
     register_sidebar(
         array(
-            'name' => __('Sidebar', 'fipradotcom'),
-            'id' => 'sidebar-1',
-            'description' => '',
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget' => '</aside>',
-            'before_title' => '<h5 class="widget-title">',
-            'after_title' => '</h5>',
+            'name' => __('Sub-Nav Bar', 'fipradotcom'),
+            'id' => 'sub-nav-bar',
+            'description' => 'Displays widgets in the sub-nav bar on each page',
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '',
+            'after_title' => '',
         )
     );
 }

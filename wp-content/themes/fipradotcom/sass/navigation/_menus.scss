@@ -163,7 +163,6 @@
 
 ul.anchor-links-list {
   @include clearfix;
-  @include font-size(14);
   list-style: none;
   margin-bottom:$v-rhythm * 2;
   &.no-margin { margin:0; }
@@ -177,9 +176,9 @@ ul.anchor-links-list {
     @include media(max-width $media__medium) {
 
       &:not(.menu-title) { border-top:1px solid rgba(white, 0.4); }
-      &.menu-title { display:block; padding:$v-rhythm * 0.25 em(6px); }
+      &.menu-title { display:block; padding:$v-rhythm * 0.25 em(6px) $v-rhythm * 0.5 0; }
       &.menu-title-toggle { cursor:pointer; }
-      a { display: block; padding: $v-rhythm * 0.5 em(6px); }
+      a { display: block; padding: $v-rhythm * 0.5 em(6px) $v-rhythm * 0.5 0; }
       i { position:absolute; right:em(6px); top:3px; }
 
       &.inline-s {
@@ -195,7 +194,7 @@ ul.anchor-links-list {
     @include media($media__medium) {
       float: left;
       &.menu-title {
-        padding:$v-rhythm * 0.5 em(6px);
+        padding:$v-rhythm * 0.5 em(6px) $v-rhythm * 0.5 0;
         i { display:none; }
       }
       &:not(:first-child) { margin-left: em(12px); }

@@ -201,7 +201,7 @@
 
     <div id="mobile-header-global-network-container">
         <div id="mobile-header-global-network">
-            <div class="title">Explore our Global Network:</div>
+            <div class="title">Explore our Network:</div>
             <select name="mobile-header-global-network-menu" id="mobile-header-global-network-menu">
                 <option value="">Please select...</option>
                 <optgroup label="Continent Name">
@@ -233,7 +233,7 @@
             <div id="site-navigation-container">
                 <div class="search-global-network-button">
                     <?php get_search_form( true ); ?>
-                    <a class="global-network-button br-bottom" href="global-network"><i class="icon-globe"></i> Explore our Global Network</a>
+                    <a class="global-network-button br-bottom" href="global-network"><i class="icon-globe"></i> Explore our Network</a>
                 </div>
                 <nav id="site-navigation" class="main-navigation" role="navigation">
                     <a class="mobile-menu-global-network btn btn-clear btn-large no-margin"><i class="icon-globe"></i></a>
@@ -255,4 +255,7 @@
         <!-- #masthead -->
     </div>
 
+    <?php get_template_part('inc/breadcrumbs'); ?>
+
     <div id="content">
+

@@ -17,8 +17,6 @@ get_header(); ?>
 
 <div id="content-container" class="expertise-area">
 
-    <?php get_template_part('inc/breadcrumbs'); ?>
-
     <div id="hero" class="full-width-block-container with-content-bar">
         <div class="full-width-block-content-container content-bar grey bg-image">
             <div class="full-width-block-content center narrow">

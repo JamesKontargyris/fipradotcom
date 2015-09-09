@@ -34,7 +34,7 @@ get_header(); ?>
         </div>
     </div>
 
-    <div class="page-nav">
+    <div class="page-nav grey">
         <div class="row content-area">
             <div class="col-9-m no-margin">
                 <ul class="anchor-links-list no-margin no-bullet">
