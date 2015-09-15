@@ -199,7 +199,7 @@
         $('.expertise-area-name').matchHeight();
 
         //    Set equal heights of testimonial quotes
-        $('.testimonial-group .quote').matchHeight();
+        $('.testimonial-group .testimonial').matchHeight();
 
         //    Set equal heights of homepage hero carousel elements
         $('#home-hero-carousel .owl-item').matchHeight();

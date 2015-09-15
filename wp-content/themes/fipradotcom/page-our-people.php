@@ -108,7 +108,7 @@ get_header(); ?>
 
     <?php
         // The Query
-        $fipriots = get_all_fipriots(false);
+        $fipriots = get_all_fipriots();
     ?>
 
     <div id="site-content-container">
@@ -118,7 +118,7 @@ get_header(); ?>
             <div id="primary" class="full-width">
                 <main id="main" class="site-main" role="main">
 
-                    <?php if ($fipriots->have_posts() ) : ?>
+                    <?php if ( $fipriots->have_posts() ) : ?>
 
                         <!--                    Used by jQuery to update filtering-on-title when clear filter button is clicked -->
                         <div class="hide-s hide-m number-of-fipriots"><?= $fipriots->found_posts; ?></div>

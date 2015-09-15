@@ -22,7 +22,7 @@ get_header(); ?>
                     <?php if ( has_post_thumbnail() ) : ?>
                         <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post_id) ) ?>" alt="Ukko Metsola"/>
                     <?php endif; ?>
-                    <h1 class="upper no-margin"><?= get_field('first_name') ?> <?= get_field('last_name') ?></h1>
+                    <h1 class="upper no-margin"><?= full_name(); ?></h1>
                     <h4 class="no-top-margin"><?= get_field('position'); ?>, Unit Name</h4>
 <!-- TODO: update link to contact form-->
                     <a class="btn primary" href="#">Contact <?= get_field('first_name') ?></a>
