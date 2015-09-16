@@ -444,6 +444,42 @@ function get_homepage_slides() {
     return $slides;
 }
 
+function get_expertise_areas() {
+
+    global $post;
+
+    $args = [
+        'post_type' => 'expertise',
+        'post_status' => 'publish',
+//        'meta_key' => 'last_name',
+//        'orderby' => 'meta_value',
+//        'order' => 'ASC',
+    ];
+
+    $expertise = new WP_Query($args);
+    wp_reset_postdata();
+
+    return $expertise;
+}
+
+function get_public_affairs_services() {
+
+    global $post;
+
+    $args = [
+        'post_type' => 'paservice',
+        'post_status' => 'publish',
+//        'meta_key' => 'last_name',
+//        'orderby' => 'meta_value',
+//        'order' => 'ASC',
+    ];
+
+    $paservices = new WP_Query($args);
+    wp_reset_postdata();
+
+    return $paservices;
+}
+
 function full_name() {
     $first_name = get_field('first_name');
     $last_name = get_field('last_name');
@@ -525,6 +561,29 @@ function fipradotcom_register_taxonomy_meta_boxes()
     }
 }
 
+/**
+ * Allow svg files to be uploaded by default
+ * @param $mimes
+ * @return mixed
+ */
+function svg_mime_types( $mimes ){
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;}
+add_filter( 'upload_mimes', 'svg_mime_types' );
+
+/**
+ * Ensure svg previews display correctly on admin pages
+ */
+function svg_size() {
+    echo '<style>
+    svg, img[src*=".svg"] {
+      max-width: 150px !important;
+      max-height: 150px !important;
+    }
+  </style>';
+}
+add_action('admin_head', 'svg_size');
+
 
 // Get language flag
 function get_language_flag_url($term_id) {
@@ -556,6 +615,52 @@ function get_master_page_id() {
     global $wp_query;
     return $wp_query->post->ID;
 }
+
+
+// Helper functions
+/**
+ * Helper function to layout each team member in a team group carousel
+ *
+ * @param $post_id
+ * @param bool|false $short_bio
+ * @return bool|string
+ */
+function layout_fipriot_team_member($post_id, $short_bio = false) {
+    if( $post_id ) {
+        $string = '';
+        $string .= '<div class="team-member">';
+        $string .= '<div class="profile-photo">';
+        if ( has_post_thumbnail($post_id) ) {
+            $string .= '<a href="' . get_the_permalink($post_id) . '">';
+            $string .= '<img src="' . wp_get_attachment_url( get_post_thumbnail_id($post_id) ) . '" alt="' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '" style="width:200px;"/>';
+            $string .= '</a>';
+        }
+        $string .= '</div>';
+        $string .= '<h4 class="no-bottom-margin"><a href="' . get_the_permalink($post_id) . '">' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '</a></h4>';
+//        TODO add unit
+        $string .= '<h6>' . get_field('position', $post_id) . '</h6>';
+        if( $short_bio === true ) { $string .= '<p class="small">' . get_field('short_bio', $post_id) . '</p>'; }
+        $string .=  '</div>';
+
+        return $string;
+    } else {
+        return false;
+    }
+}
+
+function layout_practice_staff($fipriots) {
+
+    if ( $fipriots ) {
+        $string = '';
+
+        foreach ( $fipriots as $fipriot ) {
+            $string .= layout_fipriot_team_member($fipriot->ID);
+        }
+    }
+
+    return $string;
+}
+
 
 // Shortcodes
 
@@ -602,18 +707,7 @@ function home_fipriots_sc() {
         while ( $fipriots->have_posts() ) {
             $fipriots->the_post();
 
-            $string .= '<div class="team-member">';
-                $string .= '<div class="profile-photo">';
-                    if ( has_post_thumbnail() ) {
-                        $string .= '<a href="' . get_the_permalink() . '">';
-                            $string .= '<img src="' . wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ) . '" alt="' . full_name() . '" style="width:200px;"/>';
-                        $string .= '</a>';
-                    }
-                $string .= '</div>';
-                $string .= '<h4 class="no-bottom-margin"><a href="' . get_the_permalink() . '">' . full_name() . '</a></h4>';
-                $string .= '<h6>' . get_field('position') . '</h6>';
-                $string .= '<p class="small">' . get_field('short_bio') . '</p>';
-            $string .=  '</div>';
+            $string .= layout_fipriot_team_member(get_the_ID(), true);
         }
 
         $string .=  '</div>';
@@ -622,6 +716,7 @@ function home_fipriots_sc() {
     return $string;
 }
 add_shortcode( 'home_fipriots', 'home_fipriots_sc' );
+
 
 function page_testimonials() {
 //    Get the ID of the current page

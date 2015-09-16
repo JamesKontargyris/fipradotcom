@@ -12,15 +12,14 @@ get_header(); ?>
     <!-- The Loop -->
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-        <?php
-            $post_id = get_the_ID();
-        ?>
+        <?php $post_id = get_the_ID(); ?>
 
         <div id="hero" class="full-width-block-container with-content-bar content-bar-bottom profile">
             <div class="full-width-block-content-container content-bar grey">
                 <div class="full-width-block-content left">
                     <?php if ( has_post_thumbnail() ) : ?>
-                        <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post_id) ) ?>" alt="Ukko Metsola"/>
+                        <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'profile-photo' )[0]; ?>" alt="<?= full_name(); ?>" title="<?= full_name(); ?>"/>
+<!--                    TODO add else statement with placeholder profile photo-->
                     <?php endif; ?>
                     <h1 class="upper no-margin"><?= full_name(); ?></h1>
                     <h4 class="no-top-margin"><?= get_field('position'); ?>, Unit Name</h4>

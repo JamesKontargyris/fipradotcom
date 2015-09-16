@@ -223,5 +223,28 @@
     $('.menu-title-toggle').on('click', function()
         { $(this).siblings('li:not(.menu-title)').toggleClass('hide-s'); });
 
+//    Handle the PA Services contact link (opens a modal and loads contact details using AJAX)
+    $('a.pa-service-ajax-contact').click(function(event) {
+
+        $.ajax({
+
+            url: $(this).data('modal-url'),
+
+            success: function(newHTML, textStatus, jqXHR) {
+               $('#modal').html(newHTML).modal();
+
+            },
+
+            error: function(jqXHR, textStatus, errorThrown) {
+                // Handle AJAX errors
+            }
+
+            // More AJAX customization goes here.
+
+        });
+
+        return false;
+    });
+
 })(jQuery);
 
