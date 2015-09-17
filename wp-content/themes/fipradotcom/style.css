@@ -1509,6 +1509,11 @@ ul.team-member-expertise {
       padding-right: 0;
       padding-left: 0;
       padding-top: 14.25rem; } }
+  .hero .full-width-block-content-container.short, #hero .full-width-block-content-container.short {
+    padding-top: 2.25rem;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 2.25rem; }
   @media screen and (min-width: 801px) {
     .hero .full-width-block-content-container.content-bar, #hero .full-width-block-content-container.content-bar {
       padding-top: 2.25rem;
@@ -2381,6 +2386,9 @@ ul.team-member-expertise {
       width: 100%; }
       #content-container #primary.full-width:last-child {
         margin-right: 0; }
+    @media screen and (min-width: 801px) {
+      #content-container #primary.left-sidebar {
+        margin-left: 34.7478%; } }
   #content-container #secondary {
     float: left;
     display: block;
@@ -2404,6 +2412,9 @@ ul.team-member-expertise {
       margin-top: 1.5rem;
       padding-top: 0.75rem;
       border-top: 1px solid #d7dbe3; }
+    @media screen and (min-width: 801px) {
+      #content-container #secondary.left-sidebar {
+        margin-left: -104.2434%; } }
   #content-container #page-footer {
     margin-top: 1.5rem;
     margin-bottom: -1.5rem;
@@ -4238,6 +4249,10 @@ ul.sidebar-list {
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
+
+@media screen and (max-width: 1024px) {
+  .csColumn {
+    text-align: inherit !important; } }
 
 /*--------------------------------------------------------------
 ## Asides

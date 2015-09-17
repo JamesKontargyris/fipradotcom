@@ -1,9 +1,4 @@
 <?php
-/**
- * The template for displaying all single posts.
- *
- * @package fipradotcom
- */
 
 get_header(); ?>
 

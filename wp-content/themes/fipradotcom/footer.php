@@ -12,7 +12,7 @@
 
     <div id="footer-global-network-container">
         <div id="footer-global-network">
-            <label for="footer-global-network">Explore&nbsp;our&nbsp;Global&nbsp;Network:</label>
+            <label for="footer-global-network">Explore&nbsp;our&nbsp;Network:</label>
             <div class="select-wrapper">
                 <select name="footer-global-network" id="footer-global-network">
                     <option value="">Please select...</option>

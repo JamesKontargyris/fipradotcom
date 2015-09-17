@@ -26,3 +26,7 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+@media screen and (max-width: 1024px) {
+  .csColumn { text-align:inherit !important; }
+}

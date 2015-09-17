@@ -7,21 +7,26 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'fipradotcom' ),
-				'after'  => '</div>',
-			) );
-		?>
+
+		<?php $full_width = get_field('page_layout') == 'full_width' ? 'full-width' : ''; ?>
+		<?php $left_sidebar = get_field('page_layout') == 'left_sidebar' ? 'left-sidebar' : ''; ?>
+
+		<div id="primary" class="<?= $full_width . ' ' . $left_sidebar; ?>">
+			<main id="main" class="site-main" role="main">
+				<?php the_content(); ?>
+			</main><!-- #main -->
+		</div><!-- #primary -->
+
+		<?php if( get_field('page_layout') == 'left_sidebar' || get_field('page_layout') == 'right_sidebar') : ?>
+			<div id="secondary" class="<?= $left_sidebar; ?>">
+				<?php get_sidebar(); ?>
+			</div>
+		<?php endif; ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php edit_post_link( __( 'Edit', 'fipradotcom' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'fipradotcom' ), '<span class="edit-link btn btn-small secondary">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

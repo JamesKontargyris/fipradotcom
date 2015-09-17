@@ -27,6 +27,9 @@ if (!function_exists('fipradotcom_setup')) :
         include('inc/helpers.php');
         include('inc/shortcodes.php');
 
+//        Use the site stylesheet in the content editor, so content looks as it would on the front-end
+        add_editor_style('style.css');
+
         /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
@@ -97,17 +100,24 @@ add_action('after_setup_theme', 'fipradotcom_setup');
  */
 function fipradotcom_widgets_init()
 {
-    register_sidebar(
-        array(
-            'name' => __('Sub-Nav Bar', 'fipradotcom'),
-            'id' => 'sub-nav-bar',
-            'description' => 'Displays widgets in the sub-nav bar on each page',
-            'before_widget' => '',
-            'after_widget' => '',
-            'before_title' => '',
-            'after_title' => '',
-        )
-    );
+    register_sidebar([
+        'name' => __('Page Sidebar', 'fipradotcom'),
+        'id' => 'sidebar-1',
+        'description' => 'Displays widgets in the sidebar of standard pages',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ]);
+    register_sidebar([
+        'name' => __('Sub-Nav Bar', 'fipradotcom'),
+        'id' => 'sub-nav-bar',
+        'description' => 'Displays widgets in the sub-nav bar on each page',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ]);
 }
 
 add_action('widgets_init', 'fipradotcom_widgets_init');

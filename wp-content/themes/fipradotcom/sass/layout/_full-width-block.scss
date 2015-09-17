@@ -56,10 +56,14 @@
       @include media($media__medium) { padding-bottom: $v-rhythm * 3; padding-right: 0; padding-left: 0; padding-top: $v-rhythm * 11; }
       @include media($media__xlarge) { padding-bottom: $v-rhythm * 3; padding-right: 0; padding-left: 0; padding-top: $v-rhythm * 19; }
     }
-//    If this is a content bar, alter the padding so it doesn't fill the whole block area
+
+    &.short { padding-top: $v-rhythm * 3; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 3; }
+
+    //    If this is a content bar, alter the padding so it doesn't fill the whole block area and overrides other padding settings
     &.content-bar {
       @include media($media__medium) { padding-top: $v-rhythm * 3; padding-right: 0; padding-left: 0; padding-bottom: $v-rhythm * 3; }
     }
+
 
   }
 }
