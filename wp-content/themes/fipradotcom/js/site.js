@@ -140,7 +140,7 @@
         paginationSpeed: 500,
         rewindSpeed: 500,
         autoPlay: 5000,
-        transitionStyle: "fade",
+        //transitionStyle: "fade",
         pagination: false
     });
     $("#public-affairs-services-carousel").owlCarousel({
@@ -244,6 +244,14 @@
         });
 
         return false;
+    });
+
+
+//    Explore our Network drop-down triggers
+    $('#mobile-header-global-network-menu, #footer-global-network').change(function() {
+        if($(this).val()) {
+            window.location = $(this).val();
+        }
     });
 
 })(jQuery);

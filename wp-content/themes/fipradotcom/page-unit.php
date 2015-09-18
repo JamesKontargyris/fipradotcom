@@ -16,8 +16,6 @@ get_header(); ?>
 
 <div id="content-container" class="unit">
 
-    <?php get_template_part('inc/breadcrumbs'); ?>
-
     <div id="hero" class="full-width-block-container with-content-bar">
         <div class="full-width-block-content-container content-bar grey bottom bg-image">
             <div class="full-width-block-content center narrow">
@@ -48,13 +46,13 @@ get_header(); ?>
                 <main id="main" class="site-main" role="main">
 
                     <h3 id="about-us">About Us</h3>
-                    <p>Fipra Netherlands advises organizations that are in the centre of the political and public arena; want to face, make and manage issues; shape public perception and influence the process of decision making.</p>
+                    Fipra Netherlands advises organizations that are in the centre of the political and public arena; want to face, make and manage issues; shape public perception and influence the process of decision making.
 
-                    <p>Our core business is to analyse and interpret external developments and frame internal positions with the objective to influence public affairs and lobbying target audiences.</p>
+                    Our core business is to analyse and interpret external developments and frame internal positions with the objective to influence public affairs and lobbying target audiences.
 
-                    <p>The Fipra Netherlands team currently consists of fifteen experts in public affairs, lobbying and communication management. They all have working experience in parliament, companies, ministry, or public interest groups. For example as adviser to a Member of European Parliament, Minister, as in-house lobbyist or civil servant. Consultants are societally and/or politically active and are experienced campaigners.</p>
+                    The Fipra Netherlands team currently consists of fifteen experts in public affairs, lobbying and communication management. They all have working experience in parliament, companies, ministry, or public interest groups. For example as adviser to a Member of European Parliament, Minister, as in-house lobbyist or civil servant. Consultants are societally and/or politically active and are experienced campaigners.
 
-                    <p>All consultants have expertise in the formal and informal  decision- making process at local, national ('The Hague') and EU level, and have in-depth knowledge of precisely timing and shaping messages that will help change perceptions of relevant key decision makers. Based on day-to-day experience, consultants regularly give training and workshops. Fipra Netherlands is the first Dutch independent firm with a Code of Conduct.</p>
+                    All consultants have expertise in the formal and informal  decision- making process at local, national ('The Hague') and EU level, and have in-depth knowledge of precisely timing and shaping messages that will help change perceptions of relevant key decision makers. Based on day-to-day experience, consultants regularly give training and workshops. Fipra Netherlands is the first Dutch independent firm with a Code of Conduct.
 
                     <section class="our-location">
                         <h3 id="our-location">Our Location</h3>
@@ -62,9 +60,9 @@ get_header(); ?>
                             <div class="col-7-m"><img src="<?= get_template_directory_uri(); ?>/img/unit-location-map.jpg" alt="Map Placeholder" /></div>
                             <div class="col-5-m">
                                 <address>
-                                    Bezuidenhoutseweg 101a<br/>
-                                    Den Haag<br/>
-                                    2594 AC<br/>
+                                    Bezuidenhoutseweg 101a
+                                    Den Haag
+                                    2594 AC
                                     The Netherlands
                                 </address>
                             </div>

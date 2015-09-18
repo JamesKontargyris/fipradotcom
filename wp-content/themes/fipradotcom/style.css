@@ -1759,7 +1759,6 @@ ul.team-member-expertise {
       float: left;
       color: #f7f7f7;
       padding: 0.75rem 1.5em;
-      width: 20%;
       margin: 0; }
       #global-network-menu-container #global-network-menu .menuzord-menu > li:not(:last-child) {
         border-right: 1px solid #1c43a0; }
@@ -4108,6 +4107,12 @@ ul.anchor-links-list, .filter-group-container .filter-list-container ul.filter-l
       display: none; }
       .entry-group .entry .entry-content.show {
         display: block; } }
+
+.google-map {
+  width: 100%;
+  height: 300px;
+  border: #ccc solid 1px;
+  margin: 0 0 1.5rem 0; }
 
 .white-box, .showcase .showcase-block.bg .showcase-block-content, .profile-expertise-showcase .expertise-area a, .job-listing-block {
   background-color: white;

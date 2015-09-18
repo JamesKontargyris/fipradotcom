@@ -60,7 +60,7 @@
       float: left;
       color:$color_soft-white;
       padding:$v-rhythm em(24px);
-      width:100 / 5 + %;
+      //width:100 / 5 + %;
       margin:0;
 //      border-left:1px solid desaturate(darken($color__fipra-blue, 7%), 30%);
       &:not(:last-child) { border-right:1px solid desaturate(lighten($color__fipra-blue, 12%), 30%); }

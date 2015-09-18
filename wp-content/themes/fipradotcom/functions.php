@@ -26,6 +26,7 @@ if (!function_exists('fipradotcom_setup')) :
         include('inc/query_functions.php');
         include('inc/helpers.php');
         include('inc/shortcodes.php');
+        include('inc/enqueue_scripts.php');
 
 //        Use the site stylesheet in the content editor, so content looks as it would on the front-end
         add_editor_style('style.css');
@@ -122,182 +123,7 @@ function fipradotcom_widgets_init()
 
 add_action('widgets_init', 'fipradotcom_widgets_init');
 
-/**
- * Enqueue scripts and styles.
- */
-function fipradotcom_scripts()
-{
-    wp_enqueue_style(
-        'fipradotcom-google-fonts',
-        'http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic|Lora:400,700,400italic,700italic'
-    );
-    wp_enqueue_style(
-        'fipradotcom-typicons',
-        get_template_directory_uri() . '/fonts/typicons.min.css'
-    );
-    wp_enqueue_style(
-        'fipradotcom-fontello',
-        get_template_directory_uri() . '/fonts/fontello/css/iconfonts.css'
-    );
-    wp_enqueue_style(
-        'fipradotcom-tooltipster',
-        get_template_directory_uri() . '/css/tooltipster.css'
-    );
-    wp_enqueue_style(
-        'fipradotcom-jquery-modal',
-        get_template_directory_uri() . '/js/jquery-modal/jquery.modal.css'
-    );
-    wp_enqueue_style(
-        'fipradotcom-owl-carousel',
-        get_template_directory_uri() . '/js/owl-carousel/owl.carousel.css'
-    );
-    wp_enqueue_style(
-        'fipradotcom-owl-carousel-theme',
-        get_template_directory_uri() . '/js/owl-carousel/owl.theme.css'
-    );
-    wp_enqueue_style(
-        'fipradotcom-owl-carousel-transitions',
-        get_template_directory_uri() . '/js/owl-carousel/owl.transitions.css'
-    );
 
-    wp_enqueue_style('fipradotcom-style', get_stylesheet_uri());
-
-//    wp_enqueue_script(
-//        'fipradotcom-navigation',
-//        get_template_directory_uri() . '/js/navigation.js',
-//        array(),
-//        '20120206',
-//        true
-//    );
-
-    wp_enqueue_script(
-        'fipradotcom-jquery',
-        'https://code.jquery.com/jquery-2.1.3.min.js',
-        array(),
-        '20120206',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-menuzord-js',
-        get_template_directory_uri() . '/js/menuzord.js',
-        array(),
-        '20150423',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-matchheights-js',
-        get_template_directory_uri() . '/js/jquery.matchHeight-min.js',
-        array(),
-        '20150428',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-tooltipster-js',
-        get_template_directory_uri() . '/js/jquery.tooltipster.min.js',
-        array(),
-        '20150428',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-jquery-modal',
-        get_template_directory_uri() . '/js/jquery-modal/jquery.modal.min.js',
-        array(),
-        '20150423',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-jquery-owl-carousel',
-        get_template_directory_uri() . '/js/owl-carousel/owl.carousel.js',
-        array(),
-        '20150429',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-skip-link-focus-fix',
-        get_template_directory_uri() . '/js/skip-link-focus-fix.js',
-        array(),
-        '20130115',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-jquery-actual-height-of-hidden-elements',
-        get_template_directory_uri() . '/js/jquery.actual.min.js',
-        array(),
-        '20150511',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-jquery-imagesLoaded',
-        get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js',
-        array(),
-        '20150515',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-jquery-izotone',
-        get_template_directory_uri() . '/js/isotope.pkgd.min.js',
-        array(),
-        '20150514',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-jquery-equalize',
-        get_template_directory_uri() . '/js/equalize.min.js',
-        array(),
-        '20150514',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-hover-touch-unstick',
-        get_template_directory_uri() . '/js/hoverTouchUnstick.js',
-        array(),
-        '20150528',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-user-js',
-        get_template_directory_uri() . '/js/site.js',
-        array(),
-        '20120206',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-user-js-our-people',
-        get_template_directory_uri() . '/js/our-people.js',
-        array(),
-        '20150515',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-user-menu-link-and-entries-js',
-        get_template_directory_uri() . '/js/menu-list-and-entries.js',
-        array(),
-        '20150511',
-        true
-    );
-
-
-
-    if (is_singular() && comments_open() && get_option('thread_comments')) {
-        wp_enqueue_script('comment-reply');
-    }
-}
-
-add_action('wp_enqueue_scripts', 'fipradotcom_scripts');
 
 /**
  * Implement the Custom Header feature.
@@ -338,15 +164,6 @@ function fipra_sitewide_search_form($form)
     return $form;
 }
 
-
-
-function full_name() {
-    $first_name = get_field('first_name');
-    $last_name = get_field('last_name');
-
-    if($first_name && $last_name) { return $first_name . ' ' . $last_name; }
-    return false;
-}
 /*
   Plugin Name: case-insensitive-url
   Plugin URI: http://www.unfocus.com/projects/
@@ -368,9 +185,10 @@ add_filter('get_search_form', 'fipra_sitewide_search_form');
 
 
 
-// Thumbnail sizes
+// Post Thumbnail sizes
 add_image_size( 'profile-photo', 300, 300 );
-add_image_size( 'banner', 1500, 1000 );
+add_image_size( 'banner', 1500, 1000, true );
+add_image_size( 'unit-flag', 64, 64 );
 
 /**
  * Registering meta sections for taxonomies
@@ -382,10 +200,6 @@ add_image_size( 'banner', 1500, 1000 );
  *
  */
 
-// Hook to 'admin_init' to make sure the class is loaded before
-// (in case using the class in another plugin)
-add_action( 'admin_init', 'fipradotcom_register_taxonomy_meta_boxes' );
-
 /**
  * Register meta boxes for taxonomies
  *
@@ -394,31 +208,53 @@ add_action( 'admin_init', 'fipradotcom_register_taxonomy_meta_boxes' );
 function fipradotcom_register_taxonomy_meta_boxes()
 {
     // Make sure there's no errors when the plugin is deactivated or during upgrade
-    if ( !class_exists( 'RW_Taxonomy_Meta' ) )
+    if ( ! class_exists( 'RW_Taxonomy_Meta' ) )
         return;
 
     $meta_sections = array();
 
     // First meta section
-    $meta_sections[] = array(
+    $meta_sections[] = [
         'title'      => '',             // section title
         'taxonomies' => array('language'), // list of taxonomies. Default is array('category', 'post_tag'). Optional
         'id'         => 'flag_section',                 // ID of each section, will be the option name
 
-        'fields' => array(                             // List of meta fields
+        'fields' => [                             // List of meta fields
             // IMAGE
-            array(
+            [
                 'name' => 'Flag',
                 'id'   => 'image',
                 'type' => 'image',
-            ),
-        ),
-    );
+            ],
+        ],
+    ];
 
     foreach ( $meta_sections as $meta_section )
     {
         new RW_Taxonomy_Meta( $meta_section );
     }
+}
+// Hook to 'admin_init' to make sure the class is loaded before
+// (in case using the class in another plugin)
+add_action( 'admin_init', 'fipradotcom_register_taxonomy_meta_boxes' );
+
+
+// Remove languages taxonomy metabox from sidebar of Fipriots add/edit pages
+function remove_language_meta() {
+    remove_meta_box( 'tagsdiv-language' , 'fipriot' , 'side' );
+}
+add_action( 'admin_menu' , 'remove_language_meta' );
+
+// Remove continents taxonomy metabox from sidebar of Units add/edit pages
+function remove_continent_meta() {
+    remove_meta_box( 'tagsdiv-continent' , 'unit' , 'side' );
+}
+add_action( 'admin_menu' , 'remove_continent_meta' );
+
+
+function get_master_page_id() {
+    global $wp_query;
+    return $wp_query->post->ID;
 }
 
 /**
@@ -445,36 +281,6 @@ function svg_size() {
 add_action('admin_head', 'svg_size');
 
 
-// Get language flag
-function get_language_flag_url($term_id) {
-
-
-    $meta = get_option('flag_section');
-    if (empty($meta)) $meta = array();
-    if (!is_array($meta)) $meta = (array) $meta;
-    $meta = isset($meta[$term_id]) ? $meta[$term_id] : array();
-    $images = $meta['image'];
-    foreach ($images as $att) {
-        // get image's source based on size, can be 'thumbnail', 'medium', 'large', 'full' or registed post thumbnails sizes
-        $src = wp_get_attachment_image_src($att, 'full');
-        $src = $src[0];
-
-        // return URL
-        return $src;
-    }
-}
-
-// Remove languages taxonomy metabox from sidebar of Fipriots add/edit pages
-function remove_language_meta() {
-    remove_meta_box( 'tagsdiv-language' , 'fipriot' , 'side' );
-}
-add_action( 'admin_menu' , 'remove_language_meta' );
-
-
-function get_master_page_id() {
-    global $wp_query;
-    return $wp_query->post->ID;
-}
 
 
 

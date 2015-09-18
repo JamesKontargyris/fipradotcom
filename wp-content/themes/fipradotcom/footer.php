@@ -16,11 +16,20 @@
             <div class="select-wrapper">
                 <select name="footer-global-network" id="footer-global-network">
                     <option value="">Please select...</option>
-                    <optgroup label="Continent Name">
-                        <option value="1">Country Name</option>
-                        <option value="2">Country Name</option>
-                        <option value="3">Country Name</option>
-                    </optgroup>
+
+                    <?php
+                    $continents = get_terms('continent', 'hide_empty=0');
+                    foreach( $continents as $continent ) :
+                        ?>
+                        <optgroup label="<?= $continent->name ?>">
+
+                            <?php $continent_units = get_units_by_continent($continent->term_id); ?>
+                            <?php while ( $continent_units->have_posts() ) : $continent_units->the_post(); ?>
+                                <option value="<?php the_permalink(); ?>"><?php the_title(); ?></option>
+                            <?php endwhile; ?>
+
+                        </optgroup>
+                    <?php endforeach; ?>
                 </select>
             </div>
         </div>

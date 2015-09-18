@@ -162,3 +162,28 @@ function get_public_affairs_services() {
 
     return $paservices;
 }
+
+function get_units_by_continent($continent_id) {
+
+    global $post;
+
+    $args = [
+        'post_type' => 'unit',
+        'post_status' => 'publish',
+//        'meta_key' => 'last_name',
+        'orderby' => 'title',
+        'order' => 'ASC',
+        'meta_query' => [
+            [
+                'key'     => 'continent',
+                'value'   => $continent_id,
+                'compare' => 'LIKE',
+            ]
+        ]
+    ];
+
+    $units = new WP_Query($args);
+    wp_reset_postdata();
+
+    return $units;
+}

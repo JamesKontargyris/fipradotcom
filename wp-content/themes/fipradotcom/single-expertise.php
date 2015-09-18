@@ -7,17 +7,7 @@
 
 get_header(); ?>
 
-<style>
-    <?php if(has_post_thumbnail()) : $bg_position = str_replace('_', ' ', get_field('bg_position')); // Set bg position of the featured image ?>
-    #hero {
-        content:"";
-        background:url('<?= wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) ); ?>') <?= $bg_position; ?> no-repeat;
-        background-size:cover;
-    }
-    <?php endif; ?>
-</style>
-
-
+<?php include('inc/header_featured_image.php'); ?>
 
 <div id="content-container" class="expertise-area">
 
@@ -29,7 +19,7 @@ get_header(); ?>
                 <div class="full-width-block-content center narrow">
                     <h1 class="upper"><?= file_get_contents(get_field('icon')); ?>
                         <br/><?= get_the_title(); ?></h1>
-                    <p class="lead no-margin"><?= get_field('lead_paragraph'); ?></p>
+                    <p class="lead no-margin"><?= get_field('introduction'); ?></p>
                 </div>
             </div>
         </div>
@@ -140,7 +130,7 @@ get_header(); ?>
                         <div id="expertise-carousel" class="with-controls" data-number-of-items="<?= $expertise_areas->post_count; ?>">
                             <?php while ( $expertise_areas->have_posts() ) : $expertise_areas->the_post(); ?>
                                 <div class="expertise-area center">
-                                    <a href="#">
+                                    <a href="<?= get_the_permalink(); ?>">
                                         <div class="svg-icon"><?= file_get_contents(get_field('icon')); ?></div>
                                         <div class="expertise-area-name"><?= get_the_title(); ?></div>
                                     </a>

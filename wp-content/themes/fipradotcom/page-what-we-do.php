@@ -48,7 +48,7 @@
                                             </h4>
                                         </div>
                                         <div class="entry-content">
-                                            <?= get_field('introduction'); ?><br><br>
+                                            <?= get_field('long_summary'); ?><br><br>
 
                                             <p><a href="<?= get_the_permalink(); ?>" class="btn primary">Read more</a></p>
                                         </div>

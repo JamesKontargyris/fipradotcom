@@ -40,16 +40,19 @@ get_header(); ?>
 
                         <?= get_field('main_bio') ?>
 
-                        <h3 id="expertise"><?= get_field('first_name') ?>'s Expertise</h3>
-<!--TODO Add expertise loop-->
-                        <div class="profile-expertise-showcase equal-heights">
-                                <div class="expertise-area">
-                                    <a href="#">
-                                        <div class="svg-icon"><?php echo file_get_contents(get_template_directory_uri() . "/img/icons/windmill.svg"); ?></div>
-                                        <div class="expertise-area-name">Energy and Environment</div>
-                                    </a>
-                                </div>
+                        <?php if( get_field('expertise') ) : ?>
+                            <h3 id="expertise"><?= get_field('first_name') ?>'s Expertise</h3>
+                            <div class="profile-expertise-showcase equal-heights">
+                                <?php foreach(get_field('expertise') as $expertise_area) : ?>
+                                    <div class="expertise-area">
+                                        <a href="<?= get_the_permalink($expertise_area->ID); ?>">
+                                            <div class="svg-icon"><?= file_get_contents(get_field('icon', $expertise_area->ID)); ?></div>
+                                            <div class="expertise-area-name"><?= get_the_title($expertise_area->ID); ?></div>
+                                        </a>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
+                        <?php endif; ?>
 
                     </main><!-- #main -->
                 </div><!-- #primary -->
