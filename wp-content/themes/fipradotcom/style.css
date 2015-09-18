@@ -264,8 +264,9 @@ h1 {
     text-transform: uppercase; }
   @media screen and (max-width: 481px)  {
     h1.upper {
-      font-size: 18px;
-      font-size: 1.125rem; } }
+      font-size: 21px;
+      font-size: 1.3125rem;
+      margin-bottom: 0.75rem; } }
 
 h2 {
   font-weight: 400;
@@ -4114,6 +4115,53 @@ ul.anchor-links-list, .filter-group-container .filter-list-container ul.filter-l
   border: #ccc solid 1px;
   margin: 0 0 1.5rem 0; }
 
+.continent-block {
+  display: block;
+  margin-bottom: 1.5rem; }
+  .continent-block::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .continent-block::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .continent-block:not(:last-child) {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #dde0e1; }
+  .continent-block .units .unit-block {
+    line-height: 1; }
+    @media screen and (min-width: 481px) and (max-width: 1100px)  {
+      .continent-block .units .unit-block {
+        float: left;
+        display: block;
+        margin-right: 4.2434%;
+        width: 47.8783%; }
+        .continent-block .units .unit-block:last-child {
+          margin-right: 0; }
+        .continent-block .units .unit-block:nth-child(2n) {
+          margin-right: 0; }
+        .continent-block .units .unit-block:nth-child(2n+1) {
+          clear: left; } }
+    @media screen and (min-width: 1100px) {
+      .continent-block .units .unit-block {
+        float: left;
+        display: block;
+        margin-right: 4.2434%;
+        width: 30.5044%; }
+        .continent-block .units .unit-block:last-child {
+          margin-right: 0; }
+        .continent-block .units .unit-block:nth-child(3n) {
+          margin-right: 0; }
+        .continent-block .units .unit-block:nth-child(3n+1) {
+          clear: left; } }
+    .continent-block .units .unit-block .unit-title {
+      display: block;
+      padding-top: 10px; }
+    .continent-block .units .unit-block .flag {
+      padding-right: 10px;
+      float: left; }
+
 .white-box, .showcase .showcase-block.bg .showcase-block-content, .profile-expertise-showcase .expertise-area a, .job-listing-block {
   background-color: white;
   border-bottom: 2px solid #dedede; }
@@ -4361,7 +4409,6 @@ embed, iframe, object {
 #content-container.unit #hero .full-width-block-content img {
   height: 36px;
   margin-right: 0.75em;
-  margin-bottom: 0.75rem;
   vertical-align: top;
   margin-top: 4px; }
 @media screen and (min-width: 801px) {

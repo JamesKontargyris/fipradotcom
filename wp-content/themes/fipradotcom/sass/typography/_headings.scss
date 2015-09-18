@@ -41,7 +41,7 @@ h1 {
     text-transform: uppercase;
   }
 
-  &.upper { @include media(max-width $media__small) { @include font-size(18); } }
+  &.upper { @include media(max-width $media__small) { @include font-size(21); margin-bottom:$v-rhythm; } }
 }
 
 h2 {

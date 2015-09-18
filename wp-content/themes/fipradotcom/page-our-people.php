@@ -7,32 +7,11 @@
 
 get_header(); ?>
 
-<style>
-    .full-width-block-container.our-people {
-        content:"";
-        background:url('<?php echo get_template_directory_uri(); ?>/img/our-people.jpg') center no-repeat;
-        background-size:cover;
-    }
-</style>
+<?php include('inc/header_featured_image.php'); ?>
 
 <div id="content-container" class="our-people">
 
-    <div id="hero" class="full-width-block-container with-content-bar our-people">
-        <div class="full-width-block-content-container content-bar grey bg-image">
-            <div class="full-width-block-content">
-                <h1 class="upper center">Our People</h1>
-                <h3 class="center no-top-margin">Praesent a magna tincidunt, elementum velit sed, sollicitudin mauris</h3>
-                <div class="row">
-                    <div class="col-6-m no-bottom-margin">
-                        <p class="no-bottom-margin">In venenatis neque et hendrerit iaculis. Cras velit sem, consectetur quis semper nec, finibus sit amet libero. Aliquam ut ante tristique, egestas tortor et, ullamcorper odio. Donec quis mi efficitur, mattis diam pulvinar, facilisis dolor. Suspendisse in placerat sapien.</p>
-                    </div>
-                    <div class="col-6-m no-bottom-margin">
-                        <p class="no-bottom-margin">Etiam vehicula commodo fringilla. Praesent a magna tincidunt, elementum velit sed, sollicitudin mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam commodo nec eros sed suscipit. Vivamus nunc nulla, tristique nec pellentesque ac, egestas sed leo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php include('inc/hero_banner.php'); ?>
 
     <div class="page-nav grey">
         <div class="row content-area">
@@ -107,8 +86,8 @@ get_header(); ?>
     </div>
 
     <?php
-        // The Query
-        $fipriots = get_all_fipriots();
+    // The Query
+    $fipriots = get_all_fipriots();
     ?>
 
     <div id="site-content-container">
@@ -139,7 +118,7 @@ get_header(); ?>
 
                                     <?php $post_id = get_the_ID(); ?>
 
-<!--TODO update filter class names-->
+                                    <!--TODO update filter class names-->
                                     <div class="person banking-and-financial-services country-3">
                                         <div class="person-profile-photo">
                                             <a href="<?= get_the_permalink(); ?>">
@@ -150,7 +129,7 @@ get_header(); ?>
                                         </div>
                                         <div class="person-details">
                                             <h4 class="no-margin"><a href="<?= get_the_permalink(); ?>"><?= get_field('first_name'); ?> <?= get_field('last_name'); ?></a></h4>
-<!--TODO update with Unit name-->
+                                            <!--TODO update with Unit name-->
                                             <h6><?= get_field('position'); ?>, Unit name</h6>
                                             <div class="btn-container">
                                                 <a href="<?= get_the_permalink(); ?>" class="btn">
@@ -184,7 +163,7 @@ get_header(); ?>
                                                     <?php endif; ?>
                                                     <tr>
                                                         <td colspan="2">
-<!--TODO update contact form link-->
+                                                            <!--TODO update contact form link-->
                                                             <a href="#"><?=
                                                                 get_field('email'); ?></a>
                                                         </td>

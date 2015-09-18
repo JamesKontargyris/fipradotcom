@@ -19,17 +19,7 @@ get_header(); ?>
     <!-- The Loop -->
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-        <div id="hero" class="full-width-block-container with-content-bar">
-            <div class="full-width-block-content-container content-bar bg-image grey">
-                <div class="full-width-block-content center narrow">
-                    <?php if ( get_field('flag') ) : ?>
-                        <img src="<?= $url; ?>" alt="<?= get_the_title(); ?>" title="<?= get_the_title(); ?>"/>
-                    <?php endif; ?>
-                    <h1 class="upper no-margin"><?= get_the_title(); ?></h1>
-                    <p class="lead no-margin"><?= get_field('introduction'); ?></p>
-                </div>
-            </div>
-        </div>
+        <?php include('inc/hero_banner.php'); ?>
 
         <div class="page-nav">
             <div class="row content-area">
@@ -146,7 +136,7 @@ get_header(); ?>
                                 <?php endforeach; ?>
                             </ul>
 <!--                            TODO set up link to Our Network page-->
-                            <a href="#"><small>Explore our Network <i class="icon-right-open"></i></small></a>
+                            <a href="/our-network"><small>Explore our Network <i class="icon-right-open"></i></small></a>
                         </aside>
                     <?php endif; ?>
 
@@ -172,8 +162,6 @@ get_header(); ?>
                     </div>
                 </div>
             </section>
-
-            <?= page_testimonials(); ?>
 
         <?php endwhile; endif; ?>
 

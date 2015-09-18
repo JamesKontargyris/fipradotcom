@@ -8,6 +8,9 @@
  */
 ?>
 
+<!--If page type is an expertise area, don't show the page testimonials (they are displayed on single-expertise.php-->
+    <?= get_post_type() != 'expertise' ? page_testimonials() : ''; ?>
+
     </div> <!-- #content-->
 
     <div id="footer-global-network-container">

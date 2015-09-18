@@ -7,12 +7,7 @@
 
 get_header(); ?>
 
-<style>
-    #hero {
-        background:url('<?php echo get_template_directory_uri(); ?>/img/amsterdam4.jpg') center no-repeat;
-        background-size:cover;
-    }
-</style>
+<?php include('inc/header_featured_image.php'); ?>
 
 <div id="content-container" class="unit">
 

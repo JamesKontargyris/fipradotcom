@@ -1,20 +1,25 @@
 <?php get_header(); ?>
 
-<div id="content-container">
+<?php include('inc/header_featured_image.php'); ?>
 
-    <div class="page-nav grey">
-        <div class="row content-area">
-            <ul class="anchor-links-list no-margin no-bullet">
-                <li class="menu-title menu-title-toggle"><i class="icon-menu-1"></i> Jump to...</li>
-                <li class="hide-s"><a class="jump-to-link" href="#areas-of-expertise">Areas of Expertise <i class="icon-down-open"></i></a></li>
-                <li class="hide-s"><a class="jump-to-link" href="#public-affairs-services">Public Affairs Services <i class="icon-down-open"></i></a></li>
-            </ul>
-        </div>
-    </div>
+<?php while ( have_posts() ) : the_post(); ?>
 
-    <section id="areas-of-expertise" class="full-width-block-container areas-of-expertise-block">
+    <div id="content-container">
+
+        <?php include('inc/hero_banner.php'); ?>
+
+<!--    <div class="page-nav grey">-->
+<!--        <div class="row content-area">-->
+<!--            <ul class="anchor-links-list no-margin no-bullet">-->
+<!--                <li class="menu-title menu-title-toggle"><i class="icon-menu-1"></i> Jump to...</li>-->
+<!--                <li class="hide-s"><a class="jump-to-link" href="#areas-of-expertise">Areas of Expertise <i class="icon-down-open"></i></a></li>-->
+<!--                <li class="hide-s"><a class="jump-to-link" href="#public-affairs-services">Public Affairs Services <i class="icon-down-open"></i></a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+
+        <section id="areas-of-expertise" class="full-width-block-container areas-of-expertise-block">
         <div class="full-width-block-content-container dark-grey">
-
             <div class="full-width-block-content">
                 <div class="row">
                     <div class="col-12-l no-m-margin">
@@ -93,6 +98,8 @@
     </section>
 
 </div><!-- #content-container   -->
+
+<?php endwhile; ?>
 
 <?php get_footer(); ?>
 

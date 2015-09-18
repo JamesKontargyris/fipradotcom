@@ -75,7 +75,7 @@ function page_testimonials() {
     $string = '';
 
     if ( $page_testimonials ) {
-        $string .= '<div class="full-width-block-container with-content-bar small-padding light-grey">';
+        $string .= '<div class="full-width-block-container with-content-bar small-padding">';
         $string .= '<div class="full-width-block-content-container dark-grey">';
         $string .= '<div class="full-width-block-content left">';
         $string .= '<div id="testimonial-carousel" class="testimonial-group carousel">';
@@ -109,3 +109,11 @@ function page_testimonials() {
 
 }
 add_shortcode( 'page_testimonials', 'page_testimonials' );
+
+/**
+ * Display Units grouped by continent
+ */
+function our_network_sc() {
+    include('our_network.php');
+}
+add_shortcode( 'our_network', 'our_network_sc' );

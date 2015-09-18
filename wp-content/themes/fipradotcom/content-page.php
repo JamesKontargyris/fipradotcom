@@ -27,6 +27,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php edit_post_link( __( 'Edit', 'fipradotcom' ), '<span class="edit-link btn btn-small secondary">', '</span>' ); ?>
+<!--		--><?php //edit_post_link( __( 'Edit', 'fipradotcom' ), '<span class="edit-link btn btn-small secondary">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
