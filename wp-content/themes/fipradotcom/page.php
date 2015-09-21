@@ -17,7 +17,7 @@ get_header(); ?>
 
     <?php include('inc/header_featured_image.php'); ?>
 
-    <div id="content-container">
+    <div id="content-container" class="<?= str_replace(' ', '-', strtolower(get_the_title())); ?>">
 
         <?php include('inc/hero_banner.php'); ?>
 

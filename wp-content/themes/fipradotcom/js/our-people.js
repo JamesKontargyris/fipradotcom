@@ -54,11 +54,11 @@
 
         //Is the value entered empty?
         if(filter == '') {
-            $('.filtering-on-title').text('Showing ' + $('.number-of-fipriots').text() + ' Fipriots');
+            $('.filtering-on-title').text('Showing ' + $('.number-of-fipriots').text() + ' ' + $('.fipriot-type').text() + 's');
             $('.clear-filter').addClass('hide');
         } else {
             var s = (count == 1) ? '' : 's';
-            $('.filtering-on-title').text('Found ' + count + ' Fipriot' + s);
+            $('.filtering-on-title').text('Found ' + count + ' ' + $('.fipriot-type').text() + s);
             $('.clear-filter').removeClass('hide');
         }
         people.isotope({filter: '.text-filter-show'});

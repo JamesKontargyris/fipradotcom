@@ -89,8 +89,10 @@
     padding-top:$v-rhythm;
     padding-bottom: $v-rhythm * 2;
 
-    .footer-copyright, .footer-social-links {
+    .site-info-section {
       @include span-columns(12);
+      padding:$v-rhythm;
+      @include font-size(14);
       @include media($media__medium) { @include span-columns(6); }
     }
 

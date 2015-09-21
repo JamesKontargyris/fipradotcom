@@ -1,8 +1,8 @@
 @import "buttons";
 @import "fields";
 
-.contact-form {
-  &.with-border { border:1px solid $color__fipra-light-gray; padding:$v-rhythm 20px; }
+.wpcf7-form {
+  border:1px solid $color__fipra-light-gray; padding:$v-rhythm 20px;
 
   .form-group { margin-bottom:$v-rhythm; }
 

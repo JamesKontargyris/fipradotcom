@@ -82,6 +82,8 @@ else {
  */
 $table_prefix  = 'wp_';
 
+define( 'WPCF7_AUTOP', false );
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */

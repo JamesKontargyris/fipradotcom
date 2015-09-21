@@ -42,27 +42,13 @@
         <footer id="colophon" class="site-footer" role="contentinfo">
 
             <div class="footer-section">
-                <h5>About Us</h5>
-                <p>Founded in 2000, Fipra is today the leading and most extensive global public affairs consultancy network, advising clients on a range of government relations and regulatory policy issues. </p>
-                <p><a href="/about-fipra" class="btn secondary btn-white btn-small">Find out more</a></p>
+                <?php dynamic_sidebar('footer-left'); ?>
             </div>
             <div class="footer-section">
-                <h5>Browse</h5>
-
-                <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu', 'depth' => '1')); ?>
+                <?php dynamic_sidebar('footer-middle'); ?>
             </div>
             <div class="footer-section">
-                <h5>Get in Touch</h5>
-                <address>
-                    Fipra International<br/>
-                    Rue de la Loi 227<br/>
-                    1040 Brussels<br/>
-                    Belgium<br/>
-                    <a href="http://maps.google.co.uk/maps?hl=en&q=rue%20de%20la%20loi%20227&um=1&ie=UTF-8&sa=N&tab=wl" target="_blank">Map</a><br/><br/>
-                    Tel.: +32 2 613 2828<br/>
-                    Fax: +32 2 613 2849<br/>
-                </address>
-                <p><a class="btn primary btn-white btn-small" href="/contact-us">Contact Us</a></p>
+                <?php dynamic_sidebar('footer-right'); ?>
             </div>
 
         </footer><!-- #colophon -->
@@ -70,13 +56,14 @@
     </div>
     <div id="site-info-container">
         <div class="site-info">
-            <div class="footer-copyright">
-                &copy; <?php echo date("Y"); ?> Fipra International Ltd. All Rights Reserved. <br/>
-                <a href="#">Legal Link 1</a> | <a href="#">Legal Link 2</a> | <a href="#">Legal Link 3</a>
+
+            <div class="site-info-section">
+                <?php dynamic_sidebar('site-info-left'); ?>
             </div>
-            <div class="footer-social-links">
-                <strong>Connect with us</strong><br/> <a href="#"><i class="icon-twitter"></i></a> <a href="#"><i class="icon-linkedin"></i></a>
+            <div class="site-info-section">
+                <?php dynamic_sidebar('site-info-right'); ?>
             </div>
+
         </div><!-- .site-info -->
     </div>
 

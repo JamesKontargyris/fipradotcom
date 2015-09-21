@@ -543,7 +543,7 @@ table:not(.no-style) {
   table:not(.no-style) tbody tr:nth-child(even) {
     background-color: #eef0f6; }
 
-.btn, .contact-form input[type=submit], .btn:link, .contact-form input[type=submit]:link, .btn:visited, .contact-form input[type=submit]:visited {
+.btn, .wpcf7-form input[type=submit], .btn:link, .wpcf7-form input[type=submit]:link, .btn:visited, .wpcf7-form input[type=submit]:visited {
   display: inline-block;
   font-size: 16px;
   font-size: 1rem;
@@ -552,55 +552,55 @@ table:not(.no-style) {
   padding: 0.1875rem 1rem;
   margin-bottom: 0.375rem;
   margin-right: 1rem; }
-  .btn:hover, .contact-form input[type=submit]:hover, .btn:link:hover, .contact-form input[type=submit]:link:hover, .btn:visited:hover, .contact-form input[type=submit]:visited:hover {
+  .btn:hover, .wpcf7-form input[type=submit]:hover, .btn:link:hover, .wpcf7-form input[type=submit]:link:hover, .btn:visited:hover, .wpcf7-form input[type=submit]:visited:hover {
     color: #5c6882; }
-  .btn:last-child, .contact-form input[type=submit]:last-child, .btn:link:last-child, .contact-form input[type=submit]:link:last-child, .btn:visited:last-child, .contact-form input[type=submit]:visited:last-child {
+  .btn:last-child, .wpcf7-form input[type=submit]:last-child, .btn:link:last-child, .wpcf7-form input[type=submit]:link:last-child, .btn:visited:last-child, .wpcf7-form input[type=submit]:visited:last-child {
     margin-right: 0; }
-  .btn.no-margin, .contact-form input.no-margin[type=submit], .btn:link.no-margin, .contact-form input[type=submit]:link.no-margin, .btn:visited.no-margin, .contact-form input[type=submit]:visited.no-margin {
+  .btn.no-margin, .wpcf7-form input.no-margin[type=submit], .btn:link.no-margin, .wpcf7-form input[type=submit]:link.no-margin, .btn:visited.no-margin, .wpcf7-form input[type=submit]:visited.no-margin {
     margin: 0; }
-  .btn.btn-large, .contact-form input.btn-large[type=submit], .btn:link.btn-large, .contact-form input[type=submit]:link.btn-large, .btn:visited.btn-large, .contact-form input[type=submit]:visited.btn-large {
+  .btn.btn-large, .wpcf7-form input.btn-large[type=submit], .btn:link.btn-large, .wpcf7-form input[type=submit]:link.btn-large, .btn:visited.btn-large, .wpcf7-form input[type=submit]:visited.btn-large {
     padding: 0.5625rem 1rem; }
     @media screen and (min-width: 801px) {
-      .btn.btn-large, .contact-form input.btn-large[type=submit], .btn:link.btn-large, .contact-form input[type=submit]:link.btn-large, .btn:visited.btn-large, .contact-form input[type=submit]:visited.btn-large {
+      .btn.btn-large, .wpcf7-form input.btn-large[type=submit], .btn:link.btn-large, .wpcf7-form input[type=submit]:link.btn-large, .btn:visited.btn-large, .wpcf7-form input[type=submit]:visited.btn-large {
         font-size: 18px;
         font-size: 1.125rem; } }
-  .btn.btn-small, .contact-form input.btn-small[type=submit], .btn:link.btn-small, .contact-form input[type=submit]:link.btn-small, .btn:visited.btn-small, .contact-form input[type=submit]:visited.btn-small {
+  .btn.btn-small, .wpcf7-form input.btn-small[type=submit], .btn:link.btn-small, .wpcf7-form input[type=submit]:link.btn-small, .btn:visited.btn-small, .wpcf7-form input[type=submit]:visited.btn-small {
     font-size: 14px;
     font-size: 0.875rem; }
-  .btn.btn-extra-small, .contact-form input.btn-extra-small[type=submit], .btn:link.btn-extra-small, .contact-form input[type=submit]:link.btn-extra-small, .btn:visited.btn-extra-small, .contact-form input[type=submit]:visited.btn-extra-small {
+  .btn.btn-extra-small, .wpcf7-form input.btn-extra-small[type=submit], .btn:link.btn-extra-small, .wpcf7-form input[type=submit]:link.btn-extra-small, .btn:visited.btn-extra-small, .wpcf7-form input[type=submit]:visited.btn-extra-small {
     font-size: 12px;
     font-size: 0.75rem; }
-  .btn.primary, .contact-form input[type=submit], .btn:link.primary, .contact-form input[type=submit]:link, .btn:visited.primary, .contact-form input[type=submit]:visited {
+  .btn.primary, .wpcf7-form input[type=submit], .btn:link.primary, .wpcf7-form input[type=submit]:link, .btn:visited.primary, .wpcf7-form input[type=submit]:visited {
     background-color: #00257f;
     color: white;
     text-shadow: 0px -1px 0px black;
     -webkit-transition: all 0.2s;
     transition: all 0.2s; }
-    .btn.primary:hover, .contact-form input[type=submit]:hover, .btn:link.primary:hover, .contact-form input[type=submit]:link:hover, .btn:visited.primary:hover, .contact-form input[type=submit]:visited:hover {
+    .btn.primary:hover, .wpcf7-form input[type=submit]:hover, .btn:link.primary:hover, .wpcf7-form input[type=submit]:link:hover, .btn:visited.primary:hover, .wpcf7-form input[type=submit]:visited:hover {
       opacity: 0.7;
       color: white; }
-    .btn.primary.btn-white, .full-width-block-container.blue .btn.primary, .full-width-block-container.blue .contact-form input[type=submit], .contact-form .full-width-block-container.blue input[type=submit], .full-width-block-container.dark-grey .btn.primary, .full-width-block-container.dark-grey .contact-form input[type=submit], .contact-form .full-width-block-container.dark-grey input[type=submit], .full-width-block-container.grey .btn.primary, .full-width-block-container.grey .contact-form input[type=submit], .contact-form .full-width-block-container.grey input[type=submit], .full-width-block-container.turquoise .btn.primary, .full-width-block-container.turquoise .contact-form input[type=submit], .contact-form .full-width-block-container.turquoise input[type=submit], .full-width-block-container.violet .btn.primary, .full-width-block-container.violet .contact-form input[type=submit], .contact-form .full-width-block-container.violet input[type=submit], .full-width-block-content-container.blue .btn.primary, .full-width-block-content-container.blue .contact-form input[type=submit], .contact-form .full-width-block-content-container.blue input[type=submit], .full-width-block-content-container.dark-grey .btn.primary, .full-width-block-content-container.dark-grey .contact-form input[type=submit], .contact-form .full-width-block-content-container.dark-grey input[type=submit], .full-width-block-content-container.grey .btn.primary, .full-width-block-content-container.grey .contact-form input[type=submit], .contact-form .full-width-block-content-container.grey input[type=submit], .full-width-block-content-container.turquoise .btn.primary, .full-width-block-content-container.turquoise .contact-form input[type=submit], .contact-form .full-width-block-content-container.turquoise input[type=submit], .full-width-block-content-container.violet .btn.primary, .full-width-block-content-container.violet .contact-form input[type=submit], .contact-form .full-width-block-content-container.violet input[type=submit], .contact-form input.btn-white[type=submit], .btn:link.primary.btn-white, .full-width-block-container.blue .btn:link.primary, .full-width-block-container.blue .contact-form input[type=submit]:link, .contact-form .full-width-block-container.blue input[type=submit]:link, .full-width-block-container.dark-grey .btn:link.primary, .full-width-block-container.dark-grey .contact-form input[type=submit]:link, .contact-form .full-width-block-container.dark-grey input[type=submit]:link, .full-width-block-container.grey .btn:link.primary, .full-width-block-container.grey .contact-form input[type=submit]:link, .contact-form .full-width-block-container.grey input[type=submit]:link, .full-width-block-container.turquoise .btn:link.primary, .full-width-block-container.turquoise .contact-form input[type=submit]:link, .contact-form .full-width-block-container.turquoise input[type=submit]:link, .full-width-block-container.violet .btn:link.primary, .full-width-block-container.violet .contact-form input[type=submit]:link, .contact-form .full-width-block-container.violet input[type=submit]:link, .full-width-block-content-container.blue .btn:link.primary, .full-width-block-content-container.blue .contact-form input[type=submit]:link, .contact-form .full-width-block-content-container.blue input[type=submit]:link, .full-width-block-content-container.dark-grey .btn:link.primary, .full-width-block-content-container.dark-grey .contact-form input[type=submit]:link, .contact-form .full-width-block-content-container.dark-grey input[type=submit]:link, .full-width-block-content-container.grey .btn:link.primary, .full-width-block-content-container.grey .contact-form input[type=submit]:link, .contact-form .full-width-block-content-container.grey input[type=submit]:link, .full-width-block-content-container.turquoise .btn:link.primary, .full-width-block-content-container.turquoise .contact-form input[type=submit]:link, .contact-form .full-width-block-content-container.turquoise input[type=submit]:link, .full-width-block-content-container.violet .btn:link.primary, .full-width-block-content-container.violet .contact-form input[type=submit]:link, .contact-form .full-width-block-content-container.violet input[type=submit]:link, .contact-form input[type=submit]:link.btn-white, .btn:visited.primary.btn-white, .full-width-block-container.blue .btn:visited.primary, .full-width-block-container.blue .contact-form input[type=submit]:visited, .contact-form .full-width-block-container.blue input[type=submit]:visited, .full-width-block-container.dark-grey .btn:visited.primary, .full-width-block-container.dark-grey .contact-form input[type=submit]:visited, .contact-form .full-width-block-container.dark-grey input[type=submit]:visited, .full-width-block-container.grey .btn:visited.primary, .full-width-block-container.grey .contact-form input[type=submit]:visited, .contact-form .full-width-block-container.grey input[type=submit]:visited, .full-width-block-container.turquoise .btn:visited.primary, .full-width-block-container.turquoise .contact-form input[type=submit]:visited, .contact-form .full-width-block-container.turquoise input[type=submit]:visited, .full-width-block-container.violet .btn:visited.primary, .full-width-block-container.violet .contact-form input[type=submit]:visited, .contact-form .full-width-block-container.violet input[type=submit]:visited, .full-width-block-content-container.blue .btn:visited.primary, .full-width-block-content-container.blue .contact-form input[type=submit]:visited, .contact-form .full-width-block-content-container.blue input[type=submit]:visited, .full-width-block-content-container.dark-grey .btn:visited.primary, .full-width-block-content-container.dark-grey .contact-form input[type=submit]:visited, .contact-form .full-width-block-content-container.dark-grey input[type=submit]:visited, .full-width-block-content-container.grey .btn:visited.primary, .full-width-block-content-container.grey .contact-form input[type=submit]:visited, .contact-form .full-width-block-content-container.grey input[type=submit]:visited, .full-width-block-content-container.turquoise .btn:visited.primary, .full-width-block-content-container.turquoise .contact-form input[type=submit]:visited, .contact-form .full-width-block-content-container.turquoise input[type=submit]:visited, .full-width-block-content-container.violet .btn:visited.primary, .full-width-block-content-container.violet .contact-form input[type=submit]:visited, .contact-form .full-width-block-content-container.violet input[type=submit]:visited, .contact-form input[type=submit]:visited.btn-white {
+    .btn.primary.btn-white, .full-width-block-container.blue .btn.primary, .full-width-block-container.blue .wpcf7-form input[type=submit], .wpcf7-form .full-width-block-container.blue input[type=submit], .full-width-block-container.dark-grey .btn.primary, .full-width-block-container.dark-grey .wpcf7-form input[type=submit], .wpcf7-form .full-width-block-container.dark-grey input[type=submit], .full-width-block-container.grey .btn.primary, .full-width-block-container.grey .wpcf7-form input[type=submit], .wpcf7-form .full-width-block-container.grey input[type=submit], .full-width-block-container.turquoise .btn.primary, .full-width-block-container.turquoise .wpcf7-form input[type=submit], .wpcf7-form .full-width-block-container.turquoise input[type=submit], .full-width-block-container.violet .btn.primary, .full-width-block-container.violet .wpcf7-form input[type=submit], .wpcf7-form .full-width-block-container.violet input[type=submit], .full-width-block-content-container.blue .btn.primary, .full-width-block-content-container.blue .wpcf7-form input[type=submit], .wpcf7-form .full-width-block-content-container.blue input[type=submit], .full-width-block-content-container.dark-grey .btn.primary, .full-width-block-content-container.dark-grey .wpcf7-form input[type=submit], .wpcf7-form .full-width-block-content-container.dark-grey input[type=submit], .full-width-block-content-container.grey .btn.primary, .full-width-block-content-container.grey .wpcf7-form input[type=submit], .wpcf7-form .full-width-block-content-container.grey input[type=submit], .full-width-block-content-container.turquoise .btn.primary, .full-width-block-content-container.turquoise .wpcf7-form input[type=submit], .wpcf7-form .full-width-block-content-container.turquoise input[type=submit], .full-width-block-content-container.violet .btn.primary, .full-width-block-content-container.violet .wpcf7-form input[type=submit], .wpcf7-form .full-width-block-content-container.violet input[type=submit], .wpcf7-form input.btn-white[type=submit], .btn:link.primary.btn-white, .full-width-block-container.blue .btn:link.primary, .full-width-block-container.blue .wpcf7-form input[type=submit]:link, .wpcf7-form .full-width-block-container.blue input[type=submit]:link, .full-width-block-container.dark-grey .btn:link.primary, .full-width-block-container.dark-grey .wpcf7-form input[type=submit]:link, .wpcf7-form .full-width-block-container.dark-grey input[type=submit]:link, .full-width-block-container.grey .btn:link.primary, .full-width-block-container.grey .wpcf7-form input[type=submit]:link, .wpcf7-form .full-width-block-container.grey input[type=submit]:link, .full-width-block-container.turquoise .btn:link.primary, .full-width-block-container.turquoise .wpcf7-form input[type=submit]:link, .wpcf7-form .full-width-block-container.turquoise input[type=submit]:link, .full-width-block-container.violet .btn:link.primary, .full-width-block-container.violet .wpcf7-form input[type=submit]:link, .wpcf7-form .full-width-block-container.violet input[type=submit]:link, .full-width-block-content-container.blue .btn:link.primary, .full-width-block-content-container.blue .wpcf7-form input[type=submit]:link, .wpcf7-form .full-width-block-content-container.blue input[type=submit]:link, .full-width-block-content-container.dark-grey .btn:link.primary, .full-width-block-content-container.dark-grey .wpcf7-form input[type=submit]:link, .wpcf7-form .full-width-block-content-container.dark-grey input[type=submit]:link, .full-width-block-content-container.grey .btn:link.primary, .full-width-block-content-container.grey .wpcf7-form input[type=submit]:link, .wpcf7-form .full-width-block-content-container.grey input[type=submit]:link, .full-width-block-content-container.turquoise .btn:link.primary, .full-width-block-content-container.turquoise .wpcf7-form input[type=submit]:link, .wpcf7-form .full-width-block-content-container.turquoise input[type=submit]:link, .full-width-block-content-container.violet .btn:link.primary, .full-width-block-content-container.violet .wpcf7-form input[type=submit]:link, .wpcf7-form .full-width-block-content-container.violet input[type=submit]:link, .wpcf7-form input[type=submit]:link.btn-white, .btn:visited.primary.btn-white, .full-width-block-container.blue .btn:visited.primary, .full-width-block-container.blue .wpcf7-form input[type=submit]:visited, .wpcf7-form .full-width-block-container.blue input[type=submit]:visited, .full-width-block-container.dark-grey .btn:visited.primary, .full-width-block-container.dark-grey .wpcf7-form input[type=submit]:visited, .wpcf7-form .full-width-block-container.dark-grey input[type=submit]:visited, .full-width-block-container.grey .btn:visited.primary, .full-width-block-container.grey .wpcf7-form input[type=submit]:visited, .wpcf7-form .full-width-block-container.grey input[type=submit]:visited, .full-width-block-container.turquoise .btn:visited.primary, .full-width-block-container.turquoise .wpcf7-form input[type=submit]:visited, .wpcf7-form .full-width-block-container.turquoise input[type=submit]:visited, .full-width-block-container.violet .btn:visited.primary, .full-width-block-container.violet .wpcf7-form input[type=submit]:visited, .wpcf7-form .full-width-block-container.violet input[type=submit]:visited, .full-width-block-content-container.blue .btn:visited.primary, .full-width-block-content-container.blue .wpcf7-form input[type=submit]:visited, .wpcf7-form .full-width-block-content-container.blue input[type=submit]:visited, .full-width-block-content-container.dark-grey .btn:visited.primary, .full-width-block-content-container.dark-grey .wpcf7-form input[type=submit]:visited, .wpcf7-form .full-width-block-content-container.dark-grey input[type=submit]:visited, .full-width-block-content-container.grey .btn:visited.primary, .full-width-block-content-container.grey .wpcf7-form input[type=submit]:visited, .wpcf7-form .full-width-block-content-container.grey input[type=submit]:visited, .full-width-block-content-container.turquoise .btn:visited.primary, .full-width-block-content-container.turquoise .wpcf7-form input[type=submit]:visited, .wpcf7-form .full-width-block-content-container.turquoise input[type=submit]:visited, .full-width-block-content-container.violet .btn:visited.primary, .full-width-block-content-container.violet .wpcf7-form input[type=submit]:visited, .wpcf7-form .full-width-block-content-container.violet input[type=submit]:visited, .wpcf7-form input[type=submit]:visited.btn-white {
       text-shadow: 0px -1px 0px #d9d9d9;
       background-color: white;
       color: #00257f; }
-  .btn.secondary, .contact-form input.secondary[type=submit], .btn:link.secondary, .contact-form input[type=submit]:link.secondary, .btn:visited.secondary, .contact-form input[type=submit]:visited.secondary {
+  .btn.secondary, .wpcf7-form input.secondary[type=submit], .btn:link.secondary, .wpcf7-form input[type=submit]:link.secondary, .btn:visited.secondary, .wpcf7-form input[type=submit]:visited.secondary {
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid #00257f;
     color: #00257f;
     -webkit-transition: all 0.2s;
     transition: all 0.2s; }
-    .btn.secondary:hover, .contact-form input.secondary[type=submit]:hover, .btn:link.secondary:hover, .contact-form input[type=submit]:link.secondary:hover, .btn:visited.secondary:hover, .contact-form input[type=submit]:visited.secondary:hover {
+    .btn.secondary:hover, .wpcf7-form input.secondary[type=submit]:hover, .btn:link.secondary:hover, .wpcf7-form input[type=submit]:link.secondary:hover, .btn:visited.secondary:hover, .wpcf7-form input[type=submit]:visited.secondary:hover {
       opacity: 0.7; }
-    .btn.secondary.btn-white, .full-width-block-container.blue .btn.secondary, .full-width-block-container.blue .contact-form input.secondary[type=submit], .contact-form .full-width-block-container.blue input.secondary[type=submit], .full-width-block-container.dark-grey .btn.secondary, .full-width-block-container.dark-grey .contact-form input.secondary[type=submit], .contact-form .full-width-block-container.dark-grey input.secondary[type=submit], .full-width-block-container.grey .btn.secondary, .full-width-block-container.grey .contact-form input.secondary[type=submit], .contact-form .full-width-block-container.grey input.secondary[type=submit], .full-width-block-container.turquoise .btn.secondary, .full-width-block-container.turquoise .contact-form input.secondary[type=submit], .contact-form .full-width-block-container.turquoise input.secondary[type=submit], .full-width-block-container.violet .btn.secondary, .full-width-block-container.violet .contact-form input.secondary[type=submit], .contact-form .full-width-block-container.violet input.secondary[type=submit], .full-width-block-content-container.blue .btn.secondary, .full-width-block-content-container.blue .contact-form input.secondary[type=submit], .contact-form .full-width-block-content-container.blue input.secondary[type=submit], .full-width-block-content-container.dark-grey .btn.secondary, .full-width-block-content-container.dark-grey .contact-form input.secondary[type=submit], .contact-form .full-width-block-content-container.dark-grey input.secondary[type=submit], .full-width-block-content-container.grey .btn.secondary, .full-width-block-content-container.grey .contact-form input.secondary[type=submit], .contact-form .full-width-block-content-container.grey input.secondary[type=submit], .full-width-block-content-container.turquoise .btn.secondary, .full-width-block-content-container.turquoise .contact-form input.secondary[type=submit], .contact-form .full-width-block-content-container.turquoise input.secondary[type=submit], .full-width-block-content-container.violet .btn.secondary, .full-width-block-content-container.violet .contact-form input.secondary[type=submit], .contact-form .full-width-block-content-container.violet input.secondary[type=submit], .contact-form input.secondary.btn-white[type=submit], .btn:link.secondary.btn-white, .full-width-block-container.blue .btn:link.secondary, .full-width-block-container.blue .contact-form input[type=submit]:link.secondary, .contact-form .full-width-block-container.blue input[type=submit]:link.secondary, .full-width-block-container.dark-grey .btn:link.secondary, .full-width-block-container.dark-grey .contact-form input[type=submit]:link.secondary, .contact-form .full-width-block-container.dark-grey input[type=submit]:link.secondary, .full-width-block-container.grey .btn:link.secondary, .full-width-block-container.grey .contact-form input[type=submit]:link.secondary, .contact-form .full-width-block-container.grey input[type=submit]:link.secondary, .full-width-block-container.turquoise .btn:link.secondary, .full-width-block-container.turquoise .contact-form input[type=submit]:link.secondary, .contact-form .full-width-block-container.turquoise input[type=submit]:link.secondary, .full-width-block-container.violet .btn:link.secondary, .full-width-block-container.violet .contact-form input[type=submit]:link.secondary, .contact-form .full-width-block-container.violet input[type=submit]:link.secondary, .full-width-block-content-container.blue .btn:link.secondary, .full-width-block-content-container.blue .contact-form input[type=submit]:link.secondary, .contact-form .full-width-block-content-container.blue input[type=submit]:link.secondary, .full-width-block-content-container.dark-grey .btn:link.secondary, .full-width-block-content-container.dark-grey .contact-form input[type=submit]:link.secondary, .contact-form .full-width-block-content-container.dark-grey input[type=submit]:link.secondary, .full-width-block-content-container.grey .btn:link.secondary, .full-width-block-content-container.grey .contact-form input[type=submit]:link.secondary, .contact-form .full-width-block-content-container.grey input[type=submit]:link.secondary, .full-width-block-content-container.turquoise .btn:link.secondary, .full-width-block-content-container.turquoise .contact-form input[type=submit]:link.secondary, .contact-form .full-width-block-content-container.turquoise input[type=submit]:link.secondary, .full-width-block-content-container.violet .btn:link.secondary, .full-width-block-content-container.violet .contact-form input[type=submit]:link.secondary, .contact-form .full-width-block-content-container.violet input[type=submit]:link.secondary, .contact-form input[type=submit]:link.secondary.btn-white, .btn:visited.secondary.btn-white, .full-width-block-container.blue .btn:visited.secondary, .full-width-block-container.blue .contact-form input[type=submit]:visited.secondary, .contact-form .full-width-block-container.blue input[type=submit]:visited.secondary, .full-width-block-container.dark-grey .btn:visited.secondary, .full-width-block-container.dark-grey .contact-form input[type=submit]:visited.secondary, .contact-form .full-width-block-container.dark-grey input[type=submit]:visited.secondary, .full-width-block-container.grey .btn:visited.secondary, .full-width-block-container.grey .contact-form input[type=submit]:visited.secondary, .contact-form .full-width-block-container.grey input[type=submit]:visited.secondary, .full-width-block-container.turquoise .btn:visited.secondary, .full-width-block-container.turquoise .contact-form input[type=submit]:visited.secondary, .contact-form .full-width-block-container.turquoise input[type=submit]:visited.secondary, .full-width-block-container.violet .btn:visited.secondary, .full-width-block-container.violet .contact-form input[type=submit]:visited.secondary, .contact-form .full-width-block-container.violet input[type=submit]:visited.secondary, .full-width-block-content-container.blue .btn:visited.secondary, .full-width-block-content-container.blue .contact-form input[type=submit]:visited.secondary, .contact-form .full-width-block-content-container.blue input[type=submit]:visited.secondary, .full-width-block-content-container.dark-grey .btn:visited.secondary, .full-width-block-content-container.dark-grey .contact-form input[type=submit]:visited.secondary, .contact-form .full-width-block-content-container.dark-grey input[type=submit]:visited.secondary, .full-width-block-content-container.grey .btn:visited.secondary, .full-width-block-content-container.grey .contact-form input[type=submit]:visited.secondary, .contact-form .full-width-block-content-container.grey input[type=submit]:visited.secondary, .full-width-block-content-container.turquoise .btn:visited.secondary, .full-width-block-content-container.turquoise .contact-form input[type=submit]:visited.secondary, .contact-form .full-width-block-content-container.turquoise input[type=submit]:visited.secondary, .full-width-block-content-container.violet .btn:visited.secondary, .full-width-block-content-container.violet .contact-form input[type=submit]:visited.secondary, .contact-form .full-width-block-content-container.violet input[type=submit]:visited.secondary, .contact-form input[type=submit]:visited.secondary.btn-white {
+    .btn.secondary.btn-white, .full-width-block-container.blue .btn.secondary, .full-width-block-container.blue .wpcf7-form input.secondary[type=submit], .wpcf7-form .full-width-block-container.blue input.secondary[type=submit], .full-width-block-container.dark-grey .btn.secondary, .full-width-block-container.dark-grey .wpcf7-form input.secondary[type=submit], .wpcf7-form .full-width-block-container.dark-grey input.secondary[type=submit], .full-width-block-container.grey .btn.secondary, .full-width-block-container.grey .wpcf7-form input.secondary[type=submit], .wpcf7-form .full-width-block-container.grey input.secondary[type=submit], .full-width-block-container.turquoise .btn.secondary, .full-width-block-container.turquoise .wpcf7-form input.secondary[type=submit], .wpcf7-form .full-width-block-container.turquoise input.secondary[type=submit], .full-width-block-container.violet .btn.secondary, .full-width-block-container.violet .wpcf7-form input.secondary[type=submit], .wpcf7-form .full-width-block-container.violet input.secondary[type=submit], .full-width-block-content-container.blue .btn.secondary, .full-width-block-content-container.blue .wpcf7-form input.secondary[type=submit], .wpcf7-form .full-width-block-content-container.blue input.secondary[type=submit], .full-width-block-content-container.dark-grey .btn.secondary, .full-width-block-content-container.dark-grey .wpcf7-form input.secondary[type=submit], .wpcf7-form .full-width-block-content-container.dark-grey input.secondary[type=submit], .full-width-block-content-container.grey .btn.secondary, .full-width-block-content-container.grey .wpcf7-form input.secondary[type=submit], .wpcf7-form .full-width-block-content-container.grey input.secondary[type=submit], .full-width-block-content-container.turquoise .btn.secondary, .full-width-block-content-container.turquoise .wpcf7-form input.secondary[type=submit], .wpcf7-form .full-width-block-content-container.turquoise input.secondary[type=submit], .full-width-block-content-container.violet .btn.secondary, .full-width-block-content-container.violet .wpcf7-form input.secondary[type=submit], .wpcf7-form .full-width-block-content-container.violet input.secondary[type=submit], .wpcf7-form input.secondary.btn-white[type=submit], .btn:link.secondary.btn-white, .full-width-block-container.blue .btn:link.secondary, .full-width-block-container.blue .wpcf7-form input[type=submit]:link.secondary, .wpcf7-form .full-width-block-container.blue input[type=submit]:link.secondary, .full-width-block-container.dark-grey .btn:link.secondary, .full-width-block-container.dark-grey .wpcf7-form input[type=submit]:link.secondary, .wpcf7-form .full-width-block-container.dark-grey input[type=submit]:link.secondary, .full-width-block-container.grey .btn:link.secondary, .full-width-block-container.grey .wpcf7-form input[type=submit]:link.secondary, .wpcf7-form .full-width-block-container.grey input[type=submit]:link.secondary, .full-width-block-container.turquoise .btn:link.secondary, .full-width-block-container.turquoise .wpcf7-form input[type=submit]:link.secondary, .wpcf7-form .full-width-block-container.turquoise input[type=submit]:link.secondary, .full-width-block-container.violet .btn:link.secondary, .full-width-block-container.violet .wpcf7-form input[type=submit]:link.secondary, .wpcf7-form .full-width-block-container.violet input[type=submit]:link.secondary, .full-width-block-content-container.blue .btn:link.secondary, .full-width-block-content-container.blue .wpcf7-form input[type=submit]:link.secondary, .wpcf7-form .full-width-block-content-container.blue input[type=submit]:link.secondary, .full-width-block-content-container.dark-grey .btn:link.secondary, .full-width-block-content-container.dark-grey .wpcf7-form input[type=submit]:link.secondary, .wpcf7-form .full-width-block-content-container.dark-grey input[type=submit]:link.secondary, .full-width-block-content-container.grey .btn:link.secondary, .full-width-block-content-container.grey .wpcf7-form input[type=submit]:link.secondary, .wpcf7-form .full-width-block-content-container.grey input[type=submit]:link.secondary, .full-width-block-content-container.turquoise .btn:link.secondary, .full-width-block-content-container.turquoise .wpcf7-form input[type=submit]:link.secondary, .wpcf7-form .full-width-block-content-container.turquoise input[type=submit]:link.secondary, .full-width-block-content-container.violet .btn:link.secondary, .full-width-block-content-container.violet .wpcf7-form input[type=submit]:link.secondary, .wpcf7-form .full-width-block-content-container.violet input[type=submit]:link.secondary, .wpcf7-form input[type=submit]:link.secondary.btn-white, .btn:visited.secondary.btn-white, .full-width-block-container.blue .btn:visited.secondary, .full-width-block-container.blue .wpcf7-form input[type=submit]:visited.secondary, .wpcf7-form .full-width-block-container.blue input[type=submit]:visited.secondary, .full-width-block-container.dark-grey .btn:visited.secondary, .full-width-block-container.dark-grey .wpcf7-form input[type=submit]:visited.secondary, .wpcf7-form .full-width-block-container.dark-grey input[type=submit]:visited.secondary, .full-width-block-container.grey .btn:visited.secondary, .full-width-block-container.grey .wpcf7-form input[type=submit]:visited.secondary, .wpcf7-form .full-width-block-container.grey input[type=submit]:visited.secondary, .full-width-block-container.turquoise .btn:visited.secondary, .full-width-block-container.turquoise .wpcf7-form input[type=submit]:visited.secondary, .wpcf7-form .full-width-block-container.turquoise input[type=submit]:visited.secondary, .full-width-block-container.violet .btn:visited.secondary, .full-width-block-container.violet .wpcf7-form input[type=submit]:visited.secondary, .wpcf7-form .full-width-block-container.violet input[type=submit]:visited.secondary, .full-width-block-content-container.blue .btn:visited.secondary, .full-width-block-content-container.blue .wpcf7-form input[type=submit]:visited.secondary, .wpcf7-form .full-width-block-content-container.blue input[type=submit]:visited.secondary, .full-width-block-content-container.dark-grey .btn:visited.secondary, .full-width-block-content-container.dark-grey .wpcf7-form input[type=submit]:visited.secondary, .wpcf7-form .full-width-block-content-container.dark-grey input[type=submit]:visited.secondary, .full-width-block-content-container.grey .btn:visited.secondary, .full-width-block-content-container.grey .wpcf7-form input[type=submit]:visited.secondary, .wpcf7-form .full-width-block-content-container.grey input[type=submit]:visited.secondary, .full-width-block-content-container.turquoise .btn:visited.secondary, .full-width-block-content-container.turquoise .wpcf7-form input[type=submit]:visited.secondary, .wpcf7-form .full-width-block-content-container.turquoise input[type=submit]:visited.secondary, .full-width-block-content-container.violet .btn:visited.secondary, .full-width-block-content-container.violet .wpcf7-form input[type=submit]:visited.secondary, .wpcf7-form .full-width-block-content-container.violet input[type=submit]:visited.secondary, .wpcf7-form input[type=submit]:visited.secondary.btn-white {
       border: 1px solid white;
       color: white; }
-  .btn.btn-clear, .contact-form input.btn-clear[type=submit], .btn:link.btn-clear, .contact-form input[type=submit]:link.btn-clear, .btn:visited.btn-clear, .contact-form input[type=submit]:visited.btn-clear {
+  .btn.btn-clear, .wpcf7-form input.btn-clear[type=submit], .btn:link.btn-clear, .wpcf7-form input[type=submit]:link.btn-clear, .btn:visited.btn-clear, .wpcf7-form input[type=submit]:visited.btn-clear {
     background: none;
     border: 0;
     padding: 0.375rem 0.25em !important; }
-  .btn.btn-omega, .contact-form input.btn-omega[type=submit], .btn:link.btn-omega, .contact-form input[type=submit]:link.btn-omega, .btn:visited.btn-omega, .contact-form input[type=submit]:visited.btn-omega {
+  .btn.btn-omega, .wpcf7-form input.btn-omega[type=submit], .btn:link.btn-omega, .wpcf7-form input[type=submit]:link.btn-omega, .btn:visited.btn-omega, .wpcf7-form input[type=submit]:visited.btn-omega {
     margin-right: 0 !important; }
-  .btn.full-width, .contact-form input.full-width[type=submit], .btn:link.full-width, .contact-form input[type=submit]:link.full-width, .btn:visited.full-width, .contact-form input[type=submit]:visited.full-width {
+  .btn.full-width, .wpcf7-form input.full-width[type=submit], .btn:link.full-width, .wpcf7-form input[type=submit]:link.full-width, .btn:visited.full-width, .wpcf7-form input[type=submit]:visited.full-width {
     display: block; }
 
 .owl-prev, .owl-next {
@@ -888,20 +888,23 @@ table:not(.no-style) {
       clear: both;
       content: "";
       display: table; }
-    #site-info-container .site-info .footer-copyright, #site-info-container .site-info .footer-social-links {
+    #site-info-container .site-info .site-info-section {
       float: left;
       display: block;
       margin-right: 4.2434%;
-      width: 100%; }
-      #site-info-container .site-info .footer-copyright:last-child, #site-info-container .site-info .footer-social-links:last-child {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 14px;
+      font-size: 0.875rem; }
+      #site-info-container .site-info .site-info-section:last-child {
         margin-right: 0; }
       @media screen and (min-width: 801px) {
-        #site-info-container .site-info .footer-copyright, #site-info-container .site-info .footer-social-links {
+        #site-info-container .site-info .site-info-section {
           float: left;
           display: block;
           margin-right: 4.2434%;
           width: 47.8783%; }
-          #site-info-container .site-info .footer-copyright:last-child, #site-info-container .site-info .footer-social-links:last-child {
+          #site-info-container .site-info .site-info-section:last-child {
             margin-right: 0; } }
     #site-info-container .site-info .footer-social-links {
       text-align: left; }
@@ -1235,11 +1238,11 @@ ul.team-member-expertise {
       width: 82.6261%; }
       .hero-banner:last-child {
         margin-right: 0; } }
-  .hero-banner .btn, .hero-banner .contact-form input[type=submit], .contact-form .hero-banner input[type=submit] {
+  .hero-banner .btn, .hero-banner .wpcf7-form input[type=submit], .wpcf7-form .hero-banner input[type=submit] {
     display: block;
     margin-right: 0; }
     @media screen and (min-width: 481px) {
-      .hero-banner .btn, .hero-banner .contact-form input[type=submit], .contact-form .hero-banner input[type=submit] {
+      .hero-banner .btn, .hero-banner .wpcf7-form input[type=submit], .wpcf7-form .hero-banner input[type=submit] {
         margin-right: 0.375em;
         display: inline-block; } }
   .hero-banner h1, .hero-banner h2 {
@@ -1254,13 +1257,13 @@ ul.team-member-expertise {
   .hero-banner.light-text h1, .hero-banner.light-text h2, .hero-banner.light-text .lead {
     color: white;
     text-shadow: 0px 1px 1px black; }
-  .hero-banner.light-text .btn.primary, .hero-banner.light-text .contact-form input[type=submit], .contact-form .hero-banner.light-text input[type=submit] {
+  .hero-banner.light-text .btn.primary, .hero-banner.light-text .wpcf7-form input[type=submit], .wpcf7-form .hero-banner.light-text input[type=submit] {
     text-shadow: none;
     color: #00257f;
     background-color: white;
     background-image: -webkit-linear-gradient(white 60%, #e6e6e6 100%);
     background-image: linear-gradient(white 60%, #e6e6e6 100%); }
-  .hero-banner.light-text .btn.secondary, .hero-banner.light-text .contact-form input.secondary[type=submit], .contact-form .hero-banner.light-text input.secondary[type=submit] {
+  .hero-banner.light-text .btn.secondary, .hero-banner.light-text .wpcf7-form input.secondary[type=submit], .wpcf7-form .hero-banner.light-text input.secondary[type=submit] {
     color: white;
     border-color: white; }
   .hero-banner.dark-text h2 {
@@ -1268,12 +1271,12 @@ ul.team-member-expertise {
   .hero-banner.dark-text h1, .hero-banner.dark-text .lead {
     color: #222;
     text-shadow: 0px 1px 1px #dde0e1; }
-  .hero-banner.dark-text .btn.primary, .hero-banner.dark-text .contact-form input[type=submit], .contact-form .hero-banner.dark-text input[type=submit] {
+  .hero-banner.dark-text .btn.primary, .hero-banner.dark-text .wpcf7-form input[type=submit], .wpcf7-form .hero-banner.dark-text input[type=submit] {
     text-shadow: 0px 1px 3px #0034b2; }
-  .hero-banner.dark-text .btn.secondary, .hero-banner.dark-text .contact-form input.secondary[type=submit], .contact-form .hero-banner.dark-text input.secondary[type=submit] {
+  .hero-banner.dark-text .btn.secondary, .hero-banner.dark-text .wpcf7-form input.secondary[type=submit], .wpcf7-form .hero-banner.dark-text input.secondary[type=submit] {
     border: 1px solid #00257f;
     color: #00257f; }
-    .hero-banner.dark-text .btn.secondary:hover, .hero-banner.dark-text .contact-form input.secondary[type=submit]:hover, .contact-form .hero-banner.dark-text input.secondary[type=submit]:hover {
+    .hero-banner.dark-text .btn.secondary:hover, .hero-banner.dark-text .wpcf7-form input.secondary[type=submit]:hover, .wpcf7-form .hero-banner.dark-text input.secondary[type=submit]:hover {
       border: 1px solid #5c6882;
       color: #5c6882; }
   @media screen and (min-width: 1100px) {
@@ -1399,11 +1402,11 @@ ul.team-member-expertise {
     text-align: center; }
   .page-header.right {
     text-align: right; }
-  .page-header .btn, .page-header .contact-form input[type=submit], .contact-form .page-header input[type=submit] {
+  .page-header .btn, .page-header .wpcf7-form input[type=submit], .wpcf7-form .page-header input[type=submit] {
     display: block;
     margin-right: 0; }
     @media screen and (min-width: 481px) {
-      .page-header .btn, .page-header .contact-form input[type=submit], .contact-form .page-header input[type=submit] {
+      .page-header .btn, .page-header .wpcf7-form input[type=submit], .wpcf7-form .page-header input[type=submit] {
         margin-right: 0.375em;
         display: inline-block; } }
 
@@ -2115,7 +2118,8 @@ ul.team-member-expertise {
           font-size: 1rem; } }
 
 .search-result-row {
-  border-bottom: 1px solid #ced3dd; }
+  border-bottom: 1px solid #ced3dd;
+  padding-bottom: 1.5rem; }
 
 .people-group-container {
   padding-right: 0.375em; }
@@ -2238,13 +2242,13 @@ ul.team-member-expertise {
         @media screen and (min-width: 801px) {
           .people-group-container .person .person-details .btn-container {
             display: none; } }
-        .people-group-container .person .person-details .btn-container .btn, .people-group-container .person .person-details .btn-container .contact-form input[type=submit], .contact-form .people-group-container .person .person-details .btn-container input[type=submit] {
+        .people-group-container .person .person-details .btn-container .btn, .people-group-container .person .person-details .btn-container .wpcf7-form input[type=submit], .wpcf7-form .people-group-container .person .person-details .btn-container input[type=submit] {
           display: table;
           background-color: transparent;
           height: 100%;
           padding: 0 0.75em;
           border: 0; }
-          .people-group-container .person .person-details .btn-container .btn .btn-text, .people-group-container .person .person-details .btn-container .contact-form input[type=submit] .btn-text, .contact-form .people-group-container .person .person-details .btn-container input[type=submit] .btn-text {
+          .people-group-container .person .person-details .btn-container .btn .btn-text, .people-group-container .person .person-details .btn-container .wpcf7-form input[type=submit] .btn-text, .wpcf7-form .people-group-container .person .person-details .btn-container input[type=submit] .btn-text {
             height: 100%;
             display: table-cell;
             vertical-align: middle; }
@@ -3541,24 +3545,24 @@ textarea {
   padding-left: 3px;
   width: 100%; }
 
-.contact-form.with-border {
+.wpcf7-form {
   border: 1px solid #dde0e1;
   padding: 0.75rem 20px; }
-.contact-form .form-group {
-  margin-bottom: 0.75rem; }
-.contact-form label, .contact-form input {
-  display: block; }
-  .contact-form label.full-width, .contact-form input.full-width {
-    width: 100%; }
-.contact-form label {
-  font-weight: 700;
-  margin-bottom: 0.375rem; }
-.contact-form input[type=submit] {
-  background: #00257f;
-  border: none;
-  box-shadow: none;
-  text-shadow: none;
-  padding: 0.75rem; }
+  .wpcf7-form .form-group {
+    margin-bottom: 0.75rem; }
+  .wpcf7-form label, .wpcf7-form input {
+    display: block; }
+    .wpcf7-form label.full-width, .wpcf7-form input.full-width {
+      width: 100%; }
+  .wpcf7-form label {
+    font-weight: 700;
+    margin-bottom: 0.375rem; }
+  .wpcf7-form input[type=submit] {
+    background: #00257f;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0.75rem; }
 
 /*--------------------------------------------------------------
 # Navigation
@@ -3662,7 +3666,7 @@ a {
       right: 0; }
 
 /* Mobile menu */
-.main-navigation .btn, .main-navigation .contact-form input[type=submit], .contact-form .main-navigation input[type=submit] {
+.main-navigation .btn, .main-navigation .wpcf7-form input[type=submit], .wpcf7-form .main-navigation input[type=submit] {
   margin-top: 0.9rem;
   margin-right: 0.3125em;
   padding: 0.375rem 0.75em;
@@ -3914,14 +3918,14 @@ ul.anchor-links-list, .filter-group-container .filter-list-container ul.filter-l
 
 .highlight-box {
   font-family: 'Lato', Arial, Helvetica, sans-serif; }
-  .highlight-box.primary, .contact-form input.highlight-box[type=submit] {
+  .highlight-box.primary, .wpcf7-form input.highlight-box[type=submit] {
     background-color: #5c6882;
     padding: 0.75rem 1em;
     color: white; }
-    .highlight-box.primary a, .contact-form input.highlight-box[type=submit] a {
+    .highlight-box.primary a, .wpcf7-form input.highlight-box[type=submit] a {
       color: #00257f;
       font-weight: 900; }
-      .highlight-box.primary a:hover, .contact-form input.highlight-box[type=submit] a:hover {
+      .highlight-box.primary a:hover, .wpcf7-form input.highlight-box[type=submit] a:hover {
         color: #5c6882; }
   .highlight-box.secondary {
     background-color: #c2c7c9;

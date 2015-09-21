@@ -22,8 +22,12 @@ get_header(); ?>
 <!--                    TODO add else statement with placeholder profile photo-->
                     <?php endif; ?>
                     <h1 class="upper no-margin"><?= full_name(); ?></h1>
-                    <h4 class="no-top-margin"><?= get_field('position'); ?>, Unit Name</h4>
-<!-- TODO: update link to contact form-->
+                    <?php if(get_field('is_special_adviser')) : ?>
+                        <h4 class="no-top-margin">Special Adviser<?= get_field('special_adviser_expertise') ? ', ' . get_field('special_adviser_expertise') : ''; ?></h4>
+                    <?php else : ?>
+                        <h4 class="no-top-margin"><?= get_field('position'); ?><?= get_field('unit') ? ', ' . get_field('unit')->post_title : ''; ?></h4>
+                    <?php endif; ?>
+                    <!-- TODO: update link to contact form-->
                     <a class="btn primary" href="#">Contact <?= get_field('first_name') ?></a>
                 </div>
             </div>
@@ -40,7 +44,7 @@ get_header(); ?>
 
                         <?= get_field('main_bio') ?>
 
-                        <?php if( get_field('expertise') ) : ?>
+                        <?php if( get_field('expertise') && ! get_field('is_special_adviser') ) : ?>
                             <h3 id="expertise"><?= get_field('first_name') ?>'s Expertise</h3>
                             <div class="profile-expertise-showcase equal-heights">
                                 <?php foreach(get_field('expertise') as $expertise_area) : ?>

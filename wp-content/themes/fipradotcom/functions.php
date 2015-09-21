@@ -23,12 +23,7 @@ if (!function_exists('fipradotcom_setup')) :
     function fipradotcom_setup()
     {
 
-        include('inc/query_functions.php');
-        include('inc/helpers.php');
-        include('inc/shortcodes.php');
-        include('inc/enqueue_scripts.php');
-
-//        Use the site stylesheet in the content editor, so content looks as it would on the front-end
+        //        Use the site stylesheet in the content editor, so content looks as it would on the front-end
         add_editor_style('style.css');
 
         /*
@@ -57,11 +52,11 @@ if (!function_exists('fipradotcom_setup')) :
          */
         add_theme_support('post-thumbnails');
 
-        // This theme uses wp_nav_menu() in one location.
+        // This theme uses wp_nav_menu() in two locations.
         register_nav_menus(
-            array(
-                'primary' => __('Primary Menu', 'fipradotcom'),
-            )
+            [
+                'primary' => __('Primary Menu', 'fipradotcom')
+            ]
         );
 
         /*
@@ -105,10 +100,10 @@ function fipradotcom_widgets_init()
         'name' => __('Page Sidebar', 'fipradotcom'),
         'id' => 'sidebar-1',
         'description' => 'Displays widgets in the sidebar of standard pages',
-        'before_widget' => '',
-        'after_widget' => '',
-        'before_title' => '',
-        'after_title' => '',
+        'before_widget' => '<aside>',
+        'after_widget' => '</aside>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>',
     ]);
     register_sidebar([
         'name' => __('Sub-Nav Bar', 'fipradotcom'),
@@ -119,11 +114,72 @@ function fipradotcom_widgets_init()
         'before_title' => '',
         'after_title' => '',
     ]);
+    register_sidebar([
+        'name' => __('Footer Left', 'fipradotcom'),
+        'id' => 'footer-left',
+        'description' => 'Displays widgets in the left-third of the page footer (1st row on mobile devices)',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>',
+    ]);
+    register_sidebar([
+        'name' => __('Footer Middle', 'fipradotcom'),
+        'id' => 'footer-middle',
+        'description' => 'Displays widgets in the middle-third of the page footer (2nd row on mobile devices)',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>',
+    ]);
+    register_sidebar([
+        'name' => __('Footer Right', 'fipradotcom'),
+        'id' => 'footer-right',
+        'description' => 'Displays widgets in the right-third of the page footer (3rd row on mobile devices)',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>',
+    ]);
+    register_sidebar([
+        'name' => __('Site Info Bar Left', 'fipradotcom'),
+        'id' => 'site-info-left',
+        'description' => 'Displays widgets in the left-half of the site info bar below the page footer (1st row on mobile devices)',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ]);
+    register_sidebar([
+        'name' => __('Site Info Bar Right', 'fipradotcom'),
+        'id' => 'site-info-right',
+        'description' => 'Displays widgets in the right-half of the site info bar below the page footer (2nd row on mobile devices)',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ]);
 }
 
 add_action('widgets_init', 'fipradotcom_widgets_init');
 
-
+// unregister widgets we won't use
+function remove_default_widgets() {
+    unregister_widget('WP_Widget_Pages');
+    unregister_widget('WP_Widget_Calendar');
+    unregister_widget('WP_Widget_Archives');
+    unregister_widget('WP_Widget_Links');
+    unregister_widget('WP_Widget_Meta');
+    unregister_widget('WP_Widget_Search');
+//    unregister_widget('WP_Widget_Text');
+    unregister_widget('WP_Widget_Categories');
+    unregister_widget('WP_Widget_Recent_Posts');
+    unregister_widget('WP_Widget_Recent_Comments');
+    unregister_widget('WP_Widget_RSS');
+    unregister_widget('WP_Widget_Tag_Cloud');
+//    unregister_widget('WP_Nav_Menu_Widget');
+}
+add_action('widgets_init', 'remove_default_widgets', 11);
 
 /**
  * Implement the Custom Header feature.
@@ -254,7 +310,7 @@ add_action( 'admin_menu' , 'remove_continent_meta' );
 
 function get_master_page_id() {
     global $wp_query;
-    return $wp_query->post->ID;
+    return isset($wp_query->post->ID) ? $wp_query->post->ID : false;
 }
 
 /**
