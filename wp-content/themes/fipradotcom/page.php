@@ -21,6 +21,10 @@ get_header(); ?>
 
         <?php include('inc/hero_banner.php'); ?>
 
+        <?php $slug = get_slug(); ?>
+
+        <?php if($slug == 'our-network') { include('inc/our_network_jump_to_menu.php'); } ?>
+
         <div id="site-content-container">
 
             <div id="site-content">

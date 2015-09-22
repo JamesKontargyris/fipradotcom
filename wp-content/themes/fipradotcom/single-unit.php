@@ -139,12 +139,6 @@ get_header(); ?>
                             <a href="/our-network"><small>Explore our Network <i class="icon-right-open"></i></small></a>
                         </aside>
                     <?php endif; ?>
-
-
-                    <aside>
-                        <h5>Sidebar title</h5>
-                        <p>More sidebar blocks can be added here, controlled in the CMS.</p>
-                    </aside>
                 </div><!-- #secondary -->
 
             </div><!-- #content -->

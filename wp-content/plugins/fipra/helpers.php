@@ -131,3 +131,8 @@ function get_search_results() {
     global $wp_query;
     return  $wp_query->found_posts;
 }
+
+function get_slug() {
+    global $post;
+    return $post->post_name;
+}

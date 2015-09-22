@@ -6,13 +6,15 @@
  */
 ?>
 
+
+
 <?php
 $continents = get_terms('continent', 'hide_empty=0');
 $continent_width = 100 / count($continents);
 foreach( $continents as $continent ) :
     ?>
 
-    <div class="continent-block">
+    <div id="<?php echo str_replace(' ', '', strtolower($continent->name)); ?>" class="continent-block">
         <h3><?= $continent->name; ?></h3>
 
         <div class="units">

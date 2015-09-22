@@ -114,6 +114,6 @@ add_shortcode( 'page_testimonials', 'page_testimonials' );
  * Display Units grouped by continent
  */
 function our_network_sc() {
-    include('our_network.php');
+    include(get_template_directory() . '/inc/our_network.php');
 }
 add_shortcode( 'our_network', 'our_network_sc' );
