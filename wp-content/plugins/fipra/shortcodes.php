@@ -116,4 +116,4 @@ add_shortcode( 'page_testimonials', 'page_testimonials' );
 function our_network_sc() {
     include(get_template_directory() . '/inc/our_network.php');
 }
-add_shortcode( 'our_network', 'our_network_sc' );
+add_shortcode( 'our_network_by_continent', 'our_network_sc' );

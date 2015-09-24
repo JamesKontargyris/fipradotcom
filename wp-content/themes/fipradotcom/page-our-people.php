@@ -44,9 +44,15 @@ get_header(); ?>
                                 <?php while ( $fipriots->have_posts() ) : $fipriots->the_post(); ?>
 
                                     <?php $post_id = get_the_ID(); ?>
+<!--                                    Get unit ID and filter class names-->
+                                    <?php $unit_id = get_field('unit') ? get_field('unit')->ID : 0; ?>
+                                    <?php $unit_filter_name = make_class_name(get_the_title($unit_id)); ?>
+                                    <?php $expertise_filter_names = ''; ?>
+                                    <?php foreach(get_field('expertise') as $expertise) {
+                                        $expertise_filter_names .= make_class_name($expertise->post_name) . ' ';
+                                    } ?>
 
-                                    <!--TODO update filter class names-->
-                                    <div class="person banking-and-financial-services country-3">
+                                    <div class="person <?php echo trim($unit_filter_name) . ' ' . trim($expertise_filter_names); ?>">
                                         <div class="person-profile-photo">
                                             <a href="<?= get_the_permalink(); ?>">
                                                 <?php if ( has_post_thumbnail() ) : ?>
@@ -56,7 +62,7 @@ get_header(); ?>
                                         </div>
                                         <div class="person-details">
                                             <h4 class="no-margin"><a href="<?= get_the_permalink(); ?>"><?= get_field('first_name'); ?> <?= get_field('last_name'); ?></a></h4>
-                                            <?php  $unit_id = get_field('unit') ? get_field('unit')->ID : 0; ?>
+
                                             <h6><?= get_field('position'); echo $unit_id ? ', ' . get_the_title($unit_id) : ''; ?></h6>
                                             <div class="btn-container">
                                                 <a href="<?= get_the_permalink(); ?>" class="btn">

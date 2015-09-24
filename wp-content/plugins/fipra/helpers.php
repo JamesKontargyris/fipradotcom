@@ -136,3 +136,13 @@ function get_slug() {
     global $post;
     return $post->post_name;
 }
+
+function make_class_name($string, $prefix = '', $suffix = '') {
+    if($string) {
+        if($prefix) $prefix = $prefix . '-';
+        if($suffix) $suffix = '-' . $suffix;
+        $full_string = $prefix . $string . $suffix;
+
+        return str_replace(' ', '-', strtolower($full_string));
+    }
+}

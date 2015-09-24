@@ -3,8 +3,8 @@
         <div class="col-9-m no-margin">
             <ul class="anchor-links-list no-margin no-bullet">
                 <li class="menu-title inline-s">Filter by</li>
+                <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#units-filter-group">Unit <i class="icon-down-open"></i></a></li>
                 <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#expertise-filter-group">Expertise Area <i class="icon-down-open"></i></a></li>
-                <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#continents">Country <i class="icon-down-open"></i></a></li>
             </ul>
         </div>
         <div class="col-3-m no-margin hide-s">
@@ -15,57 +15,66 @@
 
 <div class="filter-group-container">
 
-    <div id="continents" class="page-nav filter-group grey hide">
+<!--    START: Continent / Unit filters-->
+    <div id="units-filter-group" class="page-nav filter-group grey hide">
         <div class="row content-area">
-            <div class="col-8-m no-margin">
+            <div class="col-12-m no-margin">
                 <ul class="anchor-links-list no-margin no-bullet">
-                    <li class="menu-title inline-s">Continents</li>
-                    <li class="inline-s"><a href="#" class="filter-group-trigger sub" data-filter-group="#europe-filter-group">Europe <i class="icon-down-open"></i></a></li>
-                    <li class="inline-s"><a href="#" class="filter-group-trigger sub" data-filter-group="#asia-filter-group">Asia <i class="icon-down-open"></i></a></li>
+                    <?php $continents = get_terms('continent', 'hide_empty=0'); ?>
+                    <?php if( $continents) : ?>
+                        <li class="menu-title inline-s">Continents</li>
+                        <?php foreach($continents as $continent) : ?>
+                            <li class="inline-s"><a href="#" class="filter-group-trigger sub" data-filter-group="#<?php echo make_class_name($continent->name); ?>-filter-group"><?php echo $continent->name; ?> <i class="icon-down-open"></i></a></li>
+                        <?php endforeach; ?>
+                    <?php else : ?>
+                        <li class="inline-s">No filters available</li>
+                    <?php endif; ?>
                 </ul>
-            </div>
-            <div class="col-4-m no-margin" style="text-align: right">
-                <!--                <input type="text"/>-->
             </div>
         </div>
     </div>
 
+    <?php foreach($continents as $continent) : ?>
+        <div id="<?php echo make_class_name($continent->name); ?>-filter-group" class="page-nav with-padding dark-grey filter-group hide">
+            <div class="row content-area">
+                <div class="filter-list-container">
+
+                    <?php $continent_units = get_units_by_continent($continent->term_id); ?>
+                    <h5 class="filter-list-title"><?php echo $continent->name; ?></h5>
+                    <ul class="filter-list no-margin no-bullet">
+                        <?php if($continent_units->found_posts > 0) : ?>
+                            <?php while ( $continent_units->have_posts() ) : $continent_units->the_post(); ?>
+                                <li><a href="#" class="filter" data-filter=".<?php echo make_class_name(get_the_title()); ?>" data-filtering-on-text="<?php the_title(); ?>"><?php the_title(); ?></a></li>
+                            <?php endwhile; ?>
+                        <?php else : ?>
+                            <li class="inline-s">No filters available</li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+<!--    END: Continent / Unit filters-->
+
+<!--    START: Expertise Area filters-->
     <div id="expertise-filter-group" class="page-nav with-padding dark-grey filter-group hide">
         <div class="row content-area">
             <div class="filter-list-container">
                 <ul class="filter-list no-margin no-bullet">
-                    <li><a href="#" class="filter" data-filter=".banking-and-financial-services" data-filtering-on-text="Banking and Financial Services">Banking and Financial Services</i></a></li>
-                    <li><a href="#" class="filter" data-filter=".chemical-industrials-and-mining" data-filtering-on-text="Chemical, Industrials and Mining">Chemical, Industrials and Mining</a></li>
-                    <li><a href="#" class="filter" data-filter=".energy-and-environment" data-filtering-on-text="Energy and Environment">Energy and Environment</a></li>
+                    <?php $expertise_areas = get_expertise_areas(); ?>
+                    <?php if( $expertise_areas->found_posts > 0) : ?>
+                        <?php while ( $expertise_areas->have_posts() ) : $expertise_areas->the_post(); ?>
+                            <li><a href="#" class="filter" data-filter=".<?php echo make_class_name(get_the_title()); ?>" data-filtering-on-text="<?php the_title(); ?>"><?php the_title(); ?></a></li>
+                        <?php endwhile; ?>
+                    <?php else : ?>
+                        <li class="inline-s">No filters available</li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
     </div>
+<!--    END: Expertise Area filters-->
 
-    <div id="europe-filter-group" class="page-nav with-padding dark-grey filter-group hide">
-        <div class="row content-area">
-            <div class="filter-list-container">
-                <h5 class="filter-list-title">Europe</h5>
-                <ul class="filter-list no-margin no-bullet">
-                    <li><a href="#" class="filter" data-filter=".country-1" data-filtering-on-text="Country 1">Country 1</i></a></li>
-                    <li><a href="#" class="filter" data-filter=".country-2" data-filtering-on-text="Country 2">Country 2</a></li>
-                    <li><a href="#" class="filter" data-filter=".country-3" data-filtering-on-text="Country 3">Country 3</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
-    <div id="asia-filter-group" class="page-nav with-padding dark-grey filter-group hide">
-        <div class="row content-area">
-            <div class="filter-list-container">
-                <h5 class="filter-list-title">Asia</h5>
-                <ul class="filter-list no-margin no-bullet">
-                    <li><a href="#" class="filter" data-filter=".banking-and-financial-services" data-filtering-on-text="Country 4">Country 4</i></a></li>
-                    <li><a href="#" class="filter" data-filter=".chemical-industrials-and-mining" data-filtering-on-text="Country 5">Country 5</a></li>
-                    <li><a href="#" class="filter" data-filter=".energy-and-environment" data-filtering-on-text="Country 6">Country 6</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
 </div>
