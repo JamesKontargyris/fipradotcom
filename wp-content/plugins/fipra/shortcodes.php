@@ -77,7 +77,8 @@ function page_testimonials() {
     if ( $page_testimonials ) {
         $string .= '<div class="full-width-block-container with-content-bar small-padding">';
         $string .= '<div class="full-width-block-content-container dark-grey">';
-        $string .= '<div class="full-width-block-content left">';
+        $string .= '<div class="full-width-block-content">';
+        if(get_field('testimonials_title', $page_id)) { $string .= '<h5 class="center">' . get_field('testimonials_title', $page_id) . '</h5>'; }
         $string .= '<div id="testimonial-carousel" class="testimonial-group carousel">';
 
         foreach($page_testimonials as $t) {
@@ -117,3 +118,47 @@ function our_network_sc() {
     include(get_template_directory() . '/inc/our_network.php');
 }
 add_shortcode( 'our_network_by_continent', 'our_network_sc' );
+
+function get_job_listings_sc() {
+    $job_listings = get_all_jobs();
+    $string = '';
+
+    if($job_listings->have_posts()) {
+        $job_text = $job_listings->found_posts == 1 ? 'vacancy' : 'vacancies';
+
+        $string .= '<h4>' . $job_listings->found_posts . ' ' . $job_text . '</h4>';
+
+        while($job_listings->have_posts()) {
+            $job_listings->the_post();
+
+            $string .= '<div class="job-listing-block">
+                            <div class="row">
+                                <div class="col-8-m no-bottom-margin">';
+                                    $string .= '<div class="job-listing-title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>';
+                                    $string .= '<div class="job-listing-meta">';
+                                        $string .= get_field('location_information') ?  get_field('location_information') : '';
+                                        $string .= get_field('location_information') && get_field('salary_information') ? ', ' : '';
+                                        $string .= get_field('salary_information') ? get_field('salary_information') : '';
+                                    $string .= '</div>';
+                                $string .= '</div>';
+                                $string .= '<div class="col-4-m no-bottom-margin">';
+                                    $string .= '<div class="job-listing-timestamp">Posted: <strong>' . date('d M Y', strtotime(get_the_date())) . '</strong>';
+                                    $string .= get_field('closing_date') ? '<br/>Closes: <strong>' . date('d M Y', strtotime(get_field('closing_date'))) . '</strong>' : '';
+                                    $string .= '</div>';
+                                $string .= '</div>';
+                            $string .= '</div>';
+                            $string .= '<div class="row">';
+                                $string .= '<div class="job-listing-overview">';
+                                    $string .= '<p>' . get_field('summary') . '</p>';
+                                    $string .= '<p class="no-margin"><a href="' . get_the_permalink() . '" class="btn btn-extra-small primary">Read more</a></p>';
+                                $string .= '</div>';
+                            $string .= '</div>';
+                    $string .= '</div>';
+        }
+
+        return $string;
+    } else {
+        return '<h4>No vacancies at this time.</h4>';
+    }
+}
+add_shortcode( 'job_listings', 'get_job_listings_sc' );

@@ -187,3 +187,31 @@ function get_units_by_continent($continent_id) {
 
     return $units;
 }
+
+function get_all_jobs($close_in_the_future = true) {
+
+    global $post;
+
+    $args = [
+        'post_type' => 'job',
+        'post_status' => 'publish',
+//        'meta_key' => 'last_name',
+        'orderby' => 'date',
+        'order' => 'DESC',
+    ];
+//    If the request is for jobs closing in the future
+    if($close_in_the_future) {
+        $args['meta_query'] = [
+            [
+                'key'     => 'closing_date',
+                'value'   => date('Ymd'),
+                'compare' => '>=',
+            ]
+        ];
+    }
+
+    $jobs = new WP_Query($args);
+    wp_reset_postdata();
+
+    return $jobs;
+}

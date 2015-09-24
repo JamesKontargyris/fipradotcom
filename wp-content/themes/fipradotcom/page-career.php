@@ -55,60 +55,6 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                            <div class="job-listing-block">
-                                <div class="row">
-                                    <div class="col-8-m no-bottom-margin">
-                                        <div class="job-listing-title"><a href="/job-listing">Account Executive</a></div>
-                                        <div class="job-listing-meta">Fipra International | €25,000-€30,000 per annum</div>
-                                    </div>
-                                    <div class="col-4-m no-bottom-margin">
-                                        <div class="job-listing-timestamp">Posted: <strong>30 April 2015</strong><br/>Closes: <strong>10 May 2015</strong></div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="job-listing-overview">
-                                        <p>Job overview lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. Nulla facilisi. Quisque a iaculis nisi.</p>
-                                        <p class="no-margin"><a href="#" class="btn btn-extra-small primary">Read more</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="job-listing-block">
-                                <div class="row">
-                                    <div class="col-8-m no-bottom-margin">
-                                        <div class="job-listing-title"><a href="/job-listing">Account Executive</a></div>
-                                        <div class="job-listing-meta">Fipra International | €25,000-€30,000 per annum</div>
-                                    </div>
-                                    <div class="col-4-m no-bottom-margin">
-                                        <div class="job-listing-timestamp">Posted: <strong>30 April 2015</strong><br/>Closes: <strong>10 May 2015</strong></div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="job-listing-overview">
-                                        <p>Job overview lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. Nulla facilisi. Quisque a iaculis nisi.</p>
-                                        <p class="no-margin"><a href="#" class="btn btn-extra-small primary">Read more</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="job-listing-block">
-                                <div class="row">
-                                    <div class="col-8-m no-bottom-margin">
-                                        <div class="job-listing-title"><a href="/job-listing">Account Executive</a></div>
-                                        <div class="job-listing-meta">Fipra International | €25,000-€30,000 per annum</div>
-                                    </div>
-                                    <div class="col-4-m no-bottom-margin">
-                                        <div class="job-listing-timestamp">Posted: <strong>30 April 2015</strong><br/>Closes: <strong>10 May 2015</strong></div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="job-listing-overview">
-                                        <p>Job overview lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta dolor feugiat eleifend elementum. Nulla facilisi. Quisque a iaculis nisi.</p>
-                                        <p class="no-margin"><a href="#" class="btn btn-extra-small primary">Read more</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
 

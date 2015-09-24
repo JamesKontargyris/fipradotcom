@@ -336,6 +336,24 @@ function svg_size() {
 }
 add_action('admin_head', 'svg_size');
 
+/**
+ * Change the TinyMCE WYSIWYG editor settings to allow empty <i> tags (for icons)
+ *
+ * @param $init
+ * @return mixed
+ */
+function change_mce_options( $init ) {
+    $init['extended_valid_elements'] = 'i[*]';
+    return $init;
+}
+add_filter('tiny_mce_before_init', 'change_mce_options');
+
+add_filter('wp_insert_post_data', 'my_add_ul_class_on_insert');
+function my_add_ul_class_on_insert( $postarr ) {
+    $postarr['post_content'] = str_replace('<ul>', '<ul class="bullets">', $postarr['post_content'] );
+    return $postarr;
+}
+
 
 
 
