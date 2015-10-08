@@ -12,6 +12,8 @@ get_header(); ?>
     <!-- The Loop -->
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
+        <?php get_template_part('inc/breadcrumbs'); ?>
+
         <?php $post_id = get_the_ID(); ?>
 
         <div id="hero" class="full-width-block-container content-bar-bottom profile">

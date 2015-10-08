@@ -12,6 +12,7 @@ function get_all_fipriots($include_spads = false) {
         'meta_key' => 'last_name',
         'orderby' => 'meta_value',
         'order' => 'ASC',
+        'posts_per_page' => -1,
     ];
 
     if( ! $include_spads) {
@@ -40,6 +41,7 @@ function get_all_spads() {
         'meta_key' => 'last_name',
         'orderby' => 'meta_value',
         'order' => 'ASC',
+        'posts_per_page' => -1,
         'meta_query' => [
             [
                 'key'     => 'is_special_adviser',
@@ -65,6 +67,7 @@ function get_homepage_fipriots($include_spads = false) {
         'meta_key' => 'last_name',
         'orderby' => 'meta_value',
         'order' => 'ASC',
+        'posts_per_page' => -1,
         'meta_query' => [
             [
                 'key'     => 'on_homepage',
@@ -96,6 +99,7 @@ function get_homepage_blocks() {
     $args = [
         'post_type' => 'homeblock',
         'post_status' => 'publish',
+        'posts_per_page' => -1,
 //        'meta_key' => 'last_name',
 //        'orderby' => 'meta_value',
 //        'order' => 'ASC',
@@ -114,6 +118,7 @@ function get_homepage_slides() {
     $args = [
         'post_type' => 'homeslide',
         'post_status' => 'publish',
+        'posts_per_page' => -1,
     ];
 
     $slides = new WP_Query($args);
@@ -129,6 +134,7 @@ function get_expertise_areas($homepage_only = false) {
     $args = [
         'post_type' => 'expertise',
         'post_status' => 'publish',
+        'posts_per_page' => -1,
     ];
 
     if( $homepage_only ) {
@@ -152,6 +158,7 @@ function get_public_affairs_services() {
     $args = [
         'post_type' => 'paservice',
         'post_status' => 'publish',
+        'posts_per_page' => -1,
 //        'meta_key' => 'last_name',
 //        'orderby' => 'meta_value',
 //        'order' => 'ASC',
@@ -173,6 +180,7 @@ function get_units_by_continent($continent_id) {
 //        'meta_key' => 'last_name',
         'orderby' => 'title',
         'order' => 'ASC',
+        'posts_per_page' => -1,
         'meta_query' => [
             [
                 'key'     => 'continent',
@@ -198,6 +206,7 @@ function get_all_jobs($close_in_the_future = true) {
 //        'meta_key' => 'last_name',
         'orderby' => 'date',
         'order' => 'DESC',
+        'posts_per_page' => -1,
     ];
 //    If the request is for jobs closing in the future
     if($close_in_the_future) {

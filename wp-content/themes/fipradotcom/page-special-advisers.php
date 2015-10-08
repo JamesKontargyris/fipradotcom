@@ -7,6 +7,10 @@
 
 get_header(); ?>
 
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+<?php get_template_part('inc/breadcrumbs'); ?>
+
 <?php include('inc/header_featured_image.php'); ?>
 
 <div id="content-container" class="our-people">
@@ -102,8 +106,8 @@ get_header(); ?>
                                                     <tr>
                                                         <td colspan="2">
                                                             <!--TODO update contact form link-->
-                                                            <a href="#"><?=
-                                                                get_field('email'); ?></a>
+                                                            <a href="#">Email <?=
+                                                                get_field('first_name'); ?></a>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -128,5 +132,7 @@ get_header(); ?>
     </div><!-- #site-content-container -->
 
 </div><!-- #content-container   -->
+
+<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

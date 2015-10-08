@@ -10,6 +10,8 @@ get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
+    <?php get_template_part('inc/breadcrumbs'); ?>
+
     <?php if(has_post_thumbnail()) : ?>
         <style>
             #hero {

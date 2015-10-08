@@ -4,6 +4,8 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
+    <?php get_template_part('inc/breadcrumbs'); ?>
+
     <div id="content-container">
 
         <?php include('inc/hero_banner.php'); ?>

@@ -15,6 +15,8 @@ get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
+    <?php get_template_part('inc/breadcrumbs'); ?>
+
     <?php include('inc/header_featured_image.php'); ?>
 
     <div id="content-container" class="<?= str_replace(' ', '-', strtolower(get_the_title())); ?>">

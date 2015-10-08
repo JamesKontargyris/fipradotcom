@@ -66,7 +66,5 @@
         <!-- #masthead -->
     </div>
 
-    <?php get_template_part('inc/breadcrumbs'); ?>
-
     <div id="content">
 

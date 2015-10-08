@@ -26,7 +26,10 @@ foreach( $continents as $continent ) :
 
                     <a href="<?= get_the_permalink(); ?>" style="display: block;">
                         <h5>
-                            <img src="<?= $url ?>" class="flag" width="48" height="48" alt="<?= get_the_title(); ?>" align="absmiddle"/> <span class="unit-title"><?= get_the_title(); ?></span>
+                            <?php if( !empty($flag)) : ?>
+                                <img src="<?= $url ?>" class="flag" width="48" height="48" alt="<?= get_the_title(); ?>" align="absmiddle"/>
+                            <?php endif; ?>
+                            <span class="unit-title"><?= get_the_title(); ?></span>
                         </h5>
                     </a>
                 </div>

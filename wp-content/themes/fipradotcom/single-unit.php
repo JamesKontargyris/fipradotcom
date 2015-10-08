@@ -7,12 +7,14 @@
 
 get_header(); ?>
 
-<?php include('inc/header_featured_image.php'); ?>
+<!-- The Loop -->
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-<div id="content-container" class="unit">
+    <?php get_template_part('inc/breadcrumbs'); ?>
 
-    <!-- The Loop -->
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <?php include('inc/header_featured_image.php'); ?>
+
+    <div id="content-container" class="unit">
 
         <?php include('inc/hero_banner.php'); ?>
 
@@ -147,7 +149,12 @@ get_header(); ?>
                                         $flag = get_field('flag', $id);
                                         if( ! empty($flag) ) {  $url = $flag['url']; }
                                     ?>
-                                    <li><a href="<?= get_the_permalink($id); ?>"><img src="<?= $url; ?>" class="sidebar-list-flag" alt="<?= get_the_title($id); ?>"/> <?= get_the_title($id); ?></a></li>
+                                    <li><a href="<?= get_the_permalink($id); ?>">
+                                            <?php if( !empty($flag)) : ?>
+                                                <img src="<?= $url; ?>" class="sidebar-list-flag" alt="<?= get_the_title($id); ?>"/>
+                                            <?php endif; ?>
+                                            <?= get_the_title($id); ?>
+                                        </a></li>
                                 <?php endforeach; ?>
                             </ul>
 <!--                            TODO set up link to Our Network page-->

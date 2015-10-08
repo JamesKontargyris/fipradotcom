@@ -7,12 +7,14 @@
 
 get_header(); ?>
 
-<?php include('inc/header_featured_image.php'); ?>
+<!-- The Loop -->
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-<div id="content-container" class="expertise-area">
+    <?php get_template_part('inc/breadcrumbs'); ?>
 
-    <!-- The Loop -->
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <?php include('inc/header_featured_image.php'); ?>
+
+    <div id="content-container" class="expertise-area">
 
         <?php include('inc/hero_banner.php'); ?>
 

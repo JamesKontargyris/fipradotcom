@@ -7,6 +7,10 @@
 
 get_header(); ?>
 
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+<?php get_template_part('inc/breadcrumbs'); ?>
+
 <div id="content-container" class="with-border">
 
     <div id="site-content-container">
@@ -108,5 +112,7 @@ get_header(); ?>
         </div>
     </div>
 </div><!-- #content-container   -->
+
+<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>
