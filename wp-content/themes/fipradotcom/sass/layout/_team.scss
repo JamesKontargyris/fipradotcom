@@ -176,14 +176,15 @@
   }
   .team-member {
     margin:0; text-align:center;
-    .profile-photo { line-height:0;
+    .profile-photo { line-height:0; margin-bottom:$v-rhythm;
 //      border-bottom:1px solid darken($color__fipra-lighter-gray, 15%);
-      img { border-radius: 50%; background-color: lighten($color__fipra-mid-gray, 3%); border:10px solid lighten($color__fipra-mid-gray, 3%); }
+//      img { border-radius: 50%; background-color: lighten($color__fipra-mid-gray, 3%); border:10px solid lighten($color__fipra-mid-gray, 3%); }
     }
+    .profile-details { width:90%; margin:0 auto; line-height:1.4; }
+
     h4 { font-weight: $font__bold; margin-top: $v-rhythm * 0.5; }
-//    img { background-color: $color__fipra-lighter-gray; }
   }
-  a:hover img { opacity: 0.5; }
+  //a:hover img { opacity:0.8; margin-top:3px; margin-bottom:-3px; box-shadow: darken($color__fipra-light-gray, 15%) 0 0 5px; }
 }
 
 ul.team-member-expertise {

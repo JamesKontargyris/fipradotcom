@@ -16,33 +16,44 @@ function layout_fipriot_team_member($post_id, $short_bio = false, $expertise = f
 
         $string .= '<div class="team-member">';
             $string .= '<div class="profile-photo">';
-                if ( has_post_thumbnail($post_id) ) {
-                    $string .= '<a href="' . get_the_permalink($post_id) . '">';
-                    $string .= '<img src="' . wp_get_attachment_url( get_post_thumbnail_id($post_id) ) . '" alt="' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '" style="width:200px;"/>';
-                    $string .= '</a>';
-                }
-            $string .= '</div>';
-            $string .= '<h4 class="no-bottom-margin"><a href="' . get_the_permalink($post_id) . '">' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '</a></h4>';
-        //        TODO add unit
-            $string .= '<h6>' . get_field('position', $post_id) . '</h6>';
-//            If $short_bio is true, include the Fipriot's short bio text
-            if( $short_bio === true ) { $string .= '<p class="small">' . get_field('short_bio', $post_id) . '</p>'; }
-//            If $expertise is true, iterate through expertise areas and display an icon link for each one
-            if( $expertise === true ) {
-//                Fipriot has expertise set?
-                if( get_field('expertise', $post_id) ) {
-                    $string .= '<ul class="team-member-expertise">';
-                    $string .= '<li>';
-                    foreach(get_field('expertise', $post_id) as $expertise) {
-                        $string .= '<a href="' . get_the_permalink($expertise->ID) . '" class="tooltip svg-icon" title="' . get_the_title($expertise->ID) . '">';
-                        $string .= file_get_contents( get_field('icon', $expertise->ID) );
-                        $string .= '</a>';
+                $string .= '<a href="' . get_the_permalink($post_id) . '">';
+                    if ( has_post_thumbnail($post_id) ) {
+                        $string .= '<img src="' . wp_get_attachment_url( get_post_thumbnail_id($post_id) ) . '" alt="' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '" class="photo-tile" />';
+                    } else {
+                        $string .= '<img src="' . get_template_directory_uri() . '/img/blank_profile_' . get_field('gender', $post_id) . '.png" alt="' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '" title="' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '" class="photo-tile" />';
                     }
-                    $string .= '</li>';
-                    $string .= '</ul>';
-                }
-            }
+                $string .= '</a>';
+            $string .= '</div>';
 
+            $string .= '<div class="profile-details">';
+                $string .= '<h4 class="no-bottom-margin"><a href="' . get_the_permalink($post_id) . '">' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '</a></h4>';
+                if(get_field('is_special_adviser')) {
+                    $string .= '<h6>Special Adviser';
+                    if(get_field('special_adviser_expertise')) $string .= ', ' . get_field('special_adviser_expertise');
+                    $string .= '</h6>';
+                } else {
+                    $string .= '<h6>' . get_field('position', $post_id);
+                    if(get_field('unit')) { $string .= '<br>' . get_field('unit', $post_id)->post_title; }
+                    $string .= '</h6>';
+                }
+    //            If $short_bio is true, include the Fipriot's short bio text
+                if( $short_bio === true ) { $string .= '<p class="small short-bio">' . get_field('short_bio', $post_id) . '</p>'; }
+    //            If $expertise is true, iterate through expertise areas and display an icon link for each one
+                if( $expertise === true ) {
+    //                Fipriot has expertise set?
+                    if( get_field('expertise', $post_id) ) {
+                        $string .= '<ul class="team-member-expertise">';
+                        $string .= '<li>';
+                        foreach(get_field('expertise', $post_id) as $expertise) {
+                            $string .= '<a href="' . get_the_permalink($expertise->ID) . '" class="tooltip svg-icon" title="' . get_the_title($expertise->ID) . '">';
+                            $string .= file_get_contents( get_field('icon', $expertise->ID) );
+                            $string .= '</a>';
+                        }
+                        $string .= '</li>';
+                        $string .= '</ul>';
+                    }
+                }
+            $string .=  '</div>';
         $string .=  '</div>';
 
     return $string;

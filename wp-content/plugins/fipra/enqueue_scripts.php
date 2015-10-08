@@ -184,6 +184,21 @@ function fipradotcom_scripts()
         true
     );
 
+    wp_enqueue_script(
+        'fipradotcom-units-js',
+        get_template_directory_uri() . '/js/unit.js',
+        array(),
+        '20151007',
+        true
+    );
+
+    wp_enqueue_script(
+        'fipradotcom-home-js',
+        get_template_directory_uri() . '/js/home.js',
+        array(),
+        '20151007',
+        true
+    );
 
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {

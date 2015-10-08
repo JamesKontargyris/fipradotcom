@@ -1,4 +1,4 @@
-( function($) {
+(function($) {
     //    Function: element has attribute?
     $.fn.hasAttr = function(attr) {
         var attribVal = this.attr(attr);

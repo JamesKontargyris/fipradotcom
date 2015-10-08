@@ -11,11 +11,6 @@ get_header(); ?>
 
 <div id="content-container" class="unit">
 
-    <?php
-    $flag = get_field('flag');
-    if( ! empty($flag) ) {  $url = $flag['url']; }
-    ?>
-
     <!-- The Loop -->
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -44,22 +39,33 @@ get_header(); ?>
 
                         <h3 id="about-us">About Us</h3>
 
-                        <?= get_field('about_us'); ?>
+                        <?php if(get_field('translation_available')) : ?>
+                            <h5 class="about-us-toggle">
+                                <a href="#" class="btn secondary btn-extra-small hide" id="view-original-about-us"><?php echo get_field('original_about_us_label'); ?></a> <a href="#" class="btn secondary btn-extra-small" id="view-translated-about-us"><?php echo get_field('translated_about_us_label'); ?></a>
+                            </h5>
+                        <?php endif; ?>
+
+                        <div class="about-us-text">
+
+                            <div class="original-about-us">
+                                <?php echo get_field('about_us'); ?>
+                            </div>
+
+                            <?php if(get_field('translation_available')) : ?>
+                                <div class="translated-about-us hide">
+                                    <?php echo get_field('translated_about_us'); ?>
+                                </div>
+                            <?php endif; ?>
+
+                        </div>
+
+
 
                         <section class="our-location">
                             <h3 id="our-location">Our Location</h3>
 
                             <div class="row">
-                                <div class="col-3-m">
-                                    <address>
-                                        <?= get_field('office_address'); ?>
-                                    </address>
-
-                                    <?php if( get_field('office_description') ) : ?>
-                                        <p><em><?= get_field('office_description') ?></em></p>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="col-9-m">
+                                <div class="col-8-m">
                                     <!--Google Map-->
                                     <?php
 
@@ -70,6 +76,15 @@ get_header(); ?>
                                         <div class="google-map">
                                             <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
                                         </div>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="col-4-m">
+                                    <address>
+                                        <?= get_field('office_address'); ?>
+                                    </address>
+
+                                    <?php if( get_field('office_description') ) : ?>
+                                        <p><em><?= get_field('office_description') ?></em></p>
                                     <?php endif; ?>
                                 </div>
                             </div>

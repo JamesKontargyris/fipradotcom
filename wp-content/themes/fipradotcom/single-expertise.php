@@ -49,7 +49,7 @@ get_header(); ?>
                             <div class="sidebar-contact">
                                 <div class="sidebar-contact-content">
                                     <a href="<?= get_the_permalink($id); ?>">
-                                        <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($id) ) ?>" alt="<?= get_field('first_name', $id); ?> <?= get_field('last_name', $id); ?>" style="background-color:white;"/>
+                                        <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($id) ) ?>" alt="<?= get_field('first_name', $id); ?> <?= get_field('last_name', $id); ?>"/>
                                         <strong><?= get_field('first_name', $id); ?> <?= get_field('last_name', $id); ?></strong>
                                     </a>
 
@@ -89,11 +89,7 @@ get_header(); ?>
                         </aside>
 
                     <?php endif; ?>
-
-                    <aside>
-                        <h5>Sidebar title</h5>
-                        <p>More sidebar blocks can be added here, controlled in the CMS.</p>
-                    </aside>
+<!--                    TODO add sidebar for expertise area -->
                 </div><!-- #secondary -->
 
             </div><!-- #content -->

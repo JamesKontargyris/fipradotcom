@@ -33,7 +33,7 @@
     &.full-width { width:100%; border:0; }
 
     h4 { @include font-size(21); font-weight:$font__bold; line-height: $v-rhythm * 1.5 !important; }
-    h6 { margin:0; line-height:$v-rhythm * 1.75 !important; font-weight: $font__normal; }
+    h6 { margin:6px 0 0 0; line-height:1.4 !important; font-weight: $font__normal; @include font-size(13); }
 
     .person-profile-photo {
       line-height:1 !important;
@@ -48,13 +48,11 @@
 
       @include media($media__medium) {
         background-color: $color__fipra-lighter-gray;
-        img { max-width: 90%; margin-bottom:0; border-radius: 50%; border:10px solid $color__fipra-light-gray;  background-color: $color__fipra-light-gray; }
+        img { max-width: 90%; }
       }
 
       text-align:center;
       line-height:$v-rhythm;
-      &:hover { opacity:0.7; border-radius: 50%;
-      }
 
     }
 
@@ -68,7 +66,7 @@
       @include media($media__medium) {
         padding:$v-rhythm * 0.75 rem(12px);
         position:absolute;
-        top:200px;
+        top:205px;
         left:0;
 
 //        background-color: white;
@@ -87,9 +85,9 @@
         }
       }
 
-      @include media($media__medium-plus) { top:210px; }
-      @include media($media__large) { top:230px; }
-      @include media($media__xlarge) { top:200px; }
+      @include media($media__medium-plus) { top:215px; }
+      @include media($media__large) { top:205px; }
+      @include media($media__xlarge) { top:185px; }
 
       .btn-container {
         @include media($media__medium) { display: none; }

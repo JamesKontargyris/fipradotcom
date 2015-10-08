@@ -42,7 +42,8 @@ ul.sidebar-list {
 
       &:first-child { border:0; padding-top:0; }
 
-      img { max-width: 100px; display:block; margin-bottom:$v-rhythm; border-radius:50%;
+      img { max-width: 100px; display:block; margin-bottom:$v-rhythm;
+        @include radial-gradient(white, $color__fipra-light-gray);
         @include media($media__xlarge) { float:left; margin-right:em(18px); }
       }
 

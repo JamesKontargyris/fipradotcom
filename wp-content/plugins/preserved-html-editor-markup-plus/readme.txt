@@ -3,8 +3,8 @@ Contributors: marcuspope, j-ro
 Donate link: http://www.marcuspope.com/wordpress
 Tags: wpautop, editor, markup, html, white space, HTML5, WYSIWYG, visual, developer
 Requires at least: 3.2.1
-Tested up to: 4.2
-Stable tag: 1.5.2
+Tested up to: 4.3
+Stable tag: 1.5.3
 License: GPLv2 or later
 
 
@@ -58,6 +58,8 @@ If you used version 1.0 or 1.1 to create content, do not use the Fix it features
 1. No screenshots
 
 == Changelog ==
+= 1.5.3 =
+* WP 4.3 compatibility.
 = 1.5.2 =
 * Fixes for a few issues, including handling newlines in HTML, handling comments, handling secure sites, and handling IE10 javascript errors.
 = 1.5.1 =

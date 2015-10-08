@@ -110,7 +110,8 @@
     $('.clear-filter').on('click', function(e) {
         e.preventDefault();
         clearFilter();
-        $('.filtering-on-title').text('Showing ' + $('.number-of-fipriots').text() + ' Fipriots');
+        var s = ($('.number-of-fipriots').text() == 1) ? '' : 's';
+        $('.filtering-on-title').text('Showing ' + $('.number-of-fipriots').text() + ' ' + $('.fipriot-type').text() + s);
         //Clear the text filter input
         $('#text-filter').val('');
     });

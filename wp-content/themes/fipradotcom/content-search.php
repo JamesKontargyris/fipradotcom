@@ -15,7 +15,7 @@
 
             <div class="col-1-m hide-s">
                 <?php if ( has_post_thumbnail() ) : ?>
-                    <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'thumbnail' )[0]; ?>" alt="<?= full_name(); ?>" title="<?= full_name(); ?>"/>
+                    <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'thumbnail' )[0]; ?>" alt="<?= full_name(); ?>" title="<?= full_name(); ?>" class="photo-tile"/>
                 <?php endif; ?>
             </div>
             <div class="col-5-m">

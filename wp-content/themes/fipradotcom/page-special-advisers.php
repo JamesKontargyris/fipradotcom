@@ -12,7 +12,17 @@ get_header(); ?>
 <div id="content-container" class="our-people">
 
     <?php include('inc/hero_banner.php'); ?>
-    <?php include('inc/our_people_filters.php'); ?>
+
+    <div class="page-nav grey">
+        <div class="row content-area">
+            <div class="col-9-m no-margin">
+<!--                Filters go here-->&nbsp;
+            </div>
+            <div class="col-3-m no-margin hide-s">
+                <input type="text" id="text-filter" placeholder="Type to filter..." />
+            </div>
+        </div>
+    </div>
 
     <?php $fipriots = get_all_spads(); ?>
 
@@ -45,12 +55,13 @@ get_header(); ?>
 
                                     <?php $post_id = get_the_ID(); ?>
 
-                                    <!--TODO update filter class names-->
-                                    <div class="person banking-and-financial-services country-3">
+                                    <div class="person">
                                         <div class="person-profile-photo">
-                                            <a href="<?= get_the_permalink(); ?>">
+                                            <a href="<?php echo get_the_permalink(); ?>">
                                                 <?php if ( has_post_thumbnail() ) : ?>
-                                                    <img src="<?= wp_get_attachment_url( get_post_thumbnail_id($post_id) ) ?>" alt="<?= get_field('first_name'); ?> <?= get_field('last_name'); ?>" title="<?= get_field('first_name'); ?> <?= get_field('last_name'); ?>"/>
+                                                    <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post_id) ) ?>" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile" />
+                                                <?php else : ?>
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/img/blank_profile_<?php echo get_field('gender'); ?>.png" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile" />
                                                 <?php endif; ?>
                                             </a>
                                         </div>

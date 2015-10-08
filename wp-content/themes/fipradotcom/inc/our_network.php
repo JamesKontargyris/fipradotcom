@@ -21,16 +21,16 @@ foreach( $continents as $continent ) :
             <?php $continent_units = get_units_by_continent($continent->term_id); ?>
             <?php while ( $continent_units->have_posts() ) : $continent_units->the_post(); ?>
                 <div class="unit-block">
-                    <?php
-                    $flag = get_field('flag');
-                    if( ! empty($flag) ) {  $url = $flag['url']; }
-                    ?>
 
                     <a href="<?= get_the_permalink(); ?>" style="display: block;">
                         <h5>
-                            <img src="<?= $url ?>" class="flag" width="48" height="48" alt="<?= get_the_title(); ?>" align="absmiddle"/> <span class="unit-title"><?= get_the_title(); ?></span>
+                            <?php $flag = get_field('flag'); if (!empty($flag)) : $url = $flag['url']; ?>
+                                <img src="<?= $url ?>" class="flag" width="48" height="48" alt="<?= get_the_title(); ?>" align="absmiddle"/>
+                            <?php endif; ?>
+                            <span class="unit-title"><?= get_the_title(); ?></span>
                         </h5>
                     </a>
+
                 </div>
             <?php endwhile; ?>
         </div>

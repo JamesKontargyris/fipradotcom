@@ -18,14 +18,15 @@
                                 <?php if( 5 / $i == 5) : ?> <div class="megamenu-row"> <?php endif; ?>
 <!--                                    Countries-->
                                     <div class="country-tag">
-                                        <?php
-                                            $flag = get_field('flag');
-                                            if( ! empty($flag) ) {  $url = $flag['url']; }
-                                        ?>
 
                                         <a href="<?= get_the_permalink(); ?>">
-                                            <img src="<?= $url ?>" class="global-network-menu-flag" alt="<?= get_the_title(); ?>"/> <?= get_the_title(); ?>
+                                            <?php $flag = get_field('flag'); if (!empty($flag)) : $url = $flag['url']; ?>
+                                                <img src="<?= $url ?>" class="global-network-menu-flag" alt="<?= get_the_title(); ?>"/>
+                                            <?php endif; ?>
+
+                                            <?php the_title(); ?>
                                         </a>
+
                                     </div>
 <!--                                    End the row if $i == 5 and reset $i -->
                             <?php if( 5 / $i == 1) : ?> </div> <?php $i = 0; endif; ?>
