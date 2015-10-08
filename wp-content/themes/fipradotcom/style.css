@@ -4214,9 +4214,6 @@ a .photo-tile:hover {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
-.hide {
-  display: none; }
-
 /*--------------------------------------------------------------
 # Sidebar Modules
 --------------------------------------------------------------*/
@@ -4500,14 +4497,14 @@ embed, iframe, object {
           display: block;
           position: absolute;
           bottom: 0;
+          width: 150px;
           left: 40px;
-          height: 150px;
           top: 50%;
           margin-top: -75px; } }
       @media screen and (min-width: 801px) {
         .full-width-block-container.profile .full-width-block-content-container .full-width-block-content img {
           margin-top: -100px;
-          height: 200px; } }
+          width: 200px; } }
 
 .profile-content-area p.lead {
   font-size: 18px;
