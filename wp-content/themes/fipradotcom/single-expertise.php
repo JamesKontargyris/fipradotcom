@@ -45,7 +45,7 @@ get_header(); ?>
                 <div id="secondary">
 
                     <aside class="sidebar-contacts-container">
-                        <h5 id="practice-lead">Practice Lead</h5>
+                        <h5 id="practice-lead">Lead Contact</h5>
                         <?php $practice_lead = get_field('practice_lead'); $id = $practice_lead->ID; ?>
                         <div class="sidebar-contacts-group">
                             <div class="sidebar-contact">
