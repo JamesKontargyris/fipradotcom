@@ -58,23 +58,29 @@ get_header(); ?>
                                             } ?>
                                         <?php endif; ?>
 
-                                        <div class="person <?php echo trim($unit_filter_name) . ' ' . trim($expertise_filter_names) . ' surname-' . substr(get_field('last_name'), 0, 1); ?>">
+
+                                        <?php
+//                                        Assign variables
+                                            $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position');
+                                        ?>
+
+                                        <div class="person <?php echo trim($unit_filter_name) . ' ' . trim($expertise_filter_names) . ' surname-' . substr($last_name, 0, 1); ?>">
                                             <div class="person-profile-photo">
                                                 <a href="<?php echo get_the_permalink(); ?>">
                                                     <?php if ( has_post_thumbnail() ) : ?>
-                                                        <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'profile-photo' )[0]; ?>" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile" />
+                                                        <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'profile-photo' )[0]; ?>" alt="<?php echo $first_name; ?> <?php echo $last_name; ?>" title="<?php echo $first_name; ?> <?php echo $last_name; ?>" class="photo-tile" />
                                                     <?php else : ?>
-                                                        <img src="<?php echo get_template_directory_uri(); ?>/img/blank_profile_<?php echo get_field('gender'); ?>.png" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile" />
+                                                        <img src="<?php echo get_template_directory_uri(); ?>/img/blank_profile_<?php echo get_field('gender'); ?>.png" alt="<?php echo $first_name; ?> <?php echo $last_name; ?>" title="<?php echo $first_name; ?> <?php echo $last_name; ?>" class="photo-tile" />
                                                     <?php endif; ?>
                                                 </a>
                                             </div>
                                             <div class="person-details">
-                                                <h4 class="no-margin"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?></a></h4>
+                                                <h4 class="no-margin"><a href="<?php echo get_the_permalink(); ?>"><?php echo $first_name; ?> <?php echo $last_name; ?></a></h4>
 
                                                 <h6>
-                                                    <?php echo get_field('position'); ?>
-                                                    <?php if(get_field('position') && $unit_id) { echo ', '; } ?>
-                                                    <?php echo $unit_id ? get_the_title($unit_id) : ''; ?>
+                                                    <?php echo $position; ?>
+                                                    <?php if($position && $unit_id) { echo ', '; } ?>
+                                                    <?php echo $unit_id ? 'Fipra ' . str_replace('Fipra', '', get_the_title($unit_id)) : ''; ?>
                                                 </h6>
 
                                                 <div class="btn-container">
@@ -84,33 +90,30 @@ get_header(); ?>
                                                 </div>
                                                 <div class="person-contact-details">
                                                     <table class="no-style" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                        <?php $tel = get_field('tel'); ?>
-                                                        <?php if($tel) : ?>
+                                                        <?php if($tel = get_field('tel')) : ?>
                                                             <tr>
                                                                 <td>Tel</td>
-                                                                <td><?php echo get_field('tel') ?></td>
+                                                                <td><?php echo $tel; ?></td>
                                                             </tr>
                                                         <?php endif; ?>
 
-                                                        <?php $mobile = get_field('mobile'); ?>
-                                                        <?php if($mobile) : ?>
+                                                        <?php if($mobile = get_field('mobile')) : ?>
                                                             <tr>
                                                                 <td>Mobile</td>
-                                                                <td><?php echo get_field('mobile') ?></td>
+                                                                <td><?php echo $mobile; ?></td>
                                                             </tr>
                                                         <?php endif; ?>
 
-                                                        <?php $fax = get_field('fax'); ?>
-                                                        <?php if($fax) : ?>
+                                                        <?php if($fax = get_field('fax')) : ?>
                                                             <tr>
                                                                 <td>Fax</td>
-                                                                <td><?php echo get_field('fax') ?></td>
+                                                                <td><?php echo $fax; ?></td>
                                                             </tr>
                                                         <?php endif; ?>
                                                         <tr>
                                                             <td colspan="2">
                                                                 <!--TODO update contact form link-->
-                                                                <a href="#">Email <?php echo get_field('first_name'); ?></a>
+                                                                <a href="#">Email <?php echo $first_name; ?></a>
                                                             </td>
                                                         </tr>
                                                     </table>

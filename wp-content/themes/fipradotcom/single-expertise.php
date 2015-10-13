@@ -44,39 +44,42 @@ get_header(); ?>
 
                 <div id="secondary">
 
-                    <aside class="sidebar-contacts-container">
-                        <h5 id="practice-lead">Lead Contact</h5>
-                        <?php $practice_lead = get_field('practice_lead'); $id = $practice_lead->ID; ?>
-                        <div class="sidebar-contacts-group">
-                            <div class="sidebar-contact">
-                                <div class="sidebar-contact-content">
-                                    <a href="<?= get_the_permalink($id); ?>">
-                                        <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($id) ) ?>" alt="<?= get_field('first_name', $id); ?> <?= get_field('last_name', $id); ?>"/>
-                                        <strong><?= get_field('first_name', $id); ?> <?= get_field('last_name', $id); ?></strong>
-                                    </a>
+                    <?php if($lead = get_field('lead_contact')) : $id = $lead->ID; ?>
+                        <div class="sidebar-contacts-container">
+                            <h5 id="get-in-touch">Lead Contact</h5>
+                            <div class="sidebar-contacts-group">
+                                <div class="sidebar-contact">
+                                    <div class="sidebar-contact-content">
 
-                                    <?php $tel = get_field('tel', $id); ?>
-                                    <?php if($tel) : ?>
-                                        <br><span class="font-14">Tel. <?= get_field('tel', $id) ?></span>
-                                    <?php endif; ?>
+                                        <a href="<?= get_the_permalink($id); ?>">
+                                            <?php if ( has_post_thumbnail($id) ) : ?>
+                                                    <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'profile-photo' )[0]; ?>" alt="<?= $lead->first_name . ' ' . $lead->last_name ?>" title="<?= $lead->first_name . ' ' . $lead->last_name ?>" style="background-color:white;"/>
+                                            <?php endif; ?>
+                                            <strong><?= $lead->first_name . ' ' . $lead->last_name ?></strong>
+                                        </a>
 
-                                    <?php $mobile = get_field('mobile', $id); ?>
-                                    <?php if($mobile) : ?>
-                                        <br><span class="font-14">Mob. <?= get_field('mobile', $id) ?></span>
-                                    <?php endif; ?>
+                                        <?php $tel = get_field('tel', $id); ?>
+                                        <?php if($tel) : ?>
+                                            <br><span class="font-14">Tel. <?= get_field('tel', $id) ?></span>
+                                        <?php endif; ?>
 
-                                    <?php $fax = get_field('fax', $id); ?>
-                                    <?php if($fax) : ?>
-                                        <br><span class="font-14">Fax. <?= get_field('fax', $id) ?></span>
-                                    <?php endif; ?>
-    <!--TODO update mailto link-->
-                                    <br><span class="font-14"><a href="mailto:#"><?= get_field('email', $id) ?></a></span>
+                                        <?php $mobile = get_field('mobile', $id); ?>
+                                        <?php if($mobile) : ?>
+                                            <br><span class="font-14">Mob. <?= get_field('mobile', $id) ?></span>
+                                        <?php endif; ?>
 
+                                        <?php $fax = get_field('fax', $id); ?>
+                                        <?php if($fax) : ?>
+                                            <br><span class="font-14">Fax. <?= get_field('fax', $id) ?></span>
+                                        <?php endif; ?>
+                                        <!--                                        TODO add email link-->
+                                        <br><span class="font-14"><a href="mailto:#"><?= get_field('email', $id) ?></a></span>
+
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
-                    </aside>
+                    <?php endif; ?>
 
                     <?php $languages = get_field('languages');
                     if($languages): ?>
@@ -91,24 +94,29 @@ get_header(); ?>
                         </aside>
 
                     <?php endif; ?>
-<!--                    TODO add sidebar for expertise area -->
+
+                    <?php dynamic_sidebar('expertise-area'); ?>
                 </div><!-- #secondary -->
 
             </div><!-- #content -->
         </div><!-- #site-content-container -->
 
-        <section id="team-menu-container" class="full-width-block-container collapse">
-            <div class="full-width-block-content-container light-grey">
+<!--        START: team-menu-container -->
+        <?php if($staff = get_field('practice_staff')) : ?>
+            <section id="team-menu-container" class="full-width-block-container collapse">
+                <div class="full-width-block-content-container light-grey">
 
-                <div class="full-width-block-content">
-                    <h3 id="staff" class="upper small center">Practice Staff</h3>
-                    <?php $staff = get_field('practice_staff'); ?>
-                    <div id="practice-staff-carousel" class="team-carousel with-controls" data-number-of-items="<?= count($staff); ?>">
-                        <?= layout_practice_staff($staff); ?>
+                    <div class="full-width-block-content">
+                        <h3 id="staff" class="upper small center">Practice Staff</h3>
+
+                        <div id="practice-staff-carousel" class="team-carousel with-controls" data-number-of-items="<?= count($staff); ?>">
+                            <?= layout_practice_staff($staff); ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        <?php endif; ?>
+<!--        END: team-menu-container -->
 
         <?= page_testimonials(); ?>
 

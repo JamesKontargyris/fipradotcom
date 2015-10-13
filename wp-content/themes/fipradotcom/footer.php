@@ -59,6 +59,7 @@
 
             <div class="site-info-section">
                 <?php dynamic_sidebar('site-info-left'); ?>
+                <?php wp_nav_menu(array('theme_location' => 'legal', 'depth' => '1')); ?>
             </div>
             <div class="site-info-section">
                 <?php dynamic_sidebar('site-info-right'); ?>

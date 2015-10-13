@@ -98,13 +98,9 @@ get_header(); ?>
 
                 <div id="secondary">
 
+                    <?php if($lead = get_field('lead_contact')) : $id = $lead->ID; ?>
                     <div class="sidebar-contacts-container">
                         <h5 id="get-in-touch">Lead Contact</h5>
-
-                        <?php
-                            $lead = get_field('lead_contact'); $id = $lead->ID;
-                        ?>
-
                         <div class="sidebar-contacts-group">
                             <div class="sidebar-contact">
                                 <div class="sidebar-contact-content">
@@ -135,9 +131,9 @@ get_header(); ?>
 
                                 </div>
                             </div>
-
                         </div>
                     </div>
+                    <?php endif; ?>
 
 
                     <?php if( $linked_units = get_field('linked_units')) : ?>
@@ -157,27 +153,30 @@ get_header(); ?>
                                         </a></li>
                                 <?php endforeach; ?>
                             </ul>
-<!--                            TODO set up link to Our Network page-->
                             <a href="/our-network"><small>Explore our Network <i class="icon-right-open"></i></small></a>
                         </aside>
                     <?php endif; ?>
+
+                    <?php dynamic_sidebar('unit'); ?>
+
                 </div><!-- #secondary -->
 
             </div><!-- #content -->
 
-            <section id="team-menu-container" class="full-width-block-container collapse">
-                <div class="full-width-block-content-container light-grey">
-
-                    <div class="full-width-block-content">
-                        <h3 id="staff" class="upper small center">Our Team</h3>
-                        <?php $team = get_field('team'); ?>
-                        <div id="our-team-carousel" class="team-carousel with-controls" data-number-of-items="<?= count($team); ?>">
-                            <?= layout_our_team($team); ?>
+<!--            START: team-menu-container -->
+            <?php if($team = get_field('team')) : ?>
+                <section id="team-menu-container" class="full-width-block-container collapse">
+                    <div class="full-width-block-content-container light-grey">
+                        <div class="full-width-block-content">
+                            <h3 id="staff" class="upper small center">Our Team</h3>
+                            <div id="our-team-carousel" class="team-carousel with-controls" data-number-of-items="<?= count($team); ?>">
+                                <?= layout_our_team($team); ?>
+                            </div>
                         </div>
-
                     </div>
-                </div>
-            </section>
+                </section>
+            <?php endif; ?>
+<!--            END: team-menu-container -->
 
         <?php endwhile; endif; ?>
 

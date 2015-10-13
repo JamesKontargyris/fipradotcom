@@ -52,10 +52,11 @@ if (!function_exists('fipradotcom_setup')) :
          */
         add_theme_support('post-thumbnails');
 
-        // This theme uses wp_nav_menu() in two locations.
+        // This theme uses wp_nav_menu() in three locations.
         register_nav_menus(
             [
-                'primary' => __('Primary Menu', 'fipradotcom')
+                'primary' => __('Main Menu', 'fipradotcom'),
+                'legal' => __('Legal Links Menu', 'fipradotcom')
             ]
         );
 
@@ -158,6 +159,33 @@ function fipradotcom_widgets_init()
         'after_widget' => '',
         'before_title' => '',
         'after_title' => '',
+    ]);
+    register_sidebar([
+        'name' => __('Expertise Area', 'fipradotcom'),
+        'id' => 'expertise-area',
+        'description' => 'Displays widgets in the sidebar on all individual expertise area pages',
+        'before_widget' => '<aside>',
+        'after_widget' => '</aside>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>',
+    ]);
+    register_sidebar([
+        'name' => __('Fipriot Profile', 'fipradotcom'),
+        'id' => 'fipriot-profile',
+        'description' => 'Displays widgets in the sidebar on all individual Fipriot profile pages',
+        'before_widget' => '<aside>',
+        'after_widget' => '</aside>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>',
+    ]);
+    register_sidebar([
+        'name' => __('Unit', 'fipradotcom'),
+        'id' => 'unit',
+        'description' => 'Displays widgets in the sidebar on all individual Unit pages',
+        'before_widget' => '<aside>',
+        'after_widget' => '</aside>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>',
     ]);
 }
 

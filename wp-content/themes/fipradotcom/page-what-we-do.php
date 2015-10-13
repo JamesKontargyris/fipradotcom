@@ -76,8 +76,9 @@
                             <div>
                                 <h2 class="no-top-margin center"><?= get_the_title(); ?></h2>
                                 <p class="center"><?= get_field('description'); ?></p>
-                                <?php $contact_id = get_field('fipriot_contact')->ID; ?>
-                                <p class="center">Contact <a href="http://fipradotcom.dev/our-people/ukko-metsola" class="pa-service-ajax-contact" data-modal-url="<?= get_template_directory_uri(); ?>/paservice_contact_details.php?id=<?= $contact_id; ?>"><?= get_field('first_name', $contact_id); ?> <?= get_field('last_name', $contact_id); ?></a> for more information.</p>
+                                <?php if($contact_id = get_field('fipriot_contact')) : ?>
+                                    <p class="center">Contact <a href="http://fipradotcom.dev/our-people/ukko-metsola" class="pa-service-ajax-contact" data-modal-url="<?= get_template_directory_uri(); ?>/paservice_contact_details.php?id=<?= $contact_id->ID; ?>"><?= get_field('first_name', $contact_id->ID); ?> <?= get_field('last_name', $contact_id->ID); ?></a> for more information.</p>
+                                <?php endif; ?>
                             </div>
                         <?php endwhile; ?>
                 </div>

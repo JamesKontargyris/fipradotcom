@@ -20,6 +20,11 @@ get_header(); ?>
             <div class="full-width-block-content-container grey">
                 <div class="full-width-block-content left">
 
+                    <?php
+                        // Assign variables
+                        $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $unit_id = get_field('unit');
+                    ?>
+
                     <?php if ( has_post_thumbnail() ) : ?>
                         <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'profile-photo' )[0]; ?>" alt="<?php echo full_name(); ?>" title="<?php echo full_name(); ?>" class="photo-tile dark-shadow" />
                     <?php else : ?>
@@ -31,9 +36,9 @@ get_header(); ?>
                         <h4 class="no-top-margin">Special Adviser<?php echo get_field('special_adviser_expertise') ? ', ' . get_field('special_adviser_expertise') : ''; ?></h4>
                     <?php else : ?>
                         <h4 class="no-top-margin">
-                            <?php echo get_field('position'); ?>
-                            <?php if(get_field('position') && get_field('unit')) { echo ', '; } ?>
-                            <?php echo get_field('unit') ? get_field('unit')->post_title : ''; ?>
+                            <?php echo $position; ?>
+                            <?php if($position && $unit_id) { echo '<br>'; } ?>
+                            <a href="<?php echo get_the_permalink($unit_id); ?>"><?php echo $unit_id ? 'Fipra ' . str_replace('Fipra', '', get_the_title($unit_id)) : ''; ?></a>
                         </h4>
                     <?php endif; ?>
                     <!-- TODO: update link to contact form-->
@@ -130,6 +135,8 @@ get_header(); ?>
                                 </aside>
 
                         <?php endif; ?>
+
+                        <?php dynamic_sidebar('fipriot-profile'); ?>
 
                 </div><!-- #secondary -->
 

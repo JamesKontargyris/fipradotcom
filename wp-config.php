@@ -80,6 +80,8 @@ else {
  * You can have multiple installations in one database if you give each a unique
  * prefix. Only numbers, letters, and underscores please!
  */
+//define('WP_CACHE', true); //Added by WP-Cache Manager
+define( 'WPCACHEHOME', '/home/vagrant/code/fipra/fipradotcom/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 $table_prefix  = 'wp_';
 
 define( 'WPCF7_AUTOP', false );

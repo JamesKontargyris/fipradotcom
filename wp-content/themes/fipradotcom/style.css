@@ -908,6 +908,18 @@ table:not(.no-style) {
           width: 47.8783%; }
           #site-info-container .site-info .site-info-section:last-child {
             margin-right: 0; } }
+      #site-info-container .site-info .site-info-section ul.menu {
+        list-style: none;
+        font-size: 12px;
+        font-size: 0.75rem;
+        margin: 0; }
+        #site-info-container .site-info .site-info-section ul.menu li {
+          float: left;
+          line-height: 1; }
+          #site-info-container .site-info .site-info-section ul.menu li:not(:last-child) {
+            padding: 0 5px 0 0;
+            margin-right: 5px;
+            border-right: 1px solid #BFC5D2; }
     #site-info-container .site-info .footer-social-links {
       text-align: left; }
       @media screen and (min-width: 801px) {
