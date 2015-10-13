@@ -62,7 +62,7 @@ get_header(); ?>
                                             <div class="person-profile-photo">
                                                 <a href="<?php echo get_the_permalink(); ?>">
                                                     <?php if ( has_post_thumbnail() ) : ?>
-                                                        <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post_id) ) ?>" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile" />
+                                                        <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'profile-photo' )[0]; ?>" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile" />
                                                     <?php else : ?>
                                                         <img src="<?php echo get_template_directory_uri(); ?>/img/blank_profile_<?php echo get_field('gender'); ?>.png" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile" />
                                                     <?php endif; ?>

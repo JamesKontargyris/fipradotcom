@@ -18,7 +18,7 @@ function layout_fipriot_team_member($post_id, $short_bio = false, $expertise = f
             $string .= '<div class="profile-photo">';
                 $string .= '<a href="' . get_the_permalink($post_id) . '">';
                     if ( has_post_thumbnail($post_id) ) {
-                        $string .= '<img src="' . wp_get_attachment_url( get_post_thumbnail_id($post_id) ) . '" alt="' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '" class="photo-tile" />';
+                        $string .= '<img src="' . wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'profile-photo' )[0] . '" alt="' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '" class="photo-tile" />';
                     } else {
                         $string .= '<img src="' . get_template_directory_uri() . '/img/blank_profile_' . get_field('gender', $post_id) . '.png" alt="' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '" title="' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '" class="photo-tile" />';
                     }
