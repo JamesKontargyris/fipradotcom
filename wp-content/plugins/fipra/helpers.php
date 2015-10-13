@@ -29,7 +29,7 @@ function layout_fipriot_team_member($post_id, $short_bio = false, $expertise = f
                 $string .= '<h4 class="no-bottom-margin"><a href="' . get_the_permalink($post_id) . '">' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '</a></h4>';
                 if(get_field('is_special_adviser')) {
                     $string .= '<h6>Special Adviser';
-                    if(get_field('special_adviser_expertise')) $string .= ', ' . get_field('special_adviser_expertise');
+                    if(get_field('special_adviser_expertise')) $string .= '<br>' . get_field('special_adviser_expertise');
                     $string .= '</h6>';
                 } else {
                     $string .= '<h6>' . get_field('position', $post_id);

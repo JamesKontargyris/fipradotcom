@@ -30,7 +30,11 @@ get_header(); ?>
                     <?php if(get_field('is_special_adviser')) : ?>
                         <h4 class="no-top-margin">Special Adviser<?php echo get_field('special_adviser_expertise') ? ', ' . get_field('special_adviser_expertise') : ''; ?></h4>
                     <?php else : ?>
-                        <h4 class="no-top-margin"><?php echo get_field('position'); ?><?php echo get_field('unit') ? ', ' . get_field('unit')->post_title : ''; ?></h4>
+                        <h4 class="no-top-margin">
+                            <?php echo get_field('position'); ?>
+                            <?php if(get_field('position') && get_field('unit')) { echo ', '; } ?>
+                            <?php echo get_field('unit') ? get_field('unit')->post_title : ''; ?>
+                        </h4>
                     <?php endif; ?>
                     <!-- TODO: update link to contact form-->
                     <a class="btn primary" href="#">Contact <?php echo get_field('first_name') ?></a>

@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
-    <div id="content-container" class="<?= str_replace(' ', '-', strtolower(get_the_title())); ?>">
+    <div id="content-container" class="<?= str_replace(' ', '-', strtolower(get_the_title())); ?> with-border">
 
         <div id="site-content-container">
 
             <div id="site-content">
 
-                <?php query_posts($query_string . '&showposts=10'); ?>
+                <?php query_posts($query_string . '&showposts=9999'); ?>
 
                 <?php if ( have_posts() ) : ?>
 

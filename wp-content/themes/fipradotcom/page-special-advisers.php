@@ -16,17 +16,7 @@ get_header(); ?>
 <div id="content-container" class="our-people">
 
     <?php include('inc/hero_banner.php'); ?>
-
-    <div class="page-nav grey">
-        <div class="row content-area">
-            <div class="col-9-m no-margin">
-<!--                Filters go here-->&nbsp;
-            </div>
-            <div class="col-3-m no-margin hide-s">
-                <input type="text" id="text-filter" placeholder="Type to filter..." />
-            </div>
-        </div>
-    </div>
+    <?php include('inc/special_advisers_filters.php'); ?>
 
     <?php $fipriots = get_all_spads(); ?>
 
@@ -59,7 +49,7 @@ get_header(); ?>
 
                                     <?php $post_id = get_the_ID(); ?>
 
-                                    <div class="person">
+                                    <div class="person <?php echo 'surname-' . substr(get_field('last_name'), 0, 1); ?>">
                                         <div class="person-profile-photo">
                                             <a href="<?php echo get_the_permalink(); ?>">
                                                 <?php if ( has_post_thumbnail() ) : ?>

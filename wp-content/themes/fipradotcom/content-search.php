@@ -13,21 +13,29 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="row search-result-row">
 
-            <div class="col-1-m hide-s">
-                <?php if ( has_post_thumbnail() ) : ?>
-                    <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'thumbnail' )[0]; ?>" alt="<?= full_name(); ?>" title="<?= full_name(); ?>" class="photo-tile"/>
-                <?php endif; ?>
+            <div class="col-2-m hide-s">
+                <a href="<?php the_permalink(); ?>">
+                    <?php if ( has_post_thumbnail() ) : ?>
+                        <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'profile-photo' )[0]; ?>" alt="<?php echo full_name(); ?>" title="<?php echo full_name(); ?>" class="photo-tile dark-shadow" />
+                        <?php else : ?>
+                        <img src="<?php echo get_template_directory_uri() ?>/img/blank_profile_<?php echo get_field('gender'); ?>.png" alt="<?php echo full_name(); ?>" title="<?php echo full_name(); ?>" class="photo-tile dark-shadow" />
+                    <?php endif; ?>
+                </a>
             </div>
             <div class="col-5-m">
                 <?php the_title( sprintf( '<h3 class="no-margin"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
                     <?php if(get_field('is_special_adviser')) : ?>
                         <h5>Special Adviser<?= get_field('special_adviser_expertise') ? ', ' . get_field('special_adviser_expertise') : ''; ?></h5>
                     <?php else : ?>
-                        <h5><?= get_field('position'); ?><?= get_field('unit') ? ', ' . get_field('unit')->post_title : ''; ?></h5>
+                        <h5>
+                            <?php echo get_field('position'); ?>
+                            <?php if(get_field('position') && get_field('unit')) { echo ', '; } ?>
+                            <?php echo get_field('unit') ? get_field('unit')->post_title : ''; ?>
+                        </h5>
                     <?php endif; ?>
             </div>
 
-            <div class="col-6-m hide-s">
+            <div class="col-5-m hide-s">
                 <?= get_field('short_bio'); ?>
             </div>
 
@@ -40,7 +48,7 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="row search-result-row">
 
-            <div class="col-1-m hide-s" style="fill:grey">
+            <div class="col-2-m hide-s" style="fill:grey">
                 <?= file_get_contents(get_field('icon')); ?>
             </div>
             <div class="col-5-m">
@@ -48,7 +56,7 @@
                 <h5>Area of Expertise</h5>
             </div>
 
-            <div class="col-6-m hide-s">
+            <div class="col-5-m hide-s">
                 <?= get_field('short_summary'); ?>
             </div>
 
@@ -66,12 +74,12 @@
                     <img src="<?= get_field('flag')['url']; ?>" alt="<?= get_the_title(); ?>" title="<?= get_the_title(); ?>"/>
                 <?php endif; ?>
             </div>
-            <div class="col-5-m">
+            <div class="col-6-m">
                 <?php the_title( sprintf( '<h3 class="no-margin"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
                 <h5>Fipra Unit</h5>
             </div>
 
-            <div class="col-6-m hide-s">
+            <div class="col-5-m hide-s">
                 <?= get_field('introduction'); ?>
             </div>
 

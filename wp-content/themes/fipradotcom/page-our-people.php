@@ -58,7 +58,7 @@ get_header(); ?>
                                             } ?>
                                         <?php endif; ?>
 
-                                        <div class="person <?php echo trim($unit_filter_name) . ' ' . trim($expertise_filter_names); ?>">
+                                        <div class="person <?php echo trim($unit_filter_name) . ' ' . trim($expertise_filter_names) . ' surname-' . substr(get_field('last_name'), 0, 1); ?>">
                                             <div class="person-profile-photo">
                                                 <a href="<?php echo get_the_permalink(); ?>">
                                                     <?php if ( has_post_thumbnail() ) : ?>
@@ -71,7 +71,12 @@ get_header(); ?>
                                             <div class="person-details">
                                                 <h4 class="no-margin"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?></a></h4>
 
-                                                <h6><?php echo get_field('position'); echo $unit_id ? ', ' . get_the_title($unit_id) : ''; ?></h6>
+                                                <h6>
+                                                    <?php echo get_field('position'); ?>
+                                                    <?php if(get_field('position') && $unit_id) { echo ', '; } ?>
+                                                    <?php echo $unit_id ? get_the_title($unit_id) : ''; ?>
+                                                </h6>
+
                                                 <div class="btn-container">
                                                     <a href="<?php echo get_the_permalink(); ?>" class="btn">
                                                         <div class="btn-text"><i class="icon-right-circle-1"></i></div>
