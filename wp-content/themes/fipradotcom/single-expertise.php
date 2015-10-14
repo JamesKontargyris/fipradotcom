@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <!-- The Loop -->
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); $expertise_id = get_the_ID(); ?>
 
     <?php get_template_part('inc/breadcrumbs'); ?>
 
@@ -101,22 +101,23 @@ get_header(); ?>
             </div><!-- #content -->
         </div><!-- #site-content-container -->
 
-<!--        START: team-menu-container -->
-        <?php if($staff = get_field('practice_staff')) : ?>
-            <section id="team-menu-container" class="full-width-block-container collapse">
+        <!--            START: team-menu-container -->
+        <?php $team = get_all_fipriots_by_expertise_area($expertise_id); ?>
+        <?php if($team->have_posts()) : ?>
+            <section id="team-menu-container" class="full-width-block-container">
                 <div class="full-width-block-content-container light-grey">
-
                     <div class="full-width-block-content">
                         <h3 id="staff" class="upper small center">Practice Staff</h3>
-
-                        <div id="practice-staff-carousel" class="team-carousel with-controls" data-number-of-items="<?= count($staff); ?>">
-                            <?= layout_practice_staff($staff); ?>
+                        <div id="our-team-carousel" class="team-carousel with-controls" data-number-of-items="<?php echo $team->found_posts; ?>">
+                            <?php while($team->have_posts()) : $team->the_post(); ?>
+                                <?php echo layout_fipriot_team_member(get_the_ID(), false, false, true, true); ?>
+                            <?php endwhile; ?>
                         </div>
                     </div>
                 </div>
             </section>
         <?php endif; ?>
-<!--        END: team-menu-container -->
+        <!--            END: team-menu-container -->
 
         <?= page_testimonials(); ?>
 

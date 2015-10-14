@@ -22,7 +22,7 @@ get_header(); ?>
 
                     <?php
                         // Assign variables
-                        $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $unit_id = get_field('unit');
+                        $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $unit_id = get_field('unit')[0];
                     ?>
 
                     <?php if ( has_post_thumbnail() ) : ?>
@@ -36,8 +36,9 @@ get_header(); ?>
                         <h4 class="no-top-margin">Special Adviser<?php echo get_field('special_adviser_expertise') ? ', ' . get_field('special_adviser_expertise') : ''; ?></h4>
                     <?php else : ?>
                         <h4 class="no-top-margin">
-                            <?php echo $position; ?>
-                            <?php if($position && $unit_id) { echo '<br>'; } ?>
+                            <?php
+                            echo $position;
+                            if($position && $unit_id) { echo ', '; } ?>
                             <a href="<?php echo get_the_permalink($unit_id); ?>"><?php echo $unit_id ? 'Fipra ' . str_replace('Fipra', '', get_the_title($unit_id)) : ''; ?></a>
                         </h4>
                     <?php endif; ?>
@@ -58,16 +59,16 @@ get_header(); ?>
                             <p class="lead"><?php echo $lead_para; ?></p>
                         <?php endif; ?>
 
-                        <?php echo get_field('main_bio') ?>
+                        <?php echo get_field('main_bio') ?><br>
 
                         <?php if( get_field('expertise') && ! get_field('is_special_adviser') ) : ?>
                             <h3 id="expertise"><?php echo get_field('first_name') ?>'s Expertise</h3>
                             <div class="profile-expertise-showcase equal-heights">
                                 <?php foreach(get_field('expertise') as $expertise_area) : ?>
                                     <div class="expertise-area">
-                                        <a href="<?php echo get_the_permalink($expertise_area->ID); ?>">
-                                            <div class="svg-icon"><?php echo file_get_contents(get_field('icon', $expertise_area->ID)); ?></div>
-                                            <div class="expertise-area-name"><?php echo get_the_title($expertise_area->ID); ?></div>
+                                        <a href="<?php echo get_the_permalink($expertise_area); ?>">
+                                            <div class="svg-icon"><?php echo file_get_contents(get_field('icon', $expertise_area)); ?></div>
+                                            <div class="expertise-area-name"><?php echo get_the_title($expertise_area); ?></div>
                                         </a>
                                     </div>
                                 <?php endforeach; ?>
@@ -88,33 +89,34 @@ get_header(); ?>
                                 <address class="no-bottom-margin">
                                     <table class="no-style" cellspacing="0" cellpadding="0" border="0" width="100%">
 
-                                        <?php $tel = get_field('tel'); ?>
-                                        <?php if($tel) : ?>
+                                        <?php if($tel = get_field('tel')) : ?>
                                             <tr>
                                                 <td>Tel</td>
-                                                <td><?php echo get_field('tel') ?></td>
+                                                <td><?php echo $tel ?></td>
                                             </tr>
                                         <?php endif; ?>
 
-                                        <?php $mobile = get_field('mobile'); ?>
-                                        <?php if($mobile) : ?>
+                                        <?php if($mobile = get_field('mobile')) : ?>
                                             <tr>
                                                 <td>Mobile</td>
-                                                <td><?php echo get_field('mobile') ?></td>
+                                                <td><?php echo $mobile ?></td>
                                             </tr>
                                         <?php endif; ?>
 
-                                        <?php $fax = get_field('fax'); ?>
-                                        <?php if($fax) : ?>
+                                        <?php if($fax = get_field('fax')) : ?>
                                             <tr>
                                                 <td>Fax</td>
-                                                <td><?php echo get_field('fax') ?></td>
+                                                <td><?php echo $fax ?></td>
                                             </tr>
                                         <?php endif; ?>
 
                                     </table>
 <!-- TODO: update link to contact form -->
-                                    <a href="#"><?php echo get_field('email') ?></a>
+                                    <?php if($email = get_field('email')) : ?>
+                                        <br>
+                                        <a href="#" class="btn secondary btn-small">Email <?php echo get_field('first_name'); ?></a>
+                                    <?php endif; ?>
+
                                 </address>
                             </div>
                         </div>

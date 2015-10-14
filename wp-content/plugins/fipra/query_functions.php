@@ -57,6 +57,70 @@ function get_all_spads() {
     return $spads;
 }
 
+function get_all_fipriots_by_unit($unit_id = 0, $include_spads = false) {
+
+    global $post;
+
+    $args = [
+        'post_type' => 'fipriot',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'meta_query' => [
+            'relation' => 'AND',
+            [
+                'key' => 'unit',
+                'value' => $unit_id,
+                'compare' => 'LIKE',
+            ],
+        ],
+    ];
+
+    if( ! $include_spads) {
+        $args['meta_query'][] = [
+            'key'     => 'is_special_adviser',
+            'value'   => '1',
+            'compare' => 'NOT LIKE',
+        ];
+    }
+
+    $fipriots = new WP_Query($args);
+    wp_reset_postdata();
+
+    return $fipriots;
+}
+
+function get_all_fipriots_by_expertise_area($expertise_id = 0, $include_spads = false) {
+
+    global $post;
+
+    $args = [
+        'post_type' => 'fipriot',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'meta_query' => [
+            'relation' => 'AND',
+            [
+                'key' => 'expertise',
+                'value' => $expertise_id,
+                'compare' => 'LIKE',
+            ],
+        ],
+    ];
+
+    if( ! $include_spads) {
+        $args['meta_query'][] = [
+            'key'     => 'is_special_adviser',
+            'value'   => '1',
+            'compare' => 'NOT LIKE',
+        ];
+    }
+
+    $fipriots = new WP_Query($args);
+    wp_reset_postdata();
+
+    return $fipriots;
+}
+
 function get_homepage_fipriots($include_spads = false) {
 
     global $post;

@@ -49,12 +49,12 @@ get_header(); ?>
 
                                         <?php $post_id = get_the_ID(); ?>
     <!--                                    Get unit ID and filter class names-->
-                                        <?php $unit_id = get_field('unit') ? get_field('unit')->ID : 0; ?>
+                                        <?php $unit_id = get_field('unit') ? get_field('unit')[0] : 0; ?>
                                         <?php $unit_filter_name = make_class_name(get_the_title($unit_id)); ?>
                                         <?php $expertise_filter_names = ''; ?>
                                         <?php if($expertise_areas = get_field('expertise')) : ?>
-                                            <?php foreach($expertise_areas as $expertise) {
-                                                $expertise_filter_names .= make_class_name($expertise->post_name) . ' ';
+                                            <?php foreach($expertise_areas as $expertise_id) {
+                                                $expertise_filter_names .= make_class_name(get_the_title($expertise_id)) . ' ';
                                             } ?>
                                         <?php endif; ?>
 
@@ -78,9 +78,11 @@ get_header(); ?>
                                                 <h4 class="no-margin"><a href="<?php echo get_the_permalink(); ?>"><?php echo $first_name; ?> <?php echo $last_name; ?></a></h4>
 
                                                 <h6>
-                                                    <?php echo $position; ?>
-                                                    <?php if($position && $unit_id) { echo ', '; } ?>
-                                                    <?php echo $unit_id ? 'Fipra ' . str_replace('Fipra', '', get_the_title($unit_id)) : ''; ?>
+                                                    <?php
+                                                        echo $position;
+                                                        if($position && $unit_id) { echo ', '; }
+                                                        echo $unit_id ? 'Fipra ' . str_replace('Fipra', '', get_the_title($unit_id)) : '';
+                                                    ?>
                                                 </h6>
 
                                                 <div class="btn-container">

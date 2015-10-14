@@ -4455,27 +4455,25 @@ embed, iframe, object {
 @media screen and (min-width: 801px) {
   #content-container.unit #hero .full-width-block-content img, #content-container.unit #hero .full-width-block-content h1 {
     display: inline-block; } }
-#content-container.unit #team-menu-container .full-width-block-content-container {
-  padding-bottom: 0; }
-  #content-container.unit #team-menu-container .full-width-block-content-container .svg-icon {
-    float: left;
-    background-color: #00257f;
-    width: 32px;
-    height: 32px;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%; }
-    #content-container.unit #team-menu-container .full-width-block-content-container .svg-icon:not(:last-child) {
-      margin-right: 0.375rem; }
-    @media screen and (max-width: 801px)  {
-      #content-container.unit #team-menu-container .full-width-block-content-container .svg-icon {
-        display: none; } }
-    #content-container.unit #team-menu-container .full-width-block-content-container .svg-icon:hover {
-      opacity: 0.7; }
-    #content-container.unit #team-menu-container .full-width-block-content-container .svg-icon svg {
-      fill: white;
-      width: 60%; }
+#content-container.unit #team-menu-container .full-width-block-content-container .svg-icon {
+  float: left;
+  background-color: #00257f;
+  width: 32px;
+  height: 32px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%; }
+  #content-container.unit #team-menu-container .full-width-block-content-container .svg-icon:not(:last-child) {
+    margin-right: 0.375rem; }
+  @media screen and (max-width: 801px)  {
+    #content-container.unit #team-menu-container .full-width-block-content-container .svg-icon {
+      display: none; } }
+  #content-container.unit #team-menu-container .full-width-block-content-container .svg-icon:hover {
+    opacity: 0.7; }
+  #content-container.unit #team-menu-container .full-width-block-content-container .svg-icon svg {
+    fill: white;
+    width: 60%; }
 
 @media screen and (max-width: 801px)  {
   #content-container.with-border {

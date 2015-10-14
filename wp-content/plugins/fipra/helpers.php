@@ -8,9 +8,10 @@
  * @param $post_id
  * @param bool|false $short_bio
  * @param bool $expertise
+ * @param bool $unit
  * @return bool|string
  */
-function layout_fipriot_team_member($post_id, $short_bio = false, $expertise = false) {
+function layout_fipriot_team_member($post_id, $short_bio = false, $expertise = false, $unit = true, $position = true) {
     if( $post_id ) {
         $string = '';
 
@@ -27,14 +28,21 @@ function layout_fipriot_team_member($post_id, $short_bio = false, $expertise = f
 
             $string .= '<div class="profile-details">';
                 $string .= '<h4 class="no-bottom-margin"><a href="' . get_the_permalink($post_id) . '">' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '</a></h4>';
-                if(get_field('is_special_adviser')) {
+                if(get_field('is_special_adviser', $post_id)) {
                     $string .= '<h6>Special Adviser';
                     if(get_field('special_adviser_expertise')) $string .= '<br>' . get_field('special_adviser_expertise');
                     $string .= '</h6>';
                 } else {
-                    $string .= '<h6>' . get_field('position', $post_id);
-                    if(get_field('unit')) { $string .= '<br>' . get_field('unit', $post_id)->post_title; }
-                    $string .= '</h6>';
+                    $position_title = get_field('position', $post_id);
+                    $unit_id = get_field('unit', $post_id)[0];
+//                    Fipriot has either a position or unit assigned?
+                    if($position_title || $unit_id) {
+                        $string .= '<h6>';
+                            if($position && $position_title) { $string .= $position_title; };
+                            if($position_title && $unit_id) { $string .= '<br>'; }
+                            if($unit && $unit_id) { $string .= get_the_title($unit_id); }
+                        $string .= '</h6>';
+                    }
                 }
     //            If $short_bio is true, include the Fipriot's short bio text
                 if( $short_bio === true ) { $string .= '<p class="small short-bio">' . get_field('short_bio', $post_id) . '</p>'; }
@@ -45,8 +53,8 @@ function layout_fipriot_team_member($post_id, $short_bio = false, $expertise = f
                         $string .= '<ul class="team-member-expertise">';
                         $string .= '<li>';
                         foreach(get_field('expertise', $post_id) as $expertise) {
-                            $string .= '<a href="' . get_the_permalink($expertise->ID) . '" class="tooltip svg-icon" title="' . get_the_title($expertise->ID) . '">';
-                            $string .= file_get_contents( get_field('icon', $expertise->ID) );
+                            $string .= '<a href="' . get_the_permalink($expertise) . '" class="tooltip svg-icon" title="' . get_the_title($expertise) . '">';
+                            $string .= file_get_contents( get_field('icon', $expertise) );
                             $string .= '</a>';
                         }
                         $string .= '</li>';
