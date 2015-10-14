@@ -6,13 +6,15 @@
 
             <?php if(get_post_type() == 'unit') : ?>
                 <?php if ( get_field('flag') ) : ?>
-                    <img src="<?= get_field('flag')['url']; ?>" alt="<?= get_the_title(); ?>" title="<?= get_the_title(); ?>"/>
+                    <img src="<?= get_field('flag')['url']; ?>" alt="<?= get_the_title(); ?>" title="<?= get_the_title(); ?>" class="hero-flag"/>
                 <?php endif; ?>
             <?php endif; ?>
 
             <h1 class="upper no-margin">
                 <?php if (get_post_type() == 'expertise') : ?><?= file_get_contents(get_field('icon')); ?><br class="hide-s"/> <?php endif; ?>
-                <?php the_title(); ?>
+                <?php if(get_post_type() == 'unit') : echo 'Fipra ' . str_replace('Fipra', '', get_the_title()); ?>
+                <?php else : the_title(); ?>
+                <?php endif; ?>
             </h1>
             <?php if(get_field('header_introduction')) : ?>
                 <p class="lead no-margin"><?= get_field('header_introduction'); ?></p>

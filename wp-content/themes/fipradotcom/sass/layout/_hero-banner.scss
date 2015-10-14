@@ -115,3 +115,11 @@
     padding:($v-rhythm * 16) 0;
   }
 }
+
+.hero-flag {
+  @include media($media__medium) {
+    display:block !important;
+    margin:0 auto !important;
+    width:64px !important; height:64px !important;
+  }
+}

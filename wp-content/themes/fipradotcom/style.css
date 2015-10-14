@@ -1363,6 +1363,13 @@ ul.team-member-expertise {
     .hero-banner {
       padding: 12rem 0; } }
 
+@media screen and (min-width: 801px) {
+  .hero-flag {
+    display: block !important;
+    margin: 0 auto !important;
+    width: 64px !important;
+    height: 64px !important; } }
+
 .page-nav {
   font-size: 13px;
   font-size: 0.8125rem;
