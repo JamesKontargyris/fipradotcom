@@ -54,7 +54,7 @@ get_header(); ?>
                                         <?php $expertise_filter_names = ''; ?>
                                         <?php if($expertise_areas = get_field('expertise')) : ?>
                                             <?php foreach($expertise_areas as $expertise_id) {
-                                                $expertise_filter_names .= make_class_name(get_the_title($expertise_id)) . ' ';
+                                                $expertise_filter_names .= make_class_name(str_replace(',', '', get_the_title($expertise_id))) . ' ';
                                             } ?>
                                         <?php endif; ?>
 
