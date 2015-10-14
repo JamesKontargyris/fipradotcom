@@ -493,19 +493,19 @@ ul, ol {
   list-style: none; }
   #content ul.no-bottom-margin, footer ul.no-bottom-margin {
     margin-bottom: 0; }
-  #content ul.bullets li, footer ul.bullets li {
-    padding-left: 1.875em;
-    text-indent: -1.875em;
-    margin-bottom: 0.75rem;
-    line-height: 1.5rem; }
-    #content ul.bullets li:before, footer ul.bullets li:before {
-      content: "■ ";
-      font-size: 12px;
-      font-size: 0.75rem;
-      padding-right: 1.75em;
-      color: #00257f; }
   #content ul.no-v-spacing li, footer ul.no-v-spacing li {
     margin-bottom: 0; }
+#content ul.bullets li, #content .site-main ul li, footer ul.bullets li, footer .site-main ul li {
+  padding-left: 1.875em;
+  text-indent: -1.875em;
+  margin-bottom: 0.75rem;
+  line-height: 1.5rem; }
+  #content ul.bullets li:before, #content .site-main ul li:before, footer ul.bullets li:before, footer .site-main ul li:before {
+    content: "■ ";
+    font-size: 12px;
+    font-size: 0.75rem;
+    padding-right: 1.75em;
+    color: #00257f; }
 #content ol, footer ol {
   list-style: decimal;
   padding-left: 1.5em; }
