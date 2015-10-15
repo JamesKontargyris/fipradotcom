@@ -39,7 +39,7 @@ get_header(); ?>
                             <?php
                             echo $position;
                             if($position && $unit_id) { echo ', '; } ?>
-                            <a href="<?php echo get_the_permalink($unit_id); ?>"><?php echo $unit_id ? 'Fipra ' . str_replace('Fipra', '', get_the_title($unit_id)) : ''; ?></a>
+                            <a href="<?php echo get_the_permalink($unit_id); ?>"><?php echo $unit_id ? fiprafy_unit_name(get_the_title($unit_id)) : ''; ?></a>
                         </h4>
                     <?php endif; ?>
                     <!-- TODO: update link to contact form-->

@@ -147,9 +147,9 @@ get_header(); ?>
                                     ?>
                                     <li><a href="<?= get_the_permalink($id); ?>">
                                             <?php if( !empty($flag)) : ?>
-                                                <img src="<?= $url; ?>" class="sidebar-list-flag" alt="<?= get_the_title($id); ?>"/>
+                                                <img src="<?= $url; ?>" class="sidebar-list-flag" alt="<?= fiprafy_unit_name(get_the_title($id)); ?>"/>
                                             <?php endif; ?>
-                                            <?= get_the_title($id); ?>
+                                            <?php echo fiprafy_unit_name(get_the_title($id)); ?>
                                         </a></li>
                                 <?php endforeach; ?>
                             </ul>

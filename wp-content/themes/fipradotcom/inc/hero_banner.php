@@ -12,7 +12,7 @@
 
             <h1 class="upper no-margin">
                 <?php if (get_post_type() == 'expertise') : ?><?= file_get_contents(get_field('icon')); ?><br class="hide-s"/> <?php endif; ?>
-                <?php if(get_post_type() == 'unit') : echo 'Fipra ' . str_replace('Fipra', '', get_the_title()); ?>
+                <?php if(get_post_type() == 'unit') : echo fiprafy_unit_name(get_the_title()); ?>
                 <?php else : the_title(); ?>
                 <?php endif; ?>
             </h1>
