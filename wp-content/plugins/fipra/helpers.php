@@ -167,5 +167,5 @@ function make_class_name($string, $prefix = '', $suffix = '') {
 }
 
 function fiprafy_unit_name($unit_name) {
-    return 'Fipra ' . str_replace('fipra', '', $unit_name);
+    return 'Fipra ' . str_ireplace('fipra', '', $unit_name);
 }
