@@ -130,7 +130,7 @@ get_header(); ?>
                                 <?php for($i = 1; $i <= 9; $i++) : $language = get_field('language_' . $i);?>
                                     <?php if(isset($language->term_id) && ! in_array($language->term_id, $languages)) : // language is set and isn't already displayed? ?>
                                         <?php $flag_url = get_language_flag_url($language->term_id) ? get_language_flag_url($language->term_id) : get_template_directory_uri() . '/img/blank_language_flag.png'; ?>
-                                        <li><img src="<?php echo $flag_url; ?>" class="languages-list-flag tooltip" alt="<?php echo $language->name; ?>" title="<?php echo $language->name; ?>"/></li>
+                                        <li><img src="<?php echo $flag_url; ?>" class="languages-list-flag tooltip" alt="<?php echo ucwords($language->name); ?>" title="<?php echo ucwords($language->name); ?>"/></li>
                                         <?php $languages[] = $language->term_id; ?>
                                     <?php endif; ?>
                                 <?php endfor; ?>
