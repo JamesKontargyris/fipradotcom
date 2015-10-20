@@ -62,36 +62,36 @@ get_header(); ?>
                         </div>
 
 
+                        <?php $location = get_field('office_location');
+                        if(!empty($location)) : ?>
 
-                        <section class="our-location">
-                            <h3 id="our-location">Our Location</h3>
+                            <section class="our-location">
+                                <h3 id="our-location">Our Location</h3>
 
-                            <div class="row">
-                                <div class="col-8-m">
-                                    <!--Google Map-->
-                                    <?php
-
-                                    $location = get_field('office_location');
-
-                                    if( !empty($location) ):
-                                        ?>
+                                <div class="row">
+                                    <div class="col-8-m">
+                                        <!--Google Map-->
                                         <div class="google-map">
                                             <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
                                         </div>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="col-4-m">
-                                    <address>
-                                        <?= get_field('office_address'); ?>
-                                    </address>
+                                        <div class="google-map-missing">
+                                            Ad-blocking software detected - it may be hiding the map above. Please disable any ad-blocking extensions or software for fipra.com.
+                                        </div>
+                                    </div>
+                                    <div class="col-4-m">
+                                        <address>
+                                            <?= get_field('office_address'); ?>
+                                        </address>
 
-                                    <?php if( get_field('office_description') ) : ?>
-                                        <p><em><?= get_field('office_description') ?></em></p>
-                                    <?php endif; ?>
+                                        <?php if( get_field('office_description') ) : ?>
+                                            <p><em><?= get_field('office_description') ?></em></p>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
-                            </div>
 
-                        </section>
+                            </section>
+
+                        <?php endif; ?>
 
                     </main><!-- #main -->
                 </div><!-- #primary -->

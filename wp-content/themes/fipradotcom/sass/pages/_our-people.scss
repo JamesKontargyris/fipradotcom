@@ -5,8 +5,8 @@
       overflow-x:hidden;
       overflow-y:scroll;
     padding-right: em(6px);
-      @include media($media__medium) { height:600px; }
-      @include media($media__large) { height:600px; }
+      @include media($media__medium) { height:630px; }
+      @include media($media__large) { height:630px; }
   }
 }
 

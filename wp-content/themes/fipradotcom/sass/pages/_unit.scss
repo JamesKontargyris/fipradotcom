@@ -38,3 +38,10 @@
 
 }
 
+.google-map-missing {
+  display:none;
+  @include font-size(13);
+  font-style: italic;
+  line-height:1.1;
+}
+
