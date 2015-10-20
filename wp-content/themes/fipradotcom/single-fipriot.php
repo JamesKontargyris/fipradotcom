@@ -22,7 +22,7 @@ get_header(); ?>
 
                     <?php
                         // Assign variables
-                        $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $unit_id = get_field('unit')[0];
+                        $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $unit_id = get_field('unit') ? get_field('unit')[0] : "";
                     ?>
 
                     <?php if ( has_post_thumbnail() ) : ?>
@@ -59,9 +59,9 @@ get_header(); ?>
                             <p class="lead"><?php echo $lead_para; ?></p>
                         <?php endif; ?>
 
-                        <?php echo get_field('main_bio') ?><br>
+                        <?php echo get_field('bio') ?><br>
 
-                        <?php if( get_field('expertise') && ! get_field('is_special_adviser') ) : ?>
+                        <?php if( get_field('expertise') ) : ?>
                             <h3 id="expertise"><?php echo get_field('first_name') ?>'s Expertise</h3>
                             <div class="profile-expertise-showcase equal-heights">
                                 <?php foreach(get_field('expertise') as $expertise_area) : ?>
@@ -124,19 +124,19 @@ get_header(); ?>
 
 <!--TODO update languages loop-->
 
-                        <?php $languages = get_field('languages');
-                            if($languages): ?>
-
-                                <aside>
-                                    <h5 id="languages">Languages Spoken</h5>
-                                    <ul class="languages-list no-bottom-margin no-bullet">
-                                        <?php foreach($languages as $language) : ?>
-                                            <li><img src="<?php echo get_language_flag_url($language->term_id); ?>" class="languages-list-flag tooltip" alt="<?php echo $language->name; ?>" title="<?php echo $language->name; ?>"/></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </aside>
-
-                        <?php endif; ?>
+                        <aside>
+                            <h5 id="languages">Languages Spoken</h5>
+                            <ul class="languages-list no-bottom-margin no-bullet">
+                                <?php $languages = []; // Collect languages as we go, so we can check for duplicates ?>
+                                <?php for($i = 1; $i <= 9; $i++) : $language = get_field('language_' . $i);?>
+                                    <?php if(isset($language->term_id) && ! in_array($language->term_id, $languages)) : // language is set and isn't already displayed? ?>
+                                        <?php $flag_url = get_language_flag_url($language->term_id) ? get_language_flag_url($language->term_id) : get_template_directory_uri() . '/img/blank_language_flag.png'; ?>
+                                        <li><img src="<?php echo $flag_url; ?>" class="languages-list-flag tooltip" alt="<?php echo $language->name; ?>" title="<?php echo $language->name; ?>"/></li>
+                                        <?php $languages[] = $language->term_id; ?>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            </ul>
+                        </aside>
 
                         <?php dynamic_sidebar('fipriot-profile'); ?>
 

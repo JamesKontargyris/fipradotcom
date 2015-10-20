@@ -110,7 +110,7 @@ get_header(); ?>
                         <h3 id="staff" class="upper small center">Practice Staff</h3>
                         <div id="our-team-carousel" class="team-carousel with-controls" data-number-of-items="<?php echo $team->found_posts; ?>">
                             <?php while($team->have_posts()) : $team->the_post(); ?>
-                                <?php echo layout_fipriot_team_member(get_the_ID(), false, false, true, true); ?>
+                                <?php echo layout_fipriot_team_member(get_the_ID(), false, true, true); ?>
                             <?php endwhile; ?>
                         </div>
                     </div>

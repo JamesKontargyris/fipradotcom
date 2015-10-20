@@ -49,7 +49,7 @@ $string .= '<div id="our-people-carousel" class="team-carousel with-controls" da
     while ( $fipriots->have_posts() ) {
     $fipriots->the_post();
 
-    $string .= layout_fipriot_team_member(get_the_ID(), true);
+    $string .= layout_fipriot_team_member(get_the_ID());
     }
 
     $string .=  '</div>';

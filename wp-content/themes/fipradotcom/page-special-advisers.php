@@ -61,8 +61,7 @@ get_header(); ?>
                                         </div>
                                         <div class="person-details">
                                             <h4 class="no-margin"><a href="<?= get_the_permalink(); ?>"><?= get_field('first_name'); ?> <?= get_field('last_name'); ?></a></h4>
-                                            <?php  $unit_id = get_field('unit') ? get_field('unit')->ID : 0; ?>
-                                            <h6><?= get_field('special_adviser_expertise') ? get_field('special_adviser_expertise') : ''; ?></h6>
+<!--                                            <h6>--><?//= get_field('special_adviser_expertise') ? get_field('special_adviser_expertise') : ''; ?><!--</h6>-->
                                             <div class="btn-container">
                                                 <a href="<?= get_the_permalink(); ?>" class="btn">
                                                     <div class="btn-text"><i class="icon-right-circle-1"></i></div>

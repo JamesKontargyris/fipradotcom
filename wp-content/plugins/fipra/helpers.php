@@ -11,7 +11,7 @@
  * @param bool $unit
  * @return bool|string
  */
-function layout_fipriot_team_member($post_id, $short_bio = false, $expertise = false, $unit = true, $position = true) {
+function layout_fipriot_team_member($post_id, $expertise = false, $unit = true, $position = true) {
     if( $post_id ) {
         $string = '';
 
@@ -44,8 +44,6 @@ function layout_fipriot_team_member($post_id, $short_bio = false, $expertise = f
                         $string .= '</h6>';
                     }
                 }
-    //            If $short_bio is true, include the Fipriot's short bio text
-                if( $short_bio === true ) { $string .= '<p class="small short-bio">' . get_field('short_bio', $post_id) . '</p>'; }
     //            If $expertise is true, iterate through expertise areas and display an icon link for each one
                 if( $expertise === true ) {
     //                Fipriot has expertise set?
@@ -102,7 +100,7 @@ function layout_our_team($fipriots) {
     if ( $fipriots ) {
 
         foreach ( $fipriots as $fipriot ) {
-            $string .= layout_fipriot_team_member($fipriot->ID, false, true);
+            $string .= layout_fipriot_team_member($fipriot->ID, true);
         }
     }
 
@@ -135,14 +133,19 @@ function get_language_flag_url($term_id) {
     if (empty($meta)) $meta = array();
     if (!is_array($meta)) $meta = (array) $meta;
     $meta = isset($meta[$term_id]) ? $meta[$term_id] : array();
-    $images = $meta['image'];
-    foreach ($images as $att) {
-        // get image's source based on size, can be 'thumbnail', 'medium', 'large', 'full' or registed post thumbnails sizes
-        $src = wp_get_attachment_image_src($att, 'full');
-        $src = $src[0];
+    if(isset($meta['image'])) {
 
-        // return URL
-        return $src;
+        $images = $meta['image'];
+        foreach ($images as $att) {
+            // get image's source based on size, can be 'thumbnail', 'medium', 'large', 'full' or registered post thumbnails sizes
+            $src = wp_get_attachment_image_src($att, 'full');
+            $src = $src[0];
+
+            // return URL
+            return $src;
+        }
+    } else {
+        return false;
     }
 }
 
