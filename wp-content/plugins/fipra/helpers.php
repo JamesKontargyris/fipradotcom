@@ -34,7 +34,7 @@ function layout_fipriot_team_member($post_id, $expertise = false, $unit = true, 
                     $string .= '</h6>';
                 } else {
                     $position_title = get_field('position', $post_id);
-                    $unit_id = get_field('unit', $post_id)[0];
+                    $unit_id = get_field('unit', $post_id) ? get_field('unit', $post_id)[0] : "";
 //                    Fipriot has either a position or unit assigned?
                     if($position_title || $unit_id) {
                         $string .= '<h6>';
@@ -171,4 +171,15 @@ function make_class_name($string, $prefix = '', $suffix = '') {
 
 function fiprafy_unit_name($unit_name) {
     return 'Fipra ' . str_ireplace('fipra', '', $unit_name);
+}
+
+function get_lead_paragraph($text) {
+    return strip_tags(preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', $text));
+}
+
+function bio_minus_lead_paragraph($text) {
+    $lead_para = trim(get_lead_paragraph($text));
+    $new_text = str_replace($lead_para, '', $text);
+
+    return $new_text;
 }

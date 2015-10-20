@@ -28,7 +28,7 @@
     @include media($media__medium-plus) { width:25%; height:300px; }
 
     @include media($media__large) { width:20%; height:330px; }
-    @include media($media__xlarge) { width:16%; height:310px; }
+    @include media($media__xlarge) { width:16%; height:290px; }
 
     &.full-width { width:100%; border:0; }
 

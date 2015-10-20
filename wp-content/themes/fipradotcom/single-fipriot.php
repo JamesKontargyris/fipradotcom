@@ -55,11 +55,10 @@ get_header(); ?>
                 <div id="primary" class="profile-content-area">
                     <main id="main" class="site-main" role="main">
 
-                        <?php if($lead_para = get_field('lead_paragraph') ) : ?>
-                            <p class="lead"><?php echo $lead_para; ?></p>
-                        <?php endif; ?>
+                        <?php $bio = get_field('bio'); ?>
+                            <p class="lead"><?php echo get_lead_paragraph($bio); ?></p>
 
-                        <?php echo get_field('bio') ?><br>
+                        <?php echo bio_minus_lead_paragraph($bio); ?>
 
                         <?php if( get_field('expertise') ) : ?>
                             <h3 id="expertise"><?php echo get_field('first_name') ?>'s Expertise</h3>

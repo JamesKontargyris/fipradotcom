@@ -48,8 +48,19 @@ get_header(); ?>
                                 <?php while ( $fipriots->have_posts() ) : $fipriots->the_post(); ?>
 
                                     <?php $post_id = get_the_ID(); ?>
+                                    <?php $expertise_filter_names = ''; ?>
+                                    <?php if($expertise_areas = get_field('expertise')) : ?>
+                                        <?php foreach($expertise_areas as $expertise_id) {
+                                            $expertise_filter_names .= make_class_name(str_replace(',', '', get_the_title($expertise_id))) . ' ';
+                                        } ?>
+                                    <?php endif; ?>
 
-                                    <div class="person <?php echo 'surname-' . substr(get_field('last_name'), 0, 1); ?>">
+                                    <?php
+//                                        Assign variables
+                                    $first_name = get_field('first_name'); $last_name = get_field('last_name');
+                                    ?>
+
+                                    <div class="person <?php echo trim($expertise_filter_names) . ' surname-' . substr($last_name, 0, 1); ?>">
                                         <div class="person-profile-photo">
                                             <a href="<?php echo get_the_permalink(); ?>">
                                                 <?php if ( has_post_thumbnail() ) : ?>
@@ -61,12 +72,14 @@ get_header(); ?>
                                         </div>
                                         <div class="person-details">
                                             <h4 class="no-margin"><a href="<?= get_the_permalink(); ?>"><?= get_field('first_name'); ?> <?= get_field('last_name'); ?></a></h4>
-<!--                                            <h6>--><?//= get_field('special_adviser_expertise') ? get_field('special_adviser_expertise') : ''; ?><!--</h6>-->
+                                            <h6><?php echo get_field('special_adviser_location') ? get_field('special_adviser_location') : ''; ?></h6>
+
                                             <div class="btn-container">
                                                 <a href="<?= get_the_permalink(); ?>" class="btn">
                                                     <div class="btn-text"><i class="icon-right-circle-1"></i></div>
                                                 </a>
                                             </div>
+
                                             <div class="person-contact-details">
                                                 <table class="no-style" cellspacing="0" cellpadding="0" border="0" width="100%">
                                                     <?php $tel = get_field('tel'); ?>
