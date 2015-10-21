@@ -44,36 +44,36 @@ get_header(); ?>
 
                 <div id="secondary">
 
-                    <?php if($lead = get_field('lead_contact')) : $id = $lead->ID; ?>
+                    <?php if($lead = get_field('lead_contact')) : $lead = $lead[0]; ?>
                         <div class="sidebar-contacts-container">
                             <h5 id="get-in-touch">First Point of Contact</h5>
                             <div class="sidebar-contacts-group">
                                 <div class="sidebar-contact">
                                     <div class="sidebar-contact-content">
 
-                                        <a href="<?= get_the_permalink($id); ?>">
-                                            <?php if ( has_post_thumbnail($id) ) : ?>
-                                                    <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'profile-photo' )[0]; ?>" alt="<?= $lead->first_name . ' ' . $lead->last_name ?>" title="<?= $lead->first_name . ' ' . $lead->last_name ?>" style="background-color:white;"/>
+                                        <a href="<?= get_the_permalink($lead->ID); ?>">
+                                            <?php if ( has_post_thumbnail($lead->ID) ) : ?>
+                                                    <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id( $lead->ID ), 'profile-photo' )[0]; ?>" alt="<?= $lead->first_name . ' ' . $lead->last_name ?>" title="<?= $lead->first_name . ' ' . $lead->last_name ?>" style="background-color:white;"/>
                                             <?php endif; ?>
                                             <strong><?= $lead->first_name . ' ' . $lead->last_name ?></strong>
                                         </a>
 
-                                        <?php $tel = get_field('tel', $id); ?>
+                                        <?php $tel = get_field('tel', $lead->ID); ?>
                                         <?php if($tel) : ?>
-                                            <br><span class="font-14">Tel. <?= get_field('tel', $id) ?></span>
+                                            <br><span class="font-14">Tel. <?= get_field('tel', $lead->ID) ?></span>
                                         <?php endif; ?>
 
-                                        <?php $mobile = get_field('mobile', $id); ?>
+                                        <?php $mobile = get_field('mobile', $lead->ID); ?>
                                         <?php if($mobile) : ?>
-                                            <br><span class="font-14">Mob. <?= get_field('mobile', $id) ?></span>
+                                            <br><span class="font-14">Mob. <?= get_field('mobile', $lead->ID) ?></span>
                                         <?php endif; ?>
 
-                                        <?php $fax = get_field('fax', $id); ?>
+                                        <?php $fax = get_field('fax', $lead->ID); ?>
                                         <?php if($fax) : ?>
-                                            <br><span class="font-14">Fax. <?= get_field('fax', $id) ?></span>
+                                            <br><span class="font-14">Fax. <?= get_field('fax', $lead->ID) ?></span>
                                         <?php endif; ?>
                                         <!--                                        TODO add email link-->
-                                        <br><span class="font-14"><a href="mailto:#"><?= get_field('email', $id) ?></a></span>
+                                        <br><span class="font-14"><a href="mailto:#"><?= get_field('email', $lead->ID) ?></a></span>
 
                                     </div>
                                 </div>
