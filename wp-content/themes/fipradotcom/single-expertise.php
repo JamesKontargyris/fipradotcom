@@ -102,16 +102,16 @@ get_header(); ?>
         </div><!-- #site-content-container -->
 
         <!--            START: team-menu-container -->
-        <?php $team = get_all_fipriots_by_expertise_area($expertise_id); ?>
-        <?php if($team->have_posts()) : ?>
+        <?php $team = get_field('practice_staff'); ?>
+        <?php if($team) : ?>
             <section id="team-menu-container" class="full-width-block-container">
                 <div class="full-width-block-content-container light-grey">
                     <div class="full-width-block-content">
                         <h3 id="staff" class="upper small center">Practice Staff</h3>
-                        <div id="our-team-carousel" class="team-carousel with-controls" data-number-of-items="<?php echo $team->found_posts; ?>">
-                            <?php while($team->have_posts()) : $team->the_post(); ?>
-                                <?php echo layout_fipriot_team_member(get_the_ID(), false, true, true); ?>
-                            <?php endwhile; ?>
+                        <div id="our-team-carousel" class="team-carousel with-controls" data-number-of-items="<?php echo count($team); ?>">
+                            <?php foreach($team as $fipriot) : ?>
+                                <?php echo layout_fipriot_team_member($fipriot->ID, false, true, true); ?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
