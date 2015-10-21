@@ -9,14 +9,21 @@ function get_all_fipriots($include_spads = false) {
     $args = [
         'post_type' => 'fipriot',
         'post_status' => 'publish',
-        'meta_key' => 'last_name',
-        'orderby' => 'meta_value',
-        'order' => 'ASC',
         'posts_per_page' => -1,
+        'meta_key' => 'is_senior',
+        'meta_query' => [
+            'relation' => 'AND',
+            [
+                'key' => 'is_senior'
+            ],
+            [
+                'key' => 'last_name'
+            ],
+        ],
     ];
 
     if( ! $include_spads) {
-        $args['meta_query'] = [
+        $args['meta_query'][] = [
             [
                 'key'     => 'is_special_adviser',
                 'value'   => '1',
@@ -25,7 +32,11 @@ function get_all_fipriots($include_spads = false) {
         ];
     }
 
+//    Add a filter that allows Wordpress to orderby two meta values, then remove it after querying
+    add_filter('posts_orderby','orderby_two_meta_values');
     $fipriots = new WP_Query($args);
+    remove_filter('posts_orderby','orderby_two_meta_values');
+
     wp_reset_postdata();
 
     return $fipriots;
@@ -38,11 +49,16 @@ function get_all_spads() {
     $args = [
         'post_type' => 'fipriot',
         'post_status' => 'publish',
-        'meta_key' => 'last_name',
-        'orderby' => 'meta_value',
-        'order' => 'ASC',
         'posts_per_page' => -1,
+        'meta_key' => 'is_senior',
         'meta_query' => [
+            'relation' => 'AND',
+            [
+                'key' => 'is_senior'
+            ],
+            [
+                'key' => 'last_name'
+            ],
             [
                 'key'     => 'is_special_adviser',
                 'value'   => '1',
@@ -51,7 +67,11 @@ function get_all_spads() {
         ],
     ];
 
+//    Add a filter that allows Wordpress to orderby two meta values, then remove it after querying
+    add_filter('posts_orderby','orderby_two_meta_values');
     $spads = new WP_Query($args);
+    remove_filter('posts_orderby','orderby_two_meta_values');
+
     wp_reset_postdata();
 
     return $spads;
@@ -65,8 +85,15 @@ function get_all_fipriots_by_unit($unit_id = 0, $include_spads = false) {
         'post_type' => 'fipriot',
         'post_status' => 'publish',
         'posts_per_page' => -1,
+        'meta_key' => 'is_senior',
         'meta_query' => [
             'relation' => 'AND',
+            [
+                'key' => 'is_senior'
+            ],
+            [
+                'key' => 'last_name'
+            ],
             [
                 'key' => 'unit',
                 'value' => $unit_id,
@@ -83,7 +110,11 @@ function get_all_fipriots_by_unit($unit_id = 0, $include_spads = false) {
         ];
     }
 
+//    Add a filter that allows Wordpress to orderby two meta values, then remove it after querying
+    add_filter('posts_orderby','orderby_two_meta_values');
     $fipriots = new WP_Query($args);
+    remove_filter('posts_orderby','orderby_two_meta_values');
+
     wp_reset_postdata();
 
     return $fipriots;
@@ -121,36 +152,35 @@ function get_all_fipriots_by_expertise_area($expertise_id = 0, $include_spads = 
     return $fipriots;
 }
 
-function get_homepage_fipriots($include_spads = false) {
+function get_homepage_fipriots() {
 
     global $post;
 
     $args = [
         'post_type' => 'fipriot',
         'post_status' => 'publish',
-        'meta_key' => 'last_name',
-        'orderby' => 'meta_value',
-        'order' => 'ASC',
+        'meta_key' => 'is_senior',
         'posts_per_page' => -1,
         'meta_query' => [
+            [
+                'key' => 'is_senior'
+            ],
+            [
+                'key' => 'last_name'
+            ],
             [
                 'key'     => 'on_homepage',
                 'value'   => '1',
                 'compare' => 'LIKE',
-            ]
+            ],
         ]
     ];
 
-    if($include_spads) {
-        $args['meta_query'][] =
-            [
-                'key'     => 'is_special_adviser',
-                'value'   => '1',
-                'compare' => 'LIKE',
-            ];
-    }
-
+//    Add a filter that allows Wordpress to orderby two meta values, then remove it after querying
+    add_filter('posts_orderby','orderby_two_meta_values');
     $fipriots = new WP_Query($args);
+    remove_filter('posts_orderby','orderby_two_meta_values');
+
     wp_reset_postdata();
 
     return $fipriots;
@@ -287,4 +317,17 @@ function get_all_jobs($close_in_the_future = true) {
     wp_reset_postdata();
 
     return $jobs;
+}
+
+/**
+ * Allows Wordpress to sort by two meta values.
+ * Add +0 to meta_value for numeric comparison.
+ *
+ * http://dotnordic.se/sorting-wordpress-posts-by-several-numeric-custom-fields/
+ *
+ * @param $orderby
+ * @return string
+ */
+function orderby_two_meta_values($orderby) {
+    return 'mt1.meta_value+0 DESC, mt2.meta_value ASC';
 }
