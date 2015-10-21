@@ -4623,9 +4623,6 @@ embed, iframe, object {
 #content-container.expertise-area #hero .full-width-block-content-container .full-width-block-content h1 {
   margin-bottom: 0.75rem;
   position: relative; }
-  @media screen and (min-width: 801px) {
-    #content-container.expertise-area #hero .full-width-block-content-container .full-width-block-content h1 {
-      padding-left: 52px; } }
 #content-container.expertise-area #expertise-menu-container #expertise-carousel {
   margin-top: 2.25rem; }
   #content-container.expertise-area #expertise-menu-container #expertise-carousel .expertise-area {

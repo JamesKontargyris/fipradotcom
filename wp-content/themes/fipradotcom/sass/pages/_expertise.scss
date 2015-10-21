@@ -10,9 +10,7 @@
           fill:white;
         }
 
-        h1 { margin-bottom: $v-rhythm; position:relative;
-          @include media($media__medium) { padding-left: 52px; }
-        }
+        h1 { margin-bottom: $v-rhythm; position:relative; }
       }
 
     }

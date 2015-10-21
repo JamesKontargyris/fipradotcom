@@ -46,7 +46,7 @@ get_header(); ?>
 
                     <?php if($lead = get_field('lead_contact')) : $id = $lead->ID; ?>
                         <div class="sidebar-contacts-container">
-                            <h5 id="get-in-touch">Lead Contact</h5>
+                            <h5 id="get-in-touch">First Point of Contact</h5>
                             <div class="sidebar-contacts-group">
                                 <div class="sidebar-contact">
                                     <div class="sidebar-contact-content">
