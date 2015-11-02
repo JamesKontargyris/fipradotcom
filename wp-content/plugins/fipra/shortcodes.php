@@ -115,7 +115,11 @@ add_shortcode( 'page_testimonials', 'page_testimonials' );
  * Display Units grouped by continent
  */
 function our_network_sc() {
+//    Buffer output and return the buffered content, so it appears in the correct position on the page
+    ob_start();
     include(get_template_directory() . '/inc/our_network.php');
+    $output = ob_get_clean();
+    return $output;
 }
 add_shortcode( 'our_network_by_continent', 'our_network_sc' );
 

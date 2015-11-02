@@ -16,6 +16,9 @@ get_header(); ?>
     <div id="content-container" class="our-people">
 
         <?php include('inc/hero_banner.php'); ?>
+
+        <?php the_content(); ?>
+
         <?php include('inc/our_people_filters.php'); ?>
 
         <?php $fipriots = get_all_fipriots(); ?>
@@ -25,6 +28,7 @@ get_header(); ?>
             <div id="site-content">
 
                 <div id="primary" class="full-width">
+
                     <main id="main" class="site-main" role="main">
 
                         <?php if ( $fipriots->have_posts() ) : ?>

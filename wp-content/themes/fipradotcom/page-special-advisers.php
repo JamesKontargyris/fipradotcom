@@ -16,6 +16,9 @@ get_header(); ?>
 <div id="content-container" class="our-people">
 
     <?php include('inc/hero_banner.php'); ?>
+
+    <?php the_content(); ?>
+
     <?php include('inc/special_advisers_filters.php'); ?>
 
     <?php $fipriots = get_all_spads(); ?>
