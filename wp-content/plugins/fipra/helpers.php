@@ -183,3 +183,20 @@ function bio_minus_lead_paragraph($text) {
 
     return $new_text;
 }
+
+function trim_text($input, $length) {
+
+    // If the text is already shorter than the max length, then just return unedited text.
+    if (strlen($input) <= $length) {
+        return $input;
+    }
+
+    // Find the last space (between words we're assuming) after the max length.
+    $last_space = strrpos(substr($input, 0, $length), ' ');
+    // Trim
+    $trimmed_text = substr($input, 0, $last_space);
+    // Add ellipsis.
+    $trimmed_text .= '...';
+
+    return $trimmed_text;
+}
