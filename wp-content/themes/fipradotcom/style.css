@@ -3560,24 +3560,21 @@ textarea {
   padding-left: 3px;
   width: 100%; }
 
-.wpcf7-form {
-  border: 1px solid #dde0e1;
-  padding: 0.75rem 20px; }
-  .wpcf7-form .form-group {
-    margin-bottom: 0.75rem; }
-  .wpcf7-form label, .wpcf7-form input {
-    display: block; }
-    .wpcf7-form label.full-width, .wpcf7-form input.full-width {
-      width: 100%; }
-  .wpcf7-form label {
-    font-weight: 700;
-    margin-bottom: 0.375rem; }
-  .wpcf7-form input[type=submit] {
-    background: #00257f;
-    border: none;
-    box-shadow: none;
-    text-shadow: none;
-    padding: 0.75rem; }
+.wpcf7-form .form-group {
+  margin-bottom: 0.75rem; }
+.wpcf7-form label, .wpcf7-form input {
+  display: block; }
+  .wpcf7-form label.full-width, .wpcf7-form input.full-width {
+    width: 100%; }
+.wpcf7-form label {
+  font-weight: 700;
+  margin-bottom: 0.375rem; }
+.wpcf7-form input[type=submit] {
+  background: #00257f;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0.75rem; }
 
 /*--------------------------------------------------------------
 # Navigation
