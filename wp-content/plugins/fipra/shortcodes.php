@@ -162,3 +162,75 @@ function get_job_listings_sc() {
     }
 }
 add_shortcode( 'job_listings', 'get_job_listings_sc' );
+
+function areas_of_expertise_menu_and_list_sc() {
+    $expertise_areas = get_expertise_areas();
+    $string = '';
+
+    if ( $expertise_areas->have_posts() ) {
+        $string .= '<div class="menu-list-and-entries-block">';
+                $string .= '<div class="row">';
+                    $string .= '<div class="col-5-l">';
+                        $string .= '<ul class="menu-list with-line" data-entry-group="1">';
+                            $i = 0; while ( $expertise_areas->have_posts() ) : $expertise_areas->the_post(); $i++;
+                            $class_active = ($i == 1) ? 'class="active"' : '';
+                            $string .= '<li ' . $class_active . '><a href="#entry-' . $i . '">';
+                            $string .= '<div class="svg-icon margin-r">' .file_get_contents(get_field('icon')) . '</div>';
+                            $string .= get_the_title();
+                            $string .= '</a></li>';
+                            endwhile;
+                        $string .= '</ul>';
+                    $string .= '</div>';
+
+                    $string .= '<div class="col-7-l entry-group" id="entry-group-1">';
+                        $i = 0; $expertise_areas->rewind_posts(); // start again at the beginning
+                        while ( $expertise_areas->have_posts() ) : $expertise_areas->the_post(); $i++;
+                            $string .= '<div class="entry" id="entry-' . $i . '">';
+                                $string .= '<div class="entry-title">';
+                                    $string .= '<h4 class="no-margin">';
+                                        $string .= '<div class="svg-icon margin-r">' . file_get_contents(get_field('icon')) . '</div>';
+                                        $string .= get_the_title();
+                                        $string .= '<i class="icon-toggle icon-down-open"></i>';
+                                    $string .= '</h4>';
+                                $string .= '</div>';
+                                $string .= '<div class="entry-content">';
+                                    $string .= get_field('long_summary') . '<br><br>';
+                                    $string .= '<p><a href="' . get_the_permalink() . '" class="btn primary">Read more</a></p>';
+                                $string .= '</div>';
+                            $string .= '</div>';
+                        endwhile;
+                    $string .= '</div>';
+                $string .= '</div>';
+        $string .= '</div>';
+    } else {
+        $string .= '<span style="text-align: center">Coming soon</span>';
+    }
+
+    return $string;
+}
+add_shortcode( 'areas_of_expertise_menu_and_list', 'areas_of_expertise_menu_and_list_sc' );
+
+function pa_services_carousel_sc() {
+    $pa_services = get_public_affairs_services();
+    $string = '';
+
+    if ( $pa_services->have_posts() ) {
+        $string .= '<div id="public-affairs-services-carousel" class="carousel with-controls">';
+
+        while ($pa_services->have_posts()) : $pa_services->the_post();
+            $string .= '<div>';
+            $string .= '<h2 class="no-top-margin center">' . get_the_title() . '</h2>';
+            $string .= '<p class="center">' . get_field('description') . '</p>';
+            if ($contact_id = get_field('fipriot_contact')) {
+                $string .= '<p class="center">Contact <a href="' . get_the_permalink($contact_id->ID) . '" class="pa-service-ajax-contact" data-modal-url="' . get_template_directory_uri() . '/paservice_contact_details.php?id=' . $contact_id->ID . '">' . get_field('first_name', $contact_id->ID) . ' ' . get_field('last_name', $contact_id->ID) . '</a> for more information.</p>';
+            }
+            $string .= '</div>';
+        endwhile;
+        $string .= '</div>';
+    } else {
+        $string .= '<span style="text-align: center">Coming soon</span>';
+    }
+
+    return $string;
+}
+add_shortcode( 'pa_services_carousel', 'pa_services_carousel_sc' );

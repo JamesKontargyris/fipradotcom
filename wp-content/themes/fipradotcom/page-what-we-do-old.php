@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<?php include('inc/header_featured_image.php'); ?>
-
 <?php while ( have_posts() ) : the_post(); ?>
+
+    <?php include('inc/header_featured_image.php'); ?>
 
     <?php get_template_part('inc/breadcrumbs'); ?>
 
@@ -44,44 +44,7 @@
                     </div>
                 </div>
 
-                <?php $expertise_areas = get_expertise_areas(); ?>
-                <?php if ( $expertise_areas->have_posts() ) : ?>
-                    <div class="menu-list-and-entries-block">
-                        <div class="row">
-                            <div class="col-5-l">
-                                <ul class="menu-list with-line" data-entry-group="1">
-                                    <?php $i = 0; while ( $expertise_areas->have_posts() ) : $expertise_areas->the_post(); $i++; ?>
-                                        <li <?php if($i == 1) : ?> class="active" <?php endif; ?>><a href="#entry-<?= $i; ?>">
-                                            <div class="svg-icon margin-r"><?= file_get_contents(get_field('icon')); ?></div>
-                                            <?= get_the_title(); ?>
-                                        </a></li>
-                                    <?php endwhile; ?>
-                                </ul>
-                            </div>
-                            <div class="col-7-l entry-group" id="entry-group-1">
-                                <?php $i = 0; $expertise_areas->rewind_posts(); // start again at the beginning
-                                while ( $expertise_areas->have_posts() ) : $expertise_areas->the_post(); $i++; ?>
-                                    <div class="entry" id="entry-<?= $i; ?>">
-                                        <div class="entry-title">
-                                            <h4 class="no-margin">
-                                                <div class="svg-icon margin-r"><?= file_get_contents(get_field('icon')); ?></div>
-                                                <?= get_the_title(); ?>
-                                                <i class="icon-toggle icon-down-open"></i>
-                                            </h4>
-                                        </div>
-                                        <div class="entry-content">
-                                            <?= get_field('long_summary'); ?><br><br>
 
-                                            <p><a href="<?= get_the_permalink(); ?>" class="btn primary">Read more</a></p>
-                                        </div>
-                                    </div>
-                                <?php endwhile; ?>
-                            </div>
-                        </div>
-                    </div>
-                <?php else : ?>
-                    <span style="text-align: center">Coming soon</span>
-                <?php endif; ?>
 
             </div>
         </div>
@@ -106,7 +69,7 @@
                                 <?php endif; ?>
                             </div>
                         <?php endwhile; ?>
-                </div>
+                    </div>
                 <?php else : ?>
                     <span style="text-align: center">Coming soon</span>
                 <?php endif; ?>
