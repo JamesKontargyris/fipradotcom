@@ -495,12 +495,12 @@ ul, ol {
     margin-bottom: 0; }
   #content ul.no-v-spacing li, footer ul.no-v-spacing li {
     margin-bottom: 0; }
-#content ul.bullets li, #content .site-main ul li, footer ul.bullets li, footer .site-main ul li {
+#content ul.bullets li, footer ul.bullets li {
   padding-left: 1.875em;
   text-indent: -1.875em;
   margin-bottom: 0.75rem;
   line-height: 1.5rem; }
-  #content ul.bullets li:before, #content .site-main ul li:before, footer ul.bullets li:before, footer .site-main ul li:before {
+  #content ul.bullets li:before, footer ul.bullets li:before {
     content: "■ ";
     font-size: 12px;
     font-size: 0.75rem;
@@ -2289,16 +2289,16 @@ ul.team-member-expertise {
   .carousel .owl-page span {
     background: #3e4a62 !important; }
 
-@media screen and (min-width: 801px) {
-  #public-affairs-services .full-width-block-content {
-    padding-left: 20%;
-    padding-right: 20%; } }
-@media screen and (min-width: 1400px) {
-  #public-affairs-services .full-width-block-content {
-    padding-left: 10%;
-    padding-right: 10%; } }
 #public-affairs-services #public-affairs-services-carousel {
   text-align: center; }
+  @media screen and (min-width: 801px) {
+    #public-affairs-services #public-affairs-services-carousel {
+      padding-left: 20%;
+      padding-right: 20%; } }
+  @media screen and (min-width: 1400px) {
+    #public-affairs-services #public-affairs-services-carousel {
+      padding-left: 10%;
+      padding-right: 10%; } }
   #public-affairs-services #public-affairs-services-carousel .circle-icon {
     margin-bottom: 0.75rem;
     border-bottom: 3px solid #afb8c9; }
@@ -4336,7 +4336,7 @@ ul.sidebar-list {
   display: block; }
 
 .hentry {
-  margin: 0 0 1.5em; }
+  margin: 0; }
 
 .byline, .updated:not(.published) {
   display: none; }

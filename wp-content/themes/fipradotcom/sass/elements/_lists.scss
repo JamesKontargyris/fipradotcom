@@ -11,8 +11,7 @@ ul, ol {
     &.no-v-spacing { li { margin-bottom:0; } }
   }
 
-  ul.bullets,
-  .site-main ul {
+  ul.bullets {
     li {
       padding-left: em(30px);
       text-indent: em(-30px);

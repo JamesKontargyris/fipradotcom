@@ -27,14 +27,22 @@ get_header(); ?>
 
         <?php if($slug == 'our-network') { include('inc/our_network_jump_to_menu.php'); } ?>
 
-        <div id="site-content-container">
+        <?php if(get_field('page_layout') == 'page_width') : ?>
 
-            <div id="site-content">
+                <?php get_template_part( 'content', 'page' ); ?>
+
+        <?php else : ?>
+
+            <div id="site-content-container">
+
+                <div id="site-content">
 
                     <?php get_template_part( 'content', 'page' ); ?>
 
-            </div><!-- #site-content -->
-        </div><!-- #site-content-container -->
+                </div><!-- #site-content -->
+            </div><!-- #site-content-container -->
+
+        <?php endif; ?>
 
     </div><!-- #content-container   -->
 

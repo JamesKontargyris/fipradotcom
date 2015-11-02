@@ -36,19 +36,19 @@
         </section>
 
         <section id="areas-of-expertise" class="full-width-block-container areas-of-expertise-block">
-        <div class="full-width-block-content-container dark-grey">
-            <div class="full-width-block-content">
-                <div class="row">
-                    <div class="col-12-l no-m-margin">
-                        <h1 class="upper small center">Areas of Expertise</h1>
+            <div class="full-width-block-content-container dark-grey">
+                <div class="full-width-block-content">
+                    <div class="row">
+                        <div class="col-12-l no-m-margin">
+                            <h1 class="upper small center">Areas of Expertise</h1>
+                        </div>
                     </div>
+
+                    <?php echo do_shortcode('[areas_of_expertise_menu_and_list]'); ?>
+
                 </div>
-
-
-
             </div>
-        </div>
-    </section>
+        </section>
 
     <section id="public-affairs-services" class="full-width-block-container public-affairs-services-block">
         <div class="full-width-block-content-container light-grey">
@@ -56,23 +56,7 @@
             <h1 class="upper small center">Public Affairs Services</h1>
             <div class="full-width-block-content left">
 
-                <?php $pa_services = get_public_affairs_services(); ?>
-                <?php if ( $pa_services->have_posts() ) : ?>
-                    <div id="public-affairs-services-carousel" class="carousel with-controls">
-
-                        <?php while ( $pa_services->have_posts() ) : $pa_services->the_post(); ?>
-                            <div>
-                                <h2 class="no-top-margin center"><?= get_the_title(); ?></h2>
-                                <p class="center"><?= get_field('description'); ?></p>
-                                <?php if($contact_id = get_field('fipriot_contact')) : ?>
-                                    <p class="center">Contact <a href="http://fipradotcom.dev/our-people/ukko-metsola" class="pa-service-ajax-contact" data-modal-url="<?= get_template_directory_uri(); ?>/paservice_contact_details.php?id=<?= $contact_id->ID; ?>"><?= get_field('first_name', $contact_id->ID); ?> <?= get_field('last_name', $contact_id->ID); ?></a> for more information.</p>
-                                <?php endif; ?>
-                            </div>
-                        <?php endwhile; ?>
-                    </div>
-                <?php else : ?>
-                    <span style="text-align: center">Coming soon</span>
-                <?php endif; ?>
+                <?php echo do_shortcode('[pa_services_carousel]'); ?>
 
             </div>
         </div>

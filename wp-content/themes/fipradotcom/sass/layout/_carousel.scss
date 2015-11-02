@@ -8,11 +8,10 @@
 }
 
 #public-affairs-services {
-  .full-width-block-content {
+  #public-affairs-services-carousel {
     @include media($media__medium) { padding-left:20%; padding-right:20%; }
     @include media($media__xlarge) { padding-left:10%; padding-right:10%; }
-  }
-  #public-affairs-services-carousel { text-align: center;
+    text-align: center;
     .circle-icon { margin-bottom: $v-rhythm; border-bottom:3px solid darken($color__fipra-lighter-gray, 20%); }
   }
 }
