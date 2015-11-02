@@ -10,6 +10,11 @@
 
 <?php if(get_post_type() == 'fipriot') : ?>
 
+    <?php
+    // Assign variables
+    $first_name = trim(get_field('first_name')); $last_name = trim(get_field('last_name')); $position = trim(get_field('position')); $unit_id = get_field('unit') ? get_field('unit')[0] : "";
+    ?>
+
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="row search-result-row">
 
@@ -28,15 +33,15 @@
                         <h5>Special Adviser<?= get_field('special_adviser_expertise') ? ', ' . get_field('special_adviser_expertise') : ''; ?></h5>
                     <?php else : ?>
                         <h5>
-                            <?php echo get_field('position'); ?>
-                            <?php if(get_field('position') && get_field('unit')) { echo ', '; } ?>
-                            <?php echo get_field('unit') ? get_field('unit')->post_title : ''; ?>
+                            <?php echo $position ? $position : ''; ?>
+                            <?php if($position && $unit_id) { echo ', '; } ?>
+                            <?php echo $unit_id ? get_the_title($unit_id) : ''; ?>
                         </h5>
                     <?php endif; ?>
             </div>
 
             <div class="col-5-m hide-s">
-                <?= get_field('short_bio'); ?>
+                <?php echo get_lead_paragraph(get_field('bio')); ?>
             </div>
 
         </div>
@@ -87,6 +92,26 @@
 
     </article>
 
+<?php elseif(get_post_type() == 'job') : ?>
+
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <div class="row search-result-row">
+
+            <div class="col-4-m">
+                <?php the_title( sprintf( '<h3 class="no-margin"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+                <h5>Job Opportunity</h5>
+            </div>
+            <div class="col-3-m hide-s">
+                Closes: <?php echo date('d M Y', strtotime(get_field('closing_date'))); ?>
+            </div>
+            <div class="col-5-m hide-s">
+                <?= get_field('summary'); ?>
+            </div>
+
+        </div>
+
+    </article>
+
 <?php else : ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -97,7 +122,7 @@
             </div>
 
             <div class="col-6-m hide-s">
-                <?= get_field('header_introduction'); ?>
+                <?php echo get_field('header_introduction'); ?>
             </div>
 
         </div>

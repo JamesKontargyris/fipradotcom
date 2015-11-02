@@ -18,7 +18,7 @@
                                 $num_results = get_search_results();
                             ?>
                             <h5>Found <?= $num_results ?> result(s)</h5>
-                            <hr />
+<!--                            <hr />-->
                         </section>
                     </div>
 

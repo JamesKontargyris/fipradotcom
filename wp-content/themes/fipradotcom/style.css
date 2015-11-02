@@ -2138,8 +2138,8 @@ ul.team-member-expertise {
           font-size: 1rem; } }
 
 .search-result-row {
-  border-bottom: 1px solid #ced3dd;
-  padding-bottom: 1.5rem; }
+  border-top: 1px solid #ced3dd;
+  padding: 1.5rem 0; }
 
 .people-group-container {
   padding-right: 0.375em; }
