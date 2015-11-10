@@ -243,7 +243,7 @@ function get_expertise_areas($homepage_only = false, $filterable_only = false) {
         $args['meta_query'][] = [
             'key'     => 'filterable',
             'value'   => '1',
-            'compare' => 'NOT LIKE',
+            'compare' => 'LIKE',
         ];
     }
 
