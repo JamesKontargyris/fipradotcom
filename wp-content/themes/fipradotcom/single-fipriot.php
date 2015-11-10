@@ -60,7 +60,7 @@ get_header(); ?>
 
                         <?php echo bio_minus_lead_paragraph($bio); ?>
 
-                        <?php if( get_field('expertise') ) : ?>
+                        <?php if( get_field('expertise') && ! get_field('is_special_adviser') ) : ?>
                             <h3 id="expertise"><?php echo get_field('first_name') ?>'s Expertise</h3>
                             <div class="profile-expertise-showcase equal-heights">
                                 <?php foreach(get_field('expertise') as $expertise_area) : ?>
