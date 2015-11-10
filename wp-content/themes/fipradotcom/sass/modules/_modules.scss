@@ -291,17 +291,17 @@
   background-color: $color__fipra-light-gray;
   @include radial-gradient(white, $color__fipra-light-gray);
   border:5px solid white;
-  box-shadow: darken($color__fipra-light-gray, 30%) 0 2px 10px;
+  //box-shadow: darken($color__fipra-light-gray, 30%) 0 2px 10px;
   transition: all 0.2s;
   width:200px;
-  &.dark-shadow { box-shadow: darken($color__fipra-blue-gray, 30%) 0 2px 10px; }
+  //&.dark-shadow { box-shadow: darken($color__fipra-blue-gray, 30%) 0 2px 10px; }
 }
 a {
   .photo-tile:hover {
     opacity: 0.8;
     margin-top: 3px;
     margin-bottom: -3px;
-    box-shadow: inherit 0 0 5px;
+    //box-shadow: inherit 0 0 5px;
   }
 }
 
