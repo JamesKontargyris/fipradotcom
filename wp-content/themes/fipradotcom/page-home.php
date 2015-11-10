@@ -42,15 +42,19 @@ wp_reset_postdata(); ?>
                             <div class="full-width-block-container with-content-bar">
                                 <div class="full-width-block-content-container content-bar grey bg-image">
                                     <div class="full-width-block-content center narrow">
-                                        <h1 class="upper"><?= get_the_title(); ?></h1>
-                                        <p class="blurb"><?= get_field('description'); ?></p>
-                                        <?php if(get_field('links')) : // Calls to action exist? ?>
-                                            <p class="no-margin">
-                                                <?php foreach(get_field('links') as $post_id) : // links is an array of post IDs - use their permalinks and titles for the buttons ?>
-                                                    <a class="btn primary" href="<?= get_the_permalink($post_id); ?>"><?= get_the_title($post_id); ?></a>
-                                                <?php endforeach; ?>
-                                            </p>
-                                        <?php endif; ?>
+                                        <div class="home-hero-title-and-blurb">
+                                            <h1 class="upper"><?= get_the_title(); ?></h1>
+                                            <p class="blurb"><?= get_field('description'); ?></p>
+                                        </div>
+                                        <div class="home-hero-link">
+                                            <?php if(get_field('links')) : // Calls to action exist? ?>
+                                                <p class="no-margin">
+                                                    <?php foreach(get_field('links') as $post_id) : // links is an array of post IDs - use their permalinks and titles for the buttons ?>
+                                                        <a class="btn primary" href="<?= get_the_permalink($post_id); ?>"><?= get_the_title($post_id); ?></a>
+                                                    <?php endforeach; ?>
+                                                </p>
+                                            <?php endif; ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

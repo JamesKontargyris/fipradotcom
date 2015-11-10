@@ -4760,6 +4760,8 @@ embed, iframe, object {
       padding-top: 12rem;
       padding-bottom: 12rem; } }
 @media screen and (max-width: 481px)  {
+  .home #home-hero-carousel .full-width-block-content .home-hero-title-and-blurb {
+    margin-bottom: 20px; }
   .home #home-hero-carousel .full-width-block-content .blurb {
     display: none; } }
 .home #home-hero-carousel .owl-pagination {

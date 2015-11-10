@@ -185,7 +185,9 @@
     //Add a fade in/out to modals by default
     $.extend($.modal.defaults, { fadeDuration: 250, zIndex:20 });
 
-
+    //Make title and blurb section of homepage hero banner the same on all slides
+    //then add some margin
+    $('.home-hero-title-and-blurb').matchHeight().css('margin-bottom', '24px');
 
     $(window).resize(function()
     {
@@ -209,6 +211,9 @@
         //Set equal heights of services and expertise boxes on homepage
         $('#home-block-services-and-expertise').find('showcase-block').matchHeight();
 
+        //Make title and blurb section of homepage hero banner the same on all slides
+        //then add some margin
+        $('.home-hero-title-and-blurb').matchHeight().css('margin-bottom', '24px');
 
         if($(window).width() >= 769) {
             //Make menu-titles in anchor links lists the same width, if more than one is present on the page
