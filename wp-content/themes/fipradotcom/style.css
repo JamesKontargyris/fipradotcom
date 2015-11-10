@@ -3634,20 +3634,20 @@ a {
       .main-navigation ul > li.current-menu-item > a, .main-navigation ul > li.current_page_ancestor > a, .main-navigation ul > li.current-menu-ancestor > a {
         font-weight: 700;
         color: #cc0a12;
-        border-bottom: 3px solid #cc0a12;
-        padding: 0.9375rem 0 0.375rem; }
+        border-bottom: 1px solid #cc0a12;
+        padding: 0.9375rem 0 0.5rem; }
       .main-navigation ul > li:hover > a, .main-navigation ul > li.focus > a {
         color: #cc0a12; }
     .main-navigation ul ul {
       float: left;
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       background-color: white;
-      border-top: 3px solid #cc0a12;
+      border-top: 1px solid #cc0a12;
       position: absolute;
       top: 3.75rem;
       left: -999em;
       z-index: 99999;
-      margin-top: -3px;
+      margin-top: -1px;
       width: 225px; }
       .main-navigation ul ul li {
         font-size: 14px;
@@ -3785,10 +3785,10 @@ ul.anchor-links-list, .filter-group-container .filter-list-container ul.filter-l
         ul.anchor-links-list li a, .filter-group-container .filter-list-container ul.filter-list li a {
           display: inline-block;
           padding: 0.375rem 0.75em;
-          border-bottom: 3px solid transparent; }
+          border-bottom: 1px solid transparent; }
           ul.anchor-links-list li a:hover, .filter-group-container .filter-list-container ul.filter-list li a:hover {
             color: #cc0a12;
-            border-bottom: 3px solid #cc0a12; } }
+            border-bottom: 1px solid #cc0a12; } }
     ul.anchor-links-list li a.active, .filter-group-container .filter-list-container ul.filter-list li a.active {
       background-color: #3e4a62;
       font-weight: 700;
