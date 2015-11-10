@@ -104,10 +104,10 @@ get_header(); ?>
                                                         <?php endif; ?>
 
                                                         <?php if($mobile = get_field('mobile')) : ?>
-                                                            <tr>
-                                                                <td>Mobile</td>
-                                                                <td><?php echo $mobile; ?></td>
-                                                            </tr>
+<!--                                                            <tr>-->
+<!--                                                                <td>Mobile</td>-->
+<!--                                                                <td>--><?php //echo $mobile; ?><!--</td>-->
+<!--                                                            </tr>-->
                                                         <?php endif; ?>
 
                                                         <?php if($fax = get_field('fax')) : ?>

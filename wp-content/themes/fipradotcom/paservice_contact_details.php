@@ -21,7 +21,7 @@ $name = get_field('first_name', $id) . ' ' . get_field('last_name', $id);
 
     <?php $mobile = get_field('mobile', $id); ?>
     <?php if($mobile) : ?>
-        <br><span class="font-14">Mob. <?= get_field('mobile', $id) ?></span>
+<!--        <br><span class="font-14">Mob. --><?//= get_field('mobile', $id) ?><!--</span>-->
     <?php endif; ?>
 
     <?php $fax = get_field('fax', $id); ?>
