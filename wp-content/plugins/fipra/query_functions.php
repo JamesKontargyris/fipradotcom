@@ -221,7 +221,7 @@ function get_homepage_slides() {
     return $slides;
 }
 
-function get_expertise_areas($homepage_only = false) {
+function get_expertise_areas($homepage_only = false, $filterable_only = false) {
 
     global $post;
 
@@ -236,6 +236,14 @@ function get_expertise_areas($homepage_only = false) {
             'key'     => 'on_homepage',
             'value'   => '1',
             'compare' => 'LIKE',
+        ];
+    }
+
+    if( $filterable_only ) {
+        $args['meta_query'][] = [
+            'key'     => 'filterable',
+            'value'   => '1',
+            'compare' => 'NOT LIKE',
         ];
     }
 

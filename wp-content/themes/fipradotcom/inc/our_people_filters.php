@@ -62,7 +62,7 @@
         <div class="row content-area">
             <div class="filter-list-container">
                 <ul class="filter-list no-margin no-bullet">
-                    <?php $expertise_areas = get_expertise_areas(); ?>
+                    <?php $expertise_areas = get_expertise_areas(false, true); ?>
                     <?php if( $expertise_areas->found_posts > 0) : ?>
                         <?php while ( $expertise_areas->have_posts() ) : $expertise_areas->the_post(); ?>
                             <li><a href="#" class="filter" data-filter=".<?php echo make_class_name(str_replace(',','',get_the_title())); ?>" data-filtering-on-text="<?php the_title(); ?>"><?php the_title(); ?></a></li>
