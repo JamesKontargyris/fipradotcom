@@ -4587,6 +4587,9 @@ embed, iframe, object {
       .profile-expertise-showcase .expertise-area a .svg-icon svg {
         height: 70%;
         fill: #00257f; }
+      @media screen and (max-width: 481px)  {
+        .profile-expertise-showcase .expertise-area a .svg-icon {
+          display: none !important; } }
     .profile-expertise-showcase .expertise-area a .expertise-area-name {
       font-size: 16px;
       font-size: 1rem;
@@ -4759,6 +4762,9 @@ embed, iframe, object {
     .home #home-hero-carousel .hero .full-width-block-content-container:not(.content-bar) {
       padding-top: 12rem;
       padding-bottom: 12rem; } }
+.home #home-hero-carousel .full-width-block-content .blurb {
+  font-size: 18px;
+  font-size: 1.125rem; }
 @media screen and (max-width: 481px)  {
   .home #home-hero-carousel .full-width-block-content .home-hero-title-and-blurb {
     margin-bottom: 20px; }

@@ -53,7 +53,7 @@
       }
     }
     .full-width-block-content {
-
+      .blurb { @include font-size(18); }
       @include media(max-width $media__small) {
         .home-hero-title-and-blurb { margin-bottom:20px; }
         .blurb { display:none; }

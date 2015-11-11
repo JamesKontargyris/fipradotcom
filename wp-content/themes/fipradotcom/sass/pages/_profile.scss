@@ -57,8 +57,12 @@
       text-align: center;
       &:hover { opacity: 0.5; }
       .svg-icon { display: block !important; width:100%; padding:$v-rhythm * 3; margin-bottom:$v-rhythm;
-        svg { height:70%; fill:$color__fipra-blue; } }
+        svg { height:70%; fill:$color__fipra-blue; }
+        @include media(max-width $media__small) { display: none !important; }
+      }
       .expertise-area-name { @include font-size(16); padding: $v-rhythm; color:$color__fipra-blue; }
+
+
     }
   }
 }
