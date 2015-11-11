@@ -65,7 +65,7 @@ get_header(); ?>
 
                                         <?php $mobile = get_field('mobile', $lead->ID); ?>
                                         <?php if($mobile) : ?>
-<!--                                            <br><span class="font-14">Mob. --><?//= get_field('mobile', $lead->ID) ?><!--</span>-->
+<!--                                            <br><span class="font-14">Mob. get_field('mobile', $lead->ID) </span>-->
                                         <?php endif; ?>
 
                                         <?php $fax = get_field('fax', $lead->ID); ?>
