@@ -25,3 +25,31 @@
     @extend .primary;
   }
 }
+
+.wpcf7-response-output {
+  margin:$v-rhythm 0 !important;
+  padding: $v-rhythm !important;
+}
+
+.wpcf7-validation-errors,
+.wpcf7-mail-sent-ng {
+  border:0 !important;
+  background-color:lighten(red, 10%);
+  color:$color_soft-white;
+}
+
+.wpcf7-mail-sent-ok {
+  border:0 !important;
+  background-color:lighten(green, 10%);
+  color:$color_soft-white;
+}
+
+.wpcf7-spam-blocked {
+  border:0 !important;
+  background-color:lighten(orangered, 10%);
+  color:$color_soft-white;
+}
+
+.wpcf7-not-valid-tip {
+  color:lighten(red, 10%) !important;
+}

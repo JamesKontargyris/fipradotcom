@@ -1,0 +1,646 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Short description.
+msgid "Allows for the ordering of categories and custom taxonomy terms through a simple drag-and-drop interface"
+msgstr ""
+
+#. Screenshot description.
+msgid ""
+"Screenshot of the menu page for Custom Taxonomy Order.\n"
+"The WordPress menu completely left lists the different taxonomies.\n"
+"The left metabox lists the toplevel terms. Right (or below) are the sub-terms."
+msgstr ""
+
+#. Found in description header.
+msgid "Languages"
+msgstr ""
+
+#. Found in description list item.
+msgid "Order (custom) terms through a simple drag-and-drop interface."
+msgstr ""
+
+#. Found in description list item.
+msgid "No custom coding needed. It uses standard WordPress filters."
+msgstr ""
+
+#. Found in description list item.
+msgid "It uses the available WordPress scripts and styles."
+msgstr ""
+
+#. Found in description list item.
+msgid "The plugin is lightweight, without any unnecessary scripts to load into the admin."
+msgstr ""
+
+#. Found in description list item.
+msgid "It falls in line gracefully with the look and feel of the WordPress interface."
+msgstr ""
+
+#. Found in description list item.
+msgid "It uses it's own menu in the backend."
+msgstr ""
+
+#. Found in description list item.
+msgid "Translated or translatable."
+msgstr ""
+
+#. Found in description list item.
+msgid "Custom functions to order the taxonomies themselves."
+msgstr ""
+
+#. Found in description list item.
+msgid "There is no Pro version, everything works in the Free version."
+msgstr ""
+
+#. Found in description list item.
+msgid "de_DE <a href=\"http://skiebe.eu\">Patrick Skiebe</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "es_ES <a href=\"http://webhostinghub.com\">Andrew Kurtis</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "fr_FR <a href=\"http://jcbrebion.com\">Jean-Christophe Brebion</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "it_IT Matteo Boria"
+msgstr ""
+
+#. Found in description list item.
+msgid "nl_NL <a href=\"http://zenoweb.nl\">Marcel Pol</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "pl_PL <a href=\"webidea.pl\">Paweł Data</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "ru_RU Alex Rumyantsev"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Custom Taxonomy Order New Edition is a plugin for WordPress which allows for the ordering of taxonomy terms."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "It supports the following features:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "It is a continuation (or fork) of Custom Taxonomy Order, which has been discontinued."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Upload the plugin folder to the <code>/wp-content/plugins/</code> directory"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate the plugin through the 'Plugins' menu in WordPress"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Order posts from the 'Term Order' menu in the admin"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Optionally set whether or not to have queries of the selected taxonomy be sorted by this order automatically."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Optionally set <code>'orderby' =&gt; 'term_order', 'order =&gt; 'ASC'</code> to manually sort queries by this order."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Enjoy!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2015-11-07"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Explode() expects parameter to be a string, not an array."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Better dashicon."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Drop pot, nl_NL, they are maintained at GlotPress."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Offer page and functions to support the taxonomies themselves."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Support WooCommerce attributes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Only support WordPress 3.7+, since they really are supported."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "More specific CSS."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add icon on admin pages."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update pot, nl_NL."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2015-09-05"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add filter for (not) sorting a tagcloud (thanks sunriseweb)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "For sub-term, start counting at term_order of parent-term, so sorting looks reasonable."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "\"Order Alphabetically\" button is no button-primary."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change textdomain to slug."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Make admin_notices dismissible."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add version to admin CSS."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2015-08-05"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Use correct headings on admin pages."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2015-05-31"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add About page."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update pot and nl_NL."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2015-03-25"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Support Link Manager plugin."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2015-03-21"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Better suppport for WPMU, also set up new blogs (thanks Andrew Patton)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2015-03-13"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Wrap radio buttons inside label, so the label works (thanks Andrew Patton)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2015-02-28"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Separate settingspage to own php-file."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add de_DE (thanks Patrick Skiebe)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2015-01-21"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add test for capability inside admin page as well."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-12-11"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix conflict with wp-catalogue plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-09-12"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix notices with defensive programming"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-08-22"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "More compatibility with WPML"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-08-20"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Some Compatibility with WPML Plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-08-15"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add action for saving the terms"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-08-06"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New default settings page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Filter added for get_the_terms"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Don't filter tags at get_terms filtering"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated nl_NL"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-06-30"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Also be able to sort the builtin taxonomies"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix bug with sorting tags"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014--5-13"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added fr_FR (Jean-Christophe Brebion)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-05-02"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added ru_RU (Alex Rumyantsev)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Small gettext fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "update nl_NL"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-04-15"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Multisite activation doesn't work if it isn't done network wide"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-04-11"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Don't usort on an array which doesn't contain objects"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-03-29"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Also filter at the get_terms hook for get_terms() and wp_list_categories()"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-03-24"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update pl_PL"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-03-23"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improve html/css"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Remove obsolete images"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-03-22"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add settings link"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New dashicon"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add alphabetical sorting to options as well"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update Polish and Dutch"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-03-18"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add Polish translation (Paweł Data)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Sort Alphabetically (landwire)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-02-25"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix activation code to really generate term_order column"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-02-18"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Ouch, remove testing code"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix activation on network install (Matteo Boria)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-01-26"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Also add filter for wp_get_object_terms and wp_get_post_terms"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Only filter categories when auto-sort is enabled"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-01-25"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Filter added for get_the_categories"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix errors \"undefined index\" for undefined options"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2014-01-03"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Use print for translated substring (Matteo Boria)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add Italian Translation (Matteo Boria)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2013-12-30"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix PHP error-notice when activating"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2013-12-10"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add es_ES translataion, thanks Andrew and Jelena"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2013-10-20"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "do init stuff in the init function"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "also update term_order in term_relationships table"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "security update: validate input with $wpdb-&gt;prepare()"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "2013-10-10"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "renamed/forked as Custom Taxonomy Order New Edition"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "fixed a bug with ordering in the backend"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "add localisation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "add nl_NL lang"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Complete code overhaul and general rewrite to bring things up to speed"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated for WordPress 3.2 Admin Design"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added auto-sort query option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Several text fixes for overall consistency and clarity."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Various small bugfixes and optimizations"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "First Version"
+msgstr ""
+
+#. Found in faq header.
+msgid "I sorted the terms in the WordPress backend, but I don't see it changed in the frontend"
+msgstr ""
+
+#. Found in faq header.
+msgid "My custom taxonomy is not available in the menu page"
+msgstr ""
+
+#. Found in faq header.
+msgid "How do I sort the terms when using a custom query?"
+msgstr ""
+
+#. Found in faq header.
+msgid "I have a custom taxonomy that uses the Tag Cloud functionality, but it doesn't sort like it should."
+msgstr ""
+
+#. Found in faq header.
+msgid "I'm using the_tags function, but it doesn't sort as it should."
+msgstr ""
+
+#. Found in faq header.
+msgid "What capabilities are needed?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Can I sort the taxonomies themselves?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Is there an API?"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"Did you set the option for that taxonomy to use that custom order? Make sure to check it so the filters run\n"
+"with your taxonomy."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"This plugin will only offer to sort them when the taxonomy is set to public. Make sure you use 'register_taxonomy'\n"
+"with the public parameter set to true (default)."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"You can apply the sorting for the taxonomy by using:\n"
+"    'orderby' =&gt; 'term_order'."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"If it is a much used plugin, can you tell me what is the name for the taxonomy?\n"
+"In the customtaxorder_wp_get_object_terms_order_filter it needs to be added, and the get_terms filter should not run\n"
+"on that taxonomy. The tag_cloud_sort filter should do that."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "If it is a custom taxonomy, you can also use a filter:"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"There is a bug with the the_tags function, where it will sort according to the setting for categories.\n"
+"And yes, that is strange :)."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "For sorting the terms you need the manage_categories capability."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "There is an admin page to sort them, and save them in the database."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "You can use a function to sort taxonomies themselves like this:"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "The function requires a parameter with an array of taxonomy objects."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"There is an action that you can use with add_action. It is being run when saving the order of terms in the admin page.\n"
+"You could add the following example to your functions.php and work from there."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Email any other questions to marcel at zenoweb dot nl."
+msgstr ""

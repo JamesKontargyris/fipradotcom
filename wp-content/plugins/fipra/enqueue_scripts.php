@@ -176,6 +176,14 @@ function fipradotcom_scripts()
         true
     );
 
+    wp_enqueue_script(
+        'fipradotcom-profile-js',
+        get_template_directory_uri() . '/js/profile.js',
+        array(),
+        '20151112',
+        true
+    );
+
 
     if(is_single()) {
 

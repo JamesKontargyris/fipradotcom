@@ -15,15 +15,27 @@ get_header(); ?>
         <?php get_template_part('inc/breadcrumbs'); ?>
 
         <?php $post_id = get_the_ID(); ?>
+        <?php
+        // Assign variables
+        $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $unit_id = get_field('unit') ? get_field('unit')[0] : "";
+        ?>
+
+        <div id="contact-form-block" class="full-width-block-container content-bar-bottom">
+            <div class="full-width-block-content-container dark-grey">
+                <div class="full-width-block-content">
+
+                    <div class="contact-form-block-close"><i class="icon-cancel"></i></div>
+                    <h3 class="no-top-margin"><i class="icon-mail"></i>&nbsp;&nbsp; Contact <?php echo $first_name; ?></h3>
+
+                    <?php echo do_shortcode('[contact-form-7 id="3292" title="Fipriot Contact Form"]'); ?>
+
+                </div>
+            </div>
+        </div>
 
         <div id="hero" class="full-width-block-container content-bar-bottom profile">
             <div class="full-width-block-content-container grey">
                 <div class="full-width-block-content left">
-
-                    <?php
-                        // Assign variables
-                        $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $unit_id = get_field('unit') ? get_field('unit')[0] : "";
-                    ?>
 
                     <?php if ( has_post_thumbnail() ) : ?>
                         <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'profile-photo' )[0]; ?>" alt="<?php echo full_name(); ?>" title="<?php echo full_name(); ?>" class="photo-tile dark-shadow" />
@@ -42,8 +54,10 @@ get_header(); ?>
                             <a href="<?php echo get_the_permalink($unit_id); ?>"><?php echo $unit_id ? fiprafy_unit_name(get_the_title($unit_id)) : ''; ?></a>
                         </h4>
                     <?php endif; ?>
-                    <!-- TODO: update link to contact form-->
-                    <a class="btn primary" href="#">Contact <?php echo get_field('first_name') ?></a>
+                    <form action="/contact-fipriot" method="POST">
+                        <input type="hidden" name="fipriot_id" value="<?php echo $post_id; ?>">
+                        <input type="submit" class="contact-form-button btn primary btn-large" value="Contact <?php echo get_field('first_name') ?>">
+                    </form>
                 </div>
             </div>
         </div>
@@ -110,11 +124,6 @@ get_header(); ?>
                                         <?php endif; ?>
 
                                     </table>
-<!-- TODO: update link to contact form -->
-                                    <?php if($email = get_field('email')) : ?>
-                                        <br>
-                                        <a href="#" class="btn secondary btn-small">Email <?php echo get_field('first_name'); ?></a>
-                                    <?php endif; ?>
 
                                 </address>
                             </div>

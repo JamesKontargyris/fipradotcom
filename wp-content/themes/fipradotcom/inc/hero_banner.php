@@ -1,5 +1,5 @@
 <?php if( ! get_field('hide_header_banner')) : ?>
-    <div id="hero" class="full-width-block-container<?= has_post_thumbnail() ? ' with-content-bar' : ''; ?>">
+    <div id="hero" class="full-width-block-container<?= has_post_thumbnail() && ! get_current_page_template('page-contact-fipriot.php')  ? ' with-content-bar' : ''; ?>">
     <!--            Set the content block height using the header_text_block_height field. If a featured image is set, override this height with the content-bar class-->
     <div class="full-width-block-content-container <?= get_field('header_text_block_height') ? get_field('header_text_block_height') : 'short'; ?> <?= has_post_thumbnail() ? 'content-bar bg-image' : ''; ?>  grey">
         <div class="full-width-block-content <?= get_field('header_text_location') ? get_field('header_text_location') : 'center';  ?> narrow">
@@ -11,9 +11,13 @@
             <?php endif; ?>
 
             <h1 class="upper no-margin">
-                <?php if (get_post_type() == 'expertise') : ?><?= file_get_contents(get_field('icon')); ?><br class="hide-s"/> <?php endif; ?>
+                <?php if (get_post_type() == 'expertise') : echo file_get_contents(get_field('icon')); ?><br class="hide-s"/> <?php endif; ?>
                 <?php if(get_post_type() == 'unit') : echo fiprafy_unit_name(get_the_title()); ?>
-                <?php else : the_title(); ?>
+
+                <?php else : ?>
+                    <?php if(get_current_page_template('page-contact-fipriot.php')) { echo "Contact "; } ?>
+                    <?php the_title(); ?>
+
                 <?php endif; ?>
             </h1>
             <?php if(get_field('header_introduction')) : ?>

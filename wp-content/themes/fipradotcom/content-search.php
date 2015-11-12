@@ -6,6 +6,8 @@
  *
  * @package fipradotcom
  */
+
+$post_id = get_the_ID();
 ?>
 
 <?php if(get_post_type() == 'fipriot') : ?>

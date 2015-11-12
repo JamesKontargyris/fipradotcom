@@ -221,6 +221,23 @@ function get_homepage_slides() {
     return $slides;
 }
 
+function get_single_fipriot($id) {
+
+    global $post;
+
+    $args = [
+        'post_type' => 'fipriot',
+        'post_status' => 'publish',
+        'posts_per_page' => 1,
+        'p' => $id,
+    ];
+
+    $fipriot = new WP_Query($args);
+    wp_reset_postdata();
+
+    return $fipriot;
+}
+
 function get_expertise_areas($homepage_only = false, $filterable_only = false) {
 
     global $post;

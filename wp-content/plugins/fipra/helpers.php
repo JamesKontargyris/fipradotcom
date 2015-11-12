@@ -200,3 +200,11 @@ function trim_text($input, $length) {
 
     return $trimmed_text;
 }
+
+function get_current_page_template($page_template) {
+    $pageTemplate = get_page_template();
+
+    $pageArray = explode("/", $pageTemplate);
+
+    return end($pageArray) == $page_template;
+}

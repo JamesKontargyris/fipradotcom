@@ -27,6 +27,27 @@
   }
 }
 
+#contact-form-block {
+  display:none;
+
+  .full-width-block-content {
+    position:relative;
+
+    .contact-form-block-close {
+      position:absolute;
+      top:0px;
+      right:20px;
+      @include font-size(24);
+      cursor:pointer;
+    }
+
+    textarea[name=message] {
+      height:180px;
+    }
+  }
+}
+
+
 .profile-content-area {
   p.lead { @include font-size(18); @include media($media__medium) { @include font-size(24); line-height: $v-rhythm * 3; } color:$color__fipra-dark-gray; }
 }

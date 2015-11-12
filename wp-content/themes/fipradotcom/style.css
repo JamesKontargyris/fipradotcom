@@ -3531,6 +3531,9 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     border-color: #aaa #bbb #bbb;
     box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
 
+input[type="submit"] {
+  border-radius: 0; }
+
 input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea {
   color: #666;
   border: 1px solid #ccc;
@@ -3575,6 +3578,28 @@ textarea {
   box-shadow: none;
   text-shadow: none;
   padding: 0.75rem; }
+
+.wpcf7-response-output {
+  margin: 0.75rem 0 !important;
+  padding: 0.75rem !important; }
+
+.wpcf7-validation-errors, .wpcf7-mail-sent-ng {
+  border: 0 !important;
+  background-color: #ff3333;
+  color: #f7f7f7; }
+
+.wpcf7-mail-sent-ok {
+  border: 0 !important;
+  background-color: #00b300;
+  color: #f7f7f7; }
+
+.wpcf7-spam-blocked {
+  border: 0 !important;
+  background-color: #ff6a33;
+  color: #f7f7f7; }
+
+.wpcf7-not-valid-tip {
+  color: #ff3333 !important; }
 
 /*--------------------------------------------------------------
 # Navigation
@@ -4219,6 +4244,10 @@ a .photo-tile:hover {
   .hide-m {
     display: none !important; } }
 
+@media screen and (max-width: 801px)  {
+  .show-l {
+    display: none !important; } }
+
 .v-align {
   position: relative;
   top: 50%;
@@ -4522,6 +4551,20 @@ embed, iframe, object {
         .full-width-block-container.profile .full-width-block-content-container .full-width-block-content img {
           margin-top: -100px;
           width: 200px; } }
+
+#contact-form-block {
+  display: none; }
+  #contact-form-block .full-width-block-content {
+    position: relative; }
+    #contact-form-block .full-width-block-content .contact-form-block-close {
+      position: absolute;
+      top: 0px;
+      right: 20px;
+      font-size: 24px;
+      font-size: 1.5rem;
+      cursor: pointer; }
+    #contact-form-block .full-width-block-content textarea[name=message] {
+      height: 180px; }
 
 .profile-content-area p.lead {
   font-size: 18px;
