@@ -98,7 +98,7 @@ get_header(); ?>
                                         <?php if($mobile = get_field('mobile')) : ?>
 <!--                                            <tr>-->
 <!--                                                <td>Mobile</td>-->
-<!--                                                <td>--><?php //echo $mobile ?><!--</td>-->
+<!--                                                <td>echo $mobile</td>-->
 <!--                                            </tr>-->
                                         <?php endif; ?>
 
