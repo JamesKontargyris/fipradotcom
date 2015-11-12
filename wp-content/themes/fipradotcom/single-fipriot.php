@@ -27,7 +27,7 @@ get_header(); ?>
                     <div class="contact-form-block-close"><i class="icon-cancel"></i></div>
                     <h3 class="no-top-margin"><i class="icon-mail"></i>&nbsp;&nbsp; Contact <?php echo $first_name; ?></h3>
 
-                    <?php echo do_shortcode('[contact-form-7 id="3292" title="Fipriot Contact Form"]'); ?>
+                    <?php echo do_shortcode('[contact-form-7 id="3276" title="Fipriot Contact Form"]'); ?>
 
                 </div>
             </div>
