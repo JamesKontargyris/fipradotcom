@@ -74,6 +74,7 @@ get_header(); ?>
                                         <?php endif; ?>
 
                                         <div class="contact-button">
+<!--                                            TODO: Add Google Analytics event tracking-->
                                             <a href="/contact-fipriot?person=<?php echo get_field('first_name', $lead->ID) ?><?php echo get_field('last_name', $lead->ID) ?>&fipriot_id=<?php echo $lead->ID; ?>" class="btn primary btn-small btn-white">Contact <?php echo get_field('first_name', $lead->ID) ?></a>
                                         </div>
 

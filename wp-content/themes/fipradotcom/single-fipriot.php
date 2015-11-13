@@ -54,10 +54,10 @@ get_header(); ?>
                             <a href="<?php echo get_the_permalink($unit_id); ?>"><?php echo $unit_id ? fiprafy_unit_name(get_the_title($unit_id)) : ''; ?></a>
                         </h4>
                     <?php endif; ?>
-                    <form action="/contact-fipriot" method="POST">
-                        <input type="hidden" name="fipriot_id" value="<?php echo $post_id; ?>">
-                        <input type="submit" class="contact-form-button btn primary btn-large" value="Contact <?php echo get_field('first_name') ?>">
-                    </form>
+
+                    <div class="contact-button">
+                        <a href="/contact-fipriot?person=<?php echo get_field('first_name') ?><?php echo get_field('last_name') ?>&fipriot_id=<?php the_ID(); ?>" class="contact-form-button btn primary btn-large btn-white">Contact <?php echo get_field('first_name') ?></a>
+                    </div>
                 </div>
             </div>
         </div>
