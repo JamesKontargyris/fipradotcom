@@ -10,6 +10,7 @@
   &:last-child { margin-right: 0; }
   &.no-margin { margin:0; }
   &.btn-large { padding: $v-rhythm * 0.75 rem(16px); @include media($media__medium) { @include font-size(18); } }
+  &.btn-medium { @include media($media__medium) { @include font-size(16); } }
   &.btn-small { @include font-size(14); }
   &.btn-extra-small { @include font-size(12); padding: $v-rhythm * 0.1 rem(16px) * 0.5; margin-right: rem(16px) * 0.5; }
 

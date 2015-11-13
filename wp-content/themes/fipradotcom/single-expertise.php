@@ -72,8 +72,10 @@ get_header(); ?>
                                         <?php if($fax) : ?>
                                             <br><span class="font-14">Fax. <?= get_field('fax', $lead->ID) ?></span>
                                         <?php endif; ?>
-                                        <!--                                        TODO add email link-->
-                                        <br><span class="font-14"><a href="mailto:#"><?= get_field('email', $lead->ID) ?></a></span>
+
+                                        <div class="contact-button">
+                                            <a href="/contact-fipriot?person=<?php echo get_field('first_name', $lead->ID) ?><?php echo get_field('last_name', $lead->ID) ?>&fipriot_id=<?php echo $lead->ID; ?>" class="btn primary btn-small btn-white">Contact <?php echo get_field('first_name', $lead->ID) ?></a>
+                                        </div>
 
                                     </div>
                                 </div>

@@ -564,6 +564,10 @@ table:not(.no-style) {
       .btn.btn-large, .wpcf7-form input.btn-large[type=submit], .btn:link.btn-large, .wpcf7-form input[type=submit]:link.btn-large, .btn:visited.btn-large, .wpcf7-form input[type=submit]:visited.btn-large {
         font-size: 18px;
         font-size: 1.125rem; } }
+  @media screen and (min-width: 801px) {
+    .btn.btn-medium, .wpcf7-form input.btn-medium[type=submit], .btn:link.btn-medium, .wpcf7-form input[type=submit]:link.btn-medium, .btn:visited.btn-medium, .wpcf7-form input[type=submit]:visited.btn-medium {
+      font-size: 16px;
+      font-size: 1rem; } }
   .btn.btn-small, .wpcf7-form input.btn-small[type=submit], .btn:link.btn-small, .wpcf7-form input[type=submit]:link.btn-small, .btn:visited.btn-small, .wpcf7-form input[type=submit]:visited.btn-small {
     font-size: 14px;
     font-size: 0.875rem; }
@@ -4688,6 +4692,10 @@ embed, iframe, object {
   text-align: left !important; }
 #content-container.expertise-area .public-affairs-services-block .full-width-block-content {
   text-align: left !important; }
+
+.contact-button {
+  display: block;
+  margin-top: 0.75rem; }
 
 .job-listing-block {
   padding: 0.75rem 1.125em;

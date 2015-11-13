@@ -5,11 +5,11 @@
  * @package fipradotcom
  */
 
-if( ! isset($_POST['fipriot_id'])) {
+if( ! isset($_GET['fipriot_id'])) {
     wp_redirect(home_url()); exit;
 };
 
-$id = $_POST['fipriot_id'];
+$id = $_GET['fipriot_id'];
 $fipriot = get_single_fipriot($id);
 
 get_header(); ?>
@@ -40,7 +40,7 @@ get_header(); ?>
 
                 <div id="primary">
 
-                    <h3>Contact <?php echo $first_name; ?></h3>
+                    <h3><i class="icon-mail"></i>&nbsp;&nbsp; Contact <?php echo $first_name; ?></h3>
 
                     <?php echo do_shortcode('[contact-form-7 id="3279" title="Fipriot Contact Form"]'); ?>
 
