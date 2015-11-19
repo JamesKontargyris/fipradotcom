@@ -17,6 +17,8 @@
     $('#text-filter').keyup(function () {
         clearFilter(); // Clear any existing filters first
 
+        $('.filtering-on-title').text('Searching for: ' + this.value);
+
         var filter_array = new Array();
         var filter = this.value.toLowerCase();  // no need to call jQuery here
 
@@ -54,11 +56,11 @@
 
         //Is the value entered empty?
         if(filter == '') {
-            $('.filtering-on-title').text('Showing ' + $('.number-of-fipriots').text() + ' ' + $('.fipriot-type').text() + 's');
+            //$('.filtering-on-title').text('Showing ' + $('.number-of-fipriots').text() + ' ' + $('.fipriot-type').text() + 's');
             $('.clear-filter').addClass('hide');
         } else {
             var s = (count == 1) ? '' : 's';
-            $('.filtering-on-title').text('Found ' + count + ' ' + $('.fipriot-type').text() + s);
+            //$('.filtering-on-title').text('Found ' + count + ' ' + $('.fipriot-type').text() + s);
             $('.clear-filter').removeClass('hide');
         }
         people.isotope({filter: '.text-filter-show'});
@@ -111,7 +113,8 @@
         e.preventDefault();
         clearFilter();
         var s = ($('.number-of-fipriots').text() == 1) ? '' : 's';
-        $('.filtering-on-title').text('Showing ' + $('.number-of-fipriots').text() + ' ' + $('.fipriot-type').text() + s);
+        //$('.filtering-on-title').text('Showing ' + $('.number-of-fipriots').text() + ' ' + $('.fipriot-type').text() + s);
+        $('.filtering-on-title').text('');
         //Clear the text filter input
         $('#text-filter').val('');
     });

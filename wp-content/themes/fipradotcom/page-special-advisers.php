@@ -38,7 +38,7 @@ get_header(); ?>
 
                         <div class="filtering-on-container">
                             <h4 class="no-margin filtering-on-title">
-                                Showing <?= $fipriots->found_posts > 1 ? $fipriots->found_posts . ' Special Advisers' : $fipriots->found_posts . ' Special Adviser' ; ?>
+                                <?php //echo 'Showing ' . $fipriots->found_posts > 1 ? $fipriots->found_posts . ' Special Advisers' : $fipriots->found_posts . ' Special Adviser' ; ?>
                             </h4>
                             <a href="#" class="btn btn-small secondary clear-filter hide"><i class="icon-cancel-1"></i> Clear Filter</a>
                         </div>

@@ -39,7 +39,7 @@ get_header(); ?>
 
                             <div class="filtering-on-container">
                                 <h4 class="no-margin filtering-on-title">
-                                    Showing <?php echo $fipriots->found_posts > 1 ? $fipriots->found_posts . ' Fipriots' : $fipriots->found_posts . ' Fipriot' ; ?>
+                                    <?php // echo 'Showing ' . $fipriots->found_posts > 1 ? $fipriots->found_posts . ' Fipriots' : $fipriots->found_posts . ' Fipriot' ; ?>
                                 </h4>
                                 <a href="#" class="btn btn-small secondary clear-filter hide"><i class="icon-cancel-1"></i> Clear Filter</a>
                             </div>
