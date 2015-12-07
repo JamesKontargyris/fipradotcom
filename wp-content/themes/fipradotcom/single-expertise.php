@@ -124,8 +124,6 @@ get_header(); ?>
 
         <?= page_testimonials(); ?>
 
-        <?php include('inc/expertise_areas_carousel.php'); ?>
-
 
     <?php endwhile; endif; ?>
 

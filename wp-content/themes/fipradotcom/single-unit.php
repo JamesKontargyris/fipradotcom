@@ -137,28 +137,6 @@ get_header(); ?>
                         </div>
                     <?php endif; ?>
 
-
-                    <?php if( $linked_units = get_field('linked_units')) : ?>
-                        <aside>
-                            <h5>More Units</h5>
-                            <ul class="sidebar-list no-bottom-margin no-bullet">
-                                <?php foreach( $linked_units as $unit) : $id = $unit->ID; ?>
-                                    <?php
-                                        $flag = get_field('flag', $id);
-                                        if( ! empty($flag) ) {  $url = $flag['url']; }
-                                    ?>
-                                    <li><a href="<?= get_the_permalink($id); ?>">
-                                            <?php if( !empty($flag)) : ?>
-                                                <img src="<?= $url; ?>" class="sidebar-list-flag" alt="<?= fiprafy_unit_name(get_the_title($id)); ?>"/>
-                                            <?php endif; ?>
-                                            <?php echo fiprafy_unit_name(get_the_title($id)); ?>
-                                        </a></li>
-                                <?php endforeach; ?>
-                            </ul>
-                            <a href="/our-network"><small>Explore our Network <i class="icon-right-open"></i></small></a>
-                        </aside>
-                    <?php endif; ?>
-
                     <?php dynamic_sidebar('unit'); ?>
 
                 </div><!-- #secondary -->
@@ -174,7 +152,7 @@ get_header(); ?>
                             <h3 id="staff" class="upper small center">Our Team</h3>
                             <div id="our-team-carousel" class="team-carousel with-controls" data-number-of-items="<?php echo $team->found_posts; ?>">
                                 <?php while($team->have_posts()) : $team->the_post(); ?>
-                                    <?php echo layout_fipriot_team_member(get_the_ID(), true, false, true); ?>
+                                    <?php echo layout_fipriot_team_member(get_the_ID(), false, false, true); ?>
                                 <?php endwhile; ?>
                             </div>
                         </div>
