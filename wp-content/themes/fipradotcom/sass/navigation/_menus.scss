@@ -178,7 +178,7 @@ ul.anchor-links-list {
       &:not(.menu-title) { border-top:1px solid rgba(white, 0.4); }
       &.menu-title { display:block; padding:$v-rhythm * 0.25 em(6px) $v-rhythm * 0.5 0; }
       &.menu-title-toggle { cursor:pointer; }
-      a { display: block; padding: $v-rhythm * 0.5 em(6px) $v-rhythm * 0.5 0; }
+      a { display: block; padding: $v-rhythm * 0.5 em(6px); }
       i { position:absolute; right:em(6px); top:3px; }
 
       &.inline-s {

@@ -32,16 +32,19 @@
 
     &.full-width { width:100%; border:0; }
 
-    h4 { @include font-size(21); font-weight:$font__bold; line-height: $v-rhythm * 1.5 !important; }
+    @include media(max-width $media__medium) {
+      h4 { @include font-size(16); font-weight:$font__bold; line-height: $v-rhythm * 1.3 !important; }
+    }
+    @include media($media__medium) {
+      h4 { @include font-size(21); font-weight:$font__bold; line-height: $v-rhythm * 1.5 !important; }
+    }
     h6 { margin:6px 0 0 0; line-height:1.4 !important; font-weight: $font__normal; @include font-size(13); }
 
     .person-profile-photo {
       line-height:1 !important;
       //      max-height:90%;
 
-      @include media(max-width $media__small) { display: none !important; }
-
-      @include media(min-width $media__small max-width $media__medium) {
+      @include media(max-width $media__medium) {
         width:20%; float:left;
         img { max-width: 90%; margin-bottom:0; }
       }
@@ -59,7 +62,7 @@
     .person-details {
       padding: $v-rhythm em(70px) $v-rhythm em(8px);
 
-      @include media(min-width $media__small max-width $media__medium) {
+      @include media(max-width $media__medium) {
         width:80%; float:left; padding: $v-rhythm em(30px) $v-rhythm em(8px);
       }
 

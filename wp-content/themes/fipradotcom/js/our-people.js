@@ -95,16 +95,16 @@
             //    Change the icon
             $('.filter-group-trigger i').removeClass('icon-up-open').addClass('icon-down-open');
         }
-            //Reset all filter-group-trigger and filter-group elements
-            $('.filter-group').addClass('hide');
+        //Reset all filter-group-trigger and filter-group elements
+        $('.filter-group').addClass('hide');
 
-            if ( ! isActive )
-            {
-                $(this).addClass('active');
-                $($(this).data('filter-group')).removeClass('hide');
-                $(this).find('i').removeClass('icon-down-open').addClass('icon-up-open');
-                $(this).parents().find('li:not(.menu-title)').removeClass('hide-s');
-            }
+        if ( ! isActive )
+        {
+            $(this).addClass('active');
+            $($(this).data('filter-group')).removeClass('hide');
+            $(this).find('i').removeClass('icon-down-open').addClass('icon-up-open');
+            $(this).parents().find('li:not(.menu-title)').removeClass('hide-s');
+        }
     });
 
 //When .clear-filter is clicked, reset the filtering
@@ -133,5 +133,28 @@
         $('.filter-group-trigger').removeClass('active').removeClass('filter-group-close');
         $('.filter-group').addClass('hide');
         $('.filter-group-trigger i').removeClass('icon-up-open').addClass('icon-down-open');
+    }
+
+    //If the current page is the Fipra Global Network page, trigger the Unit filter on-load as if it had been clicked
+    //so the continents display on page load
+    if(window.location.pathname.indexOf('global-network') >= 0) {
+        var isActive = $(this).hasClass('active');
+
+        if(! $(this).hasClass('sub')) //Isn't a sub filter trigger, e.g. continents under country
+        {
+            $('.filter-group-trigger').removeClass('active');
+            //    Change the icon
+            $('.filter-group-trigger i').removeClass('icon-up-open').addClass('icon-down-open');
+        }
+        //Reset all filter-group-trigger and filter-group elements
+        $('.filter-group').addClass('hide');
+
+        if ( ! isActive )
+        {
+            $('.unit-trigger').addClass('active');
+            $($('.unit-trigger').data('filter-group')).removeClass('hide');
+            $($('.unit-trigger')).find('i').removeClass('icon-down-open').addClass('icon-up-open');
+            $('.unit-trigger').parents().find('li:not(.menu-title)').removeClass('hide-s');
+        }
     }
 })();
