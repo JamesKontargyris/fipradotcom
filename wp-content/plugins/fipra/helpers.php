@@ -208,3 +208,12 @@ function get_current_page_template($page_template) {
 
     return end($pageArray) == $page_template;
 }
+
+function get_id_by_slug($page_slug, $post_type = 'page', $output_type = OBJECT) {
+    $page = get_page_by_path($page_slug, $output_type, $post_type);
+    if ($page) {
+        return $page->ID;
+    } else {
+        return null;
+    }
+}

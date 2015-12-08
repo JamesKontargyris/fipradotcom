@@ -19,11 +19,10 @@ get_header(); ?>
 
         <?php the_content(); ?>
 
-        <?php $fipriots = get_all_fipriots(true); // get all Fipriots INCLUDING Spads ?>
-        <?php $filter_group = 'all_profiles'; // used by our_people_filters.php to show the correct filters for the page ?>
+        <?php $fipriots = get_all_fipriots(false); // get all Fipriots WITHOUT Spads ?>
+        <?php $filter_group = 'global_profiles'; // used by our_people_filters.php to show the correct filters for the page ?>
 
         <?php include('inc/our_people_filters.php'); ?>
-
 
         <div id="site-content-container">
 

@@ -3,7 +3,9 @@
         <div class="col-9-m no-margin">
             <ul class="anchor-links-list no-margin no-bullet">
                 <li class="menu-title inline-s">Filter by</li>
-                <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#units-filter-group">Unit <i class="icon-down-open"></i></a></li>
+                <?php if(isset($filter_group) && $filter_group != 'fipra_international_profiles') : ?>
+                    <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#units-filter-group">Unit <i class="icon-down-open"></i></a></li>
+                <?php endif; ?>
                 <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#expertise-filter-group">Expertise Area <i class="icon-down-open"></i></a></li>
                 <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#surname-filter-group">Surname <i class="icon-down-open"></i></a></li>
             </ul>
