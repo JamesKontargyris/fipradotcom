@@ -3577,6 +3577,8 @@ textarea {
   display: block; }
   .wpcf7-form label.full-width, .wpcf7-form input.full-width {
     width: 100%; }
+.wpcf7-form .wpcf7-textarea {
+  height: 150px; }
 .wpcf7-form label {
   font-weight: 700;
   margin-bottom: 0.375rem; }
