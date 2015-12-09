@@ -19,11 +19,11 @@ get_header(); ?>
 
         <?php the_content(); ?>
 
-        <?php $international_unit_id = get_id_by_slug('international', 'unit') ? get_id_by_slug('international', 'unit') : 0; // get the ID of the Fipra International unit post type based on the 'international' slug ?>
-        <?php $fipriots = get_all_fipriots_by_unit($international_unit_id); // get all Fipriots assigned to Fipra International ?>
-        <?php $filter_group = 'fipra_international_profiles'; // used by our_people_filters.php to show the correct filters for the page ?>
+        <?php $fipriots = get_all_fipriots(true); // get all Fipriots INCLUDING Spads ?>
+        <?php $filter_group = 'all_profiles'; // used by our_people_filters.php to show the correct filters for the page ?>
 
         <?php include('inc/our_people_filters.php'); ?>
+
 
         <div id="site-content-container">
 
@@ -67,7 +67,7 @@ get_header(); ?>
 
                                         <?php
 //                                        Assign variables
-                                            $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position');
+                                            $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $additional_position_info = get_field('additional_position_info');
                                         ?>
 
                                         <div class="person <?php echo trim($unit_filter_name) . ' ' . trim($expertise_filter_names) . ' surname-' . substr($last_name, 0, 1); ?>">
@@ -88,6 +88,8 @@ get_header(); ?>
                                                         echo $position;
                                                         if($position && $unit_id) { echo ', '; }
                                                         echo $unit_id ? fiprafy_unit_name(get_the_title($unit_id)) : '';
+                                                        if(($position || $unit_id) && $additional_position_info) { echo '; '; }
+                                                        if($additional_position_info) { echo $additional_position_info; }
                                                     ?>
                                                 </h6>
 

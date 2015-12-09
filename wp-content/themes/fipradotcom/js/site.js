@@ -259,5 +259,14 @@
         }
     });
 
+//    Hide contact forms on Contact Us page
+    $('.contact-us-form').hide();
+//    Contact Us page buttons reveal forms
+    $('.contact-us-form-reveal-button').on('click', function()
+    {
+        $(this).parent().next('.contact-us-form').slideToggle(300);
+        return false;
+    })
+
 })(jQuery);
 

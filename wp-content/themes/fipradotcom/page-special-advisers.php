@@ -75,7 +75,6 @@ get_header(); ?>
                                         </div>
                                         <div class="person-details">
                                             <h4 class="no-margin"><a href="<?= get_the_permalink(); ?>"><?= get_field('first_name'); ?> <?= get_field('last_name'); ?></a></h4>
-                                            <h6><?php echo get_field('special_adviser_location') ? get_field('special_adviser_location') : ''; ?></h6>
 
                                             <div class="btn-container">
                                                 <a href="<?= get_the_permalink(); ?>" class="btn">

@@ -296,23 +296,26 @@ function get_units_by_continent($continent_id) {
     $args = [
         'post_type' => 'unit',
         'post_status' => 'publish',
-//        'meta_key' => 'last_name',
-        'orderby' => 'title',
-        'order' => 'ASC',
         'posts_per_page' => -1,
+        'meta_key' => 'sticky',
+        'orderby' => ['meta_value_num' => 'DESC', 'title' => 'ASC'],
         'meta_query' => [
+            'relation' => 'AND',
             [
                 'key'     => 'continent',
                 'value'   => $continent_id,
-                'compare' => 'LIKE',
+                'compare' => '=',
             ]
         ]
     ];
 
+//    Add a filter that allows Wordpress to orderby two meta values, then remove it after querying
     $units = new WP_Query($args);
+
     wp_reset_postdata();
 
     return $units;
+
 }
 
 function get_all_jobs($close_in_the_future = true) {

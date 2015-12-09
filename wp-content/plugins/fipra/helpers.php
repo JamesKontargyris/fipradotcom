@@ -35,12 +35,15 @@ function layout_fipriot_team_member($post_id, $expertise = false, $unit = true, 
                 } else {
                     $position_title = get_field('position', $post_id);
                     $unit_id = get_field('unit', $post_id) ? get_field('unit', $post_id)[0] : "";
-//                    Fipriot has either a position or unit assigned?
+                    $additional_position_info = get_field('additional_position_info');
+//                    Fipriot has either a position, unit or additional position info assigned?
                     if($position_title || $unit_id) {
                         $string .= '<h6>';
                             if($position && $position_title) { $string .= $position_title; };
                             if($position_title && $unit_id) { $string .= '<br>'; }
                             if($unit && $unit_id) { $string .= fiprafy_unit_name(get_the_title($unit_id)); }
+                            if(($position_title || $unit_id) && $additional_position_info) { $string .= ', '; }
+                            if($additional_position_info) { $string .= $additional_position_info; }
                         $string .= '</h6>';
                     }
                 }
@@ -170,7 +173,7 @@ function make_class_name($string, $prefix = '', $suffix = '') {
 }
 
 function fiprafy_unit_name($unit_name) {
-    return 'Fipra ' . str_ireplace('fipra', '', $unit_name);
+    return trim('Fipra ' . str_ireplace('fipra', '', $unit_name));
 }
 
 function get_lead_paragraph($text) {

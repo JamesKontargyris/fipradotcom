@@ -17,7 +17,7 @@ get_header(); ?>
         <?php $post_id = get_the_ID(); ?>
         <?php
         // Assign variables
-        $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $unit_id = get_field('unit') ? get_field('unit')[0] : "";
+        $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $unit_id = get_field('unit') ? get_field('unit')[0] : ""; $additional_position_info = get_field('additional_position_info');
         ?>
 
         <div id="contact-form-block" class="full-width-block-container content-bar-bottom">
@@ -51,7 +51,10 @@ get_header(); ?>
                             <?php
                             echo $position;
                             if($position && $unit_id) { echo ', '; } ?>
-                            <a href="<?php echo get_the_permalink($unit_id); ?>"><?php echo $unit_id ? fiprafy_unit_name(get_the_title($unit_id)) : ''; ?></a>
+<!--                            <a href="--><?php //echo get_the_permalink($unit_id); ?><!--">-->
+                                <?php echo $unit_id ? fiprafy_unit_name(get_the_title($unit_id)) : ''; ?>
+<!--                            </a>--><?php if(($position || $unit_id) && $additional_position_info) { echo '; '; }
+                            if($additional_position_info) { echo $additional_position_info; } ?>
                         </h4>
                     <?php endif; ?>
 
