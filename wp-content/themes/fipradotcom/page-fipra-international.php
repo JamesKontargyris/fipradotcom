@@ -19,7 +19,7 @@ get_header(); ?>
 
         <?php the_content(); ?>
 
-        <?php $international_unit_id = get_id_by_slug('fipra-international', 'unit') ? get_id_by_slug('fipra-international', 'unit') : 0; // get the ID of the Fipra International unit post type based on the 'international' slug ?>
+        <?php $international_unit_id = get_id_by_slug('international', 'unit') ? get_id_by_slug('international', 'unit') : 0; // get the ID of the Fipra International unit post type based on the 'international' slug ?>
         <?php $fipriots = get_all_fipriots_by_unit($international_unit_id); // get all Fipriots assigned to Fipra International ?>
         <?php $filter_group = 'fipra_international_profiles'; // used by our_people_filters.php to show the correct filters for the page ?>
 
