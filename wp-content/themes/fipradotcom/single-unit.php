@@ -27,7 +27,7 @@ get_header(); ?>
                     <?php if( get_field('team') ) : ?>
                         <li class="hide-s"><a class="jump-to-link" href="#our-team">Our Team <i class="icon-down-open"></i></a></li>
                     <?php endif; ?>
-                    <li class="hide-s hide-m"><a class="jump-to-link" href="#get-in-touch">Get in Touch <i class="icon-down-open"></i></a></li>
+                    <li class="hide-s hide-m"><a class="jump-to-link" href="#get-in-touch">First Point of Contact <i class="icon-down-open"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -107,7 +107,7 @@ get_header(); ?>
 
                                         <a href="<?= get_the_permalink($lead->ID); ?>">
                                             <?php if ( has_post_thumbnail($lead->ID) ) : ?>
-                                                <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id( $lead->ID ), 'profile-photo' )[0]; ?>" alt="<?= $lead->first_name . ' ' . $lead->last_name ?>" title="<?= $lead->first_name . ' ' . $lead->last_name ?>" style="background-color:white;"/>
+                                                <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id( $lead->ID ), 'profile-photo' )[0]; ?>" alt="<?= $lead->first_name . ' ' . $lead->last_name ?>" title="<?= $lead->first_name . ' ' . $lead->last_name ?>" class="photo-tile"/>
                                             <?php endif; ?>
                                             <strong><?= $lead->first_name . ' ' . $lead->last_name ?></strong>
                                         </a>

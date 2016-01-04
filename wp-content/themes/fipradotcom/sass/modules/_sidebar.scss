@@ -27,6 +27,10 @@ ul.sidebar-list {
   padding: $v-rhythm em(12px);
   margin-bottom: $v-rhythm;
 
+  @include media(max-width $media__medium) {
+    h5 { text-align:center; }
+  }
+
     &.ribbon {
       @include media($media__medium) {
         padding: $v-rhythm * 3 em(12px) $v-rhythm em(12px);
@@ -40,16 +44,18 @@ ul.sidebar-list {
     .sidebar-contact {
       margin-top:$v-rhythm; border-top:1px solid lighten($color__fipra-blue-gray, 10%); padding-top: $v-rhythm;
 
+
       &:first-child { border:0; padding-top:0; }
 
       img { max-width: 100px; display:block; margin-bottom:$v-rhythm;
         @include radial-gradient(white, $color__fipra-light-gray);
-        @include media($media__xlarge) { float:left; margin-right:em(18px); }
+        @include media($media__medium) { float:left; margin-right:em(18px); }
       }
 
-      @include media(min-width $media__small max-width $media__medium) {
-        @include span-columns(6); @include omega(2n);
-        border:0; padding-top:0;
+      @include media(max-width $media__medium) {
+        width:100%; text-align:center;
+        h5 { text-align:center; }
+        img { max-width:150px; margin:0 auto 10px auto; }
       }
     }
 

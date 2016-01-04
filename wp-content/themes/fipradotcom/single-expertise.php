@@ -52,7 +52,7 @@ get_header(); ?>
 
                                         <a href="<?= get_the_permalink($lead->ID); ?>">
                                             <?php if ( has_post_thumbnail($lead->ID) ) : ?>
-                                                    <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id( $lead->ID ), 'profile-photo' )[0]; ?>" alt="<?= $lead->first_name . ' ' . $lead->last_name ?>" title="<?= $lead->first_name . ' ' . $lead->last_name ?>" style="background-color:white;"/>
+                                                    <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id( $lead->ID ), 'profile-photo' )[0]; ?>" alt="<?= $lead->first_name . ' ' . $lead->last_name ?>" title="<?= $lead->first_name . ' ' . $lead->last_name ?>" class="photo-tile"/>
                                             <?php endif; ?>
                                             <strong><?= $lead->first_name . ' ' . $lead->last_name ?></strong>
                                         </a>

@@ -4319,6 +4319,9 @@ ul.sidebar-list {
     color: white; }
     .sidebar-contacts-container a:hover {
       opacity: 0.7; }
+  @media screen and (max-width: 801px)  {
+    .sidebar-contacts-container h5 {
+      text-align: center; } }
   @media screen and (min-width: 801px) {
     .sidebar-contacts-container.ribbon {
       padding: 2.25rem 0.75em 0.75rem 0.75em;
@@ -4340,24 +4343,19 @@ ul.sidebar-list {
       background-color: white;
       background-image: -webkit-radial-gradient(white, #dde0e1);
       background-image: radial-gradient(  white, #dde0e1); }
-      @media screen and (min-width: 1400px) {
+      @media screen and (min-width: 801px) {
         .sidebar-contacts-container .sidebar-contacts-group .sidebar-contact img {
           float: left;
           margin-right: 1.125em; } }
-    @media screen and (min-width: 481px) and (max-width: 801px)  {
+    @media screen and (max-width: 801px)  {
       .sidebar-contacts-container .sidebar-contacts-group .sidebar-contact {
-        float: left;
-        display: block;
-        margin-right: 4.2434%;
-        width: 47.8783%;
-        border: 0;
-        padding-top: 0; }
-        .sidebar-contacts-container .sidebar-contacts-group .sidebar-contact:last-child {
-          margin-right: 0; }
-        .sidebar-contacts-container .sidebar-contacts-group .sidebar-contact:nth-child(2n) {
-          margin-right: 0; }
-        .sidebar-contacts-container .sidebar-contacts-group .sidebar-contact:nth-child(2n+1) {
-          clear: left; } }
+        width: 100%;
+        text-align: center; }
+        .sidebar-contacts-container .sidebar-contacts-group .sidebar-contact h5 {
+          text-align: center; }
+        .sidebar-contacts-container .sidebar-contacts-group .sidebar-contact img {
+          max-width: 150px;
+          margin: 0 auto 10px auto; } }
 
 /*--------------------------------------------------------------
 # Widgets
