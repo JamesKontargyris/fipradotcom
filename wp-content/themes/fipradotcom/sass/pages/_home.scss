@@ -54,9 +54,10 @@
     }
     .full-width-block-content {
       .blurb { @include font-size(18); }
-      @include media(max-width $media__small) {
+      @include media(max-width $media__medium) {
         .home-hero-title-and-blurb { margin-bottom:20px; }
-        .blurb { display:none; }
+        .home-hero-link a { display:block; margin:0 0 6px 0; }
+        .blurb { @include font-size(16); line-height:1.3; }
       }
 
       @include media(max-width $media__medium) {

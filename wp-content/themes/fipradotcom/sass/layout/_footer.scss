@@ -62,10 +62,11 @@
 
     .footer-section {
       @include span-columns(12);
-      padding:$v-rhythm * 2 em(24px) $v-rhythm * 2 0;
+      padding:$v-rhythm * 2 em(24px) 0 0;
       @include font-size(14);
       @include media($media__medium) {
         @include span-columns(4);
+        padding-bottom: $v-rhythm * 2;
       }
     }
   }

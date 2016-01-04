@@ -218,9 +218,13 @@
         if($(window).width() >= 769) {
             //Make menu-titles in anchor links lists the same width, if more than one is present on the page
             $('.anchor-links-list .menu-title').matchWidths();
+            //Desktop header isn't sticky
+            $("#header-container").unstick();
         } else {
             //Otherwise if screen is smaller than 769px width, set .menu-title widths to auto
             $('.anchor-links-list .menu-title').css('width', 'auto');
+            //Mobile header sticks to top of page on scroll
+            $("#header-container").sticky({topSpacing:0});
         }
 
     }).resize();

@@ -17,6 +17,7 @@
 
 #header-container {
   @include clearfix;
+  z-index:99999;
   background-color: white;
   @include media($media__medium) { background-color: $color__fipra-lighter-gray; }
 //  @include linear-gradient(white 90%, darken(white, 5%) 100%);
