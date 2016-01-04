@@ -198,9 +198,9 @@ function areas_of_expertise_menu_and_list_sc() {
                                     $string .= '</h4>';
                                 $string .= '</div>';
                                 $string .= '<div class="entry-content">';
-                                    $string .= get_field('long_summary') . '<br><br>';
+                                    $string .= get_field('long_summary');
                                     if(get_field('link_to_page')) {
-                                        $string .= '<p><a href="' . get_the_permalink() . '" class="btn primary">Read more</a></p>';
+                                        $string .= '<p style="padding-top:24px"><a href="' . get_the_permalink() . '" class="btn primary">Read more</a></p>';
                                     }
                                 $string .= '</div>';
                             $string .= '</div>';
