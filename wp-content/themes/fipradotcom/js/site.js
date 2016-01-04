@@ -50,6 +50,8 @@
         });
     }
 
+
+
     //Display/hide mobile menu when .mobile-menu-toggle is tapped
     $('.mobile-menu-toggle').on('click', function()
     {
@@ -114,7 +116,7 @@
     $(".jump-to-link").click(function(e) {
         if($(this).attr('rel') != "modal:open")
         {
-            e.preventDefault(); var dest = $(this).attr('href'); $('html,body').animate({ scrollTop: $(dest).offset().top - 20 }, 'slow');
+            e.preventDefault(); var dest = $(this).attr('href'); $('html,body').animate({ scrollTop: $(dest).offset().top - 80 }, 'slow');
         }
     });
 
@@ -218,13 +220,9 @@
         if($(window).width() >= 769) {
             //Make menu-titles in anchor links lists the same width, if more than one is present on the page
             $('.anchor-links-list .menu-title').matchWidths();
-            //Desktop header isn't sticky
-            $("#header-container").unstick();
         } else {
             //Otherwise if screen is smaller than 769px width, set .menu-title widths to auto
             $('.anchor-links-list .menu-title').css('width', 'auto');
-            //Mobile header sticks to top of page on scroll
-            $("#header-container").sticky({topSpacing:0});
         }
 
     }).resize();

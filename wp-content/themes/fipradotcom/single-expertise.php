@@ -22,9 +22,8 @@ get_header(); ?>
             <div class="row content-area">
                 <ul class="anchor-links-list no-margin no-bullet">
                     <li class="menu-title menu-title-toggle"><i class="icon-menu-1"></i> Jump to...</li>
-                    <li class="hide-s"><a class="jump-to-link" href="#staff-menu-container">Practice Staff <i class="icon-down-open"></i></a></li>
-                    <li class="hide-s hide-m"><a class="jump-to-link" href="#practice-lead">Practice Lead <i class="icon-down-open"></i></a></li>
-                    <li class="hide-s"><a class="jump-to-link" href="#expertise-menu-container">More of our Expertise <i class="icon-down-open"></i></a></li>
+                    <li class="hide-s hide-m"><a class="jump-to-link" href="#get-in-touch">First Point of Contact <i class="icon-down-open"></i></a></li>
+                    <li class="hide-s"><a class="jump-to-link" href="#team-menu-container">Practice Staff <i class="icon-down-open"></i></a></li>
                 </ul>
             </div>
         </div>

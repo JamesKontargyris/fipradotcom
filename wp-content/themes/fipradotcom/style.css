@@ -676,6 +676,15 @@ table:not(.no-style) {
       #mobile-search-container #mobile-search form#searchform input[type=text] {
         width: 100%; }
 
+#sticky-header {
+  z-index: 999; }
+  @media screen and (max-width: 801px)  {
+    #sticky-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%; } }
+
 #header-container {
   z-index: 99999;
   background-color: white; }
@@ -2384,6 +2393,9 @@ ul.team-member-expertise {
     clear: both;
     content: "";
     display: table; }
+  @media screen and (max-width: 801px)  {
+    #content-container {
+      padding-top: 64px; } }
   #content-container.with-border {
     padding-top: 0.75rem;
     border-top: 1px solid #dde0e1; }
