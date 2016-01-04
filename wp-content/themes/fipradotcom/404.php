@@ -7,50 +7,35 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div id="content-container" class="with-border">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'fipradotcom' ); ?></h1>
-				</header><!-- .page-header -->
+	<div id="site-content-container">
 
-				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'fipradotcom' ); ?></p>
+		<div id="site-content">
 
-					<?php get_search_form(); ?>
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main" role="main">
 
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+					<section class="error-404 not-found">
+						<header class="page-header">
+							<h1 class="page-title"><?php _e( 'Sorry, that page can&rsquo;t be found.', 'fipradotcom' ); ?></h1>
+						</header><!-- .page-header -->
 
-					<?php if ( fipradotcom_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php _e( 'Most Used Categories', 'fipradotcom' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-					<?php endif; ?>
+						<div class="page-content">
+							<p><?php _e( 'Please use the site navigation and/or search tools above, or go back to the home page.', 'fipradotcom' ); ?></p>
 
-					<?php
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'fipradotcom' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-					?>
+							<p><a href="/" class="btn primary">Back to home page</a></p>
 
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+						</div><!-- .page-content -->
+					</section><!-- .error-404 -->
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+				</main><!-- #main -->
+			</div><!-- #primary -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</div>
+
+	</div>
+
+</div>
 
 <?php get_footer(); ?>
