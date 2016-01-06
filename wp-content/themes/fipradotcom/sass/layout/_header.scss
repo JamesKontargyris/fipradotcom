@@ -70,10 +70,11 @@
         z-index:5;
         float:left;
         color:white;
+        border-radius: 0 0 6px 6px;
         background-color: $color__fipra-blue;
         padding:$v-rhythm em(12) $v-rhythm / 2 em(12);
         @include transition(all 0.2s ease-out);
-//        @include linear-gradient($color__fipra-blue 60%, darken($color__fipra-blue, 7%) 100%);
+        @include linear-gradient($color__fipra-blue 60%, darken($color__fipra-blue, 7%) 100%);
         &.reverse-background { @include linear-gradient(darken($color__fipra-blue-gray, 15%) 0%, $color__fipra-blue-gray 25%);}
         &:hover {
           padding-top:$v-rhythm * 1.5;

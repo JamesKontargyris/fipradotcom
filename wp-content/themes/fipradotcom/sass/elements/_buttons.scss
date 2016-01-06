@@ -1,5 +1,6 @@
 .btn, .btn:link, .btn:visited {
   display:inline-block;
+  border-radius:3px;
   @include font-size(16);
   color:$color__fipra-blue;
   &:hover { color: $color__fipra-blue-gray; }
@@ -19,12 +20,12 @@
     color: white;
     text-shadow:0px -1px 0px darken($color__fipra-blue, 30%);
     @include transition(all 0.2s);
-//    border-bottom:2px solid darken($color__fipra-blue, 20%);
+    border-bottom:2px solid darken($color__fipra-blue, 15%);
     &:hover { opacity:0.7; color:white; }
 
     &.btn-white {
       text-shadow:0px -1px 0px darken(white, 15%);
-//      border-bottom:2px solid darken(white, 30%);
+      border-bottom:2px solid darken(white, 30%);
       background-color: white; color:$color__fipra-blue;
     }
   }

@@ -125,7 +125,7 @@
 
     $('.global-network-button').on('click', function(e) {
         e.preventDefault();
-        ($(this).html() == '<i class="icon-globe"></i> Explore our Network') ? $(this).html('<i class="icon-cancel"></i> Close') : $(this).html('<i class="icon-globe"></i> Explore our Global Network');
+        ($(this).html() == '<i class="icon-globe"></i> Explore our Network') ? $(this).html('<i class="icon-cancel"></i> Close') : $(this).html('<i class="icon-globe"></i> Explore our Network');
         $(this).toggleClass('reverse-background');
         $('#header-container').toggleClass('with-border');
        $('#global-network-menu-container').slideToggle(300);
