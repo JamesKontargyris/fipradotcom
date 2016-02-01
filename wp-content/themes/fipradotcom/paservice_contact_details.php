@@ -10,18 +10,9 @@ $name = get_field('first_name', $id) . ' ' . get_field('last_name', $id);
 <?php endif; ?>
 
 <div class="details">
-    <span style="font-weight: bold;"><?= $name ?></span>
-    <!--TODO update unit name-->
-    <br><span style="font-weight: bold;"><?= get_field('position', $id); ?>, Unit name</span>
-
     <?php $tel = get_field('tel', $id); ?>
     <?php if($tel) : ?>
         <br><span class="font-14">Tel. <?= get_field('tel', $id) ?></span>
-    <?php endif; ?>
-
-    <?php $mobile = get_field('mobile', $id); ?>
-    <?php if($mobile) : ?>
-<!--        <br><span class="font-14">Mob. --><?//= get_field('mobile', $id) ?><!--</span>-->
     <?php endif; ?>
 
     <?php $fax = get_field('fax', $id); ?>
