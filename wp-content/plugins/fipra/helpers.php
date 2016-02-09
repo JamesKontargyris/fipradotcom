@@ -182,7 +182,8 @@ function get_lead_paragraph($text) {
 
 function bio_minus_lead_paragraph($text) {
     $lead_para = trim(get_lead_paragraph($text));
-    $new_text = str_replace($lead_para, '', $text);
+    $text = strip_tags($text);
+    $new_text = str_ireplace($lead_para, '', $text);
 
     return $new_text;
 }
