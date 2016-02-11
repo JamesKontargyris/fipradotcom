@@ -423,8 +423,8 @@ p.center {
   text-align: center; }
 @media screen and (min-width: 801px) {
   p.narrow {
-    padding-left: 12.7074em;
-    padding-right: 12.7074em; } }
+    padding-left: 8.4716em;
+    padding-right: 8.4716em; } }
 p.small {
   font-size: 14px;
   font-size: 0.875rem; }

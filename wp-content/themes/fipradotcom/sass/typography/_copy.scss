@@ -75,8 +75,8 @@ p {
   }
   &.narrow {
     @include media($media__medium) {
-      padding-left:$column * 3;
-      padding-right:$column * 3;
+      padding-left:$column * 2;
+      padding-right:$column * 2;
     }
   }
   &.small { @include font-size(14); }
