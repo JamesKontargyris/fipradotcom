@@ -176,40 +176,40 @@ function areas_of_expertise_menu_and_list_sc() {
                 $string .= '<div class="row">';
                     $string .= '<div class="col-5-l">';
                         $string .= '<ul class="menu-list with-line" data-entry-group="1">';
-                            $i = 0; while ( $expertise_areas->have_posts() ) : $expertise_areas->the_post(); $i++;
+                            $i = 0; foreach ( $expertise_areas->get_posts() as $expertise_area ) : $i++; $expertise_id = $expertise_area->ID;
                             $class_active = ($i == 1) ? 'class="active"' : '';
                             $string .= '<li ' . $class_active . '><a href="#entry-' . $i . '">';
-                            $string .= '<div class="svg-icon margin-r">' .file_get_contents(get_field('icon')) . '</div>';
-                            $string .= get_the_title();
+                            $string .= '<div class="svg-icon margin-r">' .file_get_contents(get_field('icon', $expertise_id)) . '</div>';
+                            $string .= get_the_title($expertise_id);
                             $string .= '</a></li>';
-                            endwhile;
+                            endforeach;
                         $string .= '</ul>';
                     $string .= '</div>';
 
                     $string .= '<div class="col-7-l entry-group" id="entry-group-1">';
                         $i = 0; $expertise_areas->rewind_posts(); // start again at the beginning
-                        while ( $expertise_areas->have_posts() ) : $expertise_areas->the_post(); $i++;
-                            $string .= '<div class="entry" id="entry-' . $i . '">';
-                                $string .= '<div class="entry-title">';
-                                    $string .= '<h4 class="no-margin">';
-                                        $string .= '<div class="svg-icon margin-r">' . file_get_contents(get_field('icon')) . '</div>';
-                                        $string .= get_the_title();
-                                        $string .= '<i class="icon-toggle icon-down-open"></i>';
-                                    $string .= '</h4>';
+                            foreach ( $expertise_areas->get_posts() as $expertise_area ) : $i++; $expertise_id = $expertise_area->ID;
+                                $string .= '<div class="entry" id="entry-' . $i . '">';
+                                    $string .= '<div class="entry-title">';
+                                        $string .= '<h4 class="no-margin">';
+    //                                        $string .= '<div class="svg-icon margin-r">' . file_get_contents(get_field('icon')) . '</div>';
+                                            $string .= get_the_title($expertise_id);
+                                            $string .= '<i class="icon-toggle icon-down-open"></i>';
+                                        $string .= '</h4>';
+                                    $string .= '</div>';
+                                    $string .= '<div class="entry-content">';
+                                        $string .= get_field('long_summary', $expertise_id);
+                                        if(get_field('link_to_page', $expertise_id)) {
+                                            $string .= '<p style="padding-top:24px"><a href="' . get_the_permalink($expertise_id) . '" class="btn primary">Read more</a></p>';
+                                        }
+                                    $string .= '</div>';
                                 $string .= '</div>';
-                                $string .= '<div class="entry-content">';
-                                    $string .= get_field('long_summary');
-                                    if(get_field('link_to_page')) {
-                                        $string .= '<p style="padding-top:24px"><a href="' . get_the_permalink() . '" class="btn primary">Read more</a></p>';
-                                    }
-                                $string .= '</div>';
-                            $string .= '</div>';
-                        endwhile;
+                            endforeach;
                     $string .= '</div>';
                 $string .= '</div>';
         $string .= '</div>';
     } else {
-        $string .= '<span style="text-align: center">Coming soon</span>';
+        $string .= '<span style="text-align: center">Areas of Expertise coming soon</span>';
     }
 
     return $string;
