@@ -143,24 +143,6 @@ get_header(); ?>
 
             </div><!-- #content -->
 
-            <!--            START: team-menu-container -->
-            <?php $team = get_all_fipriots_by_unit($unit_id); ?>
-            <?php if($team->have_posts()) : ?>
-                <section id="team-menu-container" class="full-width-block-container">
-                    <div class="full-width-block-content-container light-grey">
-                        <div class="full-width-block-content">
-                            <h3 id="staff" class="upper small center">Our Team</h3>
-                            <div id="our-team-carousel" class="team-carousel with-controls" data-number-of-items="<?php echo $team->found_posts; ?>">
-                                <?php while($team->have_posts()) : $team->the_post(); ?>
-                                    <?php echo layout_fipriot_team_member(get_the_ID(), false, false, true); ?>
-                                <?php endwhile; ?>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            <?php endif; ?>
-            <!--            END: team-menu-container -->
-
         <?php endwhile; endif; ?>
 
     </div><!-- #site-content-container -->
