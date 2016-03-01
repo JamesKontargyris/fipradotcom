@@ -60,7 +60,7 @@ get_header(); ?>
 
                                     <?php
 //                                        Assign variables
-                                    $first_name = get_field('first_name'); $last_name = get_field('last_name');
+                                    $first_name = get_field('first_name'); $last_name = get_field('last_name'); $expertise = get_field('special_adviser_expertise');
                                     ?>
 
                                     <div class="person <?php echo trim($expertise_filter_names) . ' surname-' . substr($last_name, 0, 1); ?>">
@@ -75,6 +75,8 @@ get_header(); ?>
                                         </div>
                                         <div class="person-details">
                                             <h4 class="no-margin"><a href="<?= get_the_permalink(); ?>"><?= get_field('first_name'); ?> <?= get_field('last_name'); ?></a></h4>
+
+                                            <h6> <?php if ($expertise) { echo $expertise; } ?> </h6>
 
                                             <div class="btn-container">
                                                 <a href="<?= get_the_permalink(); ?>" class="btn">
@@ -109,9 +111,7 @@ get_header(); ?>
                                                     <?php endif; ?>
                                                     <tr>
                                                         <td colspan="2">
-                                                            <!--TODO update contact form link-->
-                                                            <a href="#">Email <?=
-                                                                get_field('first_name'); ?></a>
+                                                            <a href="/contact-fipriot?person=<?php echo get_field('first_name') ?><?php echo get_field('last_name') ?>&fipriot_id=<?php the_ID(); ?>">Contact <?php echo $first_name; ?></a>
                                                         </td>
                                                     </tr>
                                                 </table>

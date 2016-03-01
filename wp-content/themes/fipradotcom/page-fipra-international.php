@@ -122,8 +122,7 @@ get_header(); ?>
                                                         <?php endif; ?>
                                                         <tr>
                                                             <td colspan="2">
-                                                                <!--TODO update contact form link-->
-                                                                <a href="#">Email <?php echo $first_name; ?></a>
+                                                                <a href="/contact-fipriot?person=<?php echo get_field('first_name') ?><?php echo get_field('last_name') ?>&fipriot_id=<?php the_ID(); ?>">Contact <?php echo $first_name; ?></a>
                                                             </td>
                                                         </tr>
                                                     </table>

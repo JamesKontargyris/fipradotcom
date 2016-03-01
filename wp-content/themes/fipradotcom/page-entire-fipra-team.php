@@ -85,11 +85,17 @@ get_header(); ?>
 
                                                 <h6>
                                                     <?php
-                                                        echo $position;
-                                                        if($position && $unit_id) { echo ', '; }
-                                                        echo $unit_id ? fiprafy_unit_name(get_the_title($unit_id)) : '';
-                                                        if(($position || $unit_id) && $additional_position_info) { echo '; '; }
-                                                        if($additional_position_info) { echo $additional_position_info; }
+                                                        if(!get_field('is_special_adviser'))
+                                                        {
+                                                            echo $position;
+                                                            if($position && $unit_id) { echo ', '; }
+                                                            echo $unit_id ? fiprafy_unit_name(get_the_title($unit_id)) : '';
+                                                            if(($position || $unit_id) && $additional_position_info) { echo '; '; }
+                                                            if($additional_position_info) { echo $additional_position_info; }
+                                                        } else {
+                                                            echo 'Special Adviser';
+                                                            echo get_field("special_adviser_expertise") ? ", " . get_field("special_adviser_expertise") : "";
+                                                        }
                                                     ?>
                                                 </h6>
 
@@ -122,8 +128,7 @@ get_header(); ?>
                                                         <?php endif; ?>
                                                         <tr>
                                                             <td colspan="2">
-                                                                <!--TODO update contact form link-->
-                                                                <a href="#">Email <?php echo $first_name; ?></a>
+                                                                <a href="/contact-fipriot?person=<?php echo get_field('first_name') ?><?php echo get_field('last_name') ?>&fipriot_id=<?php the_ID(); ?>">Contact <?php echo $first_name; ?></a>
                                                             </td>
                                                         </tr>
                                                     </table>
