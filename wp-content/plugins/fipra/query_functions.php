@@ -50,15 +50,8 @@ function get_all_spads() {
         'post_type' => 'fipriot',
         'post_status' => 'publish',
         'posts_per_page' => -1,
-        'meta_key' => 'is_senior',
+        'orderby' => 'menu_order',
         'meta_query' => [
-            'relation' => 'AND',
-            [
-                'key' => 'is_senior'
-            ],
-            [
-                'key' => 'last_name'
-            ],
             [
                 'key'     => 'is_special_adviser',
                 'value'   => '1',
@@ -68,9 +61,9 @@ function get_all_spads() {
     ];
 
 //    Add a filter that allows Wordpress to orderby two meta values, then remove it after querying
-    add_filter('posts_orderby','orderby_two_meta_values');
+//    add_filter('posts_orderby','orderby_two_meta_values');
     $spads = new WP_Query($args);
-    remove_filter('posts_orderby','orderby_two_meta_values');
+//    remove_filter('posts_orderby','orderby_two_meta_values');
 
     wp_reset_postdata();
 
