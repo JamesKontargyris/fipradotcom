@@ -153,7 +153,7 @@
     });
     $("#home-hero-carousel").owlCarousel({
         singleItem:true,
-        autoPlay: 5000,
+        autoPlay: 8000,
         transitionStyle: "fade",
         pagination:true
     });
