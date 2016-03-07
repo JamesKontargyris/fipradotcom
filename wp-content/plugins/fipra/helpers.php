@@ -168,7 +168,8 @@ function make_class_name($string, $prefix = '', $suffix = '') {
         if($suffix) $suffix = '-' . $suffix;
         $full_string = $prefix . $string . $suffix;
 
-        return str_replace(' ', '-', strtolower($full_string));
+        // keep letters, numbers and underscores only
+        return preg_replace('/\W+/', '_', $full_string);
     }
 }
 

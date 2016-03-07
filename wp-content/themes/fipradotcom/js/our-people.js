@@ -32,6 +32,7 @@
             /* cache a reference to the current .media (you're using it twice) */
             var _this = $(this);
             var title = _this.find('h4').text().toLowerCase();
+            var expertise = _this.find('h6').text().toLowerCase();
 
             /*
              title and filter are normalized in lowerCase letters
@@ -42,7 +43,7 @@
 
             // Loop through all the words in the array and hide the div if not found
             for (var i = 0; i < arrayLength; i++) {
-                if (title.indexOf(filter_array[i]) < 0) {
+                if (title.indexOf(filter_array[i]) < 0 && expertise.indexOf(filter_array[i]) < 0) {
                     _this.removeClass('text-filter-show');
                     hidden = 1;
                 }

@@ -1,6 +1,6 @@
 <div class="page-nav grey">
     <div class="row content-area">
-        <div class="col-9-m no-margin">
+        <div class="col-7-m no-margin">
             <ul class="anchor-links-list no-margin no-bullet">
                 <li class="menu-title inline-s">Filter by</li>
                 <?php if(isset($filter_group) && $filter_group != 'fipra_international_profiles') : ?>
@@ -10,8 +10,8 @@
                 <li class="inline-s"><a href="#" class="filter-group-trigger surname-trigger" data-filter-group="#surname-filter-group">Surname <i class="icon-down-open"></i></a></li>
             </ul>
         </div>
-        <div class="col-3-m no-margin hide-s">
-            <input type="text" id="text-filter" placeholder="Type to filter..." />
+        <div class="col-5-m no-margin hide-s">
+            <input type="text" id="text-filter" placeholder="Search by name, position, country..." />
         </div>
     </div>
 </div>
