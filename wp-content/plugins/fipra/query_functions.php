@@ -50,7 +50,8 @@ function get_all_spads() {
         'post_type' => 'fipriot',
         'post_status' => 'publish',
         'posts_per_page' => -1,
-        'orderby' => 'menu_order',
+        'orderby' => 'meta_value',
+        'meta_key' => 'last_name',
         'meta_query' => [
             [
                 'key'     => 'is_special_adviser',
@@ -86,6 +87,18 @@ function get_all_spad_expertise_areas() {
     sort($expertise_areas);
 
     return $expertise_areas;
+}
+
+function autocomplete_spad_expertise() {
+    $expertise_areas = get_all_spad_expertise_areas();
+    $autocomplete_data = [];
+
+    foreach($expertise_areas as $area)
+    {
+        $autocomplete_data[] = ['value' => $area, 'data' => $area];
+    }
+
+    return json_encode($autocomplete_data);
 }
 
 function get_all_fipriots_by_unit($unit_id = 0, $include_spads = false) {

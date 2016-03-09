@@ -270,5 +270,15 @@
         return false;
     })
 
+//    Show the back to top link after scrolling 800px
+    $(document).scroll(function() {
+        var y = $(this).scrollTop();
+        if (y > 800) {
+            $('.button-back-to-top').fadeIn();
+        } else {
+            $('.button-back-to-top').fadeOut();
+        }
+    });
+
 })(jQuery);
 

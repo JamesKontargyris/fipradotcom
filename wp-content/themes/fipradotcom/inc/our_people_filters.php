@@ -2,12 +2,12 @@
     <div class="row content-area">
         <div class="col-7-m no-margin">
             <ul class="anchor-links-list no-margin no-bullet">
-                <li class="menu-title inline-s">Filter by</li>
+<!--                <li class="menu-title inline-s">Filter by</li>-->
                 <?php if(isset($filter_group) && $filter_group != 'fipra_international_profiles') : ?>
                     <li class="inline-s"><a href="#" class="filter-group-trigger unit-trigger" data-filter-group="#units-filter-group">Unit <i class="icon-down-open"></i></a></li>
                 <?php endif; ?>
 <!--                <li class="inline-s"><a href="#" class="filter-group-trigger expertise-trigger" data-filter-group="#expertise-filter-group">Expertise Area <i class="icon-down-open"></i></a></li>-->
-                <li class="inline-s"><a href="#" class="filter-group-trigger surname-trigger" data-filter-group="#surname-filter-group">Surname <i class="icon-down-open"></i></a></li>
+                <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#surname-filter-group">Surname <i class="icon-down-open"></i></a></li>
             </ul>
         </div>
         <div class="col-5-m no-margin hide-s">
@@ -47,7 +47,7 @@
                     <ul class="filter-list no-margin no-bullet">
                         <?php if($continent_units->found_posts > 0) : ?>
                             <?php while ( $continent_units->have_posts() ) : $continent_units->the_post(); ?>
-                                <li><a href="#" class="filter" data-filter=".<?php echo make_class_name(get_the_title()); ?>" data-filtering-on-text="<?php the_title(); ?>"><?php the_title(); ?></a></li>
+                                <li class="filterable"><a href="#" class="filter" data-filter=".<?php echo make_class_name(get_the_title()); ?>" data-filtering-on-text="<?php the_title(); ?>"><?php the_title(); ?></a></li>
                             <?php endwhile; ?>
                         <?php else : ?>
                             <li class="inline-s">No filters available</li>
@@ -78,19 +78,19 @@
 <!--    </div>-->
 <!--    END: Expertise Area filters-->
 
-    <!--    START: Surname filters-->
+    <!--    START: Surname jump-->
     <div id="surname-filter-group" class="page-nav with-padding dark-grey filter-group hide">
         <div class="row content-area">
             <div class="filter-list-container">
                 <ul class="filter-list no-margin no-bullet">
                     <?php $alphabet = range('A', 'Z'); ?>
                     <?php foreach($alphabet as $letter) : ?>
-                        <li><a href="#" class="filter" data-filter=".surname-<?php echo $letter; ?>" data-filtering-on-text="Surnames beginning with <?php echo $letter; ?>"><?php echo $letter; ?></a></li>
+                        <li><a href="#surname-<?php echo $letter; ?>" class="filter jump-to-surname" data-surname-letter="<?php echo $letter; ?>"><?php echo $letter; ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
         </div>
     </div>
-    <!--    END: Surname filters-->
+    <!--    END: Surname jump-->
 
 </div>

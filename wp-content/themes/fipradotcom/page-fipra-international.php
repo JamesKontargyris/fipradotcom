@@ -33,6 +33,8 @@ get_header(); ?>
 
                     <main id="main" class="site-main" role="main">
 
+                        <a href="#page" class="button-back-to-top jump-to-link"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" width="12" height="12"> Top</a>
+
                         <?php if ( $fipriots->have_posts() ) : ?>
 
                             <!--                    Used by jQuery to update filtering-on-title when clear filter button is clicked -->
@@ -70,7 +72,7 @@ get_header(); ?>
                                             $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $additional_position_info = get_field('additional_position_info');
                                         ?>
 
-                                        <div class="person <?php echo trim($unit_filter_name) . ' ' . trim($expertise_filter_names) . ' surname-' . substr($last_name, 0, 1); ?>">
+                                        <div id="surname-<?php echo substr($last_name, 0, 1); ?>" class="person <?php echo trim($unit_filter_name) . ' ' . trim($expertise_filter_names) . ' surname-' . substr($last_name, 0, 1); ?>">
                                             <div class="person-profile-photo">
                                                 <a href="<?php echo get_the_permalink(); ?>">
                                                     <?php if ( has_post_thumbnail() ) : ?>

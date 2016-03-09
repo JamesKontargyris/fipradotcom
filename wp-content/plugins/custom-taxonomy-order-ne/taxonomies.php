@@ -3,6 +3,13 @@
 
 function custom_taxonomy_order() {
 
+	// Set your custom capability through this filter.
+	$custom_cap = apply_filters( 'customtaxorder_custom_cap', 'manage_categories' );
+
+	if ( function_exists('current_user_can') && !current_user_can( $custom_cap ) ) {
+		die(__( 'Cheatin&#8217; uh?', 'custom-taxonomy-order-ne' ));
+	}
+
 	if (isset($_POST['order-submit'])) {
 		customtaxorder_update_taxonomies();
 	}
@@ -57,36 +64,6 @@ function custom_taxonomy_order() {
 						<input type="hidden" id="hidden-taxonomy-order" name="hidden-taxonomy-order" />
 					</div>
 				</div>
-
-				<script type="text/javascript">
-				// <![CDATA[
-
-					jQuery(document).ready(function(jQuery) {
-						jQuery("#custom-loading").hide();
-						jQuery("#order-submit").click(function() {
-							orderSubmit();
-						});
-					});
-
-					function customtaxorderAddLoadEvent(){
-						jQuery("#custom-taxonomy-list").sortable({
-							placeholder: "sortable-placeholder",
-							revert: false,
-							tolerance: "pointer"
-						});
-					};
-
-					addLoadEvent(customtaxorderAddLoadEvent);
-
-					function orderSubmit() {
-						var newOrder = jQuery("#custom-taxonomy-list").sortable("toArray");
-						jQuery("#custom-loading").show();
-						jQuery("#hidden-taxonomy-order").val(newOrder);
-						return true;
-					}
-
-				// ]]>
-				</script>
 
 			<?php } else { ?>
 				<p><?php _e('No taxonomies found', 'custom-taxonomy-order-ne'); ?></p>
@@ -170,9 +147,9 @@ function customtaxorder_sort_taxonomies_array( $taxonomies = array() ) {
 	// Main sorted taxonomies.
 	if ( ! empty($order) && is_array($order) && ! empty($taxonomies) && is_array($taxonomies) ) {
 		foreach ( $order as $tax ) {
-			foreach ( $taxonomies as $taxonomy ) {
-				if ( is_array( $taxonomy ) && $tax === $taxonomy['name'] ) {
-					$taxonomies_woo[] = $taxonomy;
+			foreach ( $taxonomies as $key => $taxonomy ) {
+	 			if ( is_array( $taxonomy ) && $tax === $taxonomy['name'] ) {
+					$taxonomies_woo[ $taxonomy['name'] ] = $taxonomy;
 					unset( $taxonomies[$taxonomy['name']] );
 				}
 			}
@@ -180,8 +157,8 @@ function customtaxorder_sort_taxonomies_array( $taxonomies = array() ) {
 	}
 
 	// Unsorted taxonomies, the leftovers.
-	foreach ( $taxonomies as $taxonomy ) {
-		$taxonomies_woo[] = $taxonomy;
+	foreach ( $taxonomies as $key => $taxonomy ) {
+		$taxonomies_woo[ $key ] = $taxonomy;
 	}
 
 	return $taxonomies_woo;

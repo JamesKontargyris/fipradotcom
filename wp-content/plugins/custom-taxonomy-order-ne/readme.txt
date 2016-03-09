@@ -2,8 +2,8 @@
 Contributors: mpol
 Tags: order, ordering, sorting, terms, term order, term ordering, terms order, terms ordering, categories, category order, category ordering, categories order, categories ordering, custom taxonomies, taxonomy order, taxonomy ordering, taxonomies order, taxonomies ordering
 Requires at least: 3.7
-Tested up to: 4.4
-Stable tag: 2.7.1
+Tested up to: 4.5
+Stable tag: 2.7.6
 License: GPLv2 or later
 
 
@@ -27,15 +27,6 @@ It supports the following features:
 
 It is a continuation (or fork) of Custom Taxonomy Order, which has been discontinued.
 
-= Languages =
-
-* de_DE [Patrick Skiebe](http://skiebe.eu)
-* es_ES [Andrew Kurtis](http://webhostinghub.com)
-* fr_FR [Jean-Christophe Brebion](http://jcbrebion.com)
-* it_IT Matteo Boria
-* nl_NL [Marcel Pol](http://zenoweb.nl)
-* pl_PL [Paweł Data](webidea.pl)
-* ru_RU Alex Rumyantsev
 
 == Installation ==
 
@@ -120,7 +111,14 @@ You could add the following example to your functions.php and work from there.
 	add_action('customtaxorder_update_order', 'custom_action');
 	?>
 
-Email any other questions to marcel at zenoweb dot nl.
+= How can I add my own translation? =
+
+Translations can be added very easily through [GlotPress](https://translate.wordpress.org/projects/wp-plugins/custom-taxonomy-order-ne).
+You can start translating strings there for your locale. They need to be validated though, so if there's no validator yet,
+and you want to apply for being validator, please post it on the support forum. I will make a request on make/polyglots to
+have you added as validator for this plugin/locale.
+
+Email any other questions to marcel at timelord dot nl.
 
 == Screenshots ==
 
@@ -128,8 +126,28 @@ Email any other questions to marcel at zenoweb dot nl.
 The WordPress menu completely left lists the different taxonomies.
 The left metabox lists the toplevel terms. Right (or below) are the sub-terms.
 
-
 == Changelog ==
+
+= 2.7.6 =
+* 2016-03-01
+* Add filters for custom capabilities.
+
+= 2.7.5 =
+* 2016-01-11
+* Support Advanced Custom Fields with its Taxonomy Fields.
+
+= 2.7.4 =
+* 2016-01-06
+* Really fix Woo get_attribute() (thanks eddy_boy).
+
+= 2.7.3 =
+* 2015-11-26
+* Fix for Woo get_attribute() (thanks mantish).
+
+= 2.7.2 =
+* 2015-11-26
+* Properly enqueue admin scripts.
+* Rename and prefix js functions properly.
 
 = 2.7.1 =
 * 2015-11-07

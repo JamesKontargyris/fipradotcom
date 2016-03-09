@@ -153,22 +153,6 @@ function fipradotcom_scripts()
     );
 
     wp_enqueue_script(
-        'fipradotcom-user-js-our-people',
-        get_template_directory_uri() . '/js/our-people.js',
-        array(),
-        '20150515',
-        true
-    );
-
-    wp_enqueue_script(
-        'fipradotcom-user-menu-link-and-entries-js',
-        get_template_directory_uri() . '/js/menu-list-and-entries.js',
-        array(),
-        '20150511',
-        true
-    );
-
-    wp_enqueue_script(
         'fipradotcom-profile-js',
         get_template_directory_uri() . '/js/profile.js',
         array(),
@@ -181,6 +165,14 @@ function fipradotcom_scripts()
         get_template_directory_uri() . '/js/jquery.sticky.js',
         array(),
         '20160104',
+        true
+    );
+
+    wp_enqueue_script(
+        'fipradotcom-autocomplete-js',
+        get_template_directory_uri() . '/js/jquery.autocomplete.js',
+        array(),
+        '20160309',
         true
     );
 
@@ -229,6 +221,22 @@ function fipradotcom_scripts()
         get_template_directory_uri() . '/js/site.js',
         array(),
         '20120206',
+        true
+    );
+
+    wp_enqueue_script(
+        'fipradotcom-user-js-our-people',
+        get_template_directory_uri() . '/js/our-people.js',
+        array(),
+        '20150515',
+        true
+    );
+
+    wp_enqueue_script(
+        'fipradotcom-user-menu-link-and-entries-js',
+        get_template_directory_uri() . '/js/menu-list-and-entries.js',
+        array(),
+        '20150511',
         true
     );
 

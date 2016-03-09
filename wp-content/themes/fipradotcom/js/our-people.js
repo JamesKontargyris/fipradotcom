@@ -1,5 +1,35 @@
 (function() {
 
+    //Function to jump to a place on the page
+    $.fn.goTo = function() {
+        if($(window).width() >= 841) {
+            $('html, body').animate({
+                scrollTop: ($(this).offset().top - 80) + 'px'
+            }, 0);
+        } else if($(window).width() < 841 && $(window).width() > 480) {
+            $('html, body').animate({
+                scrollTop: ($(this).offset().top - 180) + 'px'
+            }, 0);
+        } else {
+            $('html, body').animate({
+                scrollTop: ($(this).offset().top - 240) + 'px'
+            }, 0);
+        }
+        return this; // for chaining...
+    }
+
+    ////Stick the filters bar to the top of the window when the user scrolls past it
+    //$(".sticky-filters").sticky({topSpacing:0});
+    //$(window).on('resize', function() {
+    //    if($(this).width() >= 841) {
+    //        $(".sticky-filters").unstick().sticky({topSpacing:0});
+    //    } else {
+    //        $(".sticky-filters").unstick().sticky({topSpacing:64});
+    //    }
+    //});
+
+
+
     //Initialise isotope after images have been loaded to avoid layout issues
     var people = $('.people-group').imagesLoaded(function()
     {
@@ -14,7 +44,7 @@
     });
 
     //Filter all results by text input
-    $('#text-filter').keyup(function () {
+    $('#text-filter').on('propertychange change keyup input paste select', function () {
         clearFilter(); // Clear any existing filters first
 
         $('.filtering-on-title').text('Searching for: ' + this.value);
@@ -67,20 +97,24 @@
         people.isotope({filter: '.text-filter-show'});
     });
 
-//When a filter option is clicked, get isotope to filter the items
+//When a filter option (li.filterable a) is clicked, get isotope to filter the items
 //then make the current choice active
-    $('.filter-list').on( 'click', 'li a', function(e) {
+    $('.filter-list').on( 'click', 'li.filterable a', function(e) {
         e.preventDefault();
         var filterValue = $( this ).attr('data-filter');
         people.isotope({ filter: filterValue });
 
-        $('.filter-list li a').removeClass('active');
+        $('.filter-list li.filterable a').removeClass('active');
         $(this).addClass('active');
 
 //    Update the "filtering on" text
         $('.filtering-on-title').text($(this).data('filtering-on-text'));
 //    Show clear filter button
         $('.clear-filter').removeClass('hide');
+        //Close all the filter groups
+        filterGroupClose();
+    //    Clear anything in the text filter
+        $('#text-filter').val('');
     });
 
 //When a link with class .filter-group-trigger is clicked,
@@ -107,6 +141,19 @@
             $(this).parents().find('li:not(.menu-title)').removeClass('hide-s');
         }
     });
+
+//    When a surname filter letter is clicked, jump to the first relevant profile
+//  in the currently available selection
+    $('.jump-to-surname').on('click', function()
+    {
+        var element = '.surname-' + $(this).data('surname-letter');
+        $(element).first().goTo();
+        filterGroupClose();
+        //Make the profiles with the selected surname initial subtly flash
+        $('.person:not(' + element + ')').animate({opacity:0.2}, 500).delay(500).animate({opacity:1}, 500);
+        return false;
+    });
+
 
 //When .clear-filter is clicked, reset the filtering
 //and reset the active filter option

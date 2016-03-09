@@ -7,14 +7,45 @@
 function customtaxorder() {
 	global $customtaxorder_settings, $sitepress;
 
-	if ( function_exists('current_user_can') && !current_user_can('manage_categories') ) {
-		die(__( 'Cheatin&#8217; uh?', 'custom-taxonomy-order-ne' ));
-	}
-
 	customtaxorder_update_settings();
 	$options = $customtaxorder_settings;
 	$settings = ''; // The input and text for the taxonomy that's shown
 	$parent_ID = 0;
+
+	// Get list of taxonomies
+	$args = array( 'public' => true );
+	$output = 'objects';
+	$taxonomies = get_taxonomies( $args, $output );
+
+	// Also make the link_category available if activated.
+	$linkplugin = "link-manager/link-manager.php";
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	if ( is_plugin_active($linkplugin) ) {
+		$args = array( 'name' => 'link_category' );
+		$taxonomies2 = get_taxonomies( $args, $output );
+		$taxonomies = array_merge($taxonomies, $taxonomies2);
+	}
+
+	if ( !empty( $taxonomies ) ) {
+		foreach ( $taxonomies as $taxonomy ) {
+			$com_page = 'customtaxorder-'.$taxonomy->name;
+			if ( !isset($options[$taxonomy->name]) ) {
+				$options[$taxonomy->name] = 0; // default if not set in options yet
+			}
+			if ( $_GET['page'] == $com_page ) {
+
+				// Set your custom capability through this filter.
+				$custom_cap = apply_filters( 'customtaxorder_custom_cap', 'manage_categories' );
+
+				// Set your finegrained capability for this taxonomy for this custom filter.
+				$custom_cap_tax = apply_filters( 'customtaxorder_custom_cap_' . $taxonomy->name, $custom_cap );
+
+				if ( function_exists('current_user_can') && !current_user_can( $custom_cap_tax ) ) {
+					die(__( 'Cheatin&#8217; uh?', 'custom-taxonomy-order-ne' ));
+				}
+			}
+		}
+	}
 
 	// Remove filter for WPML
 	remove_filter( 'terms_clauses', array( $sitepress, 'terms_clauses' ), 10, 4 );
@@ -25,24 +56,20 @@ function customtaxorder() {
 
 	<?php
 	if ( $_GET['page'] == 'customtaxorder' ) {
+		// Main admin page with just a set of links to the taxonomy pages.
+
+		// Set your custom capability through this filter.
+		$custom_cap = apply_filters( 'customtaxorder_custom_cap', 'manage_categories' );
+
+		if ( function_exists('current_user_can') && !current_user_can( $custom_cap ) ) {
+			die(__( 'Cheatin&#8217; uh?', 'custom-taxonomy-order-ne' ));
+		}
+
 		?>
 		<h1>Custom Taxonomy Order NE</h1>
 		<div class="order-widget">
 			<p><?php _e('The ordering of categories and custom taxonomy terms through a simple drag-and-drop interface.', 'custom-taxonomy-order-ne'); ?></p>
 		<?php
-		$args = array( 'public' => true );
-		$output = 'objects';
-		$taxonomies = get_taxonomies( $args, $output );
-
-		// Also make the link_category available if activated.
-		$linkplugin = "link-manager/link-manager.php";
-		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		if ( is_plugin_active($linkplugin) ) {
-			$args = array( 'name' => 'link_category' );
-			$taxonomies2 = get_taxonomies( $args, $output );
-			$taxonomies = array_merge($taxonomies, $taxonomies2);
-		}
-
 		if ( !empty( $taxonomies ) ) {
 			echo "<h2>" . __('Taxonomies', 'custom-taxonomy-order-ne') . "</h2><ul>";
 			$taxonomies = customtaxorder_sort_taxonomies( $taxonomies );
@@ -53,22 +80,9 @@ function customtaxorder() {
 				';
 			}
 		}
-		echo "</ul></div></div><!-- #wrap -->";
+		echo '</ul></div></div><!-- #wrap -->';
 		return;
 	} else {
-		$args = array( 'public' => true );
-		$output = 'objects';
-		$taxonomies = get_taxonomies( $args, $output );
-
-		// Also make the link_category available if activated.
-		$linkplugin = "link-manager/link-manager.php";
-		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		if ( is_plugin_active($linkplugin) ) {
-			$args = array( 'name' => 'link_category' );
-			$taxonomies2 = get_taxonomies( $args, $output );
-			$taxonomies = array_merge($taxonomies, $taxonomies2);
-		}
-
 		if ( !empty( $taxonomies ) ) {
 			foreach ( $taxonomies as $taxonomy ) {
 				$com_page = 'customtaxorder-'.$taxonomy->name;
@@ -189,60 +203,6 @@ function customtaxorder() {
 		</div>
 	</form>
 </div>
-<?php if ( $terms ) { ?>
-<script type="text/javascript">
-// <![CDATA[
 
-	jQuery(document).ready(function(jQuery) {
-		jQuery("#custom-loading").hide();
-		jQuery("#order-submit").click(function() {
-			orderSubmit();
-		});
-		jQuery("#order-alpha").click(function(e) {
-			e.preventDefault();
-			jQuery("#custom-loading").show();
-			orderAlpha();
-			//jQuery("#order-submit").trigger("click");
-			setTimeout(function(){
-				jQuery("#custom-loading").hide();
-			},500);
-			jQuery("#order-alpha").blur();
-		});
-	});
-
-	function customtaxorderAddLoadEvent(){
-		jQuery("#custom-order-list").sortable({
-			placeholder: "sortable-placeholder",
-			revert: false,
-			tolerance: "pointer"
-		});
-	};
-
-	addLoadEvent(customtaxorderAddLoadEvent);
-
-	function orderSubmit() {
-		var newOrder = jQuery("#custom-order-list").sortable("toArray");
-		jQuery("#custom-loading").show();
-		jQuery("#hidden-custom-order").val(newOrder);
-		return true;
-	}
-
-	function orderAlpha() {
-		jQuery("#custom-order-list li").sort(asc_sort).appendTo('#custom-order-list');
-		var newOrder = jQuery("#custom-order-list").sortable("toArray");
-		jQuery("#custom-loading").show();
-		jQuery("#hidden-custom-order").val(newOrder);
-		return true;
-	}
-
-	// accending sort
-	function asc_sort(a, b) {
-		//return (jQuery(b).text()) < (jQuery(a).text()) ? 1 : -1;
-		//console.log (jQuery(a).text());
-		return jQuery(a).text().toUpperCase().localeCompare(jQuery(b).text().toUpperCase());
-	}
-
-// ]]>
-</script>
-<?php }
+<?php
 }
