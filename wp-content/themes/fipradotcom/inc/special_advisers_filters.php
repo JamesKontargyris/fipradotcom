@@ -36,12 +36,26 @@
         <div id="expertise-filter-group" class="page-nav with-padding dark-grey filter-group hide">
             <div class="row content-area">
                 <div class="filter-list-container">
-                    <ul class="filter-list no-margin no-bullet">
-                        <?php $expertise_areas = get_all_spad_expertise_areas(); ?>
-                        <?php foreach($expertise_areas as $expertise_area) : ?>
+                    <?php $expertise_areas_policy = get_all_spad_expertise_areas(true, false); ?>
+                    <?php $expertise_areas_location = get_all_spad_expertise_areas(false, true); ?>
+
+                    <?php if($expertise_areas_policy) : ?>
+                        <ul class="filter-list no-margin no-bullet">
+                        <li class="menu-title full-width shallow">Policy Areas</li>
+                        <?php foreach($expertise_areas_policy as $expertise_area) : ?>
                             <li class="filterable"><a href="#" class="filter" data-filter=".expertise-<?php echo make_class_name(str_replace(',', '', $expertise_area)); ?>" data-filtering-on-text="Expertise area: <?php echo $expertise_area; ?>"><?php echo $expertise_area; ?></a></li>
                         <?php endforeach; ?>
-                    </ul>
+                        </ul>
+                    <?php endif; ?>
+
+                    <?php if($expertise_areas_location) : ?>
+                        <ul class="filter-list no-margin no-bullet">
+                            <li class="menu-title full-width shallow">Geographic Locations</li>
+                            <?php foreach($expertise_areas_location as $expertise_area) : ?>
+                                <li class="filterable"><a href="#" class="filter" data-filter=".expertise-<?php echo make_class_name(str_replace(',', '', $expertise_area)); ?>" data-filtering-on-text="Expertise area: <?php echo $expertise_area; ?>"><?php echo $expertise_area; ?></a></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

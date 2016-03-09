@@ -5808,7 +5808,7 @@ ul.anchor-links-list li a.active, .filter-group-container .filter-list-container
 .filter-group-container .filter-list-container ul.filter-list li .filter {
   display: inline-block !important;
   height: auto;
-  margin: 0.375rem 0.5em 0.375rem 0;
+  margin: 0.1875rem 0.375em 0.1875rem 0;
   font-size: 13px;
   font-size: 0.8125rem;
   display: block;
@@ -5824,6 +5824,15 @@ ul.anchor-links-list li a.active, .filter-group-container .filter-list-container
 .filter-group-container .filter-list-container ul.filter-list li .filter.active {
   background-color: white;
   color: #5c6882;
+}
+
+.filter-group-container .filter-list-container ul.filter-list li.menu-title.full-width {
+  display: block;
+  float: none;
+}
+
+.filter-group-container .filter-list-container ul.filter-list li.menu-title.shallow {
+  line-height: 1.4;
 }
 
 /*--------------------------------------------------------------

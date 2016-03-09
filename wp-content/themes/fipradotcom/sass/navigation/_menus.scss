@@ -252,7 +252,7 @@ ul.anchor-links-list {
         .filter {
           display:inline-block !important;
           height: auto;
-          margin: $v-rhythm * 0.5 em(8px) $v-rhythm * 0.5 0;
+          margin: $v-rhythm * 0.25 em(6px) $v-rhythm * 0.25 0;
           @include font-size(13);
           display: block; padding: $v-rhythm * 0.5; line-height: $v-rhythm * 1.5; border: 1px solid rgba(white, 0.2);
           &:hover { border: 1px solid rgba(white, 0.6); }
@@ -261,6 +261,11 @@ ul.anchor-links-list {
             background-color:white;
             color:$color__fipra-blue-gray;
           }
+        }
+
+        &.menu-title {
+          &.full-width { display:block; float:none; }
+          &.shallow { line-height:1.4; }
         }
       }
     }

@@ -42,7 +42,7 @@ function get_all_fipriots($include_spads = false) {
     return $fipriots;
 }
 
-function get_all_spads() {
+function get_all_spads($policy = false, $location = false) {
 
     global $post;
 
@@ -61,6 +61,20 @@ function get_all_spads() {
         ],
     ];
 
+    if($policy) {
+        $args['meta_query'][] = [
+            'key'     => 'special_adviser_expertise_type',
+            'value'   => 'policy',
+            'compare' => 'LIKE',
+        ];
+    } elseif($location) {
+        $args['meta_query'][] = [
+            'key'     => 'special_adviser_expertise_type',
+            'value'   => 'country',
+            'compare' => 'LIKE',
+        ];
+    }
+
 //    Add a filter that allows Wordpress to orderby two meta values, then remove it after querying
 //    add_filter('posts_orderby','orderby_two_meta_values');
     $spads = new WP_Query($args);
@@ -71,8 +85,8 @@ function get_all_spads() {
     return $spads;
 }
 
-function get_all_spad_expertise_areas() {
-    $spads = get_all_spads();
+function get_all_spad_expertise_areas($policy = false, $location = false) {
+    $spads = get_all_spads($policy, $location);
     $expertise_areas = [];
 
     foreach($spads->get_posts() as $spad) {
