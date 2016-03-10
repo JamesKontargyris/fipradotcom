@@ -162,7 +162,8 @@ function get_job_listings_sc() {
 
         return $string;
     } else {
-        return '<h4>No vacancies at this time.</h4>';
+//        return '<h4>No vacancies at this time.</h4>';ssh homestead
+        return '';
     }
 }
 add_shortcode( 'job_listings', 'get_job_listings_sc' );
