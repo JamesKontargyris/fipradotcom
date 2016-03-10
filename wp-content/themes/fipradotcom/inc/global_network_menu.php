@@ -6,11 +6,13 @@
 
                 <?php
                     $continents = get_terms('continent', 'hide_empty=0');
-                    $continent_width = 100 / count($continents);
+                    $continent_width = 100 / (count($continents) + 1);
+                ?>
+                <li style="width:<?= $continent_width; ?>%"><a href="/network/fipra-international" style="display:block; cursor:pointer;">Fipra International</a></li>
+                <?php
                     foreach( $continents as $continent ) :
                 ?>
-
-                    <li style="width:<?= $continent_width; ?>%"><a href="#"><?= $continent->name; ?></a> <i class="icon-down-open"></i>
+                        <li style="width:<?= $continent_width; ?>%"><a href="#"><?= $continent->name; ?></a> <i class="icon-down-open"></i>
                         <div class="megamenu">
                             <?php $continent_units = get_units_by_continent($continent->term_id); ?>
                             <?php $i = 0; while ( $continent_units->have_posts() ) : $continent_units->the_post(); $i++; ?>

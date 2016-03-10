@@ -3,6 +3,7 @@
         <div class="title">Explore our Network:</div>
         <select name="mobile-header-global-network-menu" id="mobile-header-global-network-menu">
             <option value="">Please select...</option>
+            <option value="/network/fipra-international">Fipra International</option>
 
             <?php
                 $continents = get_terms('continent', 'hide_empty=0');
