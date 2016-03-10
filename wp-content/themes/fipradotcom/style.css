@@ -1297,6 +1297,14 @@ table:not(.no-style) tbody tr:nth-child(even) {
   }
 }
 
+#footer-container footer .footer-section a {
+  color: white;
+}
+
+#footer-container footer .footer-section a:hover {
+  color: #e6e6e6;
+}
+
 #site-info-container {
   font-family: "Lato", Arial, Helvetica, sans-serif;
   font-size: 12px;

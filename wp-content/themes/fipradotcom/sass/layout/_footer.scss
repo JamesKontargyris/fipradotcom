@@ -68,6 +68,13 @@
         @include span-columns(4);
         padding-bottom: $v-rhythm * 2;
       }
+
+      a {
+        color:white;
+        &:hover {
+          color:darken(white, 10%);
+        }
+      }
     }
   }
 
