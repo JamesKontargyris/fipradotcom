@@ -69,7 +69,7 @@
         padding-bottom: $v-rhythm * 2;
       }
 
-      a {
+      a:not(.btn) {
         color:white;
         &:hover {
           color:darken(white, 10%);
