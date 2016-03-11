@@ -19,6 +19,7 @@
             <div class="select-wrapper">
                 <select name="footer-global-network" id="footer-global-network">
                     <option value="">Please select...</option>
+                    <li style="width:<?= $continent_width; ?>%"><a href="/network/fipra-international" style="display:block; cursor:pointer;">Fipra International</a></li>
 
                     <?php
                     $continents = get_terms('continent', 'hide_empty=0');
