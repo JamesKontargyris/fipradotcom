@@ -23,7 +23,7 @@ get_header(); ?>
                 <ul class="anchor-links-list no-margin no-bullet">
                     <li class="menu-title menu-title-toggle"><i class="icon-menu-1"></i> Jump to...</li>
                     <li class="hide-s hide-m"><a class="jump-to-link" href="#get-in-touch">First Point of Contact <i class="icon-down-open"></i></a></li>
-                    <li class="hide-s"><a class="jump-to-link" href="#team-menu-container">Practice Staff <i class="icon-down-open"></i></a></li>
+<!--                    <li class="hide-s"><a class="jump-to-link" href="#team-menu-container">Practice Staff <i class="icon-down-open"></i></a></li>-->
                 </ul>
             </div>
         </div>

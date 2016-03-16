@@ -11,7 +11,7 @@
             <?php endif; ?>
 
             <h1 class="upper no-margin">
-                <?php if (get_post_type() == 'expertise') : echo file_get_contents(get_field('icon')); ?><br class="hide-s"/> <?php endif; ?>
+                <?php if (get_post_type() == 'expertise') : echo '<img class="svg" src="' . get_field('icon', $expertise_id) . '" alt="">'; ?><br class="hide-s"/> <?php endif; ?>
                 <?php if(get_post_type() == 'unit') : echo fiprafy_unit_name(get_the_title()); ?>
 
                 <?php else : ?>

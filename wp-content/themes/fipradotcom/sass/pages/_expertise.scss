@@ -4,7 +4,7 @@
     .full-width-block-content-container {
 
       .full-width-block-content {
-        svg {
+        img, svg {
           @include media(max-width $media__medium) { display:none; }
           width: 60px; height: 60px;
           fill:white;

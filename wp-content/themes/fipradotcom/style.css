@@ -6992,14 +6992,14 @@ object {
   width: 2.5em;
 }
 
-#content-container.expertise-area #hero .full-width-block-content-container .full-width-block-content svg {
+#content-container.expertise-area #hero .full-width-block-content-container .full-width-block-content img, #content-container.expertise-area #hero .full-width-block-content-container .full-width-block-content svg {
   width: 60px;
   height: 60px;
   fill: white;
 }
 
 @media screen and (max-width: 801px) {
-  #content-container.expertise-area #hero .full-width-block-content-container .full-width-block-content svg {
+  #content-container.expertise-area #hero .full-width-block-content-container .full-width-block-content img, #content-container.expertise-area #hero .full-width-block-content-container .full-width-block-content svg {
     display: none;
   }
 }
