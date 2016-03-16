@@ -180,7 +180,7 @@ function areas_of_expertise_menu_and_list_sc() {
                             $i = 0; foreach ( $expertise_areas->get_posts() as $expertise_area ) : $i++; $expertise_id = $expertise_area->ID;
                             $class_active = ($i == 1) ? 'class="active"' : '';
                             $string .= '<li ' . $class_active . '><a href="#entry-' . $i . '">';
-                            $string .= '<div class="svg-icon margin-r">' .file_get_contents(get_field('icon', $expertise_id)) . '</div>';
+                            $string .= '<div class="svg-icon margin-r">' .file_get_contents_curl(get_field('icon', $expertise_id)) . '</div>';
                             $string .= get_the_title($expertise_id);
                             $string .= '</a></li>';
                             endforeach;
