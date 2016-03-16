@@ -25,7 +25,7 @@
                 <ul class="anchor-links-list no-margin no-bullet">
                     <?php $continents = get_terms('continent', 'hide_empty=0'); ?>
                     <?php if( $continents) : ?>
-                        <li class="menu-title">Continents</li>
+                        <li class="menu-title full-width shallow">Continents</li>
                         <?php foreach($continents as $continent) : ?>
                             <li class="inline-s"><a href="#" class="filter-group-trigger sub" data-filter-group="#<?php echo make_class_name($continent->name); ?>-filter-group"><?php echo $continent->name; ?> <i class="icon-down-open"></i></a></li>
                         <?php endforeach; ?>
