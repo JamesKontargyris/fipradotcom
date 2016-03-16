@@ -2100,6 +2100,10 @@ ul.team-member-expertise li a:hover {
   padding: 0.75rem 0;
 }
 
+.page-nav.with-top-padding {
+  padding: 0.75rem 0 0 0;
+}
+
 .page-nav.dark-grey {
   background-color: #3e4a62;
   color: #a6b0c7;
