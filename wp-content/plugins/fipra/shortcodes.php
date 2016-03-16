@@ -18,7 +18,7 @@ $expertise->the_post();
 
 $string .= '<div class="showcase-block">';
     $string .= '<a href="' . get_the_permalink() . '"><div class="svg-icon margin-r">';
-            $string .= file_get_contents(get_field('icon'));
+            $string .= '<img class="svg" src="' . get_field('icon') . '" alt="">';
             $string .= '</div></a>';
     $string .= '<div>';
         $string .= '<h4 class="no-margin"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h4>';
@@ -193,7 +193,7 @@ function areas_of_expertise_menu_and_list_sc() {
                                 $string .= '<div class="entry" id="entry-' . $i . '">';
                                     $string .= '<div class="entry-title">';
                                         $string .= '<h4 class="no-margin">';
-    //                                        $string .= '<div class="svg-icon margin-r">' . file_get_contents(get_field('icon')) . '</div>';
+    //                                        $string .= '<div class="svg-icon margin-r"><img class="svg" src="' . get_field('icon', $expertise_id) . '" alt=""></div>';
                                             $string .= get_the_title($expertise_id);
                                             $string .= '<i class="icon-toggle icon-down-open"></i>';
                                         $string .= '</h4>';

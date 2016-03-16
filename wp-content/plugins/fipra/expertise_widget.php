@@ -34,7 +34,8 @@ class Expertise_Widget extends WP_Widget {
                 $expertise->the_post();
 
                 $string .= '<li><a href="' . get_the_permalink() . '"><div class="svg-icon svg-blue margin-r">';
-                $string .= file_get_contents(get_field('icon')) . '</div>';
+                $string .= '<img class="svg" src="' . get_field('icon') . '" alt="">';
+                $string .= '</div>';
                 $string .= get_the_title();
                 $string .= '</a></li>';
             }
