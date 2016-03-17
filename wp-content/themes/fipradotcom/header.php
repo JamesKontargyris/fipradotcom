@@ -46,7 +46,7 @@
                 <div id="site-navigation-container">
                     <div class="search-global-network-button">
                         <?php get_search_form( true ); ?>
-                        <a class="global-network-button br-bottom" href="/our-network"><i class="icon-globe"></i> Explore our Network</a>
+                        <a class="global-network-button br-bottom" href="/global-network-countries"><i class="icon-globe"></i> Explore our Network</a>
                     </div>
                     <nav id="site-navigation" class="main-navigation" role="navigation">
                         <a class="mobile-menu-global-network btn btn-clear btn-large no-margin"><i class="icon-globe"></i></a>
