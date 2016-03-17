@@ -162,6 +162,8 @@ function get_slug() {
     return $post->post_name;
 }
 
+//Convert a string to lowercase, keep letters, numbers and underscores only
+//and add a prefix and/or suffix if required
 function make_class_name($string, $prefix = '', $suffix = '') {
     if($string) {
         if($prefix) $prefix = $prefix . '-';
@@ -169,18 +171,21 @@ function make_class_name($string, $prefix = '', $suffix = '') {
         $full_string = $prefix . $string . $suffix;
 
         // keep letters, numbers and underscores only
-        return preg_replace('/\W+/', '_', $full_string);
+        return strtolower(preg_replace('/\W+/', '_', $full_string));
     }
 }
 
+//Add Fipra to a unit name
 function fiprafy_unit_name($unit_name) {
     return trim('Fipra ' . str_ireplace('fipra', '', $unit_name));
 }
 
+//Get the opening sentence from a paragraph of text
 function get_lead_paragraph($text) {
     return strip_tags(preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', $text));
 }
 
+//Return all but the first sentence in a paragraph
 function bio_minus_lead_paragraph($text) {
     $lead_para = trim(get_lead_paragraph($text));
     $text = strip_tags($text);
@@ -189,6 +194,7 @@ function bio_minus_lead_paragraph($text) {
     return $new_text;
 }
 
+//Trim text to a specified length and add an elipsis
 function trim_text($input, $length) {
 
     // If the text is already shorter than the max length, then just return unedited text.
@@ -223,12 +229,53 @@ function get_id_by_slug($page_slug, $post_type = 'page', $output_type = OBJECT) 
     }
 }
 
-function file_get_contents_curl($url) {
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Set curl to return the data instead of printing it to the browser.
-    curl_setopt($ch, CURLOPT_URL, $url);
-    $data = curl_exec($ch);
-    curl_close($ch);
-    return $data;
+//Format Spad expertise tags into a nice user-friendly string
+function format_spad_expertise_tags($tags)
+{
+    if(is_array($tags)) {
+
+        $formatted_tags = '';
+        foreach($tags as $tag_id)
+        {
+            $term = get_term_by('id', $tag_id, 'spad_expertise');
+            $formatted_tags .= $term->name . ', ';
+        }
+
+        return substr($formatted_tags, 0, -2);
+    } else {
+        return false;
+    }
+}
+
+//Get all terms for a taxonomy
+function get_tax_terms($taxonomy, $orderby = 'name', $order = 'DESC', $hide_empty = false)
+{
+    $args = [
+        'orderby' => $orderby,
+        'order' => $order,
+        'hide_empty' => $hide_empty,
+    ];
+
+    return get_terms($taxonomy, $args);
+}
+
+//Get a taxonomy term's name by its ID
+function get_tax_term_name($tag_id, $taxonomy) {
+    return get_term_by('id', $tag_id, $taxonomy)->name;
+}
+
+//Create class names for each Spad expertise tag to be used by Isotope for filtering
+function make_expertise_tag_classes($tags)
+{
+    $tag_classes = '';
+
+    if(is_array($tags)) {
+        foreach($tags as $tag_id) {
+            $tag_classes .= 'expertise-' . make_class_name(get_tax_term_name($tag_id, 'spad_expertise')) . ' ';
+        }
+
+        return trim($tag_classes);
+    }
+
+    return false;
 }

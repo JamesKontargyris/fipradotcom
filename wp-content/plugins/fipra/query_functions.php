@@ -385,6 +385,11 @@ function get_all_jobs($close_in_the_future = true) {
     return $jobs;
 }
 
+function get_spad_expertise_tags()
+{
+
+}
+
 /**
  * Allows Wordpress to sort by two meta values.
  * Add +0 to meta_value for numeric comparison.

@@ -52,15 +52,17 @@ get_header(); ?>
 
                                 <?php while ( $fipriots->have_posts() ) : $fipriots->the_post(); ?>
 
-                                    <?php $post_id = get_the_ID(); ?>
-                                    <?php $expertise_area = make_class_name(get_field('special_adviser_expertise')); ?>
-
                                     <?php
-//                                        Assign variables
-                                    $first_name = get_field('first_name'); $last_name = get_field('last_name'); $expertise = get_field('special_adviser_expertise');
+//                                    Assign variables
+                                        $post_id = get_the_ID();
+                                        $expertise_tags = get_field('special_adviser_expertise_tags');
+                                        $expertise_tag_classes = make_expertise_tag_classes($expertise_tags);
+                                        $first_name = get_field('first_name');
+                                        $last_name = get_field('last_name');
+                                        $expertise = get_field('special_adviser_expertise');
                                     ?>
 
-                                    <div id="surname-<?php echo substr($last_name, 0, 1); ?>" class="person <?php echo 'expertise-' . trim($expertise_area) . ' surname-' . substr($last_name, 0, 1); ?>">
+                                    <div id="surname-<?php echo substr($last_name, 0, 1); ?>" class="person <?php echo $expertise_tag_classes . ' surname-' . substr($last_name, 0, 1); ?>">
                                         <div class="person-profile-photo">
                                             <a href="<?php echo get_the_permalink(); ?>">
                                                 <?php if ( has_post_thumbnail() ) : ?>
@@ -73,7 +75,7 @@ get_header(); ?>
                                         <div class="person-details">
                                             <h4 class="no-margin"><a href="<?= get_the_permalink(); ?>"><?= get_field('first_name'); ?> <?= get_field('last_name'); ?></a></h4>
 
-                                            <h6 class="expertise"> <?php if ($expertise) { echo $expertise; } ?> </h6>
+                                            <h6 class="expertise"> <?php if ($expertise = format_spad_expertise_tags(get_field('special_adviser_expertise_tags'))) { echo $expertise; } ?> </h6>
 
                                             <div class="btn-container">
                                                 <a href="<?= get_the_permalink(); ?>" class="btn">

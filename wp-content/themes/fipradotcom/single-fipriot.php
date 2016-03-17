@@ -45,7 +45,7 @@ get_header(); ?>
 
                     <h1 class="upper no-margin"><?php echo full_name(); ?></h1>
                     <?php if(get_field('is_special_adviser')) : ?>
-                        <h4 class="no-top-margin">Special Adviser<?php echo get_field('special_adviser_expertise') ? ', ' . get_field('special_adviser_expertise') : ''; ?></h4>
+                        <h4 class="no-top-margin">Special Adviser<?php echo get_field('special_adviser_expertise_tags') ? ' - ' . format_spad_expertise_tags(get_field('special_adviser_expertise_tags')) : ''; ?></h4>
                     <?php else : ?>
                         <h4 class="no-top-margin">
                             <?php
