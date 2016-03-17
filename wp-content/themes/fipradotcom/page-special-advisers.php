@@ -95,10 +95,10 @@ get_header(); ?>
 
                                                     <?php $mobile = get_field('mobile'); ?>
                                                     <?php if($mobile) : ?>
-                                                        <tr>
-                                                            <td>Mobile</td>
-                                                            <td><?= get_field('mobile') ?></td>
-                                                        </tr>
+<!--                                                        <tr>-->
+<!--                                                            <td>Mobile</td>-->
+<!--                                                            <td>--><?//= get_field('mobile') ?><!--</td>-->
+<!--                                                        </tr>-->
                                                     <?php endif; ?>
 
                                                     <?php $fax = get_field('fax'); ?>
