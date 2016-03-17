@@ -15,10 +15,10 @@
 
     <div id="footer-global-network-container">
         <div id="footer-global-network">
-            <label for="footer-global-network">Explore&nbsp;our&nbsp;Network:</label>
+            <label for="footer-global-network">Global&nbsp;Network&nbsp;Countries:</label>
             <div class="select-wrapper">
                 <select name="footer-global-network" id="footer-global-network">
-                    <option value="">Please select...</option>
+                    <option value="">Please select country...</option>
                     <option value="/network/fipra-international">Fipra International</option>
 
                     <?php

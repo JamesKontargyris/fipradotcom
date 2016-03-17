@@ -1,8 +1,8 @@
 <div id="mobile-header-global-network-container">
     <div id="mobile-header-global-network">
-        <div class="title">Explore our Network:</div>
+        <div class="title">Global Network Countries:</div>
         <select name="mobile-header-global-network-menu" id="mobile-header-global-network-menu">
-            <option value="">Please select...</option>
+            <option value="">Please select country...</option>
             <option value="/network/fipra-international">Fipra International</option>
 
             <?php
