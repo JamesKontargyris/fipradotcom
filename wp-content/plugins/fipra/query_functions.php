@@ -103,18 +103,6 @@ function get_all_spad_expertise_areas($policy = false, $location = false) {
     return $expertise_areas;
 }
 
-function autocomplete_spad_expertise() {
-    $expertise_areas = get_all_spad_expertise_areas();
-    $autocomplete_data = [];
-
-    foreach($expertise_areas as $area)
-    {
-        $autocomplete_data[] = ['value' => $area, 'data' => $area];
-    }
-
-    return json_encode($autocomplete_data);
-}
-
 function get_all_fipriots_by_unit($unit_id = 0, $include_spads = false) {
 
     global $post;
@@ -383,11 +371,6 @@ function get_all_jobs($close_in_the_future = true) {
     wp_reset_postdata();
 
     return $jobs;
-}
-
-function get_spad_expertise_tags()
-{
-
 }
 
 /**

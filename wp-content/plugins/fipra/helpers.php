@@ -248,7 +248,7 @@ function format_spad_expertise_tags($tags)
 }
 
 //Get all terms for a taxonomy
-function get_tax_terms($taxonomy, $orderby = 'name', $order = 'DESC', $hide_empty = false)
+function get_tax_terms($taxonomy, $orderby = 'name', $order = 'ASC', $hide_empty = false)
 {
     $args = [
         'orderby' => $orderby,
@@ -263,6 +263,19 @@ function get_tax_terms($taxonomy, $orderby = 'name', $order = 'DESC', $hide_empt
 function get_tax_term_name($tag_id, $taxonomy) {
     return get_term_by('id', $tag_id, $taxonomy)->name;
 }
+
+function autocomplete_spad_expertise() {
+    $expertise_areas = get_tax_terms('spad_expertise');
+    $autocomplete_data = [];
+
+    foreach($expertise_areas as $area)
+    {
+        $autocomplete_data[] = ['value' => $area->name, 'data' => $area->name];
+    }
+
+    return json_encode($autocomplete_data);
+}
+
 
 //Create class names for each Spad expertise tag to be used by Isotope for filtering
 function make_expertise_tag_classes($tags)
