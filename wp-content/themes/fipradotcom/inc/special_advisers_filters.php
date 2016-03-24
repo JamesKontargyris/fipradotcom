@@ -36,12 +36,25 @@
         <div id="expertise-tags-filter-group" class="page-nav with-padding dark-grey filter-group hide">
             <div class="row content-area">
                 <div class="filter-list-container">
-                    <?php $expertise_tags = get_tax_terms('spad_expertise'); ?>
+                    <?php $expertise_tags_policy = get_spad_expertise_tags(true, false); ?>
+                    <?php $expertise_tags_location = get_spad_expertise_tags(false, true); ?>
 
-                    <?php if($expertise_tags) : ?>
+                    <?php if($expertise_tags_policy) : ?>
+                        <h5 class="no-bottom-margin">Policy Areas</h5>
                         <ul class="filter-list no-margin no-bullet">
-                            <?php foreach($expertise_tags as $tag) : ?>
-                                <li class="filterable"><a href="#" class="filter" data-filter=".expertise-<?php echo make_class_name(str_replace(',', '', $tag->name)); ?>" data-filtering-on-text="Expertise area: <?php echo $tag->name; ?>"><?php echo $tag->name; ?></a></li>
+                            <?php foreach($expertise_tags_policy as $tag) : ?>
+                                <li class="filterable"><a href="#" class="filter" data-filter=".expertise-<?php echo make_class_name(str_replace(',', '', $tag)); ?>" data-filtering-on-text="Expertise area: <?php echo $tag; ?>"><?php echo $tag; ?></a></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+
+                    <?php if($expertise_tags_location && $expertise_tags_policy) { echo '<br>'; } ?>
+
+                    <?php if($expertise_tags_location) : ?>
+                        <h5 class="no-bottom-margin">Geographic Locations</h5>
+                        <ul class="filter-list no-margin no-bullet">
+                            <?php foreach($expertise_tags_location as $tag) : ?>
+                                <li class="filterable"><a href="#" class="filter" data-filter=".expertise-<?php echo make_class_name(str_replace(',', '', $tag)); ?>" data-filtering-on-text="Expertise area: <?php echo $tag; ?>"><?php echo $tag; ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     <?php endif; ?>

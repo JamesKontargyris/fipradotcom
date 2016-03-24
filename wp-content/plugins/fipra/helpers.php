@@ -152,6 +152,47 @@ function get_language_flag_url($term_id) {
     }
 }
 
+/**
+ * Return the expertise type for the current spad_expertise term
+ *
+ * @param $term_id
+ * @return array|false
+ */
+function get_spad_expertise_type($term_id) {
+
+
+    $meta = get_option('expertise_type_section');
+    if (empty($meta)) $meta = array();
+    if (!is_array($meta)) $meta = (array) $meta;
+    $meta = isset($meta[$term_id]) ? $meta[$term_id] : array();
+    if(isset($meta['expertise_type'])) {
+        return $meta['expertise_type'];
+    } else {
+        return false;
+    }
+}
+
+//Get all individual expertise tags as applied to Spads. Separate by policy and location field if required.
+function get_spad_expertise_tags($policy = false, $location = false) {
+    $tags = get_tax_terms('spad_expertise');
+    $expertise_areas = [];
+
+    foreach($tags as $tag) {
+        if(!in_array($tag->name, $expertise_areas)) {
+            if($policy && get_spad_expertise_type($tag->term_id) == 'policy') {
+                $expertise_areas[] = $tag->name;
+            }
+            if($location && get_spad_expertise_type($tag->term_id) == 'location') {
+                $expertise_areas[] = $tag->name;
+            }
+        }
+    }
+
+    sort($expertise_areas);
+
+    return $expertise_areas;
+}
+
 function get_search_results() {
     global $wp_query;
     return  $wp_query->found_posts;
@@ -235,12 +276,22 @@ function format_spad_expertise_tags($tags)
     if(is_array($tags)) {
 
         $formatted_tags = '';
+        $terms = [];
+
+//        Get all tags and sort alphabetically
         foreach($tags as $tag_id)
         {
-            $term = get_term_by('id', $tag_id, 'spad_expertise');
-            $formatted_tags .= $term->name . ', ';
+            array_push($terms, get_term_by('id', $tag_id, 'spad_expertise')->name);
         }
 
+        sort($terms);
+
+//        Create one string from all tags
+        foreach($terms as $term)
+        {
+            $formatted_tags .= $term . ', ';
+        }
+//        Remove final comma and space, then return
         return substr($formatted_tags, 0, -2);
     } else {
         return false;

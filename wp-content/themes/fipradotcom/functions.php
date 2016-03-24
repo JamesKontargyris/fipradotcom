@@ -297,7 +297,7 @@ function fipradotcom_register_taxonomy_meta_boxes()
 
     $meta_sections = array();
 
-    // First meta section
+    // Flag for languages
     $meta_sections[] = [
         'title'      => '',             // section title
         'taxonomies' => array('language'), // list of taxonomies. Default is array('category', 'post_tag'). Optional
@@ -310,6 +310,26 @@ function fipradotcom_register_taxonomy_meta_boxes()
                 'id'   => 'image',
                 'type' => 'image',
             ],
+        ],
+    ];
+
+//  Type of expertise on Spads
+    $meta_sections[] = [
+        'title'      => '',             // section title
+        'taxonomies' => array('spad_expertise'), // list of taxonomies. Default is array('category', 'post_tag'). Optional
+        'id'         => 'expertise_type_section',                 // ID of each section, will be the option name
+
+        'fields' => [                             // List of meta fields
+//            Radio buttons
+            array(
+                'name'    => 'Expertise Type',
+                'id'      => 'expertise_type',
+                'type'    => 'radio',
+                'options' => array(                     // Array of value => label pairs for radio options
+                    'policy' => 'Policy-based',
+                    'location' => 'Country- or location-based'
+                ),
+            ),
         ],
     ];
 

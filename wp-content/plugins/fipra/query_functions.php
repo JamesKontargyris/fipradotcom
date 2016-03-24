@@ -85,24 +85,6 @@ function get_all_spads($policy = false, $location = false) {
     return $spads;
 }
 
-function get_all_spad_expertise_areas($policy = false, $location = false) {
-    $spads = get_all_spads($policy, $location);
-    $expertise_areas = [];
-
-    foreach($spads->get_posts() as $spad) {
-        $spad_id = $spad->ID;
-        $expertise_area = get_field('special_adviser_expertise', $spad_id);
-
-        if(!in_array($expertise_area, $expertise_areas)) {
-         $expertise_areas[] = $expertise_area;
-        }
-    }
-
-    sort($expertise_areas);
-
-    return $expertise_areas;
-}
-
 function get_all_fipriots_by_unit($unit_id = 0, $include_spads = false) {
 
     global $post;
