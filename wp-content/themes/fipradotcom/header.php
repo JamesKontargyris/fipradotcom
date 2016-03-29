@@ -36,7 +36,7 @@
                 <div id="site-branding-container">
                     <div class="site-branding">
                         <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/img/fipra_logo.jpg"
+                                    src="<?php echo get_template_directory_uri(); ?>/minimg/fipra_logo.png"
                                     alt="Fipra" width="72" height="72"/></a></h1>
                     </div>
                     <!-- .site-branding -->
