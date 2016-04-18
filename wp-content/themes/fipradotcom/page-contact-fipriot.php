@@ -97,6 +97,10 @@ get_header(); ?>
                                             </tr>
                                         <?php endif; ?>
 
+                                        <?php if($vcard_path = create_fipriot_vcard()) : ?>
+                                            <tr><td colspan="2"><a href="<?php echo $vcard_path; ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/vcard.svg" alt="" style="width:24px; height:24px;vertical-align: middle"> Download vCard</a></td></tr>
+                                        <?php endif; ?>
+
                                     </table>
 
                                 </address>
