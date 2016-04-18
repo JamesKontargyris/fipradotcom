@@ -102,6 +102,11 @@ get_header(); ?>
                                                 </div>
                                                 <div class="person-contact-details">
                                                     <table class="no-style" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                        <?php if($email = get_field('email')) : ?>
+                                                            <tr>
+                                                                <td colspan="2"><?php echo hide_email($email) ?></td>
+                                                            </tr>
+                                                        <?php endif; ?>
                                                         <?php if($tel = get_field('tel')) : ?>
                                                             <tr>
                                                                 <td>Tel</td>

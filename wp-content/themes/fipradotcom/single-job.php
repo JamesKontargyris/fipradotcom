@@ -35,24 +35,7 @@
                 </div><!-- #primary -->
 
                 <div id="secondary">
-                    <div class="sidebar-contacts-container">
-                        <h5 id="practice-lead">Apply to:</h5>
-<!--                        Get ID of Fipriot to apply to-->
-                        <?php $f_id = get_field('apply_to')->ID; ?>
-
-                        <div class="sidebar-contacts-group">
-                            <div class="sidebar-contact">
-                                <div class="sidebar-contact-content">
-                                    <?php if ( has_post_thumbnail($f_id) ) : ?>
-                                        <img src="<?= wp_get_attachment_image_src( get_post_thumbnail_id( $f_id ), 'profile-photo' )[0]; ?>" alt="<?php echo get_field('first_name', $f_id) . ' ' . get_field('last_name', $f_id); ?>" title="<?php echo get_field('first_name', $f_id) . ' ' . get_field('last_name', $f_id); ?>" style="background-color: white;"/>
-                                    <?php endif; ?>
-                                    <p><strong><?php echo get_field('first_name', $f_id) . ' ' . get_field('last_name', $f_id); ?></strong><br/><?php echo get_field('position', $f_id) ? get_field('position', $f_id) : ''; echo get_field('position', $f_id) && get_field('unit', $f_id) ? ', ' : ''; echo get_field('unit', $f_id) ? get_field('unit', $f_id)->post_title : ''; ?></p>
-<!--                                    TODO Update apply button-->
-                                    <p class="no-margin"><a href="#" class="btn primary btn-white">Apply</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php require('inc/lead_contacts.php'); ?>
 
                     <?php if(get_field('include')) : ?>
                         <aside>

@@ -343,3 +343,84 @@ function make_expertise_tag_classes($tags)
 
     return false;
 }
+
+
+//Obfuscate an email address in a mailto link
+function hide_email($email)
+
+{ $character_set = '+-.0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz';
+
+    $key = str_shuffle($character_set); $cipher_text = ''; $id = 'e'.rand(1,999999999);
+
+    for ($i=0;$i<strlen($email);$i+=1) $cipher_text.= $key[strpos($character_set,$email[$i])];
+
+    $script = 'var a="'.$key.'";var b=a.split("").sort().join("");var c="'.$cipher_text.'";var d="";';
+
+    $script.= 'for(var e=0;e<c.length;e++)d+=b.charAt(a.indexOf(c.charAt(e)));';
+
+    $script.= 'document.getElementById("'.$id.'").innerHTML="<a href=\\"mailto:"+d+"\\">"+d+"</a>"';
+
+    $script = "eval(\"".str_replace(array("\\",'"'),array("\\\\",'\"'), $script)."\")";
+
+    $script = '<script type="text/javascript">/*<![CDATA[*/'.$script.'/*]]>*/</script>';
+
+    return '<span id="'.$id.'">[javascript protected email address]</span>'.$script;
+
+}
+
+// Generate vCard and save to template directory
+// Return path to created file
+function create_fipriot_vcard()
+{
+    require('lib/VCard.php');
+
+// define vcard
+    $vcard = new vCard();
+
+// define variables
+   $data = [
+       'first_name' => get_field('first_name'),
+       'last_name' => get_field('last_name'),
+       'display_name' => get_field('first_name') . ' ' . get_field('last_name'),
+       'company' => 'Fipra',
+       'url' => get_the_permalink(get_the_ID()),
+   ];
+
+//    Check for various available fields
+//Email address info
+    if(get_field('email')) {
+        $data['email1'] = get_field('email');
+    }
+
+//    Contact details
+    if(get_field('tel')) { $data['office_tel'] = get_field('tel'); }
+    if(get_field('fax')) { $data['fax_tel'] = get_field('fax'); }
+    if(get_field('address')) { $data['work_address'] = strip_tags(str_replace(PHP_EOL, '\n', get_field('address'))); }
+
+//    Position and Unit / Special Adviser info
+    if(get_field('is_special_adviser')) {
+     $data['role'] = 'Special Adviser';
+        $data['role'] .= get_field('special_adviser_expertise_tags') ? ' - ' . format_spad_expertise_tags(get_field('special_adviser_expertise_tags')) : '';
+    } else {
+        $data['role'] = get_field('position');
+        if(get_field('position') && get_field('unit')[0]) {
+            $data['role'] .= ', ';
+        }
+        $data['role'] .= get_field('unit')[0] ? fiprafy_unit_name(get_the_title(get_field('unit')[0])) : '';
+        if((get_field('position') || get_field('unit')[0]) && get_field('additional_position_info')) { $data['role'] .= '; '; }
+        if(get_field('additional_position_info')) { echo get_field('additional_position_info'); }
+    }
+//Set all Fipriot data
+    $vcard->set('data', $data);
+
+//    Get vCard directory and generate filename from Fipriot name
+    $vcard_dir = get_template_directory() . '/vcards';
+    $filename = strtolower(get_field('first_name') . '_' . get_field('last_name') . '.vcf');
+    if(file_put_contents($vcard_dir . '/' . $filename, $vcard->show()))
+    {
+//        Return path and filename if successful
+        return get_template_directory_uri() . '/vcards/' . $filename;
+    }
+//    Failed?
+    return false;
+}

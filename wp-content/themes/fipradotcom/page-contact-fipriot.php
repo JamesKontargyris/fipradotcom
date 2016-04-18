@@ -24,7 +24,7 @@ get_header(); ?>
 
     <?php
 // Assign variables
-    $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $unit_id = get_field('unit') ? get_field('unit')[0] : "";
+    $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $unit_id = get_field('unit') ? get_field('unit')[0] : ""; $email = get_field('email');
     ?>
 
 
@@ -41,6 +41,10 @@ get_header(); ?>
                 <div id="primary">
 
                     <h3><i class="icon-mail"></i>&nbsp;&nbsp; Contact <?php echo $first_name; ?></h3>
+
+                    <?php if($email) : ?>
+                        <p>Email <?php echo $first_name; ?> on <strong><?php echo hide_email($email) ?></strong> or complete the form below:</p>
+                    <?php endif; ?>
 
                     <?php echo do_shortcode('[contact-form-7 id="3279" title="Fipriot Contact Form"]'); ?>
 
@@ -62,6 +66,13 @@ get_header(); ?>
                                             <tr>
                                                 <td valign="top" style="padding-bottom:24px;"><strong>Office</strong></td>
                                                 <td valign="top" style="padding-bottom:24px;"><?php echo $address ?></td>
+                                            </tr>
+                                        <?php endif; ?>
+
+                                        <?php if($email = get_field('email')) : ?>
+                                            <tr>
+                                                <td valign="top" style="padding-bottom:24px;"><strong>Email</strong></td>
+                                                <td valign="top" style="padding-bottom:24px;"><?php echo hide_email($email) ?></td>
                                             </tr>
                                         <?php endif; ?>
 

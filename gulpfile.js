@@ -2,6 +2,7 @@
 var baseDir = 'wp-content/themes/fipradotcom/';
 var sassDir = baseDir + 'sass/';
 var imgDir = baseDir + 'img/';
+var jsDir = baseDir + 'js/';
 
 // Gulp
 var gulp = require('gulp');
@@ -9,42 +10,51 @@ var gulp = require('gulp');
 // Sass/CSS stuff
 var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
-var minifycss = require('gulp-minify-css');
 
 // Images
-//var svgmin = require('gulp-svgmin');
 var imagemin = require('gulp-imagemin');
+
+// JS
+var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
 
 //Others
 var plumber = require('gulp-plumber');
+var rename = require('gulp-rename');
 
 // compile all your Sass
 gulp.task('sass', function (){
     gulp.src([sassDir + 'style.scss'])
         .pipe(plumber())
         .pipe(sass({
-            outputStyle: 'expanded'
+            outputStyle: 'compressed'
         }))
         .pipe(prefix(
             "last 1 version", "> 1%", "ie 8", "ie 7"
         ))
-        //.pipe(minifycss())
         .pipe(gulp.dest(baseDir));
 });
 
-// Images
-//gulp.task('svgmin', function() {
-//    gulp.src('./dev/img/svg/*.svg')
-//        .pipe(svgmin())
-//        .pipe(gulp.dest('./dev/img/svg'))
-//        .pipe(gulp.dest('./prod/img/svg'));
-//});
+// uglify all JS
+gulp.task('scripts', function (){
+    gulp.src([jsDir + '**/*.js'])
+        .pipe(plumber())
+        // .pipe(concat('site.min.js'))
+        .pipe(uglify())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest(baseDir + 'minjs'));
+});
 
-gulp.task('imagemin', function () {
+gulp.task('images', function () {
     gulp.src(imgDir + '**/*')
         .pipe(plumber())
-        .pipe(imagemin())
-        .pipe(gulp.dest(baseDir + 'img-min'));
+        .pipe(imagemin({
+            progressive: true,
+            optimizationLevel: 2
+        }))
+        .pipe(gulp.dest(baseDir + 'minimg'));
 });
 
 gulp.task('default', function(){

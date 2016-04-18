@@ -19,6 +19,8 @@ wp-content/backups/
 sitemap.xml
 sitemap.xml.gz
 
+wp-content/themes/fipradotcom/js
+
 desktop.ini
 node_modules/
 .idea/

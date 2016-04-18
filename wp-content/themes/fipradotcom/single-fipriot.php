@@ -17,7 +17,7 @@ get_header(); ?>
         <?php $post_id = get_the_ID(); ?>
         <?php
         // Assign variables
-        $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $unit_id = get_field('unit') ? get_field('unit')[0] : ""; $additional_position_info = get_field('additional_position_info');
+        $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $unit_id = get_field('unit') ? get_field('unit')[0] : ""; $additional_position_info = get_field('additional_position_info'); $email = get_field('email');
         ?>
 
         <div id="contact-form-block" class="full-width-block-container content-bar-bottom">
@@ -26,6 +26,10 @@ get_header(); ?>
 
                     <div class="contact-form-block-close"><i class="icon-cancel"></i></div>
                     <h3 class="no-top-margin"><i class="icon-mail"></i>&nbsp;&nbsp; Contact <?php echo $first_name; ?></h3>
+
+                    <?php if($email) : ?>
+                        <p>Email <?php echo $first_name; ?> on <?php echo hide_email($email) ?> or complete the form below:</p>
+                    <?php endif; ?>
 
                     <?php echo do_shortcode('[contact-form-7 id="3276" title="Fipriot Contact Form"]'); ?>
 
@@ -70,7 +74,7 @@ get_header(); ?>
             <div id="site-content">
 
                 <div id="primary" class="profile-content-area">
-                    <main id="main" class="site-main" role="main">
+                    <main id="main" class="site-main site-main-profile" role="main">
 
                         <?php $bio = get_field('bio'); ?>
                             <p class="lead"><?php echo get_lead_paragraph($bio); ?></p>
@@ -90,6 +94,12 @@ get_header(); ?>
                             <div class="col-6-xs col-12-xxs no-bottom-margin">
                                 <address class="no-bottom-margin">
                                     <table class="no-style" cellspacing="0" cellpadding="0" border="0" width="100%">
+
+                                        <?php if($email = get_field('email')) : ?>
+                                            <tr>
+                                                <td colspan="2"><?php echo hide_email($email) ?></td>
+                                            </tr>
+                                        <?php endif; ?>
 
                                         <?php if($tel = get_field('tel')) : ?>
                                             <tr>
@@ -112,6 +122,13 @@ get_header(); ?>
                                             </tr>
                                         <?php endif; ?>
 
+                                        <?php if($vcard_path = create_fipriot_vcard()) : ?>
+                                            <tr>
+                                                <td colspan="2">&nbsp;</td>
+                                            </tr>
+                                            <tr><td colspan="2"><a href="<?php echo $vcard_path; ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/vcard.svg" alt="" style="width:24px; height:24px;vertical-align: middle"> Download vCard</a></td></tr>
+                                        <?php endif; ?>
+
                                     </table>
 
                                 </address>
@@ -119,23 +136,21 @@ get_header(); ?>
                         </div>
                     </aside>
 
-<!--TODO update languages loop-->
+                    <aside>
+                        <h5 id="languages">Languages Spoken</h5>
+                        <ul class="languages-list no-bottom-margin no-bullet">
+                            <?php $languages = []; // Collect languages as we go, so we can check for duplicates ?>
+                            <?php for($i = 1; $i <= 9; $i++) : $language = get_field('language_' . $i);?>
+                                <?php if(isset($language->term_id) && ! in_array($language->term_id, $languages)) : // language is set and isn't already displayed? ?>
+                                    <?php $flag_url = get_language_flag_url($language->term_id) ? get_language_flag_url($language->term_id) : get_template_directory_uri() . '/img/blank_language_flag.png'; ?>
+                                    <li><img src="<?php echo $flag_url; ?>" class="languages-list-flag tooltip" alt="<?php echo ucwords($language->name); ?>" title="<?php echo ucwords($language->name); ?>"/></li>
+                                    <?php $languages[] = $language->term_id; ?>
+                                <?php endif; ?>
+                            <?php endfor; ?>
+                        </ul>
+                    </aside>
 
-                        <aside>
-                            <h5 id="languages">Languages Spoken</h5>
-                            <ul class="languages-list no-bottom-margin no-bullet">
-                                <?php $languages = []; // Collect languages as we go, so we can check for duplicates ?>
-                                <?php for($i = 1; $i <= 9; $i++) : $language = get_field('language_' . $i);?>
-                                    <?php if(isset($language->term_id) && ! in_array($language->term_id, $languages)) : // language is set and isn't already displayed? ?>
-                                        <?php $flag_url = get_language_flag_url($language->term_id) ? get_language_flag_url($language->term_id) : get_template_directory_uri() . '/img/blank_language_flag.png'; ?>
-                                        <li><img src="<?php echo $flag_url; ?>" class="languages-list-flag tooltip" alt="<?php echo ucwords($language->name); ?>" title="<?php echo ucwords($language->name); ?>"/></li>
-                                        <?php $languages[] = $language->term_id; ?>
-                                    <?php endif; ?>
-                                <?php endfor; ?>
-                            </ul>
-                        </aside>
-
-                        <?php dynamic_sidebar('fipriot-profile'); ?>
+                    <?php dynamic_sidebar('fipriot-profile'); ?>
 
                 </div><!-- #secondary -->
 

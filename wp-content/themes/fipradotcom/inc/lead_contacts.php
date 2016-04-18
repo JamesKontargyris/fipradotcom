@@ -18,6 +18,10 @@
                             <strong><?= $lead->first_name . ' ' . $lead->last_name ?></strong>
                         </a>
 
+                        <?php if($email = get_field('email', $lead->ID)) : ?>
+                            <br><?php echo hide_email($email) ?>
+                        <?php endif; ?>
+
                         <?php $tel = get_field('tel', $lead->ID); ?>
                         <?php if($tel) : ?>
                             <br><span class="font-14">Tel. <?= get_field('tel', $lead->ID) ?></span>
@@ -33,7 +37,6 @@
                             <br><span class="font-14">Fax. <?= get_field('fax', $lead->ID) ?></span>
                         <?php endif; ?>
                         <div class="contact-button">
-                            <!--                                            TODO: Add Google Analytics event tracking-->
                             <a href="/contact-fipriot?person=<?php echo get_field('first_name', $lead->ID) ?><?php echo get_field('last_name', $lead->ID) ?>&fipriot_id=<?php echo $lead->ID; ?>" class="btn primary btn-small btn-white">Contact <?php echo get_field('first_name', $lead->ID) ?></a>
                         </div>
 
