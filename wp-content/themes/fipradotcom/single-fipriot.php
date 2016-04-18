@@ -28,7 +28,7 @@ get_header(); ?>
                     <h3 class="no-top-margin"><i class="icon-mail"></i>&nbsp;&nbsp; Contact <?php echo $first_name; ?></h3>
 
                     <?php if($email) : ?>
-                        <p>Email <?php echo $first_name; ?> on <?php echo hide_email($email) ?> or complete the form below:</p>
+                        <p>Email <?php echo $first_name; ?> on <?php echo hide_email($email) ?> &nbsp;or complete the form below:</p>
                     <?php endif; ?>
 
                     <?php echo do_shortcode('[contact-form-7 id="3276" title="Fipriot Contact Form"]'); ?>
