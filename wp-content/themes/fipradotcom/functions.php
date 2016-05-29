@@ -187,6 +187,15 @@ function fipradotcom_widgets_init()
         'before_title' => '<h5>',
         'after_title' => '</h5>',
     ]);
+    register_sidebar([
+        'name' => __('Dynamic Code and Content', 'fipradotcom'),
+        'id' => 'dynamic-code',
+        'description' => 'Dynamic code added after the body tag on each page',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ]);
 }
 
 add_action('widgets_init', 'fipradotcom_widgets_init');
