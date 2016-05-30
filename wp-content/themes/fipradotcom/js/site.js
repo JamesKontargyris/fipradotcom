@@ -50,7 +50,8 @@
         });
     }
 
-
+    //Remove the outer .textwidget div on text widgets
+    // $('.textwidget').replaceWith($('.textwidget').contents());
 
     //Display/hide mobile menu when .mobile-menu-toggle is tapped
     $('.mobile-menu-toggle').on('click', function()
