@@ -415,7 +415,7 @@ function create_fipriot_vcard()
 
 //    Get vCard directory and generate filename from Fipriot name
     $vcard_dir = get_template_directory() . '/vcards';
-    $filename = strtolower(get_field('first_name') . '_' . get_field('last_name') . '.vcf');
+    $filename = sanitise_filename(strtolower(get_field('first_name') . '_' . get_field('last_name') . '.vcf'));
     if(file_put_contents($vcard_dir . '/' . $filename, $vcard->show()))
     {
 //        Return path and filename if successful

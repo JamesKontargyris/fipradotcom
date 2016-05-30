@@ -429,6 +429,19 @@ function my_add_ul_class_on_insert( $postarr ) {
     return $postarr;
 }
 
+//Function to sanitise filenames
+function sanitise_filename($file)
+{
+// Remove anything which isn't a word, whitespace, number
+// or any of the following caracters -_~,;[]().
+// If you don't need to handle multi-byte characters
+// you can use preg_replace rather than mb_ereg_replace
+    $file = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $file);
+// Remove any runs of periods
+    $file = mb_ereg_replace("([\.]{2,})", '', $file);
+
+    return $file;
+}
 
 
 
