@@ -31,7 +31,7 @@ else {
     define('DB_USER', 'forge');
 
     /** MySQL database password */
-    define('DB_PASSWORD', 'm3sdsXvvqSbuA5lluN4n');
+    define('DB_PASSWORD', 'PYkQdZF70EdfqceEb9U0');
 
     /** MySQL hostname */
     define('DB_HOST', 'localhost');
