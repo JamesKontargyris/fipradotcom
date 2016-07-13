@@ -50,7 +50,7 @@ get_header(); ?>
 
                         <div class="people-group-container">
 
-                            <div class="person lazy divider">
+                            <div class="person divider">
                                 <div class="divider__labelwrap">
                                     <div class="divider__label"><i class="icon-up-open"></i> Policy Area Expertise</div>
                                 </div>
@@ -70,13 +70,13 @@ get_header(); ?>
                                         $expertise = get_field('special_adviser_expertise');
                                     ?>
 
-                                    <div id="surname-<?php echo substr($last_name, 0, 1); ?>" class="person lazy <?php echo $expertise_tag_classes . ' surname-' . substr($last_name, 0, 1); ?>">
+                                    <div id="surname-<?php echo substr($last_name, 0, 1); ?>" class="person <?php echo $expertise_tag_classes . ' surname-' . substr($last_name, 0, 1); ?>">
                                         <div class="person-profile-photo">
                                             <a href="<?php echo get_the_permalink(); ?>">
                                                 <?php if ( has_post_thumbnail() ) : ?>
-                                                    <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post_id) ) ?>" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile" />
+                                                    <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post_id) ) ?>" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile lazy" />
                                                 <?php else : ?>
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/img/blank_profile_<?php echo get_field('gender'); ?>.png" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile" />
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/img/blank_profile_<?php echo get_field('gender'); ?>.png" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile lazy" />
                                                 <?php endif; ?>
                                             </a>
                                         </div>
@@ -165,9 +165,9 @@ get_header(); ?>
                                         <div class="person-profile-photo">
                                             <a href="<?php echo get_the_permalink(); ?>">
                                                 <?php if ( has_post_thumbnail() ) : ?>
-                                                    <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post_id) ) ?>" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile" />
+                                                    <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post_id) ) ?>" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile lazy" />
                                                 <?php else : ?>
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/img/blank_profile_<?php echo get_field('gender'); ?>.png" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile" />
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/img/blank_profile_<?php echo get_field('gender'); ?>.png" alt="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" title="<?php echo get_field('first_name'); ?> <?php echo get_field('last_name'); ?>" class="photo-tile lazy" />
                                                 <?php endif; ?>
                                             </a>
                                         </div>
