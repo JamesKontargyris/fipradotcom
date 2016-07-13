@@ -50,6 +50,9 @@
         });
     }
 
+    //Lazy loading of elements
+    $('.lazy').Lazy();
+
     //Remove the outer .textwidget div on text widgets
     // $('.textwidget').replaceWith($('.textwidget').contents());
 
