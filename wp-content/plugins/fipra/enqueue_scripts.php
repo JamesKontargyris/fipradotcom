@@ -176,6 +176,14 @@ function fipradotcom_scripts()
         true
     );
 
+    wp_enqueue_script(
+        'fipradotcom-lazy-js',
+        get_template_directory_uri() . '/minjs/jquery.lazy.min.js',
+        array(),
+        '20160309',
+        true
+    );
+
 
     if(is_single()) {
 
@@ -202,7 +210,6 @@ function fipradotcom_scripts()
             '20151007',
             true
         );
-
     }
 
 

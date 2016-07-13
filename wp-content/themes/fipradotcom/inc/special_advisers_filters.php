@@ -24,7 +24,7 @@
                     <ul class="filter-list no-margin no-bullet">
                         <?php $alphabet = range('A', 'Z'); ?>
                         <?php foreach($alphabet as $letter) : ?>
-                            <li><a href="#surname-<?php echo $letter; ?>" class="filter jump-to-surname" data-surname-letter="<?php echo $letter; ?>"><?php echo $letter; ?></a></li>
+                            <li class="filterable"><a href="#surname-<?php echo $letter; ?>" class="filter" data-filter=".surname-<?php echo $letter; ?>" data-surname-letter="<?php echo $letter; ?>" data-filtering-on-text="Surname: <?php echo $letter; ?>"><?php echo $letter; ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>

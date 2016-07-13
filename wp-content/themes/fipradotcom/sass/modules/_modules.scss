@@ -323,4 +323,44 @@ a {
 
 .v-align { @include vertical-align; }
 
+.person {
+  &.divider {
+    background-color: darken(#eceef2, 15%);
+    padding:5px;
+    @include font-size(16);
+
+    &.has-border {
+      border-left:1px dotted darken(#eceef2, 15%);
+    }
+
+    &.has-left-margin {
+      margin-left:20px;
+    }
+
+    .divider__labelwrap {
+      display: inline-block; overflow: visible;
+
+      .divider__label {
+        display: inline-block; white-space: nowrap; color:white;
+        i { display:none; }
+      }
+    }
+
+    @include breakpoint($media__medium) {
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:-10;
+      width:40px;
+      height:100%;
+
+      .divider__labelwrap .divider__label {
+        transform: rotate(90deg); transform-origin: 0 0;
+        margin-left:22px;
+        i { display:inline; }
+      }
+    }
+  }
+}
+
 //.hide { display:none; }

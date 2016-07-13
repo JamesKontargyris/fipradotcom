@@ -42,7 +42,7 @@ function get_all_fipriots($include_spads = false) {
     return $fipriots;
 }
 
-function get_all_spads($policy = false, $location = false) {
+function get_all_spads($group = '') {
 
     global $post;
 
@@ -61,16 +61,10 @@ function get_all_spads($policy = false, $location = false) {
         ],
     ];
 
-    if($policy) {
+    if($group) {
         $args['meta_query'][] = [
-            'key'     => 'special_adviser_expertise_type',
-            'value'   => 'policy',
-            'compare' => 'LIKE',
-        ];
-    } elseif($location) {
-        $args['meta_query'][] = [
-            'key'     => 'special_adviser_expertise_type',
-            'value'   => 'country',
+            'key'     => 'grouping',
+            'value'   => $group,
             'compare' => 'LIKE',
         ];
     }
