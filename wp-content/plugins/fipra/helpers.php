@@ -223,7 +223,11 @@ function fiprafy_unit_name($unit_name) {
 
 //Get the opening sentence from a paragraph of text
 function get_lead_paragraph($text) {
-    return strip_tags(preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', $text));
+    $numMatches = strpos($text, '</p>') ? preg_match_all('|<p>(.+?)</p>|', $text, $matches) : 0; // Find all paragraph blocks
+
+    if($numMatches) return strip_tags(preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', $matches[1][0])); // Return the first line from the first paragraph
+
+    return strip_tags(preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', $text)); // No paragraphs so just return the first line from the text passed in
 }
 
 //Return all but the first sentence in a paragraph
