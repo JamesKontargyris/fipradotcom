@@ -47,7 +47,7 @@ get_header(); ?>
                         <?php if( get_field('team') ) : ?>
                             <li class="hide-s"><a class="jump-to-link" href="#our-team">Our Team <i class="icon-down-open"></i></a></li>
                         <?php endif; ?>
-                        <li class="hide-s hide-m"><a class="jump-to-link" href="#get-in-touch">First Point of Contact <i class="icon-down-open"></i></a></li>
+                        <li class="hide-s hide-m"><a class="jump-to-link" href="#get-in-touch">Please contact: <i class="icon-down-open"></i></a></li>
                     </ul>
                 </div>
             </div>
