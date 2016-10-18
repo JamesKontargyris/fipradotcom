@@ -1,10 +1,11 @@
 <?php if($lead_contacts = get_field('lead_contact')) : ?>
     <div class="sidebar-contacts-container">
-        <?php if(count($lead_contacts) == 1) : ?>
-            <h5 id="get-in-touch">First Point of Contact</h5>
-        <?php else : ?>
-            <h5 id="get-in-touch">First Points of Contact</h5>
-        <?php endif; ?>
+<!--        --><?php //if(count($lead_contacts) == 1) : ?>
+<!--            <h5 id="get-in-touch">First Point of Contact</h5>-->
+<!--        --><?php //else : ?>
+<!--            <h5 id="get-in-touch">First Points of Contact</h5>-->
+<!--        --><?php //endif; ?>
+        <h5 id="get-in-touch">Please contact:</h5>
         <div class="sidebar-contacts-group">
 
             <?php foreach($lead_contacts as $lead) : ?>
