@@ -28,25 +28,38 @@ function layout_fipriot_team_member($post_id, $expertise = false, $unit = true, 
 
             $string .= '<div class="profile-details">';
                 $string .= '<h4 class="no-bottom-margin"><a href="' . get_the_permalink($post_id) . '">' . get_field('first_name', $post_id) . ' ' . get_field('last_name', $post_id) . '</a></h4>';
-                if(get_field('is_special_adviser', $post_id)) {
-                    $string .= '<h6>Special Adviser';
-                    if(get_field('special_adviser_expertise')) $string .= '<br>' . get_field('special_adviser_expertise');
-                    $string .= '</h6>';
-                } else {
-                    $position_title = get_field('position', $post_id);
-                    $unit_id = get_field('unit', $post_id) ? get_field('unit', $post_id)[0] : "";
-                    $additional_position_info = get_field('additional_position_info');
+                if($position === true) {
+	                if(get_field('is_special_adviser', $post_id)) {
+		                $string .= '<h6>Special Adviser';
+		                if(get_field('special_adviser_expertise')) $string .= '<br>' . get_field('special_adviser_expertise');
+		                $string .= '</h6>';
+	                } else {
+		                $position_title           = get_field( 'position', $post_id );
+		                $unit_id                  = get_field( 'unit', $post_id ) ? get_field( 'unit', $post_id )[0] : "";
+		                $additional_position_info = get_field( 'additional_position_info' );
 //                    Fipriot has either a position, unit or additional position info assigned?
-                    if($position_title || $unit_id) {
-                        $string .= '<h6>';
-                            if($position && $position_title) { $string .= $position_title; };
-                            if($position_title && $unit_id) { $string .= '<br>'; }
-                            if($unit && $unit_id) { $string .= fiprafy_unit_name(get_the_title($unit_id)); }
-                            if(($position_title || $unit_id) && $additional_position_info) { $string .= ', '; }
-                            if($additional_position_info) { $string .= $additional_position_info; }
-                        $string .= '</h6>';
-                    }
+		                if ( $position_title || $unit_id ) {
+			                $string .= '<h6>';
+			                if ( $position && $position_title ) {
+				                $string .= $position_title;
+			                };
+			                if ( $position_title && $unit_id ) {
+				                $string .= '<br>';
+			                }
+			                if ( $unit && $unit_id ) {
+				                $string .= fiprafy_unit_name( get_the_title( $unit_id ) );
+			                }
+			                if ( ( $position_title || $unit_id ) && $additional_position_info ) {
+				                $string .= ', ';
+			                }
+			                if ( $additional_position_info ) {
+				                $string .= $additional_position_info;
+			                }
+			                $string .= '</h6>';
+		                }
+	                }
                 }
+
     //            If $expertise is true, iterate through expertise areas and display an icon link for each one
                 if( $expertise === true ) {
     //                Fipriot has expertise set?
