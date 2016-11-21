@@ -64,7 +64,7 @@ get_header(); ?>
                         <h3 id="staff" class="upper small center">Practice Staff</h3>
                         <div id="our-team-carousel" class="team-carousel with-controls" data-number-of-items="<?php echo count($team); ?>">
                             <?php foreach($team as $fipriot) : ?>
-                                <?php echo layout_fipriot_team_member($fipriot->ID, false, true, true); ?>
+                                <?php echo layout_fipriot_team_member($fipriot->ID, false, false, false); ?>
                             <?php endforeach; ?>
                         </div>
                     </div>
