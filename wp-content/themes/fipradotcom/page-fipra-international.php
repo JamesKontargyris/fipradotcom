@@ -20,7 +20,7 @@ get_header(); ?>
         <?php the_content(); ?>
 
         <?php $international_unit_id = get_id_by_slug('international', 'unit') ? get_id_by_slug('international', 'unit') : 0; // get the ID of the Fipra International unit post type based on the 'international' slug ?>
-        <?php $fipriots = get_all_fipriots_by_unit($international_unit_id); // get all Fipriots assigned to Fipra International ?>
+        <?php $fipriots = get_field('people'); // get all Fipriots assigned to Fipra International ?>
         <?php $filter_group = 'fipra_international_profiles'; // used by our_people_filters.php to show the correct filters for the page ?>
 
         <?php include('inc/our_people_filters.php'); ?>
@@ -32,13 +32,14 @@ get_header(); ?>
                 <div id="primary" class="full-width">
 
                     <main id="main" class="site-main" role="main">
+                        <?php print_r(get_field('people')); ?>
 
                         <a href="#page" class="button-back-to-top jump-to-link"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" width="12" height="12"> Top</a>
 
-                        <?php if ( $fipriots->have_posts() ) : ?>
+                        <?php if ( count( $fipriots ) >= 1 ) : ?>
 
                             <!--                    Used by jQuery to update filtering-on-title when clear filter button is clicked -->
-                            <div class="hide-s hide-m number-of-fipriots"><?php echo $fipriots->found_posts; ?></div>
+                            <div class="hide-s hide-m number-of-fipriots"><?php echo count($fipriots); ?></div>
                             <div class="hide-s hide-m fipriot-type">Fipriot</div>
 
                             <div class="filtering-on-container">
@@ -53,32 +54,22 @@ get_header(); ?>
 
                                 <div class="people-group">
 
-                                    <?php while ( $fipriots->have_posts() ) : $fipriots->the_post(); ?>
+                                    <?php foreach($fipriots as $fipriot) : // loop through array of Fipriot IDs ?>
 
-                                        <?php $post_id = get_the_ID(); ?>
-    <!--                                    Get unit ID and filter class names-->
-                                        <?php $unit_id = get_field('unit') ? get_field('unit')[0] : 0; ?>
-                                        <?php $unit_filter_name = make_class_name(get_the_title($unit_id)); ?>
-                                        <?php $expertise_filter_names = ''; ?>
-                                        <?php if($expertise_areas = get_field('expertise')) : ?>
-                                            <?php foreach($expertise_areas as $expertise_id) {
-                                                $expertise_filter_names .= make_class_name(str_replace(',', '', get_the_title($expertise_id))) . ' ';
-                                            } ?>
-                                        <?php endif; ?>
-
+                                        <?php $post_id = $fipriot; ?>
 
                                         <?php
 //                                        Assign variables
-                                            $first_name = get_field('first_name'); $last_name = get_field('last_name'); $position = get_field('position'); $additional_position_info = get_field('additional_position_info');
+                                            $first_name = get_field('first_name', $post_id); $last_name = get_field('last_name', $post_id); $position = get_field('position', $post_id); $additional_position_info = get_field('additional_position_info', $post_id);
                                         ?>
 
-                                        <div id="surname-<?php echo substr($last_name, 0, 1); ?>" class="person <?php echo trim($unit_filter_name) . ' ' . trim($expertise_filter_names) . ' surname-' . substr($last_name, 0, 1); ?>">
+                                        <div id="surname-<?php echo substr($last_name, 0, 1); ?>" class="person <?php echo ' surname-' . substr($last_name, 0, 1); ?>">
                                             <div class="person-profile-photo">
-                                                <a href="<?php echo get_the_permalink(); ?>">
-                                                    <?php if ( has_post_thumbnail() ) : ?>
+                                                <a href="<?php echo get_the_permalink($post_id); ?>">
+                                                    <?php if ( has_post_thumbnail($post_id) ) : ?>
                                                         <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'profile-photo' )[0]; ?>" alt="<?php echo $first_name; ?> <?php echo $last_name; ?>" title="<?php echo $first_name; ?> <?php echo $last_name; ?>" class="photo-tile" />
                                                     <?php else : ?>
-                                                        <img src="<?php echo get_template_directory_uri(); ?>/img/blank_profile_<?php echo get_field('gender'); ?>.png" alt="<?php echo $first_name; ?> <?php echo $last_name; ?>" title="<?php echo $first_name; ?> <?php echo $last_name; ?>" class="photo-tile" />
+                                                        <img src="<?php echo get_template_directory_uri(); ?>/img/blank_profile_<?php echo get_field('gender', $post_id); ?>.png" alt="<?php echo $first_name; ?> <?php echo $last_name; ?>" title="<?php echo $first_name; ?> <?php echo $last_name; ?>" class="photo-tile" />
                                                     <?php endif; ?>
                                                 </a>
                                             </div>
@@ -88,40 +79,38 @@ get_header(); ?>
                                                 <h6>
                                                     <?php
                                                         echo $position;
-                                                        if($position && $unit_id) { echo ', '; }
-                                                        echo $unit_id ? fiprafy_unit_name(get_the_title($unit_id)) : '';
-                                                        if(($position || $unit_id) && $additional_position_info) { echo '; '; }
+                                                        if($position && $additional_position_info) { echo '; '; }
                                                         if($additional_position_info) { echo $additional_position_info; }
                                                     ?>
                                                 </h6>
 
                                                 <div class="btn-container">
-                                                    <a href="<?php echo get_the_permalink(); ?>" class="btn">
+                                                    <a href="<?php echo get_the_permalink($post_id); ?>" class="btn">
                                                         <div class="btn-text"><i class="icon-right-circle-1"></i></div>
                                                     </a>
                                                 </div>
                                                 <div class="person-contact-details">
                                                     <table class="no-style" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                        <?php if($email = get_field('email')) : ?>
+                                                        <?php if($email = get_field('email', $post_id)) : ?>
                                                             <tr>
                                                                 <td colspan="2"><?php echo hide_email($email) ?></td>
                                                             </tr>
                                                         <?php endif; ?>
-                                                        <?php if($tel = get_field('tel')) : ?>
+                                                        <?php if($tel = get_field('tel', $post_id)) : ?>
                                                             <tr>
                                                                 <td>Tel</td>
                                                                 <td><?php echo $tel; ?></td>
                                                             </tr>
                                                         <?php endif; ?>
 
-                                                        <?php if($mobile = get_field('mobile')) : ?>
+                                                        <?php if($mobile = get_field('mobile', $post_id)) : ?>
 <!--                                                            <tr>-->
 <!--                                                                <td>Mobile</td>-->
 <!--                                                                <td>--><?php //echo $mobile; ?><!--</td>-->
 <!--                                                            </tr>-->
                                                         <?php endif; ?>
 
-                                                        <?php if($fax = get_field('fax')) : ?>
+                                                        <?php if($fax = get_field('fax', $post_id)) : ?>
                                                             <tr>
                                                                 <td>Fax</td>
                                                                 <td><?php echo $fax; ?></td>
@@ -129,17 +118,17 @@ get_header(); ?>
                                                         <?php endif; ?>
                                                         <tr>
                                                             <td colspan="2">
-                                                                <a href="/contact-fipriot?person=<?php echo get_field('first_name') ?><?php echo get_field('last_name') ?>&fipriot_id=<?php the_ID(); ?>">Contact <?php echo $first_name; ?></a>
+                                                                <a href="/contact-fipriot?person=<?php echo get_field('first_name', $post_id) ?><?php echo get_field('last_name', $post_id) ?>&fipriot_id=<?php $post_id ?>">Contact <?php echo $first_name; ?></a>
                                                             </td>
                                                         </tr>
                                                     </table>
 
-                                                    <br/><a href="<?php echo get_the_permalink(); ?>" class="full-profile-link">Full profile <i class="icon-right-open"></i></a>
+                                                    <br/><a href="<?php echo get_the_permalink($post_id); ?>" class="full-profile-link">Full profile <i class="icon-right-open"></i></a>
                                                 </div>
                                             </div>
                                         </div>
 
-                                    <?php endwhile; ?>
+                                    <?php endforeach; ?>
 
                                 </div>
                             </div>
