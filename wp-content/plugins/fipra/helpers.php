@@ -473,12 +473,10 @@ function format_sidebar_tags()
 	foreach ( $tags as $tag ) {
 		$tag_link = get_tag_link( $tag->term_id );
 
-		$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='sidebar-tag {$tag->slug}'>";
-		$html .= "{$tag->name}</a> ";
+		$html .= ", <a href='{$tag_link}' title='{$tag->name} Tag' class='sidebar-tag {$tag->slug}'>{$tag->name}</a>";
 	}
-	$html .= '</div>';
 
-	return $html;
+	return ltrim($html, ', ');
 }
 
 /**
@@ -493,11 +491,10 @@ function format_article_tags()
 		foreach ( $tags as $tag ) {
 			$tag_link = get_tag_link( $tag->term_id );
 
-			$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='sidebar-tag {$tag->slug}'>";
-			$html .= "{$tag->name}</a> ";
+			$html .= ", <a href='{$tag_link}' title='{$tag->name} Tag' class='sidebar-tag {$tag->slug}'>{$tag->name}</a>";
 		}
 
-		return $html;
+		return ltrim($html, ', ');
 	}
 
 	return false;

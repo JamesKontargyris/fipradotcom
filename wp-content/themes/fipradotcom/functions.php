@@ -300,7 +300,7 @@ add_filter('get_search_form', 'fipra_sitewide_search_form');
 add_image_size( 'profile-photo', 300, 300, true );
 add_image_size( 'banner', 1500, 1000, true );
 add_image_size( 'unit-flag', 64, 64 );
-add_image_size( 'article', 600, 400, true );
+add_image_size( 'article', 600, 600, true );
 
 /**
  * Registering meta sections for taxonomies

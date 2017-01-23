@@ -18,13 +18,16 @@
                 <div id="primary">
                     <main id="main" class="site-main" role="main">
 
+                        <div class="article-extract__type-container">
+		                    <?php if(get_field('article_type') == 'news') : ?>
+                                <img class="article-extract__type-icon" src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-newspaper.png" alt=""> <span class="article-extract__type--news">News</span>
+		                    <?php elseif(get_field('article_type') == 'analysis') : ?>
+                                <img class="article-extract__type-icon" src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-magnifying-glass.png" alt=""> <span class="article-extract__type--analysis">Analysis</span>
+		                    <?php endif; ?>
+                        </div>
+
                         <h1 class="no-margin"><?php the_title(); ?></h1>
                         <div class="article__meta">
-		                    <?php if(get_field('article_type') == 'news') : ?>
-                                <img class="article__type-icon" src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-newspaper.png" alt=""> <span class="article__type--news">News</span>
-		                    <?php elseif(get_field('article_type') == 'analysis') : ?>
-                                <img class="article__type-icon" src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-magnifying-glass.png" alt=""> <span class="article__type--analysis">Analysis</span>
-		                    <?php endif; ?>
 		                    <?php if(get_field('author')) : ?>
                                 by <a href="<?php echo get_the_permalink(get_field('author')[0]); ?>"><strong><?php echo get_the_title(get_field('author')[0]); ?></a></strong> |
 		                    <?php endif; ?>
