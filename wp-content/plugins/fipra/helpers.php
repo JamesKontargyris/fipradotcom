@@ -441,3 +441,64 @@ function create_fipriot_vcard()
 //    Failed?
     return false;
 }
+
+/**
+ * Format an article's categories into a nicely presented string with links
+ *
+ * @param $categories
+ *
+ * @return string
+ */
+function format_article_categories($categories)
+{
+	$category_links = '';
+
+	foreach($categories as $category) {
+		$category_links .= ', <a href="' . get_category_link($category->cat_ID) . '">' . $category->name . '</a>';
+	}
+
+	return ltrim($category_links, ', ');
+
+}
+
+/**
+ * Returns a string containing all tags with links
+ *
+ * @return string
+ */
+function format_sidebar_tags()
+{
+	$tags = get_tags();
+	$html = '';
+	foreach ( $tags as $tag ) {
+		$tag_link = get_tag_link( $tag->term_id );
+
+		$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='sidebar-tag {$tag->slug}'>";
+		$html .= "{$tag->name}</a> ";
+	}
+	$html .= '</div>';
+
+	return $html;
+}
+
+/**
+ * Returns a string containing an article's tags with links
+ *
+ * @return string
+ */
+function format_article_tags()
+{
+	if($tags = wp_get_post_tags(get_the_ID())) {
+		$html = '';
+		foreach ( $tags as $tag ) {
+			$tag_link = get_tag_link( $tag->term_id );
+
+			$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='sidebar-tag {$tag->slug}'>";
+			$html .= "{$tag->name}</a> ";
+		}
+
+		return $html;
+	}
+
+	return false;
+}

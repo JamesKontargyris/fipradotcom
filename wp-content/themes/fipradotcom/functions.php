@@ -300,6 +300,7 @@ add_filter('get_search_form', 'fipra_sitewide_search_form');
 add_image_size( 'profile-photo', 300, 300, true );
 add_image_size( 'banner', 1500, 1000, true );
 add_image_size( 'unit-flag', 64, 64 );
+add_image_size( 'article', 600, 400, true );
 
 /**
  * Registering meta sections for taxonomies
@@ -428,6 +429,21 @@ function my_add_ul_class_on_insert( $postarr ) {
     $postarr['post_content'] = str_replace('<ul>', '<ul class="bullets">', $postarr['post_content'] );
     return $postarr;
 }
+
+/**
+ * Rewrite rule that ensures pagination works
+ */
+function pseudo_archive_rewrite(){
+	// Add the slugs of the pages that are using a Global Template to simulate being an "archive" page
+	$pseudo_archive_pages = array(
+		"news-and-analysis",
+	);
+
+	$slug_clause = implode( "|", $pseudo_archive_pages );
+	add_rewrite_rule( "($slug_clause)/page/([0-9]{1,})/?$", 'index.php?pagename=$matches[1]&paged=$matches[2]', "top" );
+	add_rewrite_rule( "($slug_clause)/(.*)/page/([0-9]{1,})/?$", 'index.php?pagename=$matches[1]&paged=$matches[2]', "top" );
+}
+add_action( 'init', 'pseudo_archive_rewrite' );
 
 //Function to sanitise filenames
 function sanitise_filename($file)

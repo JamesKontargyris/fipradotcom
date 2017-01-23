@@ -12,3 +12,8 @@ $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: $v-rhythm * 2;
 $font__line-height-pre: $v-rhythm * 1.2;
 
+.text--turquoise { color: $color__fipra-turquoise; }
+.text--orange { color: $color__fipra-orange; }
+
+.text--bold { font-weight: $font__bold; }
+

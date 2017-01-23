@@ -9,7 +9,8 @@
             <!-- The Loop -->
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-                <?php $post_id = get_the_ID(); ?>
+
+	            <?php $post_id = get_the_ID(); ?>
 
                 <div id="primary">
                     <main id="main" class="site-main" role="main">

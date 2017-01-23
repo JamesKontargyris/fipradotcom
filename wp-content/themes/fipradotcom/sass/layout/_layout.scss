@@ -47,6 +47,10 @@
     //If layout includes the sidebar on the left, shift the secondary column to the left
     //so it appears first on desktop displays but second on mobile displays
     &.left-sidebar { @include media($media__medium) { @include shift(-12); } }
+
+    @include media(max-width $media__medium) {
+      margin-top:20px;
+    }
   }
 
   #page-footer {

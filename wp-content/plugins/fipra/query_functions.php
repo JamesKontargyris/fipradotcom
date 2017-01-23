@@ -349,6 +349,131 @@ function get_all_jobs($close_in_the_future = true) {
     return $jobs;
 }
 
+function get_articles($articles_per_page) {
+
+	global $post;
+	//Protect against arbitrary paged values
+	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
+	$args = [
+		'post_type' => 'article',
+		'post_status' => 'publish',
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'posts_per_page' => $articles_per_page,
+		'paged' => $paged,
+	];
+
+	$articles = new WP_Query($args);
+	wp_reset_postdata();
+
+	return $articles;
+}
+
+function get_news_articles($articles_per_page, $exclude_ids = [])
+{
+	global $post;
+
+	$args = [
+		'post_type' => 'article',
+		'post_status' => 'publish',
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'posts_per_page' => $articles_per_page,
+		'post__not_in' => $exclude_ids,
+		'meta_key' => 'article_type',
+		'meta_value' => 'news',
+	];
+
+	$articles = new WP_Query($args);
+	wp_reset_postdata();
+
+	return $articles;
+}
+
+function get_analysis_articles($articles_per_page, $exclude_ids = [])
+{
+	global $post;
+
+	$args = [
+		'post_type' => 'article',
+		'post_status' => 'publish',
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'posts_per_page' => $articles_per_page,
+		'post__not_in' => $exclude_ids,
+		'meta_key' => 'article_type',
+		'meta_value' => 'analysis',
+	];
+
+	$articles = new WP_Query($args);
+	wp_reset_postdata();
+
+	return $articles;
+}
+
+function get_articles_by_category($cat_id, $articles_per_page, $exclude_ids = [])
+{
+	global $post;
+
+	$args = [
+		'post_type' => 'article',
+		'post_status' => 'publish',
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'posts_per_page' => $articles_per_page,
+		'post__not_in' => $exclude_ids,
+		'cat' => $cat_id,
+	];
+
+	$articles = new WP_Query($args);
+	wp_reset_postdata();
+
+	return $articles;
+}
+
+function get_articles_by_tag($tag_id, $articles_per_page, $exclude_ids = [])
+{
+	global $post;
+
+	$args = [
+		'post_type' => 'article',
+		'post_status' => 'publish',
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'posts_per_page' => $articles_per_page,
+		'post__not_in' => $exclude_ids,
+		'tag_id' => $tag_id,
+	];
+
+	$articles = new WP_Query($args);
+	wp_reset_postdata();
+
+	return $articles;
+}
+
+function article_pagination($articles)
+{
+	global $wp_query;
+
+	$orig_query = $wp_query; // fix for pagination to work
+	$wp_query = $articles;
+
+	$big = 999999999; // need an unlikely integer
+
+	echo paginate_links( array(
+		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		'format' => '?paged=%#%',
+		'current' => max( 1, get_query_var('paged') ),
+		'total' => $articles->max_num_pages
+	) );
+
+	$wp_query = $orig_query; // fix for pagination to work
+	wp_reset_postdata(); // reset the query
+
+	return true;
+}
+
 /**
  * Allows Wordpress to sort by two meta values.
  * Add +0 to meta_value for numeric comparison.

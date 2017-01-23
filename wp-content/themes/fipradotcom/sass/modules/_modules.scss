@@ -363,4 +363,19 @@ a {
   }
 }
 
+a.page-numbers,
+.page-numbers.current {
+  @extend .btn;
+  @extend .primary;
+  @extend .btn-extra-small;
+  margin-right:0 !important;
+}
+.page-numbers.current {
+  @extend .secondary;
+}
+a.page-numbers {
+  margin-right:0;
+  border-bottom: 0 !important;
+}
+
 //.hide { display:none; }
