@@ -2,7 +2,7 @@
 
 	<div class="article-extract__section">
 		<?php if(has_post_thumbnail()) : ?>
-			<img class="article-extract__image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'article'); ?>" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>">
+			<a href="<?php echo get_the_permalink(); ?>"><img class="article-extract__image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'article'); ?>" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>"></a>
 		<?php endif; ?>
 	</div>
 
