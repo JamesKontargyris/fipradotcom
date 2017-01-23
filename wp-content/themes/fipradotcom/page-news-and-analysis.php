@@ -83,7 +83,7 @@ get_header(); ?>
                 <aside>
                     <h5>Categories</h5>
                     <ul class="taxonomy-list no-bottom-margin">
-                        <?php wp_list_categories(['show_count' => 1, 'title_li' => '']); ?>
+                        <?php wp_list_categories(['show_count' => 1, 'title_li' => '', 'orderby' => 'name']); ?>
                     </ul>
                 </aside>
                 <aside>
