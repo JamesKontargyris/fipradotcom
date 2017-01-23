@@ -452,6 +452,26 @@ function get_articles_by_tag($tag_id, $articles_per_page, $exclude_ids = [])
 	return $articles;
 }
 
+function get_popular_articles($articles_per_page, $exclude_ids = [])
+{
+	global $post;
+
+	$args = [
+		'post_type' => 'article',
+		'post_status' => 'publish',
+		'orderby' => 'meta_value_num',
+		'meta_key' => 'post_views_count',
+		'order' => 'DESC',
+		'posts_per_page' => $articles_per_page,
+		'post__not_in' => $exclude_ids,
+	];
+
+	$articles = new WP_Query($args);
+	wp_reset_postdata();
+
+	return $articles;
+}
+
 function article_pagination($articles)
 {
 	global $wp_query;

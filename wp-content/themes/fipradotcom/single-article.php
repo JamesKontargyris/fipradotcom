@@ -13,6 +13,7 @@
 
 
                 <?php $post_id = get_the_ID(); ?>
+                <?php if(! is_admin()) { setPostViews($post_id); } // add 1 to the post views for this article ?>
 
                 <div id="primary">
                     <main id="main" class="site-main" role="main">
