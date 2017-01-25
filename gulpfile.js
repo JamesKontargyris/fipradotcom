@@ -71,4 +71,8 @@ gulp.task('default', function(){
         //gulp.run('imagemin');
         //gulp.run('svgmin');
     });
+
+    gulp.watch(jsDir + "/**/*", function(event){
+        gulp.run('scripts');
+    });
 });

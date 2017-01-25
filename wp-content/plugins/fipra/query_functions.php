@@ -415,6 +415,8 @@ function get_analysis_articles($articles_per_page, $exclude_ids = [])
 function get_articles_by_category($cat_id, $articles_per_page, $exclude_ids = [])
 {
 	global $post;
+	//Protect against arbitrary paged values
+	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 	$args = [
 		'post_type' => 'article',
@@ -424,6 +426,7 @@ function get_articles_by_category($cat_id, $articles_per_page, $exclude_ids = []
 		'posts_per_page' => $articles_per_page,
 		'post__not_in' => $exclude_ids,
 		'cat' => $cat_id,
+		'paged' => $paged,
 	];
 
 	$articles = new WP_Query($args);
@@ -435,6 +438,8 @@ function get_articles_by_category($cat_id, $articles_per_page, $exclude_ids = []
 function get_articles_by_tag($tag_id, $articles_per_page, $exclude_ids = [])
 {
 	global $post;
+	//Protect against arbitrary paged values
+	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 	$args = [
 		'post_type' => 'article',
@@ -444,6 +449,7 @@ function get_articles_by_tag($tag_id, $articles_per_page, $exclude_ids = [])
 		'posts_per_page' => $articles_per_page,
 		'post__not_in' => $exclude_ids,
 		'tag_id' => $tag_id,
+		'paged' => $paged,
 	];
 
 	$articles = new WP_Query($args);

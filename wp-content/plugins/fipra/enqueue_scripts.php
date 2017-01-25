@@ -184,6 +184,14 @@ function fipradotcom_scripts()
         true
     );
 
+	wp_enqueue_script(
+		'fipradotcom-articles-js',
+		get_template_directory_uri() . '/minjs/article.min.js',
+		array(),
+		'20170125',
+		true
+	);
+
 
     if(is_single()) {
 

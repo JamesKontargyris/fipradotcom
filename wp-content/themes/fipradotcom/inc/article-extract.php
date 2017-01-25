@@ -16,7 +16,7 @@
 			<?php endif; ?>
 		</div>
 
-		<h3 class="article-extract__headline"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		<h2 class="article-extract__headline"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		<p class="article-extract__text"><?php echo get_the_excerpt(); ?> <a class="article-extract__read-more" href="<?php echo get_the_permalink(); ?>">Read&nbsp;more...</a></p>
 
 		<div class="article-extract__meta">

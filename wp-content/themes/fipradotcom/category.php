@@ -12,16 +12,6 @@ $cat_obj = $wp_query->get_queried_object();
 
 <?php get_template_part('inc/breadcrumbs'); ?>
 
-<?php if(has_post_thumbnail()) : ?>
-    <style>
-        #hero {
-            content:"";
-            background:url('<?= wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'banner' )[0]; ?>') <?= str_replace('_', ' ', get_field('bg_position')); ?> no-repeat;
-            background-size:cover;
-        }
-    </style>
-<?php endif; ?>
-
 <div id="content-container">
 
     <div id="hero" class="full-width-block-container">
@@ -39,7 +29,7 @@ $cat_obj = $wp_query->get_queried_object();
 
             <div id="primary">
                 <main id="main" class="site-main" role="main">
-                    <?php $articles = get_articles_by_category($cat_obj->cat_ID, 99999); ?>
+                    <?php $articles = get_articles_by_category($cat_obj->cat_ID, get_option( 'posts_per_page' )); ?>
                     <?php if($articles->have_posts()) : ?>
                         <?php while($articles->have_posts()) : $articles->the_post(); ?>
 		                    <?php include('inc/article-extract.php'); ?>
@@ -48,7 +38,7 @@ $cat_obj = $wp_query->get_queried_object();
                         No news or analysis found in this category.
                     <?php endif; ?>
 
-                    <?php // article_pagination($articles); ?>
+                    <?php article_pagination($articles); ?>
 
 
                     <?php /* Restore original Post Data */ wp_reset_postdata(); ?>
@@ -56,7 +46,6 @@ $cat_obj = $wp_query->get_queried_object();
                 </main><!-- #main -->
             </div><!-- #primary -->
             <div id="secondary">
-                <a href="/news-and-analysis" class="btn primary full-width">View all News and Analysis</a>
                 <aside>
                     <h5>Categories</h5>
                     <ul class="taxonomy-list no-bottom-margin">

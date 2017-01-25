@@ -436,7 +436,7 @@ function my_add_ul_class_on_insert( $postarr ) {
 function pseudo_archive_rewrite(){
 	// Add the slugs of the pages that are using a Global Template to simulate being an "archive" page
 	$pseudo_archive_pages = array(
-		"news-and-analysis",
+		"news-and-analysis-archive",
 	);
 
 	$slug_clause = implode( "|", $pseudo_archive_pages );
@@ -444,6 +444,20 @@ function pseudo_archive_rewrite(){
 	add_rewrite_rule( "($slug_clause)/(.*)/page/([0-9]{1,})/?$", 'index.php?pagename=$matches[1]&paged=$matches[2]', "top" );
 }
 add_action( 'init', 'pseudo_archive_rewrite' );
+
+/*
+ * Add custom post types (just article as of 25/01/2017) to category and tag paginated results
+ */
+function add_custom_types($query) {
+	if (is_category() || is_tag() && empty($query->query_vars['suppress_filters'])) {
+		$query->set('post_type',[
+			'article',
+		]);
+		return $query;
+	}
+}
+
+add_filter('pre_get_posts','add_custom_types');
 
 //Function to sanitise filenames
 function sanitise_filename($file)
