@@ -82,7 +82,9 @@ get_header(); ?>
 
                     <?php // article_pagination($articles); ?>
 
-                    <a href="/news-and-analysis-archive" class="btn primary article-archive-button">View All &rarr;</a>
+                    <div class="article-archive-button-container">
+                        <a href="/news-and-analysis-archive" class="btn secondary btn-large article-archive-button">More news and analysis &rarr;</a>
+                    </div>
 
 
 

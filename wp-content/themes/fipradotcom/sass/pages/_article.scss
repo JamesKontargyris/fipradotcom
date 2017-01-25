@@ -3,6 +3,11 @@
   // padding:$v-rhythm * 1.5;
   // border:1px solid darken($color__fipra-light-gray, 10%);
   margin-bottom:$v-rhythm * 3;
+  text-align: center;
+
+  @include media(min-width $media__small) {
+    text-align: left;
+  }
 
   @include media(min-width $media__medium) {
     margin-bottom:$v-rhythm * 5;
@@ -77,9 +82,8 @@
   margin-right:20px;
 
   @include media(max-width $media__small) {
-    max-width:100%;
-    margin-right:0;
-    margin-bottom:5px;
+    max-width:150px;
+    margin:0 auto 5px auto;
     float: none;
   }
   @include media(min-width $media__medium) {
@@ -236,6 +240,9 @@
   }
 }
 
+.article-archive-button-container {
+  text-align: center;
+  margin-top:-$v-rhythm;
+}
 .article-archive-button {
-  margin-top:-($v-rhythm * 2);
 }
