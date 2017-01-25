@@ -20,7 +20,7 @@
 
                         <div class="article-extract__type-container">
 		                    <?php if(get_field('article_type') == 'news') : ?>
-                                <img class="article-extract__type-icon" src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-newspaper.png" alt=""> <span class="article-extract__type--news">News</span>
+                                <img class="article-extract__type-icon" src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-newspaper.png" alt=""> <span class="article-extract__type--news">Fipra News</span>
 		                    <?php elseif(get_field('article_type') == 'analysis') : ?>
                                 <img class="article-extract__type-icon" src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-magnifying-glass.png" alt=""> <span class="article-extract__type--analysis">Analysis</span>
 		                    <?php endif; ?>
@@ -53,9 +53,8 @@
                 </div><!-- #primary -->
 
                 <div id="secondary">
-                    <a href="/news-and-analysis" class="btn primary full-width">View all News and Analysis</a>
                     <aside>
-                        <h5><img class="article-extract__type-icon" src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-newspaper.png" alt=""> More in <span class="text--turquoise text--bold">News</span></h5>
+                        <h5><img class="article-extract__type-icon" src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-newspaper.png" alt=""> More in <span class="text--turquoise text--bold">Fipra News</span></h5>
 
 	                    <?php $more_news_articles = get_news_articles(3, [get_the_ID()]); ?>
 	                    <?php if($more_news_articles->have_posts()) : ?>
