@@ -42,7 +42,7 @@ get_header(); ?>
 
                     <ul class="article-tabs">
                        <li><a href="#" class="article-tabs__link article-tabs__link--most-recent active" data-article-group=".article-group__most-recent">Most Recent</a></li>
-                       <li><a href="#" class="article-tabs__link article-tabs__link--news" data-article-group=".article-group__news">News</a></li>
+                       <li><a href="#" class="article-tabs__link article-tabs__link--news" data-article-group=".article-group__news">Fipra News</a></li>
                        <li><a href="#" class="article-tabs__link article-tabs__link--analysis" data-article-group=".article-group__analysis">Analysis</a></li>
                     </ul>
 
@@ -83,7 +83,7 @@ get_header(); ?>
                     <?php // article_pagination($articles); ?>
 
                     <div class="article-archive-button-container">
-                        <a href="/news-and-analysis-archive" class="btn secondary btn-large article-archive-button">More news and analysis &rarr;</a>
+                        <a href="/news-and-analysis-archive" class="btn secondary btn-large article-archive-button">More Fipra news and analysis &rarr;</a>
                     </div>
 
 
