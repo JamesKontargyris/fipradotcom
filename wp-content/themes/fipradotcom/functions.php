@@ -451,6 +451,8 @@ add_action( 'init', 'pseudo_archive_rewrite' );
 function add_custom_types($query) {
 	if (is_category() || is_tag() && empty($query->query_vars['suppress_filters'])) {
 		$query->set('post_type',[
+			'post',
+			'nav_menu_item',
 			'article',
 		]);
 		return $query;

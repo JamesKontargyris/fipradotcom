@@ -7,7 +7,6 @@
 
 get_header();
 
-$cat_obj = $wp_query->get_queried_object();
 ?>
 
 <?php get_template_part('inc/breadcrumbs'); ?>
@@ -29,6 +28,7 @@ $cat_obj = $wp_query->get_queried_object();
 
             <div id="primary">
                 <main id="main" class="site-main" role="main">
+                    <?php $cat_obj = $wp_query->get_queried_object(); ?>
                     <?php $articles = get_articles_by_category($cat_obj->cat_ID, get_option( 'posts_per_page' )); ?>
                     <?php if($articles->have_posts()) : ?>
                         <?php while($articles->have_posts()) : $articles->the_post(); ?>
