@@ -28,68 +28,64 @@ get_header(); ?>
         <div class="full-width-block-content-container <?= get_field('header_text_block_height'); ?> <?= has_post_thumbnail() ? 'content-bar bg-image' : ''; ?>  grey">
             <div class="full-width-block-content <?= get_field('header_text_location'); ?> narrow">
                 <h1 class="upper no-bottom-margin"><?php the_title(); ?></h1>
-    <?php if(get_field('header_introduction')) : ?><p class="lead no-margin"><?= get_field('header_introduction'); ?></p></div><?php endif; ?>
-            </div>
+				<?php if(get_field('header_introduction')) : ?><p class="lead no-margin"><?= get_field('header_introduction'); ?></p></div><?php endif; ?>
         </div>
     </div>
+</div>
 
     <div id="site-content-container">
 
         <div id="site-content">
 
-            <div id="primary" class="full-width narrow-column">
+            <div id="primary">
                 <main id="main" class="site-main" role="main">
 
-                    <ul class="article-tabs">
-                       <li><a href="#" class="article-tabs__link article-tabs__link--most-recent active" data-article-group=".article-group__most-recent">Most Recent</a></li>
-                       <li><a href="#" class="article-tabs__link article-tabs__link--news" data-article-group=".article-group__news">Fipra News</a></li>
-                       <li><a href="#" class="article-tabs__link article-tabs__link--analysis" data-article-group=".article-group__analysis">Analysis</a></li>
-                    </ul>
-
                     <div class="article-group article-group__most-recent active">
-	                    <?php $articles = get_articles(get_option( 'posts_per_page' )); ?>
-	                    <?php if($articles->have_posts()) : ?>
-		                    <?php while($articles->have_posts()) : $articles->the_post(); ?>
-			                    <?php include('inc/article-extract.php'); ?>
-		                    <?php endwhile; ?>
-	                    <?php else : ?>
+						<?php $articles = get_articles(get_option( 'posts_per_page' )); ?>
+						<?php if($articles->have_posts()) : ?>
+							<?php while($articles->have_posts()) : $articles->the_post(); ?>
+								<?php include('inc/article-extract.php'); ?>
+							<?php endwhile; ?>
+						<?php else : ?>
                             No news or analysis at this time.
-	                    <?php endif; ?>
+						<?php endif; ?>
                     </div>
 
-                    <div class="article-group article-group__news">
-		                <?php $articles = get_news_articles(get_option( 'posts_per_page' )); ?>
-		                <?php if($articles->have_posts()) : ?>
-			                <?php while($articles->have_posts()) : $articles->the_post(); ?>
-				                <?php include('inc/article-extract.php'); ?>
-			                <?php endwhile; ?>
-		                <?php else : ?>
-                            No news or analysis at this time.
-		                <?php endif; ?>
-                    </div>
-
-                    <div class="article-group article-group__analysis">
-		                <?php $articles = get_analysis_articles(get_option( 'posts_per_page' )); ?>
-		                <?php if($articles->have_posts()) : ?>
-			                <?php while($articles->have_posts()) : $articles->the_post(); ?>
-				                <?php include('inc/article-extract.php'); ?>
-			                <?php endwhile; ?>
-		                <?php else : ?>
-                            No news or analysis at this time.
-		                <?php endif; ?>
-                    </div>
-
-
-                    <?php // article_pagination($articles); ?>
-
-                    <div class="article-archive-button-container">
-                        <a href="/news-and-analysis-archive" class="btn secondary btn-large article-archive-button">More Fipra news and analysis &rarr;</a>
-                    </div>
-
-
+					<?php article_pagination($articles); ?>
 
                 </main><!-- #main -->
             </div><!-- #primary -->
+            <div id="secondary">
+                <aside>
+                    <h5>Popular Articles</h5>
+					<?php $popular_articles = get_popular_articles(3); ?>
+					<?php if($popular_articles->have_posts()) : ?>
+						<?php while($popular_articles->have_posts()) : $popular_articles->the_post(); ?>
+                            <div class="sidebar-article-extract">
+								<?php if(has_post_thumbnail()) : ?>
+                                    <a href="<?php echo get_the_permalink(); ?>"><img class="sidebar-article-extract__image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'article'); ?>" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>"></a>
+								<?php endif; ?>
+                                <div class="sidebar-article-extract__headline"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></div>
+                                <div class="sidebar-article-extract__meta">
+									<?php echo get_the_date('d M Y'); ?>
+                                </div>
+                            </div>
+						<?php endwhile; ?>
+					<?php else : ?>
+                        No articles to display.
+					<?php endif; ?>
+                </aside>
+                <aside>
+                    <h5>Categories</h5>
+                    <ul class="taxonomy-list no-bottom-margin">
+						<?php wp_list_categories(['show_count' => 1, 'title_li' => '', 'orderby' => 'name']); ?>
+                    </ul>
+                </aside>
+                <aside>
+                    <h5>Tags</h5>
+					<?php echo format_sidebar_tags(); ?>
+                </aside>
+            </div>
 
         </div><!-- #content -->
 
