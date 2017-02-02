@@ -5,12 +5,17 @@
 <!--                <li class="menu-title inline-s">Filter by</li>-->
                 <?php if(isset($filter_group) && $filter_group != 'fipra_international_profiles') : ?>
                     <li class="inline-s"><a href="#" class="filter-group-trigger unit-trigger" data-filter-group="#units-filter-group">Unit <i class="icon-down-open"></i></a></li>
+                    <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#surname-filter-group">Surname <i class="icon-down-open"></i></a></li>
                 <?php endif; ?>
 <!--                <li class="inline-s"><a href="#" class="filter-group-trigger expertise-trigger" data-filter-group="#expertise-filter-group">Expertise Area <i class="icon-down-open"></i></a></li>-->
-                <li class="inline-s"><a href="#" class="filter-group-trigger" data-filter-group="#surname-filter-group">Surname <i class="icon-down-open"></i></a></li>
+
             </ul>
         </div>
-        <div class="col-5-m no-margin hide-s">
+	    <?php if(isset($filter_group) && $filter_group != 'fipra_international_profiles') : ?>
+            <div class="col-5-m no-margin hide-s">
+        <?php else : ?>
+            <div class="col-12-m no-margin hide-s">
+        <?php endif; ?>
             <input type="text" id="text-filter" placeholder="Search by name, position, country..." />
         </div>
     </div>
