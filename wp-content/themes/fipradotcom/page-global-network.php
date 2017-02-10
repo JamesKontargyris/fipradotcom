@@ -86,11 +86,11 @@ get_header(); ?>
 
                                                 <h6>
                                                     <?php
-                                                    echo $position;
-                                                    if($position && $unit_id) { echo ', '; }
+                                                    /*echo $position;
+                                                    if($position && $unit_id) { echo ', '; }*/
                                                     echo $unit_id ? fiprafy_unit_name(get_the_title($unit_id)) : '';
-                                                    if(($position || $unit_id) && $additional_position_info) { echo '; '; }
-                                                    if($additional_position_info) { echo $additional_position_info; }
+                                                    /*if(($position || $unit_id) && $additional_position_info) { echo '; '; }
+                                                    if($additional_position_info) { echo $additional_position_info; }*/
                                                     ?>
                                                 </h6>
 
