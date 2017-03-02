@@ -29,7 +29,14 @@ if (get_option('googlelanguagetranslator_flags') == 'show_flags') {
   
 	    echo '.goog-te-gadget { margin-top:2px !important; }';
 	    echo 'p.hello { font-size:12px; color:#666; }';
-	} 
+	} else if (get_option('googlelanguagetranslator_display')=='SIMPLE') {
+	    if (get_option('googlelanguagetranslator_language_option')=='specific') {
+		echo '#flags {display:none !important; }';
+	    }
+            if (get_option('googlelanguagetranslator_flags_alignment')=='flags_right') {
+                echo '.goog-te-gadget { float:right; padding-right:10px; clear:right; }';
+            }
+        }
 
 	if ( get_option ('googlelanguagetranslator_flags_alignment') == 'flags_right') {
 	  echo '#google_language_translator, #language { clear:both; width:160px; text-align:right; }';
@@ -63,7 +70,7 @@ if (get_option('googlelanguagetranslator_showbranding')=='Yes') {
       echo '#google_language_translator { width:auto !important; }';
     }
   
-} elseif(get_option('googlelanguagetranslator_showbranding')=='No') {
+} elseif(get_option('googlelanguagetranslator_showbranding')=='No' && get_option('googlelanguagetranslator_display')!='SIMPLE') {
     if(get_option('googlelanguagetranslator_active')==1) { 
       echo '#google_language_translator a {display: none !important; }';
       echo '.goog-te-gadget {color:transparent !important;}';  

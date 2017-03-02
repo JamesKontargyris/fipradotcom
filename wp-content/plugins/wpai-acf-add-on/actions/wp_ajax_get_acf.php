@@ -3,11 +3,11 @@
 function pmai_wp_ajax_get_acf(){
 
 	if ( ! check_ajax_referer( 'wp_all_import_secure', 'security', false )){
-		exit( json_encode(array('html' => __('Security check', 'wp_all_import_plugin'))) );
+		exit( json_encode(array('html' => __('Security check', 'wp_all_import_acf_add_on'))) );
 	}
 
 	if ( ! current_user_can('manage_options') ){
-		exit( json_encode(array('html' => __('Security check', 'wp_all_import_plugin'))) );
+		exit( json_encode(array('html' => __('Security check', 'wp_all_import_acf_add_on'))) );
 	}
 
 	global $acf;
@@ -87,7 +87,7 @@ function pmai_wp_ajax_get_acf(){
 							if ($field['parent'] == $acf_obj['key']){								
 								$fieldData = $field;
 							
-								$fieldData['id']    = uniqid();
+								$fieldData['ID'] = $fieldData['id']    = uniqid();
 								$fieldData['label'] = $field['label'];
 								$fieldData['key']   = $field['key'];					
 

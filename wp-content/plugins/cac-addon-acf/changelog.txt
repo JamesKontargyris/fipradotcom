@@ -1,5 +1,22 @@
 == Changelog ==
 
+= 1.3.5.2 =
+Release Date: August 29th, 2016
+* [Fixed] Catch possible unsupported ACF5 date formats
+
+= 1.3.5.1 =
+Release Date: August 22th, 2016
+* [Fixed] ACF5 new date format support
+
+= 1.3.5 =
+* [Fixed] ACF4 dates now displays the correct date based on the saved format
+
+= 1.3.4 =
+Release Date: March 16th, 2016
+
+* [Fixed] Changed path from api.php to absolute utility file
+* [Fixed] Replaced FamFam icon with dashicons
+
 = 1.3.3 =
 Release Date: Januari 20th, 2016
 

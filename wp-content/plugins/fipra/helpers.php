@@ -144,8 +144,24 @@ function full_name() {
  */
 function get_language_flag_url($term_id) {
 
+	// image id is stored as term meta
+	$image_id = get_term_meta( $term_id, 'image', true );
 
-    $meta = get_option('flag_section');
+// image data stored in array, second argument is which image size to retrieve
+	$image_data = wp_get_attachment_image_src( $image_id, 'full' );
+
+// image url is the first item in the array (aka 0)
+	$image = $image_data[0];
+
+	if ( ! empty( $image ) ) {
+		return esc_url( $image );
+	}
+
+	return false;
+
+
+    // Old term meta plugin logic
+	/*$meta = get_option('flag_section');
     if (empty($meta)) $meta = array();
     if (!is_array($meta)) $meta = (array) $meta;
     $meta = isset($meta[$term_id]) ? $meta[$term_id] : array();
@@ -162,7 +178,7 @@ function get_language_flag_url($term_id) {
         }
     } else {
         return false;
-    }
+    }*/
 }
 
 /**

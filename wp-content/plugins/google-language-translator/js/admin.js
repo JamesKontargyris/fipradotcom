@@ -1,91 +1,106 @@
-jQuery(document).ready(function(){
+jQuery(document).ready(function($){
+  var language_display = $('input[name=googlelanguagetranslator_language_option]:checked').val();
   
-  
-  
-  var language_display = jQuery('input[name=googlelanguagetranslator_language_option]:checked').val();
-  
-      if ( language_display == 'all') {
-       jQuery ('.languages').css('display','none');
-	   jQuery ('.choose_flags').css('display','none');
-		
-	} else if (language_display == 'specific') {
-	   //jQuery ('.languages').css('display','inline');
-	   jQuery ('.choose_flags_intro').css('display','none');
-	   jQuery ('.choose_flags').css('display','none');
-	}
-	
-  var display = jQuery('select[name=googlelanguagetranslator_display] option:selected').val();
-  if ( display == 'Horizontal') {
-	//jQuery ('.alignment').css('display','none');
+  if ( language_display == 'all') {
+    $('.languages').css('display','none');
+    $('.choose_flags').css('display','none');
+  } else if (language_display == 'specific') {
+    $('.choose_flags_intro').css('display','none');
+    $('.choose_flags').css('display','none');
   }
-  
-  jQuery('select[name=googlelanguagetranslator_display]').change(function() {
-	if( jQuery(this).val() == 'Horizontal') {
-	  //jQuery ('.alignment').fadeOut("slow");
-	} else if ( jQuery(this).val() == 'Vertical') {
-      //jQuery ('.alignment').fadeIn("slow");
-	}
-  });
-  
-  jQuery('input[name=googlelanguagetranslator_language_option]').change(function(){
-      if( jQuery(this).val() == 'all'){
-       jQuery ('.languages').fadeOut("slow");
-	   jQuery ('.choose_flags_intro').css('display','');
-		 var flag_display = jQuery('input[name=googlelanguagetranslator_flags]:checked').val();
-		 if ( flag_display == 'show_flags') {
-		  jQuery ('.choose_flags').css('display','');
-		}
-	} else if (jQuery(this).val() == 'specific') {
-	   jQuery ('.languages').fadeIn("slow");
-	   jQuery ('.choose_flags_intro').css('display','none');
-	   jQuery ('.choose_flags').css('display','none');
-	}
+	
+  var display = $('select[name=googlelanguagetranslator_display] option:selected').val();
+
+  $('input[name=googlelanguagetranslator_language_option]').change(function(){
+    if( $(this).val() == 'all'){
+      $('.languages').fadeOut("slow");
+      $('.choose_flags_intro').css('display','');
+      var flag_display = $('input[name=googlelanguagetranslator_flags]:checked').val();
+      if ( flag_display == 'show_flags') {
+        $('.choose_flags').css('display','');
+      }
+    } else if ($(this).val() == 'specific') {
+      $('.languages').fadeIn("slow");
+      $('.choose_flags_intro').css('display','none');
+      $('.choose_flags').css('display','none');
+    }
   });
       
-  var language_display = jQuery('input[name=googlelanguagetranslator_language_option]:checked').val();    
-  var flag_display = jQuery('input[name=googlelanguagetranslator_flags]:checked').val();
-      if ( flag_display == 'hide_flags') {
-       jQuery ('.choose_flags').css('display','none');
-	} else if (flag_display == 'show_flags') {
-	    if ( language_display == 'all') {
-	      jQuery ('.choose_flags').css('display','');
-	    }
-	}
+  var language_display = $('input[name=googlelanguagetranslator_language_option]:checked').val();    
+  var flag_display = $('input[name=googlelanguagetranslator_flags]:checked').val();
+  var floating_widget_display = $('select[name=googlelanguagetranslator_floating_widget] option:selected').val();
+
+  if ( flag_display == 'hide_flags') {
+    $('.choose_flags').css('display','none');
+  } else if (flag_display == 'show_flags') {
+    if ( language_display == 'all') {
+      $('.choose_flags').css('display','');
+    }
+  }
+
+  if(floating_widget_display == 'yes') {
+    $('.floating_widget_text').css('display','');
+  } else {
+    $('.floating_widget_text').css('display','none');
+  }
 	
-  jQuery('input[name=googlelanguagetranslator_flags]').change(function(){
-      if( jQuery(this).val() == 'hide_flags'){
-       jQuery ('.choose_flags').fadeOut("slow");
-	} else if (jQuery(this).val() == 'show_flags') {
-	   jQuery ('.choose_flags').fadeIn("slow");
-	}
+  $('input[name=googlelanguagetranslator_flags]').change(function(){
+    if($(this).val() == 'hide_flags'){
+      $('.choose_flags').fadeOut("slow");
+    } else if ($(this).val() == 'show_flags') {
+      $('.choose_flags').fadeIn("slow");
+    }
+  });
+
+  //FadeIn and FadeOut Floating Widget Text option
+  $('select[name=googlelanguagetranslator_floating_widget]').change(function() {
+    if($(this).val()=='yes') {
+      $('.floating_widget_text').fadeIn("slow");
+    } else {
+      $('.floating_widget_text').fadeOut("slow");
+    }
   });
   
-    //FadeIn and FadeOut Google Analytics tracking settings
-  jQuery('input[name=googlelanguagetranslator_analytics]').change(function() {
-	if( jQuery(this).is(':checked')) {
-	  jQuery('.analytics').fadeIn("slow");
-	} else if ( jQuery(this).not(':checked')) {
-	  jQuery('.analytics').fadeOut("slow");
-	}
-	  });
+  //FadeIn and FadeOut Google Analytics tracking settings
+  $('input[name=googlelanguagetranslator_analytics]').change(function() {
+    if($(this).val()=='show') {
+      $('.analytics').fadeIn("slow");
+    } else {
+      $('.analytics').fadeOut("slow");
+    }
+  });
   
   //Hide or show Google Analytics ID field upon browser refresh  
-  var analytics = jQuery('input[name=googlelanguagetranslator_analytics]');
-  if ( analytics.is(':checked') )  {
-       jQuery ('.analytics').css('display','');
+  var analytics = $('input[name=googlelanguagetranslator_analytics]');
+  if (analytics.is(':checked') )  {
+    $('.analytics').css('display','');
   } else {
-	   jQuery ('.analytics').css('display','none');
-	}
-  
-  
+    $('.analytics').css('display','none');
+  }
   
   //Prevent the translator preview from translating Dashboard text
-  jQuery('#adminmenu').addClass('notranslate');
-  jQuery('#wp-toolbar').addClass('notranslate');
-  jQuery('#setting-error-settings_updated').addClass('notranslate');
-  jQuery('.update-nag').addClass('notranslate');
-  jQuery('title').addClass('notranslate');
-  jQuery('#footer-thankyou').addClass('notranslate');
+  $('#adminmenu').addClass('notranslate');
+  $('#wp-toolbar').addClass('notranslate');
+  $('#setting-error-settings_updated').addClass('notranslate');
+  $('.update-nag').addClass('notranslate');
+  $('title').addClass('notranslate');
+  $('#footer-thankyou').addClass('notranslate');
+}); //jQuery
+
+jQuery(document).ready(function($) { 
+  $("#sortable,#sortable-toolbar").sortable({ 
+    opacity: 0.7,
+    distance: 10, 
+    helper: "clone", 
+    forcePlaceholderSize:true,
+    update: function(event,ui) {
+      var newOrder = $(this).sortable('toArray').toString();
+        $.post("options.php",{order: newOrder});
+	$('#order').val(newOrder);
+    },
+  });
+  
+  $("#sortable,#sortable-toolbar").disableSelection();
 });
 
 

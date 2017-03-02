@@ -20,7 +20,7 @@ abstract class CPAC_ACF_Column_ACF_Field extends CPAC_Column {
 		$this->properties['type'] = 'column-acf_field';
 		$this->properties['label'] = __( 'Advanced Custom Fields', 'codepress-admin-columns' );
 		$this->properties['is_cloneable'] = true;
-		$this->properties['group'] = 'acf';
+		$this->properties['group'] = __( 'Advanced Custom Fields', 'codepress-admin-columns' );
 
 		// Options
 		$this->options['field'] = '';
@@ -74,6 +74,7 @@ abstract class CPAC_ACF_Column_ACF_Field extends CPAC_Column {
 	 */
 	public function get_field_key() {
 		$field = $this->get_field();
+
 		return isset( $field['name'] ) ? $field['name'] : false;
 	}
 
@@ -138,9 +139,11 @@ abstract class CPAC_ACF_Column_ACF_Field extends CPAC_Column {
 
 		if ( 'taxonomy' == $this->storage_model->type ) {
 			$id = $this->storage_model->taxonomy . '_' . $id;
-		} elseif ( 'user' == $this->storage_model->type ) {
+		}
+		elseif ( 'user' == $this->storage_model->type ) {
 			$id = 'user_' . $id;
-		} elseif ( 'comment' == $this->storage_model->type ) {
+		}
+		elseif ( 'comment' == $this->storage_model->type ) {
 			$id = 'comment_' . $id;
 		}
 
@@ -216,7 +219,7 @@ abstract class CPAC_ACF_Column_ACF_Field extends CPAC_Column {
 
 				break;
 			case 'true_false':
-				$value = $this->get_asset_image( $value == '1' ? 'checkmark.png' : 'no.png' );
+				$value = '1' == $value ? '<span class="dashicons dashicons-yes cpac_status_yes"></span>' : '<span class="dashicons dashicons-no cpac_status_no"></span>';
 				break;
 			case 'image':
 				$value = implode( $this->get_thumbnails( $value, array(
@@ -231,7 +234,8 @@ abstract class CPAC_ACF_Column_ACF_Field extends CPAC_Column {
 
 					if ( ! $attachment ) {
 						$value = '<em>' . __( 'Invalid attachment', 'codepress-admin-columns' ) . '</em>';
-					} else {
+					}
+					else {
 						$value = '<a href="' . esc_attr( wp_get_attachment_url( $value ) ) . '" target="_blank">' . basename( $attachment ) . '</a>';
 					}
 				}
@@ -310,10 +314,23 @@ abstract class CPAC_ACF_Column_ACF_Field extends CPAC_Column {
 				break;
 			case 'date_picker':
 				if ( $value ) {
-
 					// PHP 5.3.0 and higher
-					if ( method_exists( 'DateTime', 'createFromFormat' ) && ( $date = DateTime::createFromFormat( $this->parse_jquery_dateformat( $field['return_format'] ), $value ) ) ) {
-						$value = $date->format( $this->parse_jquery_dateformat( $field['display_format'] ) );
+					if ( method_exists( 'DateTime', 'createFromFormat' ) ) {
+						// ACF4
+						if ( isset( $field['date_format'] ) ) {
+							$jquery_format = $field['display_format'];
+							$date = DateTime::createFromFormat( $this->parse_jquery_dateformat( $field['date_format'] ), $value );
+						}
+						// ACF5
+						else {
+							$jquery_format = $field['return_format'];
+							$date = false;
+							try {
+								$date = new DateTime( $value );
+							}
+							catch (Exception $ex) {}
+						}
+						$value = $date ? $date->format( $this->parse_jquery_dateformat( $jquery_format ) ) : false;
 					} // PHP 5.2.0 and lower
 					else {
 						$value = $this->get_date( $value );
@@ -381,8 +398,8 @@ abstract class CPAC_ACF_Column_ACF_Field extends CPAC_Column {
 						$layouts = array();
 						foreach ( $field_values as $values ) {
 							$layouts[ $values['acf_fc_layout'] ] = array(
-								'count' => empty( $layouts[ $values['acf_fc_layout'] ] ) ? 1 : ++ $layouts[ $values['acf_fc_layout'] ]['count'],
-								'label' => $labels[ $values['acf_fc_layout'] ]
+								'count' => empty( $layouts[ $values['acf_fc_layout'] ] ) ? 1 : ++$layouts[ $values['acf_fc_layout'] ]['count'],
+								'label' => $labels[ $values['acf_fc_layout'] ],
 							);
 						}
 
@@ -431,7 +448,7 @@ abstract class CPAC_ACF_Column_ACF_Field extends CPAC_Column {
 								if ( $format ) {
 									$class = ' cac-subfield-' . $format;
 								}
-								if( $format == 'comma' && $display_value ){
+								if ( $format == 'comma' && $display_value ) {
 									$separator = ',&nbsp;';
 								}
 
@@ -507,13 +524,13 @@ abstract class CPAC_ACF_Column_ACF_Field extends CPAC_Column {
 					$value = (array) $value;
 					if ( isset( $field['taxonomy'] ) && ( $term = get_term_by( 'id', $value[0], $field['taxonomy'] ) ) ) {
 						$value = $term->name;
-				 	}
-				break;
+					}
+					break;
 
 				case 'date_time_picker' :
 					$field = $this->get_field();
-					$value = get_post_meta( $id, $field[ 'name' ], true );
-				break;
+					$value = get_post_meta( $id, $field['name'], true );
+					break;
 
 			}
 		}
@@ -543,7 +560,7 @@ abstract class CPAC_ACF_Column_ACF_Field extends CPAC_Column {
 			'MM'    => 'F',
 			'^mm^m' => 'n',
 			'mm'    => 'm',
-			'yy'    => 'Y'
+			'yy'    => 'Y',
 		);
 
 		$replace_from = array();
@@ -597,9 +614,9 @@ abstract class CPAC_ACF_Column_ACF_Field extends CPAC_Column {
 	public function display_field_sub_field_display() {
 
 		$formats = array(
-			'' => __( 'Single Space', 'codepress-admin-columns' ),
-			'comma' => __( 'Comma Separated', 'codepress-admin-columns' ),
-			'newline' => __( 'New line', 'codepress-admin-columns' )
+			''        => __( 'Single Space', 'codepress-admin-columns' ),
+			'comma'   => __( 'Comma Separated', 'codepress-admin-columns' ),
+			'newline' => __( 'New line', 'codepress-admin-columns' ),
 		);
 		?>
 		<tr class="column-sub_field">
@@ -627,7 +644,7 @@ abstract class CPAC_ACF_Column_ACF_Field extends CPAC_Column {
 			__( 'Display format', 'codepress-admin-columns' ),
 			array(
 				''      => __( 'Url' ), // default
-				'video' => __( 'Video' )
+				'video' => __( 'Video' ),
 			)
 		);
 	}

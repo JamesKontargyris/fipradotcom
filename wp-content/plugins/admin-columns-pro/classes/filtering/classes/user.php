@@ -15,13 +15,10 @@ class CAC_Filtering_Model_User extends CAC_Filtering_Model {
 	}
 
 	/**
-	 * Enable filtering
-	 *
-	 * @since 3.5
+	 * @since 3.8
 	 */
-	public function enable_filtering( $columns ) {
-
-		$include_types = array(
+	public function get_filterables() {
+		$column_types = array(
 
 			// WP default columns
 			'email',
@@ -35,14 +32,13 @@ class CAC_Filtering_Model_User extends CAC_Filtering_Model {
 			'column-rich_editing',
 			'column-user_registered',
 			'column-user_url',
-
 		);
 
-		foreach ( $columns as $column ) {
-			if ( in_array( $column->properties->type, $include_types ) ) {
-				$column->set_properties( 'is_filterable', true );
-			}
-		}
+		return $column_types;
+	}
+
+	public function get_default_filterables() {
+		return array( 'role' );
 	}
 
 	/**
@@ -182,7 +178,7 @@ class CAC_Filtering_Model_User extends CAC_Filtering_Model {
 
 				// Custom Fields
 				case 'column-meta' :
-					$user_query->query_vars['meta_query'][] = $this->get_meta_query( $column->get_field_key(), $value, $column->options->field_type );
+					$user_query->query_vars['meta_query'][] = $this->get_meta_query( $column->get_field_key(), $value, $column->get_option( 'field_type' ) );
 					break;
 
 				// ACF

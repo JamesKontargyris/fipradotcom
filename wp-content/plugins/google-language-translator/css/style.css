@@ -3,11 +3,34 @@
     display:none !important;
 }
 
+#glt-translate-trigger,
+#glt-translate-trigger span {
+  cursor:pointer;
+}
+
+.tool-container {
+    bottom:50px !important;
+    top:auto !important;
+    z-index:9999 !important;
+}
+
+.tool-container .tool-items a {
+    margin:4px;
+}
+
+.box-right {
+    clear:right;
+}
+
 a.wp-studio-logo:focus,
 a.wp-helpdesk-logo:focus {
   box-shadow:none !important;
   -webkit-box-shadow:none !important;
   -moz-box-shadow:none !important;
+}
+
+.goog-te-gadget-simple {
+  margin:4px 0;
 }
 
 select.goog-te-combo { 
@@ -56,26 +79,51 @@ select.goog-te-combo {
 #flags.size24 a {
   width:24px !important;
   height:18px !important;
+  box-sizing:content-box;
+  -webkit-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  -o-box-sizing:content-box;
+  -ms-box-sizing:content-box;
 }
 
 #flags.size22 a {
   width:22px !important;
   height:17px !important;
+  box-sizing:content-box;
+  -webkit-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  -o-box-sizing:content-box;
+  -ms-box-sizing:content-box;
 }
 
 #flags.size20 a {
   width:20px !important;
   height:14px !important;
+  box-sizing:content-box;
+  -webkit-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  -o-box-sizing:content-box;
+  -ms-box-sizing:content-box;
 }
 
 #flags.size18 a {
   width:18px !important;
   height:14px !important;
+  box-sizing:content-box;
+  -webkit-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  -o-box-sizing:content-box;
+  -ms-box-sizing:content-box;
 }
 
 #flags.size16 a {
   width:16px !important;
   height:12px !important;
+  box-sizing:content-box;
+  -webkit-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  -o-box-sizing:content-box;
+  -ms-box-sizing:content-box;
 }
   
 .tool-container .tool-items a {
@@ -222,7 +270,7 @@ code {
 
 /* Individual flag backgrounds (22px) */
 
-#flags.size22 a[title="Afrikaans"],
+#flags.size22 a[data-lang="Afrikaans"],
 .tool-container .tool-items a[title="Afrikaans"] {
     background:url('../images/flags22.png') -1px -3px no-repeat;
 }
@@ -230,6 +278,11 @@ code {
 #flags.size22 a[title="Albanian"],
 .tool-container .tool-items a[title="Albanian"] {
     background:url('../images/flags22.png') -30px -3px no-repeat;
+}
+
+#flags.size22 a[title="Amharic"],
+.tool-container .tool-items a[title="Amharic"] {
+    background:url('../images/flags22.png') -1px -467px no-repeat;
 }
 
 #flags.size22 a[title="Arabic"],
@@ -287,14 +340,19 @@ code {
     background:url('../images/flags22.png') -88px -409px no-repeat;
 }
 
-#flags.size22 a[title="Chinese"],
-.tool-container .tool-items a[title="Chinese"] {
+#flags.size22 a[title="Chinese (Simplified)"],
+.tool-container .tool-items a[title="Chinese (Simplified)"] {
     background:url('../images/flags22.png') -1px -61px no-repeat;
 }
 
-#flags.size22 a[title="Chinese(Traditional)"],
-.tool-container .tool-items a[title="Chinese(Traditional)"] {
+#flags.size22 a[title="Chinese (Traditional)"],
+.tool-container .tool-items a[title="Chinese (Traditional)"] {
     background:url('../images/flags22.png') -30px -61px no-repeat;
+}
+
+#flags.size22 a[title="Corsican"],
+.tool-container .tool-items a[title="Corsican"] {
+    background:url('../images/flags22.png') -117px -90px no-repeat;
 }
 
 #flags.size22 a[title="Croatian"],
@@ -355,6 +413,11 @@ code {
     background:url('../images/flags22.png') -117px -90px no-repeat;
 }
 
+#flags.size22 a[title="Frisian"],
+.tool-container .tool-items a[title="Frisian"] {
+    background:url('../images/flags22.png') -146px -61px no-repeat;
+}
+
 #flags.size22 a[title="Galician"],
 .tool-container .tool-items a[title="Galician"] {
     background:url('../images/flags22.png') -146px -90px no-repeat;
@@ -410,6 +473,11 @@ code {
     background:url('../images/flags22.png') -88px -148px no-repeat;
 }
 
+#flags.size22 a[title="Hawaiian"],
+.tool-container .tool-items a[title="Hawaiian"] {
+    background:url('../images/flags22.png') -88px -467px no-repeat;
+}
+
 #flags.size22 a[title="Icelandic"],
 .tool-container .tool-items a[title="Icelandic"] {
     background:url('../images/flags22.png') -117px -148px no-repeat;
@@ -460,9 +528,19 @@ code {
     background:url('../images/flags22.png') -1px -206px no-repeat;
 }
 
+#flags.size22 a[title="Kurdish"],
+.tool-container .tool-items a[title="Kurdish"] {
+    background:url('../images/flags22.png') -117px -467px no-repeat;
+}
+
 #flags.size22 a[title="Korean"],
 .tool-container .tool-items a[title="Korean"] {
     background:url('../images/flags22.png') -30px -206px no-repeat;
+}
+
+#flags.size22 a[title="Kyrgyz"],
+.tool-container .tool-items a[title="Kyrgyz"] {
+    background:url('../images/flags22.png') -146px -467px no-repeat;
 }
 
 #flags.size22 a[title="Lao"],
@@ -483,6 +561,11 @@ code {
 #flags.size22 a[title="Lithuanian"],
 .tool-container .tool-items a[title="Lithuanian"] {
     background:url('../images/flags22.png') -146px -206px no-repeat;
+}
+
+#flags.size22 a[title="Luxembourgish"],
+.tool-container .tool-items a[title="Luxembourgish"] {
+    background:url('../images/flags22.png') -1px -496px no-repeat;
 }
 
 #flags.size22 a[title="Macedonian"],
@@ -525,8 +608,8 @@ code {
     background:url('../images/flags22.png') -146px -235px no-repeat;
 }
 
-#flags.size22 a[title="Myanmar(Burmese)"],
-.tool-container .tool-items a[title="Myanmar(Burmese)"] {
+#flags.size22 a[title="Myanmar (Burmese)"],
+.tool-container .tool-items a[title="Myanmar (Burmese)"] {
     background:url('../images/flags22.png') -146px -409px no-repeat;
 }
 
@@ -538,6 +621,11 @@ code {
 #flags.size22 a[title="Norwegian"],
 .tool-container .tool-items a[title="Norwegian"] {
     background:url('../images/flags22.png') -30px -264px no-repeat;
+}
+
+#flags.size22 a[title="Pashto"],
+.tool-container .tool-items a[title="Pashto"] {
+    background:url('../images/flags22.png') -30px -496px no-repeat;
 }
 
 #flags.size22 a[title="Persian"],
@@ -574,6 +662,16 @@ code {
     background:url('../images/flags22.png') -30px -293px no-repeat;
 }
 
+#flags.size22 a[title="Samoan"],
+.tool-container .tool-items a[title="Samoan"] {
+    background:url('../images/flags22.png') -30px -467px no-repeat;
+}
+
+#flags.size22 a[title="Scots Gaelic"],
+.tool-container .tool-items a[title="Scots Gaelic"] {
+    background:url('../images/flags22.png') -59px -467px no-repeat;
+}
+
 #flags.size22 a[title="Serbian"],
 .tool-container .tool-items a[title="Serbian"] {
     background:url('../images/flags22.png') -59px -293px no-repeat;
@@ -584,9 +682,19 @@ code {
     background:url('../images/flags22.png') -30px -409px no-repeat;
 }
 
+#flags.size22 a[title="Sindhi"],
+.tool-container .tool-items a[title="Sindhi"] {
+    background:url('../images/flags22.png') -146px -351px no-repeat;
+}
+
 #flags.size22 a[title="Sinhala"],
 .tool-container .tool-items a[title="Sinhala"] {
     background:url('../images/flags22.png') -1px -438px no-repeat;
+}
+
+#flags.size22 a[title="Shona"],
+.tool-container .tool-items a[title="Shona"] {
+    background:url('../images/flags22.png') -59px -496px no-repeat;
 }
 
 #flags.size22 a[title="Slovak"],
@@ -653,8 +761,8 @@ code {
     background:url('../images/flags22.png') -30px -351px no-repeat;
 }
 
-#flags.size22 a[title="Ukranian"],
-.tool-container .tool-items a[title="Ukranian"] {
+#flags.size22 a[title="Ukrainian"],
+.tool-container .tool-items a[title="Ukrainian"] {
     background:url('../images/flags22.png') -59px -351px no-repeat;
 }
 
@@ -676,6 +784,11 @@ code {
 #flags.size22 a[title="Welsh"],
 .tool-container .tool-items a[title="Welsh"] {
     background:url('../images/flags22.png') -30px -380px no-repeat;
+}
+
+#flags.size22 a[title="Xhosa"],
+.tool-container .tool-items a[title="Xhosa"] {
+    background:url('../images/flags22.png') -1px -3px no-repeat;
 }
 
 #flags.size22 a[title="Yiddish"],
@@ -703,6 +816,11 @@ code {
 #flags.size18 a[title="Albanian"],
 .tool-container .tool-items a[title="Albanian"] {
     background:url('../images/flags18.png') -31px -4px no-repeat;
+}
+
+#flags.size18 a[title="Amharic"],
+.tool-container .tool-items a[title="Amharic"] {
+    background:url('../images/flags18.png') -2px -468px no-repeat;
 }
 
 #flags.size18 a[title="Arabic"],
@@ -760,14 +878,19 @@ code {
     background:url('../images/flags18.png') -89px -410px no-repeat;
 }
 
-#flags.size18 a[title="Chinese"],
-.tool-container .tool-items a[title="Chinese"] {
+#flags.size18 a[title="Chinese (Simplified)"],
+.tool-container .tool-items a[title="Chinese (Simplified)"] {
     background:url('../images/flags18.png') -2px -62px no-repeat;
 }
 
-#flags.size18 a[title="Chinese(Traditional)"],
-.tool-container .tool-items a[title="Chinese(Traditional)"] {
+#flags.size18 a[title="Chinese (Traditional)"],
+.tool-container .tool-items a[title="Chinese (Traditional)"] {
     background:url('../images/flags18.png') -31px -62px no-repeat;
+}
+
+#flags.size18 a[title="Corsican"],
+.tool-container .tool-items a[title="Corsican"] {
+    background:url('../images/flags18.png') -118px -91px no-repeat;
 }
 
 #flags.size18 a[title="Croatian"],
@@ -828,6 +951,11 @@ code {
     background:url('../images/flags18.png') -118px -91px no-repeat;
 }
 
+#flags.size18 a[title="Frisian"],
+.tool-container .tool-items a[title="Frisian"] {
+    background:url('../images/flags18.png') -147px -62px no-repeat;
+}
+
 #flags.size18 a[title="Galician"],
 .tool-container .tool-items a[title="Galician"] {
     background:url('../images/flags18.png') -147px -91px no-repeat;
@@ -881,6 +1009,11 @@ code {
 #flags.size18 a[title="Hungarian"],
 .tool-container .tool-items a[title="Hungarian"] {
     background:url('../images/flags18.png') -89px -149px no-repeat;
+}
+
+#flags.size18 a[title="Hawaiian"],
+.tool-container .tool-items a[title="Hawaiian"] {
+    background:url('../images/flags18.png') -89px -468px no-repeat;
 }
 
 #flags.size18 a[title="Icelandic"],
@@ -938,6 +1071,16 @@ code {
     background:url('../images/flags18.png') -31px -207px no-repeat;
 }
 
+#flags.size18 a[title="Kurdish"],
+.tool-container .tool-items a[title="Kurdish"] {
+    background:url('../images/flags18.png') -118px -468px no-repeat;
+}
+
+#flags.size18 a[title="Kyrgyz"],
+.tool-container .tool-items a[title="Kyrgyz"] {
+    background:url('../images/flags18.png') -147px -468px no-repeat;
+}
+
 #flags.size18 a[title="Lao"],
 .tool-container .tool-items a[title="Lao"] {
     background:url('../images/flags18.png') -60px -207px no-repeat;
@@ -956,6 +1099,11 @@ code {
 #flags.size18 a[title="Lithuanian"],
 .tool-container .tool-items a[title="Lithuanian"] {
     background:url('../images/flags18.png') -147px -207px no-repeat;
+}
+
+#flags.size18 a[title="Luxembourgish"],
+.tool-container .tool-items a[title="Luxembourgish"] {
+    background:url('../images/flags18.png') -2px -496px no-repeat;
 }
 
 #flags.size18 a[title="Macedonian"],
@@ -998,8 +1146,8 @@ code {
     background:url('../images/flags18.png') -147px -236px no-repeat;
 }
 
-#flags.size18 a[title="Myanmar(Burmese)"],
-.tool-container .tool-items a[title="Myanmar(Burmese)"] {
+#flags.size18 a[title="Myanmar (Burmese)"],
+.tool-container .tool-items a[title="Myanmar (Burmese)"] {
     background:url('../images/flags18.png') -147px -410px no-repeat;
 }
 
@@ -1011,6 +1159,11 @@ code {
 #flags.size18 a[title="Norwegian"],
 .tool-container .tool-items a[title="Norwegian"] {
     background:url('../images/flags18.png') -31px -265px no-repeat;
+}
+
+#flags.size18 a[title="Pashto"],
+.tool-container .tool-items a[title="Pashto"] {
+    background:url('../images/flags18.png') -31px -496px no-repeat;
 }
 
 #flags.size18 a[title="Persian"],
@@ -1047,6 +1200,16 @@ code {
     background:url('../images/flags18.png') -31px -294px no-repeat;
 }
 
+#flags.size18 a[title="Samoan"],
+.tool-container .tool-items a[title="Samoan"] {
+    background:url('../images/flags18.png') -31px -468px no-repeat;
+}
+
+#flags.size18 a[title="Scots Gaelic"],
+.tool-container .tool-items a[title="Scots Gaelic"] {
+    background:url('../images/flags18.png') -60px -468px no-repeat;
+}
+
 #flags.size18 a[title="Serbian"],
 .tool-container .tool-items a[title="Serbian"] {
     background:url('../images/flags18.png') -60px -294px no-repeat;
@@ -1055,6 +1218,16 @@ code {
 #flags.size18 a[title="Sesotho"],
 .tool-container .tool-items a[title="Sesotho"] {
     background:url('../images/flags18.png') -31px -410px no-repeat;
+}
+
+#flags.size18 a[title="Shona"],
+.tool-container .tool-items a[title="Shona"] {
+    background:url('../images/flags18.png') -60px -496px no-repeat;
+}
+
+#flags.size18 a[title="Sindhi"],
+.tool-container .tool-items a[title="Sindhi"] {
+    background:url('../images/flags18.png') -147px -352px no-repeat;
 }
 
 #flags.size18 a[title="Sinhala"],
@@ -1126,8 +1299,8 @@ code {
     background:url('../images/flags18.png') -31px -352px no-repeat;
 }
 
-#flags.size18 a[title="Ukranian"],
-.tool-container .tool-items a[title="Ukranian"] {
+#flags.size18 a[title="Ukrainian"],
+.tool-container .tool-items a[title="Ukrainian"] {
     background:url('../images/flags18.png') -60px -352px no-repeat;
 }
 
@@ -1149,6 +1322,11 @@ code {
 #flags.size18 a[title="Welsh"],
 .tool-container .tool-items a[title="Welsh"] {
     background:url('../images/flags18.png') -31px -381px no-repeat;
+}
+
+#flags.size18 a[title="Xhosa"],
+.tool-container .tool-items a[title="Xhosa"] {
+    background:url('../images/flags18.png') -2px -4px no-repeat;
 }
 
 #flags.size18 a[title="Yiddish"],
@@ -1176,6 +1354,11 @@ code {
 #flags.size20 a[title="Albanian"],
 .tool-container .tool-items a[title="Albanian"] {
     background:url('../images/flags20.png') -31px -4px no-repeat;
+}
+
+#flags.size20 a[title="Amharic"],
+.tool-container .tool-items a[title="Amharic"] {
+    background:url('../images/flags20.png') -2px -468px no-repeat;
 }
 
 #flags.size20 a[title="Arabic"],
@@ -1233,14 +1416,19 @@ code {
     background:url('../images/flags20.png') -89px -410px no-repeat;
 }
 
-#flags.size20 a[title="Chinese"],
-.tool-container .tool-items a[title="Chinese"] {
+#flags.size20 a[title="Chinese (Simplified)"],
+.tool-container .tool-items a[title="Chinese (Simplified)"] {
     background:url('../images/flags20.png') -2px -62px no-repeat;
 }
 
-#flags.size20 a[title="Chinese(Traditional)"],
-.tool-container .tool-items a[title="Chinese(Traditional)"] {
+#flags.size20 a[title="Chinese (Traditional)"],
+.tool-container .tool-items a[title="Chinese (Traditional)"] {
     background:url('../images/flags20.png') -31px -62px no-repeat;
+}
+
+#flags.size20 a[title="Corsican"],
+.tool-container .tool-items a[title="Corsican"] {
+    background:url('../images/flags20.png') -118px -91px no-repeat;
 }
 
 #flags.size20 a[title="Croatian"],
@@ -1301,6 +1489,11 @@ code {
     background:url('../images/flags20.png') -118px -91px no-repeat;
 }
 
+#flags.size20 a[title="Frisian"],
+.tool-container .tool-items a[title="Frisian"] {
+    background:url('../images/flags20.png') -147px -62px no-repeat;
+}
+
 #flags.size20 a[title="Galician"],
 .tool-container .tool-items a[title="Galician"] {
     background:url('../images/flags20.png') -147px -91px no-repeat;
@@ -1354,6 +1547,11 @@ code {
 #flags.size20 a[title="Hungarian"],
 .tool-container .tool-items a[title="Hungarian"] {
     background:url('../images/flags20.png') -89px -149px no-repeat;
+}
+
+#flags.size20 a[title="Hawaiian"],
+.tool-container .tool-items a[title="Hawaiian"] {
+    background:url('../images/flags20.png') -89px -468px no-repeat;
 }
 
 #flags.size20 a[title="Icelandic"],
@@ -1411,6 +1609,16 @@ code {
     background:url('../images/flags20.png') -31px -207px no-repeat;
 }
 
+#flags.size20 a[title="Kurdish"],
+.tool-container .tool-items a[title="Kurdish"] {
+    background:url('../images/flags20.png') -118px -468px no-repeat;
+}
+
+#flags.size20 a[title="Kyrgyz"],
+.tool-container .tool-items a[title="Kyrgyz"] {
+    background:url('../images/flags20.png') -147px -468px no-repeat;
+}
+
 #flags.size20 a[title="Lao"],
 .tool-container .tool-items a[title="Lao"] {
     background:url('../images/flags20.png') -60px -207px no-repeat;
@@ -1429,6 +1637,11 @@ code {
 #flags.size20 a[title="Lithuanian"],
 .tool-container .tool-items a[title="Lithuanian"] {
     background:url('../images/flags20.png') -147px -207px no-repeat;
+}
+
+#flags.size20 a[title="Luxembourgish"],
+.tool-container .tool-items a[title="Luxembourgish"] {
+    background:url('../images/flags20.png') -2px -497px no-repeat;
 }
 
 #flags.size20 a[title="Macedonian"],
@@ -1471,8 +1684,8 @@ code {
     background:url('../images/flags20.png') -147px -236px no-repeat;
 }
 
-#flags.size20 a[title="Myanmar(Burmese)"],
-.tool-container .tool-items a[title="Myanmar(Burmese)"] {
+#flags.size20 a[title="Myanmar (Burmese)"],
+.tool-container .tool-items a[title="Myanmar (Burmese)"] {
     background:url('../images/flags20.png') -147px -410px no-repeat;
 }
 
@@ -1484,6 +1697,11 @@ code {
 #flags.size20 a[title="Norwegian"],
 .tool-container .tool-items a[title="Norwegian"] {
     background:url('../images/flags20.png') -31px -265px no-repeat;
+}
+
+#flags.size20 a[title="Pashto"],
+.tool-container .tool-items a[title="Pashto"] {
+    background:url('../images/flags20.png') -31px -497px no-repeat;
 }
 
 #flags.size20 a[title="Persian"],
@@ -1520,6 +1738,16 @@ code {
     background:url('../images/flags20.png') -31px -294px no-repeat;
 }
 
+#flags.size20 a[title="Samoan"],
+.tool-container .tool-items a[title="Samoan"] {
+    background:url('../images/flags20.png') -31px -468px no-repeat;
+}
+
+#flags.size20 a[title="Scots Gaelic"],
+.tool-container .tool-items a[title="Scots Gaelic"] {
+    background:url('../images/flags20.png') -60px -468px no-repeat;
+}
+
 #flags.size20 a[title="Serbian"],
 .tool-container .tool-items a[title="Serbian"] {
     background:url('../images/flags20.png') -60px -294px no-repeat;
@@ -1528,6 +1756,16 @@ code {
 #flags.size20 a[title="Sesotho"],
 .tool-container .tool-items a[title="Sesotho"] {
     background:url('../images/flags20.png') -31px -410px no-repeat;
+}
+
+#flags.size20 a[title="Shona"],
+.tool-container .tool-items a[title="Shona"] {
+    background:url('../images/flags20.png') -60px -497px no-repeat;
+}
+
+#flags.size20 a[title="Sindhi"],
+.tool-container .tool-items a[title="Sindhi"] {
+    background:url('../images/flags20.png') -147px -352px no-repeat;
 }
 
 #flags.size20 a[title="Sinhala"],
@@ -1599,8 +1837,8 @@ code {
     background:url('../images/flags20.png') -31px -352px no-repeat;
 }
 
-#flags.size20 a[title="Ukranian"],
-.tool-container .tool-items a[title="Ukranian"] {
+#flags.size20 a[title="Ukrainian"],
+.tool-container .tool-items a[title="Ukrainian"] {
     background:url('../images/flags20.png') -60px -352px no-repeat;
 }
 
@@ -1622,6 +1860,11 @@ code {
 #flags.size20 a[title="Welsh"],
 .tool-container .tool-items a[title="Welsh"] {
     background:url('../images/flags20.png') -31px -381px no-repeat;
+}
+
+#flags.size20 a[title="Xhosa"],
+.tool-container .tool-items a[title="Xhosa"] {
+    background:url('../images/flags20.png') -2px -4px no-repeat;
 }
 
 #flags.size20 a[title="Yiddish"],
@@ -1649,6 +1892,11 @@ code {
 #flags.size16 a[title="Albanian"],
 .tool-container .tool-items a[title="Albanian"] {
     background:url('../images/flags16.png') -33px -5px no-repeat;
+}
+
+#flags.size16 a[title="Amharic"],
+.tool-container .tool-items a[title="Amharic"] {
+    background:url('../images/flags16.png') -4px -469px no-repeat;
 }
 
 #flags.size16 a[title="Arabic"],
@@ -1706,14 +1954,19 @@ code {
     background:url('../images/flags16.png') -91px -411px no-repeat;
 }
 
-#flags.size16 a[title="Chinese"],
-.tool-container .tool-items a[title="Chinese"] {
+#flags.size16 a[title="Chinese (Simplified)"],
+.tool-container .tool-items a[title="Chinese (Simplified)"] {
     background:url('../images/flags16.png') -4px -63px no-repeat;
 }
 
-#flags.size16 a[title="Chinese(Traditional)"],
-.tool-container .tool-items a[title="Chinese(Traditional)"] {
+#flags.size16 a[title="Chinese (Traditional)"],
+.tool-container .tool-items a[title="Chinese (Traditional)"] {
     background:url('../images/flags16.png') -33px -63px no-repeat;
+}
+
+#flags.size16 a[title="Corsican"],
+.tool-container .tool-items a[title="Corsican"] {
+    background:url('../images/flags16.png') -120px -92px no-repeat;
 }
 
 #flags.size16 a[title="Croatian"],
@@ -1774,6 +2027,11 @@ code {
     background:url('../images/flags16.png') -120px -92px no-repeat;
 }
 
+#flags.size16 a[title="Frisian"],
+.tool-container .tool-items a[title="Frisian"] {
+    background:url('../images/flags16.png') -149px -63px no-repeat;
+}
+
 #flags.size16 a[title="Galician"],
 .tool-container .tool-items a[title="Galician"] {
     background:url('../images/flags16.png') -149px -92px no-repeat;
@@ -1827,6 +2085,11 @@ code {
 #flags.size16 a[title="Hungarian"],
 .tool-container .tool-items a[title="Hungarian"] {
     background:url('../images/flags16.png') -91px -150px no-repeat;
+}
+
+#flags.size16 a[title="Hawaiian"],
+.tool-container .tool-items a[title="Hawaiian"] {
+    background:url('../images/flags16.png') -91px -469px no-repeat;
 }
 
 #flags.size16 a[title="Icelandic"],
@@ -1884,6 +2147,16 @@ code {
     background:url('../images/flags16.png') -33px -208px no-repeat;
 }
 
+#flags.size16 a[title="Kurdish"],
+.tool-container .tool-items a[title="Kurdish"] {
+    background:url('../images/flags16.png') -120px -469px no-repeat;
+}
+
+#flags.size16 a[title="Kyrgyz"],
+.tool-container .tool-items a[title="Kyrgyz"] {
+    background:url('../images/flags16.png') -149px -469px no-repeat;
+}
+
 #flags.size16 a[title="Lao"],
 .tool-container .tool-items a[title="Lao"] {
     background:url('../images/flags16.png') -62px -208px no-repeat;
@@ -1902,6 +2175,11 @@ code {
 #flags.size16 a[title="Lithuanian"],
 .tool-container .tool-items a[title="Lithuanian"] {
     background:url('../images/flags16.png') -149px -208px no-repeat;
+}
+
+#flags.size16 a[title="Luxembourgish"],
+.tool-container .tool-items a[title="Luxembourgish"] {
+    background:url('../images/flags16.png') -4px -498px no-repeat;
 }
 
 #flags.size16 a[title="Macedonian"],
@@ -1944,8 +2222,8 @@ code {
     background:url('../images/flags16.png') -149px -237px no-repeat;
 }
 
-#flags.size16 a[title="Myanmar(Burmese)"],
-.tool-container .tool-items a[title="Myanmar(Burmese)"] {
+#flags.size16 a[title="Myanmar (Burmese)"],
+.tool-container .tool-items a[title="Myanmar (Burmese)"] {
     background:url('../images/flags16.png') -149px -411px no-repeat;
 }
 
@@ -1957,6 +2235,11 @@ code {
 #flags.size16 a[title="Norwegian"],
 .tool-container .tool-items a[title="Norwegian"] {
     background:url('../images/flags16.png') -33px -266px no-repeat;
+}
+
+#flags.size16 a[title="Pashto"],
+.tool-container .tool-items a[title="Pashto"] {
+    background:url('../images/flags16.png') -33px -498px no-repeat;
 }
 
 #flags.size16 a[title="Persian"],
@@ -1993,6 +2276,16 @@ code {
     background:url('../images/flags16.png') -33px -295px no-repeat;
 }
 
+#flags.size16 a[title="Samoan"],
+.tool-container .tool-items a[title="Samoan"] {
+    background:url('../images/flags16.png') -33px -469px no-repeat;
+}
+
+#flags.size16 a[title="Scots Gaelic"],
+.tool-container .tool-items a[title="Scots Gaelic"] {
+    background:url('../images/flags16.png') -62px -469px no-repeat;
+}
+
 #flags.size16 a[title="Serbian"],
 .tool-container .tool-items a[title="Serbian"] {
     background:url('../images/flags16.png') -62px -295px no-repeat;
@@ -2001,6 +2294,16 @@ code {
 #flags.size16 a[title="Sesotho"],
 .tool-container .tool-items a[title="Sesotho"] {
     background:url('../images/flags16.png') -33px -411px no-repeat;
+}
+
+#flags.size16 a[title="Shona"],
+.tool-container .tool-items a[title="Shona"] {
+    background:url('../images/flags16.png') -62px -498px no-repeat;
+}
+
+#flags.size16 a[title="Sindhi"],
+.tool-container .tool-items a[title="Sindhi"] {
+    background:url('../images/flags16.png') -149px -353px no-repeat;
 }
 
 #flags.size16 a[title="Sinhala"],
@@ -2072,8 +2375,8 @@ code {
     background:url('../images/flags16.png') -33px -353px no-repeat;
 }
 
-#flags.size16 a[title="Ukranian"],
-.tool-container .tool-items a[title="Ukranian"] {
+#flags.size16 a[title="Ukrainian"],
+.tool-container .tool-items a[title="Ukrainian"] {
     background:url('../images/flags16.png') -62px -353px no-repeat;
 }
 
@@ -2095,6 +2398,11 @@ code {
 #flags.size16 a[title="Welsh"],
 .tool-container .tool-items a[title="Welsh"] {
     background:url('../images/flags16.png') -33px -382px no-repeat;
+}
+
+#flags.size16 a[title="Xhosa"],
+.tool-container .tool-items a[title="Xhosa"] {
+    background:url('../images/flags16.png') -4px -5px no-repeat;
 }
 
 #flags.size16 a[title="Yiddish"],
@@ -2122,6 +2430,11 @@ code {
 #flags.size24 a[title="Albanian"],
 .tool-container .tool-items a[title="Albanian"] {
     background:url('../images/flags.png') -29px -3px no-repeat;
+}
+
+#flags.size24 a[title="Amharic"],
+.tool-container .tool-items a[title="Amharic"] {
+    background:url('../images/flags.png') 0 -467px no-repeat;
 }
 
 #flags.size24 a[title="Arabic"],
@@ -2179,14 +2492,19 @@ code {
     background:url('../images/flags.png') -87px -409px no-repeat;
 }
 
-#flags.size24 a[title="Chinese"],
-.tool-container .tool-items a[title="Chinese"] {
+#flags.size24 a[title="Chinese (Simplified)"],
+.tool-container .tool-items a[title="Chinese (Simplified)"] {
     background:url('../images/flags.png') 0 -61px no-repeat;
 }
 
-#flags.size24 a[title="Chinese(Traditional)"],
-.tool-container .tool-items a[title="Chinese(Traditional)"] {
+#flags.size24 a[title="Chinese (Traditional)"],
+.tool-container .tool-items a[title="Chinese (Traditional)"] {
     background:url('../images/flags.png') -29px -61px no-repeat;
+}
+
+#flags.size24 a[title="Corsican"],
+.tool-container .tool-items a[title="Corsican"] {
+    background:url('../images/flags.png') -116px -90px no-repeat;
 }
 
 #flags.size24 a[title="Croatian"],
@@ -2249,6 +2567,11 @@ code {
     background:url('../images/flags.png') -116px -90px no-repeat;
 }
 
+#flags.size24 a[title="Frisian"],
+.tool-container .tool-items a[title="Frisian"] {
+    background:url('../images/flags.png') -145px -61px no-repeat;
+}
+
 #flags.size24 a[title="Galician"],
 .tool-container .tool-items a[title="Galician"] {
     background:url('../images/flags.png') -145px -90px no-repeat;
@@ -2302,6 +2625,11 @@ code {
 #flags.size24 a[title="Hungarian"],
 .tool-container .tool-items a[title="Hungarian"] {
     background:url('../images/flags.png') -87px -148px no-repeat;
+}
+
+#flags.size24 a[title="Hawaiian"],
+.tool-container .tool-items a[title="Hawaiian"] {
+    background:url('../images/flags.png') -87px -467px no-repeat;
 }
 
 #flags.size24 a[title="Icelandic"],
@@ -2359,6 +2687,16 @@ code {
     background:url('../images/flags.png') -29px -206px no-repeat;
 }
 
+#flags.size24 a[title="Kurdish"],
+.tool-container .tool-items a[title="Kurdish"] {
+    background:url('../images/flags.png') -116px -467px no-repeat;
+}
+
+#flags.size24 a[title="Kyrgyz"],
+.tool-container .tool-items a[title="Kyrgyz"] {
+    background:url('../images/flags.png') -145px -467px no-repeat;
+}
+
 #flags.size24 a[title="Lao"],
 .tool-container .tool-items a[title="Lao"] {
     background:url('../images/flags.png') -58px -206px no-repeat;
@@ -2377,6 +2715,11 @@ code {
 #flags.size24 a[title="Lithuanian"],
 .tool-container .tool-items a[title="Lithuanian"] {
     background:url('../images/flags.png') -145px -206px no-repeat;
+}
+
+#flags.size24 a[title="Luxembourgish"],
+.tool-container .tool-items a[title="Luxembourgish"] {
+    background:url('../images/flags.png') 0 -496px no-repeat;
 }
 
 #flags.size24 a[title="Macedonian"],
@@ -2419,8 +2762,8 @@ code {
     background:url('../images/flags.png') -145px -235px no-repeat;
 }
 
-#flags.size24 a[title="Myanmar(Burmese)"],
-.tool-container .tool-items a[title="Myanmar(Burmese)"] {
+#flags.size24 a[title="Myanmar (Burmese)"],
+.tool-container .tool-items a[title="Myanmar (Burmese)"] {
     background:url('../images/flags.png') -145px -409px no-repeat;
 }
 
@@ -2432,6 +2775,11 @@ code {
 #flags.size24 a[title="Norwegian"],
 .tool-container .tool-items a[title="Norwegian"] {
     background:url('../images/flags.png') -29px -264px no-repeat;
+}
+
+#flags.size24 a[title="Pashto"],
+.tool-container .tool-items a[title="Pashto"] {
+    background:url('../images/flags.png') -29px -496px no-repeat;
 }
 
 #flags.size24 a[title="Persian"],
@@ -2469,6 +2817,16 @@ code {
     background:url('../images/flags.png') -29px -293px no-repeat;
 }
 
+#flags.size24 a[title="Samoan"],
+.tool-container .tool-items a[title="Samoan"] {
+    background:url('../images/flags.png') -29px -467px no-repeat;
+}
+
+#flags.size24 a[title="Scots Gaelic"],
+.tool-container .tool-items a[title="Scots Gaelic"] {
+    background:url('../images/flags.png') -58px -467px no-repeat;
+}
+
 #flags.size24 a[title="Serbian"],
 .tool-container .tool-items a[title="Serbian"] {
     background:url('../images/flags.png') -58px -293px no-repeat;
@@ -2479,9 +2837,19 @@ code {
     background:url('../images/flags.png') -29px -409px no-repeat;
 }
 
+#flags.size24 a[title="Sindhi"],
+.tool-container .tool-items a[title="Sindhi"] {
+    background:url('../images/flags.png') -145px -351px no-repeat;
+}
+
 #flags.size24 a[title="Sinhala"],
 .tool-container .tool-items a[title="Sinhala"] {
     background:url('../images/flags.png') 0px -438px no-repeat;
+}
+
+#flags.size24 a[title="Shona"],
+.tool-container .tool-items a[title="Shona"] {
+    background:url('../images/flags.png') -58px -496px no-repeat;
 }
 
 #flags.size24 a[title="Slovak"],
@@ -2549,8 +2917,8 @@ code {
     background:url('../images/flags.png') -29px -351px no-repeat;
 }
 
-#flags.size24 a[title="Ukranian"],
-.tool-container .tool-items a[title="Ukranian"] {
+#flags.size24 a[title="Ukrainian"],
+.tool-container .tool-items a[title="Ukrainian"] {
     background:url('../images/flags.png') -58px -351px no-repeat;
 }
 
@@ -2574,6 +2942,11 @@ code {
     background:url('../images/flags.png') -29px -380px no-repeat;
 }
 
+#flags.size24 a[title="Xhosa"],
+.tool-container .tool-items a[title="Xhosa"] {
+    background:url('../images/flags.png') 0 -3px no-repeat;
+}
+
 #flags.size24 a[title="Yiddish"],
 .tool-container .tool-items a[title="Yiddish"] {
     background:url('../images/flags.png') -58px -380px no-repeat;
@@ -2588,3 +2961,28 @@ code {
 .tool-container .tool-items a[title="Zulu"] {
     background:url('../images/flags.png') -116px -380px no-repeat;
 }
+
+.glt-controls {
+    margin-bottom: 15px;
+    background: #f0f0f0;
+    padding: 10px;
+}
+
+/* Some Dashboard mobile styles */
+
+@media only screen and (max-width:767px) {
+      .metabox-holder {
+	      float:none !important;
+	      width:100% !important;
+      }
+	  
+	  .flagdisplay {
+		  float:none !important;
+		  width:100% !important;
+	  }
+		
+	  .flagdisplay div {
+		  margin-bottom:10px;
+	  }
+  
+} /* End 568px */
