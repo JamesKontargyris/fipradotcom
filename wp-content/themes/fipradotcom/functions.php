@@ -502,6 +502,54 @@ function setPostViews($postID) {
 // Remove issues with prefetching adding extra views
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
+/**
+ * Grab Fipriot by email address via API
+ *
+ * @param array $data Options for the function.
+ * @return string|null Post title for the latest,  * or null if none.
+ */
+function get_fipriot_for_fipra_tools( $data ) {
+	global $post;
 
+	$fipriotData = [];
 
+	$args = [
+		'post_type' => 'fipriot',
+		'post_status' => 'publish',
+		'posts_per_page' => 1,
+		'meta_query' => [
+			[
+				'key'     => 'email',
+				'value'   => $data['email'],
+				'compare' => '=',
+			],
+		]
+	];
+
+	$results = array_merge((array) get_posts($args)[0], (array) get_fields(get_posts($args)[0]->ID));
+
+	if(isset($results['ID']))
+	{
+		$id = $results['ID'];
+		$fipriotData['wp_id'] = isset($results['ID']) ? $results['ID'] : '';
+		$fipriotData['name'] = isset($results['post_title']) ? $results['post_title'] : '';
+		$fipriotData['email'] = isset($results['email']) ? $results['email'] : '';
+		$fipriotData['tel'] = isset($results['tel']) ? $results['tel'] : '';
+		$fipriotData['fax'] = isset($results['fax']) ? $results['fax'] : '';
+		$fipriotData['address'] = isset($results['address']) ? strip_tags($results['address']) : '';
+		$fipriotData['bio'] = isset($results['bio']) ? strip_tags($results['bio']) : '';
+		$fipriotData['photo'] = get_post_thumbnail_id($id) ? wp_get_attachment_image_url( get_post_thumbnail_id($id), 'full') : '';
+
+		return $fipriotData;
+	}
+
+	return false;
+
+}
+add_action( 'rest_api_init', function () {
+	register_rest_route( 'wp/v2', '/fipriot', array( // fipra.com/wp-json/wp/v2/fipriot?email=firstname.surname@fipra.com
+		'methods' => 'GET',
+		'callback' => 'get_fipriot_for_fipra_tools',
+	) );
+} );
 
