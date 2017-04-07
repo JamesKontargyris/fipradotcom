@@ -437,6 +437,7 @@ function pseudo_archive_rewrite(){
 	// Add the slugs of the pages that are using a Global Template to simulate being an "archive" page
 	$pseudo_archive_pages = array(
 		"news-and-analysis-archive",
+		"news-and-analysis",
 	);
 
 	$slug_clause = implode( "|", $pseudo_archive_pages );
