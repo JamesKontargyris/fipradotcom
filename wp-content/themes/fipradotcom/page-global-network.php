@@ -86,7 +86,6 @@ get_header(); ?>
 
                                                 <h6>
                                                     <?php
-                                                    if($last_name == 'Lehrell') echo $position;
                                                     /*echo $position;
                                                     if($position && $unit_id) { echo ', '; }*/
                                                     echo $unit_id ? fiprafy_unit_name(get_the_title($unit_id)) : '';
