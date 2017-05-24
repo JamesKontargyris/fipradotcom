@@ -1,2 +1,22 @@
+# robots.txt for wordpress
+# https://gist.github.com/chuckreynolds/135728
+
 User-agent: *
-Disallow: /
+
+# Directories
+Disallow: /cgi-bin/
+Disallow: /trackback/
+Disallow: /comment-page-
+
+# Files
+Disallow: /xmlrpc.php
+Disallow: /readme.html
+Disallow: /license.txt
+
+# Paths (not clean urls)
+Disallow: /?s=*
+Disallow: /*.php$
+
+# custom removes
+
+Sitemap: http://fipra.com/sitemap.xml
