@@ -74,7 +74,7 @@ get_header(); ?>
                                                 </a>
                                             </div>
                                             <div class="person-details">
-                                                <h4 class="no-margin"><a href="<?php echo get_the_permalink(); ?>"><?php echo $first_name; ?> <?php echo $last_name; ?></a></h4>
+                                                <h4 class="no-margin"><a href="<?php echo get_the_permalink($post_id); ?>"><?php echo $first_name; ?> <?php echo $last_name; ?></a></h4>
 
                                                 <h6>
                                                     <?php
