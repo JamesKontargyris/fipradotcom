@@ -554,3 +554,31 @@ add_action( 'rest_api_init', function () {
 	) );
 } );
 
+//-------------------------------------------------
+
+// GDPR
+
+add_action( 'wp_head', 'google_analytics_opt_out' );
+function google_analytics_opt_out() {
+	if( ! current_user_can('administrator') ) {
+		if ( ! is_allowed_cookie( '_ga' )) {
+			?>
+			<script>
+                window['ga-disable-UA-13160043-1'] = true;
+			</script>
+			<?php
+		} else {
+			?>
+			<!-- Global Site Tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-13160043-1"></script>
+			<script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-13160043-1');
+			</script>
+			<?php
+		}
+	}
+}
