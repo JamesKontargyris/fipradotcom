@@ -90,10 +90,10 @@ get_header(); ?>
 
                                     <div class="row">
 <!--                                        <div class="col-8-m">-->
-<!--                                            <!--Google Map-->-->
-<!--<!--                                            <div class="google-map">-->-->
-<!--<!--                                                <div class="marker" data-lat="-->--><?php ////echo $location['lat']; ?><!--<!--" data-lng="-->--><?php ////echo $location['lng']; ?><!--<!--"></div>-->-->
-<!--<!--                                            </div>-->-->
+<!--                                            <!--Google Map-->
+<!--<!--                                            <div class="google-map">-->
+<!--<!--                                                <div class="marker" data-lat="--><?php ////echo $location['lat']; ?><!--" data-lng="--><?php ////echo $location['lng']; ?><!--<!--"></div>-->
+<!--<!--                                            </div>-->
 <!--                                            <div class="google-map-missing">-->
 <!--                                                Ad-blocking software detected - it may be hiding the map above. Please disable any ad-blocking extensions or software for fipra.com.-->
 <!--                                            </div>-->
