@@ -195,21 +195,21 @@ function fipradotcom_scripts()
 
     if(is_single()) {
 
-        wp_enqueue_script(
-            'fipradotcom-google-maps-api-js',
-            'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false',
-            array(),
-            false,
-            false
-        );
+//        wp_enqueue_script(
+//            'fipradotcom-google-maps-api-js',
+//            'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false',
+//            array(),
+//            false,
+//            false
+//        );
 
-        wp_enqueue_script(
-            'fipradotcom-google-maps-site-js',
-            get_template_directory_uri() . '/minjs/google-maps.min.js',
-            array(),
-            '20150511',
-            true
-        );
+//        wp_enqueue_script(
+//            'fipradotcom-google-maps-site-js',
+//            get_template_directory_uri() . '/minjs/google-maps.min.js',
+//            array(),
+//            '20150511',
+//            true
+//        );
 
         wp_enqueue_script(
             'fipradotcom-units-js',

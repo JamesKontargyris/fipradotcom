@@ -19,8 +19,12 @@ function custom_taxonomy_order() {
 		<div id="icon-customtaxorder"></div>
 		<h1><?php _e('Order Taxonomies', 'custom-taxonomy-order-ne'); ?></h1>
 
-		<form name="custom-order-form" method="post" action="">
-			<?php
+		<form name="custom-order-form" method="post" action=""><?php
+
+			/* Nonce */
+			$nonce = wp_create_nonce( 'custom-taxonomy-order-ne-nonce' );
+			echo '<input type="hidden" id="custom-taxonomy-order-ne-nonce" name="custom-taxonomy-order-ne-nonce" value="' . $nonce . '" />';
+
 			$args = array();
 			$output = 'objects';
 			$taxonomies = get_taxonomies( $args, $output );
@@ -79,11 +83,22 @@ function custom_taxonomy_order() {
  * Save order of the taxonomies in an option
  */
 function customtaxorder_update_taxonomies() {
+
+	/* Check Nonce */
+	$verified = false;
+	if ( isset($_POST['custom-taxonomy-order-ne-nonce']) ) {
+		$verified = wp_verify_nonce( $_POST['custom-taxonomy-order-ne-nonce'], 'custom-taxonomy-order-ne-nonce' );
+	}
+	if ( $verified == false ) {
+		// Nonce is invalid.
+		echo '<div id="message" class="error fade notice is-dismissible"><p>' . __('The Nonce did not validate. Please try again.', 'custom-taxonomy-order-ne') . '</p></div>';
+		return;
+	}
+
 	if (isset($_POST['hidden-taxonomy-order']) && $_POST['hidden-taxonomy-order'] != "") {
 
 		$new_order = $_POST['hidden-taxonomy-order'];
 		$new_order = sanitize_text_field( $new_order );
-
 		update_option('customtaxorder_taxonomies', $new_order);
 
 		echo '<div id="message" class="updated fade notice is-dismissible"><p>'. __('Order updated successfully.', 'custom-taxonomy-order-ne').'</p></div>';
@@ -100,7 +115,7 @@ function customtaxorder_update_taxonomies() {
  *
  * Returns: array with list of taxonomies, ordered correctly.
  *
- * Since: 2.7.0
+ * @since: 2.7.0
  *
  */
 function customtaxorder_sort_taxonomies( $taxonomies = array() ) {
@@ -127,40 +142,3 @@ function customtaxorder_sort_taxonomies( $taxonomies = array() ) {
 
 	return $taxonomies_ordered;
 }
-
-
-/*
- * Same as customtaxorder_sort_taxonomies, but for WooCommerce.
- *
- * Parameter: $taxonomies, array with a list of taxonomy arrays.
- *
- * Returns: array with list of taxonomies, ordered correctly.
- *
- * Since: 2.7.0
- *
- */
-function customtaxorder_sort_taxonomies_array( $taxonomies = array() ) {
-	$order = get_option( 'customtaxorder_taxonomies', '' );
-	$order = explode( ",", $order );
-	$taxonomies_woo = array();
-
-	// Main sorted taxonomies.
-	if ( ! empty($order) && is_array($order) && ! empty($taxonomies) && is_array($taxonomies) ) {
-		foreach ( $order as $tax ) {
-			foreach ( $taxonomies as $key => $taxonomy ) {
-	 			if ( is_array( $taxonomy ) && $tax === $taxonomy['name'] ) {
-					$taxonomies_woo[ $taxonomy['name'] ] = $taxonomy;
-					unset( $taxonomies[$taxonomy['name']] );
-				}
-			}
-		}
-	}
-
-	// Unsorted taxonomies, the leftovers.
-	foreach ( $taxonomies as $key => $taxonomy ) {
-		$taxonomies_woo[ $key ] = $taxonomy;
-	}
-
-	return $taxonomies_woo;
-}
-add_filter( 'woocommerce_get_product_attributes', 'customtaxorder_sort_taxonomies_array' );

@@ -1,120 +1,86 @@
 <?php
 /*
 Plugin Name: Admin Columns Pro
-Version: 3.8.9
+Version: 4.3.7
 Description: Customize columns on the administration screens for post(types), users and other content. Filter and sort content, and edit posts directly from the posts overview. All via an intuitive, easy-to-use drag-and-drop interface.
 Author: AdminColumns.com
 Author URI: https://www.admincolumns.com
 Plugin URI: https://www.admincolumns.com
+Requires PHP: 5.3
 Text Domain: codepress-admin-columns
 Domain Path: /languages/
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	header( 'Status: 403 Forbidden' );
-	header( 'HTTP/1.1 403 Forbidden' );
 	exit;
 }
 
-define( 'ACP_VERSION', '3.8.9' );
+if ( ! is_admin() ) {
+	return;
+}
+
 define( 'ACP_FILE', __FILE__ );
 
-// Only run plugin in the admin interface
-if ( ! is_admin() ) {
-	return false;
-}
+/**
+ * Deactivate Admin Columns
+ */
+require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+deactivate_plugins( 'codepress-admin-columns/codepress-admin-columns.php' );
 
 /**
- * Loads Admin Columns and Admin Columns Pro
- *
- * @since 3.0.6
+ * Load integrated Admin Columns
  */
-class CPAC_Full {
-
-	/**
-	 * @since 3.0
-	 */
-	public function __construct() {
-
-		// Add capability to roles to manage admin columns
-		register_activation_hook( __FILE__, array( $this, 'set_capabilities' ) );
-
-		// Only load Admin Columns if it hasn't been loaded already (in which case it is automatically deactivated by maybe_deactivate_admincolumns())
-		if ( ! $this->maybe_deactivate_admincolumns() ) {
-
-			require_once dirname( __FILE__ ) . '/codepress-admin-columns/codepress-admin-columns.php';
-			require_once dirname( __FILE__ ) . '/cac-addon-pro.php';
-		}
-
-		// Add settings link
-		add_filter( 'plugin_action_links', array( $this, 'add_settings_link' ), 1, 2 );
-		add_filter( 'network_admin_plugin_action_links', array( $this, 'add_settings_link' ), 10, 2 );
-	}
-
-	/**
-	 * Disable the Admin Columns base plugin if it is active
-	 *
-	 * @since 3.0
-	 *
-	 * @return bool Whether the base plugin was deactivated
-	 */
-	public function maybe_deactivate_admincolumns() {
-
-		require_once ABSPATH . 'wp-admin/includes/plugin.php';
-
-		$deactivated = false;
-
-		// Plugin files
-		$cpac_basename = 'codepress-admin-columns/codepress-admin-columns.php';
-		$cpac_addon_pro_basename = 'cac-addon-pro/cac-addon-pro.php';
-
-		if ( is_plugin_active( $cpac_basename ) ) {
-			deactivate_plugins( $cpac_basename );
-			$deactivated = true;
-		}
-
-		if ( is_plugin_active( $cpac_addon_pro_basename ) ) {
-			deactivate_plugins( $cpac_addon_pro_basename );
-			$deactivated = true;
-		}
-
-		return $deactivated;
-	}
-
-	/**
-	 * Add Settings link to plugin page
-	 *
-	 * @since 3.0
-	 *
-	 * @param string $links All settings links.
-	 * @param string $file Plugin filename.
-	 *
-	 * @return string Link to settings page
-	 */
-	public function add_settings_link( $links, $file ) {
-
-		if ( $file === plugin_basename( __FILE__ ) ) {
-			$adminurl = is_network_admin() ? network_admin_url( "settings.php" ) : admin_url( "options-general.php" );
-			array_unshift( $links, '<a href="' . add_query_arg( array(
-					'page' => 'codepress-admin-columns',
-					'tab'  => 'settings'
-				), $adminurl ) . '">' . __( 'Settings', 'codepress-admin-columns' ) . '</a>' );
-		}
-
-		return $links;
-	}
-
-	/**
-	 * Add capability to administrator to manage admin columns.
-	 * You can use the capability 'manage_admin_columns' to grant other roles this privilege as well.
-	 *
-	 * @since 3.0
-	 */
-	public function set_capabilities() {
-		if ( $role = get_role( 'administrator' ) ) {
-			$role->add_cap( 'manage_admin_columns' );
-		}
-	}
+function acp_ac_init() {
+	require_once 'admin-columns/codepress-admin-columns.php';
 }
 
-new CPAC_Full();
+add_action( 'plugins_loaded', 'acp_ac_init' );
+
+/**
+ * Load Admin Columns Pro
+ */
+function acp_init() {
+	$dependencies = new AC_Dependencies( plugin_basename( ACP_FILE ) );
+	$dependencies->check_php_version( '5.3' );
+
+	if ( $dependencies->has_missing() ) {
+		return;
+	}
+
+	require_once 'bootstrap.php';
+}
+
+add_action( 'after_setup_theme', 'acp_init', 5 );
+
+/**
+ * Force an addon to adhere to a certain version of Admin Columns Pro
+ *
+ * @param string $version
+ * @param string $basename
+ *
+ * @return string
+ */
+function acp_dependencies_version_gte( $version, $basename ) {
+	$versions = array(
+		'ac-addon-acf/ac-addon-acf.php'                         => '4.3',
+		'ac-addon-buddypress/ac-addon-buddypress.php'           => '4.3',
+		'ac-addon-events-calendar/ac-addon-events-calendar.php' => '4.3',
+		'ac-addon-ninjaforms/ac-addon-ninjaforms.php'           => '4.3',
+		'ac-addon-pods/ac-addon-pods.php'                       => '4.3',
+		'ac-addon-types/ac-addon-types.php'                     => '4.3',
+		'ac-addon-woocommerce/ac-addon-woocommerce.php'         => '4.3',
+	);
+
+	// Deprecated basenames since 4.2
+	$versions['cac-addon-acf/cac-addon-acf.php'] = $versions['ac-addon-acf/ac-addon-acf.php'];
+	$versions['cac-addon-woocommerce/cac-addon-woocommerce.php'] = $versions['ac-addon-woocommerce/ac-addon-woocommerce.php'];
+
+	if ( isset( $versions[ $basename ] ) && -1 === version_compare( $version, $versions[ $basename ] ) ) {
+		$version = $versions[ $basename ];
+	}
+
+	return $version;
+}
+
+add_filter( 'ac/dependencies/acp_version_gte', 'acp_dependencies_version_gte', 10, 2 );

@@ -3,8 +3,9 @@ Contributors: dfactory
 Donate link: http://www.dfactory.eu/
 Tags: counter, hits, posts, postviews, post views, views, count, statistics, stats, analytics, pageviews, tracking
 Requires at least: 4.0
-Tested up to: 4.7.2
-Stable tag: 1.2.7
+Requires PHP: 5.2.4
+Tested up to: 4.9.8
+Stable tag: 1.2.14
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -19,7 +20,8 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 = Features include: =
 
 * Option to select post types for which post views will be counted and displayed.
-* 3 methods of collecting post views data: PHP, Javascript or REST API for greater flexibility
+* 4 methods of collecting post views data: PHP, Javascript, Fast AJAX and REST API for greater flexibility
+* GDPR compatibility with [Cookie Notice](https://wordpress.org/plugins/cookie-notice/) plugin
 * Possibility to manually set views count for each post
 * Dashboard post views stats widget
 * Capability to query posts according to its views count
@@ -32,6 +34,7 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 * One-click data import from WP-PostViews
 * Sortable admin column
 * Post views display position, automatic or manual via shortcode
+* Multisite compatibile
 * W3 Cache/WP SuperCache compatible
 * Optional object cache support
 * WPML and Polylang compatible
@@ -58,6 +61,30 @@ No questions yet.
 2. screenshot-2.png
 
 == Changelog ==
+
+= 1.2.14 =
+* Fix: Bulk edit post views count reset issue
+
+= 1.2.13 =
+* New: Experimental Fast AJAX counter method (10+ times faster)
+
+= 1.2.12 =
+* New: GDPR compatibility with Cookie Notice plugin
+
+= 1.2.11 =
+* Tweak: Additional IP expiration checks added as an option
+
+= 1.2.10 =
+* New: Additional transient based IP expiration checks
+* Tweak: Chart.js script update to 2.7.1
+
+= 1.2.9 =
+* Fix: WooCommerce products list table broken
+
+= 1.2.8 =
+* New: Multisite compatibility
+* Fix: Undefined index post_views_column on post_views_counter/includes/settings.php
+* Tweak: Improved user IP handling
 
 = 1.2.7 =
 * Fix: Chart data not updating for object cached installs due to missing expire parameter
@@ -156,7 +183,5 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.7 =
-* Fix: Chart data not updating for object cached installs due to missing expire parameter
-* Fix: Bug preventing hiding the counter based on user role.
-* Fix: Undefined notice in admin dashboard request
+= 1.2.14 =
+* Fix: Bulk edit post views count reset issue

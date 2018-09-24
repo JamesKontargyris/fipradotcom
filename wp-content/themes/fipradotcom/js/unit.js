@@ -9,7 +9,5 @@
         console.log('Ad Block Detected');
         // adblocker detected, show fallback
         $('.google-map-missing').show();
-    } else {
-        console.log(window.canRunAds);
     }
 })(jQuery);

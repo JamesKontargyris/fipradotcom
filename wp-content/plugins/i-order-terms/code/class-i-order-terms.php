@@ -17,7 +17,7 @@ if ( !class_exists( 'I_Order_Terms' ) ) {
 class I_Order_Terms
 {
 	const PLUGIN_NAME = 'I Order Terms';
-	const PLUGIN_VERSION = '1.4.0';
+	const PLUGIN_VERSION = '1.5.0';
 	const WP_MIN_VERSION = '3.5';
 	const PLUGIN_BASENAME = 'i-order-terms/i-order-terms.php';
 	const PLUGIN_OPTIONS_PAGE = 'iorderterms_general';
@@ -300,7 +300,7 @@ class I_Order_Terms
 
 		// restrict plugin usage based on WordPress version
 		if ( !function_exists( 'is_multisite' ) || version_compare( $wp_version, self::WP_MIN_VERSION, '<' ) ) {
-			$this->notices[] = '<div id="i-order-terms-warning" class="updated"><p>' .sprintf( __( '%s plugin requires WordPress %s or higher. Please <a href="http://codex.wordpress.org/Upgrading_WordPress" target="_blank">upgrade WordPress</a> to a current version.', 'i-order-terms' ), self::PLUGIN_NAME, self::WP_MIN_VERSION ). '</p></div>';
+			$this->notices[] = '<div id="i-order-terms-warning" class="updated"><p>' .sprintf( __( '%s plugin requires WordPress %s or higher. Please <a href="https://codex.wordpress.org/Updating_WordPress" target="_blank">upgrade WordPress</a> to a current version.', 'i-order-terms' ), self::PLUGIN_NAME, self::WP_MIN_VERSION ). '</p></div>';
 		}
 
 		// register settings
@@ -410,6 +410,31 @@ class I_Order_Terms
 
 			// fetch all taxonomies with standard WordPress UI that plugin supports
 			$taxonomies = get_taxonomies( array( 'show_ui' => true ), 'objects' );
+
+
+			// Show check/uncheck all
+			if ( count( $taxonomies ) > 1 ) {
+				?>
+
+				<label for="iorderterms-ctrl-all">
+					<input id="iorderterms-ctrl-all" type="checkbox" onclick="iOrderTermsToggle(this)" />
+					<span><?php echo esc_html_e( 'Check/uncheck all', 'i-order-terms' ); ?></span>
+					<hr />
+				</label>
+				<br />
+				<script>
+				function iOrderTermsToggle(source) {
+					var checkboxes = document.getElementsByName('iorderterms_general[taxonomies-sort][]');
+					for ( var i = 0; i < checkboxes.length; i++) {
+						checkboxes[i].checked = source.checked;
+					}
+				}
+				</script>
+
+				<?php
+			}
+
+			// List taxonomies
 			foreach ( $taxonomies as $taxonomy ) {
 				if ( $taxonomy->_builtin && in_array( $taxonomy->name, array( 'nav_menu' ) ) ) {
 					continue;

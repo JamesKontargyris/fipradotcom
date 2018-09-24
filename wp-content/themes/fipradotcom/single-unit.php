@@ -98,6 +98,25 @@ get_header(); ?>
 <!--                                                Ad-blocking software detected - it may be hiding the map above. Please disable any ad-blocking extensions or software for fipra.com.-->
 <!--                                            </div>-->
 <!--                                        </div>-->
+                                        <div class="col-8-m">
+<!--                                            Google Map-->
+                                            <div id="google-map" class="google-map"></div>
+                                            <script>
+                                                // Initialize and add the map
+                                                function initMap() {
+                                                    var location = {lat: <?php echo $location['lat']; ?>, lng: <?php echo $location['lng']; ?>};
+                                                    var map = new google.maps.Map(
+                                                        document.getElementById('google-map'), {zoom: 15, center: location});
+                                                    var marker = new google.maps.Marker({position: location, map: map});
+                                                }
+                                            </script>
+                                            <script async defer
+                                                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJGButmCUf5ad-H9x55KHfd-sZVm_yd6Q&callback=initMap">
+                                            </script>
+                                            <div class="google-map-missing">
+                                                Ad-blocking software detected - it may be hiding the map above. Please disable any ad-blocking extensions or software for fipra.com.
+                                            </div>
+                                        </div>
                                         <div class="col-4-m">
                                             <address>
                                                 <?= get_field('office_address'); ?>
