@@ -32,7 +32,7 @@ $post_id = get_the_ID();
             <div class="col-4-m">
                 <?php the_title( sprintf( '<h3 class="no-margin"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
                     <?php if(get_field('is_special_adviser')) : ?>
-                        <h5>Special Adviser<?= get_field('special_adviser_expertise') ? ', ' . get_field('special_adviser_expertise') : ''; ?></h5>
+                        <h5><?php echo get_field('special_adviser_alternative_title') ? get_field('special_adviser_alternative_title') : 'Special Adviser'; ?><? echo get_field('special_adviser_expertise') ? ', ' . get_field('special_adviser_expertise') : ''; ?></h5>
                     <?php else : ?>
                         <h5>
                             <?php echo $position ? $position : ''; ?>
