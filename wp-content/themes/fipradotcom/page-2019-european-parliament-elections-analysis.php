@@ -50,9 +50,9 @@ get_header(); ?>
 
                     <div class="row">
                         <div class="col-4">
-                            <div class="ballot-box-icon-container">
-                                <img class="ballot-box-icon" src="<?php echo get_template_directory_uri(); ?>/img/icons/ballot-box.png" alt="Ballot Box icon">
-                            </div>
+<!--                            <div class="ballot-box-icon-container">-->
+<!--                                <img class="ballot-box-icon" src="--><?php //echo get_template_directory_uri(); ?><!--/img/icons/ballot-box.png" alt="Ballot Box icon">-->
+<!--                            </div>-->
                             <h2 class="lead-para"><?php echo get_field('feature_text'); ?></h2>
                         </div>
                         <div class="col-8">
