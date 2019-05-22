@@ -5,74 +5,106 @@ var imgDir = baseDir + 'img/';
 var jsDir = baseDir + 'js/';
 
 // Gulp
-var gulp = require('gulp');
+const gulp = require('gulp');
 
 // Sass/CSS stuff
-var sass = require('gulp-sass');
-var prefix = require('gulp-autoprefixer');
+const sass = require('gulp-sass');
+const prefix = require('gulp-autoprefixer');
 
 // Images
-var imagemin = require('gulp-imagemin');
+const imagemin = require('gulp-imagemin');
 
 // JS
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 
 //Others
-var plumber = require('gulp-plumber');
-var rename = require('gulp-rename');
+const rename = require('gulp-rename');
+const browsersync = require('browser-sync').create();
 
-// compile all your Sass
-gulp.task('sass', function (){
-    gulp.src([sassDir + 'style.scss'])
-        .pipe(plumber())
+// BrowserSync
+function browserSync(done) {
+    browsersync.init({
+        proxy: "fipradotcom.site",
+        notify: false,
+        open: false,
+        port:3000
+    });
+    done();
+}
+
+// BrowserSync Reload
+function browserSyncReload(done) {
+    browsersync.reload();
+    done();
+}
+
+
+// Compile Sass
+function styles() {
+    return gulp
+        .src([sassDir + 'style.scss'])
         .pipe(sass({
-            outputStyle: 'compressed'
+            outputStyle: 'nested'
         }))
-        .pipe(prefix(
-            "last 1 version", "> 1%", "ie 8", "ie 7"
-        ))
+        // .pipe(prefix(
+        //     "last 1 version", "> 1%", "ie 8", "ie 7"
+        // ))
         .pipe(gulp.dest(baseDir));
-});
+}
+
+// Optimize Images
+function images() {
+    return gulp
+        .src(imgDir)
+        .pipe(newer(imgDir + 'optimised/'))
+        .pipe(
+            imagemin([
+                imagemin.gifsicle({ interlaced: true }),
+                imagemin.jpegtran({ progressive: true }),
+                imagemin.optipng({ optimizationLevel: 5 }),
+                imagemin.svgo({
+                    plugins: [
+                        {
+                            removeViewBox: false,
+                            collapseGroups: true
+                        }
+                    ]
+                })
+            ])
+        )
+        // Puts optimised images in their own directory
+        .pipe(gulp.dest(imgDir + 'optimised/'));
+}
 
 // uglify all JS
-gulp.task('scripts', function (){
-    gulp.src([jsDir + '**/*.js'])
-        .pipe(plumber())
-        // .pipe(concat('site.min.js'))
+function scripts() {
+    return gulp
+        .src(jsDir + '**/*.js')
         .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest(baseDir + 'minjs'));
-});
+        // Adds min to filename
+        .pipe(gulp.dest(jsDir + 'min'));
+}
 
-gulp.task('images', function () {
-    gulp.src(imgDir + '**/*')
-        .pipe(plumber())
-        .pipe(imagemin({
-            progressive: true,
-            optimizationLevel: 2
-        }))
-        .pipe(gulp.dest(baseDir + 'minimg'));
-});
+// Watch files
+function watchFiles(done) {
+    // Uses polling to get around issues with changes made to files locally that are not reflected on the virtual machine
+    // (https://github.com/floatdrop/gulp-watch/issues/213)
+    gulp.watch(sassDir + '**/*.scss', { usePolling: true, ignoreInitial: false }, gulp.series(styles, browserSyncReload));
+    gulp.watch(baseDir + '**/*.php', { usePolling: true, ignoreInitial: false }, gulp.series(browserSyncReload));
+    done();
+}
 
-gulp.task('default', function(){
 
-    gulp.run('sass');
-    //gulp.run('imagemin');
 
-    // watch me getting Sassy
-    gulp.watch(sassDir + "**/*.scss", function(event){
-        gulp.run('sass');
-    });
-    // images
-    gulp.watch(imgDir + "/**/*", function(event){
-        //gulp.run('imagemin');
-        //gulp.run('svgmin');
-    });
+// call these using gulp js, gulp img etc.
+exports.css = gulp.series(styles);
+exports.js = gulp.series(scripts);
+exports.img = gulp.series(images);
+exports.watch = gulp.series(watchFiles, browserSync);
+exports.build = gulp.series(scripts, images, styles);
 
-    gulp.watch(jsDir + "/**/*", function(event){
-        gulp.run('scripts');
-    });
-});
+// call this using gulp default or just gulp
+exports.default = gulp.series(watchFiles, browserSync);

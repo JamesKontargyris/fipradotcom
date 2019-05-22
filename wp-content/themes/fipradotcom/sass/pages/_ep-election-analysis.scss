@@ -1,0 +1,304 @@
+.ep-election-analysis {
+  background: url(img/ep-logo-watermark.png) bottom right no-repeat, white;
+
+  .hero-container {
+    position: relative;
+
+    .hero__grey-block {
+      display: none;
+
+      @include media($media__large) {
+        display: block;
+        position: absolute;
+        top:0;
+        right:0;
+        width:35%;
+        height:15rem;
+        transform: skew(-30deg);
+        background:rgba(black, 0.4);
+        z-index:2;
+        margin-right:-160px;
+
+      }
+    }
+
+    .hero__ep-logo {
+      display: block;
+      position: absolute;
+      width:180px;
+      top:6rem;
+      left:50%;
+      margin-left:-90px;
+      z-index:2;
+
+      @include media(min-width 768px) {
+        left:20px;
+        margin-left:0;
+      }
+
+      @include media($media__large) {
+        left:3rem;
+      }
+    }
+
+  }
+
+  .hero {
+    padding-top:15rem;
+    overflow:hidden;
+    background:url('img/hemicircle-duotone.jpg') center no-repeat;
+    background-size: cover;
+
+    @include media(min-width 768px) {
+      background: transparent;
+      transform: skew(-30deg);
+      margin-left:-200px;
+    }
+
+    .hero__background-block {
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:-1;
+
+      @include media(min-width 768px) {
+        transform: skew(30deg); // make straight again
+        margin-left:200px;
+        background:url('img/hemicircle-duotone.jpg') center no-repeat; // take over from hero-container on tablet and desktop
+        background-size: cover;
+      }
+    }
+
+    .hero__main-title-container {
+      background:radial-gradient(#006b97 0%, #203c7b 100%);
+      padding:1rem;
+      width:100%;
+
+      @include media(min-width 768px) {
+        padding:2rem 15rem 2rem 5rem;
+        margin-left:200px;
+      }
+
+      @include media($media__large) {
+        padding:2rem 5rem;
+        width:65%;
+      }
+
+      .hero__main-title {
+        text-align: center;
+        margin:0;
+        font-family: "Calibri Light", Calibri, "Lato Light", sans-serif;
+        font-weight:normal;
+        font-size:40px;
+        line-height:36px;
+        letter-spacing: -2px;
+        color:white;
+        font-style: italic;
+
+        @include media(min-width 768px) {
+          text-align: left;
+          font-size:45px;
+          line-height:42px;
+          padding-left:30px;
+          transform: skew(30deg); // make straight again
+        }
+
+        @include media($media__large) {
+          font-size:55px;
+          line-height:52px;
+          padding-left:60px;
+
+        }
+
+      }
+    }
+  }
+
+  .hero-after {
+    @include clearfix;
+
+    .hero__sub-title-container {
+      width:100%;
+      background-color:$color__fipra-turquoise;
+      padding:1rem;
+
+      @include media(min-width 768px) {
+        width:calc(70% + 250px);
+        transform: skew(-30deg);
+        margin-left:-200px;
+      }
+
+      @include media($media__large) {
+        float: left;
+        width:calc(50% + 250px);
+      }
+
+      .hero__sub-title {
+        text-align: center;
+        font-family: Calibri, Lato, sans-serif;
+        font-weight:bold;
+        text-transform: uppercase;
+        letter-spacing:7px;
+        color:white;
+        margin:0;
+
+        @include media(min-width 768px) {
+          text-align: left;
+          margin:0 0 0 230px;
+          transform: skew(30deg); // make straight again
+        }
+
+        @include media($media__large) {
+          margin:0 0 0 255px;
+        }
+      }
+    }
+
+    .hero__hashtag-container {
+      padding:1rem;
+
+      @include media(min-width 768px) {
+        margin-left:30px;
+      }
+
+      @include media($media__large) {
+        float: left;
+      }
+
+      .hero__hashtag {
+        text-align: center;
+        font-family: Calibri, Lato, sans-serif;
+        font-size:18px;
+        line-height:18px;
+        font-style: italic;
+        letter-spacing:3px;
+        color:$color__fipra-turquoise;
+
+        @include media(min-width 768px) {
+          text-align: left;
+          font-size:21px;
+          line-height:21px;
+        }
+      }
+    }
+  }
+
+  .ballot-box-icon-container {
+    display: inline-block;
+    position:relative;
+    left:50%; //Moves the element to the left by 50%
+    transform: translateX(-50%);
+    max-width:60px;
+    max-height:60px;
+    padding:10px;
+    border:2px solid $color__fipra-blue;
+    border-radius:1000px;
+    margin:0 0 15px 0;
+
+    @include media(min-width 768px) {
+      padding:20px;
+      max-width:80px;
+      max-height:80px;
+    }
+
+    @include media($media__large) {
+      float: right;
+      left:unset;
+      transform: unset;
+
+    }
+  }
+
+  .lead-para {
+    font-family: "Calibri Light", Calibri, "Lato Light", sans-serif;
+    font-weight:normal;
+    font-size:34px;
+    line-height:1.2;
+    letter-spacing: -2px;
+    color:$color__fipra-blue;
+    font-style: italic;
+    text-align:center;
+
+    @include media(min-width 768px) {
+      font-size:40px;
+    }
+
+    @include media($media__large) {
+      text-align: right;
+    }
+
+  }
+}
+
+.ep-election-review-back-issues-container {
+  background:$color__fipra-periwinkle;
+  width:100%;
+  margin-top:30px;
+
+  .ep-election-review-back-issues__content {
+    margin:0 auto;
+    padding:1.5rem;
+    text-align:center;
+
+    @include media($media__large) {
+      text-align:left;
+    }
+
+    .ep-election-review-back-issues__title {
+      font-family: "Calibri Light", Calibri, "Lato Light", sans-serif;
+      font-weight:normal;
+      font-size:34px;
+      line-height:1;
+      color:$color__fipra-blue;
+      font-style: italic;
+      margin:0 0 10px;
+
+      @include media(min-width 768px) {
+        letter-spacing:-2px;
+        font-size:44px;
+      }
+    }
+  }
+
+  .ep-election-review-back-issues__gallery {
+    margin:0;
+
+    li {
+      width:100%;
+      margin-bottom:10px;
+      background:white;
+      box-shadow:0 1px 1px rgba(black, 0.3);
+
+      a {
+        display: block;
+        width:100%;
+        padding:5px 10px;
+        font-weight:700;
+        text-transform: uppercase;
+
+        .ep-election-review-back-issues__icon {
+          height:15px;
+          margin-right:5px;
+        }
+
+        @include media(min-width 768px) {
+          padding:125px 10px 5px 10px;
+        }
+      }
+
+      @include media(min-width 768px) {
+        background:url(img/hemicircle-duotone-small.jpg) top center no-repeat, white;
+        background-size:auto 120px;
+        display: inline-block;
+        width:32%;
+        margin-right:1%;
+      }
+
+      @include media($media__large) {
+        width:23%;
+      }
+    }
+  }
+}

@@ -346,7 +346,7 @@ a {
       }
     }
 
-    @include breakpoint($media__medium) {
+    @include media($media__medium) {
       position:absolute;
       top:0;
       left:0;
