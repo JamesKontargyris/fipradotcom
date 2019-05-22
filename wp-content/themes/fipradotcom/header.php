@@ -15,7 +15,7 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
     <!-- Twitter card meta info-->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@FipraI" />
     <meta name="twitter:creator" content="@FipraI" />
     <meta property="og:url" content="<?php echo get_the_permalink(); ?>" />
