@@ -63,7 +63,7 @@ get_header(); ?>
                     <div class="ep-election-review-back-issues-container">
                         <div class="ep-election-review-back-issues__content">
                             <h3 class="ep-election-review-back-issues__title">Fipra European Elections Review</h3>
-                            <h5>Download back issues</h5>
+                            <h5>Download previous issues</h5>
                             <ul class="ep-election-review-back-issues__gallery">
                                 <li><a href="<?php echo get_template_directory_uri(); ?>/files/ep_elections_reviews/fipra_2019_european_elections_review_may_2019.pdf" target="_blank"><img class="ep-election-review-back-issues__icon" src="<?php echo get_template_directory_uri();  ?>/img/icons/file-download-solid.svg" alt="Download"> May 2019</a></li>
                                 <li><a href="<?php echo get_template_directory_uri(); ?>/files/ep_elections_reviews/fipra_2019_european_elections_review_april_2019.pdf" target="_blank"><img class="ep-election-review-back-issues__icon" src="<?php echo get_template_directory_uri();  ?>/img/icons/file-download-solid.svg" alt="Download"> April 2019</a></li>
