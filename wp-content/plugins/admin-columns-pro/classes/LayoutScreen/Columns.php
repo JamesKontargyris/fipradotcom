@@ -4,13 +4,14 @@ namespace ACP\LayoutScreen;
 
 use AC;
 use AC\ListScreen;
+use ACP\Helper\Select;
 use ACP\Layout;
 use ACP\Layouts;
-use WP_User_Query;
 
-class Columns {
+class Columns
+	implements AC\Registrable {
 
-	public function __construct() {
+	public function register() {
 		// Init
 		add_action( 'ac/settings/list_screen', array( $this, 'set_layout_on_settings_screen' ) );
 
@@ -21,9 +22,8 @@ class Columns {
 		// HTML
 		add_action( 'ac/settings/sidebox', array( $this, 'settings' ) );
 		add_action( 'ac/settings/after_title', array( $this, 'menu' ) );
-		add_action( 'ac/settings/after_menu', array( $this, 'layout_help' ) );
+		add_action( 'ac/settings/sidebox', array( $this, 'layout_help' ) );
 
-		add_action( 'admin_init', array( $this, 'select2_conflict_fix' ), 1 );
 		add_filter( 'ac/settings/list_screen_message_label', array( $this, 'add_layout_to_label' ), 10, 2 );
 		add_filter( 'ac/read_only_message', array( $this, 'read_only_message' ), 10, 2 );
 		add_action( 'ac/settings/scripts', array( $this, 'admin_scripts' ) );
@@ -111,7 +111,9 @@ class Columns {
 				}
 
 				// Get original columns
-				if ( $original_settings = $list_screen->get_settings() ) {
+				$original_settings = $list_screen->get_settings();
+
+				if ( $original_settings ) {
 					$list_screen->set_layout_id( $layout->get_id() )->store( $original_settings );
 				}
 
@@ -120,7 +122,7 @@ class Columns {
 				$list_screen->set_layout_id( $layout->get_id() );
 				$list_screen->set_read_only( false );
 
-				$screen->notice( sprintf( __( 'Set %s succesfully created.', 'codepress-admin-columns' ), "<strong>\"" . esc_html( $layout->get_name() ) . "\"</strong>" ), 'updated' );
+				$screen->notice( sprintf( __( 'Set %s successfully created.', 'codepress-admin-columns' ), "<strong>\"" . esc_html( $layout->get_name() ) . "\"</strong>" ), 'updated' );
 				break;
 
 			case 'delete_layout' :
@@ -141,12 +143,13 @@ class Columns {
 				$layout = ACP()->layouts( $list_screen )->delete( filter_input( INPUT_POST, 'layout_id' ) );
 
 				if ( ! $layout ) {
-					AC()->admin()->get_page( 'columns' )->notice( __( "Screen does not exist.", 'codepress-admin-columns' ), 'error' );
+					$page = new AC\Admin\Page\Columns();
+					$page->notice( __( "Screen does not exist.", 'codepress-admin-columns' ), 'error' );
 
 					return;
 				}
 
-				$screen->notice( sprintf( __( 'Column set %s succesfully deleted.', 'codepress-admin-columns' ), "<strong>\"" . esc_html( $layout->get_name() ) . "\"</strong>" ), 'updated' );
+				$screen->notice( sprintf( __( 'Column set %s successfully deleted.', 'codepress-admin-columns' ), "<strong>\"" . esc_html( $layout->get_name() ) . "\"</strong>" ), 'updated' );
 				break;
 		}
 	}
@@ -187,10 +190,11 @@ class Columns {
 		wp_deregister_script( 'select2' ); // try to remove any other version of select2
 
 		wp_enqueue_style( 'acp-layouts', $this->get_assets_url() . "css/layouts.css", array(), ACP()->get_version() );
-		wp_enqueue_style( 'acp-layouts-select2', $this->get_assets_url() . "css/select2.css", array(), '4.0.2' );
 
-		wp_register_script( 'acp-layouts-select2', $this->get_assets_url() . "js/select2.js", array( 'jquery' ), ACP()->get_version() );
-		wp_enqueue_script( 'acp-layouts', $this->get_assets_url() . "js/layouts.js", array( 'acp-layouts-select2' ), ACP()->get_version() );
+		// Select2
+		wp_enqueue_style( 'ac-select2' );
+		wp_enqueue_script( 'ac-select2' );
+		wp_enqueue_script( 'acp-layouts', $this->get_assets_url() . "js/layouts.js", array( 'ac-select2' ), ACP()->get_version() );
 
 		wp_localize_script( 'acp-layouts', 'acp_layouts', array(
 			'roles'  => __( 'Select roles', 'codepress-admin-columns' ),
@@ -209,7 +213,8 @@ class Columns {
 	/**
 	 * @param ListScreen $list_screen
 	 */
-	public function settings( ListScreen $list_screen ) { ?>
+	public function settings( ListScreen $list_screen ) {
+		?>
 		<div class="sidebox layouts" data-type="<?php echo $list_screen->get_key(); ?>">
 
 			<div class="header">
@@ -222,7 +227,7 @@ class Columns {
 				</h3>
 			</div>
 			<div class="item new">
-				<form method="post" action="<?php echo esc_attr( add_query_arg( array( 'list_screen' => $list_screen->get_key() ), AC()->admin()->get_link( 'columns' ) ) ); // without layout id  ?>">
+				<form method="post" action="<?php echo esc_attr( add_query_arg( array( 'list_screen' => $list_screen->get_key() ), ac_get_admin_url() ) ); // without layout id  ?>">
 
 					<?php $this->nonce_field( 'create-layout' ); ?>
 
@@ -248,7 +253,11 @@ class Columns {
 				</form>
 			</div>
 
-			<?php if ( $layouts = ACP()->layouts( $list_screen )->get_layouts() ) : ?>
+			<?php
+
+			$layouts = ACP()->layouts( $list_screen )->get_layouts();
+
+			if ( $layouts ) : ?>
 				<?php foreach ( $layouts as $i => $layout ) : ?>
 					<?php $onclick = AC()->use_delete_confirmation() ? ' onclick="return confirm(\'' . esc_attr( addslashes( sprintf( __( "Warning! The %s columns data will be deleted. This cannot be undone. 'OK' to delete, 'Cancel' to stop", 'codepress-admin-columns' ), "'" . $layout->get_name() . "'" ) ) ) . '\');"' : ''; ?>
 					<?php $is_current = $list_screen->get_layout_id() == $layout->get_id(); ?>
@@ -321,7 +330,7 @@ class Columns {
 	}
 
 	private function get_assets_url() {
-		return ACP()->get_url() . 'assets/';
+		return ACP()->get_url() . 'assets/core/';
 	}
 
 	public function layout_help() {
@@ -336,20 +345,13 @@ class Columns {
 				<?php _e( "Available sets are selectable from the overview screen. Users can have their own column view preference.", 'codepress-admin-columns' ); ?>
 			<p>
 			<p>
-				<img src="<?php echo esc_url( $this->get_assets_url() ); ?>images/layout-selector.png"/>
+				<img src="<?php echo esc_url( $this->get_assets_url() ); ?>images/layout-selector.png" alt=""/>
 			</p>
 			<p>
 				<a href="<?php echo esc_url( ac_get_site_utm_url( 'documentation/how-to/make-multiple-column-sets', 'column-sets' ) ); ?>" target="_blank"><?php _e( 'Online documentation', 'codepress-admin-columns' ); ?></a>
 			</p>
 		</div>
 		<?php
-	}
-
-	// Try to prevent older version 3.x of select2 from loading and causing conflicts with 4.x
-	public function select2_conflict_fix() {
-		if ( AC()->admin()->is_current_page( 'columns' ) ) {
-			wp_enqueue_script( 'disable-older-version-select2', $this->get_assets_url() . "js/select2_conflict_fix.js", array(), ACP()->get_version() );
-		}
 	}
 
 	private function ajax_validate_request() {
@@ -363,38 +365,26 @@ class Columns {
 	public function ajax_get_users() {
 		$this->ajax_validate_request();
 
-		$query_args = array(
-			'orderby'        => 'display_name',
-			'number'         => 100,
-			'search'         => '*' . filter_input( INPUT_POST, 'search' ) . '*',
-			'search_columns' => array( 'ID', 'user_login', 'user_nicename', 'user_email', 'user_url' ),
+		$paged = filter_input( INPUT_POST, 'page' );
+
+		$entities = new Select\Entities\User( array(
+			'search' => filter_input( INPUT_POST, 'search' ),
+			'paged'  => $paged ? $paged : 1,
+			'number' => 10,
+		) );
+
+		$options = new Select\Options\Paginated(
+			$entities,
+			new Select\Group\UserRole(
+				new Select\Formatter\UserName( $entities )
+			)
 		);
 
-		$options = array();
+		$has_more = ! $options->is_last_page();
 
-		$users_query = new WP_User_Query( $query_args );
-		if ( $users = $users_query->get_results() ) {
-			$names = array();
+		$response = new Select\Response( $options, $has_more );
 
-			foreach ( $users as $user ) {
-				$name = ac_helper()->user->get_display_name( $user );
-
-				if ( in_array( $name, $names ) ) {
-					$name .= ' (' . $user->user_email . ')';
-				}
-
-				// Select2 format
-				$options[] = array(
-					'id'   => $user->ID,
-					'text' => $name,
-				);
-
-				// for duplicates
-				$names[] = $name;
-			}
-		}
-
-		wp_send_json_success( $options );
+		wp_send_json_success( $response() );
 	}
 
 	public function ajax_update_layout() {
@@ -445,7 +435,9 @@ class Columns {
 	 * @return string
 	 */
 	public function add_layout_to_label( $label, $list_screen ) {
-		if ( $name = ACP()->layouts( $list_screen )->get_layout_name( $list_screen->get_layout_id() ) ) {
+		$name = ACP()->layouts( $list_screen )->get_layout_name( $list_screen->get_layout_id() );
+
+		if ( $name ) {
 			$label = $name;
 		}
 
@@ -505,74 +497,82 @@ class Columns {
 	 * @param bool              $is_disabled
 	 */
 	public function input_rows( $attr_id, $layout = false, $is_disabled = false ) {
-		?>
-		<div class="row name">
-			<label for="layout-name-<?php echo $attr_id; ?>">
-				<?php _e( 'Name', 'codepress-admin-columns' ); ?>
-			</label>
-			<div class="input">
-				<div class="ac-error-message">
-					<p>
-						<?php _e( 'Please enter a name.', 'codepress-admin-columns' ); ?>
-					<p>
-				</div>
-				<input class="name" id="layout-name-<?php echo $attr_id; ?>" name="layout_name" value="<?php echo $layout ? esc_attr( $layout->get_name() ) : ''; ?>" data-value="<?php echo $layout ? esc_attr( $layout->get_name() ) : ''; ?>" placeholder="<?php _e( 'Enter name', 'codepress-admin-coliumns' ); ?>" <?php echo $is_disabled ? ' disabled="disabled"' : ''; ?>/>
-			</div>
-		</div>
-		<div class="row info">
-			<em><?php _e( 'Make this set available only for specific users or roles (optional)', 'codepress-admin-columns' ); ?></em>
-		</div>
-		<div class="row roles">
-			<label for="layout-roles-<?php echo $attr_id; ?>">
-				<?php _e( 'Roles', 'codepress-admin-columns' ); ?>
-				<span>(<?php _e( 'optional', 'codepress-admin-columns' ); ?>)</span>
-			</label>
-			<div class="input">
-				<?php $this->display_select_roles( $attr_id, $layout ? $layout->get_roles() : false, $is_disabled ); ?>
-			</div>
-		</div>
-		<div class="row users">
-			<label for="layout-users-<?php echo $attr_id; ?>">
-				<?php _e( 'Users' ); ?>
-				<span>(<?php _e( 'optional', 'codepress-admin-columns' ); ?>)</span>
-			</label>
-			<div class="input">
-				<?php $this->display_select_users( $attr_id, $layout ? $layout->get_users() : false, $is_disabled ); ?>
-			</div>
-		</div>
-		<?php
+
+		$input_name = new AC\Form\Element\Input( 'layout-name-' . $attr_id );
+
+		$input_name
+			->set_attribute( 'class', 'name' )
+			->set_attribute( 'name', 'layout_name' )
+			->set_attribute( 'data-value', $layout ? esc_attr( $layout->get_name() ) : '' )
+			->set_attribute( 'placeholder', __( 'Enter name', 'codepress-admin-coliumns' ) )
+			->set_value( $layout ? esc_attr( $layout->get_name() ) : '' );
+
+		if ( $is_disabled ) {
+			$input_name->set_attribute( 'disabled', 'disabled' );
+		}
+
+		$view = new AC\View( array(
+			'id'           => $attr_id,
+			'input_name'   => $input_name,
+			'select_roles' => $this->select_roles( $attr_id, $layout ? $layout->get_roles() : array(), $is_disabled ),
+			'select_users' => $this->select_users( $attr_id, $layout ? $layout->get_users() : array(), $is_disabled ),
+		) );
+
+		$view->set_template( 'admin/edit-layout' );
+
+		echo $view->render();
 	}
 
 	/**
-	 * @param       $attr_id
-	 * @param array $current_roles
-	 * @param bool  $is_disabled
+	 * @param string $attr_id
+	 * @param array  $current_roles
+	 * @param bool   $is_disabled
+	 *
+	 * @return AC\Form\Element\MultiSelect
 	 */
-	private function display_select_roles( $attr_id, $current_roles = array(), $is_disabled = false ) {
-		$grouped_roles = $this->get_grouped_role_names();
-		?>
-		<select class="roles" name="layout_roles[]" multiple="multiple" id="layout-roles-<?php echo $attr_id; ?>" style="width: 100%;"<?php echo $is_disabled ? ' disabled="disabled"' : ''; ?>>
-			<?php foreach ( $grouped_roles as $group => $roles ) : ?>
-				<optgroup label="<?php echo esc_attr( $group ); ?>">
-					<?php foreach ( $roles as $name => $label ) : ?>
-						<option value="<?php echo esc_attr( $name ); ?>"<?php echo in_array( $name, (array) $current_roles ) ? ' selected="selected"' : ''; ?>><?php echo esc_html( $label ); ?></option>
-					<?php endforeach; ?>
-				</optgroup>
-			<?php endforeach; ?>
-		</select>
-		<?php
+	private function select_roles( $attr_id, $current_roles = array(), $is_disabled = false ) {
+		$select = new AC\Form\Element\MultiSelect( 'layout_roles[]', $this->get_grouped_role_names() );
+
+		$select->set_value( $current_roles )
+		       ->set_attribute( 'class', 'roles' )
+		       ->set_attribute( 'style', 'width: 100%;' )
+		       ->set_attribute( 'id', 'layout-roles-' . $attr_id );
+
+		if ( $is_disabled ) {
+			$select->set_attribute( 'disabled', 'dsiabled' );
+		}
+
+		return $select;
 	}
 
-	private function display_select_users( $attr_id, $current_users = array(), $is_disabled = false ) {
-		?>
-		<select class="users" name="layout_users[]" multiple="multiple" id="layout-users-<?php echo $attr_id; ?>" style="width: 100%;"<?php echo $is_disabled ? ' disabled="disabled"' : ''; ?>>
-			<?php if ( $current_users ) : ?>
-				<?php foreach ( $current_users as $user_id ) : $user = get_userdata( $user_id ); ?>
-					<option value="<?php echo $user->ID; ?>" selected="selected"><?php echo esc_html( ac_helper()->user->get_display_name( $user ) ); ?></option>
-				<?php endforeach; ?>
-			<?php endif; ?>
-		</select>
-		<?php
+	/**
+	 * @param string $attr_id
+	 * @param array  $user_ids
+	 * @param bool   $is_disabled
+	 *
+	 * @return AC\Form\Element\MultiSelect
+	 */
+	private function select_users( $attr_id, $user_ids = array(), $is_disabled = false ) {
+		$options = array();
+
+		if ( $user_ids ) {
+			foreach ( $user_ids as $user_id ) {
+				$options[ $user_id ] = ac_helper()->user->get_display_name( $user_id );
+			}
+		}
+
+		$select = new AC\Form\Element\MultiSelect( 'layout_users[]', $options );
+
+		$select->set_value( $user_ids )
+		       ->set_attribute( 'class', 'users' )
+		       ->set_attribute( 'style', 'width: 100%;' )
+		       ->set_attribute( 'id', 'layout-users-' . $attr_id );
+
+		if ( $is_disabled ) {
+			$select->set_attribute( 'disabled', 'dsiabled' );
+		}
+
+		return $select;
 	}
 
 	private function instructions() {
@@ -609,7 +609,12 @@ class Columns {
 			 */
 			$group = apply_filters( 'ac/editing/role_group', $group, $name );
 
-			$roles[ $group ][ $name ] = $role['name'];
+			if ( ! isset( $roles[ $group ] ) ) {
+				$roles[ $group ]['title'] = $group;
+				$roles[ $group ]['options'] = array();
+			}
+
+			$roles[ $group ]['options'][ $name ] = $role['name'];
 		}
 
 		return $roles;

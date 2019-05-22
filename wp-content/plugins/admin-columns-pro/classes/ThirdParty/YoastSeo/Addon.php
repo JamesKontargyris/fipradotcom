@@ -4,9 +4,10 @@ namespace ACP\ThirdParty\YoastSeo;
 
 use AC;
 
-final class Addon {
+final class Addon
+	implements AC\Registrable {
 
-	public function __construct() {
+	public function register() {
 		add_action( 'ac/column_types', array( $this, 'set_columns' ) );
 		add_action( 'ac/column_groups', array( $this, 'set_groups' ) );
 		add_action( 'ac/admin_footer', array( $this, 'fix_yoast_heading_tooltips' ) );

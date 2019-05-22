@@ -2,13 +2,16 @@
 
 namespace ACA\ACF\Field;
 
-use ACA\ACF\Field;
 use ACA\ACF\Editing;
-use ACA\ACF\Sorting;
+use ACA\ACF\Field;
 use ACA\ACF\Filtering;
+use ACA\ACF\Formattable;
+use ACA\ACF\Search;
+use ACA\ACF\Sorting;
 use ACP;
 
-class Taxonomy extends Field {
+class Taxonomy extends Field
+	implements Formattable {
 
 	public function __construct( $column ) {
 		parent::__construct( $column );
@@ -23,22 +26,40 @@ class Taxonomy extends Field {
 		$values = array();
 
 		foreach ( ac_helper()->taxonomy->get_terms_by_ids( $term_ids, $this->get( 'taxonomy' ) ) as $term ) {
-			$values[] = ac_helper()->html->link( get_edit_term_link( $term->term_id, $term->taxonomy ), $term->name );
+			$values[] = $this->get_term_link( $term );
 		}
 
 		return implode( ', ', $values );
 	}
 
-	public function editing() {
-		return new Editing\Taxonomy( $this->column );
+	public function get_term_link( $term ) {
+		return ac_helper()->html->link( get_edit_term_link( $term->term_id, $term->taxonomy ), $term->name );
+	}
+
+	public function format( $term_id ) {
+		$term = get_term( $term_id );
+
+		return $this->get_term_link( $term );
 	}
 
 	public function filtering() {
 		return new Filtering\Taxonomy( $this->column );
 	}
 
+	public function editing() {
+		return new Editing\Taxonomy( $this->column );
+	}
+
+	public function search() {
+		if ( $this->is_serialized() ) {
+			return new Search\Taxonomies( $this->get_meta_key(), $this->get_meta_type(), $this->get( 'taxonomy' ) );
+		}
+
+		return new Search\Taxonomy( $this->get_meta_key(), $this->get_meta_type(), $this->get( 'taxonomy' ) );
+	}
+
 	public function sorting() {
-		if ( $this->column->get_field()->get( 'multiple' ) ) {
+		if ( $this->get( 'multiple' ) ) {
 			return new ACP\Sorting\Model\Value( $this->column );
 		}
 

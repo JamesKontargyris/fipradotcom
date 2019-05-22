@@ -3,8 +3,9 @@
 namespace ACP\ThirdParty\bbPress\Editing;
 
 use ACP\Editing;
+use ACP\Helper\Select;
 
-class TopicForum extends Editing\Model {
+class TopicForum extends Editing\Model implements Editing\PaginatedOptions {
 
 	public function get_view_settings() {
 		return array(
@@ -15,12 +16,17 @@ class TopicForum extends Editing\Model {
 		);
 	}
 
-	public function get_ajax_options( $request ) {
-		return acp_editing_helper()->get_posts_list( array(
-			's'         => $request['search'],
+	public function get_paginated_options( $s, $paged, $id = null ) {
+		$entities = new Select\Entities\Post( array(
+			's'         => $s,
+			'paged'     => $paged,
 			'post_type' => 'forum',
-			'paged'     => $request['paged'],
 		) );
+
+		return new Select\Options\Paginated(
+			$entities,
+			new Select\Formatter\PostTitle( $entities )
+		);
 	}
 
 	public function get_edit_value( $id ) {

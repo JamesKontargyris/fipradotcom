@@ -1,6 +1,6 @@
 <?php
 /*  
-	Copyright 2007-2018  John Havlik  (email : john.havlik@mtekk.us)
+	Copyright 2007-2019  John Havlik  (email : john.havlik@mtekk.us)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ require_once(dirname(__FILE__) . '/includes/block_direct_access.php');
 class bcn_breadcrumb
 {
 	//Our member variables
-	const version = '6.1.0';
+	const version = '6.3.0';
 	//The main text that will be shown
 	protected $title;
 	//The breadcrumb's template, used durring assembly
@@ -38,7 +38,7 @@ class bcn_breadcrumb
 	//The type of this breadcrumb
 	protected $type;
 	protected $allowed_html = array();
-	const default_template_no_anchor = '<span property="itemListElement" typeof="ListItem"><span property="name">%htitle%</span><meta property="position" content="%position%"></span>';
+	const default_template_no_anchor = '<span class="%type%">%htitle%</span>';
 	/**
 	 * The enhanced default constructor, ends up setting all parameters via the set_ functions
 	 *
@@ -88,7 +88,7 @@ class bcn_breadcrumb
 	 */
 	static public function get_default_template()
 	{
-		return __('<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to %title%." href="%link%" class="%type%"><span property="name">%htitle%</span></a><meta property="position" content="%position%"></span>', 'breadcrumb-navxt');
+		return sprintf('<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="%1$s" href="%%link%%" class="%%type%%" bcn-aria-current><span property="name">%%htitle%%</span></a><meta property="position" content="%%position%%"></span>', esc_attr__('Go to %title%.','breadcrumb-navxt'));
 	}
 	/**
 	 * Function to set the protected title member
@@ -213,11 +213,20 @@ class bcn_breadcrumb
 	 *
 	 * @param bool $linked Allow the output to contain anchors?
 	 * @param int $position The position of the breadcrumb in the trail (between 1 and n when there are n breadcrumbs in the trail)
+	 * @param bool $is_current_item Whether or not this breadcrumb represents the current item
 	 *
 	 * @return string The compiled breadcrumb string
 	 */
-	public function assemble($linked, $position)
+	public function assemble($linked, $position, $is_current_item = false)
 	{
+		if($is_current_item)
+		{
+			$aria_current_str = 'aria-current="page"';
+		}
+		else
+		{
+			$aria_current_str = '';
+		}
 		//Build our replacements array
 		$replacements = array(
 			'%title%' => esc_attr(strip_tags($this->title)),
@@ -226,7 +235,8 @@ class bcn_breadcrumb
 			'%type%' => apply_filters('bcn_breadcrumb_types', $this->type, $this->id),
 			'%ftitle%' => esc_attr(strip_tags($this->_title)),
 			'%fhtitle%' => $this->_title,
-			'%position%' => $position
+			'%position%' => $position,
+			'bcn-aria-current' => $aria_current_str
 			);
 		//The type may be an array, implode it if that is the case
 		if(is_array($replacements['%type%']))
@@ -261,12 +271,12 @@ class bcn_breadcrumb
 	 */
 	public function assemble_json_ld($position)
 	{
-		return (object)array(
+		return (object) apply_filters('bcn_breadcrumb_assembled_json_ld_array', array(
 			'@type' => 'ListItem',
 			'position' => $position,
 			'item' => (object)array(
 				'@id' => esc_url($this->url),
 				'name' => esc_attr($this->title))
-		);
+		), $this->type, $this->id);
 	}
 }

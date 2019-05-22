@@ -3,9 +3,9 @@ Contributors: codepress, tschutter, davidmosterd, engelen, dungengronovius
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZDZRSYLQ4Z76J
 Tags: plugins, wordpress, admin, column, columns, custom columns, custom fields, image, dashboard, sortable, filters, posts, media, users, pages, posttypes, manage columns, wp-admin
 Requires at least: 4.5
-Tested up to: 4.9.8
-Requires PHP: 5.3
-Stable tag: 3.2.6
+Tested up to: 5.2
+Requires PHP: 5.3.6
+Stable tag: 3.4.4
 
 Customise columns on the administration screens for post(types), pages, media, comments, links and users with an easy to use drag-and-drop interface.
 
@@ -206,12 +206,58 @@ You can find a list of the available actions and filters (and examples on how to
 2. Posts Screen with the customized sortable columns.
 3. Settings page for the Media Library columns.
 4. Media Screen with the customized sortable columns.
-5. Settings page for Users columns.
+5. Settings page for Users columns../ch
 6. Users Screen with the customized sortable columns.
 7. Settings page showing the different displaying types for custom field.
 8. Posts Screen with custom fields.
 
 == Changelog ==
+
+= 3.4.4 =
+Release Date: May 20th, 2019
+
+* [Fixed] Transient class fixed. Unchanged data did not update the timestamp resulting in invalidating the transient constantly
+
+= 3.4.3 =
+Release Date: May 10th, 2019
+
+* [Fixed] IE11 bug when adding new columns
+
+= 3.4.2 =
+Release Date: March 26th, 2019
+
+* [Improved] Prevent possible warning in User Registered column
+* [Improved] Give feedback on settings page when something went wrong
+* [Improved] Setting for link Media item to download or view
+
+= 3.4.1 =
+Release Date: February 18th, 2019
+
+* [Improved] Minor improvements in banners, missing links, etc
+
+= 3.4 =
+Release Date: January 23rd, 2019
+
+* [Fixed] Width setting Javascript errors
+* [Fixed] Show icons for Action column works again
+* [Improved] Show icon labels in the Screen Options menu when necessary
+
+= 3.3.1 =
+Release Date: November 7th, 2018
+
+* [Improved] Better external image support for Custom Field column
+
+= 3.3 =
+Release Date: October 31st, 2018
+
+* [Improved] Extra display for Path column to show the local path of a file
+
+= 3.2.7 =
+Release Date: September 25th, 2018
+
+* [Fixed] jQuery noConflict fixes for column settings page
+* [Improved] Post title column is now always available
+* [Improved] Disable autoloading for ACP options
 
 = 3.2.6 =
 Release Date: August 21th, 2018

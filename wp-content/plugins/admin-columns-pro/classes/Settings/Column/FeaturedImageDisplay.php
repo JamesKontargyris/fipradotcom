@@ -54,9 +54,8 @@ class FeaturedImageDisplay extends AC\Settings\Column
 	public function format( $value, $original_value ) {
 		switch ( $this->get_featured_image_display() ) {
 			case 'count':
-				$value = count( $value );
+				return count( $value );
 
-				break;
 			case 'title':
 				$values = array();
 
@@ -65,17 +64,14 @@ class FeaturedImageDisplay extends AC\Settings\Column
 					$values[] = ac_helper()->html->link( get_edit_post_link( $post ), $post->post_title );
 				}
 
-				$value = implode( ac_helper()->html->divider(), $values );
+				return implode( ac_helper()->html->divider(), $values );
 
-				break;
 			case 'true_false':
-				$value = count( $value ) ? ac_helper()->icon->yes() : false;
+				return count( $value ) ? ac_helper()->icon->yes() : false;
 
-				break;
-
+			default :
+				return $value;
 		}
-
-		return $value;
 	}
 
 }

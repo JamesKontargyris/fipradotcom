@@ -1,7 +1,29 @@
 == Changelog ==
 
+= 2.5.2 =
+Release Date: March 5th, 2019
+
+* [Fixed] Handle ACF Legacy date save formats for editing
+
+= 2.5.1 =
+Release Date: February 27th, 2019
+
+* [Fixed] Possible warning for Repeater Field (count)
+
+= 2.5 =
+Release Date: January 24th, 2019
+
+* [Added] Made compatible with Admin Columns Pro 4.5, Bulk Editing
+* [Fixed] Fatal error for ACF Relation fields created with PHP
+* [Improved] Editing options for ACF Relation field are now grouped by Post Type
+
+= 2.4 =
+Release Date: October 31st, 2018
+
+* [Added] Smart Filtering
+
 = 2.3.2 =
-Release Date: September 12th, 2018
+Release Date: September 10th, 2018
 
 * [Added] Display support for ACF Group Field
 * [Improved] Recognize the initial sub field when adding a Group or Repeater field

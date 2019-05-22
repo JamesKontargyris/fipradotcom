@@ -31,6 +31,7 @@ class CustomFieldType extends Settings\Column
 			case 'image' :
 			case 'library_id' :
 				$settings[] = new Image( $this->column );
+				$settings[] = new MediaLink( $this->column );
 
 				break;
 			case 'excerpt' :
@@ -198,7 +199,8 @@ class CustomFieldType extends Settings\Column
 		switch ( $this->get_field_type() ) {
 
 			case 'date' :
-				if ( $timestamp = ac_helper()->date->strtotime( $value ) ) {
+				$timestamp = ac_helper()->date->strtotime( $value );
+				if ( $timestamp ) {
 					$value = date( 'c', $timestamp );
 				}
 

@@ -16,8 +16,8 @@ class Media extends AC\ListScreen\Media
 		return new Sorting\Strategy\Post( $model );
 	}
 
-	public function editing( $model ) {
-		return new Editing\Strategy\Post( $model );
+	public function editing() {
+		return new Editing\Strategy\Post( $this->get_post_type() );
 	}
 
 	public function filtering( $model ) {

@@ -9,40 +9,30 @@ use AC\Message;
 use AC\Screen;
 use AC\Storage;
 use ACP\License;
+use Exception;
 
 class Renewal
 	implements AC\Registrable {
+
+	/** @var License */
+	private $license;
 
 	/**
 	 * @var int[] Intervals to check in ascending order with a max of 90 days
 	 */
 	protected $intervals;
 
-	/**
-	 * @var License
-	 */
-	protected $license;
-
-	/**
-	 * @param License $license
-	 */
 	public function __construct( License $license ) {
 		$this->license = $license;
 		$this->intervals = array( 1, 7, 21 );
 	}
 
-	/**
-	 * @throws \Exception
-	 */
 	public function register() {
 		add_action( 'ac/screen', array( $this, 'display' ) );
 
 		$this->get_ajax_handler()->register();
 	}
 
-	/**
-	 * @throws \Exception
-	 */
 	public function ajax_dismiss_notice() {
 		$this->get_ajax_handler()->verify_request();
 
@@ -73,7 +63,7 @@ class Renewal
 	 * @param int $interval
 	 *
 	 * @return Storage\Timestamp
-	 * @throws \Exception
+	 * @throws Exception
 	 */
 	protected function get_dismiss_option( $interval ) {
 		return new Storage\Timestamp(
@@ -84,7 +74,7 @@ class Renewal
 	/**
 	 * @param Screen $screen
 	 *
-	 * @throws \Exception
+	 * @throws Exception
 	 */
 	public function display( Screen $screen ) {
 		if ( ! $screen->has_screen() ) {
@@ -107,7 +97,7 @@ class Renewal
 			return;
 		}
 
-		$interval = $this->get_current_interval();
+		$interval = $this->get_current_interval( (int) $this->license->get_time_remaining( 'days' ) );
 
 		if ( false === $interval ) {
 			return;
@@ -120,21 +110,26 @@ class Renewal
 		$ajax_handler = $this->get_ajax_handler();
 		$ajax_handler->set_param( 'interval', $interval );
 
-		$notice = new Message\Notice\Dismissible( $ajax_handler );
-		$notice->set_type( $notice::WARNING )
-		       ->set_message( $this->get_message() )
-		       ->register();
+		$notice = new Message\Notice\Dismissible(
+			$this->get_message( $this->license->get_expiry_date(), $this->license->get_time_remaining( 'days' ), $this->license->get_renewal_discount() ),
+			$ajax_handler
+		);
+
+		$notice
+			->set_type( $notice::WARNING )
+			->register();
 	}
 
 	/**
 	 * Get the current interval compared to the license state. Returns false when no interval matches
+	 *
+	 * @param int $remaining_days
+	 *
 	 * @return false|int
 	 */
-	protected function get_current_interval() {
-		$days_remaining = $this->license->get_time_remaining( 'days' );
-
+	protected function get_current_interval( $remaining_days ) {
 		foreach ( $this->intervals as $k => $interval ) {
-			if ( $interval >= $days_remaining ) {
+			if ( $interval >= $remaining_days ) {
 				return $k;
 			}
 		}
@@ -145,12 +140,10 @@ class Renewal
 	/**
 	 * @return string
 	 */
-	protected function get_message() {
-		$expiry_date = '<strong>' . date_i18n( get_option( 'date_format' ), $this->license->get_expiry_date() ) . '</strong>';
-		$days_remaining = $this->license->get_time_remaining( 'days' );
-		$days = '<strong>' . sprintf( _n( '1 day', '%s days', $days_remaining, 'codepress-admin-columns' ), $days_remaining ) . '</strong>';
+	protected function get_message( $expiration_date, $remaining_days, $discount ) {
+		$expiry_date = '<strong>' . date_i18n( get_option( 'date_format' ), $expiration_date ) . '</strong>';
+		$days = '<strong>' . sprintf( _n( '1 day', '%s days', $remaining_days, 'codepress-admin-columns' ), $remaining_days ) . '</strong>';
 		$renewal_link = ac_helper()->html->link( ac_get_site_utm_url( 'my-account', 'renewal' ), __( 'Renew your license', 'codepress-admin-columns' ) );
-		$discount = $this->license->get_renewal_discount();
 
 		if ( $discount ) {
 			return sprintf(
@@ -165,8 +158,8 @@ class Renewal
 		return sprintf(
 			__( "Your Admin Columns Pro license will expire in %s. %s before %s to get a discount!", 'codepress-admin-columns' ),
 			$days,
-			$expiry_date,
-			$renewal_link
+			$renewal_link,
+			$expiry_date
 		);
 	}
 

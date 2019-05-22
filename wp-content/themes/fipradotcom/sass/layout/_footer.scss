@@ -141,3 +141,14 @@
     }
   }
 }
+
+#menu-footer-menu {
+  a:link,
+  a:visited {
+    color:white;
+  }
+
+  a:hover {
+    color:$color__fipra-red;
+  }
+}

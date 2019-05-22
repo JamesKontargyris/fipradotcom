@@ -2,8 +2,8 @@
 
 namespace ACA\ACF\Field;
 
-use ACA\ACF\Field;
 use ACA\ACF\Editing;
+use ACA\ACF\Field;
 use ACA\ACF\Filtering;
 use ACP;
 
@@ -22,6 +22,10 @@ class Number extends Field {
 
 	public function filtering() {
 		return new Filtering\Number( $this->column );
+	}
+
+	public function search() {
+		return new ACP\Search\Comparison\Meta\Numeric( $this->get_meta_key(), $this->get_meta_type() );
 	}
 
 }

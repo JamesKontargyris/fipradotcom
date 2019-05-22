@@ -8,13 +8,12 @@ use AC\ListScreen;
 /**
  * @since 4.0
  */
-class HorizontalScrolling {
+class HorizontalScrolling implements AC\Registrable {
 
 	public function register() {
 		add_action( 'ac/table', array( $this, 'register_screen_option' ) );
 		add_action( 'ac/table_scripts', array( $this, 'scripts' ) );
 		add_filter( 'ac/table/body_class', array( $this, 'add_horizontal_scrollable_class' ), 10, 2 );
-
 		add_action( 'wp_ajax_acp_update_table_option_overflow', array( $this, 'update_table_option_overflow' ) );
 	}
 
@@ -48,7 +47,9 @@ class HorizontalScrolling {
 	 * @return bool
 	 */
 	private function is_overflow_table( $list_screen ) {
-		return (bool) $this->preferences()->get( $list_screen->get_storage_key() );
+		$preference = $this->preferences()->get( $list_screen->get_storage_key() );
+
+		return (bool) apply_filters( 'acp/horizontal_scrolling/enable', $preference, $list_screen );
 	}
 
 	/**
@@ -75,8 +76,8 @@ class HorizontalScrolling {
 	 * Load scripts
 	 */
 	public function scripts() {
-		wp_enqueue_style( 'ac-table-screen-option', ACP()->get_url() . 'assets/css/table-screen-options.css', array(), ACP()->get_version() );
-		wp_enqueue_script( 'ac-table-screen-option', ACP()->get_url() . 'assets/js/table-screen-options.js', array(), ACP()->get_version() );
+		wp_enqueue_style( 'ac-table-screen-option', ACP()->get_url() . 'assets/core/css/table-screen-options.css', array(), ACP()->get_version() );
+		wp_enqueue_script( 'ac-table-screen-option', ACP()->get_url() . 'assets/core/js/table-screen-options.js', array(), ACP()->get_version() );
 	}
 
 	/**

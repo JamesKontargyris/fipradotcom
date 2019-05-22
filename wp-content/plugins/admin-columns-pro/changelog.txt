@@ -1,7 +1,156 @@
 == Changelog ==
 
+= 4.6.2 =
+Release Date: May 21th, 2019
+
+* [Fixed] Fixed an issue where the plugin would show a PHP timeout on multisite making it inaccessible.
+
+= 4.6.1 =
+Release Date: May 20th, 2019
+
+* [Fixed] Fixed an issue where an error occrured when using the Custom Field column with the inline editing setting set to 'false'.
+
+= 4.6 =
+Release Date: May 20th, 2019
+
+* [Improved] API refactored, resulting in less calls to our server for license related stuff
+* [Improved] Add-on installs are now done on Ajax
+* [Improved] Changelog display now uses the same markup as WordPress
+* [Fixed] Only one single call is necessary to check plugin updates. This could decrease the loading times on the plugin overview page
+* [Updated] Admin Column Core changes ( 3.4.4 )
+    * [Fixed] Transient class fixed. Unchanged data did not update the timestamp resulting in invalidating the transient constantly
+
+= 4.5.9 =
+Release Date: May 14th, 2019
+
+* [Fixed] Error on the MS Site overview page
+* [Fixed] Rebuilt Javascript to prevent Date Time picker issues for editing
+
+= 4.5.8 =
+Release Date: May 10th, 2019
+
+* [Added] It is now possible to recheck the status of your license on the settings page
+* [Improved] Bulk Edit is now always enabled (even when Inline Edit setting is disabled). The only way to disable it, is with the `acp/editing/active` hook
+* [Improved] Column setting will show if "Export" is disabled or enabled
+* [Improved] Limit Ajax Calls for Select2 drop downs by adding a short delay
+
+= 4.5.7 =
+Release Date: March 29th, 2019
+
+* [Added] Filter added for disabling the Bulk Edit confirmation `acp/editing/bulk/show_confirmation`
+* [Fixed] Possible Fatal error on User overview page
+* [Fixed] Multiple Bulk Edit rows were added to the table when selecting records
+* [Fixed] Sorting issues on Meta column when Yoast SEO is active
+
+= 4.5.6 =
+Release Date: March 26th, 2019
+
+* [Added] New hook `acp/export/is_active` for disabling export (per list screen)
+* [Added] New Taxonomy column: Count per post type
+* [Improved] Moved bulk edit to tbody so the default WP Bulk Editing still works
+* [Improved] Better message for lifetime licenses
+* [Improved] Translation improvements
+* [Improved] Added 'Not Contains' and 'Is Not' operators to default text meta columns
+* [Improved] Exclude hidden columns from Export
+* [Improved] Show default label for Page Template when editing and filtering on Page Template column
+* [Improved] New JS for Editing when saved is ready `ACP_InlineEditing_After_Save` on document
+* [Improved] New Editing interface for editing Taxonomy columns
+* [Updated] Admin Column Core changes ( 3.4.2 )
+    * [Improved] Prevent possible warning in User Registered column
+    * [Improved] Give feedback on settings page when something went wrong
+    * [Improved] Setting for link Media item to download or view
+
+= 4.5.5 =
+Release Date: February 27th, 2019
+
+* [Improved] Set focus on input when opening text editable
+* [Improved] Don't post (Smart) Filters to URL when there are no set filters that could cause 403 errors
+* [Fixed] Quick Edit and WordPress Bulk Edit interface was broken when ACP Bulk Editing was active
+* [Fixed] JS error when there are no columns on the overview that supports smart filtering
+* [Fixed] Only render Export markup on table screen
+* [Fixed] DateTime timeformat can be changed with a hook for Editing
+* [Fixed] Removed duplicate records when sorting on Taxonomy Column
+
+= 4.5.4 =
+Release Date: February 18th, 2019
+
+* [Added] New hook `acp/editing/bulk/active` to disable bulk editing for a specific list screen
+* [Fixed] Create new terms for Inline Editing
+* [Fixed] Datepicker did not always close when using Inline Editing
+* [Improved] Path column is now editable
+* [Improved] Page content is now exported in full instead of excerpt
+* [Improved] Text Field for Inline Edit has now wider
+* [Improved] Bulk Editing for Yoast Primary Taxonomy Disabled
+* [Improved] 'Is not' operator added for Taxonomy column
+* [Improved] Export Button is visible by default, but can be disabled in the Screen Options menu
+
+= 4.5.3 =
+Release Date: February 4th, 2019
+
+* [Fixed] Fatal error on Load.php (file not exists)
+
+= 4.5.2 =
+Release Date: January 25th, 2019
+
+* [Fixed] Column Sets inputs did not load properly.
+
+= 4.5.1 =
+Release Date: January 24th, 2019
+
+* [Fixed] Fatal error on Request Class
+
+= 4.5 =
+Release Date: January 23th, 2019
+
+* [Added] Bulk Edit
+* [Added] Media Column: Permalink
+* [Added] Smart Filtering logic for Timestamps and ISO Dates
+* [Fixed] Z-index issue for filtering date picker
+* [Fixed] Javascript error on the Media Grid Overview
+* [Fixed] Inline Editing for Taxonomy column with 'allow new category' option enabled
+* [Improved] Smart Filtering for Custom Field Post type
+* [Removed] Removed the acp/editing/save* filters as all models now return a boolean result
+* [Changed] get_rows abstract method renamed to get_table_screen_rows
+* [Changed] Editing model is made abstract and now implements an abstract save method instead of public
+* [Updated] Admin Column Core changes ( 3.4 )
+    * [Fixed] Width setting Javascript errors
+    * [Fixed] Show icons for Action column works again
+    * [Improved] Show icon labels in the Screen Options menu when necessary
+
+= 4.4.1 =
+Release Date: November 7th, 2018
+
+* [Fixed] Date editing for empty columns
+* [Fixed] Export now also works correctly with Smart Filtering
+* [Fixed] Filter button removed entire hook for adding extra filter to user and taxonomy overview pages
+* [Fixed] Inline Edit for categories and tag had strange behaviour in select2 drop downs
+* [Fixed] Translation files for Pro files where not loaded correctly
+* [Updated] Admin Column Core changes ( Release 3.1 )
+    * [Improved] Better external image support for Custom Field column
+
+= 4.4 =
+Release Date: October 31st, 2018
+
+* [Added] Smart Filtering
+* [Added] Icon picker for label setting
+* [Added] New hook `ac/export/column/disable` for disabling columns for export
+* [Improved] Show attachment file size for Featured Image
+* [Updated] Admin Column Core changes ( Release 3.3 )
+    * [Improved] Extra display for Path column to show the local path of a file
+
+= 4.3.8 =
+Release Date: September 25th, 2018
+
+* [Added] Media Column: Post Type
+* [Added] New hook `acp/horizontal_scrolling/enable` to enable horizontal scrolling for a specific overview
+* [Improved] Limit to check for updates once per request (if WP triggers the update check)
+* [Updated] Admin Column Core changes ( Release 3.2.7 )
+    * [Fixed] jQuery noConflict fixes for column settings page
+    * [Improved] Post title column is now always available
+    * [Improved] Disable autoloading for ACP options
+
 = 4.3.7 =
-Release Date: August 21th, 2018
+Release Date: August 21st, 2018
 
 * [Fixed] Fatal error on Taxonomy overview pages when filtering on meta columns
 * [Improved] Re-added Pro features for MS User overview pages

@@ -28,13 +28,13 @@ get_header(); ?>
                 <div class="hero__background-block"> </div>
 
                 <div class="hero__main-title-container">
-                    <h1 class="hero__main-title">2019 European Parliament Elections</h1>
+                    <h1 class="hero__main-title"><?php echo get_field('main_page_title'); ?></h1>
                 </div>
             </div>
 
             <div class="hero-after">
                 <div class="hero__sub-title-container">
-                    <h4 class="hero__sub-title">The Fipra Pan-EU Analysis</h4>
+                    <h4 class="hero__sub-title"><?php echo get_field('sub_page_title'); ?></h4>
                 </div>
                 <div class="hero__hashtag-container">
                     <h4 class="hero__hashtag">#28countries<strong>ONEnetwork</strong></h4>
@@ -53,14 +53,10 @@ get_header(); ?>
                             <div class="ballot-box-icon-container">
                                 <img class="ballot-box-icon" src="<?php echo get_template_directory_uri(); ?>/img/icons/ballot-box.png" alt="Ballot Box icon">
                             </div>
-                            <h2 class="lead-para">Fipra is getting ready for the European Parliament elections 2019</h2>
+                            <h2 class="lead-para"><?php echo get_field('feature_text'); ?></h2>
                         </div>
                         <div class="col-8">
-                            <p>The upcoming European Parliament elections are set to drastically change EU politics. The rise of new political and populist are set to break the previous hold of the European centre-right and Socialist groups over the European Parliament and lead to greater political fragmentation. This in turn is likely to impact not only on the appointment of the new European Commission President, but also lead to political uncertainty and shifting power dynamics in the implementation of new EU policies for the 2019-2024 political cycle.</p>
-
-                            <p>In short, 2019 is likely to be a year of change for the EU, with new political forces on the rise, Brexit and a revamped nationalist sentiment all expected to change the way the EU works. How will this evolving political landscape affect the EU’s 2019-2024 priorities? How well are businesses and other organisations prepared for this change ?</p>
-
-                            <p>Fipra will be following the election results closely and we will be compiling a full country-by-country analysis of both the outcome of the elections and their implications. For more information, please contact us on: [ enter contact point email ]</p>
+	                        <?php the_content(); ?>
                         </div>
                     </div>
 

@@ -5,9 +5,10 @@ namespace ACP\Column\Post;
 use AC;
 use ACP\Export;
 use ACP\Filtering;
+use ACP\Search;
 
 class ChildPages extends AC\Column
-	implements Filtering\Filterable, Export\Exportable {
+	implements Filtering\Filterable, Export\Exportable, Search\Searchable {
 
 	public function __construct() {
 		$this->set_type( 'column-child-pages' );
@@ -24,6 +25,10 @@ class ChildPages extends AC\Column
 
 				$titles[] = ac_helper()->html->link( get_edit_post_link( $id ), $post->post_title );
 			}
+		}
+
+		if( empty( $titles ) ){
+			return $this->get_empty_char();
 		}
 
 		return ac_helper()->string->enumeration_list( $titles, 'and' );
@@ -52,6 +57,10 @@ class ChildPages extends AC\Column
 
 	public function export() {
 		return new Export\Model\Post\ChildPages( $this );
+	}
+
+	public function search() {
+		return new Search\Comparison\Post\ChildPages( $this->get_post_type() );
 	}
 
 }

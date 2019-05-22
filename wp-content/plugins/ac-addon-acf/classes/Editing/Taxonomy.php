@@ -2,10 +2,13 @@
 
 namespace ACA\ACF\Editing;
 
-use ACA\ACF\API;
 use ACA\ACF\Editing;
+use ACP;
+use ACP\Helper\Select;
+use ACP\Helper\Select\Formatter;
 
-class Taxonomy extends Editing {
+class Taxonomy extends Editing
+	implements ACP\Editing\PaginatedOptions {
 
 	public function get_view_settings() {
 		$data = parent::get_view_settings();
@@ -24,42 +27,31 @@ class Taxonomy extends Editing {
 		return $data;
 	}
 
+	/**
+	 * @return array|string
+	 */
 	private function get_taxonomy() {
 		return $this->column->get_acf_field_option( 'taxonomy' );
 	}
 
-	public function get_ajax_options( $request ) {
+	public function get_paginated_options( $search, $page, $id = null ) {
+		$entities = new Select\Entities\Taxonomy( array(
+			'search'   => $search,
+			'page'     => $page,
+			'taxonomy' => $this->get_taxonomy(),
+		) );
 
-		// ACF Free
-		if ( API::is_free() ) {
-			return acp_editing_helper()->get_terms_list( array(
-				'taxonomy' => $this->get_taxonomy(),
-				'search'   => $request['search'],
-				'paged'    => $request['paged'],
-			) );
-		}
-
-		// ACF Pro
-		$acf_field = new \acf_field_taxonomy();
-
-		return $this->format_choices( $acf_field->get_ajax_query( array(
-			'taxonomy'  => $this->get_taxonomy(),
-			's'         => $request['search'],
-			'paged'     => $request['paged'],
-			'field_key' => $this->column->get_field_hash(),
-		) ) );
+		return new Select\Options\Paginated(
+			$entities,
+			new Formatter\TermName( $entities )
+		);
 	}
 
-	protected function format_choices( $choices ) {
-		$options = array();
-
-		foreach ( $choices['results'] as $choice ) {
-			$options[ $choice['id'] ] = htmlspecialchars_decode( $choice['text'] );
-		}
-
-		return $options;
-	}
-
+	/**
+	 * @param int $term_id
+	 *
+	 * @return array
+	 */
 	public function get_edit_value( $term_id ) {
 		$term_ids = parent::get_edit_value( $term_id );
 

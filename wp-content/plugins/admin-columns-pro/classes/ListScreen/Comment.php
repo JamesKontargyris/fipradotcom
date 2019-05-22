@@ -16,8 +16,8 @@ class Comment extends AC\ListScreen\Comment
 		return new Sorting\Strategy\Comment( $model );
 	}
 
-	public function editing( $model ) {
-		return new Editing\Strategy\Comment( $model );
+	public function editing() {
+		return new Editing\Strategy\Comment();
 	}
 
 	public function filtering( $model ) {

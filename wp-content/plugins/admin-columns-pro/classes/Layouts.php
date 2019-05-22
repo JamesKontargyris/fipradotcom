@@ -4,6 +4,7 @@ namespace ACP;
 
 use AC;
 use AC\ListScreen;
+use ACP\Sorting\Table\Preference;
 use WP_Error;
 
 /**
@@ -119,7 +120,7 @@ final class Layouts {
 			'name'  => $layout->get_name(),
 			'roles' => $layout->get_roles(),
 			'users' => $layout->get_users(),
-		) );
+		), false );
 
 		// Re populate layouts
 		$this->reset();
@@ -145,8 +146,8 @@ final class Layouts {
 		$this->list_screen->delete();
 
 		// Delete preferences
-		$table = new Sorting\Table\Screen( $this->list_screen );
-		$table->preference()->delete();
+		$preference = new Preference\SortedBy( $this->list_screen->get_storage_key() );
+		$preference->delete();
 
 		$scrolling = new Table\HorizontalScrolling();
 		$scrolling->preferences()->delete( $this->list_screen->get_storage_key() );

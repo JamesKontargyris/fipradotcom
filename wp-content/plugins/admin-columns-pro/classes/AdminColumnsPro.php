@@ -3,11 +3,10 @@
 namespace ACP;
 
 use AC;
-use ACP\Admin\Page;
+use ACP\Admin;
 use ACP\LayoutScreen;
-use ACP\License\API;
-use ACP\ListScreen;
 use ACP\ThirdParty;
+use ACP\Updates\AddonInstaller;
 
 /**
  * The Admin Columns Pro plugin class
@@ -16,40 +15,17 @@ use ACP\ThirdParty;
 final class AdminColumnsPro extends AC\Plugin {
 
 	/**
-	 * Editing instance
-	 * @since 4.0
-	 * @var Editing\Addon
-	 */
-	private $editing;
-
-	/**
-	 * Filtering instance
-	 * @since 4.0
-	 * @var Filtering\Addon
-	 */
-	private $filtering;
-
-	/**
-	 * Sorting instance
-	 * @since 4.0
-	 * @var Sorting\Addon
-	 */
-	private $sorting;
-
-	/**
-	 * @var NetworkAdmin
+	 * @var AC\Admin
 	 */
 	private $network_admin;
-
-	/**
-	 * @var Table\HorizontalScrolling
-	 */
-	private $screen_options;
 
 	/**
 	 * @var API
 	 */
 	private $api;
+
+	/** @var License */
+	private $license;
 
 	/**
 	 * @since 3.8
@@ -57,8 +33,8 @@ final class AdminColumnsPro extends AC\Plugin {
 	private static $instance = null;
 
 	/**
-	 * @since 3.8
 	 * @return AdminColumnsPro
+	 * @since 3.8
 	 */
 	public static function instance() {
 		if ( null === self::$instance ) {
@@ -68,55 +44,73 @@ final class AdminColumnsPro extends AC\Plugin {
 		return self::$instance;
 	}
 
-	/**
-	 * ACP constructor.
-	 */
 	private function __construct() {
-		$this->editing = new Editing\Addon();
-		$this->sorting = new Sorting\Addon();
-		$this->filtering = new Filtering\Addon();
-		$this->network_admin = new NetworkAdmin();
-
-		$scrolling = new Table\HorizontalScrolling();
-		$scrolling->register();
-
-		// Configure API
 		$this->api = new API();
-		$this->api->set_url( ac_get_site_url() )
-		          ->set_proxy( 'https://api.admincolumns.com' );
+		$this->api
+			->set_url( ac_get_site_url() )
+			->set_proxy( 'https://api.admincolumns.com' )
+			->set_request_meta( array(
+				'php_version' => PHP_VERSION,
+				'acp_version' => $this->get_version(),
+			) );
 
-		AC()->admin()->get_pages()->register_page( new Page\ExportImport() );
+		$this->license = new License( $this->is_network_active() );
 
-		Export\Addon::instance();
+		$this->localize();
 
-		new ThirdParty\Addon();
-		new LayoutScreen\Columns();
-
-		$table = new LayoutScreen\Table();
-		$table->register();
-
-		$manager = new License\Manager( $this->api );
-		$manager->register();
-
-		$settings = new License\Settings( $this->api );
-		$settings->register();
+		$factory = new AdminFactory();
+		$factory->create( is_network_admin(), AC()->admin(), $this->api, $this->license );
 
 		add_action( 'init', array( $this, 'notice_checks' ) );
 
 		add_filter( 'plugin_action_links', array( $this, 'add_settings_link' ), 1, 2 );
-		add_filter( 'network_admin_plugin_action_links', array( $this, 'add_settings_link' ), 1, 2 );
+		add_filter( 'network_admin_plugin_action_links', array( $this, 'add_network_settings_link' ), 1, 2 );
 
 		add_filter( 'ac/show_banner', '__return_false' );
 
-		add_action( 'ac/list_screen_groups', array( $this, 'register_list_screen_groups' ) );
+		add_action( 'init', array( $this, 'register_global_scripts' ) );
+		add_action( 'ac/table_scripts', array( $this, 'table_scripts' ) );
 
-		add_action( 'ac/list_screens', array( $this, 'register_list_screens' ) );
-		add_action( 'ac/column_types', array( $this, 'register_columns' ) );
-
-		add_action( 'ac/table_scripts', array( $this, 'table_scripts' ), 10, 1 );
-
-		// Updater
 		add_action( 'init', array( $this, 'install' ) );
+
+		add_filter( 'ac/view/templates', array( $this, 'templates' ) );
+
+		$modules = array(
+			new Editing\Addon(),
+			new Sorting\Addon(),
+			new Filtering\Addon(),
+			new Export\Addon(),
+			new Search\Addon(),
+			new ThirdParty\ACF\Addon(),
+			new ThirdParty\bbPress\Addon(),
+			new ThirdParty\WooCommerce\Addon(),
+			new ThirdParty\YoastSeo\Addon(),
+			new LayoutScreen\Columns(),
+			new LayoutScreen\Table(),
+			new Table\HorizontalScrolling(),
+			new ListScreens(),
+			new NativeTaxonomies(),
+			new IconPicker(),
+			new Updates( $this->api, $this->license ),
+			new AddonInstaller( $this->api, $this->license->get_key() )
+		);
+
+		foreach ( $modules as $module ) {
+			if ( $module instanceof AC\Registrable ) {
+				$module->register();
+			}
+		}
+	}
+
+	/**
+	 * Localize
+	 */
+	public function localize() {
+		$domain = 'codepress-admin-columns';
+		$path = pathinfo( $this->get_dir() );
+
+		load_plugin_textdomain( $domain, false, $path['basename'] . '/languages/' );
+		load_plugin_textdomain( $domain, false, $path['basename'] . '/admin-columns/languages/' );
 	}
 
 	/**
@@ -131,11 +125,14 @@ final class AdminColumnsPro extends AC\Plugin {
 	 */
 	public function notice_checks() {
 		$checks = array(
-			new Check\Activation( new License() ),
-			new Check\Beta( $this ),
-			new Check\Expired( new License() ),
-			new Check\Renewal( new License() ),
+			new Check\Activation( $this->license ),
+			new Check\Expired( $this->license ),
+			new Check\Renewal( $this->license ),
 		);
+
+		if ( $this->is_beta() ) {
+			$checks[] = new Check\Beta( new Admin\Feedback() );
+		}
 
 		foreach ( $checks as $check ) {
 			$check->register();
@@ -157,32 +154,10 @@ final class AdminColumnsPro extends AC\Plugin {
 	}
 
 	/**
-	 * @since 4.0
-	 */
-	public function editing() {
-		return $this->editing;
-	}
-
-	/**
-	 * @since 4.0
-	 */
-	public function filtering() {
-		return $this->filtering;
-	}
-
-	/**
-	 * @since 4.0
-	 */
-	public function sorting() {
-		return $this->sorting;
-	}
-
-	/**
-	 * @since 4.0
-	 *
 	 * @param AC\ListScreen $list_screen
 	 *
 	 * @return Layouts
+	 * @since 4.0
 	 */
 	public function layouts( AC\ListScreen $list_screen ) {
 		return new Layouts( $list_screen );
@@ -196,165 +171,88 @@ final class AdminColumnsPro extends AC\Plugin {
 	}
 
 	/**
-	 * @since 4.0.12
-	 */
-	public function screen_options() {
-		return $this->screen_options;
-	}
-
-	/**
-	 * @since 1.0
-	 * @see   filter:plugin_action_links
-	 *
 	 * @param array  $links
 	 * @param string $file
 	 *
 	 * @return array
+	 * @see   filter:plugin_action_links
+	 * @since 1.0
 	 */
 	public function add_settings_link( $links, $file ) {
 		if ( $file === $this->get_basename() ) {
-			$url = AC()->admin()->get_link( 'columns' );
-
-			if ( is_network_admin() ) {
-				$url = $this->network_admin->get_link();
-			}
-
-			array_unshift( $links, ac_helper()->html->link( $url, __( 'Settings' ) ) );
+			array_unshift( $links, sprintf( '<a href="%s">%s</a>', AC()->admin()->get_url( AC\Admin\Page\Columns::NAME ), __( 'Settings' ) ) );
 		}
 
 		return $links;
 	}
 
 	/**
-	 * @return string
+	 * @param array  $links
+	 * @param string $file
+	 *
+	 * @return array
 	 */
-	public function get_network_settings_url() {
-		return $this->network_admin()->get_link();
+	public function add_network_settings_link( $links, $file ) {
+		if ( $file === $this->get_basename() ) {
+			array_unshift( $links, sprintf( '<a href="%s">%s</a>', AC()->admin()->get_url( AC\Admin\Page\Settings::NAME ), __( 'Settings' ) ) );
+		}
+
+		return $links;
 	}
 
 	/**
-	 * Get a list of taxonomies supported by Admin Columns
-	 * @since 1.0
-	 * @return array List of taxonomies
+	 * @return void
 	 */
-	private function get_taxonomies() {
-		$taxonomies = get_taxonomies( array( 'show_ui' => true ) );
-
-		if ( isset( $taxonomies['post_format'] ) ) {
-			unset( $taxonomies['post_format'] );
-		}
-
-		if ( isset( $taxonomies['link_category'] ) && ! get_option( 'link_manager_enabled' ) ) {
-			unset( $taxonomies['link_category'] );
-		}
-
-		/**
-		 * Filter the post types for which Admin Columns is active
-		 * @since 2.0
-		 *
-		 * @param array $post_types List of active post type names
-		 */
-		return (array) apply_filters( 'acp/taxonomies', $taxonomies );
+	public function table_scripts() {
+		wp_enqueue_style( 'acp-table', ACP()->get_url() . "assets/core/css/table.css", array(), AC()->get_version() );
 	}
 
 	/**
-	 * @param AC\Groups $groups
+	 * @return void
 	 */
-	public function register_list_screen_groups( $groups ) {
-		$groups->register_group( 'taxonomy', __( 'Taxonomy' ), 15 );
-		$groups->register_group( 'network', __( 'Network' ), 5 );
+	public function register_global_scripts() {
+		wp_register_script( 'ac-select2-core', $this->get_url() . 'assets/core/js/select2.js', array(), $this->get_version() );
+		wp_register_script( 'ac-select2', $this->get_url() . 'assets/core/js/select2_conflict_fix.js', array( 'jquery', 'ac-select2-core' ), $this->get_version() );
+		wp_register_style( 'ac-select2', $this->get_url() . 'assets/core/css/select2.css', array(), $this->get_version() );
+		wp_register_style( 'ac-jquery-ui', $this->get_url() . 'assets/core/css/ac-jquery-ui.css', array(), $this->get_version() );
 	}
 
 	/**
 	 * @since 4.0
-	 *
-	 * @param AC\AdminColumns $admin_columns
 	 */
-	public function register_list_screens( $admin_columns ) {
-		$list_screens = array();
+	public function editing() {
+		_deprecated_function( __METHOD__, '4.5', 'acp_editing()' );
 
-		// Post types
-		foreach ( AC()->get_post_types() as $post_type ) {
-			$list_screens[] = new ListScreen\Post( $post_type );
-		}
-
-		$list_screens[] = new ListScreen\Media();
-		$list_screens[] = new ListScreen\Comment();
-
-		foreach ( $this->get_taxonomies() as $taxonomy ) {
-			$list_screens[] = new ListScreen\Taxonomy( $taxonomy );
-		}
-
-		$list_screens[] = new ListScreen\User();
-
-		if ( is_multisite() ) {
-
-			// Settings UI
-			if ( AC()->admin_columns_screen()->is_current_screen() ) {
-
-				// Main site
-				if ( is_main_site() ) {
-					$list_screens[] = new ListScreen\MSUser();
-					$list_screens[] = new ListScreen\MSSite();
-				}
-			} // Table screen
-			else {
-				$list_screens[] = new ListScreen\MSUser();
-				$list_screens[] = new ListScreen\MSSite();
-			}
-		}
-
-		foreach ( $list_screens as $list_screen ) {
-			$admin_columns->register_list_screen( $list_screen );
-		}
+		return acp_editing();
 	}
 
 	/**
-	 * @param AC\ListScreen $list_screen
+	 * @since 4.0
 	 */
-	public function register_columns( AC\ListScreen $list_screen ) {
-		$this->register_column_native_taxonomies( $list_screen );
+	public function filtering() {
+		_deprecated_function( __METHOD__, '4.5', 'acp_filtering()' );
 
-		/**
-		 * @deprecated 4.1 Use 'ac/column_types'
-		 */
-		do_action( 'acp/column_types', $list_screen );
+		return acp_filtering();
 	}
 
 	/**
-	 * Register Taxonomy columns that are set by WordPress. These native columns are registered
-	 * by setting 'show_admin_column' to 'true' as an argument in register_taxonomy();
-	 * Only supports Post Types.
-	 * @see register_taxonomy
-	 *
-	 * @param AC\ListScreen $list_screen
+	 * @since 4.0
 	 */
-	private function register_column_native_taxonomies( AC\ListScreen $list_screen ) {
-		if ( ! $list_screen instanceof AC\ListScreenPost ) {
-			return;
-		}
+	public function sorting() {
+		_deprecated_function( __METHOD__, '4.5', 'acp_sorting()' );
 
-		$taxonomies = get_taxonomies(
-			array(
-				'show_ui'           => 1,
-				'show_admin_column' => 1,
-				'_builtin'          => 0,
-			),
-			'object'
-		);
-
-		foreach ( $taxonomies as $taxonomy ) {
-			if ( in_array( $list_screen->get_post_type(), $taxonomy->object_type ) ) {
-				$column = new Column\NativeTaxonomy();
-				$column->set_type( 'taxonomy-' . $taxonomy->name );
-
-				$list_screen->register_column_type( $column );
-			}
-		}
+		return acp_sorting();
 	}
 
-	public function table_scripts() {
-		wp_enqueue_style( 'acp-table', ACP()->get_url() . "assets/css/table.css", array(), AC()->get_version() );
+	/**
+	 * @param array $templates
+	 *
+	 * @return array
+	 */
+	public function templates( $templates ) {
+		$templates[] = $this->get_dir() . 'templates';
+
+		return $templates;
 	}
 
 }

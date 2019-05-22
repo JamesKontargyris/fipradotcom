@@ -2,9 +2,11 @@
 
 namespace ACP\LayoutScreen;
 
+use AC\Form\Element\Select;
 use AC\ListScreen;
+use AC\Registrable;
 
-class Table {
+class Table implements Registrable {
 
 	public function register() {
 		add_action( 'ac/table/list_screen', array( $this, 'set_current_layout' ), 9 ); // Early priority
@@ -42,6 +44,10 @@ class Table {
 		}
 	}
 
+	private function get_layout_link( $link, $id ) {
+		return add_query_arg( array( 'layout' => $id ), $link );
+	}
+
 	/**
 	 * @param ListScreen $list_screen
 	 */
@@ -69,11 +75,23 @@ class Table {
 				</label>
 				<span class="spinner"></span>
 
-				<select id="column-view-selector" name="layout" <?php echo ac_helper()->html->get_tooltip_attr( __( 'Switch View', 'codepress-admin-columns' ) ); ?>>
-					<?php foreach ( $layouts as $layout ) : ?>
-						<option value="<?php echo add_query_arg( array( 'layout' => $layout->get_id() ), $link ); ?>"<?php selected( $layout->get_id(), $list_screen->get_layout_id() ); ?>><?php echo esc_html( $layout->get_name() ); ?></option>
-					<?php endforeach; ?>
-				</select>
+				<?php
+
+				$options = array();
+
+				foreach ( $layouts as $layout ) {
+					$options[ $this->get_layout_link( $link, $layout->get_id() ) ] = $layout->get_name();
+				}
+
+				$select = new Select( 'layout', $options );
+
+				$select->set_attribute( 'id', 'column-view-selector' )
+				       ->set_attribute( 'data-ac-tip', __( 'Switch View', 'codepress-admin-columns' ) )
+				       ->set_value( $this->get_layout_link( $link, $list_screen->get_layout_id() ) );
+
+				echo $select->render();
+
+				?>
 				<script type="text/javascript">
 					jQuery( document ).ready( function( $ ) {
 						$( '.layout-switcher' ).change( function() {
@@ -91,8 +109,8 @@ class Table {
 	 * Loads scripts on the list screen
 	 */
 	public function table_scripts() {
-		wp_enqueue_script( 'acp-layouts', ACP()->get_url() . 'assets/js/layouts-listings-screen.js', array( 'jquery' ), ACP()->get_version() );
-		wp_enqueue_style( 'acp-layouts', ACP()->get_url() . 'assets/css/layouts-listings-screen.css', array(), ACP()->get_version() );
+		wp_enqueue_script( 'acp-layouts', ACP()->get_url() . 'assets/core/js/layouts-listings-screen.js', array( 'jquery' ), ACP()->get_version() );
+		wp_enqueue_style( 'acp-layouts', ACP()->get_url() . 'assets/core/css/layouts-listings-screen.css', array(), ACP()->get_version() );
 	}
 
 }

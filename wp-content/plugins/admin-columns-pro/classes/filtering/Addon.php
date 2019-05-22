@@ -4,16 +4,23 @@ namespace ACP\Filtering;
 
 use AC;
 use ACP;
+use ACP\Asset\Location;
 
 /**
  * @since 4.0
  */
-class Addon extends AC\Addon {
+class Addon implements AC\Registrable {
+
+	/**
+	 * @var string
+	 */
+	private $plugin_file;
 
 	public function __construct() {
-		AC\Autoloader::instance()->register_prefix( __NAMESPACE__, $this->get_dir() . 'classes' );
-		AC\Autoloader\Underscore::instance()->add_alias( __NAMESPACE__ . '\Filterable', 'ACP_Column_FilteringInterface' );
+		$this->plugin_file = ACP_FILE;
+	}
 
+	public function register() {
 		add_action( 'ac/column/settings', array( $this, 'settings' ) );
 		add_action( 'ac/settings/scripts', array( $this, 'settings_scripts' ) );
 		add_action( 'ac/table/list_screen', array( $this, 'table_screen' ) );
@@ -42,20 +49,6 @@ class Addon extends AC\Addon {
 		}
 
 		wp_send_json_success( $table_screen->update_dropdown_cache() );
-	}
-
-	/**
-	 * @return string
-	 */
-	protected function get_file() {
-		return __FILE__;
-	}
-
-	/**
-	 * @since 4.0
-	 */
-	public function get_version() {
-		return ACP()->get_version();
 	}
 
 	/**
@@ -122,29 +115,42 @@ class Addon extends AC\Addon {
 			return false;
 		}
 
+		$location = new Location\Absolute(
+			plugin_dir_url( $this->plugin_file ),
+			plugin_dir_path( $this->plugin_file )
+		);
+		$assets[] = new ACP\Asset\Style( 'acp-filtering-table', $location->with_suffix( 'assets/filtering/css/table.css' ) );
+		$assets[] = new ACP\Asset\Script( 'acp-filtering-table', $location->with_suffix( 'assets/filtering/js/table.js' ), array( 'jquery', 'jquery-ui-datepicker' ) );
+
 		switch ( true ) {
 			case $list_screen instanceof ACP\ListScreen\MSUser :
-				return new TableScreen\MSUser( $models );
+				return new TableScreen\MSUser( $models, $assets );
 
 			case $list_screen instanceof ACP\ListScreen\User :
-				return new TableScreen\User( $models );
+				return new TableScreen\User( $models, $assets );
 
 			case $list_screen instanceof ACP\ListScreen\Post :
 			case $list_screen instanceof ACP\ListScreen\Media :
-				return new TableScreen\Post( $models );
+				return new TableScreen\Post( $models, $assets );
 
 			case $list_screen instanceof ACP\ListScreen\Comment :
-				return new TableScreen\Comment( $models );
+				return new TableScreen\Comment( $models, $assets );
 
 			case $list_screen instanceof ACP\ListScreen\Taxonomy :
-				return new TableScreen\Taxonomy( $models );
+				return new TableScreen\Taxonomy( $models, $assets );
 		}
 
 		return false;
 	}
 
 	public function settings_scripts() {
-		wp_enqueue_script( 'acp-filtering-settings', $this->get_url() . 'assets/js/settings.js', array( 'jquery' ), $this->get_version() );
+		$location = new Location\Absolute(
+			plugin_dir_url( $this->plugin_file ),
+			plugin_dir_path( $this->plugin_file )
+		);
+
+		$script = new ACP\Asset\Script( 'acp-filtering-settings', $location->with_suffix( 'assets/filtering/js/settings.js' ), array( 'jquery' ) );
+		$script->enqueue();
 	}
 
 	/**

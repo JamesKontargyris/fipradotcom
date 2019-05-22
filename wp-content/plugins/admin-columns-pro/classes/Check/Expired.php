@@ -13,14 +13,9 @@ use ACP\License;
 class Expired
 	implements Registrable {
 
-	/**
-	 * @var License
-	 */
-	protected $license;
+	/** @var License */
+	private $license;
 
-	/**
-	 * @param License $license
-	 */
 	public function __construct( License $license ) {
 		$this->license = $license;
 	}
@@ -40,11 +35,7 @@ class Expired
 	 * @throws \Exception
 	 */
 	public function display( Screen $screen ) {
-		if ( ! $screen->has_screen() ) {
-			return;
-		}
-
-		if ( ! current_user_can( Capabilities::MANAGE ) ) {
+		if ( ! $screen->has_screen() || ! current_user_can( Capabilities::MANAGE ) ) {
 			return;
 		}
 
@@ -53,38 +44,32 @@ class Expired
 		}
 
 		if ( $screen->is_plugin_screen() ) {
-
 			// Inline message on plugin page
-			$notice = new Message\Plugin( ACP()->get_basename() );
-			$notice->set_message( $this->get_message() )
-			       ->register();
-
+			$notice = new Message\Plugin( $this->get_message( $this->license->get_expiry_date() ), ACP()->get_basename() );
 		} else if ( $screen->is_admin_screen( 'settings' ) ) {
-
 			// Permanent displayed on settings page
-			$this->register_notice( new Message\Notice() );
-
+			$notice = new Message\Notice( $this->get_message( $this->license->get_expiry_date() ) );
 		} else if ( $screen->is_admin_screen( 'columns' ) && $this->get_dismiss_option()->is_expired() ) {
+			// Dismissible on columns page
+			$notice = new Message\Notice\Dismissible( $this->get_message( $this->license->get_expiry_date() ), $this->get_ajax_handler() );
+		} else {
+			$notice = false;
+		}
 
-			// Dismissable on columns page
-			$this->register_notice( new Message\Notice\Dismissible( $this->get_ajax_handler() ) );
+		if ( $notice instanceof Message ) {
+			$notice
+				->set_type( Message::WARNING )
+				->register();
 		}
 	}
 
 	/**
-	 * @param Message\Notice $notice
-	 */
-	private function register_notice( Message\Notice $notice ) {
-		$notice->set_type( $notice::WARNING )
-		       ->set_message( $this->get_message() )
-		       ->register();
-	}
-
-	/**
+	 * @param int $expiration_date
+	 *
 	 * @return string
 	 */
-	private function get_message() {
-		$expired_on = date_i18n( get_option( 'date_format' ), $this->license->get_expiry_date() );
+	private function get_message( $expiration_date ) {
+		$expired_on = date_i18n( get_option( 'date_format' ), $expiration_date );
 		$my_account_link = ac_helper()->html->link( ac_get_site_utm_url( 'my-account', 'renewal' ), __( 'My Account Page', 'codepress-admin-columns' ) );
 
 		return sprintf(
@@ -99,8 +84,9 @@ class Expired
 	 */
 	protected function get_ajax_handler() {
 		$handler = new Ajax\Handler();
-		$handler->set_action( 'ac_notice_dismiss_expired' )
-		        ->set_callback( array( $this, 'ajax_dismiss_notice' ) );
+		$handler
+			->set_action( 'ac_notice_dismiss_expired' )
+			->set_callback( array( $this, 'ajax_dismiss_notice' ) );
 
 		return $handler;
 	}

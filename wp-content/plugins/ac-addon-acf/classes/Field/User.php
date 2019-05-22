@@ -2,12 +2,13 @@
 
 namespace ACA\ACF\Field;
 
-use AC\Collection;
-use ACA\ACF\Field;
-use ACA\ACF\Editing;
-use ACA\ACF\Filtering;
-use ACP;
 use AC;
+use AC\Collection;
+use ACA\ACF\Editing;
+use ACA\ACF\Field;
+use ACA\ACF\Filtering;
+use ACA\ACF\Search;
+use ACP;
 
 class User extends Field {
 
@@ -29,12 +30,20 @@ class User extends Field {
 		return new Editing\User( $this->column );
 	}
 
+	public function filtering() {
+		return new Filtering\User( $this->column );
+	}
+
 	public function sorting() {
 		return new ACP\Sorting\Model\Value( $this->column );
 	}
 
-	public function filtering() {
-		return new Filtering\User( $this->column );
+	public function search() {
+		if ( $this->is_serialized() ) {
+			return new Search\Users( $this->get_meta_key(), $this->get_meta_type() );
+		}
+
+		return new Search\User( $this->get_meta_key(), $this->get_meta_type() );
 	}
 
 	public function export() {

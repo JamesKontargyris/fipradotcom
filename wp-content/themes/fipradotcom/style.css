@@ -1212,6 +1212,13 @@ table:not(.no-style) {
         #site-info-container .site-info .footer-social-links a:hover {
           opacity: 0.7; }
 
+#menu-footer-menu a:link,
+#menu-footer-menu a:visited {
+  color: white; }
+
+#menu-footer-menu a:hover {
+  color: #cc0a12; }
+
 .showcase {
   margin: 0; }
   .showcase::after {
@@ -5348,12 +5355,12 @@ object {
   padding-right: 48px; }
   @media screen and (min-width: 1100px) {
     .home #home-hero-carousel .hero .full-width-block-content-container {
-      padding-top: 9rem;
-      padding-bottom: 9rem; } }
+      padding-top: 6rem;
+      padding-bottom: 6rem; } }
   @media screen and (min-width: 1400px) {
     .home #home-hero-carousel .hero .full-width-block-content-container {
-      padding-top: 12rem;
-      padding-bottom: 12rem; } }
+      padding-top: 6rem;
+      padding-bottom: 6rem; } }
 
 .home #home-hero-carousel .full-width-block-content .blurb {
   font-size: 18px;

@@ -7,12 +7,16 @@ use AC\ListScreen;
 use AC\ListScreenFactory;
 use AC\ListScreenGroups;
 use AC\Message;
+use AC\Registrable;
 use ACP;
 
 /**
  * @since 1.4.6.5
  */
-class ExportImport extends Page {
+class ExportImport extends Page
+	implements Registrable {
+
+	const NAME = 'import-export';
 
 	/**
 	 * @var string
@@ -23,45 +27,43 @@ class ExportImport extends Page {
 	 * @since 1.4.6.5
 	 */
 	public function __construct() {
-
-		$this
-			->set_slug( 'import-export' )
-			->set_label( __( 'Export/Import', 'codepress-admin-columns' ) );
-
-		$this->register();
+		parent::__construct( self::NAME, __( 'Export/Import', 'codepress-admin-columns' ) );
 	}
 
 	/**
 	 * Register Hooks
 	 */
 	public function register() {
-		add_action( 'admin_init', array( $this, 'handle_export' ) );
-		add_action( 'admin_init', array( $this, 'handle_import' ) );
+		$this->handle_export();
+		$this->handle_import();
+
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 	}
 
 	/**
-	 * @return string
+	 * @param string $action
+	 *
+	 * @return bool
 	 */
-	private function get_assets_url() {
-		return ACP()->get_url() . 'assets/';
+	private function verify_nonce( $action ) {
+		return wp_verify_nonce( filter_input( INPUT_POST, '_ac_nonce' ), $action );
 	}
 
 	/**
 	 * @since 1.4.6.5
 	 */
 	public function handle_export() {
-		if ( ! $this->is_current_screen() || ! $this->verify_nonce( 'export' ) ) {
+		if ( ! $this->verify_nonce( 'export' ) ) {
 			return;
 		}
 
 		$export_types = $this->get_exported_types();
 
 		if ( empty( $export_types ) ) {
-			$notice = new Message\Notice();
-			$notice->set_message( __( 'Export field is empty. Please select your types from the left column.', 'codepress-admin-columns' ) )
-			       ->set_type( $notice::ERROR )
-			       ->register();
+			$notice = new Message\Notice( __( 'Export field is empty. Please select your types from the left column.', 'codepress-admin-columns' ) );
+			$notice
+				->set_type( Message::ERROR )
+				->register();
 
 			return;
 		}
@@ -107,11 +109,10 @@ class ExportImport extends Page {
 	 * @param string $message
 	 */
 	private function notice_error( $message ) {
-		$notice = new Message\Notice();
-
-		$notice->set_message( $message )
-		       ->set_type( $notice::ERROR )
-		       ->register();
+		$notice = new Message\Notice( $message );
+		$notice
+			->set_type( Message::ERROR )
+			->register();
 	}
 
 	/**
@@ -119,11 +120,7 @@ class ExportImport extends Page {
 	 * @since 2.0.0
 	 */
 	public function handle_import() {
-		if ( ! $this->is_current_screen() ) {
-			return;
-		}
-
-		if ( ! $this->verify_nonce( 'file-import' ) || empty( $_FILES['import'] ) ) {
+		if ( empty( $_FILES['import'] ) || ! $this->verify_nonce( 'file-import' ) ) {
 			return;
 		}
 
@@ -225,9 +222,8 @@ class ExportImport extends Page {
 				"<strong>" . $list_screen->get_label() . "</strong>"
 			);
 
-			$notice = new Message\Notice();
-			$notice->set_message( $message )
-			       ->register();
+			$notice = new Message\Notice( $message );
+			$notice->register();
 		}
 	}
 
@@ -534,13 +530,9 @@ class ExportImport extends Page {
 	 * @since 1.0
 	 */
 	public function admin_scripts() {
-		if ( ! $this->is_current_screen() ) {
-			return;
-		}
-
-		wp_enqueue_style( 'acp-export-import', $this->get_assets_url() . 'css/export-import.css', array(), ACP()->get_version() );
-		wp_enqueue_script( 'acp-export-import', $this->get_assets_url() . 'js/export-import.js', array( 'jquery' ), ACP()->get_version() );
-		wp_enqueue_script( 'acp-export-import-multi-select', $this->get_assets_url() . 'js/jquery.multi-select.js', array( 'jquery' ), ACP()->get_version() );
+		wp_enqueue_style( 'acp-export-import', ACP()->get_url() . 'assets/core/css/export-import.css', array(), ACP()->get_version() );
+		wp_enqueue_script( 'acp-export-import', ACP()->get_url() . 'assets/core/js/export-import.js', array( 'jquery' ), ACP()->get_version() );
+		wp_enqueue_script( 'acp-export-import-multi-select', ACP()->get_url() . 'assets/core/js/jquery.multi-select.js', array( 'jquery' ), ACP()->get_version() );
 	}
 
 	/**
@@ -670,7 +662,7 @@ class ExportImport extends Page {
 	/**
 	 * @since 1.4.6.5
 	 */
-	public function display() {
+	public function render() {
 		?>
 		<table class="form-table ac-form-table">
 			<tbody>
@@ -708,7 +700,7 @@ class ExportImport extends Page {
 						<?php if ( $groups = $this->get_export_multiselect_options() ) : ?>
 							<form method="post" class="<?php echo $this->export_single_layouts() ? 'large' : ''; ?>">
 
-								<?php $this->nonce_field( 'export' ); ?>
+								<?php wp_nonce_field( 'export', '_ac_nonce', false ); ?>
 
 								<select title="Exported types" name="export_types[]" multiple="multiple" class="select ac-export-multiselect" id="export_types">
 									<?php foreach ( $groups as $group_key => $group ) : ?>
@@ -795,7 +787,7 @@ class ExportImport extends Page {
 						<form method="post" action="" enctype="multipart/form-data">
 							<input type="file" size="25" name="import" id="upload">
 
-							<?php $this->nonce_field( 'file-import' ); ?>
+							<?php wp_nonce_field( 'file-import', '_ac_nonce', false ); ?>
 
 							<input type="submit" value="<?php _e( 'Upload file and import', 'codepress-admin-columns' ); ?>" class="button" id="import-submit" name="file-submit">
 						</form>

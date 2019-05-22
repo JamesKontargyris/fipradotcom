@@ -1,6 +1,6 @@
 <?php
 /*
-	Copyright 2015-2018  John Havlik  (email : john.havlik@mtekk.us)
+	Copyright 2015-2019  John Havlik  (email : john.havlik@mtekk.us)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ require_once(dirname(__FILE__) . '/includes/block_direct_access.php');
 class bcn_breadcrumb_trail
 {
 	//Our member variables
-	const version = '6.1.0';
+	const version = '6.3.0';
 	//An array of breadcrumbs
 	public $breadcrumbs = array();
 	public $trail = array();
@@ -64,6 +64,8 @@ class bcn_breadcrumb_trail
 			//Static page options
 			//Should the trail include the hierarchy of the page
 			'bpost_page_hierarchy_display' => true,
+			//Should the post parent be followed first for this type, then fallback to the hierarchy type
+			'bpost_page_hierarchy_parent_first' => false,
 			//What hierarchy should be shown leading to the page
 			'Spost_page_hierarchy_type' => 'BCN_POST_PARENT',
 			//The anchor template for page breadcrumbs
@@ -74,7 +76,7 @@ class bcn_breadcrumb_trail
 			'apost_page_root' => get_option('page_on_front'),
 			//Paged options
 			//The template for paged breadcrumb
-			'Hpaged_template' => __('<span property="itemListElement" typeof="ListItem"><span property="name">Page %htitle%</span><meta property="position" content="%position%"></span>', 'breadcrumb-navxt'),
+			'Hpaged_template' => sprintf('<span class="%%type%%">%1$s</span>', esc_attr__('Page %htitle%', 'breadcrumb-navxt')),
 			//Should we try filling out paged information
 			'bpaged_display' => false,
 			//The post options previously singleblogpost
@@ -86,12 +88,16 @@ class bcn_breadcrumb_trail
 			'apost_post_root' => get_option('page_for_posts'),
 			//Should the trail include the hierarchy of the post
 			'bpost_post_hierarchy_display' => true,
+			//Should the post parent be followed first for this type, then fallback to the hierarchy type
+			'bpost_post_hierarchy_parent_first' => false,
 			//Should the trail reflect the referer taxonomy or not
 			'bpost_post_taxonomy_referer' => false,
 			//What hierarchy should be shown leading to the post, tag or category
 			'Spost_post_hierarchy_type' => 'category',
 			//Attachment settings
 			'bpost_attachment_hierarchy_display' => true,
+			//Should the post parent be followed first for this type, then fallback to the hierarchy type
+			'bpost_attachment_hierarchy_parent_first' => true,
 			//What hierarchy should be shown leading to the attachment
 			'Spost_attachment_hierarchy_type' => 'BCN_POST_PARENT',
 			//Give an invlaid page ID for the attachement root
@@ -107,50 +113,44 @@ class bcn_breadcrumb_trail
 			'S404_title' => __('404', 'breadcrumb-navxt'),
 			//Search page options
 			//The breadcrumb template for search breadcrumbs
-			'Hsearch_template' => __('<span property="itemListElement" typeof="ListItem"><span property="name">Search results for &#39;<a property="item" typeof="WebPage" title="Go to the first page of search results for %title%." href="%link%" class="%type%">%htitle%</a>&#39;</span><meta property="position" content="%position%"></span>', 'breadcrumb-navxt'),
+			'Hsearch_template' => sprintf('<span property="itemListElement" typeof="ListItem"><span property="name">%1$s</span><meta property="position" content="%%position%%"></span>',
+					sprintf(esc_attr__('Search results for &#39;%1$s&#39;', 'breadcrumb-navxt'),
+					sprintf('<a property="item" typeof="WebPage" title="%1$s" href="%%link%%" class="%%type%%" bcn-aria-current>%%htitle%%</a>', esc_attr__('Go to the first page of search results for %title%.', 'breadcrumb-navxt')))),
 			//The breadcrumb template for search breadcrumbs, used when an anchor is not necessary
-			'Hsearch_template_no_anchor' => __('<span property="itemListElement" typeof="ListItem"><span property="name">Search results for &#39;%htitle%&#39;</span><meta property="position" content="%position%"></span>', 'breadcrumb-navxt'),
+			'Hsearch_template_no_anchor' => sprintf('<span class="%%type%%">%1$s</span>',
+					sprintf(esc_attr__('Search results for &#39;%1$s&#39;', 'breadcrumb-navxt'), '%htitle%')),
 			//Tag related stuff
 			//The breadcrumb template for tag breadcrumbs
-			'Htax_post_tag_template' => __('<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the %title% tag archives." href="%link%" class="%type%"><span property="name">%htitle%</span></a><meta property="position" content="%position%"></span>', 'breadcrumb-navxt'),
+			'Htax_post_tag_template' => sprintf('<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="%1$s" href="%%link%%" class="%%type%%" bcn-aria-current><span property="name">%%htitle%%</span></a><meta property="position" content="%%position%%"></span>', esc_attr__('Go to the %title% tag archives.', 'breadcrumb-navxt')),
 			//The breadcrumb template for tag breadcrumbs, used when an anchor is not necessary
 			'Htax_post_tag_template_no_anchor' => bcn_breadcrumb::default_template_no_anchor,
 			//Post format related stuff
 			//The breadcrumb template for post format breadcrumbs, used when an anchor is not necessary
-			'Htax_post_format_template' => __('<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the %title% archives." href="%link%" class="%type%"><span property="name">%htitle%</span></a><meta property="position" content="%position%"></span>', 'breadcrumb-navxt'),
+			'Htax_post_format_template' => sprintf('<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="%1$s" href="%%link%%" class="%%type%%" bcn-aria-current><span property="name">%%htitle%%</span></a><meta property="position" content="%%position%%"></span>', esc_attr__('Go to the %title% archives.', 'breadcrumb-navxt')),
 			//The breadcrumb template for post format breadcrumbs
 			'Htax_post_format_template_no_anchor' => bcn_breadcrumb::default_template_no_anchor,
 			//Author page stuff
 			//The anchor template for author breadcrumbs
-			'Hauthor_template' => __('<span property="itemListElement" typeof="ListItem"><span property="name">Articles by: <a title="Go to the first page of posts by %title%." href="%link%" class="%type%">%htitle%</a>', 'breadcrumb-navxt'),
+			'Hauthor_template' => sprintf('<span property="itemListElement" typeof="ListItem"><span property="name">%1$s</span><meta property="position" content="%%position%%"></span>',
+				sprintf(esc_attr__('Articles by: %1$s', 'breadcrumb-navxt'),
+				sprintf('<a title="%1$s" href="%%link%%" class="%%type%%" bcn-aria-current>%%htitle%%</a>', esc_attr__('Go to the first page of posts by %title%.', 'breadcrumb-navxt')))),
 			//The anchor template for author breadcrumbs, used when anchors are not needed
-			'Hauthor_template_no_anchor' => __('<span property="itemListElement" typeof="ListItem"><span property="name">Articles by: %htitle%</span><meta property="position" content="%position%"></span>', 'breadcrumb-navxt'),
+			'Hauthor_template_no_anchor' => sprintf('<span class="%%type%%">%1$s</span>',
+				sprintf(esc_attr__('Articles by: %1$s', 'breadcrumb-navxt'), '%htitle%')),
 			//Which of the various WordPress display types should the author breadcrumb display
 			'Sauthor_name' => 'display_name',
 			//Give an invlaid page ID for the author root
 			'aauthor_root' => 0,
 			//Category stuff
 			//The breadcrumb template for category breadcrumbs
-			'Htax_category_template' => __('<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the %title% category archives." href="%link%" class="%type%"><span property="name">%htitle%</span></a><meta property="position" content="%position%"></span>', 'breadcrumb-navxt'),
+			'Htax_category_template' => sprintf('<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="%1$s" href="%%link%%" class="%%type%%" bcn-aria-current><span property="name">%%htitle%%</span></a><meta property="position" content="%%position%%"></span>', esc_attr__('Go to the %title% category archives.', 'breadcrumb-navxt')),
 			//The breadcrumb template for category breadcrumbs, used when anchors are not needed
 			'Htax_category_template_no_anchor' => bcn_breadcrumb::default_template_no_anchor,
 			//The breadcrumb template for date breadcrumbs
-			'Hdate_template' => __('<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the %title% archives." href="%link%" class="%type%"><span property="name">%htitle%</span></a><meta property="position" content="%position%"></span>', 'breadcrumb-navxt'),
+			'Hdate_template' => sprintf('<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="%1$s" href="%%link%%" class="%%type%%" bcn-aria-current><span property="name">%%htitle%%</span></a><meta property="position" content="%%position%%"></span>', esc_attr__('Go to the %title% archives.', 'breadcrumb-navxt')),
 			//The breadcrumb template for date breadcrumbs, used when anchors are not needed
 			'Hdate_template_no_anchor' => bcn_breadcrumb::default_template_no_anchor
 		);
-	}
-	/**
-	 * This returns the internal version
-	 * 
-	 * @deprecated 5.2.0 No longer needed, superceeded bcn_breadcrumb_trail::version
-	 *
-	 * @return string internal version of the Breadcrumb trail
-	 */
-	public function get_version()
-	{
-		_deprecated_function( __FUNCTION__, '5.2', 'bcn_breadcrumb_trail::version' );
-		return self::version;
 	}
 	/**
 	 * Adds a breadcrumb to the breadcrumb trail
@@ -508,19 +508,15 @@ class bcn_breadcrumb_trail
 			//Add the link
 			$breadcrumb->set_url(get_permalink($post));
 		}
-		//If we have an attachment, run through the post again
-		if($post->post_type === 'attachment')
+		//Done with the current item, now on to the parents
+		$frontpage = get_option('page_on_front');
+		//If we are to follow the hierarchy first (with hierarchy type backup), run through the post again
+		if($this->opt['bpost_' . $post->post_type. '_hierarchy_parent_first'] && $post->post_parent > 0 && $post->ID != $post->post_parent && $frontpage != $post->post_parent)
 		{
-			//Done with the current item, now on to the parents
-			$frontpage = get_option('page_on_front');
-			//Make sure the id is valid, and that we won't end up spinning in a loop
-			if($post->post_parent > 0 && $post->ID != $post->post_parent && $frontpage != $post->post_parent)
-			{
-				//Get the parent's information
-				$parent = get_post($post->post_parent);
-				//Take care of the parent's breadcrumb
-				$this->do_post($parent, true, false, false);
-			}
+			//Get the parent's information
+			$parent = get_post($post->post_parent);
+			//Take care of the parent's breadcrumb
+			$this->do_post($parent, true, false, false);
 		}
 		//Otherwise we need the follow the hiearchy tree
 		else
@@ -528,18 +524,6 @@ class bcn_breadcrumb_trail
 			//Handle the post's hiearchy
 			$this->post_hierarchy($post->ID, $post->post_type, $post->post_parent);
 		}
-	}
-	/**
-	 * A Breadcrumb Trail Filling Function
-	 * 
-	 * @deprecated 6.0.0 No longer needed, superceeded by do_post
-	 * 
-	 * This functions fills a breadcrumb for an attachment page.
-	 */
-	protected function do_attachment()
-	{
-		_deprecated_function( __FUNCTION__, '6.0', 'bcn_breadcrumb_trail::do_post');
-		$this->do_post(get_post());
 	}
 	/**
 	 * A Breadcrumb Trail Filling Function
@@ -652,30 +636,6 @@ class bcn_breadcrumb_trail
 			//Deal with the anchor
 			$breadcrumb->set_url($this->maybe_add_post_type_arg($url, $type));
 		}
-	}
-	/**
-	 * A Breadcrumb Trail Filling Function
-	 * 
-	 * This functions fills a breadcrumb for a date archive.
-	 * 
-	 * @param string $type The type to restrict the date archives to
-	 * 
-	 * @deprecated 6.0.0 No longer needed, superceeded by do_day, do_month, and/or do_year
-	 */
-	protected function do_archive_by_date($type)
-	{
-		_deprecated_function( __FUNCTION__, '6.0', 'bcn_breadcrumb_trail::do_day, bcn_breadcrumb_trail::do_month, and/or bcn_breadcrumb_trail::do_year');
-		//First deal with the day breadcrumb
-		if(is_day() || is_single())
-		{
-			$this->do_day(get_post(), $type, is_paged(), is_day());
-		}
-		//Now deal with the month breadcrumb
-		if(is_month() || is_day() || is_single())
-		{
-			$this->do_month(get_post(), $type, is_paged(), is_month());
-		}
-		$this->do_year(get_post(), $type, is_paged(), is_year());
 	}
 	/**
 	 * A Breadcrumb Trail Filling Function
@@ -971,7 +931,7 @@ class bcn_breadcrumb_trail
 	 */
 	public function fill()
 	{
-		global $wpdb, $wp_query, $wp;
+		global $wpdb, $wp_query, $wp, $wp_taxonomies;
 		//Check to see if the trail is already populated
 		if(count($this->breadcrumbs) > 0)
 		{
@@ -1103,7 +1063,7 @@ class bcn_breadcrumb_trail
 			{
 				$type_str = 'post';
 			}
-			if(isset($this->opt['apost_' . $type_str . '_root']))
+			if(isset($type_str) && isset($this->opt['apost_' . $type_str . '_root']))
 			{
 				$this->do_root($type_str, $this->opt['apost_' . $type_str . '_root'], is_paged(), $this->treat_as_root_page($type_str));
 			}
@@ -1182,22 +1142,6 @@ class bcn_breadcrumb_trail
 		return $trail_str;
 	}
 	/**
-	 * This functions outputs or returns the breadcrumb trail in list form.
-	 *
-	 * @deprecated 6.0.0 No longer needed, superceeded by $template parameter in display
-	 * 
-	 * @param bool $linked[optional] Whether to allow hyperlinks in the trail or not.
-	 * @param bool $reverse[optional] Whether to reverse the output or not.
-	 * 
-	 * @return void Void if option to print out breadcrumb trail was chosen.
-	 * @return string String version of the breadcrumb trail.
-	 */
-	public function display_list($linked = true, $reverse = false)
-	{
-		_deprecated_function( __FUNCTION__, '6.0', 'bcn_breadcrumb_trail::display');
-		return $this->display($return, $linked, $reverse, "<li%3\$s>%1\$s</li>\n");
-	}
-	/**
 	 * This function assembles the breadcrumbs in the breadcrumb trail in accordance with the passed in template
 	 * 
 	 * @param bool $linked  Whether to allow hyperlinks in the trail or not.
@@ -1216,7 +1160,8 @@ class bcn_breadcrumb_trail
 		{
 			$types = $breadcrumb->get_types();
 			array_walk($types, 'sanitize_html_class');
-			$class = sprintf(' class="%s"', esc_attr(implode(' ', $types)));
+			$attrib_array = array('class' => $types);
+			$attribs = '';
 			//Deal with the separator
 			if($position < $last_position)
 			{
@@ -1226,17 +1171,24 @@ class bcn_breadcrumb_trail
 			{
 				$separator = '';
 			}
+			//Allow others to hook into the attribute array
+			$attrib_array= apply_filters('bcn_display_attribute_array', $attrib_array, $breadcrumb->get_types(), $breadcrumb->get_id());
+			//Stringify the array
+			foreach($attrib_array as $attrib => $value)
+			{
+				$attribs .= sprintf(' %1$s="%2$s"', esc_attr($attrib), esc_attr(implode(' ', $value)));
+			}
 			//Filter li_attributes adding attributes to the li element
-			$attribs = apply_filters_deprecated('bcn_li_attributes', array($class, $breadcrumb->get_types(), $breadcrumb->get_id()), '6.0.0', 'bcn_display_attributes');
-			$attribs = apply_filters('bcn_display_attributes', $class, $breadcrumb->get_types(), $breadcrumb->get_id());
+			$attribs = apply_filters_deprecated('bcn_li_attributes', array($attribs, $breadcrumb->get_types(), $breadcrumb->get_id()), '6.0.0', 'bcn_display_attributes');
+			$attribs = apply_filters('bcn_display_attributes', $attribs, $breadcrumb->get_types(), $breadcrumb->get_id());
 			//Trim titles, if requested
 			if($this->opt['blimit_title'] && $this->opt['amax_title_length'] > 0)
 			{
 				//Trim the breadcrumb's title
 				$breadcrumb->title_trim($this->opt['amax_title_length']);
 			}
-			//Assemble the breadrumb and wrap with li's
-			$trail_str .= sprintf($template, $breadcrumb->assemble($linked, $position), $separator, $attribs);
+			//Assemble the breadcrumb
+			$trail_str .= sprintf($template, $breadcrumb->assemble($linked, $position, ($key === 0)), $separator, $attribs);
 			$position++;
 		}
 		return $trail_str;
@@ -1275,5 +1227,72 @@ class bcn_breadcrumb_trail
 			$postion++;
 		}
 		return $breadcrumbs;
+	}
+	/**
+	 * Deprecated functions, don't use these
+	 */
+	/**
+	 * This returns the internal version
+	 *
+	 * @deprecated 5.2.0 No longer needed, superceeded bcn_breadcrumb_trail::version
+	 *
+	 * @return string internal version of the Breadcrumb trail
+	 */
+	public function get_version()
+	{
+		_deprecated_function( __FUNCTION__, '5.2', 'bcn_breadcrumb_trail::version' );
+		return self::version;
+	}
+	/**
+	 * A Breadcrumb Trail Filling Function
+	 *
+	 * @deprecated 6.0.0 No longer needed, superceeded by do_post
+	 *
+	 * This functions fills a breadcrumb for an attachment page.
+	 */
+	protected function do_attachment()
+	{
+		_deprecated_function( __FUNCTION__, '6.0', 'bcn_breadcrumb_trail::do_post');
+		$this->do_post(get_post());
+	}
+	/**
+	 * A Breadcrumb Trail Filling Function
+	 *
+	 * This functions fills a breadcrumb for a date archive.
+	 *
+	 * @param string $type The type to restrict the date archives to
+	 *
+	 * @deprecated 6.0.0 No longer needed, superceeded by do_day, do_month, and/or do_year
+	 */
+	protected function do_archive_by_date($type)
+	{
+		_deprecated_function( __FUNCTION__, '6.0', 'bcn_breadcrumb_trail::do_day, bcn_breadcrumb_trail::do_month, and/or bcn_breadcrumb_trail::do_year');
+		//First deal with the day breadcrumb
+		if(is_day() || is_single())
+		{
+			$this->do_day(get_post(), $type, is_paged(), is_day());
+		}
+		//Now deal with the month breadcrumb
+		if(is_month() || is_day() || is_single())
+		{
+			$this->do_month(get_post(), $type, is_paged(), is_month());
+		}
+		$this->do_year(get_post(), $type, is_paged(), is_year());
+	}
+	/**
+	 * This functions outputs or returns the breadcrumb trail in list form.
+	 *
+	 * @deprecated 6.0.0 No longer needed, superceeded by $template parameter in display
+	 *
+	 * @param bool $linked[optional] Whether to allow hyperlinks in the trail or not.
+	 * @param bool $reverse[optional] Whether to reverse the output or not.
+	 *
+	 * @return void Void if option to print out breadcrumb trail was chosen.
+	 * @return string String version of the breadcrumb trail.
+	 */
+	public function display_list($linked = true, $reverse = false)
+	{
+		_deprecated_function( __FUNCTION__, '6.0', 'bcn_breadcrumb_trail::display');
+		return $this->display($linked, $reverse, "<li%3\$s>%1\$s</li>\n");
 	}
 }

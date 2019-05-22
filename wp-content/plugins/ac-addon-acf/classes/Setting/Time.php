@@ -2,8 +2,8 @@
 
 namespace ACA\ACF\Setting;
 
-use ACA\ACF\Column;
 use AC;
+use ACA\ACF\Column;
 
 /**
  * @property Column $column

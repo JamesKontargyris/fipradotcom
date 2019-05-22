@@ -18,9 +18,7 @@ class Title extends Editing\Model {
 	}
 
 	public function save( $id, $value ) {
-		update_post_meta( $id, '_yoast_wpseo_title', $value );
-
-		return $value;
+		return false !== update_post_meta( $id, '_yoast_wpseo_title', $value );
 	}
 
 }

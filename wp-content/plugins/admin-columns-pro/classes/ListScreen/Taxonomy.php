@@ -25,13 +25,12 @@ class Taxonomy extends AC\ListScreenWP
 	 * @param $taxonomy
 	 */
 	public function __construct( $taxonomy ) {
-
 		$this->set_taxonomy( $taxonomy )
-		     ->set_meta_type( 'term' )
-		     ->set_screen_base( 'edit-tags' )
-		     ->set_screen_id( 'edit-' . $taxonomy )
-		     ->set_key( 'wp-taxonomy_' . $taxonomy )
-		     ->set_group( 'taxonomy' );
+			->set_meta_type( AC\MetaType::TERM )
+			->set_screen_base( 'edit-tags' )
+			->set_screen_id( 'edit-' . $taxonomy )
+			->set_key( 'wp-taxonomy_' . $taxonomy )
+			->set_group( 'taxonomy' );
 	}
 
 	/**
@@ -161,8 +160,8 @@ class Taxonomy extends AC\ListScreenWP
 		$this->register_column_types_from_dir( 'ACP\Column\Taxonomy' );
 	}
 
-	public function editing( $model ) {
-		return new Editing\Strategy\Taxonomy( $model );
+	public function editing() {
+		return new Editing\Strategy\Taxonomy( $this->taxonomy );
 	}
 
 	public function filtering( $model ) {

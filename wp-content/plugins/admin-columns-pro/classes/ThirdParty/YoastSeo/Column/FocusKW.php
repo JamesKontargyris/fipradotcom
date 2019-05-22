@@ -23,4 +23,4 @@ class FocusKW extends YoastSeo\Column
 		return new YoastSeo\Export\FocusKW( $this );
 	}
 
-}//1244437863
+}

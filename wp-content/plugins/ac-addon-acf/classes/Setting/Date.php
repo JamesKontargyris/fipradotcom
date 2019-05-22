@@ -2,13 +2,13 @@
 
 namespace ACA\ACF\Setting;
 
+use AC;
 use ACA\ACF\Column;
-Use AC;
 
 /**
  * @property Column $column
  */
-class Date extends \AC\Settings\Column\Date
+class Date extends AC\Settings\Column\Date
 	implements AC\Settings\FormatValue {
 
 	public function __construct( Column $column ) {

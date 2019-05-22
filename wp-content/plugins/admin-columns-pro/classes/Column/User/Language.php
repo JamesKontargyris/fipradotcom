@@ -5,13 +5,14 @@ namespace ACP\Column\User;
 use AC;
 use ACP\Editing;
 use ACP\Filtering;
+use ACP\Search;
 use ACP\Sorting;
 
 /**
  * @since 4.2
  */
 class Language extends AC\Column\Meta
-	implements Editing\Editable, Filtering\Filterable, Sorting\Sortable {
+	implements Editing\Editable, Filtering\Filterable, Sorting\Sortable, Search\Searchable {
 
 	private $translations = null;
 
@@ -78,6 +79,10 @@ class Language extends AC\Column\Meta
 
 	public function sorting() {
 		return new Sorting\Model\Meta( $this );
+	}
+
+	public function search() {
+		return new Search\Comparison\User\Languages( $this->get_language_options( false ) );
 	}
 
 }

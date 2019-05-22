@@ -5,19 +5,13 @@ namespace ACP\ThirdParty\bbPress;
 use AC;
 use ACP;
 
-final class Addon {
+final class Addon implements AC\Registrable {
 
-	public function __construct() {
-
-		// Columns
+	public function register() {
 		add_action( 'ac/column_types', array( $this, 'set_columns' ) );
 		add_action( 'ac/column_groups', array( $this, 'register_column_group' ) );
-
-		// Listscreen
 		add_action( 'ac/list_screen_groups', array( $this, 'register_list_screen_group' ) );
 		add_action( 'ac/list_screens', array( $this, 'register_list_screens' ), 11 );
-
-		// Editing
 		add_filter( 'ac/editing/role_group', array( $this, 'editing_role_group' ), 10, 2 );
 
 	}

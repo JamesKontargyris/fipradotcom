@@ -13,14 +13,9 @@ use ACP\License;
 class Activation
 	implements Registrable {
 
-	/**
-	 * @var License
-	 */
-	protected $license;
+	/** @var License */
+	private $license;
 
-	/**
-	 * @param License $license
-	 */
 	public function __construct( License $license ) {
 		$this->license = $license;
 	}
@@ -29,7 +24,7 @@ class Activation
 	 * @throws \Exception
 	 */
 	public function register() {
-		add_action( 'ac/screen', array( $this, 'display' ) );
+		add_action( 'ac/screen', array( $this, 'register_notice' ) );
 
 		$this->get_ajax_handler()->register();
 	}
@@ -39,12 +34,8 @@ class Activation
 	 *
 	 * @throws \Exception
 	 */
-	public function display( Screen $screen ) {
-		if ( ! $screen->has_screen() ) {
-			return;
-		}
-
-		if ( ! current_user_can( Capabilities::MANAGE ) ) {
+	public function register_notice( Screen $screen ) {
+		if ( ! $screen->has_screen() || ! current_user_can( Capabilities::MANAGE ) ) {
 			return;
 		}
 
@@ -52,32 +43,29 @@ class Activation
 			return;
 		}
 
+		// Inline message on plugin page
 		if ( $screen->is_plugin_screen() ) {
-
-			// Inline message on plugin page
-			$notice = new Message\Plugin( ACP()->get_basename() );
-			$notice->set_message( $this->get_message() )
-			       ->register();
-
-		} else if ( $screen->is_admin_screen( 'settings' ) ) {
-
-			// Permanent displayed on settings page
-			$this->register_notice( new Message\Notice() );
-
-		} else if ( $screen->is_admin_screen( 'columns' ) && $this->get_dismiss_option()->is_expired() ) {
-
-			// Dismissible on columns page
-			$this->register_notice( new Message\Notice\Dismissible( $this->get_ajax_handler() ) );
+			$notice = new Message\Plugin( $this->get_message(), ACP()->get_basename() );
+			$notice
+				->set_type( Message::INFO )
+				->register();
 		}
-	}
 
-	/**
-	 * @param Message\Notice $notice
-	 */
-	private function register_notice( Message\Notice $notice ) {
-		$notice->set_type( $notice::INFO )
-		       ->set_message( $this->get_message() )
-		       ->register();
+		// Permanent message on admin page
+		if ( $screen->is_admin_screen() ) {
+			$notice = new Message\Notice( $this->get_message() );
+			$notice
+				->set_type( Message::INFO )
+				->register();
+		}
+
+		// Dismissible on list tables
+		if ( $screen->get_list_screen() && $this->get_dismiss_option()->is_expired() ) {
+			$notice = new Message\Notice\Dismissible( $this->get_message(), $this->get_ajax_handler() );
+			$notice
+				->set_type( Message::INFO )
+				->register();
+		}
 	}
 
 	/**
@@ -86,7 +74,7 @@ class Activation
 	private function get_message() {
 		$message = sprintf(
 			__( "To enable automatic updates <a href='%s'>enter your license key</a>. If you don't have a licence key, please see <a href='%s' target='_blank'>details & pricing</a>.", 'codepress_admin_columns' ),
-			AC()->admin()->get_link( 'settings' ),
+			ac_get_admin_url( 'settings' ),
 			ac_get_site_utm_url( 'pricing-purchase', 'plugins' )
 		);
 
@@ -98,8 +86,9 @@ class Activation
 	 */
 	private function get_ajax_handler() {
 		$handler = new Ajax\Handler();
-		$handler->set_action( 'ac_notice_dismiss_activation' )
-		        ->set_callback( array( $this, 'ajax_dismiss_notice' ) );
+		$handler
+			->set_action( 'ac_notice_dismiss_activation' )
+			->set_callback( array( $this, 'ajax_dismiss_notice' ) );
 
 		return $handler;
 	}
@@ -120,6 +109,8 @@ class Activation
 	public function ajax_dismiss_notice() {
 		$this->get_ajax_handler()->verify_request();
 		$this->get_dismiss_option()->save( time() + ( MONTH_IN_SECONDS * 4 ) );
+
+		wp_die( 1 );
 	}
 
 }

@@ -54,6 +54,20 @@ class MSSite extends AC\ListScreenWP
 	}
 
 	/**
+	 * Settings page is the first subsite instead of one the network page.
+	 *
+	 * @return string
+	 */
+	public function get_edit_link() {
+		return add_query_arg( array(
+			'tab'         => 'columns',
+			'page'        => AC\Admin::PLUGIN_PAGE,
+			'list_screen' => $this->get_key(),
+			'layout_id'   => $this->get_layout_id(),
+		), admin_url( 'options-general.php' ) );
+	}
+
+	/**
 	 * @since 2.4.7
 	 *
 	 * @param $column_name
@@ -76,8 +90,8 @@ class MSSite extends AC\ListScreenWP
 		$this->register_column_types_from_dir( 'ACP\Column\NetworkSite' );
 	}
 
-	public function editing( $model ) {
-		return new Editing\Strategy\Site( $model );
+	public function editing() {
+		return new Editing\Strategy\Site();
 	}
 
 }

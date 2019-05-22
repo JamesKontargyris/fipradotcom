@@ -2,8 +2,6 @@
 
 namespace ACP;
 
-use ACP\License\Request;
-
 /**
  * @since 4.2.4
  */
@@ -31,18 +29,20 @@ final class License {
 	 */
 	private $renewal_discount;
 
-	public function __construct() {
-		$this->load();
+	/** @var bool */
+	private $is_network_active;
+
+	public function __construct( $is_network_active = false ) {
+		$this->is_network_active = (bool) $is_network_active;
+
+		$this->populate();
 	}
 
-	/**
-	 * Populate all vars
-	 */
-	public function load() {
-		$this->set_key( defined( 'ACP_LICENCE' ) && ACP_LICENCE ? ACP_LICENCE : $this->get_option( self::OPTION_KEY ) );
-		$this->set_status( $this->get_option( self::OPTION_KEY . '_sts' ) );
-		$this->set_expiry_date( $this->get_option( self::OPTION_KEY . '_expiry_date' ) );
-		$this->set_renewal_discount( $this->get_option( self::OPTION_KEY . '_renewal_discount' ) );
+	private function populate() {
+		$this->set_key( defined( 'ACP_LICENCE' ) && ACP_LICENCE ? ACP_LICENCE : $this->get_option( self::OPTION_KEY ) )
+		     ->set_status( $this->get_option( self::OPTION_KEY . '_sts' ) )
+		     ->set_expiry_date( $this->get_option( self::OPTION_KEY . '_expiry_date' ) )
+		     ->set_renewal_discount( $this->get_option( self::OPTION_KEY . '_renewal_discount' ) );
 	}
 
 	/**
@@ -52,15 +52,19 @@ final class License {
 		foreach ( $this->mapping() as $var => $db_key ) {
 			$this->update_option( self::OPTION_KEY . $db_key, $this->{$var} );
 		}
+
+		$this->populate();
 	}
 
 	/**
-	 * Removes object from DB
+	 * Delete license setting from DB
 	 */
 	public function delete() {
 		foreach ( $this->mapping() as $db_key ) {
 			$this->delete_option( self::OPTION_KEY . $db_key );
 		}
+
+		$this->populate();
 	}
 
 	/**
@@ -111,9 +115,13 @@ final class License {
 	/**
 	 * @param string $format days|seconds
 	 *
-	 * @return int
+	 * @return int|false Time ins seconds is returned or false when the expiry date hasn't been fetched yet.
 	 */
 	public function get_time_remaining( $format = 'seconds' ) {
+		if ( ! $this->get_expiry_date() ) {
+			return false;
+		}
+
 		$remaining = $this->get_expiry_date() - strtotime( 'midnight' );
 
 		switch ( $format ) {
@@ -173,28 +181,6 @@ final class License {
 	}
 
 	/**
-	 * Update expiry date & renewal discount
-	 */
-	public function update_by_remote_api() {
-		$request = new Request( array(
-			'request'     => 'licensedetails',
-			'license_key' => $this->get_key(),
-		) );
-
-		$response = ACP()->get_api()->request( $request );
-
-		if ( $response->get( 'expiry_date' ) ) {
-			$this->set_expiry_date( $response->get( 'expiry_date' ) );
-		}
-
-		if ( $response->get( 'renewal_discount' ) ) {
-			$this->set_renewal_discount( $response->get( 'renewal_discount' ) );
-		}
-
-		$this->save();
-	}
-
-	/**
 	 * @param $discount
 	 *
 	 * @return $this
@@ -203,6 +189,14 @@ final class License {
 		$this->renewal_discount = absint( $discount );
 
 		return $this;
+	}
+
+	/**
+	 * License needs to fetch remote data when the expiry date is empty.
+	 * @return bool
+	 */
+	public function needs_update() {
+		return ! $this->get_expiry_date();
 	}
 
 	/**
@@ -215,8 +209,21 @@ final class License {
 	/**
 	 * @return bool
 	 */
+	public function has_expiry_date() {
+		$time_remaining = $this->get_time_remaining();
+
+		if ( ! $time_remaining ) {
+			return false;
+		}
+
+		return $time_remaining > ( YEAR_IN_SECONDS * 10 );
+	}
+
+	/**
+	 * @return bool
+	 */
 	private function is_network_managed_license() {
-		return is_multisite() && is_plugin_active_for_network( ACP()->get_basename() );
+		return is_multisite() && $this->is_network_active;
 	}
 
 	/**

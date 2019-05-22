@@ -2,11 +2,11 @@
 
 namespace ACA\ACF\Field;
 
-use AC\Collection;
-use ACA\ACF\Field;
-use ACA\ACF\Editing;
-use ACA\ACF\Filtering;
 use AC;
+use AC\Collection;
+use ACA\ACF\Editing;
+use ACA\ACF\Field;
+use ACA\ACF\Filtering;
 use ACP;
 
 class PostObject extends Field {
@@ -36,6 +36,46 @@ class PostObject extends Field {
 
 	public function sorting() {
 		return new ACP\Sorting\Model\Value( $this->column );
+	}
+
+	/**
+	 * @return array|string
+	 */
+	private function get_post_type() {
+		$post_type = $this->column->get_acf_field_option( 'post_type' );
+
+		if ( is_array( $post_type ) && ( in_array( 'all', $post_type ) || in_array( 'any', $post_type ) ) ) {
+			$post_type = 'any';
+		}
+
+		return $post_type;
+	}
+
+	private function get_terms() {
+		$taxonomy = $this->column->get_acf_field_option( 'taxonomy' );
+
+		$array_terms = acf_decode_taxonomy_terms( $taxonomy );
+
+		if ( ! $array_terms ) {
+			return array();
+		}
+
+		$terms = array();
+		foreach ( $array_terms as $taxonomy => $term_slugs ) {
+			foreach ( $term_slugs as $term_slug ) {
+				$terms[] = get_term_by( 'slug', $term_slug, $taxonomy );
+			}
+		}
+
+		return array_filter( $terms );
+	}
+
+	public function search() {
+		if ( $this->is_serialized() ) {
+			return new ACP\Search\Comparison\Meta\Posts( $this->get_meta_key(), $this->get_meta_type(), $this->get_post_type(), $this->get_terms() );
+		}
+
+		return new ACP\Search\Comparison\Meta\Post( $this->get_meta_key(), $this->get_meta_type(), $this->get_post_type(), $this->get_terms() );
 	}
 
 	public function filtering() {

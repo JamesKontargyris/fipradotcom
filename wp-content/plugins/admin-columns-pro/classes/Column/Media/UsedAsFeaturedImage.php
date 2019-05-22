@@ -4,22 +4,24 @@ namespace ACP\Column\Media;
 
 use AC;
 use ACP\Filtering;
+use ACP\Search;
 use ACP\Settings;
 
 class UsedAsFeaturedImage extends AC\Column
-	implements Filtering\Filterable {
+	implements Filtering\Filterable, Search\Searchable {
 
 	public function __construct() {
-		$this->set_type( 'column-used_as_featured_image' );
-		$this->set_label( __( 'Used as Featured Image', 'codepress-admin-columns' ) );
+		$this->set_type( 'column-used_as_featured_image' )
+		     ->set_label( __( 'Featured Image', 'codepress-admin-columns' ) );
 	}
 
 	public function get_raw_value( $id ) {
-		$posts = get_posts( array(
+		$ids = get_posts( array(
 			'posts_per_page' => -1,
 			'post_type'      => 'any',
 			'post_status'    => 'any',
 			'fields'         => 'ids',
+			'no_found_rows'  => true,
 			'meta_query'     => array(
 				array(
 					'key'   => '_thumbnail_id',
@@ -28,7 +30,7 @@ class UsedAsFeaturedImage extends AC\Column
 			),
 		) );
 
-		return $posts;
+		return $ids;
 	}
 
 	protected function register_settings() {
@@ -37,6 +39,10 @@ class UsedAsFeaturedImage extends AC\Column
 
 	public function filtering() {
 		return new Filtering\Model\Media\UsedAsFeaturedImage( $this );
+	}
+
+	public function search() {
+		return new Search\Comparison\Media\UsedAsFeaturedImage();
 	}
 
 }

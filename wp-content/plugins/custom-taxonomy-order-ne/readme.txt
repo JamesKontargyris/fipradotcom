@@ -2,8 +2,8 @@
 Contributors: mpol
 Tags: term order, category order, taxonomy order, order
 Requires at least: 3.7
-Tested up to: 4.9
-Stable tag: 2.9.5
+Tested up to: 5.2
+Stable tag: 2.10.0
 License: GPLv2 or later
 
 
@@ -24,6 +24,10 @@ It supports the following features:
 * Translated or translatable.
 * Custom functions to order the taxonomies themselves.
 * There is no Pro version, everything works in the Free version.
+
+= Compatibility =
+
+This plugin is compatible with [ClassicPress](https://www.classicpress.net).
 
 
 == Installation ==
@@ -147,6 +151,11 @@ The WordPress menu completely left lists the different taxonomies.
 The left metabox lists the toplevel terms. Right (or below) are the sub-terms.
 
 == Changelog ==
+
+= 2.10.0 =
+* 2018-10-17
+* Sort attributes for WooCommerce automatically.
+* Show name and label of taxonomy in the lists.
 
 = 2.9.5 =
 * 2018-09-07

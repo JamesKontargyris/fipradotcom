@@ -3,44 +3,58 @@
 namespace ACP\Export;
 
 use AC;
+use ACP;
+use ACP\Asset\Location;
+use ACP\Asset\Script;
+use ACP\Asset\Style;
+use ACP\Export\Asset;
+use ACP\Export\Asset\Script\Table;
 
-class Addon extends AC\Addon {
+class Addon implements AC\Registrable {
 
 	/**
-	 * @var self
+	 * @var string
 	 */
-	protected static $instance;
+	public $plugin_file;
 
-	protected function __construct() {
-		AC\Autoloader::instance()->register_prefix( __NAMESPACE__, $this->get_dir() . 'classes/' );
-		AC\Autoloader\Underscore::instance()->add_alias( __NAMESPACE__ . '\Exportable', 'ACP_Export_Column' );
+	public function __construct() {
+		$this->plugin_file = ACP_FILE;
+	}
 
+	public function register() {
 		new Admin();
-		new TableScreenOptions();
 
+		$this->register_table_screen_options();
+
+		$settings = new Settings( array(
+			new ACP\Asset\Style( 'acp-search-admin', $this->get_location()->with_suffix( 'assets/search/css/admin.css' ) ),
+		) );
+		$settings->register();
+
+		add_action( 'ac/table/list_screen', array( $this, 'register_table_screen' ) );
 		add_action( 'ac/table/list_screen', array( $this, 'load_list_screen' ) );
 	}
 
-	public static function instance() {
-		if ( null === self::$instance ) {
-			self::$instance = new self();
-		}
+	public function register_table_screen() {
+		$table_screen = new TableScreen( array(
+			new Style( 'acp-export-listscreen', $this->get_location()->with_suffix( 'assets/export/css/listscreen.css' ) ),
+			new Table( 'acp-export-listscreen', $this->get_location()->with_suffix( 'assets/export/js/listscreen.js' ) ),
+		) );
 
-		return self::$instance;
+		$table_screen->register();
 	}
 
-	/**
-	 * @inheritDoc
-	 */
-	protected function get_file() {
-		return __FILE__;
+	public function register_table_screen_options() {
+		new TableScreenOptions( array(
+			new Script( 'acp-export-table-screen-options', $this->get_location()->with_suffix( 'assets/export/js/table-screen-options.js' ) ),
+		) );
 	}
 
-	/**
-	 * @return string
-	 */
-	public function get_version() {
-		return ACP()->get_version();
+	private function get_location() {
+		return new Location\Absolute(
+			plugin_dir_url( $this->plugin_file ),
+			plugin_dir_path( $this->plugin_file )
+		);
 	}
 
 	/**
@@ -75,9 +89,9 @@ class Addon extends AC\Addon {
 	 * Load a list screen and potentially attach the proper exporting information to it
 	 * @since 1.0
 	 *
-	 * @param AC\ListScreen $list_screen List screen for current table screen
+	 * @param ListScreen $list_screen List screen for current table screen
 	 */
-	public function load_list_screen( $list_screen ) {
+	public function load_list_screen( AC\ListScreen $list_screen ) {
 		if ( $list_screen instanceof ListScreen ) {
 			$list_screen->export()->attach();
 		}
