@@ -14,6 +14,17 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+    <!-- Twitter card meta info-->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@FipraI" />
+    <meta name="twitter:creator" content="@FipraI" />
+    <meta property="og:url" content="<?php echo get_the_permalink(); ?>" />
+    <meta property="og:title" content="<?php the_title(); ?>" />
+    <meta property="og:description" content="<?php echo wp_strip_all_tags( get_the_content() ); ?>" />
+	<?php if(has_post_thumbnail() ) : ?>
+        <meta property="og:image" content="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" />
+	<?php endif; ?>
+
     <?php wp_head(); ?>
 </head>
 
