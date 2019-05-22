@@ -14,7 +14,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-    <!-- Twitter card meta info-->
+    <!-- Social meta info-->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@FipraI" />
     <meta name="twitter:creator" content="@FipraI" />
