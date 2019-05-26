@@ -232,19 +232,52 @@
   }
 }
 
-.ep-election-review-back-issues-container {
-  background:$color__fipra-periwinkle;
-  width:100%;
+.ep-election-analysis__tabbed-content {
   margin-top:30px;
+}
+
+.ep-election-analysis-tabbed-content__tab-group {
+  text-align:center;
+}
+
+.ep-election-analysis-tab {
+  display: inline-block;
+  padding:1rem;
+  margin-right:5px;
+  text-transform: uppercase;
+
+  &:first-child {
+    background-color: #203c7b;
+    color:white;
+    &:hover {
+      color:$color__fipra-red;
+    }
+  }
+  &:last-child {
+    background-color: $color__fipra-gold;
+  }
+}
+
+.ep-election-news-and-analysis-container {
+  background: #203c7b;
+  color:white;
+  width: 100%;
+
+  .ep-election-news-and-analysis__content {
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+}
+
+.ep-election-review-back-issues-container {
+  background: $color__fipra-gold;
+  width:100%;
 
   .ep-election-review-back-issues__content {
     margin:0 auto;
-    padding:1.5rem;
+    padding: 2rem 1.5rem;
     text-align:center;
-
-    @include media($media__large) {
-      text-align:left;
-    }
 
     .ep-election-review-back-issues__title {
       font-family: "Calibri Light", Calibri, "Lato Light", sans-serif;
@@ -300,5 +333,111 @@
         width:23%;
       }
     }
+  }
+}
+
+.ep-election-analysis-report-hero-container {
+  @include clearfix;
+  position: relative;
+  padding:$v-rhythm 1rem;
+  background:radial-gradient(#006b97 0%, #203c7b 100%);
+  margin-top:40px;
+
+  @include media(min-width 768px) {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    transform: skew(-30deg);
+    margin-right:-200px;
+    padding:($v-rhythm * 2) 220px ($v-rhythm * 2) 20px;
+  }
+
+  .ep-election-analysis-report-hero__mockup-background {
+    display: none;
+    transform: skew(30deg);
+
+    @include media(min-width 768px) {
+      display: block;
+      position: absolute;
+      top:0;
+      right:200px; // allows for negative margin above
+      height:100%;
+      width:100%;
+      background:url(img/2019-ep-elections-report-front-cover-and-inside-pages-mockup.png) top right no-repeat;
+      background-size:contain;
+      opacity:0.5;
+    }
+
+    @include media($media__large) {
+      opacity:1;
+    }
+  }
+
+  .ep-election-analysis-report-hero__report-cover {
+    display: block;
+    position: relative;
+    z-index:2;
+    max-width:200px;
+    box-shadow: 0 2px 2px rgba(black, 0.7);
+    margin:-40px auto $v-rhythm;
+
+    @include media(min-width 768px) {
+      max-width:unset;
+      margin:0 30px;
+      width:275px;
+      height:390px;
+      transform: skew(30deg);
+    }
+  }
+
+  .ep-election-analysis-report-hero__content {
+    position: relative;
+    text-align:center;
+    color:white;
+
+    @include media(min-width 768px) {
+      text-align:left;
+      transform: skew(30deg);
+      max-width:330px;
+    }
+  }
+
+  .ep-election-analysis-report-hero__content__skewed-background {
+    display: none;
+
+    @include media(min-width 768px) {
+      display: block;
+      position: absolute;
+      top:0;
+      left:0;
+      width:180%;
+      height:140%;
+      margin-left:-60%;
+      margin-top:-10%;
+      transform: skew(-30deg);
+      background-color:$color__fipra-turquoise;
+      box-shadow: 0 2px 2px rgba(black, 0.7);
+      z-index:-1;
+    }
+  }
+
+  .ep-election-analysis-report-hero__title {
+    font-family: "Calibri Light", Calibri, "Lato Light", sans-serif;
+    font-weight:normal;
+    font-size:40px;
+    line-height:36px;
+    letter-spacing: -2px;
+    margin-bottom:$v-rhythm;
+  }
+
+  .ep-election-analysis-report-hero__description {
+    font-size:0.9rem;
+    line-height:1.5;
+    margin-bottom:$v-rhythm;
+  }
+
+  .ep-election-analysis-report-hero__button {
+    text-transform: uppercase;
+    font-weight:700;
   }
 }

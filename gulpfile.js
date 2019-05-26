@@ -3,6 +3,7 @@ var baseDir = 'wp-content/themes/fipradotcom/';
 var sassDir = baseDir + 'sass/';
 var imgDir = baseDir + 'img/';
 var jsDir = baseDir + 'js/';
+var minjsDir = baseDir + 'minjs/';
 
 // Gulp
 const gulp = require('gulp');
@@ -27,7 +28,7 @@ function browserSync(done) {
         proxy: "fipradotcom.site",
         notify: false,
         open: false,
-        port:3000
+        port: 3000
     });
     done();
 }
@@ -59,9 +60,9 @@ function images() {
         .pipe(newer(imgDir + 'optimised/'))
         .pipe(
             imagemin([
-                imagemin.gifsicle({ interlaced: true }),
-                imagemin.jpegtran({ progressive: true }),
-                imagemin.optipng({ optimizationLevel: 5 }),
+                imagemin.gifsicle({interlaced: true}),
+                imagemin.jpegtran({progressive: true}),
+                imagemin.optipng({optimizationLevel: 5}),
                 imagemin.svgo({
                     plugins: [
                         {
@@ -85,18 +86,17 @@ function scripts() {
             suffix: '.min'
         }))
         // Adds min to filename
-        .pipe(gulp.dest(jsDir + 'min'));
+        .pipe(gulp.dest(minjsDir));
 }
 
 // Watch files
 function watchFiles(done) {
     // Uses polling to get around issues with changes made to files locally that are not reflected on the virtual machine
     // (https://github.com/floatdrop/gulp-watch/issues/213)
-    gulp.watch(sassDir + '**/*.scss', { usePolling: true, ignoreInitial: false }, gulp.series(styles, browserSyncReload));
-    gulp.watch(baseDir + '**/*.php', { usePolling: true, ignoreInitial: false }, gulp.series(browserSyncReload));
+    gulp.watch(sassDir + '**/*.scss', {usePolling: true, ignoreInitial: false}, gulp.series(styles, browserSyncReload));
+    gulp.watch(baseDir + '**/*.php', {usePolling: true, ignoreInitial: false}, gulp.series(browserSyncReload));
     done();
 }
-
 
 
 // call these using gulp js, gulp img etc.
@@ -105,6 +105,7 @@ exports.js = gulp.series(scripts);
 exports.img = gulp.series(images);
 exports.watch = gulp.series(watchFiles, browserSync);
 exports.build = gulp.series(scripts, images, styles);
+exports.scripts = gulp.series(scripts);
 
 // call this using gulp default or just gulp
 exports.default = gulp.series(watchFiles, browserSync);

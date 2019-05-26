@@ -15,6 +15,7 @@
 #content-container {
   @include clearfix;
   width:100%;
+  overflow:hidden;
   @include media(max-width $media__medium) { padding-top:64px; }
 
   &.with-border { padding-top:$v-rhythm; border-top:1px solid $color__fipra-light-gray; }

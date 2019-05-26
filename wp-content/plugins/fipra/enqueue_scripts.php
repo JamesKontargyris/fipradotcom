@@ -231,6 +231,14 @@ function fipradotcom_scripts()
         );
     }
 
+	wp_enqueue_script(
+		'fipradotcom-ep-election-analysis-js',
+		get_template_directory_uri() . '/js/ep-election-analysis.js',
+		array(),
+		'20120206',
+		true
+	);
+
     wp_enqueue_script(
         'fipradotcom-user-js',
         get_template_directory_uri() . '/minjs/site.min.js',
