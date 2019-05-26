@@ -233,7 +233,7 @@ function fipradotcom_scripts()
 
 	wp_enqueue_script(
 		'fipradotcom-ep-election-analysis-js',
-		get_template_directory_uri() . '/js/ep-election-analysis.js',
+		get_template_directory_uri() . '/minjs/ep-election-analysis.min.js',
 		array(),
 		'20120206',
 		true

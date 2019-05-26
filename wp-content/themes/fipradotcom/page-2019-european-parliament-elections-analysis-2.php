@@ -64,7 +64,7 @@ get_header(); ?>
                     <div class="ep-election-analysis-tabbed-content">
                         <div class="ep-election-analysis-tabbed-content__tab-group">
                             <a href="#" class="ep-election-analysis-tab" data-target-tab=".ep-election-analysis-tab-content--news-and-analysis">News and Analysis</a>
-                            <a href="#" class="ep-election-analysis-tab" data-target-tab=".ep-election-analysis-tab-content--review-back-issues">Download previous reviews</a>
+                            <a href="#" class="ep-election-analysis-tab" data-target-tab=".ep-election-analysis-tab-content--review-back-issues">Previous reviews</a>
                         </div>
                         <div class="ep-election-news-and-analysis-container ep-election-analysis-tab-content ep-election-analysis-tab-content--news-and-analysis">
                             <div class="ep-election-news-and-analysis__content">
