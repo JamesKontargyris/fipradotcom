@@ -50,7 +50,7 @@
 
     .btn.primary {
       text-shadow:none;
-      color:$color__fipra-blue;
+      color:$color__fipra-blue !important;
       @include linear-gradient(white 60%, darken(white, 10%) 100%);
     }
     .btn.secondary {

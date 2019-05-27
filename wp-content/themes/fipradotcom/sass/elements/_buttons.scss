@@ -26,7 +26,7 @@
     &.btn-white {
       text-shadow:0px -1px 0px darken(white, 15%);
       border-bottom:2px solid darken(white, 30%);
-      background-color: white; color:$color__fipra-blue;
+      background-color: white; color:$color__fipra-blue !important;
     }
   }
 
