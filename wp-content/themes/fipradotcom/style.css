@@ -718,7 +718,7 @@ table:not(.no-style) {
       text-shadow: 0px -1px 0px #d9d9d9;
       border-bottom: 2px solid #b3b3b3;
       background-color: white;
-      color: #00257f; }
+      color: #00257f !important; }
   .btn.secondary, .wpcf7-form input.secondary[type=submit],
   .wpcf7-form input.page-numbers.current[type=submit], a.secondary.page-numbers,
   a.page-numbers.current,
@@ -1553,7 +1553,7 @@ ul.team-member-expertise {
   .hero-banner.light-text .btn.primary, .hero-banner.light-text .wpcf7-form input[type=submit], .wpcf7-form .hero-banner.light-text input[type=submit], .hero-banner.light-text a.page-numbers,
   .hero-banner.light-text .page-numbers.current {
     text-shadow: none;
-    color: #00257f;
+    color: #00257f !important;
     background-color: white;
     background-image: -webkit-linear-gradient(white 60%, #e6e6e6 100%);
     background-image: linear-gradient(white 60%, #e6e6e6 100%); }
@@ -5889,12 +5889,15 @@ object {
       margin-bottom: 10px;
       background: white;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
+      .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li:hover {
+        opacity: 0.7; }
       .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a {
         display: block;
         width: 100%;
         padding: 5px 10px;
         font-weight: 700;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        color: #00257f !important; }
         .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a .ep-election-review-back-issues__icon {
           display: none; }
           @media screen and (min-width: 768px) {
