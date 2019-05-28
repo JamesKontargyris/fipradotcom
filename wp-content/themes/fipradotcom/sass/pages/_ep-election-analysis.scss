@@ -381,7 +381,7 @@
   @include media(min-width 768px) {
     display: flex;
     align-items: center;
-    justify-content:flex-start;
+    justify-content:center;
     transform: skew(-30deg);
     margin-right:-200px;
     padding:($v-rhythm * 2) 220px ($v-rhythm * 2) 20px;

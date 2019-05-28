@@ -47,7 +47,7 @@ get_header(); ?>
             <div class="ep-election-analysis-report-hero__mockup-background"> </div>
             <img class="ep-election-analysis-report-hero__report-cover" src="<?php echo get_template_directory_uri(); ?>/img/fipra-election-analysis-report-front-cover.jpg">
             <div class="ep-election-analysis-report-hero__content">
-                <div class="ep-election-analysis-report-hero__content__skewed-background"> </div>
+<!--                <div class="ep-election-analysis-report-hero__content__skewed-background"> </div>-->
                 <div class="ep-election-analysis-report-hero__title">Fipra Pan-EU Election Analysis</div>
                 <div class="ep-election-analysis-report-hero__description">
                     <p class="lead-paragraph">Fipra and its Network of Units across the EU28 have compiled a full country-by-country analysis of the outcome of the elections highlighting some of the new movers and shakers for the 2019-2024 EU legislature.</p>
