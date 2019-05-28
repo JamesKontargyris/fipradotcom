@@ -105,9 +105,15 @@ get_header(); ?>
 
                         <div class="ep-election-review-back-issues-container ep-election-analysis-tab-content ep-election-analysis-tab-content--review-back-issues">
                             <div class="ep-election-review-back-issues__content">
-                                Fipra has been following the European Parliament elections 2019 for a period of several months. For further information and to receive copies of our previous reports, please contact us on
-                                <a href="mailto:eptaskforce@fipra.com.">eptaskforce@fipra.com</a>.
-
+                                <ul class="ep-election-review-back-issues__gallery">
+                                    <li><a href="<?php echo get_template_directory_uri(); ?>/files/ep_elections_reviews/fipra_2019_european_elections_review_may_2019.pdf" target="_blank"><img class="ep-election-review-back-issues__icon" src="<?php echo get_template_directory_uri();  ?>/img/icons/file-download-solid.svg" alt="Download"> May 2019</a></li>
+                                    <li><a href="<?php echo get_template_directory_uri(); ?>/files/ep_elections_reviews/fipra_2019_european_elections_review_april_2019.pdf" target="_blank"><img class="ep-election-review-back-issues__icon" src="<?php echo get_template_directory_uri();  ?>/img/icons/file-download-solid.svg" alt="Download"> April 2019</a></li>
+                                    <li><a href="<?php echo get_template_directory_uri(); ?>/files/ep_elections_reviews/fipra_2019_european_elections_review_january_2019.pdf" target="_blank"><img class="ep-election-review-back-issues__icon" src="<?php echo get_template_directory_uri();  ?>/img/icons/file-download-solid.svg" alt="Download"> January 2019</a></li>
+                                    <li><a href="<?php echo get_template_directory_uri(); ?>/files/ep_elections_reviews/fipra_2019_european_elections_review_november_2018.pdf" target="_blank"><img class="ep-election-review-back-issues__icon" src="<?php echo get_template_directory_uri();  ?>/img/icons/file-download-solid.svg" alt="Download"> November 2018</a></li>
+                                    <li><a href="<?php echo get_template_directory_uri(); ?>/files/ep_elections_reviews/fipra_2019_european_elections_review_october_2018.pdf" target="_blank"><img class="ep-election-review-back-issues__icon" src="<?php echo get_template_directory_uri();  ?>/img/icons/file-download-solid.svg" alt="Download"> October 2018</a></li>
+                                    <li><a href="<?php echo get_template_directory_uri(); ?>/files/ep_elections_reviews/fipra_2019_european_elections_review_september_2018.pdf" target="_blank"><img class="ep-election-review-back-issues__icon" src="<?php echo get_template_directory_uri();  ?>/img/icons/file-download-solid.svg" alt="Download"> September 2018</a></li>
+                                    <li><a href="<?php echo get_template_directory_uri(); ?>/files/ep_elections_reviews/fipra_2019_european_elections_review_july_2018.pdf" target="_blank"><img class="ep-election-review-back-issues__icon" src="<?php echo get_template_directory_uri();  ?>/img/icons/file-download-solid.svg" alt="Download"> July 2018</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
