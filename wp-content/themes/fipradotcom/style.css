@@ -5840,7 +5840,8 @@ object {
   display: inline-block;
   padding: 1rem;
   text-transform: uppercase;
-  line-height: 1; }
+  line-height: 1;
+  cursor: pointer; }
   @media screen and (max-width: 768px) {
     .ep-election-analysis-tab {
       width: 45%;
@@ -5860,8 +5861,21 @@ object {
   width: 100%; }
   .ep-election-news-and-analysis-container .ep-election-news-and-analysis__content {
     margin: 0 auto;
-    padding: 2rem 1.5rem;
-    text-align: center; }
+    padding: 3rem 1.5rem;
+    text-align: left;
+    max-width: 800px; }
+    @media screen and (min-width: 768px) {
+      .ep-election-news-and-analysis-container .ep-election-news-and-analysis__content {
+        font-size: 16px;
+        line-height: 24px; } }
+    .ep-election-news-and-analysis-container .ep-election-news-and-analysis__content .lead-paragraph {
+      font-size: 20px;
+      line-height: 32px;
+      font-weight: 700; }
+      @media screen and (min-width: 768px) {
+        .ep-election-news-and-analysis-container .ep-election-news-and-analysis__content .lead-paragraph {
+          font-size: 24px;
+          line-height: 36px; } }
 
 .ep-election-review-back-issues-container {
   background: #e5c75c;
@@ -5891,22 +5905,26 @@ object {
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
       .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li:hover {
         opacity: 0.7; }
-      .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a {
+      .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a:link,
+      .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a:visited {
         display: block;
         width: 100%;
         padding: 5px 10px;
         font-weight: 700;
         text-transform: uppercase;
         color: #00257f !important; }
-        .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a .ep-election-review-back-issues__icon {
+        .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a:link .ep-election-review-back-issues__icon,
+        .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a:visited .ep-election-review-back-issues__icon {
           display: none; }
           @media screen and (min-width: 768px) {
-            .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a .ep-election-review-back-issues__icon {
+            .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a:link .ep-election-review-back-issues__icon,
+            .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a:visited .ep-election-review-back-issues__icon {
               display: inline;
               height: 15px;
               margin-right: 5px; } }
         @media screen and (min-width: 768px) {
-          .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a {
+          .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a:link,
+          .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li a:visited {
             padding: 125px 10px 5px 10px; } }
       @media screen and (min-width: 768px) {
         .ep-election-review-back-issues-container .ep-election-review-back-issues__gallery li {
@@ -5948,11 +5966,8 @@ object {
         height: 100%;
         width: 100%;
         background: url(img/2019-ep-elections-report-front-cover-and-inside-pages-mockup.png) top right no-repeat;
-        background-size: contain;
-        opacity: 0.5; } }
-    @media screen and (min-width: 1100px) {
-      .ep-election-analysis-report-hero-container .ep-election-analysis-report-hero__mockup-background {
-        opacity: 1; } }
+        background-size: 80%;
+        opacity: 0.1; } }
   .ep-election-analysis-report-hero-container .ep-election-analysis-report-hero__report-cover {
     display: block;
     position: relative;
@@ -5971,16 +5986,23 @@ object {
     position: relative;
     text-align: center;
     color: white; }
+    .ep-election-analysis-report-hero-container .ep-election-analysis-report-hero__content a:link,
+    .ep-election-analysis-report-hero-container .ep-election-analysis-report-hero__content a:visited {
+      color: white;
+      font-weight: 700; }
     @media screen and (min-width: 768px) {
       .ep-election-analysis-report-hero-container .ep-election-analysis-report-hero__content {
         text-align: left;
         transform: skew(30deg);
-        max-width: 330px; } }
+        max-width: 800px; } }
+    .ep-election-analysis-report-hero-container .ep-election-analysis-report-hero__content .lead-paragraph {
+      font-size: 18px;
+      line-height: 26px;
+      font-weight: 700; }
   .ep-election-analysis-report-hero-container .ep-election-analysis-report-hero__content__skewed-background {
     display: none; }
     @media screen and (min-width: 768px) {
       .ep-election-analysis-report-hero-container .ep-election-analysis-report-hero__content__skewed-background {
-        display: block;
         position: absolute;
         top: 0;
         left: 0;
