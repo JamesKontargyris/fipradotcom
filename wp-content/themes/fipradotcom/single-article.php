@@ -36,7 +36,7 @@
                                 in <?php echo format_article_categories(get_the_category()); ?>
 		                    <?php endif; ?>
                         </div>
-	                    <?php if(has_post_thumbnail()) : ?>
+	                    <?php if(has_post_thumbnail() && get_field('display_thumbnail_in_article')) : ?>
                             <img class="article__image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'article'); ?>" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>">
 	                    <?php endif; ?>
 
