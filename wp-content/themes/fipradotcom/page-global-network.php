@@ -126,11 +126,6 @@ get_header(); ?>
                                                                 <td><?php echo $fax; ?></td>
                                                             </tr>
                                                         <?php endif; ?>
-                                                        <tr>
-                                                            <td colspan="2">
-                                                                <a href="/contact-fipriot?person=<?php echo get_field('first_name') ?><?php echo get_field('last_name') ?>&fipriot_id=<?php the_ID(); ?>">Contact <?php echo $first_name; ?></a>
-                                                            </td>
-                                                        </tr>
                                                     </table>
 
                                                     <br/><a href="<?php echo get_the_permalink(); ?>" class="full-profile-link">Full profile <i class="icon-right-open"></i></a>
